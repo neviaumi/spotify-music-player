@@ -3,4 +3,4 @@
 set -ex
 
 yarn test --watchAll=false --coverage
-lhci autorun
+yarn lhci autorun
