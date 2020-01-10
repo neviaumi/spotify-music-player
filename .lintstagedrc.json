@@ -1,0 +1,10 @@
+{
+  "*.{json,css,md,yaml,yml}": ["yarn prettier --write", "git add"],
+  "*.{js,ts,tsx}": [
+    "yarn prettier --write",
+    "yarn eslint --max-warnings 0 --fix",
+    "yarn stylelint",
+    "git add"
+  ],
+  "*.svg": ["yarn prettier --parser html --write", "git add"]
+}

@@ -1,0 +1,8 @@
+{
+  "ci": {
+    "assert": {
+      "present": "lighthouse:recommended",
+      "budgetsFile": "budgets.json"
+    }
+  }
+}
