@@ -52,7 +52,7 @@
     "husky": "4.0.7",
     "lint-staged": "9.5.0",
     "prettier": "1.19.1",
-    "stylelint": "12.0.1"
+    "stylelint": "13.0.0"
   },
   "husky": {
     "hooks": {
