@@ -40,7 +40,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.3.4",
     "@commitlint/config-conventional": "8.3.4",
-    "@lhci/cli": "0.3.7",
+    "@lhci/cli": "0.3.8",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
     "enzyme-to-json": "3.4.3",
