@@ -1,10 +1,10 @@
 name: Test the build
 
-on: [push, pull_request]
+on: [pull_request]
 env:
   CI: true
 jobs:
-  unitTest:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
