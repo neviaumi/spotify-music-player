@@ -4,3 +4,7 @@
 // learn more: https://github.com/testing-library/jest-dom
 
 import "@testing-library/jest-dom"
+
+Object.assign(window.location, {
+  replace: jest.fn().mockReturnValue(undefined)
+})

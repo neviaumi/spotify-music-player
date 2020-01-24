@@ -2,33 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vagrant.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Auth/Callback/__tests__/index.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Auth/Callback/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Auth/Login/__tests__/index.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Auth/Login/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/authorize.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/spotify/auth/authorize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/spotify/auth/getAuthorizeUrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/spotify/auth/openidConfiguration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/spotify/auth/verifyAuthCallback.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__tests__/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__tests__/Router.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Router.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +73,7 @@
       <recent name="$PROJECT_DIR$/src/pages/Auth" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Should render without error (1)">
+  <component name="RunManager" selected="Jest.Should render without error (3)">
     <configuration name="Should render without error (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -103,6 +82,32 @@
       <envs />
       <scope-kind value="TEST" />
       <test-file value="$PROJECT_DIR$/src/pages/Auth/Callback/__tests__/index.test.js" />
+      <test-names>
+        <test-name value="Should render without error" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Should render without error (2)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/App.test.js" />
+      <test-names>
+        <test-name value="Should render without error" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Should render without error (3)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/Router.test.js" />
       <test-names>
         <test-name value="Should render without error" />
       </test-names>
@@ -121,19 +126,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Should return authorization url" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.js" />
-      <test-names>
-        <test-name value="Should return authorization url" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="Should return error params from url" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -147,26 +139,13 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Should return valid callback params from url" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.js" />
-      <test-names>
-        <test-name value="Should return valid callback params from url" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Should render without error (3)" />
+        <item itemvalue="Jest.Should render without error (2)" />
         <item itemvalue="Jest.Should render without error (1)" />
         <item itemvalue="Jest.Should render without error" />
         <item itemvalue="Jest.Should return error params from url" />
-        <item itemvalue="Jest.Should return valid callback params from url" />
-        <item itemvalue="Jest.Should return authorization url" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +175,7 @@
       <workItem from="1578648865164" duration="113000" />
       <workItem from="1578649012224" duration="1313000" />
       <workItem from="1579857758679" duration="2150000" />
-      <workItem from="1579869261402" duration="8355000" />
+      <workItem from="1579869261402" duration="9624000" />
     </task>
     <servers />
   </component>
@@ -212,58 +191,70 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="528" y="251" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1579858070611" />
-    <state width="1659" height="243" key="GridCell.Tab.0.bottom" timestamp="1579878713314">
+    <state width="1659" height="243" key="GridCell.Tab.0.bottom" timestamp="1579879758053">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="243" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579878713314" />
-    <state width="1659" height="243" key="GridCell.Tab.0.center" timestamp="1579878713313">
+    <state width="1659" height="243" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579879758053" />
+    <state width="1659" height="243" key="GridCell.Tab.0.center" timestamp="1579879758053">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="243" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579878713313" />
-    <state width="1659" height="243" key="GridCell.Tab.0.left" timestamp="1579878713313">
+    <state width="1659" height="243" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579879758053" />
+    <state width="1659" height="243" key="GridCell.Tab.0.left" timestamp="1579879758052">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="243" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579878713313" />
-    <state width="1659" height="243" key="GridCell.Tab.0.right" timestamp="1579878713314">
+    <state width="1659" height="243" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579879758052" />
+    <state width="1659" height="243" key="GridCell.Tab.0.right" timestamp="1579879758053">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="243" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579878713314" />
-    <state width="1659" height="302" key="GridCell.Tab.1.bottom" timestamp="1579875786384">
+    <state width="1659" height="243" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579879758053" />
+    <state width="1659" height="302" key="GridCell.Tab.1.bottom" timestamp="1579879696871">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="302" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579875786384" />
-    <state width="1659" height="302" key="GridCell.Tab.1.center" timestamp="1579875786383">
+    <state width="1659" height="302" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579879696871" />
+    <state width="1659" height="302" key="GridCell.Tab.1.center" timestamp="1579879696870">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="302" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579875786383" />
-    <state width="1659" height="302" key="GridCell.Tab.1.left" timestamp="1579875786382">
+    <state width="1659" height="302" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579879696870" />
+    <state width="1659" height="302" key="GridCell.Tab.1.left" timestamp="1579879696870">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="302" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579875786382" />
-    <state width="1659" height="302" key="GridCell.Tab.1.right" timestamp="1579875786383">
+    <state width="1659" height="302" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579879696870" />
+    <state width="1659" height="302" key="GridCell.Tab.1.right" timestamp="1579879696870">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="302" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579875786383" />
-    <state width="1659" height="302" key="GridCell.Tab.2.bottom" timestamp="1579875786382">
+    <state width="1659" height="302" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579879696870" />
+    <state width="1659" height="302" key="GridCell.Tab.2.bottom" timestamp="1579879696870">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="302" key="GridCell.Tab.2.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579875786382" />
-    <state width="1659" height="302" key="GridCell.Tab.2.center" timestamp="1579875786381">
+    <state width="1659" height="302" key="GridCell.Tab.2.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579879696870" />
+    <state width="1659" height="302" key="GridCell.Tab.2.center" timestamp="1579879696869">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="302" key="GridCell.Tab.2.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579875786381" />
-    <state width="1659" height="302" key="GridCell.Tab.2.left" timestamp="1579875786381">
+    <state width="1659" height="302" key="GridCell.Tab.2.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579879696869" />
+    <state width="1659" height="302" key="GridCell.Tab.2.left" timestamp="1579879696869">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="302" key="GridCell.Tab.2.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579875786381" />
-    <state width="1659" height="302" key="GridCell.Tab.2.right" timestamp="1579875786382">
+    <state width="1659" height="302" key="GridCell.Tab.2.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579879696869" />
+    <state width="1659" height="302" key="GridCell.Tab.2.right" timestamp="1579879696869">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="302" key="GridCell.Tab.2.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579875786382" />
+    <state width="1659" height="302" key="GridCell.Tab.2.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579879696869" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1579869530587">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1579869530587" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/__tests__/App.test.js</url>
+          <line>7</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>
