@@ -1,9 +1,5 @@
 module.exports = {
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "eslint-config-prettier/react"
-  ],
+  extends: ["@spotify/eslint-config-react", "eslint-config-prettier/react"],
   parserOptions: {
     sourceType: "module",
     ecmaVersion: "2018",
