@@ -1450,10 +1450,53 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
+"@spotify/eslint-config-base@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-5.0.2.tgz#c448a2560050de76d8f129f9ce80bd0b6a2a4e26"
+  integrity sha512-O8UH7J3HJag3GQh3my027Huul0eCUBBfAhGeeFj4vrIvLeWXMoDtoKmHwu0ragsWF/0Q/ke5t+ZEgyp4urE9dA==
+
 "@spotify/eslint-config-react@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-5.2.0.tgz#9eb1a76408ae721d01b79f5afbe6230760b81e73"
   integrity sha512-yzhVhQLlNcTRpPrXYk9HxKjA7oNQVUYcKIIy+EIkw0Lld28M/cLHxxrFop8ddTFQw9mE/iDf3QCDLNcrpq0lwQ==
+
+"@spotify/eslint-config-typescript@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-5.0.0.tgz#e47d82f6b2cd7b5a25d6f010702fbd88b2ed4ed8"
+  integrity sha512-IJD/e8jiVPw7j5PxJPL6+MGjZxgt9iDR9jnBw0ZkyvY/laE6kvnihFW1iSQs+Oa9EIhK4Jam9xeivP2hAPYtBA==
+
+"@spotify/eslint-config@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-5.2.0.tgz#1ead664aaec4559293d655395b659e4e2439c71a"
+  integrity sha512-9dPS2GzIudV0EelJ8ikST9vGLxcIp/0jC9YYTLXpBg/DzHjMDbJMunYto4tvuIPkg8g1j5gu1etNxP0BWkLIig==
+  dependencies:
+    "@spotify/eslint-config-base" "^5.0.2"
+    "@spotify/eslint-config-react" "^5.2.0"
+    "@spotify/eslint-config-typescript" "^5.0.0"
+    "@spotify/web-scripts-utils" "^5.1.0"
+    "@typescript-eslint/eslint-plugin" "^2.14.0"
+    "@typescript-eslint/parser" "^2.14.0"
+    eslint-config-prettier "^6.0.0"
+    eslint-plugin-jsx-a11y "^6.2.1"
+    eslint-plugin-react "^7.12.4"
+
+"@spotify/prettier-config@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/prettier-config/-/prettier-config-5.0.0.tgz#453905ad26c64783df4a906d7acc5db286464c10"
+  integrity sha512-OR2H7k8pDFqE8Wqtlmbehp4zbjz7tkO2xxv/VB6aKjhs/t3VHXZyKLP/7iLkQ+Ichc4ss3agFqiR8Bw54hVlGQ==
+
+"@spotify/tsconfig@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/tsconfig/-/tsconfig-5.0.0.tgz#1017141ec05ae35d4dc0a57618204803be7102df"
+  integrity sha512-/QeNQQuW6BMKxwWy/1bFGYz+vm923XGibyAeeMBt9ez4ye5lhSIE2nZ2R33DEGCv3REjdGuzn9wN9vGNvaHxVw==
+
+"@spotify/web-scripts-utils@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@spotify/web-scripts-utils/-/web-scripts-utils-5.1.0.tgz#97a10dd4e0edff058a52fea64a2a4b7d74751b4b"
+  integrity sha512-Nk5R+LWDn7iEeuwyxp95rF/bPlTDl3XHmBchZwoJ5ujNDz/lAIhyCH5KRopyORoSui4myxKgqQ/KQfk35h3mGA==
+  dependencies:
+    glob "^7.1.4"
+    read-pkg-up "^7.0.1"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
@@ -1806,7 +1849,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^2.8.0":
+"@typescript-eslint/eslint-plugin@^2.14.0", "@typescript-eslint/eslint-plugin@^2.8.0":
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.17.0.tgz#880435a9f9bdd50b45fa286ba63fed723d73c837"
   integrity sha512-tg/OMOtPeXlvk0ES8mZzEZ4gd1ruSE03nsKcK+teJhxYv5CPCXK6Mb/OK6NpB4+CqGTHs4MVeoSZXNFqpT1PyQ==
@@ -1826,7 +1869,7 @@
     "@typescript-eslint/typescript-estree" "2.17.0"
     eslint-scope "^5.0.0"
 
-"@typescript-eslint/parser@^2.8.0":
+"@typescript-eslint/parser@^2.14.0", "@typescript-eslint/parser@^2.17.0", "@typescript-eslint/parser@^2.8.0":
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-2.17.0.tgz#627f79586d868edbab55f46a6b183cdc341aea1d"
   integrity sha512-k1g3gRQ4fwfJoIfgUpz78AovicSWKFANmvTfkAHP24MgJHjWfZI6ya7tsQZt1sLczvP4G9BE5G5MgADHdmJB/w==
@@ -4601,7 +4644,7 @@ escodegen@^1.11.0, escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@6.9.0:
+eslint-config-prettier@6.9.0, eslint-config-prettier@^6.0.0:
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.9.0.tgz#430d24822e82f7deb1e22a435bfa3999fae4ad64"
   integrity sha512-k4E14HBtcLv0uqThaI6I/n1LEqROp8XaPu6SO9Z32u5NlGRC07Enu1Bh2KEFw4FNHbekH8yzbIU9kUGxbiGmCA==
@@ -4674,7 +4717,7 @@ eslint-plugin-jest@23.6.0:
     "@typescript-eslint/experimental-utils" "^2.5.0"
     micromatch "^4.0.2"
 
-eslint-plugin-jsx-a11y@6.2.3, eslint-plugin-jsx-a11y@^6.2.3:
+eslint-plugin-jsx-a11y@6.2.3, eslint-plugin-jsx-a11y@^6.2.1, eslint-plugin-jsx-a11y@^6.2.3:
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.3.tgz#b872a09d5de51af70a97db1eea7dc933043708aa"
   integrity sha512-CawzfGt9w83tyuVekn0GDPU9ytYtxyxyFZ3aSWROmnRRFQFT2BiPJd7jvRdzNDi6oLWaS2asMeYSNMjWTV4eNg==
@@ -4716,7 +4759,7 @@ eslint-plugin-react@7.16.0:
     prop-types "^15.7.2"
     resolve "^1.12.0"
 
-eslint-plugin-react@^7.18.0:
+eslint-plugin-react@^7.12.4, eslint-plugin-react@^7.18.0:
   version "7.18.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.18.0.tgz#2317831284d005b30aff8afb7c4e906f13fa8e7e"
   integrity sha512-p+PGoGeV4SaZRDsXqdj9OWcOrOpZn8gXoGPcIQTzo2IDMbAKhNDnME9myZWqO3Ic4R3YmwAZ1lDjWl2R2hMUVQ==
@@ -10440,7 +10483,7 @@ read-pkg-up@^4.0.0:
     find-up "^3.0.0"
     read-pkg "^3.0.0"
 
-read-pkg-up@^7.0.0:
+read-pkg-up@^7.0.0, read-pkg-up@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-7.0.1.tgz#f3a6135758459733ae2b95638056e1854e7ef507"
   integrity sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==
@@ -12305,6 +12348,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typescript@^3.7.5:
+  version "3.7.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.5.tgz#0692e21f65fd4108b9330238aac11dd2e177a1ae"
+  integrity sha512-/P5lkRXkWHNAbcJIiHPfRoKqyd7bsyCma1hZNUGfn20qm64T6ZBlrzprymeu918H+mB/0rIg2gGK/BXkhhYgBw==
 
 uglify-js@3.4.x:
   version "3.4.10"
