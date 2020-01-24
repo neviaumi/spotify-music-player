@@ -1,12 +1,5 @@
 module.exports = {
   extends: ['@spotify'],
-  parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: '2018',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
   plugins: [
     'eslint-plugin-react',
     'eslint-plugin-react-hooks',
@@ -15,16 +8,6 @@ module.exports = {
     'eslint-plugin-prettier',
     'eslint-plugin-simple-import-sort',
   ],
-  env: {
-    browser: true,
-    jest: true,
-    node: true,
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
   rules: {
     'block-scoped-var': 'error',
     // Prefer less responsibility for function, ideally is only one
