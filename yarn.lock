@@ -1496,10 +1496,10 @@
   resolved "https://registry.yarnpkg.com/@spotify/prettier-config/-/prettier-config-6.0.0.tgz#f3a72cf290af8f5b57e89fc65e6eaff8178a6e83"
   integrity sha512-lO/ykZ/GNtzH63mFzs1VeqOVNCZwQJyZm/PBNBZuYk3hnWOfDC8XA5G/D4opV/gxqkED5+Ek7LSAnPcQNv/wUA==
 
-"@spotify/tsconfig@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@spotify/tsconfig/-/tsconfig-5.0.0.tgz#1017141ec05ae35d4dc0a57618204803be7102df"
-  integrity sha512-/QeNQQuW6BMKxwWy/1bFGYz+vm923XGibyAeeMBt9ez4ye5lhSIE2nZ2R33DEGCv3REjdGuzn9wN9vGNvaHxVw==
+"@spotify/tsconfig@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/tsconfig/-/tsconfig-6.0.0.tgz#bf9fd0b8188494d87ba6c172f0030376d2aa5dd8"
+  integrity sha512-B+T6fcDRJg3x1G8wrqUQ+xgu6JYWBwPHeVxKybRGHLt4ciDmzJUvtWthXt8Fg3DqvaKnLnfXLcGOp8TiG+f0kA==
 
 "@spotify/web-scripts-utils@^6.0.0":
   version "6.0.0"
