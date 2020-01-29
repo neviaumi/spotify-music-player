@@ -38,7 +38,7 @@
     "@commitlint/config-conventional": "8.3.4",
     "@lhci/cli": "0.3.8",
     "@spotify/eslint-config": "6.0.0",
-    "@spotify/eslint-config-react": "5.2.0",
+    "@spotify/eslint-config-react": "6.0.0",
     "@spotify/prettier-config": "5.0.0",
     "@spotify/tsconfig": "5.0.0",
     "@testing-library/jest-dom": "5.0.2",
