@@ -1460,33 +1460,39 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@spotify/eslint-config-base@^5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-5.0.2.tgz#c448a2560050de76d8f129f9ce80bd0b6a2a4e26"
-  integrity sha512-O8UH7J3HJag3GQh3my027Huul0eCUBBfAhGeeFj4vrIvLeWXMoDtoKmHwu0ragsWF/0Q/ke5t+ZEgyp4urE9dA==
+"@spotify/eslint-config-base@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-6.0.0.tgz#487da7dbb89380b4eb778f4b902b8bba9b1f389f"
+  integrity sha512-R5NrJY/6hUWceiymcFia83j54yeB2SBeNYV3gZZuagSqI765358I3TEzccsS5ARo2zkPGKqfvawSP3ePVGCOMQ==
 
-"@spotify/eslint-config-react@5.2.0", "@spotify/eslint-config-react@^5.2.0":
+"@spotify/eslint-config-react@5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-5.2.0.tgz#9eb1a76408ae721d01b79f5afbe6230760b81e73"
   integrity sha512-yzhVhQLlNcTRpPrXYk9HxKjA7oNQVUYcKIIy+EIkw0Lld28M/cLHxxrFop8ddTFQw9mE/iDf3QCDLNcrpq0lwQ==
 
-"@spotify/eslint-config-typescript@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-5.0.0.tgz#e47d82f6b2cd7b5a25d6f010702fbd88b2ed4ed8"
-  integrity sha512-IJD/e8jiVPw7j5PxJPL6+MGjZxgt9iDR9jnBw0ZkyvY/laE6kvnihFW1iSQs+Oa9EIhK4Jam9xeivP2hAPYtBA==
+"@spotify/eslint-config-react@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-6.0.0.tgz#9cfc88362c7ffcd14e4dde73c196d1bc8583051d"
+  integrity sha512-Tb88Yvu9lAjT/isKbebmOoxBAmjreDFH4lQfXxoFcW56Wl78l2yvLo0LkPV8lOx5+lKfX0BbFiBBpwl+jCaflg==
 
-"@spotify/eslint-config@5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-5.2.0.tgz#1ead664aaec4559293d655395b659e4e2439c71a"
-  integrity sha512-9dPS2GzIudV0EelJ8ikST9vGLxcIp/0jC9YYTLXpBg/DzHjMDbJMunYto4tvuIPkg8g1j5gu1etNxP0BWkLIig==
+"@spotify/eslint-config-typescript@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-6.0.0.tgz#8ae8469d2a0e219d71abaf2da14f8659c3912a34"
+  integrity sha512-cK1iHhfMgvZFPANqLoChhgUQ1oqH+qTWILGvcsc6HylzVt9/kM0SyjGcDuZKj+CP6TecJODdyHgb5U6U+O5gKw==
+
+"@spotify/eslint-config@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-6.0.0.tgz#45c535c302e02fc8bb459287930a729e9770a60c"
+  integrity sha512-KYQY8w8QuDz2IPJxh70xRQPd73RAJrwQVPCbkUBUzKb+0EBNx+kjX8JFBa7KNsJlnIu648f3XWYTySMFxGyFhQ==
   dependencies:
-    "@spotify/eslint-config-base" "^5.0.2"
-    "@spotify/eslint-config-react" "^5.2.0"
-    "@spotify/eslint-config-typescript" "^5.0.0"
-    "@spotify/web-scripts-utils" "^5.1.0"
+    "@spotify/eslint-config-base" "^6.0.0"
+    "@spotify/eslint-config-react" "^6.0.0"
+    "@spotify/eslint-config-typescript" "^6.0.0"
+    "@spotify/web-scripts-utils" "^6.0.0"
     "@typescript-eslint/eslint-plugin" "^2.14.0"
     "@typescript-eslint/parser" "^2.14.0"
     eslint-config-prettier "^6.0.0"
+    eslint-plugin-jest "^23.6.0"
     eslint-plugin-jsx-a11y "^6.2.1"
     eslint-plugin-react "^7.12.4"
 
@@ -1500,10 +1506,10 @@
   resolved "https://registry.yarnpkg.com/@spotify/tsconfig/-/tsconfig-5.0.0.tgz#1017141ec05ae35d4dc0a57618204803be7102df"
   integrity sha512-/QeNQQuW6BMKxwWy/1bFGYz+vm923XGibyAeeMBt9ez4ye5lhSIE2nZ2R33DEGCv3REjdGuzn9wN9vGNvaHxVw==
 
-"@spotify/web-scripts-utils@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@spotify/web-scripts-utils/-/web-scripts-utils-5.1.0.tgz#97a10dd4e0edff058a52fea64a2a4b7d74751b4b"
-  integrity sha512-Nk5R+LWDn7iEeuwyxp95rF/bPlTDl3XHmBchZwoJ5ujNDz/lAIhyCH5KRopyORoSui4myxKgqQ/KQfk35h3mGA==
+"@spotify/web-scripts-utils@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/web-scripts-utils/-/web-scripts-utils-6.0.0.tgz#64642e79a894058510b0b4a239b117323080e853"
+  integrity sha512-o3htse1lyhLCabmYoQcI2qCsYV0PW6dpnYHhKAF/iycIglzz4/tXOk3EA/MQVlo6bo7crdr++3OeU4Dyk2CsWw==
   dependencies:
     glob "^7.1.4"
     read-pkg-up "^7.0.1"
@@ -4782,7 +4788,7 @@ eslint-plugin-import@2.18.2:
     read-pkg-up "^2.0.0"
     resolve "^1.11.0"
 
-eslint-plugin-jest@23.6.0:
+eslint-plugin-jest@23.6.0, eslint-plugin-jest@^23.6.0:
   version "23.6.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.6.0.tgz#508b32f80d44058c8c01257c0ee718cfbd521e9d"
   integrity sha512-GH8AhcFXspOLqak7fqnddLXEJsrFyvgO8Bm60SexvKSn1+3rWYESnCiWUOCUcBTprNSDSE4CtAZdM4EyV6gPPw==
