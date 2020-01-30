@@ -1,4 +1,4 @@
-import getCurrentTimestamp from "../../../utils/getCurrentTimestamp"
+import getCurrentTimestamp from '../../../utils/getCurrentTimestamp';
 import getCallbackParams from './getCallbackParams';
 
 export default (url: string) => {
@@ -7,10 +7,9 @@ export default (url: string) => {
     // TODO: error here
     throw new Error('Custom Error here');
   }
-  const currentTimestamp = getCurrentTimestamp()
+  const currentTimestamp = getCurrentTimestamp();
   return {
     token: params.access_token as string,
-    expiredAt:
-      currentTimestamp + Number(params.expires_in || 0),
+    expiredAt: currentTimestamp + Number(params.expires_in || 0),
   };
 };

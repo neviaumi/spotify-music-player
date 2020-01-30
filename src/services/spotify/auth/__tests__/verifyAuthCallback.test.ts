@@ -1,14 +1,14 @@
 import { URL, URLSearchParams } from 'url';
 
-import getCurrentTimestamp from "../../../../utils/getCurrentTimestamp"
+import getCurrentTimestamp from '../../../../utils/getCurrentTimestamp';
 import verifyAuthCallback from '../verifyAuthCallback';
 
-jest.mock("../../../../utils/getCurrentTimestamp")
+jest.mock('../../../../utils/getCurrentTimestamp');
 
-const getCurrentTimestampMock = getCurrentTimestamp as jest.Mock
+const getCurrentTimestampMock = getCurrentTimestamp as jest.Mock;
 
 it('Should return valid callback params from url', () => {
-  getCurrentTimestampMock.mockReturnValue(3600)
+  getCurrentTimestampMock.mockReturnValue(3600);
   const authorizeUrl = new URL('http://localhost:3000/auth/callback');
   const hashParams = new URLSearchParams();
   hashParams.append('access_token', 'foobar');
@@ -20,7 +20,7 @@ it('Should return valid callback params from url', () => {
   const params = verifyAuthCallback(authorizeUrl.toString());
   expect(params).toEqual({
     token: 'foobar',
-    expiredAt: 7200
+    expiredAt: 7200,
   });
 });
 
@@ -29,5 +29,7 @@ it('Should return error params from url', () => {
     'http://localhost:3000/auth/callback?error=unit-test&state=foobar&dummy=i-am-a-teapot',
   );
 
-  expect(() => verifyAuthCallback(authorizeUrl.toString())).toThrow("Custom Error here");
+  expect(() => verifyAuthCallback(authorizeUrl.toString())).toThrow(
+    'Custom Error here',
+  );
 });
