@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/Auth/AuthContextProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/Auth/AuthContextProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/Auth/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/Auth/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Callback/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Callback/__tests__/index.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Callback/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Callback/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/verifyAuthCallback.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/verifyAuthCallback.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/__tests__/getCurrentTimestamp.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/__tests__/getCurrentTimestamp.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/getCurrentTimestamp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/getCurrentTimestamp.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +173,7 @@
       <workItem from="1579881112689" duration="2093000" />
       <workItem from="1579965080827" duration="291000" />
       <workItem from="1580373080166" duration="128000" />
-      <workItem from="1580378063130" duration="5948000" />
+      <workItem from="1580378063130" duration="6032000" />
     </task>
     <servers />
   </component>
