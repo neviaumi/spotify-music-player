@@ -43,6 +43,17 @@
     "@spotify/tsconfig": "6.0.0",
     "@testing-library/jest-dom": "5.0.2",
     "@testing-library/react": "9.4.0",
+    "@types/enzyme": "^3.10.4",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/eslint": "6.1.7",
+    "@types/eslint-plugin-prettier": "2.2.0",
+    "@types/prettier": "1.19.0",
+    "@types/react-router-dom": "5.1.2",
+    "@types/stylelint": "9.10.1",
+    "@types/testing-library__jest-dom": "5.0.0",
+    "@types/testing-library__react": "9.1.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "@testing-library/user-event": "8.1.0",
     "@types/jest": "25.1.1",
     "@types/node": "13.5.2",
@@ -60,7 +71,8 @@
     "lint-staged": "10.0.5",
     "prettier": "1.19.1",
     "stylelint": "13.0.0",
-    "typescript": "3.7.5"
+    "typescript": "3.7.5",
+    "typesync": "^0.6.1"
   },
   "husky": {
     "hooks": {
@@ -77,9 +89,8 @@
       "json"
     ],
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/index.js",
-      "!src/serviceWorker.js"
+      "src/**/*.{ts,tsx}",
+      "!src/index.ts"
     ],
     "coverageThreshold": {
       "global": {

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,13 +13,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>console.log</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,21 +66,21 @@
       <recent name="$PROJECT_DIR$/src/pages/Auth" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Should render without error (3)">
-    <configuration name="Should render without error (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Should has correct route count">
+    <configuration name="Should has correct route count" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/pages/Auth/Callback/__tests__/index.test.js" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/Routes.test.tsx" />
       <test-names>
-        <test-name value="Should render without error" />
+        <test-name value="Should has correct route count" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Should render without error (2)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Should render without error (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
@@ -100,14 +93,14 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Should render without error (3)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Should render without error (2)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/__tests__/Router.test.js" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/Router.test.tsx" />
       <test-names>
         <test-name value="Should render without error" />
       </test-names>
@@ -126,26 +119,27 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Should return error params from url" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Test useAccessToken setAccessToken hooks.Should success set the token" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.js" />
+      <test-file value="$PROJECT_DIR$/src/hooks/__tests__/useAccessToken.test.tsx" />
       <test-names>
-        <test-name value="Should return error params from url" />
+        <test-name value="Test useAccessToken setAccessToken hooks" />
+        <test-name value="Should success set the token" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.Should render without error (3)" />
+        <item itemvalue="Jest.Should has correct route count" />
         <item itemvalue="Jest.Should render without error (2)" />
         <item itemvalue="Jest.Should render without error (1)" />
         <item itemvalue="Jest.Should render without error" />
-        <item itemvalue="Jest.Should return error params from url" />
+        <item itemvalue="Jest.Test useAccessToken setAccessToken hooks.Should success set the token" />
       </list>
     </recent_temporary>
   </component>
@@ -177,6 +171,9 @@
       <workItem from="1579857758679" duration="2150000" />
       <workItem from="1579869261402" duration="10324000" />
       <workItem from="1579881112689" duration="2093000" />
+      <workItem from="1579965080827" duration="291000" />
+      <workItem from="1580373080166" duration="128000" />
+      <workItem from="1580378063130" duration="6032000" />
     </task>
     <servers />
   </component>
@@ -192,54 +189,86 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="528" y="251" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1579858070611" />
-    <state width="1659" height="302" key="GridCell.Tab.0.bottom" timestamp="1579881095439">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="-1151" y="240" key="#xdebugger.evaluate" timestamp="1580379688817">
+      <screen x="-1920" y="23" width="1920" height="1006" />
     </state>
+    <state x="-1151" y="240" key="#xdebugger.evaluate/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379688817" />
+    <state x="472" y="296" key="EditFileWatcherDialog" timestamp="1580382375659">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state x="472" y="296" key="EditFileWatcherDialog/0.23.1680.976@0.23.1680.976" timestamp="1580382375659" />
+    <state width="1659" height="260" key="GridCell.Tab.0.bottom" timestamp="1580384161886">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state width="1659" height="270" key="GridCell.Tab.0.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
-    <state width="1659" height="302" key="GridCell.Tab.0.center" timestamp="1579881095438">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="260" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1580384161886" />
+    <state width="1659" height="260" key="GridCell.Tab.0.center" timestamp="1580384161885">
+      <screen x="0" y="23" width="1680" height="976" />
     </state>
+    <state width="1659" height="270" key="GridCell.Tab.0.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200785" />
     <state width="1659" height="302" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
-    <state width="1659" height="302" key="GridCell.Tab.0.left" timestamp="1579881095438">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="260" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1580384161885" />
+    <state width="1659" height="260" key="GridCell.Tab.0.left" timestamp="1580384161884">
+      <screen x="0" y="23" width="1680" height="976" />
     </state>
+    <state width="1659" height="270" key="GridCell.Tab.0.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200784" />
     <state width="1659" height="302" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
-    <state width="1659" height="302" key="GridCell.Tab.0.right" timestamp="1579881095439">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="260" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1580384161884" />
+    <state width="1659" height="260" key="GridCell.Tab.0.right" timestamp="1580384161885">
+      <screen x="0" y="23" width="1680" height="976" />
     </state>
+    <state width="1659" height="270" key="GridCell.Tab.0.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
-    <state width="1659" height="302" key="GridCell.Tab.1.bottom" timestamp="1579881095441">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="260" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1580384161885" />
+    <state width="1659" height="336" key="GridCell.Tab.1.bottom" timestamp="1580379704492">
+      <screen x="-1920" y="23" width="1920" height="1006" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
-    <state width="1659" height="302" key="GridCell.Tab.1.center" timestamp="1579881095441">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="336" key="GridCell.Tab.1.center" timestamp="1580379704492">
+      <screen x="-1920" y="23" width="1920" height="1006" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
-    <state width="1659" height="302" key="GridCell.Tab.1.left" timestamp="1579881095441">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="336" key="GridCell.Tab.1.left" timestamp="1580379704492">
+      <screen x="-1920" y="23" width="1920" height="1006" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
-    <state width="1659" height="302" key="GridCell.Tab.1.right" timestamp="1579881095441">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="336" key="GridCell.Tab.1.right" timestamp="1580379704492">
+      <screen x="-1920" y="23" width="1920" height="1006" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
-    <state width="1659" height="302" key="GridCell.Tab.2.bottom" timestamp="1579881095440">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="336" key="GridCell.Tab.2.bottom" timestamp="1580379704491">
+      <screen x="-1920" y="23" width="1920" height="1006" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.2.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704491" />
     <state width="1659" height="302" key="GridCell.Tab.2.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095440" />
-    <state width="1659" height="302" key="GridCell.Tab.2.center" timestamp="1579881095440">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="336" key="GridCell.Tab.2.center" timestamp="1580379704491">
+      <screen x="-1920" y="23" width="1920" height="1006" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.2.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704491" />
     <state width="1659" height="302" key="GridCell.Tab.2.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095440" />
-    <state width="1659" height="302" key="GridCell.Tab.2.left" timestamp="1579881095439">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="336" key="GridCell.Tab.2.left" timestamp="1580379704490">
+      <screen x="-1920" y="23" width="1920" height="1006" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.2.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704490" />
     <state width="1659" height="302" key="GridCell.Tab.2.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
-    <state width="1659" height="302" key="GridCell.Tab.2.right" timestamp="1579881095440">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state width="1659" height="336" key="GridCell.Tab.2.right" timestamp="1580379704491">
+      <screen x="-1920" y="23" width="1920" height="1006" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.2.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704491" />
     <state width="1659" height="302" key="GridCell.Tab.2.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095440" />
+    <state x="341" y="150" key="SettingsEditor" timestamp="1580382377806">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state x="341" y="150" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1580382377806" />
+    <state x="-1234" y="283" width="639" height="486" key="find.popup" timestamp="1580379352954">
+      <screen x="-1920" y="23" width="1920" height="1006" />
+    </state>
+    <state x="-1234" y="283" width="639" height="486" key="find.popup/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379352954" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1579869530587">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -249,9 +278,10 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/__tests__/App.test.js</url>
-          <line>7</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/services/spotify/auth/verifyAuthCallback.ts</url>
+          <line>10</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
