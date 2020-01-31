@@ -18,12 +18,12 @@ export default () => {
   const getAccessInfo = () => {
     const { isAuthenticated, _accessInfo } = context;
     if (!isAuthenticated || !_accessInfo) {
-      // context.isAuthenticated = false;
+      context.isAuthenticated = false;
       throw new UnAuthenticatedError();
     }
     const currentTimestamp = getCurrentTimestamp();
     if (currentTimestamp >= _accessInfo.expiredAt) {
-      // setTimeout(() => (context.isAuthenticated = false));
+      setTimeout(() => (context.isAuthenticated = false));
       throw new AuthenticationExpiredError(
         _accessInfo.token,
         _accessInfo.expiredAt,
