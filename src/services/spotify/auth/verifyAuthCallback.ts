@@ -1,11 +1,11 @@
+import AuthenticationCallbackError from '../../../errors/AuthenticationCallbackError';
 import getCurrentTimestamp from '../../../utils/getCurrentTimestamp';
 import getCallbackParams from './getCallbackParams';
 
 export default (url: string) => {
   const params = getCallbackParams(url);
   if (params.error) {
-    // TODO: error here
-    throw new Error('Custom Error here');
+    throw new AuthenticationCallbackError(params.error);
   }
   const currentTimestamp = getCurrentTimestamp();
   return {

@@ -1,5 +1,7 @@
 import { URL, URLSearchParams } from 'url';
 
+import AuthenticationCallbackError from '../../../../errors/AuthenticationCallbackError';
+
 import getCurrentTimestamp from '../../../../utils/getCurrentTimestamp';
 import verifyAuthCallback from '../verifyAuthCallback';
 
@@ -30,6 +32,6 @@ it('Should return error params from url', () => {
   );
 
   expect(() => verifyAuthCallback(authorizeUrl.toString())).toThrow(
-    'Custom Error here',
+    AuthenticationCallbackError,
   );
 });

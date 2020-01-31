@@ -2,6 +2,8 @@ import { render } from '@testing-library/react';
 import React from 'react';
 
 import AuthContextProvider from '../../contexts/Auth/AuthContextProvider';
+import AuthenticationExpiredError from '../../errors/AuthenticationExpiredError';
+import UnAuthenticatedError from '../../errors/UnAuthenticatedError';
 import useAccessToken from '../useAccessToken';
 
 function DummyComponentWillGetToken() {
@@ -53,7 +55,7 @@ describe('Test useAccessToken getAccessToken hooks', () => {
           <DummyComponentWillGetToken />
         </AuthContextProvider>,
       ),
-    ).toThrow('Custom Error here');
+    ).toThrow(UnAuthenticatedError);
   });
 
   it('Should fail get the token due to token expired', () => {
@@ -69,6 +71,6 @@ describe('Test useAccessToken getAccessToken hooks', () => {
           <DummyComponentWillGetToken />
         </AuthContextProvider>,
       ),
-    ).toThrow('Custom Error here');
+    ).toThrow(AuthenticationExpiredError);
   });
 });

@@ -1,29 +1,35 @@
 import { useContext } from 'react';
 
 import AuthContext, { AccessInfo } from '../contexts/Auth';
+import AuthenticationExpiredError from '../errors/AuthenticationExpiredError';
+import UnAuthenticatedError from '../errors/UnAuthenticatedError';
 import getCurrentTimestamp from '../utils/getCurrentTimestamp';
 
 export default () => {
   const context = useContext(AuthContext);
   const setAccessInfo = (accessInfo: AccessInfo) => {
     if (accessInfo) {
-      context._accessInfo = accessInfo;
-      context.isAuthenticated = true;
+      Object.assign(context, {
+        _accessInfo: accessInfo,
+        isAuthenticated: true,
+      });
     }
   };
   const getAccessInfo = () => {
-    if (!context.isAuthenticated || !context._accessInfo) {
-      context.isAuthenticated = false;
-      // TODO: custom error here
-      throw new Error('Custom Error here');
+    const { isAuthenticated, _accessInfo } = context;
+    if (!isAuthenticated || !_accessInfo) {
+      // context.isAuthenticated = false;
+      throw new UnAuthenticatedError();
     }
     const currentTimestamp = getCurrentTimestamp();
-    if (currentTimestamp >= context._accessInfo.expiredAt) {
-      context.isAuthenticated = false;
-      // TODO: custom error here
-      throw new Error('Custom error here');
+    if (currentTimestamp >= _accessInfo.expiredAt) {
+      // setTimeout(() => (context.isAuthenticated = false));
+      throw new AuthenticationExpiredError(
+        _accessInfo.token,
+        _accessInfo.expiredAt,
+      );
     }
-    return context._accessInfo.token;
+    return _accessInfo.token;
   };
   return { setAccessInfo, getAccessInfo };
 };
