@@ -41,7 +41,7 @@
     "@spotify/eslint-config-react": "6.0.0",
     "@spotify/prettier-config": "6.0.0",
     "@spotify/tsconfig": "6.0.0",
-    "@testing-library/jest-dom": "5.0.2",
+    "@testing-library/jest-dom": "5.1.0",
     "@testing-library/react": "9.4.0",
     "@testing-library/user-event": "8.1.0",
     "@types/enzyme": "3.10.4",
