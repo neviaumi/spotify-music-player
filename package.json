@@ -44,7 +44,7 @@
     "@testing-library/jest-dom": "5.1.1",
     "@testing-library/react": "9.4.0",
     "@testing-library/user-event": "8.1.0",
-    "@types/enzyme": "3.10.4",
+    "@types/enzyme": "3.10.5",
     "@types/enzyme-adapter-react-16": "1.0.5",
     "@types/eslint": "6.1.8",
     "@types/eslint-plugin-prettier": "2.2.0",
