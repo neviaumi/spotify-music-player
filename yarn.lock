@@ -1400,12 +1400,12 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@lhci/cli@0.3.8":
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/@lhci/cli/-/cli-0.3.8.tgz#0f3eadefdaa852691b0f2dcca65eb41894d6588c"
-  integrity sha512-7b8l2pxkBGSmGbaZ4nQj+uL5Cs4e1QYKYNuwxFPJ+r72RSuX/zvCRlsSrlo9oZx/09rhk1MmGncoXnd4TGZWCA==
+"@lhci/cli@0.3.9":
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/@lhci/cli/-/cli-0.3.9.tgz#5c7054b1633ae16ab6f7fb3700e77d0d941ac2e6"
+  integrity sha512-dMsdFvnW4JZK57FV71mu5SScvpDNrDj7wWcZODEujE2N9RPB/ScwOg+LRoMQkkH5pssJ4ynE2X2nPA4BzmF4gg==
   dependencies:
-    "@lhci/utils" "0.3.8"
+    "@lhci/utils" "0.3.9"
     chrome-launcher "^0.12.0"
     compression "^1.7.4"
     express "^4.17.1"
@@ -1417,10 +1417,10 @@
     yargs "^12.0.5"
     yargs-parser "^11.1.1"
 
-"@lhci/utils@0.3.8":
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/@lhci/utils/-/utils-0.3.8.tgz#9ecb3a1ecdb04d19fc19b65d2f8c59a0ccccee31"
-  integrity sha512-g6xCBT4ToTVmesP6rS9rUpJe61mvtgnEIj1Bbz3n46CKyrzubQY77yo81HgcE+/tGKYKTenhDQfz6EZ0mMF8yg==
+"@lhci/utils@0.3.9":
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/@lhci/utils/-/utils-0.3.9.tgz#e495f2edc33b32d3ae55a9908047f515526fe19d"
+  integrity sha512-qXHi54VgKu/MA9InSyer0cGdNjccdi70nunBp51CMBvw2jHNcL0pBatYmmPzOO4weuWPj1HzHUEGWlFmFXKsbQ==
   dependencies:
     isomorphic-fetch "^2.2.1"
     js-yaml "^3.13.1"
