@@ -42,7 +42,7 @@
     "@spotify/prettier-config": "6.0.0",
     "@spotify/tsconfig": "6.0.0",
     "@testing-library/jest-dom": "5.1.1",
-    "@testing-library/react": "9.4.0",
+    "@testing-library/react": "9.4.1",
     "@testing-library/user-event": "10.0.0",
     "@types/enzyme": "3.10.5",
     "@types/enzyme-adapter-react-16": "1.0.6",
