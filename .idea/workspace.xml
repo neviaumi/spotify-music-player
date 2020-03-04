@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAccessToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAccessToken.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Panel/__tests__/index.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Panel/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/__mocks__/useAccessToken.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Home/__tests__/index.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/getAuthorizeUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/getAuthorizeUrl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -67,7 +76,7 @@
       <recent name="$PROJECT_DIR$/src/pages/Auth" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Should render without error">
+  <component name="RunManager" selected="Jest.Test render Home Page">
     <configuration name="Should render without error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -78,6 +87,19 @@
       <test-file value="$PROJECT_DIR$/src/__tests__/App.test.tsx" />
       <test-names>
         <test-name value="Should render without error" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Should return authorization url" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" />
+      <test-names>
+        <test-name value="Should return authorization url" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -94,16 +116,16 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test useAccessToken getAccessToken hooks" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Test render Home Page" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/hooks/__tests__/useAccessToken.test.tsx" />
+      <test-file value="$PROJECT_DIR$/src/pages/Home/__tests__/index.test.tsx" />
       <test-names>
-        <test-name value="Test useAccessToken getAccessToken hooks" />
+        <test-name value="Test render Home Page" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -121,27 +143,13 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test useAccessToken getAccessToken hooks.Should fail get the token due to unauthenticated" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/hooks/__tests__/useAccessToken.test.tsx" />
-      <test-names>
-        <test-name value="Test useAccessToken getAccessToken hooks" />
-        <test-name value="Should fail get the token due to unauthenticated" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Test render Home Page" />
+        <item itemvalue="Jest.Should return authorization url" />
         <item itemvalue="Jest.Should render without error" />
         <item itemvalue="Jest.Should return error params from url" />
         <item itemvalue="Jest.Test useAccessToken getAccessToken hooks.Should fail get the token due to token expired" />
-        <item itemvalue="Jest.Test useAccessToken getAccessToken hooks" />
-        <item itemvalue="Jest.Test useAccessToken getAccessToken hooks.Should fail get the token due to unauthenticated" />
       </list>
     </recent_temporary>
   </component>
@@ -203,34 +211,34 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="472" y="296" key="EditFileWatcherDialog/0.23.1680.976@0.23.1680.976" timestamp="1580382375659" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1580471872002">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1583324701940">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1580471872002" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1580471872001">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1583324701940" />
+    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1583324701939">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200785" />
     <state width="1659" height="302" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1580471872001" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1580471872000">
+    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1583324701939" />
+    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1583324701938">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200784" />
     <state width="1659" height="302" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1580471872000" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1580471872001">
+    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1583324701938" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1583324701939">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1580471872001" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1583324701939" />
     <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1580469863996">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
@@ -313,7 +321,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/pages/Auth/Login/index.tsx</url>
           <line>6</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
