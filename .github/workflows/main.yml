@@ -1,6 +1,11 @@
 name: build
 
-on: [pull_request, push]
+on:
+  push:
+    branch:
+      - master
+      - development
+  pull_request:
 env:
   CI: true
 jobs:
