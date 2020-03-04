@@ -1,4 +1,4 @@
-name: Test the build
+name: build
 
 on: [pull_request]
 env:
