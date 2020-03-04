@@ -9,5 +9,6 @@ export default () => {
   );
   queryParams.append('response_type', openidConfiguration.response_types[0]);
   queryParams.append('redirect_uri', openidConfiguration.redirect_uris[0]);
+  queryParams.append('show_dialog', 'false');
   return authorizeUrl.toString();
 };
