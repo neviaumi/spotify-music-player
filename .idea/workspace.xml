@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Panel/__tests__/index.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Panel/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/__mocks__/useAccessToken.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home/__tests__/index.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/getAuthorizeUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/getAuthorizeUrl.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Callback/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Callback/__tests__/index.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

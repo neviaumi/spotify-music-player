@@ -20,8 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "lint:css": "stylelint './src/**/*.ts'"
+    "lint:js": "eslint --ext=ts,tsx --fix .",
+    "lint:css": "stylelint './src/**/*.{ts,tsx}'"
   },
   "browserslist": {
     "production": [
@@ -82,7 +82,7 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
-      "pre-push": "yarn lint && CI=true yarn test --coverage --watchAll=false"
+      "pre-push": "yarn lint:js && CI=true yarn test --coverage --watchAll=false"
     }
   },
   "jest": {
