@@ -1,7 +1,6 @@
 import { URL, URLSearchParams } from 'url';
 
 import AuthenticationCallbackError from '../../../../errors/AuthenticationCallbackError';
-
 import getCurrentTimestamp from '../../../../utils/getCurrentTimestamp';
 import verifyAuthCallback from '../verifyAuthCallback';
 
