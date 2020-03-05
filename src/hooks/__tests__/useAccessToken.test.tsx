@@ -6,6 +6,8 @@ import AuthenticationExpiredError from '../../errors/AuthenticationExpiredError'
 import UnAuthenticatedError from '../../errors/UnAuthenticatedError';
 import useAccessToken from '../useAccessToken';
 
+jest.unmock('../useAccessToken');
+
 function DummyComponentWillGetToken() {
   const { getAccessInfo } = useAccessToken();
   const token = getAccessInfo();

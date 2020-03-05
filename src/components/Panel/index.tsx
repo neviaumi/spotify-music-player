@@ -2,17 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  background-color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.white};
   display: grid;
   width: 100%;
   height: 100%;
   grid-template-columns: 230px 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr 90px;
   grid-gap: 0 0;
 `;
 
 const LeftContainer = styled.div`
   grid-column-start: 1;
-  grid-column-end: col1-end;
+  grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
 `;

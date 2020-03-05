@@ -1,6 +1,6 @@
 {
   "*.{json,css,md,yaml,yml}": ["yarn prettier --write", "git add"],
-  "*.{js,jsx}": [
+  "*.{js,jsx,ts,tsx}": [
     "yarn prettier --write",
     "yarn eslint --max-warnings 0 --fix",
     "yarn stylelint",

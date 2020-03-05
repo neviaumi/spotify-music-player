@@ -12,3 +12,5 @@ configure({ adapter: new Adapter() });
 Object.assign(window.location, {
   replace: jest.fn().mockReturnValue(undefined),
 });
+jest.mock('./hooks/useDataFetcher');
+jest.mock('./hooks/useAccessToken');

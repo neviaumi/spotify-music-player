@@ -1,0 +1,36 @@
+{
+  "collaborative": false,
+  "description": "",
+  "external_urls": {
+    "spotify": "https://open.spotify.com/playlist/4Id7NUXCtfIZ4bVeIzL2QA"
+  },
+  "href": "https://api.spotify.com/v1/playlists/4Id7NUXCtfIZ4bVeIzL2QA",
+  "id": "4Id7NUXCtfIZ4bVeIzL2QA",
+  "images": [
+    {
+      "height": null,
+      "url": "https://i.scdn.co/image/ab67706c0000da840fa686265daf225ea87c8f59",
+      "width": null
+    }
+  ],
+  "name": "薯仔’s Pet Playlist ",
+  "owner": {
+    "display_name": "Madao Ng",
+    "external_urls": {
+      "spotify": "https://open.spotify.com/user/22ekb6z247ehuekkeofnzwe4y"
+    },
+    "href": "https://api.spotify.com/v1/users/22ekb6z247ehuekkeofnzwe4y",
+    "id": "22ekb6z247ehuekkeofnzwe4y",
+    "type": "user",
+    "uri": "spotify:user:22ekb6z247ehuekkeofnzwe4y"
+  },
+  "primary_color": null,
+  "public": false,
+  "snapshot_id": "NCw1ODE4NjU0ODcyNmM5MmE3MjA5NDkyNjFlNzkzZjQ2YWMyZGEzNTQw",
+  "tracks": {
+    "href": "https://api.spotify.com/v1/playlists/4Id7NUXCtfIZ4bVeIzL2QA/tracks",
+    "total": 30
+  },
+  "type": "playlist",
+  "uri": "spotify:playlist:4Id7NUXCtfIZ4bVeIzL2QA"
+}

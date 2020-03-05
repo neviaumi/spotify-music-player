@@ -2,21 +2,20 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import Home from '../';
+import Nav from '../';
 import ThemeProvider from '../../../contexts/Theme';
 
-jest.mock('../../../hooks/useAccessToken');
-
-describe('Test render Home Page', () => {
+describe('Test render Nav component', () => {
   it('Should render without error', () => {
     const { getByTestId } = render(
-      <MemoryRouter>
+      <MemoryRouter initialEntries={['/']}>
         <ThemeProvider>
-          <Home />
+          <Nav />
         </ThemeProvider>
       </MemoryRouter>,
     );
-    const login = getByTestId('panel');
-    expect(login).toBeDefined();
+    const navHome = getByTestId('nav-home');
+
+    expect(navHome).toBeDefined();
   });
 });
