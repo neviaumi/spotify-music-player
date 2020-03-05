@@ -5,9 +5,9 @@
     "jsx": "react",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
-    "typeRoots": ["./node_modules/@types", "./typings"]
+    "typeRoots": ["./typings", "./node_modules/@types"],
+    "skipLibCheck": true
   }
 }

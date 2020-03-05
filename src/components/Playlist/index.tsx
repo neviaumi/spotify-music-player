@@ -1,29 +1,24 @@
-import axios from 'axios';
 import React, { Suspense } from 'react';
-import useSWR from 'swr';
 
-import useAccessToken from '../../hooks/useAccessToken';
+import useDataFetcher from '../../hooks/useDataFetcher';
+import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
+import getAllPlaylist from '../../services/spotify/playlist/getAllPlaylist';
 
 export function Playlist() {
-  const { getAccessInfo } = useAccessToken();
-  const accessToken = getAccessInfo();
-  const { data: response } = useSWR(
-    'me/playlist',
-    () =>
-      axios({
-        url: 'https://api.spotify.com/v1/me/playlists',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }),
+  const apiClient = useSpotifyAPIClient();
+  const { data: response } = useDataFetcher(
+    'me/playlists',
+    () => getAllPlaylist(apiClient),
     {
       suspense: true,
     },
   );
   return (
     <div>
-      {response?.data.items.map((item: any) => (
-        <div key={item.id}>{item.name}</div>
+      {response?.data.items.map(item => (
+        <div data-testid="user-playlist" key={item.id}>
+          {item.name}
+        </div>
       ))}
     </div>
   );

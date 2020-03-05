@@ -20,7 +20,9 @@ interface Props extends RouteChildrenProps {}
 export function Nav({ location, ...rest }: Props) {
   return (
     <Container {...rest}>
-      <NavItem active={location.pathname === '/'}>Home</NavItem>
+      <NavItem data-testid="nav-home" active={location.pathname === '/'}>
+        Home
+      </NavItem>
       <NavItem>Search</NavItem>
       <NavItem>Your Library</NavItem>
       <Playlist />

@@ -2,11 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Playlist/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__fixtures__/playlist.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Nav/__tests__/index.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Playlist/__tests__/index.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/__mocks__/useDataFetcher.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/__tests__/useSpotifyAPIClient.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useDataFetcher.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useSpotifyAPIClient.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/spotify/playlist/getAllPlaylist.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/spotify/typings/fetcher.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/typings/global.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/typings/spotify/Playlist.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/typings/spotify/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__tests__/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/App.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Nav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/getAuthorizeUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/getAuthorizeUrl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Playlist/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Playlist/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/__tests__/useAccessToken.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/__tests__/useAccessToken.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -64,7 +81,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -72,43 +89,44 @@
       <recent name="$PROJECT_DIR$/src/pages/Auth" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Test render Panel component (1)">
-    <configuration name="Should return authorization url" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Should render without error">
+    <configuration name="Should render without error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/App.test.tsx" />
       <test-names>
-        <test-name value="Should return authorization url" />
+        <test-name value="Should render without error" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test render Home Page" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Should resolve value" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/pages/Home/__tests__/index.test.tsx" />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" />
       <test-names>
-        <test-name value="Test render Home Page" />
+        <test-name value="Should resolve value" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test render Panel component (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Test render Nav component.Should render without error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/contexts/Theme/__tests__/index.test.tsx" />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/components/Nav/__tests__/index.test.tsx" />
       <test-names>
-        <test-name value="Test render Panel component" />
+        <test-name value="Test render Nav component" />
+        <test-name value="Should render without error" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -119,33 +137,32 @@
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/components/Panel/__tests__/index.test.tsx" />
+      <test-file value="$PROJECT_DIR$/src/components/Playlist/__tests__/index.test.tsx" />
       <test-names>
         <test-name value="Test render Panel component" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test render Panel component.Should render without error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Test render Playlist component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/contexts/Theme/__tests__/index.test.tsx" />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/components/Playlist/__tests__/index.test.tsx" />
       <test-names>
-        <test-name value="Test render Panel component" />
-        <test-name value="Should render without error" />
+        <test-name value="Test render Playlist component" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.Test render Panel component (1)" />
-        <item itemvalue="Jest.Test render Panel component.Should render without error" />
+        <item itemvalue="Jest.Should render without error" />
+        <item itemvalue="Jest.Should resolve value" />
+        <item itemvalue="Jest.Test render Nav component.Should render without error" />
+        <item itemvalue="Jest.Test render Playlist component" />
         <item itemvalue="Jest.Test render Panel component" />
-        <item itemvalue="Jest.Test render Home Page" />
-        <item itemvalue="Jest.Should return authorization url" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +202,7 @@
       <workItem from="1580461471045" duration="3047000" />
       <workItem from="1580468921093" duration="3027000" />
       <workItem from="1583370904980" duration="1814000" />
-      <workItem from="1583405433559" duration="3492000" />
+      <workItem from="1583405433559" duration="13988000" />
     </task>
     <servers />
   </component>
@@ -209,100 +226,100 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="472" y="296" key="EditFileWatcherDialog/0.23.1680.976@0.23.1680.976" timestamp="1580382375659" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1583407071161">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1583419324789">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1583407071161" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1583407071160">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1583419324789" />
+    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1583419324784">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200785" />
     <state width="1659" height="302" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1583407071160" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1583407071159">
+    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1583419324784" />
+    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1583419324776">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200784" />
     <state width="1659" height="302" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1583407071159" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1583407071160">
+    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1583419324776" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1583419324788">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1583407071160" />
-    <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1580469863996">
+    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1583419324788" />
+    <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1583419224456">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.1.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
     <state width="1899" height="356" key="GridCell.Tab.1.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524799" />
-    <state width="1659" height="323" key="GridCell.Tab.1.bottom/0.23.1680.976@0.23.1680.976" timestamp="1580469863996" />
-    <state width="1659" height="323" key="GridCell.Tab.1.center" timestamp="1580469863996">
+    <state width="1659" height="323" key="GridCell.Tab.1.bottom/0.23.1680.976@0.23.1680.976" timestamp="1583419224456" />
+    <state width="1659" height="323" key="GridCell.Tab.1.center" timestamp="1583419224456">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.1.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
     <state width="1899" height="356" key="GridCell.Tab.1.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524798" />
-    <state width="1659" height="323" key="GridCell.Tab.1.center/0.23.1680.976@0.23.1680.976" timestamp="1580469863996" />
-    <state width="1659" height="323" key="GridCell.Tab.1.left" timestamp="1580469863995">
+    <state width="1659" height="323" key="GridCell.Tab.1.center/0.23.1680.976@0.23.1680.976" timestamp="1583419224456" />
+    <state width="1659" height="323" key="GridCell.Tab.1.left" timestamp="1583419224455">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.1.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
     <state width="1899" height="356" key="GridCell.Tab.1.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524798" />
-    <state width="1659" height="323" key="GridCell.Tab.1.left/0.23.1680.976@0.23.1680.976" timestamp="1580469863995" />
-    <state width="1659" height="323" key="GridCell.Tab.1.right" timestamp="1580469863996">
+    <state width="1659" height="323" key="GridCell.Tab.1.left/0.23.1680.976@0.23.1680.976" timestamp="1583419224455" />
+    <state width="1659" height="323" key="GridCell.Tab.1.right" timestamp="1583419224456">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.1.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
     <state width="1899" height="356" key="GridCell.Tab.1.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524798" />
-    <state width="1659" height="323" key="GridCell.Tab.1.right/0.23.1680.976@0.23.1680.976" timestamp="1580469863996" />
-    <state width="1659" height="323" key="GridCell.Tab.2.bottom" timestamp="1580469863995">
+    <state width="1659" height="323" key="GridCell.Tab.1.right/0.23.1680.976@0.23.1680.976" timestamp="1583419224456" />
+    <state width="1659" height="323" key="GridCell.Tab.2.bottom" timestamp="1583419224455">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.2.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704491" />
     <state width="1659" height="302" key="GridCell.Tab.2.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095440" />
     <state width="1899" height="356" key="GridCell.Tab.2.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524797" />
-    <state width="1659" height="323" key="GridCell.Tab.2.bottom/0.23.1680.976@0.23.1680.976" timestamp="1580469863995" />
-    <state width="1659" height="323" key="GridCell.Tab.2.center" timestamp="1580469863994">
+    <state width="1659" height="323" key="GridCell.Tab.2.bottom/0.23.1680.976@0.23.1680.976" timestamp="1583419224455" />
+    <state width="1659" height="323" key="GridCell.Tab.2.center" timestamp="1583419224455">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.2.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704491" />
     <state width="1659" height="302" key="GridCell.Tab.2.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095440" />
     <state width="1899" height="356" key="GridCell.Tab.2.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524797" />
-    <state width="1659" height="323" key="GridCell.Tab.2.center/0.23.1680.976@0.23.1680.976" timestamp="1580469863994" />
-    <state width="1659" height="323" key="GridCell.Tab.2.left" timestamp="1580469863993">
+    <state width="1659" height="323" key="GridCell.Tab.2.center/0.23.1680.976@0.23.1680.976" timestamp="1583419224455" />
+    <state width="1659" height="323" key="GridCell.Tab.2.left" timestamp="1583419224455">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.2.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704490" />
     <state width="1659" height="302" key="GridCell.Tab.2.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.2.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524797" />
-    <state width="1659" height="323" key="GridCell.Tab.2.left/0.23.1680.976@0.23.1680.976" timestamp="1580469863993" />
-    <state width="1659" height="323" key="GridCell.Tab.2.right" timestamp="1580469863994">
+    <state width="1659" height="323" key="GridCell.Tab.2.left/0.23.1680.976@0.23.1680.976" timestamp="1583419224455" />
+    <state width="1659" height="323" key="GridCell.Tab.2.right" timestamp="1583419224455">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.2.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704491" />
     <state width="1659" height="302" key="GridCell.Tab.2.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095440" />
     <state width="1899" height="356" key="GridCell.Tab.2.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524797" />
-    <state width="1659" height="323" key="GridCell.Tab.2.right/0.23.1680.976@0.23.1680.976" timestamp="1580469863994" />
-    <state x="-1530" y="161" key="SettingsEditor" timestamp="1580462884400">
-      <screen x="-1920" y="23" width="1920" height="1057" />
+    <state width="1659" height="323" key="GridCell.Tab.2.right/0.23.1680.976@0.23.1680.976" timestamp="1583419224455" />
+    <state x="341" y="150" key="SettingsEditor" timestamp="1583412923158">
+      <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="-1530" y="161" key="SettingsEditor/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580462884400" />
-    <state x="341" y="150" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1580382377806" />
-    <state x="600" y="275" width="683" height="486" key="find.popup" timestamp="1580471487839">
+    <state x="341" y="150" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1583412923158" />
+    <state x="600" y="275" width="683" height="486" key="find.popup" timestamp="1583409549372">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="-1234" y="283" width="639" height="486" key="find.popup/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379352954" />
-    <state x="600" y="275" width="683" height="486" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1580471487839" />
+    <state x="600" y="275" width="683" height="486" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1583409549372" />
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1579869530587">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -320,6 +337,12 @@
           <url>file://$PROJECT_DIR$/src/pages/Auth/Login/index.tsx</url>
           <line>6</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Nav/__tests__/index.test.tsx</url>
+          <line>18</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
