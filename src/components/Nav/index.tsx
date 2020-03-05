@@ -2,6 +2,8 @@ import React from 'react';
 import { RouteChildrenProps, withRouter } from 'react-router';
 import styled from 'styled-components';
 
+import Playlist from '../Playlist';
+
 const Container = styled.nav`
   display: flex;
   flex-direction: column;
@@ -21,6 +23,7 @@ export function Nav({ location, ...rest }: Props) {
       <NavItem active={location.pathname === '/'}>Home</NavItem>
       <NavItem>Search</NavItem>
       <NavItem>Your Library</NavItem>
+      <Playlist />
     </Container>
   );
 }
