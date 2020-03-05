@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 
-import ThemeProvider from '../../../contexts/Theme';
 import Home from '../';
+import ThemeProvider from '../../../contexts/Theme';
 
 jest.mock('../../../hooks/useAccessToken');
 
