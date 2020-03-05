@@ -1,8 +1,13 @@
 import React, { Suspense } from 'react';
+import styled from 'styled-components';
 
 import useDataFetcher from '../../hooks/useDataFetcher';
 import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
 import getAllPlaylist from '../../services/spotify/playlist/getAllPlaylist';
+
+const Container = styled.div`
+  height: 513px;
+`;
 
 export function Playlist() {
   const apiClient = useSpotifyAPIClient();
@@ -14,13 +19,13 @@ export function Playlist() {
     },
   );
   return (
-    <div>
+    <Container>
       {response?.data.items.map(item => (
         <div data-testid="user-playlist" key={item.id}>
           {item.name}
         </div>
       ))}
-    </div>
+    </Container>
   );
 }
 
