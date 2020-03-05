@@ -76,7 +76,6 @@
     "eslint-plugin-simple-import-sort": "5.0.1",
     "husky": "4.2.3",
     "lint-staged": "10.0.8",
-    "nock": "^12.0.2",
     "prettier": "1.19.1",
     "quicktype": "^15.0.214",
     "serve": "11.3.0",

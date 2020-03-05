@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Panel from '../../components/Panel';
 import Nav from '../../components/Nav';
-
+import Panel from '../../components/Panel';
 import useAccessToken from '../../hooks/useAccessToken';
 
 export default function Home() {
