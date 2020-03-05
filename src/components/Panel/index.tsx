@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  background-color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.white};
   display: grid;
   width: 100%;
   height: 100%;
@@ -12,7 +14,7 @@ const Container = styled.div`
 
 const LeftContainer = styled.div`
   grid-column-start: 1;
-  grid-column-end: col1-end;
+  grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
 `;

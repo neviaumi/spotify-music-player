@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Panel from '../../components/Panel';
+import Nav from '../../components/Nav';
+
 import useAccessToken from '../../hooks/useAccessToken';
 
 export default function Home() {
@@ -9,7 +11,7 @@ export default function Home() {
   return (
     <Panel
       data-testid="panel"
-      Left={<div>Hello</div>}
+      Left={<Nav />}
       Right={<div>World</div>}
       Bottom={<div>Access Token: {accessInfo}</div>}
     />
