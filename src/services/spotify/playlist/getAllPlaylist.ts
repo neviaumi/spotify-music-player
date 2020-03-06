@@ -14,7 +14,7 @@ const getAllPlaylist: Fetcher<Response> = async (
   >({
     url: '/me/playlists',
     method: 'GET',
-    data: {
+    params: {
       offset,
     },
   });
