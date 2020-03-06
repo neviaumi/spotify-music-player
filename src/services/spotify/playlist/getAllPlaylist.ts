@@ -1,6 +1,6 @@
 import { Fetcher } from '../typings/fetcher';
 
-interface Response {
+export interface Response {
   items: Spotify.Playlist[];
 }
 

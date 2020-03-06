@@ -1,5 +1,19 @@
-import useSWR from 'swr';
+import { AxiosResponse } from 'axios';
+import useSWR, { keyInterface } from 'swr';
 
-const useDataFetcher = useSWR;
+import DataFetchingError from '../errors/DataFetchingError';
+
+const useDataFetcher = <T>(
+  key: keyInterface,
+  fn: () => Promise<AxiosResponse<T>>,
+) => {
+  const { data, error } = useSWR(key, fn, {
+    suspense: true,
+  });
+  if (error) {
+    throw new DataFetchingError(error);
+  }
+  return data!;
+};
 
 export default useDataFetcher;
