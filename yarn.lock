@@ -1429,7 +1429,7 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@pollyjs/adapter-node-http@^4.0.3":
+"@pollyjs/adapter-node-http@4.0.3":
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/@pollyjs/adapter-node-http/-/adapter-node-http-4.0.3.tgz#87e9cff4559b2dc00679f27e12b8ea0cb59925ca"
   integrity sha512-1ucveKkUovKXNIMkHs0tKSbDoSu+sPnImhUgrHqqTuUvOIou9gLIwjPAPI4k7JY3CqUKrOhq8TCsyGa3YumFow==
@@ -1446,7 +1446,7 @@
   dependencies:
     "@pollyjs/utils" "^4.0.2"
 
-"@pollyjs/core@^4.0.2":
+"@pollyjs/core@4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@pollyjs/core/-/core-4.0.2.tgz#43f30ad2bb01735678c2cc112bd9dcbea7235740"
   integrity sha512-QOTinIkwetuZ2MxVSFVRJMpcMQhBE+jZtNWVGmDFvyJG3R106XmwJTFhCoGXvGbHBVxte2fgQ8zKUQoyIuE+oQ==
@@ -1474,7 +1474,7 @@
     morgan "^1.9.1"
     nocache "^2.1.0"
 
-"@pollyjs/persister-fs@^4.0.2":
+"@pollyjs/persister-fs@4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@pollyjs/persister-fs/-/persister-fs-4.0.2.tgz#24c2a647351d4a51b42a1276a5df2b90bf93baa9"
   integrity sha512-/VYa2DQ32JUIH0vQj+MXM3/8N0OFSntoK20bx30HifLb+HEw14OorGjgDUrWHzQPZdRofeogvNAjE+1O+hMxrQ==
@@ -1894,7 +1894,7 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/pollyjs__adapter-node-http@^2.0.0":
+"@types/pollyjs__adapter-node-http@2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/pollyjs__adapter-node-http/-/pollyjs__adapter-node-http-2.0.0.tgz#357514c35a61b3ebb7769d915dc4352720bcc132"
   integrity sha512-v8g65xEnADlb1UZe4fNPO9KpU04uY6HAPns307RWqePlVtftctD73FA++74PbO17PNgMbi/7IzrZatiEEn9CPQ==
@@ -1908,7 +1908,7 @@
   dependencies:
     "@types/pollyjs__core" "*"
 
-"@types/pollyjs__core@*", "@types/pollyjs__core@^4.0.0":
+"@types/pollyjs__core@*", "@types/pollyjs__core@4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/pollyjs__core/-/pollyjs__core-4.0.0.tgz#064c6fc575dcbb7dc06b322593d025576f309d3f"
   integrity sha512-tmdhyQs8bqMCDRZn3r2HXlwfbDCIcBweqkNcFAbr97rjGWgQsu4mI37GiaehFuiRkCPkpHuuk+oA4oW3g5sMsQ==
@@ -1916,7 +1916,7 @@
     "@types/pollyjs__adapter" "*"
     "@types/pollyjs__persister" "*"
 
-"@types/pollyjs__persister-fs@^2.0.0":
+"@types/pollyjs__persister-fs@2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/pollyjs__persister-fs/-/pollyjs__persister-fs-2.0.0.tgz#8643bca7e80da499541d3e4d28fd039e3bfdc5be"
   integrity sha512-m788FLVtzE+qqrNeotBel2S1EhNMkkNRVJa9XQqeNdwvaJvOp7h/EWacKCrdHLK406LBo7vhL8dpWldkRBm0lg==
@@ -1989,7 +1989,7 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/setup-polly-jest@^0.5.0":
+"@types/setup-polly-jest@0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@types/setup-polly-jest/-/setup-polly-jest-0.5.0.tgz#0aa46e64df8e440b0ee1e70f9d105f8c3febf426"
   integrity sha512-adGkOa52Z/zU6gZ6oU7iUyS6BOmueFUjPIXrW0INNZPZqB5p68Q6dukWVk2bqVXwDUy3Cd6B/aADSouClwwmew==
@@ -12411,7 +12411,7 @@ setprototypeof@1.1.1:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
   integrity sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
 
-setup-polly-jest@^0.7.0:
+setup-polly-jest@0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/setup-polly-jest/-/setup-polly-jest-0.7.0.tgz#f0d6e462c3f961134a37317415b7659a03954d3a"
   integrity sha512-VuJyA6HqTNsOsqXRD7d56kSNOwByMDUPuE8yxWsL7ijmkx+0OcjNtOzWYNRX5Q3BlPqXivsoMDR3ZxwDgEqItw==
