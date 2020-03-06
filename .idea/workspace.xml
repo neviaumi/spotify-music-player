@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Tests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__recordings__/resolve-all-playList_1225860670/recording.har" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/polly.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PresentPlayList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/PresentPlayList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/playlist/getAllPlaylist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/playlist/getAllPlaylist.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/createSpotifyAPIClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/createSpotifyAPIClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typings/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typings/global.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -322,11 +310,11 @@
     </state>
     <state x="-1530" y="161" key="SettingsEditor/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580462884400" />
     <state x="341" y="150" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1583495898836" />
-    <state x="600" y="275" width="683" height="486" key="find.popup" timestamp="1583493813797">
+    <state x="600" y="275" width="683" height="486" key="find.popup" timestamp="1583506405081">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="-1234" y="283" width="639" height="486" key="find.popup/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379352954" />
-    <state x="600" y="275" width="683" height="486" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1583493813797" />
+    <state x="600" y="275" width="683" height="486" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1583506405081" />
     <state x="505" y="239" width="670" height="643" key="search.everywhere.popup" timestamp="1583504173585">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
