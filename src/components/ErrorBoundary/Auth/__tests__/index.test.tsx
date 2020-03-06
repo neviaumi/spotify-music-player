@@ -9,7 +9,7 @@ function ErrorComponent() {
   return <div />;
 }
 
-describe('Test GlobalErrorBoundary', () => {
+describe('Test AuthErrorBoundary', () => {
   it('Should capture the error', () => {
     const { getByTestId } = render(
       <AuthErrorBoundary>

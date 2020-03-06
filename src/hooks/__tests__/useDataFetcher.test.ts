@@ -19,7 +19,7 @@ describe('Test useDataFetcher hook', () => {
     const useSWRMock = useSWR as TestUtils.JestMock<typeof useSWR>;
     useSWRMock.mockReturnValue({ error: new Error('foobar') });
     expect(() => useDataFetcher<unknown>('foobar', jest.fn())).toThrow(
-      'foobar',
+      'Unable fetching data',
     );
   });
 });

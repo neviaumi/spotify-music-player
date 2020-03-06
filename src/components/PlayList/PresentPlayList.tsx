@@ -9,7 +9,7 @@ interface Props {
   items: Spotify.Playlist[];
 }
 
-export default function Playlist({ items }: Props) {
+export default function Playlist({ items = [] }: Props) {
   return (
     <Container>
       {items.map(item => (
