@@ -1461,7 +1461,7 @@
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-6.0.0.tgz#8ae8469d2a0e219d71abaf2da14f8659c3912a34"
   integrity sha512-cK1iHhfMgvZFPANqLoChhgUQ1oqH+qTWILGvcsc6HylzVt9/kM0SyjGcDuZKj+CP6TecJODdyHgb5U6U+O5gKw==
 
-"@spotify/eslint-config@^6.0.0":
+"@spotify/eslint-config@6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-6.0.0.tgz#45c535c302e02fc8bb459287930a729e9770a60c"
   integrity sha512-KYQY8w8QuDz2IPJxh70xRQPd73RAJrwQVPCbkUBUzKb+0EBNx+kjX8JFBa7KNsJlnIu648f3XWYTySMFxGyFhQ==
