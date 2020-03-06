@@ -2,7 +2,7 @@ import React from 'react';
 import { RouteChildrenProps, withRouter } from 'react-router';
 import styled from 'styled-components';
 
-import Playlist from '../Playlist';
+import Playlist from '../PlayList';
 
 const Container = styled.nav`
   display: flex;

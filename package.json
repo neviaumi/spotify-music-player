@@ -42,7 +42,7 @@
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@lhci/cli": "0.3.9",
-    "@spotify/eslint-config": "6.0.0",
+    "@spotify/eslint-config": "^6.0.0",
     "@spotify/eslint-config-react": "6.0.0",
     "@spotify/prettier-config": "6.0.0",
     "@spotify/tsconfig": "6.0.0",
