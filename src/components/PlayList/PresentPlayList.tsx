@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   height: 513px;
+  overflow-y: scroll;
 `;
 
 interface Props {

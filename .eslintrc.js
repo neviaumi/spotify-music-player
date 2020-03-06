@@ -49,4 +49,12 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['typings/**/*.d.ts'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off', // Not work for type declaration file
+      },
+    },
+  ],
 };

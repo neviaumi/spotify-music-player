@@ -23,14 +23,14 @@ const getAllPlaylist: Fetcher<Response> = async (
   } = response;
   if (next) {
     return await getAllPlaylist(apiClient, offset + items.length, [
-      playlists,
+      ...playlists,
       ...items,
     ]);
   }
   return Object.assign(response, {
     data: {
       ...response.data,
-      items: [playlists, ...response.data.items],
+      items: [...playlists, ...response.data.items],
     },
   });
 };
