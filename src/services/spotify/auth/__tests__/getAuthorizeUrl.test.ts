@@ -13,7 +13,12 @@ it('Should return authorization url', () => {
   );
   queryParams.append(
     'scope',
-    ['playlist-read-private', 'playlist-read-collaborative'].join(' '),
+    [
+      'playlist-read-private',
+      'playlist-read-collaborative',
+      'user-read-recently-played',
+      'user-top-read',
+    ].join(' '),
   );
   queryParams.append('response_type', openidConfiguration.response_types[0]);
   queryParams.append('redirect_uri', openidConfiguration.redirect_uris[0]);
