@@ -5,6 +5,8 @@ import * as spotify from './spotify';
 declare global {
   export namespace Spotify {
     export type Playlist = spotify.Playlist;
+    export type Track = spotify.Track;
+    export type Artist = spotify.Artist;
   }
 
   export namespace TestUtils {
