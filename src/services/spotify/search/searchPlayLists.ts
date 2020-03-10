@@ -6,10 +6,7 @@ export interface Response {
   };
 }
 
-export const searchPlayLists: Fetcher<Response> = async (
-  apiClient,
-  query: string,
-) => {
+const searchPlayLists: Fetcher<Response> = async (apiClient, query: string) => {
   const response = await apiClient.request<
     Response & { next: string | undefined }
   >({
@@ -22,3 +19,5 @@ export const searchPlayLists: Fetcher<Response> = async (
   });
   return response;
 };
+
+export default searchPlayLists;

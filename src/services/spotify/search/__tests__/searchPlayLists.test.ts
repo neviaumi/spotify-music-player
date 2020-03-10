@@ -1,5 +1,5 @@
 import createSpotifyAPIClient from '../../../../utils/createSpotifyAPIClient';
-import { searchPlayLists } from '../searchPlayLists';
+import searchPlayLists from '../searchPlayLists';
 
 describe('Test search', () => {
   it('get playlist by given query', async () => {
