@@ -142,11 +142,11 @@
     </configuration>
     <list>
       <item itemvalue="Jest.All Tests" />
-      <item itemvalue="Jest.Test search.get playlist by given query" />
-      <item itemvalue="Jest.Test search" />
-      <item itemvalue="Jest.Test render Home page.Should render Home page" />
       <item itemvalue="Jest.Test render Home page" />
+      <item itemvalue="Jest.Test render Home page.Should render Home page" />
       <item itemvalue="Jest.Test render Present component" />
+      <item itemvalue="Jest.Test search" />
+      <item itemvalue="Jest.Test search.get playlist by given query" />
     </list>
     <recent_temporary>
       <list>
