@@ -6,13 +6,21 @@ interface Props {
   playlists?: Spotify.Playlist[];
 }
 
+const PlayListContainer = styled.p`
+  padding: ${props => props.theme.spaces.xl} 0;
+`;
+
 const Container = styled.div`
   display: flex;
   max-width: 100%;
   overflow: scroll;
 `;
 
-const Heading = styled.h1``;
+const Heading = styled.h1`
+  font-size: 28px;
+  line-height: 1.6;
+  display: block;
+`;
 
 const Item = styled.a`
   display: block;
@@ -57,7 +65,7 @@ const PlayListDescription = styled.span`
 
 export default ({ title, playlists = [] }: Props) => {
   return (
-    <section data-testid="present-play-list">
+    <PlayListContainer data-testid="present-play-list">
       <Heading>{title}</Heading>
       <Container>
         {playlists.map(playlist => (
@@ -70,6 +78,6 @@ export default ({ title, playlists = [] }: Props) => {
           </Item>
         ))}
       </Container>
-    </section>
+    </PlayListContainer>
   );
 };
