@@ -7,4 +7,5 @@ it('Get recently played list', async () => {
   );
   const response = await getRecentlyPlayed(client);
   expect(response.data).toBeDefined();
+  expect(response.data).toHaveProperty('items');
 });

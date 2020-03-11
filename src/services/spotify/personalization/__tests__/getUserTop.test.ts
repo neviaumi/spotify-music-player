@@ -7,6 +7,7 @@ it(`Get User Top artist`, async () => {
   );
   const response = await getUserTop(client, Type.ARTIST);
   expect(response.data).toBeDefined();
+  expect(response.data).toHaveProperty('items');
 });
 
 it(`Get User Top track`, async () => {
@@ -15,4 +16,5 @@ it(`Get User Top track`, async () => {
   );
   const response = await getUserTop(client, Type.TRACK);
   expect(response.data).toBeDefined();
+  expect(response.data).toHaveProperty('items');
 });
