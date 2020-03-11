@@ -6,6 +6,15 @@ declare module 'styled-components' {
       green: string;
       white: string;
       black: string;
+      grey: string;
+    };
+    spaces: {
+      xs: string;
+      s: string;
+      m: string;
+      l: string;
+      xl: string;
+      xxl: string;
     };
   }
 }

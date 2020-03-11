@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Home/__tests__/index.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/Present/__tests__/index.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/Present/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/searchPlayLists.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/searchPlayLists.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/themes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/themes/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/typings/styled-components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typings/styled-components.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
       <recent name="$PROJECT_DIR$/src/pages/Auth" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Test render Home page">
+  <component name="RunManager" selected="Jest.Test render Present component">
     <configuration name="Test render Home page" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -101,6 +100,19 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Test render Present component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/components/Home/Present/__tests__/index.test.tsx" />
+      <test-names>
+        <test-name value="Test render Present component" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Test search" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -111,20 +123,6 @@
       <test-file value="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" />
       <test-names>
         <test-name value="Test search" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Test search.get by category (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" />
-      <test-names>
-        <test-name value="Test search" />
-        <test-name value="get by category" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -144,19 +142,19 @@
     </configuration>
     <list>
       <item itemvalue="Jest.All Tests" />
-      <item itemvalue="Jest.Test search.get by category (1)" />
       <item itemvalue="Jest.Test search.get playlist by given query" />
       <item itemvalue="Jest.Test search" />
       <item itemvalue="Jest.Test render Home page.Should render Home page" />
       <item itemvalue="Jest.Test render Home page" />
+      <item itemvalue="Jest.Test render Present component" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Test render Present component" />
         <item itemvalue="Jest.Test render Home page" />
         <item itemvalue="Jest.Test render Home page.Should render Home page" />
         <item itemvalue="Jest.Test search" />
         <item itemvalue="Jest.Test search.get playlist by given query" />
-        <item itemvalue="Jest.Test search.get by category (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -240,34 +238,34 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="594" y="283" key="EnvironmentVariablesDialog/0.23.1680.976@0.23.1680.976" timestamp="1583501837731" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1583847539524">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1583920358092">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1583847539524" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1583847539523">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1583920358092" />
+    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1583920358091">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200785" />
     <state width="1659" height="302" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1583847539523" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1583847539522">
+    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1583920358091" />
+    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1583920358090">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200784" />
     <state width="1659" height="302" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1583847539522" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1583847539523">
+    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1583920358090" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1583920358091">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1583847539523" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1583920358091" />
     <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1583845630723">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
@@ -334,11 +332,11 @@
     </state>
     <state x="-1234" y="283" width="639" height="486" key="find.popup/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379352954" />
     <state x="600" y="275" width="683" height="486" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1583506405081" />
-    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup" timestamp="1583844999313">
+    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup" timestamp="1583922445702">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1579869530587" />
-    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup/0.23.1680.976@0.23.1680.976" timestamp="1583844999313" />
+    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup/0.23.1680.976@0.23.1680.976" timestamp="1583922445702" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -396,14 +394,7 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts</url>
           <line>8</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Home/index.tsx</url>
-          <line>12</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
