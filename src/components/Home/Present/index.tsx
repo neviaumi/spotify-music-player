@@ -37,14 +37,14 @@ const PlayListBottom = styled.div`
   overflow: hidden;
 `;
 
-const PlayListName = styled.a`
+const PlayListName = styled.p`
   font-size: 14px;
   line-height: 20px;
   font-weight: 700;
   letter-spacing: 0.24px;
 `;
 
-const PlayListDescription = styled.p`
+const PlayListDescription = styled.span`
   display: block;
   font-size: 12px;
   line-height: 18px;
@@ -57,11 +57,11 @@ const PlayListDescription = styled.p`
 
 export default ({ title, playlists = [] }: Props) => {
   return (
-    <section data-testid="present-plat-list">
+    <section data-testid="present-play-list">
       <Heading>{title}</Heading>
       <Container>
         {playlists.map(playlist => (
-          <Item key={playlist.id}>
+          <Item key={playlist.id} data-testid="present-play-list-item">
             <PlayListIcon src={playlist.images[0].url} />
             <PlayListBottom>
               <PlayListName>{playlist.name}</PlayListName>
