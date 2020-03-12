@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:reset": "REACT_APP_POLLY_MODE=record yarn test --watchAll --coverage",
     "eject": "react-scripts eject",
     "lint:js": "eslint --ext=ts,tsx --fix .",
     "lint:css": "stylelint './src/**/*.{ts,tsx}'",

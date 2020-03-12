@@ -6,7 +6,7 @@ import getAllPlaylist, {
   Response,
 } from '../../services/spotify/playlist/getAllPlaylist';
 import withSuspense from '../HOC/withSuspense';
-import PresentPlayList from './PresentPlayList';
+import PresentPlayList from './Present/PresentPlayListSmall';
 
 export function Playlist() {
   const apiClient = useSpotifyAPIClient();

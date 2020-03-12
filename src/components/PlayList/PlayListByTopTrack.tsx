@@ -2,15 +2,15 @@ import React from 'react';
 
 import useDataFetcher from '../../hooks/useDataFetcher';
 import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
-import getPlayListByTopTrack from '../../services/spotify/playlist/getPlayListByTopTrack';
+import searchPlayListsByTopTrack from '../../services/spotify/search/searchPlayListsByTopTrack';
 import withSuspense from '../HOC/withSuspense';
-import PresentPlayList from './Present';
+import PresentPlayList from './Present/PresentPlayListLarge';
 
 export function PlayListByTopTrack() {
   const apiClient = useSpotifyAPIClient();
   const response = useDataFetcher(
     ['search/playlist', 'by-last-played-track'],
-    () => getPlayListByTopTrack(apiClient),
+    () => searchPlayListsByTopTrack(apiClient),
   );
 
   return (

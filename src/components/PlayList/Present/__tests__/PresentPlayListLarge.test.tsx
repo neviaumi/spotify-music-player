@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import PresentPlayList from '../';
 import ThemeProvider from '../../../../contexts/Theme';
+import PresentPlayList from '../PresentPlayListLarge';
 
 describe('Test render Present component', () => {
   it('Should render Present component', () => {

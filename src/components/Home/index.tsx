@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import withSuspense from '../HOC/withSuspense';
-import PlayListByTopTrack from './PlayListByTopTrack';
+import PlayListByTopTrack from '../PlayList/PlayListByTopTrack';
 
 const Container = styled.div`
   padding: 0 32px;
