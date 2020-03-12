@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default (accessToken: string) => {
+export default function createSpotifyAPIClient(accessToken: string) {
   const client = axios.create({
     baseURL: 'https://api.spotify.com/v1',
     headers: {
@@ -8,4 +8,10 @@ export default (accessToken: string) => {
     },
   });
   return client;
-};
+}
+
+export function createSpotifyAPIClientForTesting() {
+  return createSpotifyAPIClient(
+    process.env.REACT_APP_SPOTIFY_ACCESS_TOKEN as string,
+  );
+}

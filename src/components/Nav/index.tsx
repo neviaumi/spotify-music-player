@@ -2,7 +2,7 @@ import React from 'react';
 import { RouteChildrenProps, withRouter } from 'react-router';
 import styled from 'styled-components';
 
-import Playlist from '../PlayList';
+import UserPlayList from '../PlayList/UserPlayList';
 
 const Container = styled.nav`
   display: flex;
@@ -25,7 +25,7 @@ export function Nav({ location, ...rest }: Props) {
       </NavItem>
       <NavItem>Search</NavItem>
       <NavItem>Your Library</NavItem>
-      <Playlist />
+      <UserPlayList />
     </Container>
   );
 }

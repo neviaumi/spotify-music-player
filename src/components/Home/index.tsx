@@ -1,21 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import useDataFetcher from '../../hooks/useDataFetcher';
-import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
-import searchPlayLists from '../../services/spotify/search/searchPlayLists';
 import withSuspense from '../HOC/withSuspense';
+import PlayListByTopTrack from '../PlayList/PlayListByTopTrack';
+
+const Container = styled.div`
+  padding: 0 32px;
+`;
 
 export function Home() {
-  const apiClient = useSpotifyAPIClient();
-  const playlists = useDataFetcher('search/playlists', () =>
-    searchPlayLists(apiClient, 'endy chow'),
-  );
   return (
-    <div data-testid="home-component">
-      {playlists.data.playlists?.items.map(playlist => (
-        <div key={playlist.id}>{playlist.name}</div>
-      ))}
-    </div>
+    <Container data-testid="home-component">
+      <PlayListByTopTrack />
+    </Container>
   );
 }
 

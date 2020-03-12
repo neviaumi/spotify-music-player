@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import { Playlist } from '../';
 import playlist from '../../../../__fixtures__/playlist.json';
 import useDataFetcher from '../../../hooks/useDataFetcher';
+import { Playlist } from '../UserPlayList';
 
 jest.mock('../../../hooks/useDataFetcher');
 
