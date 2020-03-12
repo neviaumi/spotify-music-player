@@ -1524,10 +1524,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@spotify/eslint-config-base@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-6.0.0.tgz#487da7dbb89380b4eb778f4b902b8bba9b1f389f"
-  integrity sha512-R5NrJY/6hUWceiymcFia83j54yeB2SBeNYV3gZZuagSqI765358I3TEzccsS5ARo2zkPGKqfvawSP3ePVGCOMQ==
+"@spotify/eslint-config-base@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-6.1.0.tgz#b48d2764049d56a7d83a95709ec1e6733cb19f2a"
+  integrity sha512-oxR3OBBrms09Ih6yPrqcaeKgwchdw9XgRvKsF6x6uPiMy0OVYald/+GkBtyQy+IChD14WStV/XosqNxEZeTJ4Q==
 
 "@spotify/eslint-config-react@6.0.0", "@spotify/eslint-config-react@^6.0.0":
   version "6.0.0"
@@ -1539,12 +1539,12 @@
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-6.0.0.tgz#8ae8469d2a0e219d71abaf2da14f8659c3912a34"
   integrity sha512-cK1iHhfMgvZFPANqLoChhgUQ1oqH+qTWILGvcsc6HylzVt9/kM0SyjGcDuZKj+CP6TecJODdyHgb5U6U+O5gKw==
 
-"@spotify/eslint-config@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-6.0.0.tgz#45c535c302e02fc8bb459287930a729e9770a60c"
-  integrity sha512-KYQY8w8QuDz2IPJxh70xRQPd73RAJrwQVPCbkUBUzKb+0EBNx+kjX8JFBa7KNsJlnIu648f3XWYTySMFxGyFhQ==
+"@spotify/eslint-config@6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-6.1.0.tgz#67ef537c4419ecf275f790a79ce988820b3f5a95"
+  integrity sha512-pRfRFkW9XMHrzSErzzUxMRs/e+IL0i0o8crgMJJgk0J56+f0rQaXWkeDrI9HCw1uCkXLEwUoNPe+Rdd6cDk/lA==
   dependencies:
-    "@spotify/eslint-config-base" "^6.0.0"
+    "@spotify/eslint-config-base" "^6.1.0"
     "@spotify/eslint-config-react" "^6.0.0"
     "@spotify/eslint-config-typescript" "^6.0.0"
     "@spotify/web-scripts-utils" "^6.0.0"
