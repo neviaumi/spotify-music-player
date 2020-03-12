@@ -4,9 +4,10 @@ import styled from 'styled-components';
 interface Props {
   title: string;
   playlists?: Spotify.Playlist[];
+  [key: string]: unknown;
 }
 
-const PlayListContainer = styled.p`
+const PlayListContainer = styled.article`
   padding: ${props => props.theme.spaces.xl} 0;
 `;
 
@@ -63,11 +64,11 @@ const PlayListDescription = styled.span`
   overflow: hidden;
 `;
 
-export default ({ title, playlists = [] }: Props) => {
+export default ({ title, playlists = [], ...rest }: Props) => {
   return (
-    <PlayListContainer data-testid="present-play-list">
+    <PlayListContainer {...rest}>
       <Heading>{title}</Heading>
-      <Container>
+      <Container data-testid="present-play-list">
         {playlists.map(playlist => (
           <Item key={playlist.id} data-testid="present-play-list-item">
             <PlayListIcon src={playlist.images[0].url} />

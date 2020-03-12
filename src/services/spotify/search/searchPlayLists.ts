@@ -7,9 +7,7 @@ export interface Response {
 }
 
 const searchPlayLists: Fetcher<Response> = async (apiClient, query: string) => {
-  const response = await apiClient.request<
-    Response & { next: string | undefined }
-  >({
+  const response = await apiClient.request<Response>({
     url: '/search',
     method: 'GET',
     params: {
