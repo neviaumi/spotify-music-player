@@ -9,3 +9,13 @@
 yarn
 yarn start
 ```
+
+# Testing
+
+To make PollyJS start record your network call
+
+```js
+global.pollyContext.polly?.configure({
+  mode: 'record',
+});
+```

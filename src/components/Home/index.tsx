@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import withSuspense from '../HOC/withSuspense';
-import ByLastPlayedTrack from './ByLastPlayedTrack';
+import PlayListByTopTrack from './PlayListByTopTrack';
 
 const Container = styled.div`
   padding: 0 32px;
@@ -11,7 +11,7 @@ const Container = styled.div`
 export function Home() {
   return (
     <Container data-testid="home-component">
-      <ByLastPlayedTrack />
+      <PlayListByTopTrack />
     </Container>
   );
 }
