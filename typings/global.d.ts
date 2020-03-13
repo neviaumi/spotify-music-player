@@ -7,6 +7,7 @@ declare global {
     export type Playlist = spotify.Playlist;
     export type Track = spotify.Track;
     export type Artist = spotify.Artist;
+    export type Album = spotify.Album;
   }
 
   export namespace TestUtils {
