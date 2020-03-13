@@ -2,23 +2,24 @@ import React from 'react';
 
 import useDataFetcher from '../../hooks/useDataFetcher';
 import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
-import searchPlayListsByTopTrack from '../../services/spotify/search/searchPlayListsByTopTrack';
+import searchPlayListByLastPlayedTrack from '../../services/spotify/search/searchPlayListByLastPlayedTrack';
 import withSuspense from '../HOC/withSuspense';
 import PresentPlayList from './Present/PresentPlayListLarge';
 
-export function PlayListByTopTrack() {
+export function PlayListByLastPlayedTrack() {
   const apiClient = useSpotifyAPIClient();
-  const response = useDataFetcher(['search/playlist', 'by-top-track'], () =>
-    searchPlayListsByTopTrack(apiClient),
+  const response = useDataFetcher(
+    ['search/playlist', 'by-last-played-track'],
+    () => searchPlayListByLastPlayedTrack(apiClient),
   );
 
   return (
     <PresentPlayList
       title={`More like ${response.data.track?.name}`}
       playlists={response.data.playlists}
-      data-testid="playlist-by-top-track"
+      data-testid="playlist-by-last-played-track"
     />
   );
 }
 
-export default withSuspense(PlayListByTopTrack);
+export default withSuspense(PlayListByLastPlayedTrack);

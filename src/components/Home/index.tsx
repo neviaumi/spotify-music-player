@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import withSuspense from '../HOC/withSuspense';
+import PlayListByLastPlayedArtist from '../PlayList/PlayListByLastPlayedArtist';
+import PlayListByLastPlayedTrack from '../PlayList/PlayListByLastPlayedTrack';
+import PlayListByTopArtist from '../PlayList/PlayListByTopArtist';
 import PlayListByTopTrack from '../PlayList/PlayListByTopTrack';
 
 const Container = styled.div`
@@ -11,6 +14,9 @@ const Container = styled.div`
 export function Home() {
   return (
     <Container data-testid="home-component">
+      <PlayListByTopArtist />
+      <PlayListByLastPlayedArtist />
+      <PlayListByLastPlayedTrack />
       <PlayListByTopTrack />
     </Container>
   );
