@@ -6,7 +6,8 @@ declare module 'styled-components' {
       green: string;
       white: string;
       black: string;
-      grey: string;
+      natural255: string;
+      natural128: string;
     };
     spaces: {
       xs: string;
