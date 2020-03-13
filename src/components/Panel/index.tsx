@@ -2,35 +2,41 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
   background-color: ${props => props.theme.colors.black};
   color: ${props => props.theme.colors.white};
   display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: 230px 1fr;
-  grid-template-rows: 1fr 90px;
+  grid-template-rows: calc(100vh - 90px) 90px;
+  grid-template-columns: 234px auto;
   grid-gap: 0 0;
+  grid-template-areas:
+    'nav-bar main-view'
+    'now-playing-bar now-playing-bar';
 `;
 
 const LeftContainer = styled.div`
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-area: nav-bar;
+  overflow: hidden;
 `;
 
 const RightContainer = styled.div`
-  grid-column-start: 2;
-  grid-column-end: col2-end;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-area: main-view;
+  overflow: hidden;
 `;
 
 const BottomContainer = styled.div`
-  grid-column-start: 1;
-  grid-column-end: col2-end;
-  grid-row-start: 2;
-  grid-row-end: row2-end;
+  grid-area: now-playing-bar;
+`;
+
+const ScrollAbleWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
 `;
 
 interface Props {
@@ -43,8 +49,10 @@ export default function Panel({ Left, Right, Bottom, ...rest }: Props) {
   return (
     <Container {...rest}>
       <LeftContainer data-testid="panel-left">{Left}</LeftContainer>
-      <RightContainer data-testid="panel-right">{Right}</RightContainer>
       <BottomContainer data-testid="panel-bottom">{Bottom}</BottomContainer>
+      <RightContainer data-testid="panel-right">
+        <ScrollAbleWrapper>{Right}</ScrollAbleWrapper>
+      </RightContainer>
     </Container>
   );
 }

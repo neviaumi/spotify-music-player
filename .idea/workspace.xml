@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Logo/Spotify_Logo_RGB_White.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Logo/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PlayList/Present/typings/Props.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Nav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListLarge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListLarge.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListSmall.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListSmall.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/__tests__/PresentPlayListSmall.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/Present/__tests__/PresentPlayListSmall.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/UserPlayList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/UserPlayList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/UserPlayList.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/__tests__/UserPlayList.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/themes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/themes/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typings/styled-components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typings/styled-components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Panel/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Panel/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,9 +144,9 @@
       <item itemvalue="Jest.All Tests" />
       <item itemvalue="Jest.Test PlayListByLastPlayedArtist component" />
       <item itemvalue="Jest.Test render Home page" />
-      <item itemvalue="Jest.search playlist by last played artist" />
       <item itemvalue="Jest.Test render Playlist component" />
       <item itemvalue="Jest.Test render PresentPlaylist component" />
+      <item itemvalue="Jest.search playlist by last played artist" />
     </list>
     <recent_temporary>
       <list>
@@ -352,11 +343,11 @@
     </state>
     <state x="-1234" y="283" width="639" height="486" key="find.popup/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379352954" />
     <state x="600" y="275" width="683" height="486" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1584103920433" />
-    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup" timestamp="1583928140421">
+    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup" timestamp="1584118686117">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1579869530587" />
-    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup/0.23.1680.976@0.23.1680.976" timestamp="1583928140421" />
+    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup/0.23.1680.976@0.23.1680.976" timestamp="1584118686117" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
