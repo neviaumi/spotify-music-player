@@ -2,37 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/__recordings__/search-playlist-by-top-track_583397378/recording.har" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/serachPlayListsByTopTrack.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getCategoryPlayList.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getPlayListByTopArtistGenre.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/isCategoryExist.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/spotify/browse/getCategoryPlayList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/spotify/browse/getPlayListByTopArtistGenre.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/spotify/browse/isCategoryExist.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-User-Top-artist_1877818924/recording.har" beforeDir="false" afterPath="$PROJECT_DIR$/__recordings__/Get-User-Top-artist_1877818924/recording.har" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-User-Top-track_1761848290/recording.har" beforeDir="false" afterPath="$PROJECT_DIR$/__recordings__/Get-User-Top-track_1761848290/recording.har" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-recently-played-list_3493102476/recording.har" beforeDir="false" afterPath="$PROJECT_DIR$/__recordings__/Get-recently-played-list_3493102476/recording.har" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-recommendations-from-seed-artist_3843754521/recording.har" beforeDir="false" afterPath="$PROJECT_DIR$/__recordings__/Get-recommendations-from-seed-artist_3843754521/recording.har" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-recommendations-from-seed-track_131423685/recording.har" beforeDir="false" afterPath="$PROJECT_DIR$/__recordings__/Get-recommendations-from-seed-track_131423685/recording.har" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Test-search_1050451023/get-playlist-by-given-query_337230021/recording.har" beforeDir="false" afterPath="$PROJECT_DIR$/__recordings__/Test-search_1050451023/get-playlist-by-given-query_337230021/recording.har" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/resolve-all-playList_1225860670/recording.har" beforeDir="false" afterPath="$PROJECT_DIR$/__recordings__/resolve-all-playList_1225860670/recording.har" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/PlayListByTopTrack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/PlayListByTopTrack.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Present/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/Present/__tests__/PresentPlayListLarge.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Present/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListLarge.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/__tests__/PlayListByTopTrack.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByTopTrack.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Nav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PresentPlayList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListSmall.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PresentPlayList.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/Present/__tests__/PresentPlayListSmall.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/__tests__/UserPlayList.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/UserPlayList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/polly.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/polly.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getRecommendations.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getRecommendations.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/player/__tests__/getRecentlyPlayed.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/player/__tests__/getRecentlyPlayed.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getPlayListByTopTrack.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/playlist/getPlayListByTopTrack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/searchPlayListsByTopTrack.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/createSpotifyAPIClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/createSpotifyAPIClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListByTopTrack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlayList/PlayListByTopTrack.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/serachPlayListsByTopTrack.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListsByTopTrackArtist.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/searchPlayListsByTopTrack.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/searchPlayListsByTopTrackArtist.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,91 +74,94 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/services/spotify/browse" />
       <recent name="$PROJECT_DIR$/src/services/spotify/search/__tests__" />
       <recent name="$PROJECT_DIR$/src/services/spotify/search" />
       <recent name="$PROJECT_DIR$/src/components/PlayList/Present/__tests__" />
       <recent name="$PROJECT_DIR$/src/components/PlayList/Present" />
-      <recent name="$PROJECT_DIR$/src/components/PlayList" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.test:reset">
-    <configuration name="Test render PresentPlaylist component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/components/PlayList/Present/__tests__/PresentPlayListSmall.test.tsx" />
-      <test-names>
-        <test-name value="Test render PresentPlaylist component" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="get playlist by top track" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.get playlist by top artist genre">
+    <configuration name="Category exist" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getPlayListByTopTrack.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/browse/__tests__/isCategoryExist.test.ts" />
       <test-names>
-        <test-name value="get playlist by top track" />
+        <test-name value="Category exist" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="resolve all playList" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Category not exist" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getPlayListByTopTrack.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/browse/__tests__/isCategoryExist.test.ts" />
       <test-names>
-        <test-name value="resolve all playList" />
+        <test-name value="Category not exist" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="search playlist by top track" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Category playlist (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/search/__tests__/serachPlayListsByTopTrack.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getPlayListByTopArtistGenre.test.ts" />
       <test-names>
-        <test-name value="search playlist by top track" />
+        <test-name value="Category playlist" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="test:reset" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="test:reset" />
-      </scripts>
+    <configuration name="Category playlist" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
       <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getCategoryPlayList.test.ts" />
+      <test-names>
+        <test-name value="Category playlist" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="get playlist by top artist genre" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getPlayListByTopArtistGenre.test.ts" />
+      <test-names>
+        <test-name value="get playlist by top artist genre" />
+      </test-names>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Jest.All Tests" />
-      <item itemvalue="Jest.Test render PresentPlaylist component" />
-      <item itemvalue="Jest.get playlist by top track" />
-      <item itemvalue="Jest.resolve all playList" />
-      <item itemvalue="Jest.search playlist by top track" />
-      <item itemvalue="npm.test:reset" />
+      <item itemvalue="Jest.Category exist" />
+      <item itemvalue="Jest.Category not exist" />
+      <item itemvalue="Jest.Category playlist" />
+      <item itemvalue="Jest.Category playlist (1)" />
+      <item itemvalue="Jest.get playlist by top artist genre" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.test:reset" />
-        <item itemvalue="Jest.search playlist by top track" />
-        <item itemvalue="Jest.Test render PresentPlaylist component" />
-        <item itemvalue="Jest.get playlist by top track" />
-        <item itemvalue="Jest.resolve all playList" />
+        <item itemvalue="Jest.get playlist by top artist genre" />
+        <item itemvalue="Jest.Category playlist (1)" />
+        <item itemvalue="Jest.Category playlist" />
+        <item itemvalue="Jest.Category not exist" />
+        <item itemvalue="Jest.Category exist" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +204,7 @@
       <workItem from="1583405433559" duration="15225000" />
       <workItem from="1583494911569" duration="1954000" />
       <workItem from="1583842963436" duration="3338000" />
-      <workItem from="1584025681051" duration="1956000" />
+      <workItem from="1584025681051" duration="5361000" />
     </task>
     <servers />
   </component>
@@ -263,90 +246,90 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="594" y="283" key="EnvironmentVariablesDialog/0.23.1680.976@0.23.1680.976" timestamp="1583501837731" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1584027689325">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1584067270425">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584027689325" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1584027689324">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584067270425" />
+    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1584067270424">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200785" />
     <state width="1659" height="302" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1584027689324" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1584027689323">
+    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1584067270424" />
+    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1584067270424">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200784" />
     <state width="1659" height="302" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1584027689323" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1584027689324">
+    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1584067270424" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1584067270425">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="270" key="GridCell.Tab.0.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1584027689324" />
-    <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1584022406516">
+    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1584067270425" />
+    <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1584066415912">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.1.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
     <state width="1899" height="356" key="GridCell.Tab.1.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524799" />
-    <state width="1659" height="323" key="GridCell.Tab.1.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584022406516" />
-    <state width="1659" height="323" key="GridCell.Tab.1.center" timestamp="1584022406516">
+    <state width="1659" height="323" key="GridCell.Tab.1.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584066415912" />
+    <state width="1659" height="323" key="GridCell.Tab.1.center" timestamp="1584066415911">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.1.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
     <state width="1899" height="356" key="GridCell.Tab.1.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524798" />
-    <state width="1659" height="323" key="GridCell.Tab.1.center/0.23.1680.976@0.23.1680.976" timestamp="1584022406516" />
-    <state width="1659" height="323" key="GridCell.Tab.1.left" timestamp="1584022406516">
+    <state width="1659" height="323" key="GridCell.Tab.1.center/0.23.1680.976@0.23.1680.976" timestamp="1584066415911" />
+    <state width="1659" height="323" key="GridCell.Tab.1.left" timestamp="1584066415911">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.1.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
     <state width="1899" height="356" key="GridCell.Tab.1.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524798" />
-    <state width="1659" height="323" key="GridCell.Tab.1.left/0.23.1680.976@0.23.1680.976" timestamp="1584022406516" />
-    <state width="1659" height="323" key="GridCell.Tab.1.right" timestamp="1584022406516">
+    <state width="1659" height="323" key="GridCell.Tab.1.left/0.23.1680.976@0.23.1680.976" timestamp="1584066415911" />
+    <state width="1659" height="323" key="GridCell.Tab.1.right" timestamp="1584066415911">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.1.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704492" />
     <state width="1659" height="302" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095441" />
     <state width="1899" height="356" key="GridCell.Tab.1.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524798" />
-    <state width="1659" height="323" key="GridCell.Tab.1.right/0.23.1680.976@0.23.1680.976" timestamp="1584022406516" />
-    <state width="1659" height="323" key="GridCell.Tab.2.bottom" timestamp="1584022406515">
+    <state width="1659" height="323" key="GridCell.Tab.1.right/0.23.1680.976@0.23.1680.976" timestamp="1584066415911" />
+    <state width="1659" height="323" key="GridCell.Tab.2.bottom" timestamp="1584066415910">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.2.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704491" />
     <state width="1659" height="302" key="GridCell.Tab.2.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095440" />
     <state width="1899" height="356" key="GridCell.Tab.2.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524797" />
-    <state width="1659" height="323" key="GridCell.Tab.2.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584022406515" />
-    <state width="1659" height="323" key="GridCell.Tab.2.center" timestamp="1584022406515">
+    <state width="1659" height="323" key="GridCell.Tab.2.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584066415910" />
+    <state width="1659" height="323" key="GridCell.Tab.2.center" timestamp="1584066415909">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.2.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704491" />
     <state width="1659" height="302" key="GridCell.Tab.2.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095440" />
     <state width="1899" height="356" key="GridCell.Tab.2.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524797" />
-    <state width="1659" height="323" key="GridCell.Tab.2.center/0.23.1680.976@0.23.1680.976" timestamp="1584022406515" />
-    <state width="1659" height="323" key="GridCell.Tab.2.left" timestamp="1584022406515">
+    <state width="1659" height="323" key="GridCell.Tab.2.center/0.23.1680.976@0.23.1680.976" timestamp="1584066415909" />
+    <state width="1659" height="323" key="GridCell.Tab.2.left" timestamp="1584066415909">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.2.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704490" />
     <state width="1659" height="302" key="GridCell.Tab.2.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.2.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524797" />
-    <state width="1659" height="323" key="GridCell.Tab.2.left/0.23.1680.976@0.23.1680.976" timestamp="1584022406515" />
-    <state width="1659" height="323" key="GridCell.Tab.2.right" timestamp="1584022406515">
+    <state width="1659" height="323" key="GridCell.Tab.2.left/0.23.1680.976@0.23.1680.976" timestamp="1584066415909" />
+    <state width="1659" height="323" key="GridCell.Tab.2.right" timestamp="1584066415910">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1659" height="336" key="GridCell.Tab.2.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580379704491" />
     <state width="1659" height="302" key="GridCell.Tab.2.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095440" />
     <state width="1899" height="356" key="GridCell.Tab.2.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524797" />
-    <state width="1659" height="323" key="GridCell.Tab.2.right/0.23.1680.976@0.23.1680.976" timestamp="1584022406515" />
+    <state width="1659" height="323" key="GridCell.Tab.2.right/0.23.1680.976@0.23.1680.976" timestamp="1584066415910" />
     <state x="575" y="229" key="RollbackChangesDialog" timestamp="1584019681494">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
@@ -428,6 +411,18 @@
           <url>file://$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts</url>
           <line>7</line>
           <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/services/spotify/browse/getPlayListByTopArtistGenre.ts</url>
+          <line>19</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/services/spotify/browse/getPlayListByTopArtistGenre.ts</url>
+          <line>25</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

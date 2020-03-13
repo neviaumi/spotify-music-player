@@ -2,7 +2,7 @@ import React from 'react';
 
 import useDataFetcher from '../../hooks/useDataFetcher';
 import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
-import searchPlayListsByTopTrack from '../../services/spotify/search/searchPlayListsByTopTrack';
+import searchPlayListsByTopTrackArtist from '../../services/spotify/search/searchPlayListsByTopTrackArtist';
 import withSuspense from '../HOC/withSuspense';
 import PresentPlayList from './Present/PresentPlayListLarge';
 
@@ -10,7 +10,7 @@ export function PlayListByTopTrack() {
   const apiClient = useSpotifyAPIClient();
   const response = useDataFetcher(
     ['search/playlist', 'by-last-played-track'],
-    () => searchPlayListsByTopTrack(apiClient),
+    () => searchPlayListsByTopTrackArtist(apiClient),
   );
 
   return (

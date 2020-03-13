@@ -7,7 +7,7 @@ export interface Response {
   playlists: Spotify.Playlist[];
 }
 
-const searchPlayListsByTopTrack: Fetcher<Response> = async apiClient => {
+const searchPlayListsByTopTrackArtist: Fetcher<Response> = async apiClient => {
   const { data: tracks } = await getUserTop(apiClient, Type.TRACK);
   const _artist = tracks.items[0].artists[0];
   const query: string = `"${_artist.name}"`;
@@ -25,4 +25,4 @@ const searchPlayListsByTopTrack: Fetcher<Response> = async apiClient => {
   });
 };
 
-export default searchPlayListsByTopTrack;
+export default searchPlayListsByTopTrackArtist;
