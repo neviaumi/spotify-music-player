@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {
-  title: string;
-  playlists?: Spotify.Playlist[];
-  [key: string]: unknown;
-}
+import { Props } from './typings/Props';
 
 const PlayListContainer = styled.article`
   padding: ${props => props.theme.spaces.xl} 0;
@@ -59,7 +55,7 @@ const PlayListDescription = styled.span`
   line-height: 18px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: ${props => props.theme.colors.grey};
+  color: ${props => props.theme.colors.natural255};
   margin-top: ${props => props.theme.spaces.s};
   overflow: hidden;
 `;
@@ -71,7 +67,7 @@ export default ({ title, playlists = [], ...rest }: Props) => {
       <Container data-testid="present-play-list">
         {playlists.map(playlist => (
           <Item key={playlist.id} data-testid="present-play-list-item">
-            <PlayListIcon src={playlist.images[0].url} />
+            <PlayListIcon src={playlist.images[0]?.url} />
             <PlayListBottom>
               <PlayListName>{playlist.name}</PlayListName>
               <PlayListDescription>{playlist.description}</PlayListDescription>

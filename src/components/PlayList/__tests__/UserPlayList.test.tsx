@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 
 import playlist from '../../../../__fixtures__/playlist.json';
+import ThemeProvider from '../../../contexts/Theme';
 import useDataFetcher from '../../../hooks/useDataFetcher';
 import { Playlist } from '../UserPlayList';
 
@@ -21,7 +22,11 @@ describe('Test render Playlist component', () => {
         ],
       },
     });
-    const { getAllByTestId } = render(<Playlist />);
+    const { getAllByTestId } = render(
+      <ThemeProvider>
+        <Playlist />
+      </ThemeProvider>,
+    );
     const playlists = getAllByTestId('user-playlist');
 
     expect(playlists).toHaveLength(3);

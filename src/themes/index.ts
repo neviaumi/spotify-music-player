@@ -5,7 +5,8 @@ const myTheme: DefaultTheme = {
     green: '#1DB954',
     white: '#FFFFFF',
     black: '#191414',
-    grey: '#b3b3b3',
+    natural255: '#b3b3b3',
+    natural128: '#282828',
   },
   spaces: {
     xs: '2px',

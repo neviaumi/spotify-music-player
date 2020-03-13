@@ -13,7 +13,7 @@ export function Playlist() {
   const response = useDataFetcher<Response>('me/playlists', () =>
     getAllPlaylist(apiClient),
   );
-  return <PresentPlayList items={response.data.items} />;
+  return <PresentPlayList title="PLAYLISTS" playlists={response.data.items} />;
 }
 
 export default withSuspense(Playlist);
