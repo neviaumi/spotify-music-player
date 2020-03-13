@@ -1,10 +1,10 @@
 import { createSpotifyAPIClientForTesting } from '../../../../utils/createSpotifyAPIClient';
-import searchPlayListByLastPlayedTrack from '../searchPlayListByLastPlayedTrack';
+import searchPlayListByLastPlayedArtist from '../searchPlayListByLastPlayedArtist';
 
 it('search playlist by last played artist', async () => {
   const client = createSpotifyAPIClientForTesting();
 
-  const response = await searchPlayListByLastPlayedTrack(client);
-  expect(response.data.track).toBeDefined();
+  const response = await searchPlayListByLastPlayedArtist(client);
+  expect(response.data.artist).toBeDefined();
   expect(response.data.playlists).toBeDefined();
 });
