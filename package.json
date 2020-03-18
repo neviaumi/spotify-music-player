@@ -58,7 +58,7 @@
     "@types/eslint": "6.1.8",
     "@types/eslint-plugin-prettier": "2.2.0",
     "@types/jest": "25.1.4",
-    "@types/node": "13.9.1",
+    "@types/node": "13.9.2",
     "@types/pollyjs__adapter-node-http": "2.0.0",
     "@types/pollyjs__core": "4.0.0",
     "@types/pollyjs__persister-fs": "2.0.0",
