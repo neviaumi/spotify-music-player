@@ -4,20 +4,28 @@ on: pull_request
 env:
   CI: true
 jobs:
-  test:
+  unit-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 12.x
       - run: bash ./scripts/setup.sh
-      - run: bash ./scripts/test.sh
-      - uses: codecov/codecov-action@v1
+      - uses: paambaati/codeclimate-action@v2.5.5
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          coverageCommand: bash ./scripts/test/jest.sh
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: bash ./scripts/setup.sh
+      - run: bash ./scripts/test/lchi.sh
