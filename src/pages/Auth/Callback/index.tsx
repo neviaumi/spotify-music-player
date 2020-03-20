@@ -8,5 +8,5 @@ export default function AuthCallback() {
   const { setAccessInfo } = useAccessToken();
   const authResult = verifyAuthCallback(window.location.href);
   setAccessInfo(authResult);
-  return <Redirect to="/" />;
+  return <Redirect to="/playlist/foobar" />;
 }
