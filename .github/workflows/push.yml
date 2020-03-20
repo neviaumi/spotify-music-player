@@ -1,4 +1,4 @@
-name: before push
+name: before-push
 
 on:
   push:
@@ -8,22 +8,27 @@ on:
 env:
   CI: true
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
-
+  unit-test:
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 12.x
       - run: bash ./scripts/setup.sh
-      - run: bash ./scripts/test.sh
-      - uses: aktions/codeclimate-test-reporter@v1
+      - uses: paambaati/codeclimate-action@v2.5.5
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
-          codeclimate-test-reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
+          coverageCommand: bash ./scripts/test/jest.sh
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: bash ./scripts/setup.sh
+      - run: bash ./scripts/test/lchi.sh
