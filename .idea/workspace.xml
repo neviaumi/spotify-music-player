@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.lighthouserc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/push.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/action.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/auto_assign.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/auto_assign.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/testing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pr.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budgets.json" beforeDir="false" afterPath="$PROJECT_DIR$/.budgets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lighthouserc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/Routes.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/Routes.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +69,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.github" />
       <recent name="$PROJECT_DIR$/src/components/Icon" />
       <recent name="$PROJECT_DIR$/src/services/spotify/browse" />
       <recent name="$PROJECT_DIR$/src/services/spotify/search/__tests__" />
       <recent name="$PROJECT_DIR$/src/services/spotify/search" />
-      <recent name="$PROJECT_DIR$/src/components/PlayList/Present/__tests__" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.lhr-1584677957943.html">
@@ -138,12 +133,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.lhr-1584677957943.html" />
       <item itemvalue="Jest.All Tests" />
+      <item itemvalue="Jest.Should has correct route count" />
       <item itemvalue="Jest.Test render Playlist component" />
       <item itemvalue="Jest.Test render PresentPlaylist component" />
       <item itemvalue="Jest.search playlist by last played artist" />
-      <item itemvalue="Jest.Should has correct route count" />
-      <item itemvalue="JavaScript Debug.lhr-1584677957943.html" />
     </list>
     <recent_temporary>
       <list>
@@ -200,7 +195,8 @@
       <workItem from="1584673986203" duration="325000" />
       <workItem from="1584674359538" duration="2518000" />
       <workItem from="1584677686897" duration="595000" />
-      <workItem from="1584678399533" duration="2351000" />
+      <workItem from="1584678399533" duration="2513000" />
+      <workItem from="1584691714270" duration="1682000" />
     </task>
     <servers />
   </component>
@@ -217,6 +213,10 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="304" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.976@0.23.1680.976" timestamp="1583503540243" />
+    <state x="452" y="271" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584693517954">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="452" y="271" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/-1920.23.1920.977@0.23.1440.877" timestamp="1584693517954" />
     <state x="528" y="251" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579858070611">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>

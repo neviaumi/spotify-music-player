@@ -1,11 +1,6 @@
-name: build
+name: testing
 
-on:
-  push:
-    branch:
-      - master
-      - development
-  pull_request:
+on: pull_request
 env:
   CI: true
 jobs:
