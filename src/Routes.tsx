@@ -12,6 +12,11 @@ export default function Router() {
     <Switch>
       <Route exact path="/auth/login" component={Login} />
       <Route exact path="/auth/login/callback" component={AuthCallback} />
+      <Route
+        exact
+        path="/metric/performance"
+        render={() => <div>First Content</div>}
+      />
       <AuthErrorBoundary>
         <DataFetchingErrorBoundary>
           <Route exact path="/" component={Home} />
