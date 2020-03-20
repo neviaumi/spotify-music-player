@@ -1,0 +1,21 @@
+{
+  "ci": {
+    "collect": {
+      "url": ["http://localhost:42069/metric/performance"]
+    },
+    "assert": {
+      "preset": "lighthouse:recommended",
+      "assertions": {
+        "uses-long-cache-ttl": "off",
+        "redirects-http": "off",
+        "uses-http2": "off",
+        "content-width": "off",
+        "offline-start-url": "off",
+        "service-worker": "off",
+        "works-offline": "off",
+        "render-blocking-resources": ["error", { "maxLength": 1 }],
+        "unminified-javascript": "off"
+      }
+    }
+  }
+}

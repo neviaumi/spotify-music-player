@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.lighthouserc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budgets.json" beforeDir="false" afterPath="$PROJECT_DIR$/.budgets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lighthouserc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__tests__/Routes.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/Routes.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +69,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -72,30 +81,17 @@
       <recent name="$PROJECT_DIR$/src/components/PlayList/Present/__tests__" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Test render PresentPlaylist component">
-    <configuration name="Test PlayListByLastPlayedArtist component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JavaScript Debug.lhr-1584677957943.html">
+    <configuration name="Should has correct route count" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByLastPlayedArtist.test.tsx" />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/Routes.test.tsx" />
       <test-names>
-        <test-name value="Test PlayListByLastPlayedArtist component" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Test render Home page" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/components/Home/__tests__/index.test.tsx" />
-      <test-names>
-        <test-name value="Test render Home page" />
+        <test-name value="Should has correct route count" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -138,21 +134,24 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="lhr-1584677957943.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/spotify-music-player/.lighthouseci/lhr-1584677957943.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Jest.All Tests" />
-      <item itemvalue="Jest.Test PlayListByLastPlayedArtist component" />
-      <item itemvalue="Jest.Test render Home page" />
       <item itemvalue="Jest.Test render Playlist component" />
       <item itemvalue="Jest.Test render PresentPlaylist component" />
       <item itemvalue="Jest.search playlist by last played artist" />
+      <item itemvalue="Jest.Should has correct route count" />
+      <item itemvalue="JavaScript Debug.lhr-1584677957943.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.lhr-1584677957943.html" />
+        <item itemvalue="Jest.Should has correct route count" />
         <item itemvalue="Jest.Test render PresentPlaylist component" />
         <item itemvalue="Jest.Test render Playlist component" />
         <item itemvalue="Jest.search playlist by last played artist" />
-        <item itemvalue="Jest.Test render Home page" />
-        <item itemvalue="Jest.Test PlayListByLastPlayedArtist component" />
       </list>
     </recent_temporary>
   </component>
@@ -199,6 +198,9 @@
       <workItem from="1584070421949" duration="1674000" />
       <workItem from="1584073616980" duration="11753000" />
       <workItem from="1584673986203" duration="325000" />
+      <workItem from="1584674359538" duration="2518000" />
+      <workItem from="1584677686897" duration="595000" />
+      <workItem from="1584678399533" duration="2351000" />
     </task>
     <servers />
   </component>
@@ -240,30 +242,34 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="594" y="283" key="EnvironmentVariablesDialog/0.23.1680.976@0.23.1680.976" timestamp="1583501837731" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1584105276497">
-      <screen x="0" y="23" width="1680" height="976" />
+    <state width="1899" height="290" key="GridCell.Tab.0.bottom" timestamp="1584677235746">
+      <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
+    <state width="1899" height="290" key="GridCell.Tab.0.bottom/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235746" />
     <state width="1659" height="270" key="GridCell.Tab.0.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
     <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584105276497" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1584105276496">
-      <screen x="0" y="23" width="1680" height="976" />
+    <state width="1899" height="290" key="GridCell.Tab.0.center" timestamp="1584677235745">
+      <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
+    <state width="1899" height="290" key="GridCell.Tab.0.center/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235745" />
     <state width="1659" height="270" key="GridCell.Tab.0.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200785" />
     <state width="1659" height="302" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
     <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1584105276496" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1584105276496">
-      <screen x="0" y="23" width="1680" height="976" />
+    <state width="1899" height="290" key="GridCell.Tab.0.left" timestamp="1584677235745">
+      <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
+    <state width="1899" height="290" key="GridCell.Tab.0.left/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235745" />
     <state width="1659" height="270" key="GridCell.Tab.0.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200784" />
     <state width="1659" height="302" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
     <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1584105276496" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1584105276497">
-      <screen x="0" y="23" width="1680" height="976" />
+    <state width="1899" height="290" key="GridCell.Tab.0.right" timestamp="1584677235746">
+      <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
+    <state width="1899" height="290" key="GridCell.Tab.0.right/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235746" />
     <state width="1659" height="270" key="GridCell.Tab.0.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
@@ -328,9 +334,10 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="575" y="229" key="RollbackChangesDialog/0.23.1680.976@0.23.1680.976" timestamp="1584019681494" />
-    <state x="341" y="150" key="SettingsEditor" timestamp="1583495898836">
-      <screen x="0" y="23" width="1680" height="976" />
+    <state x="-1530" y="161" key="SettingsEditor" timestamp="1584676101024">
+      <screen x="-1920" y="23" width="1920" height="1057" />
     </state>
+    <state x="-1530" y="161" key="SettingsEditor/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584676101024" />
     <state x="-1530" y="161" key="SettingsEditor/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580462884400" />
     <state x="341" y="150" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1583495898836" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1584027517081">

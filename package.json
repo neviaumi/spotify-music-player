@@ -25,7 +25,8 @@
     "eject": "react-scripts eject",
     "lint:js": "eslint --ext=ts,tsx --fix .",
     "lint:css": "stylelint './src/**/*.{ts,tsx}'",
-    "quicktype": "quicktype --just-types"
+    "quicktype": "quicktype --just-types",
+    "serve:lhci": "serve -l 42069 -s build"
   },
   "browserslist": {
     "production": [
@@ -86,7 +87,7 @@
     "lint-staged": "10.0.8",
     "prettier": "1.19.1",
     "quicktype": "15.0.222",
-    "serve": "11.3.0",
+    "serve": "^11.3.0",
     "setup-polly-jest": "0.7.0",
     "stylelint": "13.2.1",
     "typescript": "3.8.3",
@@ -114,7 +115,7 @@
       "global": {
         "statements": 95,
         "branches": 93,
-        "functions": 93,
+        "functions": 92,
         "lines": 95
       }
     }
