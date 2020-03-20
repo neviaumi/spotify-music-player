@@ -18,10 +18,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: bash ./scripts/setup.sh
       - run: bash ./scripts/test.sh
-  coverage:
-    needs: [test]
-    runs-on: ubuntu-latest
-    steps:
       - uses: aktions/codeclimate-test-reporter@v1
         with:
           codeclimate-test-reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
