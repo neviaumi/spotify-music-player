@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/push.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/action.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/auto_assign.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/auto_assign.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/testing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pr.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,12 +130,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.lhr-1584677957943.html" />
       <item itemvalue="Jest.All Tests" />
       <item itemvalue="Jest.Should has correct route count" />
       <item itemvalue="Jest.Test render Playlist component" />
       <item itemvalue="Jest.Test render PresentPlaylist component" />
       <item itemvalue="Jest.search playlist by last played artist" />
+      <item itemvalue="JavaScript Debug.lhr-1584677957943.html" />
     </list>
     <recent_temporary>
       <list>
