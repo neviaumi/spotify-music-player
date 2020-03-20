@@ -42,7 +42,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
-    "@lhci/cli": "0.3.11",
+    "@lhci/cli": "0.3.12",
     "@pollyjs/adapter-node-http": "4.0.3",
     "@pollyjs/core": "4.0.2",
     "@pollyjs/persister-fs": "4.0.2",
