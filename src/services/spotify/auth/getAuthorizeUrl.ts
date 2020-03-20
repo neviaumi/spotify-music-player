@@ -1,6 +1,6 @@
 import openidConfiguration from './openidConfiguration';
 
-export default () => {
+export default (transactionId: string) => {
   const authorizeUrl = new URL(openidConfiguration.authorization_endpoint);
   const queryParams = authorizeUrl.searchParams;
   queryParams.append(
@@ -19,5 +19,6 @@ export default () => {
   queryParams.append('response_type', openidConfiguration.response_types[0]);
   queryParams.append('redirect_uri', openidConfiguration.redirect_uris[0]);
   queryParams.append('show_dialog', 'false');
+  queryParams.append('state', transactionId);
   return authorizeUrl.toString();
 };

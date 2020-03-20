@@ -4,7 +4,7 @@ import getAuthorizeUrl from '../getAuthorizeUrl';
 import openidConfiguration from '../openidConfiguration';
 
 it('Should return authorization url', () => {
-  const url = getAuthorizeUrl();
+  const url = getAuthorizeUrl('foobar');
   const authorizeUrl = new URL(openidConfiguration.authorization_endpoint);
   const queryParams = authorizeUrl.searchParams;
   queryParams.append(
@@ -23,5 +23,6 @@ it('Should return authorization url', () => {
   queryParams.append('response_type', openidConfiguration.response_types[0]);
   queryParams.append('redirect_uri', openidConfiguration.redirect_uris[0]);
   queryParams.append('show_dialog', 'false');
+  queryParams.append('state', 'foobar');
   expect(url).toEqual(authorizeUrl.toString());
 });

@@ -8,5 +8,8 @@ it('Should render without error', () => {
   const wrapper = shallow(<AuthCallback />);
   const redirect = wrapper.find(Redirect).first();
   expect(redirect).toBeDefined();
-  expect(redirect.prop('to')).toEqual('/playlist/foobar');
+  expect(redirect.prop('to')).toEqual({
+    pathname: '/',
+    state: { from: undefined },
+  });
 });
