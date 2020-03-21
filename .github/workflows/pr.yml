@@ -12,6 +12,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+        env:
+          RUNNER_TEMP: /tmp
       - run: bash ./scripts/setup.sh
       - uses: paambaati/codeclimate-action@v2.5.5
         env:

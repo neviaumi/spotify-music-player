@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pr.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pr.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/push.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/push.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
       <recent name="$PROJECT_DIR$/src/services/spotify/search/__tests__" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Read previous state from cookies">
+  <component name="RunManager" selected="Jest.Test render Playlist component.Should render without error">
     <configuration name="Read previous state from cookies" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -100,19 +101,6 @@
       <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/authorize.test.ts" />
       <test-names>
         <test-name value="Should redirect browsers" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Should render without error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/pages/Auth/Login/__tests__/index.test.tsx" />
-      <test-names>
-        <test-name value="Should render without error" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -142,21 +130,35 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Test render Playlist component.Should render without error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/components/PlayList/__tests__/UserPlayList.test.tsx" />
+      <test-names>
+        <test-name value="Test render Playlist component" />
+        <test-name value="Should render without error" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Jest.All Tests" />
       <item itemvalue="Jest.Read previous state from cookies" />
       <item itemvalue="Jest.Should redirect browsers" />
-      <item itemvalue="Jest.Should render without error" />
       <item itemvalue="Jest.Should return authorization url" />
       <item itemvalue="Jest.Should return valid callback params from url" />
+      <item itemvalue="Jest.Test render Playlist component.Should render without error" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Test render Playlist component.Should render without error" />
         <item itemvalue="Jest.Read previous state from cookies" />
         <item itemvalue="Jest.Should return valid callback params from url" />
         <item itemvalue="Jest.Should return authorization url" />
         <item itemvalue="Jest.Should redirect browsers" />
-        <item itemvalue="Jest.Should render without error" />
       </list>
     </recent_temporary>
   </component>
@@ -214,6 +216,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema.js" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema.d.ts" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema-cli.d.ts" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema-cli.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema-cli.js" />
+      </list>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="177" key="#ESLint" timestamp="1583494676230">
@@ -258,38 +270,38 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="594" y="283" key="EnvironmentVariablesDialog/0.23.1680.976@0.23.1680.976" timestamp="1583501837731" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1584726229626">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1584811667026">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1899" height="290" key="GridCell.Tab.0.bottom/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235746" />
     <state width="1659" height="270" key="GridCell.Tab.0.bottom/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.bottom/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584726229626" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1584726229625">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584811667026" />
+    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1584811667025">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1899" height="290" key="GridCell.Tab.0.center/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235745" />
     <state width="1659" height="270" key="GridCell.Tab.0.center/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200785" />
     <state width="1659" height="302" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.center/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1584726229625" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1584726229624">
+    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1584811667025" />
+    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1584811667025">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1899" height="290" key="GridCell.Tab.0.left/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235745" />
     <state width="1659" height="270" key="GridCell.Tab.0.left/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200784" />
     <state width="1659" height="302" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095438" />
     <state width="1899" height="356" key="GridCell.Tab.0.left/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524795" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1584726229624" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1584726229625">
+    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1584811667025" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1584811667026">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state width="1899" height="290" key="GridCell.Tab.0.right/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235746" />
     <state width="1659" height="270" key="GridCell.Tab.0.right/0.23.1680.1027/-1920.23.1920.1006@-1920.23.1920.1006" timestamp="1580380200786" />
     <state width="1659" height="302" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1579881095439" />
     <state width="1899" height="356" key="GridCell.Tab.0.right/0.23.1680.976/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1580464524796" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1584726229625" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1584811667026" />
     <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1584725757399">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
