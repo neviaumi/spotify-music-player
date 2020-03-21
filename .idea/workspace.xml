@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/services/storage/CookieStorage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/storage/Storage.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/storage/__tests__/CookieStorage.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/storage/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.codeclimate.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.codeclimate.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ErrorBoundary/Auth/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ErrorBoundary/Auth/__tests__/index.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ErrorBoundary/Auth/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ErrorBoundary/Auth/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/errors/AuthenticationExpiredError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/AuthenticationExpiredError.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/errors/UnAuthenticatedError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/UnAuthenticatedError.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/__tests__/useAccessToken.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/__tests__/useAccessToken.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAccessToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAccessToken.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Callback/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Callback/__tests__/index.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Callback/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Callback/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Login/__tests__/index.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Login/__tests__/index.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth/Login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth/Login/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/authorize.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/authorize.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/authorize.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/authorize.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/getAuthorizeUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/getAuthorizeUrl.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/auth/verifyAuthCallback.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/auth/verifyAuthCallback.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -450,7 +429,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/spotify/auth/verifyAuthCallback.ts</url>
           <line>15</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
