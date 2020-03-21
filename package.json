@@ -10,7 +10,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-router-dom": "5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "3.4.0",
     "styled-components": "5.0.1",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-processor-styled-components": "1.10.0",
@@ -22,9 +22,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "reset": "yarn test --clearCache && yarn build",
-    "test": "react-scripts test",
-    "test:reset": "REACT_APP_POLLY_MODE=record yarn test --watchAll --coverage",
+    "reset": "yarn test --clearCache && rm -rf node_modules/ && yarn && yarn build",
+    "test": "CI=true react-scripts test",
+    "test:reset": "REACT_APP_POLLY_MODE=record yarn test",
     "eject": "react-scripts eject",
     "lint:js": "eslint --ext=ts,tsx --fix .",
     "lint:css": "stylelint './src/**/*.{ts,tsx}'",
@@ -113,8 +113,7 @@
       "json"
     ],
     "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/index.ts"
+      "src/**/*.{ts,tsx}"
     ],
     "coverageThreshold": {
       "global": {
