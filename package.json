@@ -22,6 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "reset": "yarn test --clearCache && yarn build",
     "test": "react-scripts test",
     "test:reset": "REACT_APP_POLLY_MODE=record yarn test --watchAll --coverage",
     "eject": "react-scripts eject",
