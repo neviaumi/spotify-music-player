@@ -1,9 +1,6 @@
 version: '2'
-plugins:
-  eslint:
-    enabled: true
-    checks:
-      complexity:
-        enabled: false
-      similar-code:
-        enabled: false
+checks:
+  similar-code:
+    enabled: false
+  complexity:
+    enabled: false
