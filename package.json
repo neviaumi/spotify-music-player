@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "0.19.2",
+    "js-cookie": "^2.2.1",
+    "nanoid": "^2.1.11",
     "ramda": "0.27.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -59,6 +61,8 @@
     "@types/eslint": "6.1.8",
     "@types/eslint-plugin-prettier": "2.2.0",
     "@types/jest": "25.1.4",
+    "@types/js-cookie": "^2.2.5",
+    "@types/nanoid": "^2.1.0",
     "@types/node": "13.9.2",
     "@types/pollyjs__adapter-node-http": "2.0.0",
     "@types/pollyjs__core": "4.0.0",
@@ -114,7 +118,7 @@
     "coverageThreshold": {
       "global": {
         "statements": 95,
-        "branches": 93,
+        "branches": 90,
         "functions": 92,
         "lines": 95
       }

@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 
 import AuthContextProvider from '../../contexts/Auth/AuthContextProvider';
 import AuthenticationExpiredError from '../../errors/AuthenticationExpiredError';
@@ -27,9 +28,11 @@ function DummyComponentWillSetToken() {
 describe('Test useAccessToken setAccessToken hooks', () => {
   it('Should success set the token', () => {
     const { getByTestId } = render(
-      <AuthContextProvider>
-        <DummyComponentWillSetToken />
-      </AuthContextProvider>,
+      <MemoryRouter initialEntries={['/']}>
+        <AuthContextProvider>
+          <DummyComponentWillSetToken />
+        </AuthContextProvider>
+      </MemoryRouter>,
     );
     expect(getByTestId('access-token').textContent).toEqual('foobar');
   });
@@ -37,15 +40,17 @@ describe('Test useAccessToken setAccessToken hooks', () => {
 describe('Test useAccessToken getAccessToken hooks', () => {
   it('Should success get the token', () => {
     const { getByTestId } = render(
-      <AuthContextProvider
-        isAuthenticated
-        _accessInfo={{
-          token: 'foobar',
-          expiredAt: Number.POSITIVE_INFINITY,
-        }}
-      >
-        <DummyComponentWillGetToken />
-      </AuthContextProvider>,
+      <MemoryRouter initialEntries={['/']}>
+        <AuthContextProvider
+          isAuthenticated
+          _accessInfo={{
+            token: 'foobar',
+            expiredAt: Number.POSITIVE_INFINITY,
+          }}
+        >
+          <DummyComponentWillGetToken />
+        </AuthContextProvider>
+      </MemoryRouter>,
     );
     expect(getByTestId('access-token').textContent).toEqual('foobar');
   });
@@ -53,9 +58,11 @@ describe('Test useAccessToken getAccessToken hooks', () => {
   it('Should fail get the token due to unauthenticated', () => {
     expect(() =>
       render(
-        <AuthContextProvider>
-          <DummyComponentWillGetToken />
-        </AuthContextProvider>,
+        <MemoryRouter initialEntries={['/']}>
+          <AuthContextProvider>
+            <DummyComponentWillGetToken />
+          </AuthContextProvider>
+        </MemoryRouter>,
       ),
     ).toThrow(UnAuthenticatedError);
   });
@@ -63,15 +70,17 @@ describe('Test useAccessToken getAccessToken hooks', () => {
   it('Should fail get the token due to token expired', () => {
     expect(() =>
       render(
-        <AuthContextProvider
-          isAuthenticated
-          _accessInfo={{
-            token: 'foobar',
-            expiredAt: 0,
-          }}
-        >
-          <DummyComponentWillGetToken />
-        </AuthContextProvider>,
+        <MemoryRouter initialEntries={['/']}>
+          <AuthContextProvider
+            isAuthenticated
+            _accessInfo={{
+              token: 'foobar',
+              expiredAt: 0,
+            }}
+          >
+            <DummyComponentWillGetToken />
+          </AuthContextProvider>
+        </MemoryRouter>,
       ),
     ).toThrow(AuthenticationExpiredError);
   });

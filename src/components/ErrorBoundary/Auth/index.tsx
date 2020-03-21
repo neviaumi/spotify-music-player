@@ -1,3 +1,4 @@
+import { path } from 'ramda';
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
@@ -32,7 +33,20 @@ export default class AuthErrorBoundary extends React.Component<
     if (error) {
       const err = error.err;
       if (err instanceof AppError && err.fallbackPath) {
-        return <Redirect to={err.fallbackPath} />;
+        const location = path(['meta', 'location'], err);
+        if (!location) {
+          return <Redirect to={err.fallbackPath} />;
+        }
+        return (
+          <Redirect
+            to={{
+              pathname: err.fallbackPath,
+              state: {
+                from: location,
+              },
+            }}
+          />
+        );
       }
       return <div data-testid="error-fallback">{err.message}</div>;
     }
