@@ -14,6 +14,11 @@ configure({ adapter: new Adapter() });
 Object.assign(window.location, {
   replace: jest.fn().mockReturnValue(undefined),
 });
+
+// https://github.com/facebook/react/issues/11098
+Object.assign(console, {
+  error: jest.fn(),
+});
 jest.mock('./hooks/useDataFetcher');
 jest.mock('./hooks/useAccessToken');
 
