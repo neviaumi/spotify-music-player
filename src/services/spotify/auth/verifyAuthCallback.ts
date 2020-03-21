@@ -1,5 +1,6 @@
 import AuthenticationCallbackError from '../../../errors/AuthenticationCallbackError';
 import getCurrentTimestamp from '../../../utils/getCurrentTimestamp';
+import { Cookie } from '../../storage';
 import getCallbackParams from './getCallbackParams';
 
 export default (url: string) => {
@@ -7,9 +8,15 @@ export default (url: string) => {
   if (params.error) {
     throw new AuthenticationCallbackError(params.error);
   }
+  const transactionId = params.state as string;
+  let transaction = '{}';
+  if (transactionId) {
+    transaction = Cookie.getItem(transactionId) || transaction;
+  }
   const currentTimestamp = getCurrentTimestamp();
   return {
     token: params.access_token as string,
     expiredAt: currentTimestamp + Number(params.expires_in || 0),
+    state: JSON.parse(transaction),
   };
 };

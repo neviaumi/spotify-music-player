@@ -4,6 +4,6 @@ it('Should redirect browsers', () => {
   const replaceSpy = jest
     .spyOn(window.location, 'replace')
     .mockReturnValue(undefined);
-  authorize();
+  authorize({});
   expect(replaceSpy).toHaveBeenCalled();
 });

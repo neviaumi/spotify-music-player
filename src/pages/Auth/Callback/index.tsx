@@ -8,5 +8,15 @@ export default function AuthCallback() {
   const { setAccessInfo } = useAccessToken();
   const authResult = verifyAuthCallback(window.location.href);
   setAccessInfo(authResult);
-  return <Redirect to="/playlist/foobar" />;
+  const {
+    state: { from: fromState },
+  } = authResult;
+  return (
+    <Redirect
+      to={{
+        pathname: fromState?.pathname || '/',
+        state: { from: fromState },
+      }}
+    />
+  );
 }
