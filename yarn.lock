@@ -1449,10 +1449,10 @@
   dependencies:
     "@pollyjs/utils" "^4.0.2"
 
-"@pollyjs/core@4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@pollyjs/core/-/core-4.0.2.tgz#43f30ad2bb01735678c2cc112bd9dcbea7235740"
-  integrity sha512-QOTinIkwetuZ2MxVSFVRJMpcMQhBE+jZtNWVGmDFvyJG3R106XmwJTFhCoGXvGbHBVxte2fgQ8zKUQoyIuE+oQ==
+"@pollyjs/core@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@pollyjs/core/-/core-4.0.4.tgz#0295acaf445eab8b7120a7967c90917a866d9b63"
+  integrity sha512-kvX04VRV5avTYOIveGVsZLfXNUDMFfIcMgw5OKFCmbLLAwMwDBx0pDQ+Hbvlau22sj1SmF8gRptV7VaieCEtBQ==
   dependencies:
     "@pollyjs/utils" "^4.0.2"
     "@sindresorhus/fnv1a" "^1.2.0"
