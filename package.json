@@ -107,13 +107,7 @@
   "jest": {
     "coverageReporters": [
       "text",
-      "text-summary",
-      "lcov",
-      "json"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/index.ts"
+      "text-summary"
     ],
     "coverageThreshold": {
       "global": {
