@@ -2,7 +2,7 @@ name: before-push
 
 on:
   push:
-    branch:
+    branches:
       - master
       - development
 env:

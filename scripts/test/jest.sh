@@ -2,4 +2,6 @@
 
 set -ex
 
-yarn test --watchAll=false --coverage
+# For debugg failure on CI
+yarn test --showConfig
+yarn test --coverage
