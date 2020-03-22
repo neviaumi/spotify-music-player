@@ -4,8 +4,6 @@
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test/jest.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/jest.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,11 +153,11 @@
     </configuration>
     <list>
       <item itemvalue="Jest.All Tests" />
+      <item itemvalue="Jest.Should render without error" />
       <item itemvalue="Jest.Test render Panel component" />
+      <item itemvalue="Jest.Test render Panel component.Should render without error (1)" />
       <item itemvalue="Jest.Test render Panel component.Should render without error" />
       <item itemvalue="Jest.Test render ThemeProvider" />
-      <item itemvalue="Jest.Test render Panel component.Should render without error (1)" />
-      <item itemvalue="Jest.Should render without error" />
     </list>
     <recent_temporary>
       <list>
@@ -220,6 +218,8 @@
       <workItem from="1584691714270" duration="1682000" />
       <workItem from="1584699816490" duration="195000" />
       <workItem from="1584717826447" duration="8489000" />
+      <workItem from="1584817797056" duration="235000" />
+      <workItem from="1584839659047" duration="447000" />
     </task>
     <servers />
   </component>
@@ -462,13 +462,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/contexts/Theme/__tests__/index.test.tsx</url>
           <line>9</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/__tests__/App.test.tsx</url>
           <line>8</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
