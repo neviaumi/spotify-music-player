@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.codeclimate.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.codeclimate.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/push.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/push.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/spotify-web-player.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spotify-music-player.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/test/jest.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/jest.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,11 +211,24 @@
       <workItem from="1584691714270" duration="1682000" />
       <workItem from="1584699816490" duration="195000" />
       <workItem from="1584717826447" duration="8489000" />
+      <workItem from="1584855211163" duration="294000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema.js" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema.d.ts" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema-cli.d.ts" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema-cli.js.map" />
+        <option value="$PROJECT_DIR$/node_modules/@mark.probst/typescript-json-schema/typescript-json-schema-cli.js" />
+        <option value="$PROJECT_DIR$/node_modules/image-ssim/index.js" />
+        <option value="$PROJECT_DIR$/node_modules/image-ssim/index.d.ts" />
+      </list>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="177" key="#ESLint" timestamp="1583494676230">
