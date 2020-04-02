@@ -1955,10 +1955,10 @@
   resolved "https://registry.yarnpkg.com/@types/pollyjs__persister/-/pollyjs__persister-2.0.1.tgz#4ecc700f68d3c3a6c18c6d2dc7e16dcf618ff07a"
   integrity sha512-Et19GEUffnxsJXJYzgdSDN6oUZgDt0JlCIImy4rEh1fn1Y2mX6nZSZ7FnMEBxZGGph5eviaqQxuHwHDF3TmdBQ==
 
-"@types/prettier@1.19.1":
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-1.19.1.tgz#33509849f8e679e4add158959fdb086440e9553f"
-  integrity sha512-5qOlnZscTn4xxM5MeGXAMOsIOIKIbh9e85zJWfBRVPlRMEVawzoPhINYbRGkBZCI8LxvBe7tJCdWiarA99OZfQ==
+"@types/prettier@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.0.0.tgz#dc85454b953178cc6043df5208b9e949b54a3bc4"
+  integrity sha512-/rM+sWiuOZ5dvuVzV37sUuklsbg+JPOP8d+nNFlo2ZtfpzPiPvh1/gc8liWOLBqe+sR+ZM7guPaIcTt6UZTo7Q==
 
 "@types/prop-types@*":
   version "15.7.3"
