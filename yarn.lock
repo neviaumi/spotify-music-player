@@ -1529,30 +1529,35 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@spotify/eslint-config-base@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-6.1.0.tgz#b48d2764049d56a7d83a95709ec1e6733cb19f2a"
-  integrity sha512-oxR3OBBrms09Ih6yPrqcaeKgwchdw9XgRvKsF6x6uPiMy0OVYald/+GkBtyQy+IChD14WStV/XosqNxEZeTJ4Q==
+"@spotify/eslint-config-base@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-6.1.1.tgz#e6ff907836e47832113beba7b327356b62cfa2a4"
+  integrity sha512-pTcQjTgpUfnHCk1Ubll0T/WPkZpiBx3x32nPwbYn/Y1kB3ASKqr7ga5x0LfdP6DLnZ1u+TAzVtIBvqzAR/uhWQ==
 
-"@spotify/eslint-config-react@6.0.0", "@spotify/eslint-config-react@^6.0.0":
+"@spotify/eslint-config-react@6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-6.0.0.tgz#9cfc88362c7ffcd14e4dde73c196d1bc8583051d"
   integrity sha512-Tb88Yvu9lAjT/isKbebmOoxBAmjreDFH4lQfXxoFcW56Wl78l2yvLo0LkPV8lOx5+lKfX0BbFiBBpwl+jCaflg==
 
-"@spotify/eslint-config-typescript@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-6.0.0.tgz#8ae8469d2a0e219d71abaf2da14f8659c3912a34"
-  integrity sha512-cK1iHhfMgvZFPANqLoChhgUQ1oqH+qTWILGvcsc6HylzVt9/kM0SyjGcDuZKj+CP6TecJODdyHgb5U6U+O5gKw==
+"@spotify/eslint-config-react@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-6.1.1.tgz#b2e2c3f19d120b70779260dcf0e14d938800e41a"
+  integrity sha512-KOVRCirnRDVyMC213w+7OCC2XkTX/9YykiiJAEn29XuascOFcYcB+Lk7rc65F7/UaOkwJtIve7pn2aVwfovfdA==
 
-"@spotify/eslint-config@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-6.1.0.tgz#67ef537c4419ecf275f790a79ce988820b3f5a95"
-  integrity sha512-pRfRFkW9XMHrzSErzzUxMRs/e+IL0i0o8crgMJJgk0J56+f0rQaXWkeDrI9HCw1uCkXLEwUoNPe+Rdd6cDk/lA==
+"@spotify/eslint-config-typescript@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-6.1.1.tgz#52d3c91a872e988da6bec7cfbba78f5e57625bc8"
+  integrity sha512-Uw4k409g6sA7T6WSvED8tjKNg157Ik8crKMK1tHGeGlrFeafUjnvZKxHenqmfsvsix4uZbE9nge6kFSZWEEagA==
+
+"@spotify/eslint-config@6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-6.1.1.tgz#56bf6cb984cbe6dec261ca1bf3a0232ea3e5775b"
+  integrity sha512-NcrS82knU/lEST+vYLCliUgh5NvXXot1lKlKYZQheh6hz6HYaln0kHU4bT6SlYKDxJyGRWUykFH3LMETyR3bmQ==
   dependencies:
-    "@spotify/eslint-config-base" "^6.1.0"
-    "@spotify/eslint-config-react" "^6.0.0"
-    "@spotify/eslint-config-typescript" "^6.0.0"
-    "@spotify/web-scripts-utils" "^6.0.0"
+    "@spotify/eslint-config-base" "^6.1.1"
+    "@spotify/eslint-config-react" "^6.1.1"
+    "@spotify/eslint-config-typescript" "^6.1.1"
+    "@spotify/web-scripts-utils" "^6.1.1"
     "@typescript-eslint/eslint-plugin" "^2.14.0"
     "@typescript-eslint/parser" "^2.14.0"
     eslint-config-prettier "^6.0.0"
@@ -1570,10 +1575,10 @@
   resolved "https://registry.yarnpkg.com/@spotify/tsconfig/-/tsconfig-6.0.0.tgz#bf9fd0b8188494d87ba6c172f0030376d2aa5dd8"
   integrity sha512-B+T6fcDRJg3x1G8wrqUQ+xgu6JYWBwPHeVxKybRGHLt4ciDmzJUvtWthXt8Fg3DqvaKnLnfXLcGOp8TiG+f0kA==
 
-"@spotify/web-scripts-utils@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@spotify/web-scripts-utils/-/web-scripts-utils-6.0.0.tgz#64642e79a894058510b0b4a239b117323080e853"
-  integrity sha512-o3htse1lyhLCabmYoQcI2qCsYV0PW6dpnYHhKAF/iycIglzz4/tXOk3EA/MQVlo6bo7crdr++3OeU4Dyk2CsWw==
+"@spotify/web-scripts-utils@^6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@spotify/web-scripts-utils/-/web-scripts-utils-6.1.1.tgz#c39f16209a58e0cec169d162f10805743152517f"
+  integrity sha512-zSsYu+EnbWQ6OGzIChE885e3nwfQa+VjiqTfnHsknOlCu6MTyfy1qXKvhnxMlAqvzl33gZphoeoiEqmlEf1AdQ==
   dependencies:
     glob "^7.1.4"
     read-pkg-up "^7.0.1"
