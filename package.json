@@ -51,7 +51,7 @@
     "@pollyjs/persister-fs": "4.0.4",
     "@spotify/eslint-config": "6.2.0",
     "@spotify/eslint-config-react": "6.2.0",
-    "@spotify/prettier-config": "6.1.1",
+    "@spotify/prettier-config": "6.2.0",
     "@spotify/tsconfig": "6.1.1",
     "@testing-library/jest-dom": "5.3.0",
     "@testing-library/react": "10.0.2",
