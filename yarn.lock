@@ -1544,12 +1544,7 @@
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-6.2.0.tgz#ad35a301da862ccc6a47208aece04f3af97b13df"
   integrity sha512-j3G/YPYBz+PZGkG9Sx1mnUAY/SHK5+DX6FPzjgN0tPcMpOyt6jJrkcEC0Q6QZk+L4SLiDKJ7jshM7fx9oX61UA==
 
-"@spotify/eslint-config-react@6.1.1":
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-6.1.1.tgz#b2e2c3f19d120b70779260dcf0e14d938800e41a"
-  integrity sha512-KOVRCirnRDVyMC213w+7OCC2XkTX/9YykiiJAEn29XuascOFcYcB+Lk7rc65F7/UaOkwJtIve7pn2aVwfovfdA==
-
-"@spotify/eslint-config-react@^6.2.0":
+"@spotify/eslint-config-react@6.2.0", "@spotify/eslint-config-react@^6.2.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-6.2.0.tgz#55e950fe4373d2ea7dd289a533e04a40c6748281"
   integrity sha512-R+xxqaGaU+qZNsk3eOBy6Sz7jbg5KRR/VfABD0FuaSmqGoL2FKpFf6i/fuqhwCpwfJssSEOd34MlZXVGxFzdYw==
