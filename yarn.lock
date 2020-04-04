@@ -1570,10 +1570,10 @@
     eslint-plugin-jsx-a11y "^6.2.1"
     eslint-plugin-react "^7.12.4"
 
-"@spotify/prettier-config@6.1.1":
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/@spotify/prettier-config/-/prettier-config-6.1.1.tgz#dfc0e8e9004250ae3006830102a9a61ee82456ce"
-  integrity sha512-I36VSM2blKFNid1T9ycslN2uQFPmAz6H9lXqcTZ+zHZGCzF7Q5sVtxaODD7AGN973GQCCvw6N8d04A83IpHFPw==
+"@spotify/prettier-config@6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@spotify/prettier-config/-/prettier-config-6.2.0.tgz#db779bc21654092d8a7561b4abbde8770e633393"
+  integrity sha512-nDnEh9LnrdUcbghZ5MxQMJDlBcXy3aSDhvEUcNGrOtANo6TOS/oA7n9Eryjsp7+xXXquLq99iHianm8D5F1mWw==
 
 "@spotify/tsconfig@6.1.1":
   version "6.1.1"
