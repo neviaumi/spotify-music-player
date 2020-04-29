@@ -1577,10 +1577,10 @@
     route-recognizer "^0.3.4"
     slugify "^1.3.4"
 
-"@pollyjs/node-server@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@pollyjs/node-server/-/node-server-4.1.0.tgz#47e9b2aea2cfa6bcaac820e8df4999819552cd15"
-  integrity sha512-X7ukMcDRPoMLsXtDgEfK9L3jy+ngUJJUFXCCmWrSVjB2d3UK3F2vqpS7fvxTfA7TJXP/usKA4tAA0YrYe7DVUA==
+"@pollyjs/node-server@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@pollyjs/node-server/-/node-server-4.2.0.tgz#7a2345b249c410e94d742838883c978fec7fcfd2"
+  integrity sha512-2wYb2iirTVgVQV+h9sflcpYpWFEUzJC/vYwAmf6g3GsiqXzzwKgI405UA5LckPxAjR1Id6Nfm+x+3v2r75MPnQ==
   dependencies:
     "@pollyjs/utils" "^4.1.0"
     body-parser "^1.19.0"
@@ -1591,12 +1591,12 @@
     morgan "^1.9.1"
     nocache "^2.1.0"
 
-"@pollyjs/persister-fs@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@pollyjs/persister-fs/-/persister-fs-4.1.0.tgz#fa140d007068c4ff290109acc181a0a916aeb116"
-  integrity sha512-8V8aaqNJYjhJhuuVIxl0dinuCOVS43+zPjz+nGocQO2Ig2i5GPueQl7hjIE5HnJshjXRbPx8AAxjZFiLNXmxQw==
+"@pollyjs/persister-fs@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@pollyjs/persister-fs/-/persister-fs-4.2.0.tgz#1e19d47afd0fa7d021b401a8036afbf6cd228ef0"
+  integrity sha512-a2N8+UzmG/heWD7XTckyMJw/yGSir3JwwZViNEZyOORGVwiHzNHIgEEjqB6RHwlnhlxEVOaT5eIkgfxHz4NDCg==
   dependencies:
-    "@pollyjs/node-server" "^4.1.0"
+    "@pollyjs/node-server" "^4.2.0"
     "@pollyjs/persister" "^4.1.0"
 
 "@pollyjs/persister@^4.1.0":
