@@ -90,7 +90,7 @@
     "husky": "4.2.5",
     "lint-staged": "10.2.2",
     "prettier": "2.0.5",
-    "quicktype": "15.0.225",
+    "quicktype": "15.0.226",
     "serve": "11.3.0",
     "setup-polly-jest": "0.7.0",
     "stylelint": "13.3.3",
