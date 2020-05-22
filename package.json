@@ -91,7 +91,7 @@
     "lint-staged": "10.2.6",
     "prettier": "2.0.5",
     "quicktype": "15.0.235",
-    "serve": "11.3.0",
+    "serve": "11.3.1",
     "setup-polly-jest": "0.7.0",
     "stylelint": "13.5.0",
     "typescript": "3.9.3",
