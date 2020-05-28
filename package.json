@@ -95,7 +95,7 @@
     "setup-polly-jest": "0.7.0",
     "stylelint": "13.5.0",
     "typescript": "3.9.3",
-    "typesync": "0.6.1"
+    "typesync": "0.7.0"
   },
   "husky": {
     "hooks": {
