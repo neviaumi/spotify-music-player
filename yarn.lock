@@ -2232,10 +2232,10 @@
   dependencies:
     pretty-format "^25.1.0"
 
-"@types/testing-library__jest-dom@5.9.0":
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/@types/testing-library__jest-dom/-/testing-library__jest-dom-5.9.0.tgz#f8e6e1e5f2feb23c457ee374fc16a55e6aa6d427"
-  integrity sha512-44vLGp/JTa92BwwKV3CkcqhfEuvMQvKfyKazgr3KRZzbT1DCasNOPIe2dEoMJhYrvaaw9n7OlNeQPIX/W8jw9A==
+"@types/testing-library__jest-dom@5.9.1":
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/@types/testing-library__jest-dom/-/testing-library__jest-dom-5.9.1.tgz#aba5ee062b7880f69c212ef769389f30752806e5"
+  integrity sha512-yYn5EKHO3MPEMSOrcAb1dLWY+68CG29LiXKsWmmpVHqoP5+ZRiAVLyUHvPNrO2dABDdUGZvavMsaGpWNjM6N2g==
   dependencies:
     "@types/jest" "*"
 
