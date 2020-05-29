@@ -88,7 +88,7 @@
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-simple-import-sort": "5.0.3",
     "husky": "4.2.5",
-    "lint-staged": "10.2.6",
+    "lint-staged": "10.2.7",
     "prettier": "2.0.5",
     "quicktype": "15.0.235",
     "serve": "11.3.1",
