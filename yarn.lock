@@ -1570,12 +1570,12 @@
   dependencies:
     "@pollyjs/utils" "^4.0.2"
 
-"@pollyjs/core@4.0.4":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@pollyjs/core/-/core-4.0.4.tgz#0295acaf445eab8b7120a7967c90917a866d9b63"
-  integrity sha512-kvX04VRV5avTYOIveGVsZLfXNUDMFfIcMgw5OKFCmbLLAwMwDBx0pDQ+Hbvlau22sj1SmF8gRptV7VaieCEtBQ==
+"@pollyjs/core@4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@pollyjs/core/-/core-4.3.0.tgz#1043085972131465e651f867ca895e6c787640a0"
+  integrity sha512-8Fs0Lg19P39oO/GvzWoC/fkckrCSx9rL5DPmU4Ez/Q+WXnDzmWtHI1x/jmD+jv5JLc2ig/ueWugIpE0f9eZbAQ==
   dependencies:
-    "@pollyjs/utils" "^4.0.2"
+    "@pollyjs/utils" "^4.3.0"
     "@sindresorhus/fnv1a" "^1.2.0"
     blueimp-md5 "^2.10.0"
     fast-json-stable-stringify "^2.0.0"
