@@ -53,7 +53,7 @@
     "@spotify/eslint-config-react": "7.0.1",
     "@spotify/prettier-config": "7.0.0",
     "@spotify/tsconfig": "7.0.0",
-    "@testing-library/jest-dom": "5.9.0",
+    "@testing-library/jest-dom": "5.10.0",
     "@testing-library/react": "10.2.1",
     "@testing-library/user-event": "11.4.1",
     "@types/enzyme": "3.10.5",
