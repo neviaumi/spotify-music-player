@@ -9,6 +9,7 @@ module.exports = {
     'eslint-plugin-simple-import-sort',
   ],
   rules: {
+    'prettier/prettier': 'error',
     'block-scoped-var': 'error',
     // Prefer less responsibility for function, ideally is only one
     complexity: ['error', { max: 8 }],
