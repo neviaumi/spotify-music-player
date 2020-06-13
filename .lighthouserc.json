@@ -4,17 +4,20 @@
       "url": ["http://localhost:42069/metric/performance"]
     },
     "assert": {
-      "preset": "lighthouse:recommended",
       "assertions": {
-        "uses-long-cache-ttl": "off",
-        "redirects-http": "off",
-        "uses-http2": "off",
-        "content-width": "off",
-        "offline-start-url": "off",
-        "service-worker": "off",
-        "works-offline": "off",
-        "render-blocking-resources": ["error", { "maxLength": 1 }],
-        "unminified-javascript": "off"
+        "resource-summary.script.size": [
+          "error",
+          { "maxNumericValue": 150000 }
+        ],
+        "resource-summary:document:size": [
+          "error",
+          { "maxNumericValue": 300000 }
+        ],
+        "resource-summary:font:count": ["error", { "maxNumericValue": 1 }],
+        "resource-summary:third-party:count": [
+          "error",
+          { "maxNumericValue": 10 }
+        ]
       }
     }
   }
