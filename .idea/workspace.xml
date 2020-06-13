@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +40,12 @@
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="Project Files" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.14.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -58,8 +62,10 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="prettier.files.pattern" value="{**/*,*}.{yml,md,json}" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -193,7 +199,9 @@
       <workItem from="1584699816490" duration="195000" />
       <workItem from="1584717826447" duration="8489000" />
       <workItem from="1584855211163" duration="294000" />
-      <workItem from="1591953679495" duration="494000" />
+      <workItem from="1588181563824" duration="70000" />
+      <workItem from="1588659988849" duration="953000" />
+      <workItem from="1591964923304" duration="1000000" />
     </task>
     <servers />
   </component>
@@ -201,10 +209,9 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1417" y="177" key="#ESLint" timestamp="1591953834772">
-      <screen x="-1920" y="23" width="1920" height="973" />
+    <state x="440" y="177" key="#ESLint" timestamp="1583494676230">
+      <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state x="-1417" y="177" key="#ESLint/0.23.1440.877/-1920.23.1920.973@-1920.23.1920.973" timestamp="1591953834772" />
     <state x="440" y="177" key="#ESLint/0.23.1680.976@0.23.1680.976" timestamp="1583494676230" />
     <state x="304" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583503540243">
       <screen x="0" y="23" width="1680" height="976" />
@@ -290,11 +297,11 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="575" y="229" key="RollbackChangesDialog/0.23.1680.976@0.23.1680.976" timestamp="1584019681494" />
-    <state x="-1530" y="161" key="SettingsEditor" timestamp="1584676101024">
-      <screen x="-1920" y="23" width="1920" height="1057" />
+    <state x="341" y="150" key="SettingsEditor" timestamp="1592046534574">
+      <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="-1530" y="161" key="SettingsEditor/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584676101024" />
-    <state x="341" y="150" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1583495898836" />
+    <state x="341" y="150" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1592046534574" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1584027517081">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
