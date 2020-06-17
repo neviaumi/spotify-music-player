@@ -94,7 +94,7 @@
     "quicktype": "15.0.247",
     "serve": "11.3.2",
     "setup-polly-jest": "0.9.0",
-    "stylelint": "13.6.0",
+    "stylelint": "13.6.1",
     "typescript": "3.9.5",
     "typesync": "0.7.0"
   },
