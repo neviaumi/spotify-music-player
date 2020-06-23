@@ -46,7 +46,7 @@
     "@commitlint/cli": "9.0.1",
     "@commitlint/config-conventional": "9.0.1",
     "@lhci/cli": "0.4.1",
-    "@pollyjs/adapter-node-http": "4.3.0",
+    "@pollyjs/adapter-node-http": "5.0.0",
     "@pollyjs/core": "4.3.0",
     "@pollyjs/persister-fs": "4.3.0",
     "@spotify/eslint-config": "8.0.0",
