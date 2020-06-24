@@ -50,7 +50,7 @@
     "@pollyjs/core": "5.0.0",
     "@pollyjs/persister-fs": "5.0.0",
     "@spotify/eslint-config": "8.0.0",
-    "@spotify/eslint-config-react": "7.0.1",
+    "@spotify/eslint-config-react": "8.0.0",
     "@spotify/prettier-config": "7.0.0",
     "@spotify/tsconfig": "7.0.0",
     "@testing-library/jest-dom": "5.10.1",
