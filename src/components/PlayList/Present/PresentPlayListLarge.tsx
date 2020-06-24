@@ -31,9 +31,11 @@ const Item = styled.a`
   margin-right: ${props => props.theme.spaces.xl};
 `;
 
-const PlayListIcon = styled.img`
+const PlayListCover = styled.img`
   width: 100%;
+  height: 164px;
   display: block;
+  object-fit: cover;
   margin-bottom: ${props => props.theme.spaces.xl};
 `;
 
@@ -67,7 +69,7 @@ export default ({ title, playlists = [], ...rest }: Props) => {
       <Container data-testid="present-play-list">
         {playlists.map(playlist => (
           <Item key={playlist.id} data-testid="present-play-list-item">
-            <PlayListIcon src={playlist.images[0]?.url} />
+            <PlayListCover src={playlist.images[0]?.url} />
             <PlayListBottom>
               <PlayListName>{playlist.name}</PlayListName>
               <PlayListDescription>{playlist.description}</PlayListDescription>

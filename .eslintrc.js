@@ -9,6 +9,7 @@ module.exports = {
     'eslint-plugin-simple-import-sort',
   ],
   rules: {
+    '@typescript-eslint/naming-convention': 'off',
     'prettier/prettier': 'error',
     'block-scoped-var': 'error',
     // Prefer less responsibility for function, ideally is only one
