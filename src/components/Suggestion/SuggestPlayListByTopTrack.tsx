@@ -4,9 +4,9 @@ import useDataFetcher from '../../hooks/useDataFetcher';
 import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
 import searchPlayListsByTopTrack from '../../services/spotify/search/searchPlayListsByTopTrack';
 import withSuspense from '../HOC/withSuspense';
-import PresentPlayList from './Present/PresentPlayListLarge';
+import PresentPlayList from './Present/PresentSuggestionList';
 
-export function PlayListByTopTrack() {
+export function SuggestPlayListByTopTrack() {
   const apiClient = useSpotifyAPIClient();
   const response = useDataFetcher(['search/playlist', 'by-top-track'], () =>
     searchPlayListsByTopTrack(apiClient),
@@ -21,4 +21,4 @@ export function PlayListByTopTrack() {
   );
 }
 
-export default withSuspense(PlayListByTopTrack);
+export default withSuspense(SuggestPlayListByTopTrack);

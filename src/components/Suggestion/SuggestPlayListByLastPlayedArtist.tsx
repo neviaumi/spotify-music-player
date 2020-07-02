@@ -4,9 +4,9 @@ import useDataFetcher from '../../hooks/useDataFetcher';
 import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
 import searchPlayListByLastPlayedArtist from '../../services/spotify/search/searchPlayListByLastPlayedArtist';
 import withSuspense from '../HOC/withSuspense';
-import PresentPlayList from './Present/PresentPlayListLarge';
+import PresentPlayList from './Present/PresentSuggestionList';
 
-export function PlayListByLastPlayedArtist() {
+export function SuggestPlayListByLastPlayedArtist() {
   const apiClient = useSpotifyAPIClient();
   const response = useDataFetcher(
     ['search/playlist', 'by-last-played-artist'],
@@ -22,4 +22,4 @@ export function PlayListByLastPlayedArtist() {
   );
 }
 
-export default withSuspense(PlayListByLastPlayedArtist);
+export default withSuspense(SuggestPlayListByLastPlayedArtist);

@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Props } from './typings/Props';
+import useDataFetcher from '../../hooks/useDataFetcher';
+import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
+import getAllPlaylist, {
+  Response,
+} from '../../services/spotify/playlist/getAllPlaylist';
+import withSuspense from '../HOC/withSuspense';
 
 const Container = styled.section`
   margin-top: 24px;
@@ -36,10 +41,15 @@ const Item = styled.a`
   }
 `;
 
-export default function Playlist({ title, playlists = [] }: Props) {
+export function Playlist() {
+  const apiClient = useSpotifyAPIClient();
+  const response = useDataFetcher<Response>('me/playlists', () =>
+    getAllPlaylist(apiClient),
+  );
+  const playlists = response.data.items ?? [];
   return (
     <Container>
-      <Title>{title}</Title>
+      <Title>PLAYLISTS</Title>
       <ItemContainer>
         {playlists.map(playlist => (
           <Item data-testid="user-playlist" key={playlist.id}>
@@ -50,3 +60,5 @@ export default function Playlist({ title, playlists = [] }: Props) {
     </Container>
   );
 }
+
+export default withSuspense(Playlist);

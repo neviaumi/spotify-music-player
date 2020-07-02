@@ -8,7 +8,7 @@ import { Playlist } from '../UserPlayList';
 
 jest.mock('../../../hooks/useDataFetcher');
 
-describe('Test render Playlist component', () => {
+describe('Test render UserPlaylist component', () => {
   it('Should render without error', () => {
     const useDataFetcherMock = useDataFetcher as TestUtils.JestMock<
       typeof useDataFetcher
