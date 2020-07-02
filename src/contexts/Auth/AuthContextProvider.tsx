@@ -5,7 +5,7 @@ import AuthContext, { AccessInfo, AuthContextValue } from './index';
 interface Props {
   children: ReactNode;
   isAuthenticated?: boolean;
-  _accessInfo: AccessInfo;
+  _accessInfo?: AccessInfo;
 }
 
 export default ({ isAuthenticated, _accessInfo, children }: Props) => {
