@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typings/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typings/global.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByLastPlayedArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByLastPlayedArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopTrack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopTrack.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

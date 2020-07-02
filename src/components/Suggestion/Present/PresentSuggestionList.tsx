@@ -4,17 +4,16 @@ import styled from 'styled-components';
 interface Props {
   title: string;
   suggestions?: Spotify.Playlist[];
-  [key: string]: unknown;
 }
 
 const Container = styled.div`
-  display: flex;
-  max-width: 100%;
-  overflow: scroll;
+  padding: ${props => props.theme.spaces.xl} 0;
 `;
 
 const SuggestionsContainer = styled.article`
-  padding: ${props => props.theme.spaces.xl} 0;
+  display: flex;
+  max-width: 100%;
+  overflow: scroll;
 `;
 
 const Heading = styled.h1`

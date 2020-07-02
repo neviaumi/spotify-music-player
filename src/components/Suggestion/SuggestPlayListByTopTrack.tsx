@@ -4,7 +4,7 @@ import useDataFetcher from '../../hooks/useDataFetcher';
 import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
 import searchPlayListsByTopTrack from '../../services/spotify/search/searchPlayListsByTopTrack';
 import withSuspense from '../HOC/withSuspense';
-import PresentPlayList from './Present/PresentSuggestionList';
+import PresentSuggestionList from './Present/PresentSuggestionList';
 
 export function SuggestPlayListByTopTrack() {
   const apiClient = useSpotifyAPIClient();
@@ -13,9 +13,9 @@ export function SuggestPlayListByTopTrack() {
   );
 
   return (
-    <PresentPlayList
+    <PresentSuggestionList
       title={`More like ${response.data.track?.name}`}
-      playlists={response.data.playlists}
+      suggestions={response.data.playlists}
       data-testid="playlist-by-top-track"
     />
   );
