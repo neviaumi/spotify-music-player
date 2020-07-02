@@ -1,9 +1,9 @@
 import React from 'react';
-import { RouteChildrenProps, withRouter } from 'react-router';
+import { Location, RouteChildrenProps, withRouter } from 'react-router';
 import styled from 'styled-components';
 
 import Logo from '../Logo';
-import UserPlayList from '../PlayList/UserPlayList';
+import UserPlayList from '../UserPlayList/UserPlayList';
 
 const Container = styled.nav`
   padding-top: 24px;
@@ -37,7 +37,9 @@ color: ${theme.colors.white};
   `}
 `;
 
-interface Props extends RouteChildrenProps {}
+interface Props extends RouteChildrenProps {
+  location: Location;
+}
 
 export function Nav({ location, ...rest }: Props) {
   return (

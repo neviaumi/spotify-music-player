@@ -2,15 +2,15 @@ import { render } from '@testing-library/react';
 import React from 'react';
 
 import ThemeProvider from '../../../contexts/Theme';
-import { PlayListByTopArtist } from '../PlayListByTopArtist';
+import { SuggestPlayListByLastPlayedTrack } from '../SuggestPlayListByLastPlayedTrack';
 
-describe('Test PlayListByTopArtist component', () => {
+describe('Test SuggestPlayListByLastPlayedTrack component', () => {
   it('Should render without error', () => {
     const { getByTestId } = render(
       <ThemeProvider>
-        <PlayListByTopArtist />
+        <SuggestPlayListByLastPlayedTrack />
       </ThemeProvider>,
     );
-    expect(getByTestId('playlist-by-top-artist')).toBeDefined();
+    expect(getByTestId('playlist-by-last-played-track')).toBeDefined();
   });
 });

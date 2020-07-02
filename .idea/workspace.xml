@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.lintstagedrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.lintstagedrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Suggestion/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/Content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListByLastPlayedArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByLastPlayedArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListByLastPlayedTrack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByLastPlayedTrack.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListByTopArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopArtist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListByTopTrack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopTrack.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListSuggestion.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListLarge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/Present/PresentSuggestionList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListSmall.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserPlayList/UserPlayList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/__tests__/PresentPlayListLarge.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/Present/__tests__/PresentSuggestionList.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/__tests__/PresentPlayListSmall.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/typings/Props.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/UserPlayList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByLastPlayedArtist.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/SuggestPlayListByLastPlayedArtist.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByLastPlayedTrack.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/SuggestPlayListByLastPlayedTrack.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByTopArtist.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/SuggestPlayListByTopArtist.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByTopTrack.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/SuggestPlayListByTopTrack.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListSuggestion.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/index.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/UserPlayList.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserPlayList/__tests__/UserPlayList.test.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,14 +89,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/PlayList" />
+      <recent name="$PROJECT_DIR$/src/components/PlayList/__tests__" />
       <recent name="$PROJECT_DIR$/src/Routes/__tests__" />
       <recent name="$PROJECT_DIR$/.github" />
       <recent name="$PROJECT_DIR$/src/components/Icon" />
-      <recent name="$PROJECT_DIR$/src/services/spotify/browse" />
-      <recent name="$PROJECT_DIR$/src/services/spotify/search/__tests__" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Read previous state from cookies">
+  <component name="RunManager" selected="Jest.Test render Nav component.Should render without error">
     <configuration name="Read previous state from cookies" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -86,45 +107,6 @@
       <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.ts" />
       <test-names>
         <test-name value="Read previous state from cookies" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Should redirect browsers" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/authorize.test.ts" />
-      <test-names>
-        <test-name value="Should redirect browsers" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Should render without error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/pages/Auth/Login/__tests__/index.test.tsx" />
-      <test-names>
-        <test-name value="Should render without error" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Should return authorization url" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/getAuthorizeUrl.test.ts" />
-      <test-names>
-        <test-name value="Should return authorization url" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -141,21 +123,63 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Test render Nav component.Should render without error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/components/Nav/__tests__/index.test.tsx" />
+      <test-names>
+        <test-name value="Test render Nav component" />
+        <test-name value="Should render without error" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test render PlayListSuggestion.Should render PlayListSuggestion" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/components/Suggestion/__tests__/index.test.tsx" />
+      <test-names>
+        <test-name value="Test render PlayListSuggestion" />
+        <test-name value="Should render PlayListSuggestion" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test render PresentSuggestionList component.Should render Present component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/components/Suggestion/Present/__tests__/PresentSuggestionList.test.tsx" />
+      <test-names>
+        <test-name value="Test render PresentSuggestionList component" />
+        <test-name value="Should render Present component" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Jest.All Tests" />
       <item itemvalue="Jest.Read previous state from cookies" />
-      <item itemvalue="Jest.Should redirect browsers" />
-      <item itemvalue="Jest.Should render without error" />
-      <item itemvalue="Jest.Should return authorization url" />
       <item itemvalue="Jest.Should return valid callback params from url" />
+      <item itemvalue="Jest.Test render PresentSuggestionList component.Should render Present component" />
+      <item itemvalue="Jest.Test render PlayListSuggestion.Should render PlayListSuggestion" />
+      <item itemvalue="Jest.Test render Nav component.Should render without error" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Test render Nav component.Should render without error" />
+        <item itemvalue="Jest.Test render PlayListSuggestion.Should render PlayListSuggestion" />
+        <item itemvalue="Jest.Test render PresentSuggestionList component.Should render Present component" />
         <item itemvalue="Jest.Read previous state from cookies" />
         <item itemvalue="Jest.Should return valid callback params from url" />
-        <item itemvalue="Jest.Should return authorization url" />
-        <item itemvalue="Jest.Should redirect browsers" />
-        <item itemvalue="Jest.Should render without error" />
       </list>
     </recent_temporary>
   </component>
@@ -200,6 +224,7 @@
       <workItem from="1588181563824" duration="70000" />
       <workItem from="1588659988849" duration="953000" />
       <workItem from="1591964923304" duration="1000000" />
+      <workItem from="1593724476575" duration="2180000" />
     </task>
     <servers />
   </component>
@@ -207,111 +232,30 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="177" key="#ESLint" timestamp="1583494676230">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1593726496087">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state x="440" y="177" key="#ESLint/0.23.1680.976@0.23.1680.976" timestamp="1583494676230" />
-    <state x="304" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583503540243">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1593726496087" />
+    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1593726496087">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state x="304" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.976@0.23.1680.976" timestamp="1583503540243" />
-    <state x="452" y="271" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584693517954">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="452" y="271" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/-1920.23.1920.977@0.23.1440.877" timestamp="1584693517954" />
-    <state x="645" y="269" key="#com.intellij.ide.util.MemberChooser" timestamp="1584720768931">
+    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1593726496087" />
+    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1593726496086">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state x="645" y="269" key="#com.intellij.ide.util.MemberChooser/0.23.1680.976@0.23.1680.976" timestamp="1584720768931" />
-    <state x="671" y="374" width="474" height="453" key="#xdebugger.evaluate" timestamp="1584707117579">
+    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1593726496086" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1593726496087">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state x="671" y="374" width="474" height="453" key="#xdebugger.evaluate/0.23.1680.976@0.23.1680.976" timestamp="1584707117579" />
-    <state x="397" y="111" key="CommitChangelistDialog2" timestamp="1583497025666">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state x="397" y="111" key="CommitChangelistDialog2/0.23.1680.976@0.23.1680.976" timestamp="1583497025666" />
-    <state width="529" height="466" key="DebuggerActiveHint" timestamp="1583501595663">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="529" height="466" key="DebuggerActiveHint/0.23.1680.976@0.23.1680.976" timestamp="1583501595663" />
-    <state x="594" y="283" key="EnvironmentVariablesDialog" timestamp="1583501837731">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state x="594" y="283" key="EnvironmentVariablesDialog/0.23.1680.976@0.23.1680.976" timestamp="1583501837731" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1584726229626">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1899" height="290" key="GridCell.Tab.0.bottom/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235746" />
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584726229626" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1584726229625">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1899" height="290" key="GridCell.Tab.0.center/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235745" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1584726229625" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1584726229624">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1899" height="290" key="GridCell.Tab.0.left/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235745" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1584726229624" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1584726229625">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1899" height="290" key="GridCell.Tab.0.right/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584677235746" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1584726229625" />
-    <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1584725757399">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1659" height="323" key="GridCell.Tab.1.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584725757399" />
-    <state width="1659" height="323" key="GridCell.Tab.1.center" timestamp="1584725757399">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1659" height="323" key="GridCell.Tab.1.center/0.23.1680.976@0.23.1680.976" timestamp="1584725757399" />
-    <state width="1659" height="323" key="GridCell.Tab.1.left" timestamp="1584725757399">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1659" height="323" key="GridCell.Tab.1.left/0.23.1680.976@0.23.1680.976" timestamp="1584725757399" />
-    <state width="1659" height="323" key="GridCell.Tab.1.right" timestamp="1584725757399">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1659" height="323" key="GridCell.Tab.1.right/0.23.1680.976@0.23.1680.976" timestamp="1584725757399" />
-    <state width="1659" height="323" key="GridCell.Tab.2.bottom" timestamp="1584725757399">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1659" height="323" key="GridCell.Tab.2.bottom/0.23.1680.976@0.23.1680.976" timestamp="1584725757399" />
-    <state width="1659" height="323" key="GridCell.Tab.2.center" timestamp="1584725757398">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1659" height="323" key="GridCell.Tab.2.center/0.23.1680.976@0.23.1680.976" timestamp="1584725757398" />
-    <state width="1659" height="323" key="GridCell.Tab.2.left" timestamp="1584725757398">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1659" height="323" key="GridCell.Tab.2.left/0.23.1680.976@0.23.1680.976" timestamp="1584725757398" />
-    <state width="1659" height="323" key="GridCell.Tab.2.right" timestamp="1584725757398">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state width="1659" height="323" key="GridCell.Tab.2.right/0.23.1680.976@0.23.1680.976" timestamp="1584725757398" />
-    <state x="575" y="229" key="RollbackChangesDialog" timestamp="1584019681494">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state x="575" y="229" key="RollbackChangesDialog/0.23.1680.976@0.23.1680.976" timestamp="1584019681494" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1593726496087" />
     <state x="341" y="150" key="SettingsEditor" timestamp="1592046534574">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state x="-1530" y="161" key="SettingsEditor/0.23.1440.797/-1920.23.1920.1057@-1920.23.1920.1057" timestamp="1584676101024" />
     <state x="341" y="150" key="SettingsEditor/0.23.1680.976@0.23.1680.976" timestamp="1592046534574" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1584027517081">
+    <state x="541" y="266" width="598" height="490" key="find.popup" timestamp="1593726120593">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1680.976@0.23.1680.976" timestamp="1584027517081" />
-    <state x="600" y="275" width="683" height="486" key="find.popup" timestamp="1584706659068">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state x="600" y="275" width="683" height="486" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1584706659068" />
-    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup" timestamp="1584118686117">
-      <screen x="0" y="23" width="1680" height="976" />
-    </state>
-    <state x="505" y="239" width="670" height="643" key="search.everywhere.popup/0.23.1680.976@0.23.1680.976" timestamp="1584118686117" />
+    <state x="541" y="266" width="598" height="490" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1593726120593" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

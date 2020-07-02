@@ -1,16 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Props } from './typings/Props';
-
-const PlayListContainer = styled.article`
-  padding: ${props => props.theme.spaces.xl} 0;
-`;
+interface Props {
+  title: string;
+  suggestions?: Spotify.Playlist[];
+  [key: string]: unknown;
+}
 
 const Container = styled.div`
   display: flex;
   max-width: 100%;
   overflow: scroll;
+`;
+
+const SuggestionsContainer = styled.article`
+  padding: ${props => props.theme.spaces.xl} 0;
 `;
 
 const Heading = styled.h1`
@@ -19,7 +23,7 @@ const Heading = styled.h1`
   display: block;
 `;
 
-const Item = styled.a`
+const Suggestion = styled.a`
   display: block;
   width: 164px;
   min-width: 164px;
@@ -31,7 +35,7 @@ const Item = styled.a`
   margin-right: ${props => props.theme.spaces.xl};
 `;
 
-const PlayListCover = styled.img`
+const SuggestionCover = styled.img`
   width: 100%;
   height: 164px;
   display: block;
@@ -39,19 +43,19 @@ const PlayListCover = styled.img`
   margin-bottom: ${props => props.theme.spaces.xl};
 `;
 
-const PlayListBottom = styled.div`
+const SuggestionHeading = styled.div`
   height: 62px;
   overflow: hidden;
 `;
 
-const PlayListName = styled.p`
+const SuggestionName = styled.p`
   font-size: 14px;
   line-height: 20px;
   font-weight: 700;
   letter-spacing: 0.24px;
 `;
 
-const PlayListDescription = styled.span`
+const SuggestionDescription = styled.span`
   display: block;
   font-size: 12px;
   line-height: 18px;
@@ -62,21 +66,23 @@ const PlayListDescription = styled.span`
   overflow: hidden;
 `;
 
-export default ({ title, playlists = [], ...rest }: Props) => {
+export default ({ title, suggestions = [], ...rest }: Props) => {
   return (
-    <PlayListContainer {...rest}>
+    <Container {...rest}>
       <Heading>{title}</Heading>
-      <Container data-testid="present-play-list">
-        {playlists.map(playlist => (
-          <Item key={playlist.id} data-testid="present-play-list-item">
-            <PlayListCover src={playlist.images[0]?.url} />
-            <PlayListBottom>
-              <PlayListName>{playlist.name}</PlayListName>
-              <PlayListDescription>{playlist.description}</PlayListDescription>
-            </PlayListBottom>
-          </Item>
+      <SuggestionsContainer data-testid="present-suggestions-container">
+        {suggestions.map(suggestion => (
+          <Suggestion key={suggestion.id} data-testid="present-suggestion">
+            <SuggestionCover src={suggestion.images[0]?.url} />
+            <SuggestionHeading>
+              <SuggestionName>{suggestion.name}</SuggestionName>
+              <SuggestionDescription>
+                {suggestion.description}
+              </SuggestionDescription>
+            </SuggestionHeading>
+          </Suggestion>
         ))}
-      </Container>
-    </PlayListContainer>
+      </SuggestionsContainer>
+    </Container>
   );
 };
