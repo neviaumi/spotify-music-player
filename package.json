@@ -108,7 +108,10 @@
   "jest": {
     "coverageReporters": [
       "text",
-      "text-summary"
+      "text-summary",
+      "lcov",
+      "clover",
+      "json"
     ],
     "coverageThreshold": {
       "global": {
