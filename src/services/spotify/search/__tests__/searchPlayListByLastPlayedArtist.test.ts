@@ -1,6 +1,7 @@
 import { createSpotifyAPIClientForTesting } from '../../../../utils/createSpotifyAPIClient';
+import createPollyContext from '../../../../utils/tests/createPollyContext';
 import searchPlayListByLastPlayedArtist from '../searchPlayListByLastPlayedArtist';
-
+createPollyContext();
 it('search playlist by last played artist', async () => {
   const client = createSpotifyAPIClientForTesting();
 

@@ -1,6 +1,7 @@
 import { createSpotifyAPIClientForTesting } from '../../../../utils/createSpotifyAPIClient';
+import createPollyContext from '../../../../utils/tests/createPollyContext';
 import getUserTop, { Type } from '../getUserTop';
-
+createPollyContext();
 it(`Get User Top artist`, async () => {
   const client = createSpotifyAPIClientForTesting();
 

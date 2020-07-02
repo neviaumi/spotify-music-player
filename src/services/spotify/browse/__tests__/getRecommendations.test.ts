@@ -1,8 +1,9 @@
 import { createSpotifyAPIClientForTesting } from '../../../../utils/createSpotifyAPIClient';
+import createPollyContext from '../../../../utils/tests/createPollyContext';
 import getUserTop, { Type } from '../../personalization/getUserTop';
 import getRecentlyPlayed from '../../player/getRecentlyPlayed';
 import getRecommendations, { SeedType } from '../getRecommendations';
-
+createPollyContext();
 it('Get recommendations from seed track', async () => {
   const apiClient = createSpotifyAPIClientForTesting();
   const {

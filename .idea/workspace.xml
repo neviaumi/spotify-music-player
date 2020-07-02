@@ -2,8 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/tests/__tests__/getCurrentTestPath.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/tests/createPollyContext.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/tests/getCurrentTestPath.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Category-exist_1891239602/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Category-not-exist_1494989207/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Category-playlist_1428426725/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Get-User-Top-artist_1877818924/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Get-User-Top-track_1761848290/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Get-album-by-given-ID_3457962521/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Get-artist-by-given-ID_3467082123/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Get-recently-played-list_3493102476/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Get-recommendations-from-seed-artist_3843754521/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Get-recommendations-from-seed-track_131423685/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/Test-search_1050451023/get-playlist-by-given-query_337230021/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/resolve-all-playList_1225860670/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/search-playlist-by-last-played-artist_1166215180/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/search-playlist-by-last-played-track_3440302914/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/search-playlist-by-top-artist_3166574540/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__recordings__/search-playlist-by-top-track_583397378/recording.har" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/polly.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/album/__tests__/getAlbum.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/album/__tests__/getAlbum.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/artist/__tests__/getArtist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/artist/__tests__/getArtist.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getCategoryPlayList.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getCategoryPlayList.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getRecommendations.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getRecommendations.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/isCategoryExist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/isCategoryExist.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/player/__tests__/getRecentlyPlayed.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/player/__tests__/getRecentlyPlayed.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListByLastPlayedArtist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListByLastPlayedArtist.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListByLastPlayedTrack.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListByLastPlayedTrack.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListsByTopArtist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListsByTopArtist.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListsByTopTrack.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListsByTopTrack.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,90 +110,87 @@
       <recent name="$PROJECT_DIR$/src/components/Icon" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Test render Nav component.Should render without error">
-    <configuration name="Read previous state from cookies" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Category playlist">
+    <configuration name="Category exist" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/browse/__tests__/isCategoryExist.test.ts" />
       <test-names>
-        <test-name value="Read previous state from cookies" />
+        <test-name value="Category exist" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Should return valid callback params from url" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Category not exist" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/auth/__tests__/verifyAuthCallback.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/browse/__tests__/isCategoryExist.test.ts" />
       <test-names>
-        <test-name value="Should return valid callback params from url" />
+        <test-name value="Category not exist" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test render Nav component.Should render without error" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Category playlist" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/Nav/__tests__/index.test.tsx" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getCategoryPlayList.test.ts" />
       <test-names>
-        <test-name value="Test render Nav component" />
-        <test-name value="Should render without error" />
+        <test-name value="Category playlist" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test render PlayListSuggestion.Should render PlayListSuggestion" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Get album by given ID" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/Suggestion/__tests__/index.test.tsx" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/album/__tests__/getAlbum.test.ts" />
       <test-names>
-        <test-name value="Test render PlayListSuggestion" />
-        <test-name value="Should render PlayListSuggestion" />
+        <test-name value="Get album by given ID" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Test render PresentSuggestionList component.Should render Present component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="Get artist by given ID" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/Suggestion/Present/__tests__/PresentSuggestionList.test.tsx" />
+      <test-file value="$PROJECT_DIR$/src/services/spotify/artist/__tests__/getArtist.test.ts" />
       <test-names>
-        <test-name value="Test render PresentSuggestionList component" />
-        <test-name value="Should render Present component" />
+        <test-name value="Get artist by given ID" />
       </test-names>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Jest.All Tests" />
-      <item itemvalue="Jest.Read previous state from cookies" />
-      <item itemvalue="Jest.Should return valid callback params from url" />
-      <item itemvalue="Jest.Test render PresentSuggestionList component.Should render Present component" />
-      <item itemvalue="Jest.Test render PlayListSuggestion.Should render PlayListSuggestion" />
-      <item itemvalue="Jest.Test render Nav component.Should render without error" />
+      <item itemvalue="Jest.Get album by given ID" />
+      <item itemvalue="Jest.Get artist by given ID" />
+      <item itemvalue="Jest.Category exist" />
+      <item itemvalue="Jest.Category not exist" />
+      <item itemvalue="Jest.Category playlist" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.Test render Nav component.Should render without error" />
-        <item itemvalue="Jest.Test render PlayListSuggestion.Should render PlayListSuggestion" />
-        <item itemvalue="Jest.Test render PresentSuggestionList component.Should render Present component" />
-        <item itemvalue="Jest.Read previous state from cookies" />
-        <item itemvalue="Jest.Should return valid callback params from url" />
+        <item itemvalue="Jest.Category playlist" />
+        <item itemvalue="Jest.Category not exist" />
+        <item itemvalue="Jest.Category exist" />
+        <item itemvalue="Jest.Get artist by given ID" />
+        <item itemvalue="Jest.Get album by given ID" />
       </list>
     </recent_temporary>
   </component>
@@ -212,22 +243,54 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1593726496087">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1593731002547">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1593726496087" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1593726496087">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1593731002547" />
+    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1593731002546">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1593726496087" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1593726496086">
+    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1593731002546" />
+    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1593731002545">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1593726496086" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1593726496087">
+    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1593731002545" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1593731002547">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1593726496087" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1593731002547" />
+    <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1593730953279">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state width="1659" height="323" key="GridCell.Tab.1.bottom/0.23.1680.976@0.23.1680.976" timestamp="1593730953279" />
+    <state width="1659" height="323" key="GridCell.Tab.1.center" timestamp="1593730953278">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state width="1659" height="323" key="GridCell.Tab.1.center/0.23.1680.976@0.23.1680.976" timestamp="1593730953278" />
+    <state width="1659" height="323" key="GridCell.Tab.1.left" timestamp="1593730953278">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state width="1659" height="323" key="GridCell.Tab.1.left/0.23.1680.976@0.23.1680.976" timestamp="1593730953278" />
+    <state width="1659" height="323" key="GridCell.Tab.1.right" timestamp="1593730953278">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state width="1659" height="323" key="GridCell.Tab.1.right/0.23.1680.976@0.23.1680.976" timestamp="1593730953278" />
+    <state width="1659" height="323" key="GridCell.Tab.2.bottom" timestamp="1593730953278">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state width="1659" height="323" key="GridCell.Tab.2.bottom/0.23.1680.976@0.23.1680.976" timestamp="1593730953278" />
+    <state width="1659" height="323" key="GridCell.Tab.2.center" timestamp="1593730953277">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state width="1659" height="323" key="GridCell.Tab.2.center/0.23.1680.976@0.23.1680.976" timestamp="1593730953277" />
+    <state width="1659" height="323" key="GridCell.Tab.2.left" timestamp="1593730953277">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state width="1659" height="323" key="GridCell.Tab.2.left/0.23.1680.976@0.23.1680.976" timestamp="1593730953277" />
+    <state width="1659" height="323" key="GridCell.Tab.2.right" timestamp="1593730953277">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state width="1659" height="323" key="GridCell.Tab.2.right/0.23.1680.976@0.23.1680.976" timestamp="1593730953277" />
     <state x="341" y="150" key="SettingsEditor" timestamp="1592046534574">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
@@ -257,18 +320,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts</url>
-          <line>15</line>
+          <line>16</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts</url>
-          <line>7</line>
+          <line>8</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/services/spotify/album/__tests__/getAlbum.test.ts</url>
-          <line>6</line>
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Routes/__tests__/Content.test.tsx</url>
