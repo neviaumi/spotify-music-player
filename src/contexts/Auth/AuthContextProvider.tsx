@@ -1,9 +1,11 @@
 import React, { ReactNode } from 'react';
 
-import AuthContext, { AuthContextValue } from './index';
+import AuthContext, { AccessInfo, AuthContextValue } from './index';
 
-interface Props extends Partial<AuthContextValue> {
+interface Props {
   children: ReactNode;
+  isAuthenticated?: boolean;
+  _accessInfo: AccessInfo;
 }
 
 export default ({ isAuthenticated, _accessInfo, children }: Props) => {

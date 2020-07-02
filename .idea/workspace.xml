@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Suggestion/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/Content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Nav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListByLastPlayedArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByLastPlayedArtist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListByLastPlayedTrack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByLastPlayedTrack.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListByTopArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopArtist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListByTopTrack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopTrack.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/PlayListSuggestion.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListLarge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/Present/PresentSuggestionList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/PresentPlayListSmall.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserPlayList/UserPlayList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/__tests__/PresentPlayListLarge.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/Present/__tests__/PresentSuggestionList.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/__tests__/PresentPlayListSmall.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/Present/typings/Props.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/UserPlayList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByLastPlayedArtist.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/SuggestPlayListByLastPlayedArtist.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByLastPlayedTrack.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/SuggestPlayListByLastPlayedTrack.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByTopArtist.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/SuggestPlayListByTopArtist.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListByTopTrack.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/SuggestPlayListByTopTrack.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/PlayListSuggestion.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/__tests__/index.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlayList/__tests__/UserPlayList.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserPlayList/__tests__/UserPlayList.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/Auth/AuthContextProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/Auth/AuthContextProvider.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +204,7 @@
       <workItem from="1588181563824" duration="70000" />
       <workItem from="1588659988849" duration="953000" />
       <workItem from="1591964923304" duration="1000000" />
-      <workItem from="1593724476575" duration="2180000" />
+      <workItem from="1593724476575" duration="2350000" />
     </task>
     <servers />
   </component>
@@ -269,26 +249,6 @@
           <url>file://$PROJECT_DIR$/src/components/Nav/__tests__/index.test.tsx</url>
           <line>18</line>
           <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/ErrorBoundary/DataFetching/index.tsx</url>
-          <line>33</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/ErrorBoundary/DataFetching/index.tsx</url>
-          <line>37</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/ErrorBoundary/DataFetching/index.tsx</url>
-          <line>31</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/ErrorBoundary/DataFetching/index.tsx</url>
-          <line>34</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/node_modules/@spotify/polly-jest-presets/cjs/index.js</url>
