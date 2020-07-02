@@ -1,5 +1,3 @@
-import { Polly } from '@pollyjs/core';
-
 import * as spotify from './spotify';
 
 declare global {
@@ -15,12 +13,5 @@ declare global {
       [K in keyof T]?: T[K] & jest.Mock;
     } &
       jest.Mock;
-  }
-
-  namespace NodeJS {
-    interface Global {
-      pollyContext: { polly?: Polly };
-      afterEach(callback: () => Promise<unknown>): void;
-    }
   }
 }

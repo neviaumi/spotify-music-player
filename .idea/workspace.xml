@@ -2,42 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/tests/__tests__/getCurrentTestPath.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/tests/createPollyContext.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/tests/getCurrentTestPath.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Category-exist_1891239602/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Category-not-exist_1494989207/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Category-playlist_1428426725/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-User-Top-artist_1877818924/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-User-Top-track_1761848290/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-album-by-given-ID_3457962521/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-artist-by-given-ID_3467082123/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-recently-played-list_3493102476/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-recommendations-from-seed-artist_3843754521/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Get-recommendations-from-seed-track_131423685/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/Test-search_1050451023/get-playlist-by-given-query_337230021/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/resolve-all-playList_1225860670/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/search-playlist-by-last-played-artist_1166215180/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/search-playlist-by-last-played-track_3440302914/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/search-playlist-by-top-artist_3166574540/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__recordings__/search-playlist-by-top-track_583397378/recording.har" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/polly.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/album/__tests__/getAlbum.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/album/__tests__/getAlbum.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/artist/__tests__/getArtist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/artist/__tests__/getArtist.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getCategoryPlayList.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getCategoryPlayList.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getRecommendations.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/getRecommendations.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/isCategoryExist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/browse/__tests__/isCategoryExist.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/personalization/__tests__/getUserTop.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/player/__tests__/getRecentlyPlayed.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/player/__tests__/getRecentlyPlayed.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/playlist/__tests__/getAllPlaylist.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListByLastPlayedArtist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListByLastPlayedArtist.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListByLastPlayedTrack.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListByLastPlayedTrack.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayLists.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListsByTopArtist.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListsByTopArtist.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListsByTopTrack.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/spotify/search/__tests__/searchPlayListsByTopTrack.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/typings/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typings/global.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
