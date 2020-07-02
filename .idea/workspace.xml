@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d58dde-5332-4bb9-9f94-52cac9acfdaa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/Suggestion/__tests__/index.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Suggestion/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByLastPlayedArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByLastPlayedArtist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopArtist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopArtist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopTrack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suggestion/SuggestPlayListByTopTrack.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/Content.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +17,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="TypeScript React Component" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -47,7 +47,7 @@
     <property name="TODO_SCOPE" value="Project Files" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.14.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Suggestion/__tests__" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -70,15 +70,18 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/Suggestion/__tests__" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/Suggestion" />
       <recent name="$PROJECT_DIR$/src/components/PlayList" />
       <recent name="$PROJECT_DIR$/src/components/PlayList/__tests__" />
       <recent name="$PROJECT_DIR$/src/Routes/__tests__" />
       <recent name="$PROJECT_DIR$/.github" />
-      <recent name="$PROJECT_DIR$/src/components/Icon" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Category playlist">
+  <component name="RunManager" selected="Jest.Test render PlayListSuggestion">
     <configuration name="Category exist" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -118,19 +121,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Get album by given ID" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/services/spotify/album/__tests__/getAlbum.test.ts" />
-      <test-names>
-        <test-name value="Get album by given ID" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="Get artist by given ID" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -144,21 +134,34 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Test render PlayListSuggestion" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/pages/Suggestion/__tests__/index.test.tsx" />
+      <test-names>
+        <test-name value="Test render PlayListSuggestion" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Jest.All Tests" />
-      <item itemvalue="Jest.Get album by given ID" />
       <item itemvalue="Jest.Get artist by given ID" />
       <item itemvalue="Jest.Category exist" />
       <item itemvalue="Jest.Category not exist" />
       <item itemvalue="Jest.Category playlist" />
+      <item itemvalue="Jest.Test render PlayListSuggestion" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Test render PlayListSuggestion" />
         <item itemvalue="Jest.Category playlist" />
         <item itemvalue="Jest.Category not exist" />
         <item itemvalue="Jest.Category exist" />
         <item itemvalue="Jest.Get artist by given ID" />
-        <item itemvalue="Jest.Get album by given ID" />
       </list>
     </recent_temporary>
   </component>
@@ -211,22 +214,22 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1593731002547">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom" timestamp="1593732687889">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1593731002547" />
-    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1593731002546">
+    <state width="1659" height="340" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1593732687889" />
+    <state width="1659" height="340" key="GridCell.Tab.0.center" timestamp="1593732687889">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1593731002546" />
-    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1593731002545">
+    <state width="1659" height="340" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1593732687889" />
+    <state width="1659" height="340" key="GridCell.Tab.0.left" timestamp="1593732687888">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1593731002545" />
-    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1593731002547">
+    <state width="1659" height="340" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1593732687888" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right" timestamp="1593732687889">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
-    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1593731002547" />
+    <state width="1659" height="340" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1593732687889" />
     <state width="1659" height="323" key="GridCell.Tab.1.bottom" timestamp="1593730953279">
       <screen x="0" y="23" width="1680" height="976" />
     </state>
@@ -267,6 +270,10 @@
       <screen x="0" y="23" width="1680" height="976" />
     </state>
     <state x="541" y="266" width="598" height="490" key="find.popup/0.23.1680.976@0.23.1680.976" timestamp="1593726120593" />
+    <state x="505" y="238" width="670" height="676" key="search.everywhere.popup" timestamp="1593732720171">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state x="505" y="238" width="670" height="676" key="search.everywhere.popup/0.23.1680.976@0.23.1680.976" timestamp="1593732720171" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

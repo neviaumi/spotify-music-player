@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Nav from '../components/Nav';
 import Panel from '../components/Panel';
-import Suggestion from '../components/Suggestion';
+import Suggestion from '../pages/Suggestion';
 
 export function ContentSwitch() {
   return (
