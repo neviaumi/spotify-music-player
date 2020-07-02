@@ -16,7 +16,7 @@ export function SuggestPlayListByLastPlayedArtist() {
   return (
     <PresentPlayList
       title={`Continue with ${response.data.artist?.name}`}
-      playlists={response.data.playlists}
+      suggestions={response.data.playlists}
       data-testid="playlist-by-last-played-artist"
     />
   );

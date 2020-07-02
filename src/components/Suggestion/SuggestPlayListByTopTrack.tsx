@@ -15,7 +15,7 @@ export function SuggestPlayListByTopTrack() {
   return (
     <PresentPlayList
       title={`More like ${response.data.track?.name}`}
-      playlists={response.data.playlists}
+      suggestions={response.data.playlists}
       data-testid="playlist-by-top-track"
     />
   );
