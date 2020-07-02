@@ -1,5 +1,5 @@
 import React from 'react';
-import { Location, RouteChildrenProps, withRouter } from 'react-router';
+import { withRouter } from 'react-router';
 import styled from 'styled-components';
 
 import Logo from '../Logo';
@@ -37,8 +37,8 @@ color: ${theme.colors.white};
   `}
 `;
 
-interface Props extends RouteChildrenProps {
-  location: Location;
+interface Props {
+  location: { pathname: string };
 }
 
 export function Nav({ location, ...rest }: Props) {
