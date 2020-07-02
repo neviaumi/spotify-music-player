@@ -1,5 +1,8 @@
 import { createSpotifyAPIClientForTesting } from '../../../../utils/createSpotifyAPIClient';
+import createPollyContext from '../../../../utils/tests/createPollyContext';
 import getAlbum from '../getAlbum';
+
+createPollyContext();
 
 it('Get album by given ID', async () => {
   const client = createSpotifyAPIClientForTesting();
