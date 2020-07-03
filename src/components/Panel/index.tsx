@@ -11,7 +11,7 @@ const Container = styled.div`
   background-color: ${props => props.theme.colors.black};
   color: ${props => props.theme.colors.white};
   display: grid;
-  grid-template-rows: calc(100vh - 90px) 90px;
+  grid-template-rows: auto 90px;
   grid-template-columns: 234px auto;
   grid-gap: 0 0;
   grid-template-areas:
