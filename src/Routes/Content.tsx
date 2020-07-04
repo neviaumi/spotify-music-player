@@ -3,13 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 
 import Nav from '../components/Nav';
 import Panel from '../components/Panel';
+import PlayListTracks from '../pages/PlayListTracks';
 import Suggestion from '../pages/Suggestion';
 
 export function ContentSwitch() {
   return (
     <Switch>
       <Route exact path="/" component={Suggestion} />
-      <Route exact path="/playlist/:id" render={() => <div>TODO</div>} />
+      <Route exact path="/playlist/:playListId" render={PlayListTracks} />
     </Switch>
   );
 }

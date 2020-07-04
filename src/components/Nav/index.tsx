@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Logo from '../Logo';
@@ -42,11 +43,17 @@ interface Props {
 }
 
 export function Nav({ location, ...rest }: Props) {
+  const history = useHistory();
+
   return (
     <Container {...rest}>
       <Logo />
       <NavItemContainer>
-        <NavItem data-testid="nav-home" active={location.pathname === '/'}>
+        <NavItem
+          data-testid="nav-home"
+          active={location.pathname === '/'}
+          onClick={() => history.push('/')}
+        >
           Home
         </NavItem>
         <NavItem>Search</NavItem>

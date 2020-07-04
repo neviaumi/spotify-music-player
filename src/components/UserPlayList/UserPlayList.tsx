@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 import useDataFetcher from '../../hooks/useDataFetcher';
@@ -42,6 +43,13 @@ const Item = styled.a`
 `;
 
 export function Playlist() {
+  const history = useHistory();
+  const onClickPlayList = useCallback(
+    playlist => {
+      history.push(`/playlist/${playlist.id}`);
+    },
+    [history],
+  );
   const apiClient = useSpotifyAPIClient();
   const response = useDataFetcher<Response>('me/playlists', () =>
     getAllPlaylist(apiClient),
@@ -52,7 +60,11 @@ export function Playlist() {
       <Title>PLAYLISTS</Title>
       <ItemContainer>
         {playlists.map(playlist => (
-          <Item data-testid="user-playlist" key={playlist.id}>
+          <Item
+            data-testid="user-playlist"
+            key={playlist.id}
+            onClick={() => onClickPlayList(playlist)}
+          >
             {playlist.name}
           </Item>
         ))}
