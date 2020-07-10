@@ -4,6 +4,7 @@ import styled from 'styled-components';
 interface Props {
   title: string;
   suggestions?: Spotify.Playlist[];
+  onClickSuggestion: (suggestion: object) => void;
 }
 
 const Container = styled.div`
@@ -32,6 +33,9 @@ const Suggestion = styled.a`
   background: #282828;
   border-radius: 8px;
   margin-right: ${props => props.theme.spaces.xl};
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const SuggestionCover = styled.img`
@@ -65,13 +69,22 @@ const SuggestionDescription = styled.span`
   overflow: hidden;
 `;
 
-export default ({ title, suggestions = [], ...rest }: Props) => {
+export default ({
+  title,
+  suggestions = [],
+  onClickSuggestion,
+  ...rest
+}: Props) => {
   return (
     <Container {...rest}>
       <Heading>{title}</Heading>
       <SuggestionsContainer data-testid="present-suggestions-container">
         {suggestions.map(suggestion => (
-          <Suggestion key={suggestion.id} data-testid="present-suggestion">
+          <Suggestion
+            key={suggestion.id}
+            data-testid="present-suggestion"
+            onClick={() => onClickSuggestion(suggestion)}
+          >
             <SuggestionCover src={suggestion.images[0]?.url} />
             <SuggestionHeading>
               <SuggestionName>{suggestion.name}</SuggestionName>
