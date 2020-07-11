@@ -3,7 +3,6 @@ import React from 'react';
 
 import Nav from '../';
 import { TestApp } from '../../../App';
-import ThemeProvider from '../../../contexts/Theme';
 
 describe('Test render Nav component', () => {
   it('Should render without error', () => {
@@ -12,9 +11,7 @@ describe('Test render Nav component', () => {
         AuthProviderProps={{ initialEntries: ['/'] }}
         SWRConfigProviderProps={{ initialData: { data: {} } }}
       >
-        <ThemeProvider>
-          <Nav />
-        </ThemeProvider>
+        <Nav />
       </TestApp>,
     );
     const navHome = getByTestId('nav-home');
