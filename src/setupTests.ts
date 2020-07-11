@@ -16,5 +16,4 @@ Object.assign(window.location, {
 Object.assign(console, {
   error: jest.fn(),
 });
-jest.mock('./hooks/useDataFetcher');
 jest.mock('./hooks/useAccessToken');

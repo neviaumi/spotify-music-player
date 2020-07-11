@@ -7,9 +7,7 @@ const useDataFetcher = <T>(
   key: keyInterface,
   fn: () => Promise<AxiosResponse<T>>,
 ) => {
-  const { data, error } = useSWR(key, fn, {
-    suspense: true,
-  });
+  const { data, error } = useSWR(key, fn);
   if (error) {
     throw new DataFetchingError(error);
   }
