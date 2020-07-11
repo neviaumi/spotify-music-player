@@ -1,18 +1,15 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import { TestSWRConfigProvider } from '../../../contexts/SWR';
-import ThemeProvider from '../../../contexts/Theme';
+import { TestApp } from '../../../App';
 import Suggestion from '../index';
 
 describe('Test render PlayListSuggestion', () => {
   it('Should render PlayListSuggestion', () => {
     const { getByTestId } = render(
-      <TestSWRConfigProvider value={{ initialData: { data: {} } }}>
-        <ThemeProvider>
-          <Suggestion />
-        </ThemeProvider>
-      </TestSWRConfigProvider>,
+      <TestApp SWRConfigProviderProps={{ initialData: { data: {} } }}>
+        <Suggestion />
+      </TestApp>,
     );
     expect(getByTestId('user-suggestion')).toBeDefined();
   });

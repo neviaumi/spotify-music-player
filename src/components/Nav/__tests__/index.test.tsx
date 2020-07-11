@@ -1,21 +1,21 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 
 import Nav from '../';
-import { TestSWRConfigProvider } from '../../../contexts/SWR';
+import { TestApp } from '../../../App';
 import ThemeProvider from '../../../contexts/Theme';
 
 describe('Test render Nav component', () => {
   it('Should render without error', () => {
     const { getByTestId } = render(
-      <MemoryRouter initialEntries={['/']}>
-        <TestSWRConfigProvider value={{ initialData: { data: {} } }}>
-          <ThemeProvider>
-            <Nav />
-          </ThemeProvider>
-        </TestSWRConfigProvider>
-      </MemoryRouter>,
+      <TestApp
+        AuthProviderProps={{ initialEntries: ['/'] }}
+        SWRConfigProviderProps={{ initialData: { data: {} } }}
+      >
+        <ThemeProvider>
+          <Nav />
+        </ThemeProvider>
+      </TestApp>,
     );
     const navHome = getByTestId('nav-home');
 
