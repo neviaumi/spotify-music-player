@@ -1,0 +1,45 @@
+import React, { ReactNode } from 'react';
+import { MemoryRouterProps } from 'react-router';
+import { MemoryRouter } from 'react-router-dom';
+
+import AuthContext, { AccessInfo, AuthContextValue } from './AuthContext';
+
+interface Props {
+  children: ReactNode;
+  isAuthenticated?: boolean;
+  _accessInfo?: AccessInfo;
+}
+
+export default ({ isAuthenticated, _accessInfo, children }: Props) => {
+  const contextValue: AuthContextValue = {
+    isAuthenticated: isAuthenticated || false,
+    _accessInfo: _accessInfo,
+  };
+
+  return (
+    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
+  );
+};
+
+export interface TestAuthProviderProps extends MemoryRouterProps {
+  children?: React.ReactNode;
+}
+
+export const TestAuthProvider = ({
+  children,
+  ...rest
+}: TestAuthProviderProps) => (
+  <MemoryRouter {...rest}>
+    <AuthContext.Provider
+      value={{
+        isAuthenticated: true,
+        _accessInfo: {
+          token: process.env.REACT_APP_SPOTIFY_ACCESS_TOKEN as string,
+          expiredAt: Number.MAX_SAFE_INTEGER,
+        },
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  </MemoryRouter>
+);

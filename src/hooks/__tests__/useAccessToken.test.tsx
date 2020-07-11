@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import AuthContextProvider from '../../contexts/Auth/AuthContextProvider';
+import AuthContextProvider from '../../contexts/Auth';
 import AuthenticationExpiredError from '../../errors/AuthenticationExpiredError';
 import UnAuthenticatedError from '../../errors/UnAuthenticatedError';
 import useAccessToken from '../useAccessToken';

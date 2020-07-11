@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import AuthContext, { AccessInfo } from '../contexts/Auth';
+import AuthContext, { AccessInfo } from '../contexts/Auth/AuthContext';
 import AuthenticationExpiredError from '../errors/AuthenticationExpiredError';
 import UnAuthenticatedError from '../errors/UnAuthenticatedError';
 import getCurrentTimestamp from '../utils/getCurrentTimestamp';

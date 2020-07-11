@@ -2,15 +2,14 @@ import { render } from '@testing-library/react';
 import React from 'react';
 
 import playlist from '../../../../__fixtures__/playlist.json';
-import { TestSWRConfigProvider } from '../../../contexts/SWR';
-import ThemeProvider from '../../../contexts/Theme';
+import { TestApp } from '../../../App';
 import { Playlist } from '../UserPlayList';
 
 describe('Test render UserPlaylist component', () => {
   it('Should render without error', () => {
     const { getAllByTestId } = render(
-      <TestSWRConfigProvider
-        value={{
+      <TestApp
+        SWRConfigProviderProps={{
           initialData: {
             data: {
               items: [
@@ -22,10 +21,8 @@ describe('Test render UserPlaylist component', () => {
           },
         }}
       >
-        <ThemeProvider>
-          <Playlist />
-        </ThemeProvider>
-      </TestSWRConfigProvider>,
+        <Playlist />
+      </TestApp>,
     );
     const playlists = getAllByTestId('user-playlist');
 
