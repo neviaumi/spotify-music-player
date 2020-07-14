@@ -7,7 +7,7 @@ import { SuggestPlayListByLastPlayedTrack } from '../SuggestPlayListByLastPlayed
 describe('Test SuggestPlayListByLastPlayedTrack component', () => {
   it('Should render without error', () => {
     const { getByTestId } = render(
-      <TestApp SWRConfigProviderProps={{ initialData: { data: {} } }}>
+      <TestApp DataFetchingConfigProviderProps={{ initialData: { data: {} } }}>
         <SuggestPlayListByLastPlayedTrack />
       </TestApp>,
     );

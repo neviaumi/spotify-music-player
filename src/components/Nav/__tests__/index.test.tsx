@@ -9,7 +9,7 @@ describe('Test render Nav component', () => {
     const { getByTestId } = render(
       <TestApp
         AuthProviderProps={{ initialEntries: ['/'] }}
-        SWRConfigProviderProps={{ initialData: { data: {} } }}
+        DataFetchingConfigProviderProps={{ initialData: { data: {} } }}
       >
         <Nav />
       </TestApp>,

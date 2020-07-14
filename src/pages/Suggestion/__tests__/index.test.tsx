@@ -7,7 +7,7 @@ import Suggestion from '../index';
 describe('Test render PlayListSuggestion', () => {
   it('Should render PlayListSuggestion', () => {
     const { getByTestId } = render(
-      <TestApp SWRConfigProviderProps={{ initialData: { data: {} } }}>
+      <TestApp DataFetchingConfigProviderProps={{ initialData: { data: {} } }}>
         <Suggestion />
       </TestApp>,
     );

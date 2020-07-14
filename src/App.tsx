@@ -4,10 +4,10 @@ import AuthProvider, {
   TestAuthProvider,
   TestAuthProviderProps,
 } from './contexts/Auth';
-import SWRConfigProvider, {
-  SWRConfigProviderProps as TestSWRConfigProviderProps,
-  TestSWRConfigProvider,
-} from './contexts/SWR';
+import DataFetchingConfigProvider, {
+  DataFetchingConfigProviderProps,
+  TestDataFetchingConfigProvider,
+} from './contexts/DataFetching';
 import ThemeProvider from './contexts/Theme';
 import Router from './Router';
 
@@ -15,9 +15,9 @@ function App() {
   return (
     <AuthProvider>
       <ThemeProvider>
-        <SWRConfigProvider>
+        <DataFetchingConfigProvider>
           <Router />
-        </SWRConfigProvider>
+        </DataFetchingConfigProvider>
       </ThemeProvider>
     </AuthProvider>
   );
@@ -25,18 +25,18 @@ function App() {
 
 export function TestApp({
   AuthProviderProps,
-  SWRConfigProviderProps,
+  DataFetchingConfigProviderProps: _DataFetchingConfigProviderProps,
   children,
 }: {
   AuthProviderProps?: TestAuthProviderProps;
-  SWRConfigProviderProps?: TestSWRConfigProviderProps;
+  DataFetchingConfigProviderProps?: DataFetchingConfigProviderProps;
   children: React.ReactNode;
 }) {
   return (
     <TestAuthProvider {...AuthProviderProps}>
-      <TestSWRConfigProvider {...SWRConfigProviderProps}>
+      <TestDataFetchingConfigProvider {..._DataFetchingConfigProviderProps}>
         <ThemeProvider>{children}</ThemeProvider>
-      </TestSWRConfigProvider>
+      </TestDataFetchingConfigProvider>
     </TestAuthProvider>
   );
 }
