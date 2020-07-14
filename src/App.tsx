@@ -1,9 +1,8 @@
 import React from 'react';
+import { MemoryRouterProps } from 'react-router';
+import { MemoryRouter } from 'react-router-dom';
 
-import AuthProvider, {
-  TestAuthProvider,
-  TestAuthProviderProps,
-} from './contexts/Auth';
+import AuthProvider, { TestAuthProvider } from './contexts/Auth';
 import DataFetchingConfigProvider, {
   DataFetchingConfigProviderProps,
   TestDataFetchingConfigProvider,
@@ -24,20 +23,22 @@ function App() {
 }
 
 export function TestApp({
-  AuthProviderProps,
   DataFetchingConfigProviderProps: _DataFetchingConfigProviderProps,
+  MemoryRouterProps: _MemoryRouterProps,
   children,
 }: {
-  AuthProviderProps?: TestAuthProviderProps;
   DataFetchingConfigProviderProps?: DataFetchingConfigProviderProps;
+  MemoryRouterProps?: MemoryRouterProps;
   children: React.ReactNode;
 }) {
   return (
-    <TestAuthProvider {...AuthProviderProps}>
-      <TestDataFetchingConfigProvider {..._DataFetchingConfigProviderProps}>
-        <ThemeProvider>{children}</ThemeProvider>
-      </TestDataFetchingConfigProvider>
-    </TestAuthProvider>
+    <MemoryRouter {..._MemoryRouterProps}>
+      <TestAuthProvider>
+        <TestDataFetchingConfigProvider {..._DataFetchingConfigProviderProps}>
+          <ThemeProvider>{children}</ThemeProvider>
+        </TestDataFetchingConfigProvider>
+      </TestAuthProvider>
+    </MemoryRouter>
   );
 }
 

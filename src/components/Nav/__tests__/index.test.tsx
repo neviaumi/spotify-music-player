@@ -8,7 +8,7 @@ describe('Test render Nav component', () => {
   it('Should render without error', () => {
     const { getByTestId } = render(
       <TestApp
-        AuthProviderProps={{ initialEntries: ['/'] }}
+        MemoryRouterProps={{ initialEntries: ['/'] }}
         DataFetchingConfigProviderProps={{ initialData: { data: {} } }}
       >
         <Nav />
