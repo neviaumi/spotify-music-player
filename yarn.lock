@@ -2098,23 +2098,28 @@
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-8.0.0.tgz#c3d10d8a05ad9129d579952cb80063e4c4fa216e"
   integrity sha512-07Fo+KoTMl4AaZJPD6deFnYmG634wzgeqfFcWdFlIrOLAasvWSH8Lp6ZE9cJBKuffOAy8kuEE1SwFo34+5X8bQ==
 
-"@spotify/eslint-config-react@8.0.0", "@spotify/eslint-config-react@^8.0.0":
+"@spotify/eslint-config-react@8.0.0":
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-8.0.0.tgz#68aa5c4f0cfa15438c1a16efb38bba777cbf4dab"
   integrity sha512-ta8Phx00RNwVhSIg4qIVX3cIyLumW3w+WrT6snZzIqLmToZjBdvoZbpRbUfG15BPuH99Q+X1yYuEOvqwlTSXaQ==
+
+"@spotify/eslint-config-react@^8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-8.0.2.tgz#91af3c58b22d49a96795336ed66927e722cda430"
+  integrity sha512-V0gzO/jWmjhODLINAfeunHj+OBdj/cQeVDw+92ZUlkonAg6BZLjX6Vy8jeIUFjfgmVOtI9eKbcApxaurj1jN6g==
 
 "@spotify/eslint-config-typescript@^8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-8.0.1.tgz#2d3ee56a8a3f945454109086639cde47251d1e62"
   integrity sha512-ALkA4WA2ZikX7grkptZ36J1N/iap0IJeViy6/ZcxSkm6yEy2BYslmS2MdoJ5PV/DfZ3Z/21d/+XYFqVEpcbrXg==
 
-"@spotify/eslint-config@8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-8.0.1.tgz#b949c5d486bda1d4ef9cd631ec56d8f880d108cd"
-  integrity sha512-lJcnAmCi2rWAAFbEJET4syfbX0ftJQbg3KMyeF8LXCGkaOp0ILDwBjscZ61NbS0/3Pp4sl2+bnIxRQ6Vl3jmPw==
+"@spotify/eslint-config@8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config/-/eslint-config-8.0.2.tgz#2c0aa02e6914794b71bc61288217b5c0895691c6"
+  integrity sha512-f5y2ugeIFzq2FiXcg3cJkjL7Aqtge68Aik4dAYY3mulYH8Y583s025sPrWwUsgLuV96S6c5RQtW6gxuB4DePfw==
   dependencies:
     "@spotify/eslint-config-base" "^8.0.0"
-    "@spotify/eslint-config-react" "^8.0.0"
+    "@spotify/eslint-config-react" "^8.0.2"
     "@spotify/eslint-config-typescript" "^8.0.1"
     "@spotify/web-scripts-utils" "^8.0.0"
     "@typescript-eslint/eslint-plugin" "^3.4.0"

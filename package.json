@@ -49,7 +49,7 @@
     "@pollyjs/adapter-node-http": "5.0.0",
     "@pollyjs/core": "5.0.0",
     "@pollyjs/persister-fs": "5.0.0",
-    "@spotify/eslint-config": "8.0.1",
+    "@spotify/eslint-config": "8.0.2",
     "@spotify/eslint-config-react": "8.0.0",
     "@spotify/prettier-config": "8.0.0",
     "@spotify/tsconfig": "8.0.0",
