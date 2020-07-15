@@ -9,7 +9,7 @@ describe('Test render UserPlaylist component', () => {
   it('Should render without error', () => {
     const { getAllByTestId } = render(
       <TestApp
-        SWRConfigProviderProps={{
+        DataFetchingConfigProviderProps={{
           initialData: {
             data: {
               items: [

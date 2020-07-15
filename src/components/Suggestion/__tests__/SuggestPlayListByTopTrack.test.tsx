@@ -7,7 +7,7 @@ import { SuggestPlayListByTopTrack } from '../SuggestPlayListByTopTrack';
 describe('Test SuggestPlayListByTopTrack component', () => {
   it('Should render without error', () => {
     const { getByTestId } = render(
-      <TestApp SWRConfigProviderProps={{ initialData: { data: {} } }}>
+      <TestApp DataFetchingConfigProviderProps={{ initialData: { data: {} } }}>
         <SuggestPlayListByTopTrack />
       </TestApp>,
     );

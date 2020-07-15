@@ -8,8 +8,8 @@ describe('Test render Nav component', () => {
   it('Should render without error', () => {
     const { getByTestId } = render(
       <TestApp
-        AuthProviderProps={{ initialEntries: ['/'] }}
-        SWRConfigProviderProps={{ initialData: { data: {} } }}
+        MemoryRouterProps={{ initialEntries: ['/'] }}
+        DataFetchingConfigProviderProps={{ initialData: { data: {} } }}
       >
         <Nav />
       </TestApp>,

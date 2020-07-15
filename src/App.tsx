@@ -1,13 +1,12 @@
 import React from 'react';
+import { MemoryRouterProps } from 'react-router';
+import { MemoryRouter } from 'react-router-dom';
 
-import AuthProvider, {
-  TestAuthProvider,
-  TestAuthProviderProps,
-} from './contexts/Auth';
-import SWRConfigProvider, {
-  SWRConfigProviderProps as TestSWRConfigProviderProps,
-  TestSWRConfigProvider,
-} from './contexts/SWR';
+import AuthProvider, { TestAuthProvider } from './contexts/Auth';
+import DataFetchingConfigProvider, {
+  DataFetchingConfigProviderProps,
+  TestDataFetchingConfigProvider,
+} from './contexts/DataFetching';
 import ThemeProvider from './contexts/Theme';
 import Router from './Router';
 
@@ -15,29 +14,31 @@ function App() {
   return (
     <AuthProvider>
       <ThemeProvider>
-        <SWRConfigProvider>
+        <DataFetchingConfigProvider>
           <Router />
-        </SWRConfigProvider>
+        </DataFetchingConfigProvider>
       </ThemeProvider>
     </AuthProvider>
   );
 }
 
 export function TestApp({
-  AuthProviderProps,
-  SWRConfigProviderProps,
+  DataFetchingConfigProviderProps: _DataFetchingConfigProviderProps,
+  MemoryRouterProps: _MemoryRouterProps,
   children,
 }: {
-  AuthProviderProps?: TestAuthProviderProps;
-  SWRConfigProviderProps?: TestSWRConfigProviderProps;
+  DataFetchingConfigProviderProps?: DataFetchingConfigProviderProps;
+  MemoryRouterProps?: MemoryRouterProps;
   children: React.ReactNode;
 }) {
   return (
-    <TestAuthProvider {...AuthProviderProps}>
-      <TestSWRConfigProvider {...SWRConfigProviderProps}>
-        <ThemeProvider>{children}</ThemeProvider>
-      </TestSWRConfigProvider>
-    </TestAuthProvider>
+    <MemoryRouter {..._MemoryRouterProps}>
+      <TestAuthProvider>
+        <TestDataFetchingConfigProvider {..._DataFetchingConfigProviderProps}>
+          <ThemeProvider>{children}</ThemeProvider>
+        </TestDataFetchingConfigProvider>
+      </TestAuthProvider>
+    </MemoryRouter>
   );
 }
 
