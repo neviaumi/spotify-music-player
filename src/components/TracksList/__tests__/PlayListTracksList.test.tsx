@@ -1,14 +1,14 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import ThemeProvider from '../../../contexts/Theme';
+import { TestApp } from '../../../App';
 import { PlayListTracksList } from '../PlayListTracksList';
 
 it('render without error', () => {
   const { getByTestId } = render(
-    <ThemeProvider>
+    <TestApp DataFetchingConfigProviderProps={{ initialData: { data: {} } }}>
       <PlayListTracksList playListId="foobar" />
-    </ThemeProvider>,
+    </TestApp>,
   );
   expect(getByTestId('playlist-tracks-list')).toBeDefined();
 });
