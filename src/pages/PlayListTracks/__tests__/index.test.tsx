@@ -1,7 +1,8 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import ThemeProvider from '../../../contexts/Theme';
+import playlist from '../../../../__fixtures__/playlist.json';
+import { TestApp } from '../../../App';
 import PlayListTracks from '../index';
 
 describe('Test render PlayListTracks', () => {
@@ -14,9 +15,13 @@ describe('Test render PlayListTracks', () => {
       },
     };
     const { getByTestId } = render(
-      <ThemeProvider>
+      <TestApp
+        DataFetchingConfigProviderProps={{
+          initialData: { data: playlist },
+        }}
+      >
         <PlayListTracks {...props} />
-      </ThemeProvider>,
+      </TestApp>,
     );
     expect(getByTestId('playlist-tracks')).toBeDefined();
   });

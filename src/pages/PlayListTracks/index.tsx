@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 import PlayList from '../../components/PlayList/PlayList';
 import PlayListTracksList from '../../components/TracksList/PlayListTracksList';
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 0 32px;
+`;
 
 interface Props {
   match: {
