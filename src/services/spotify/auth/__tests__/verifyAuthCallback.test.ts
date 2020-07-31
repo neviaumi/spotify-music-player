@@ -6,6 +6,7 @@ import Storage from '../../../storage';
 import verifyAuthCallback from '../verifyAuthCallback';
 
 jest.mock('../../../../utils/getCurrentTimestamp');
+jest.mock('../../../storage');
 
 const getCurrentTimestampMock = getCurrentTimestamp as jest.Mock;
 
