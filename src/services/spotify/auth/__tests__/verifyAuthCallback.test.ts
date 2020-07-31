@@ -2,7 +2,7 @@ import { URL, URLSearchParams } from 'url';
 
 import AuthenticationCallbackError from '../../../../errors/AuthenticationCallbackError';
 import getCurrentTimestamp from '../../../../utils/getCurrentTimestamp';
-import { Cookie } from '../../../storage';
+import Storage from '../../../storage';
 import verifyAuthCallback from '../verifyAuthCallback';
 
 jest.mock('../../../../utils/getCurrentTimestamp');
@@ -12,7 +12,7 @@ const getCurrentTimestampMock = getCurrentTimestamp as jest.Mock;
 it('Read previous state from cookies', () => {
   getCurrentTimestampMock.mockReturnValue(3600);
   const getItemSpy = jest
-    .spyOn(Cookie, 'getItem')
+    .spyOn(Storage, 'getItem')
     .mockReturnValue('{"foo": "bar"}');
   const authorizeUrl = new URL('http://localhost:3000/auth/callback');
   const hashParams = new URLSearchParams();
