@@ -15,3 +15,11 @@ export default function formatMS(ms: number) {
 
   return result.join(' ');
 }
+
+export function formatMSToMinute(ms: number) {
+  const { minutes, seconds } = parseMS(ms);
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(
+    2,
+    '0',
+  )}`;
+}
