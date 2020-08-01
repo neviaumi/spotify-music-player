@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-const Container = styled.div``;
+
+import PlayList from '../../components/PlayList/PlayList';
+import PlayListTracksList from '../../components/TracksList/PlayListTracksList';
+const Container = styled.div`
+  padding: 0 32px;
+`;
 
 interface Props {
   match: {
@@ -14,7 +19,8 @@ export default function PlayListTracks(props: Props) {
   const playListId = props.match.params.playListId;
   return (
     <Container data-testid="playlist-tracks">
-      <div>Page should display track under playlistId : {playListId}</div>
+      <PlayList playListId={playListId} />
+      <PlayListTracksList playListId={playListId} />
     </Container>
   );
 }

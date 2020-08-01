@@ -1,6 +1,6 @@
 import AuthenticationCallbackError from '../../../errors/AuthenticationCallbackError';
 import getCurrentTimestamp from '../../../utils/getCurrentTimestamp';
-import { Cookie } from '../../storage';
+import Storage from '../../storage';
 import getCallbackParams from './getCallbackParams';
 
 export default (url: string) => {
@@ -11,7 +11,7 @@ export default (url: string) => {
   const transactionId = params.state as string;
   let transaction = '{}';
   if (transactionId) {
-    transaction = Cookie.getItem(transactionId) || transaction;
+    transaction = Storage.getItem(transactionId) || transaction;
   }
   const currentTimestamp = getCurrentTimestamp();
   return {
