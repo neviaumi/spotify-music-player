@@ -12603,10 +12603,10 @@ quick-lru@^4.0.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-4.0.1.tgz#5b8878f113a58217848c6482026c73e1ba57727f"
   integrity sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==
 
-quicktype@15.0.249:
-  version "15.0.249"
-  resolved "https://registry.yarnpkg.com/quicktype/-/quicktype-15.0.249.tgz#387267574e227896976fd251b2ee0388b5d307f7"
-  integrity sha512-iA26cJTkalZf/oI+inoBCwn21l7xPHwfr+8dcJ1ydX3pnQDAratb6O8HLZ3JrFPatVfrt61QHb3/PHer1nlYcg==
+quicktype@15.0.254:
+  version "15.0.254"
+  resolved "https://registry.yarnpkg.com/quicktype/-/quicktype-15.0.254.tgz#32b4d9f9d33f8c32de90c1970cf19b79490cf17f"
+  integrity sha512-sH9Mm89fIIu5zHq3YtvJeL/rGhvpo2cMlcT9oqZ8ZOHLEDt/AoNa4YP0lghkW6ibdW1KHOX6dJX8jmoaxSj/qw==
   dependencies:
     "@mark.probst/typescript-json-schema" "~0.32.0"
     "@mark.probst/unicode-properties" "~1.1.0"
@@ -12619,7 +12619,7 @@ quicktype@15.0.249:
     is-url "^1.2.4"
     isomorphic-fetch "^2.2.1"
     js-base64 "^2.4.3"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     moment "^2.22.1"
     node-fetch "^1.7.1"
     pako "^1.0.6"
