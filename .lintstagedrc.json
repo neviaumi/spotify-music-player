@@ -1,9 +1,9 @@
 {
-  "*.{json,css,md,yaml,yml}": ["yarn prettier --write"],
+  "*.svg": ["yarn prettier --parser html --write"],
   "*.{js,jsx,ts,tsx}": [
     "yarn prettier --write",
     "yarn eslint --max-warnings 0 --fix",
     "yarn stylelint"
   ],
-  "*.svg": ["yarn prettier --parser html --write"]
+  "*.{json,css,md,yaml,yml}": ["yarn prettier --write"]
 }

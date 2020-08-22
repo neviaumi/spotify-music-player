@@ -1,13 +1,13 @@
 import { createContext } from 'react';
 
 export interface AuthContextValue {
-  isAuthenticated: boolean;
   _accessInfo?: AccessInfo;
+  isAuthenticated: boolean;
 }
 
 export interface AccessInfo {
-  token: string;
   expiredAt: number;
+  token: string;
 }
 
 export default createContext<AuthContextValue>({

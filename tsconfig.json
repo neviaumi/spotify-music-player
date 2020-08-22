@@ -1,13 +1,13 @@
 {
-  "extends": "@spotify/tsconfig",
-  "include": ["src", "typings"],
   "compilerOptions": {
-    "jsx": "react",
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowSyntheticDefaultImports": true,
     "allowJs": true,
-    "typeRoots": ["./typings", "./node_modules/@types"],
-    "skipLibCheck": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "skipLibCheck": true,
+    "target": "es5",
+    "typeRoots": ["./typings", "./node_modules/@types"]
+  },
+  "extends": "@spotify/tsconfig",
+  "include": ["src", "typings"]
 }

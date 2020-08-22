@@ -3,8 +3,8 @@ import searchPlayLists from '../search/searchPlayLists';
 import { Fetcher } from '../typings/fetcher';
 
 export interface Response {
-  track: Spotify.Track;
   playlists: Spotify.Playlist[];
+  track: Spotify.Track;
 }
 
 const searchPlayListByLastPlayedTrack: Fetcher<Response> = async apiClient => {
@@ -12,7 +12,7 @@ const searchPlayListByLastPlayedTrack: Fetcher<Response> = async apiClient => {
     data: { items: tracks },
   } = await getRecentlyPlayed(apiClient);
   const track = tracks[0].track;
-  const query: string = `"${track.name}"`;
+  const query = `"${track.name}"`;
   const searchResponse = await searchPlayLists(apiClient, query);
   const {
     data: {

@@ -3,7 +3,9 @@ import nanoid from 'nanoid';
 import Storage from '../../storage';
 import getAuthorizeUrl from './getAuthorizeUrl';
 
-export interface State {}
+export interface State {
+  [key: string]: unknown;
+}
 
 export default (state: State) => {
   const transactionId = nanoid();

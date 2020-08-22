@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  title: string;
-  suggestions?: Spotify.Playlist[];
   onClickSuggestion: (suggestion: object) => void;
+  suggestions?: Spotify.Playlist[];
+  title: string;
 }
 
 const Container = styled.div`
@@ -69,12 +69,12 @@ const SuggestionDescription = styled.span`
   overflow: hidden;
 `;
 
-export default ({
+export default function PresentSuggestionList({
   title,
   suggestions = [],
   onClickSuggestion,
   ...rest
-}: Props) => {
+}: Props) {
   return (
     <Container {...rest}>
       <Heading>{title}</Heading>
@@ -97,4 +97,4 @@ export default ({
       </SuggestionsContainer>
     </Container>
   );
-};
+}

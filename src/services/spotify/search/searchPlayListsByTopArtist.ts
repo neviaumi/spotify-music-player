@@ -10,7 +10,7 @@ export interface Response {
 const searchPlayListsByTopArtist: Fetcher<Response> = async apiClient => {
   const { data: artists } = await getUserTop(apiClient, Type.ARTIST);
   const _artist = artists.items[0];
-  const query: string = `"${_artist.name}"`;
+  const query = `"${_artist.name}"`;
   const searchResponse = await searchPlayLists(apiClient, query);
   const {
     data: {

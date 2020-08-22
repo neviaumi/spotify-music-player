@@ -40,9 +40,9 @@ const ScrollAbleWrapper = styled.div`
 `;
 
 interface Props {
+  Bottom: React.ReactNode;
   Left: React.ReactNode;
   Right: React.ReactNode;
-  Bottom: React.ReactNode;
 }
 
 export default function Panel({ Left, Right, Bottom, ...rest }: Props) {

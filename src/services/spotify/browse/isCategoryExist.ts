@@ -1,8 +1,8 @@
 import { Fetcher } from '../typings/fetcher';
 
 export interface Response {
-  isCategoryExist: boolean;
   categoryId: string;
+  isCategoryExist: boolean;
 }
 
 const isCategoryExist: Fetcher<Response> = async (

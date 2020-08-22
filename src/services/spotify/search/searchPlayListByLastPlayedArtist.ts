@@ -12,7 +12,7 @@ const searchPlayListByLastPlayedArtist: Fetcher<Response> = async apiClient => {
     data: { items: tracks },
   } = await getRecentlyPlayed(apiClient);
   const track = tracks[0].track;
-  const query: string = `"${track.artists[0].name}"`;
+  const query = `"${track.artists[0].name}"`;
   const searchResponse = await searchPlayLists(apiClient, query);
   const {
     data: {

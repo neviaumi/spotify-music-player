@@ -14,7 +14,8 @@ describe('Test API Client hook', () => {
     useAccessTokenSpy.mockReturnValue({
       getAccessInfo: jest.fn().mockReturnValue('Spotify Access Token here'),
     });
-    const createSpy = jest.spyOn(axios, 'create').mockReturnValue({} as any);
+    // @ts-expect-error
+    const createSpy = jest.spyOn(axios, 'create').mockReturnValue({});
     useSpotifyAPIClient();
     expect(createSpy).toHaveBeenCalledWith({
       baseURL: 'https://api.spotify.com/v1',

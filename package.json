@@ -1,13 +1,28 @@
 {
-  "name": "spotify-web-player",
-  "version": "0.1.0",
-  "private": true,
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "dependencies": {
+    "@busybox/eslint-config": "^5.0.0",
     "axios": "0.20.0",
     "js-cookie": "2.2.1",
     "nanoid": "2.1.11",
-    "ramda": "0.27.1",
     "parse-ms": "2.1.0",
+    "ramda": "0.27.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
@@ -16,32 +31,6 @@
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-processor-styled-components": "1.10.0",
     "swr": "0.3.1"
-  },
-  "engines": {
-    "node": ">=12"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:reset": "REACT_APP_POLLY_MODE=record yarn test --watchAll --coverage",
-    "eject": "react-scripts eject",
-    "lint:js": "eslint --ext=ts,tsx --fix .",
-    "lint:css": "stylelint './src/**/*.{ts,tsx}'",
-    "quicktype": "quicktype --just-types",
-    "serve:lhci": "serve -l 42069 -s build"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "devDependencies": {
     "@commitlint/cli": "9.1.2",
@@ -101,12 +90,15 @@
     "typescript": "4.0.2",
     "typesync": "0.7.0"
   },
+  "engines": {
+    "node": ">=12"
+  },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
-      "pre-push": "yarn lint:js && CI=true yarn test --coverage --watchAll=false"
+      "pre-push": "yarn lint:js && CI=true yarn test --coverage --watchAll=false",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   },
   "jest": {
@@ -119,16 +111,25 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 90,
         "branches": 90,
         "functions": 85,
-        "lines": 93
+        "lines": 93,
+        "statements": 90
       }
     }
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  "name": "spotify-web-player",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "lint:css": "stylelint './src/**/*.{ts,tsx}'",
+    "lint:js": "eslint --ext=ts,tsx,json,js --fix .",
+    "quicktype": "quicktype --just-types",
+    "serve:lhci": "serve -l 42069 -s build",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "test:reset": "REACT_APP_POLLY_MODE=record yarn test --watchAll --coverage"
+  },
+  "version": "0.1.0"
 }
