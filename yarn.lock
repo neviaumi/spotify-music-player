@@ -1176,6 +1176,13 @@
   dependencies:
     npm-package-json-lint-config-default "3.0.0"
 
+"@busybox/prettier-config@1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@busybox/prettier-config/-/prettier-config-1.1.3.tgz#e453fc23a91008f132efacbfd728377c737ffdc6"
+  integrity sha512-dKElIvO1V9vKhwDdxjn0x9gKJTUilPYIAf1zSkfas5MOocutLLLaHkBuiRG/dEfIaWr8we96XX+dUBEt9vTq9g==
+  dependencies:
+    "@spotify/prettier-config" "8.0.0"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
