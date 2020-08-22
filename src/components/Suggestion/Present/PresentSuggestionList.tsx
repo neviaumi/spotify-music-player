@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  onClickSuggestion: (suggestion: object) => void;
+  onClickSuggestion: (suggestion: Spotify.Playlist) => void;
   suggestions?: Spotify.Playlist[];
   title: string;
 }

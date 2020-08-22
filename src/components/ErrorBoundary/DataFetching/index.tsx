@@ -4,7 +4,7 @@ import AppError from '../../../errors/AppError';
 import DataFetchingError from '../../../errors/DataFetchingError';
 
 export default class DataFetchingErrorBoundary extends React.Component<
-  object,
+  unknown,
   {
     error?: {
       err: Error | AppError;
@@ -12,7 +12,7 @@ export default class DataFetchingErrorBoundary extends React.Component<
     };
   }
 > {
-  constructor(props: object) {
+  constructor(props: unknown) {
     super(props);
     this.state = {};
   }
