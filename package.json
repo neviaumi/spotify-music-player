@@ -17,7 +17,7 @@
     }
   },
   "dependencies": {
-    "@busybox/eslint-config": "^5.0.0",
+    "@busybox/eslint-config": "5.0.0",
     "axios": "0.20.0",
     "js-cookie": "2.2.1",
     "nanoid": "2.1.11",
@@ -28,11 +28,10 @@
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.3",
     "styled-components": "5.1.1",
-    "stylelint-config-styled-components": "0.1.1",
-    "stylelint-processor-styled-components": "1.10.0",
     "swr": "0.3.1"
   },
   "devDependencies": {
+    "@busybox/npm-package-json-lint-config": "1.1.3",
     "@commitlint/cli": "9.1.2",
     "@commitlint/config-conventional": "9.1.2",
     "@lhci/cli": "0.5.0",
@@ -82,11 +81,14 @@
     "eslint-plugin-simple-import-sort": "5.0.3",
     "husky": "4.2.5",
     "lint-staged": "10.2.11",
+    "npm-package-json-lint": "5.1.0",
     "prettier": "2.0.5",
     "quicktype": "15.0.256",
     "serve": "11.3.2",
     "setup-polly-jest": "0.9.1",
     "stylelint": "13.6.1",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.10.0",
     "typescript": "4.0.2",
     "typesync": "0.7.0"
   },
@@ -118,6 +120,7 @@
       }
     }
   },
+  "license": "MIT",
   "name": "spotify-web-player",
   "private": true,
   "scripts": {
@@ -125,6 +128,7 @@
     "eject": "react-scripts eject",
     "lint:css": "stylelint './src/**/*.{ts,tsx}'",
     "lint:js": "eslint --ext=ts,tsx,json,js --fix .",
+    "lint:package-json": "yarn npmPkgJsonLint .",
     "quicktype": "quicktype --just-types",
     "serve:lhci": "serve -l 42069 -s build",
     "start": "react-scripts start",
