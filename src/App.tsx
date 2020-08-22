@@ -1,5 +1,5 @@
 import React from 'react';
-import { MemoryRouterProps } from 'react-router';
+import type { MemoryRouterProps } from 'react-router';
 import { MemoryRouter } from 'react-router-dom';
 
 import AuthProvider, { TestAuthProvider } from './contexts/Auth';

@@ -1,6 +1,6 @@
 import { omit } from 'ramda';
 
-import { Fetcher } from '../typings/fetcher';
+import type { Fetcher } from '../typings/fetcher';
 
 export interface Response {
   items: { track: Spotify.Track }[];

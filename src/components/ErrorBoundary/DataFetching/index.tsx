@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AppError from '../../../errors/AppError';
+import type AppError from '../../../errors/AppError';
 import DataFetchingError from '../../../errors/DataFetchingError';
 
 export default class DataFetchingErrorBoundary extends React.Component<

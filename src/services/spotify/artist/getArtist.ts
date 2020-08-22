@@ -1,4 +1,4 @@
-import { Fetcher } from '../typings/fetcher';
+import type { Fetcher } from '../typings/fetcher';
 
 export type Response = Spotify.Artist;
 

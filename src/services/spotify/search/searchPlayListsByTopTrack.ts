@@ -1,6 +1,6 @@
 import getUserTop, { Type } from '../personalization/getUserTop';
 import searchPlayLists from '../search/searchPlayLists';
-import { Fetcher } from '../typings/fetcher';
+import type { Fetcher } from '../typings/fetcher';
 
 export interface Response {
   playlists: Spotify.Playlist[];

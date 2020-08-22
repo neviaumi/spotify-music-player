@@ -1,4 +1,4 @@
-import { Fetcher } from '../typings/fetcher';
+import type { Fetcher } from '../typings/fetcher';
 
 const getPlayList: Fetcher<Spotify.Playlist> = async (
   apiClient,

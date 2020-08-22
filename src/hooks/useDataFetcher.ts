@@ -1,4 +1,4 @@
-import { AxiosResponse } from 'axios';
+import type { AxiosResponse } from 'axios';
 import useSWR, { keyInterface } from 'swr';
 
 import DataFetchingError from '../errors/DataFetchingError';
