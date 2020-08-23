@@ -1148,10 +1148,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@busybox/eslint-config@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@busybox/eslint-config/-/eslint-config-5.0.0.tgz#9d5d9e2d5beb59f8398b70a27fea0d401b6f3cb8"
-  integrity sha512-gVxnDyZSTkGLxeZcW3maRTFPqkWRSyIy2xSpXHDqQ9SRIHBqXVl8GELFPYWkD7YAvue1nyci/fhSCdJ7nZDwCA==
+"@busybox/eslint-config@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@busybox/eslint-config/-/eslint-config-5.1.0.tgz#d31f5ef8975a8dd59d1ab5a5effac4c653161c64"
+  integrity sha512-HLfGZEwePxrdKbs8902eDegdSPPQvGITdYihhapAwuui9arW+2+y1RXvdOKl76GNc2UNt8ftio+57hKrHrtjwg==
   dependencies:
     "@spotify/eslint-config" "8.0.2"
     "@spotify/web-scripts-utils" "8.0.0"
