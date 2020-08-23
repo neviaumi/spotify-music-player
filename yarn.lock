@@ -1741,7 +1741,7 @@
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-8.0.0.tgz#c3d10d8a05ad9129d579952cb80063e4c4fa216e"
   integrity sha512-07Fo+KoTMl4AaZJPD6deFnYmG634wzgeqfFcWdFlIrOLAasvWSH8Lp6ZE9cJBKuffOAy8kuEE1SwFo34+5X8bQ==
 
-"@spotify/eslint-config-react@8.0.2", "@spotify/eslint-config-react@^8.0.2":
+"@spotify/eslint-config-react@^8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-react/-/eslint-config-react-8.0.2.tgz#91af3c58b22d49a96795336ed66927e722cda430"
   integrity sha512-V0gzO/jWmjhODLINAfeunHj+OBdj/cQeVDw+92ZUlkonAg6BZLjX6Vy8jeIUFjfgmVOtI9eKbcApxaurj1jN6g==
@@ -1912,9 +1912,9 @@
     defer-to-connect "^1.0.1"
 
 "@testing-library/dom@*", "@testing-library/dom@^7.22.3":
-  version "7.22.4"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.22.4.tgz#92a43253507b2436199449d344d3ec4a29df773c"
-  integrity sha512-b+/z7/dIzEckmu7YS29xkl7JbI+n5XAnneQVUv3rXb19oVkxUFoYU6c0CTXuWEznNDU+g+eTYXB5CXMzbr232g==
+  version "7.22.5"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.22.5.tgz#178fb0bfb52540538667f2f72d4b7fb406a49499"
+  integrity sha512-qALmosaNSny/JqQ+mDhdT0N5u1a76pEcOvfWFDpBQOchtkxDm/w/bCfe0J/K7nHrwJPHelFiAZksaBs//P9fsw==
   dependencies:
     "@babel/runtime" "^7.10.3"
     "@types/aria-query" "^4.2.0"
@@ -5856,7 +5856,7 @@ eslint-plugin-jsx-a11y@6.2.3:
     has "^1.0.3"
     jsx-ast-utils "^2.2.1"
 
-eslint-plugin-jsx-a11y@6.3.1, eslint-plugin-jsx-a11y@^6.2.1:
+eslint-plugin-jsx-a11y@^6.2.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.3.1.tgz#99ef7e97f567cc6a5b8dd5ab95a94a67058a2660"
   integrity sha512-i1S+P+c3HOlBJzMFORRbC58tHa65Kbo8b52/TwCwSKLohwvpfT5rm2GjGWzOHTEuq4xxf2aRlHHTtmExDQOP+g==
@@ -5936,11 +5936,6 @@ eslint-plugin-react@7.20.6, eslint-plugin-react@^7.12.4:
     prop-types "^15.7.2"
     resolve "^1.17.0"
     string.prototype.matchall "^4.0.2"
-
-eslint-plugin-simple-import-sort@5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-5.0.3.tgz#9ae258ddada6efffc55e47a134afbd279eb31fc6"
-  integrity sha512-1rf3AWiHeWNCQdAq0iXNnlccnH1UDnelGgrPbjBBHE8d2hXVtOudcmy0vTF4hri3iJ0MKz8jBhmH6lJ0ZWZLHQ==
 
 eslint-plugin-sort-keys-fix@1.1.1:
   version "1.1.1"
@@ -8744,11 +8739,6 @@ js-base64@^2.4.3:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
   integrity sha512-pZe//GGmwJndub7ZghVHz7vjb2LgC1m8B07Au3eYqeqv9emhESByMXxaEgkUkEqJe87oBbSniGYoQNIBklc7IQ==
-
-js-cookie@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.1.tgz#69e106dc5d5806894562902aa5baec3744e9b2b8"
-  integrity sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==
 
 js-library-detector@^5.7.0:
   version "5.9.0"
