@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "allowJs": false,
-    "allowSyntheticDefaultImports": true,
     "typeRoots": ["./typings", "./node_modules/@types"]
   },
   "extends": "@busybox/tsconfig",
