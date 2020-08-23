@@ -14,4 +14,10 @@ declare global {
     } &
       jest.Mock;
   }
+
+  namespace NodeJS {
+    interface Global {
+      jasmine: { testPath: string };
+    }
+  }
 }
