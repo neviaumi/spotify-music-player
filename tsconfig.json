@@ -1,13 +1,9 @@
 {
-  "extends": "@spotify/tsconfig",
-  "include": ["src", "typings"],
   "compilerOptions": {
-    "jsx": "react",
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "typeRoots": ["./typings", "./node_modules/@types"],
-    "skipLibCheck": true
-  }
+    "typeRoots": ["./typings", "./node_modules/@types"]
+  },
+  "extends": "@busybox/tsconfig",
+  "include": ["src", "typings"]
 }

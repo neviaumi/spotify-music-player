@@ -36,9 +36,9 @@ export interface Owner {
   external_urls: ExternalUrls;
   href: string;
   id: DisplayName;
+  name?: OwnerName;
   type: OwnerType;
   uri: OwnerURI;
-  name?: OwnerName;
 }
 
 export enum DisplayName {

@@ -14,8 +14,9 @@ describe('Test render PresentSuggestionList component', () => {
               id: 'FooBarID',
               name: 'FooBar',
               description: 'FooBar',
+              // @ts-expect-error
               images: [{ url: 'https://www.google.com' }],
-            } as any,
+            },
           ]}
           title="Hello World"
           onClickSuggestion={jest.fn()}
@@ -32,10 +33,11 @@ describe('Test render PresentSuggestionList component', () => {
       name: 'FooBar',
       description: 'FooBar',
       images: [{ url: 'https://www.google.com' }],
-    } as any;
+    };
     const { getByTestId } = render(
       <ThemeProvider>
         <PresentSuggestionList
+          // @ts-expect-error
           suggestions={[suggestion]}
           title="Hello World"
           onClickSuggestion={onClickSuggestion}

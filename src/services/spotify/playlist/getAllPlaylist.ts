@@ -1,4 +1,4 @@
-import { Fetcher } from '../typings/fetcher';
+import type { Fetcher } from '../typings/fetcher';
 
 export interface Response {
   items: Spotify.Playlist[];
@@ -6,7 +6,7 @@ export interface Response {
 
 const getAllPlaylist: Fetcher<Response> = async (
   apiClient,
-  offset: number = 0,
+  offset = 0,
   playlists: Spotify.Playlist[] = [],
 ) => {
   const response = await apiClient.request<

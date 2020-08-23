@@ -3,12 +3,16 @@ import React, { ReactNode } from 'react';
 import AuthContext, { AccessInfo, AuthContextValue } from './AuthContext';
 
 interface Props {
+  _accessInfo?: AccessInfo;
   children: ReactNode;
   isAuthenticated?: boolean;
-  _accessInfo?: AccessInfo;
 }
 
-export default ({ isAuthenticated, _accessInfo, children }: Props) => {
+export default function AuthContextProvider({
+  isAuthenticated,
+  _accessInfo,
+  children,
+}: Props) {
   const contextValue: AuthContextValue = {
     isAuthenticated: isAuthenticated || false,
     _accessInfo: _accessInfo,
@@ -17,7 +21,7 @@ export default ({ isAuthenticated, _accessInfo, children }: Props) => {
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );
-};
+}
 
 interface TestAuthProviderProps {
   children?: React.ReactNode;

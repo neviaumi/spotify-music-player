@@ -1,8 +1,5 @@
 {
   "ci": {
-    "collect": {
-      "url": ["http://localhost:42069/metric/performance"]
-    },
     "assert": {
       "assertions": {
         "resource-summary.script.size": [
@@ -19,6 +16,9 @@
           { "maxNumericValue": 10 }
         ]
       }
+    },
+    "collect": {
+      "url": ["http://localhost:42069/metric/performance"]
     }
   }
 }

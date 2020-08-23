@@ -1,4 +1,4 @@
-import { Fetcher } from '../typings/fetcher.d';
+import type { Fetcher } from '../typings/fetcher.d';
 
 export interface Response {
   playlists: {

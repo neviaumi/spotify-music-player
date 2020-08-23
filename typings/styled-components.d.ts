@@ -3,18 +3,18 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      green: string;
-      white: string;
       black: string;
-      natural255: string;
+      green: string;
       natural128: string;
+      natural255: string;
+      white: string;
     };
     spaces: {
-      xs: string;
-      s: string;
-      m: string;
       l: string;
+      m: string;
+      s: string;
       xl: string;
+      xs: string;
       xxl: string;
     };
   }

@@ -1,15 +1,13 @@
 import React, { Suspense } from 'react';
 
-const WithSuspense = <T extends object>(
+export default function WithSuspense<T>(
   WrappedComponent: React.ComponentType<T>,
-) => {
-  return (props: T) => {
+) {
+  return function Wrapper(props: T) {
     return (
       <Suspense fallback={<div>Loading</div>}>
         <WrappedComponent {...props} />
       </Suspense>
     );
   };
-};
-
-export default WithSuspense;
+}

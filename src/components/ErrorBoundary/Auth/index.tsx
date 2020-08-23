@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import AppError from '../../../errors/AppError';
 
 export default class AuthErrorBoundary extends React.Component<
-  object,
+  unknown,
   {
     error?: {
       err: Error | AppError;
@@ -13,7 +13,7 @@ export default class AuthErrorBoundary extends React.Component<
     };
   }
 > {
-  constructor(props: object) {
+  constructor(props: unknown) {
     super(props);
     this.state = {};
   }

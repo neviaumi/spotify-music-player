@@ -9,6 +9,6 @@ it('Should sum total duration', () => {
       {
         track: { duration_ms: 20 },
       },
-    ] as any),
+    ]),
   ).toEqual(30);
 });
