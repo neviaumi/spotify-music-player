@@ -72,7 +72,7 @@
     "husky": "4.2.5",
     "lint-staged": "10.2.11",
     "npm-package-json-lint": "5.1.0",
-    "prettier": "2.0.5",
+    "prettier": "2.1.0",
     "quicktype": "15.0.256",
     "serve": "11.3.2",
     "setup-polly-jest": "0.9.1",
