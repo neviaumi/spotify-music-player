@@ -57,7 +57,7 @@
     "@types/prettier": "2.1.5",
     "@types/ramda": "0.27.30",
     "@types/react": "16.9.53",
-    "@types/react-dom": "16.9.8",
+    "@types/react-dom": "16.9.9",
     "@types/react-router-dom": "5.1.6",
     "@types/setup-polly-jest": "0.5.1",
     "@types/styled-components": "5.1.4",
