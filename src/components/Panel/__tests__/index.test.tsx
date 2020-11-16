@@ -9,9 +9,9 @@ describe('Test render Panel component', () => {
     const { getByTestId } = render(
       <ThemeProvider>
         <Panel
+          Bottom={<div>FooBar</div>}
           Left={<div>Hello</div>}
           Right={<div>World</div>}
-          Bottom={<div>FooBar</div>}
         />
       </ThemeProvider>,
     );

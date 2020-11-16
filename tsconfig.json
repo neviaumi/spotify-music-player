@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": false,
+    "noUnusedLocals": false,
     "typeRoots": ["./typings", "./node_modules/@types"]
   },
   "extends": "@busybox/tsconfig",

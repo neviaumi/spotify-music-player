@@ -9,9 +9,9 @@ export default class AuthenticationExpiredError extends AppError<{
 }> {
   constructor(token: string, expiredAt: number, location: Location) {
     super('Authentication_Expired', 'access token expired', {
-      token,
       expiredAt,
       location,
+      token,
     });
     this.fallbackPath = '/auth/login';
   }

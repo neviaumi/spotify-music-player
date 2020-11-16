@@ -18,8 +18,8 @@ function DummyComponentWillGetToken() {
 function DummyComponentWillSetToken() {
   const { setAccessInfo, getAccessInfo } = useAccessToken();
   setAccessInfo({
-    token: 'foobar',
     expiredAt: Number.POSITIVE_INFINITY,
+    token: 'foobar',
   });
   const token = getAccessInfo();
   return <div data-testid="access-token">{token}</div>;
@@ -42,11 +42,11 @@ describe('Test useAccessToken getAccessToken hooks', () => {
     const { getByTestId } = render(
       <MemoryRouter initialEntries={['/']}>
         <AuthContextProvider
-          isAuthenticated
           _accessInfo={{
-            token: 'foobar',
             expiredAt: Number.POSITIVE_INFINITY,
+            token: 'foobar',
           }}
+          isAuthenticated
         >
           <DummyComponentWillGetToken />
         </AuthContextProvider>
@@ -72,11 +72,11 @@ describe('Test useAccessToken getAccessToken hooks', () => {
       render(
         <MemoryRouter initialEntries={['/']}>
           <AuthContextProvider
-            isAuthenticated
             _accessInfo={{
-              token: 'foobar',
               expiredAt: 0,
+              token: 'foobar',
             }}
+            isAuthenticated
           >
             <DummyComponentWillGetToken />
           </AuthContextProvider>

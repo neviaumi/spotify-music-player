@@ -5,9 +5,9 @@ export default (url: string) => {
     : _url.searchParams;
   return {
     access_token: params.get('access_token'),
-    token_type: params.get('token_type'),
-    expires_in: params.get('expires_in'),
     error: params.get('error'),
+    expires_in: params.get('expires_in'),
     state: params.get('state'),
+    token_type: params.get('token_type'),
   };
 };

@@ -3,14 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 
 import Nav from '../components/Nav';
 import Panel from '../components/Panel';
-import PlayListTracks from '../pages/PlayListTracks';
-import Suggestion from '../pages/Suggestion';
+import Suggestion from '../pages/index';
+import PlayListTracks from '../pages/playlist/:playListId';
 
 export function ContentSwitch() {
   return (
     <Switch>
-      <Route exact path="/" component={Suggestion} />
-      <Route exact path="/playlist/:playListId" render={PlayListTracks} />
+      <Route component={Suggestion} exact path="/" />
+      <Route component={PlayListTracks} exact path="/playlist/:playListId" />
     </Switch>
   );
 }
@@ -18,10 +18,10 @@ export function ContentSwitch() {
 export default function Content() {
   return (
     <Panel
-      data-testid="panel"
+      Bottom={<div>TODO!</div>}
       Left={<Nav />}
       Right={<ContentSwitch />}
-      Bottom={<div>TODO!</div>}
+      data-testid="panel"
     />
   );
 }

@@ -4,7 +4,7 @@
   "*.{css,md,yaml,yml}": ["yarn prettier --write"],
   "*.{js,jsx,ts,tsx}": [
     "yarn prettier --write",
-    "yarn eslint --max-warnings 0 --fix",
+    "yarn eslint --fix",
     "yarn stylelint"
   ],
   "package.json": [

@@ -11,9 +11,9 @@ export interface AccessInfo {
 }
 
 export default createContext<AuthContextValue>({
-  isAuthenticated: false,
   _accessInfo: {
-    token: '',
     expiredAt: 0,
+    token: '',
   },
+  isAuthenticated: false,
 });

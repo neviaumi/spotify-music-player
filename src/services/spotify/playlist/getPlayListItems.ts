@@ -11,8 +11,8 @@ const getPlayListItems: Fetcher<Response> = async (
   playListId: string,
 ) => {
   const { data, ...rest } = await apiClient.request<Response>({
-    url: `/playlists/${playListId}/tracks`,
     method: 'GET',
+    url: `/playlists/${playListId}/tracks`,
   });
   return {
     ...rest,

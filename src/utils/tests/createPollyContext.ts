@@ -12,20 +12,20 @@ Polly.register(FSPersister);
 export default (config: PollyConfig = {}) => {
   return setupPolly({
     adapters: ['node-http'],
+    matchRequestsBy: {
+      body: false,
+      headers: false,
+    },
     mode: (process.env.REACT_APP_POLLY_MODE as MODE) || 'replay',
     persister: 'fs',
     persisterOptions: {
-      keepUnusedRequests: false,
       fs: {
         recordingsDir: path.join(getCurrentTestPath(), '__recordings__'),
       },
+      keepUnusedRequests: false,
     },
-    recordIfMissing: false,
     recordFailedRequests: true,
-    matchRequestsBy: {
-      headers: false,
-      body: false,
-    },
+    recordIfMissing: false,
     ...config,
   });
 };

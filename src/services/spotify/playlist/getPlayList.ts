@@ -5,8 +5,8 @@ const getPlayList: Fetcher<Spotify.Playlist> = async (
   playListId: string,
 ) => {
   return apiClient.request({
-    url: `/playlists/${playListId}`,
     method: 'GET',
+    url: `/playlists/${playListId}`,
   });
 };
 

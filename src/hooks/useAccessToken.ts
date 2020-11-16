@@ -34,5 +34,5 @@ export default () => {
     }
     return _accessInfo.token;
   };
-  return { setAccessInfo, getAccessInfo };
+  return { getAccessInfo, setAccessInfo };
 };
