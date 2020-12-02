@@ -45,7 +45,7 @@
     "@testing-library/user-event": "12.3.0",
     "@types/enzyme": "3.10.8",
     "@types/enzyme-adapter-react-16": "1.0.6",
-    "@types/eslint": "7.2.5",
+    "@types/eslint": "7.2.6",
     "@types/eslint-plugin-prettier": "3.1.0",
     "@types/jest": "26.0.16",
     "@types/js-cookie": "2.2.6",
