@@ -1174,12 +1174,12 @@
   resolved "https://registry.yarnpkg.com/@busybox/renovate-config/-/renovate-config-1.1.3.tgz#a8ee45d918b5dd051d0adb73bd3a10be1de7507c"
   integrity sha512-97+TpN+hBj2Kwe7ZBcGSdQ8exP0WVHx8oFgujDiCDmpGTc01uiidJM1IO0U7ivuzOaSBQno4eRo2GF/uKZPNPA==
 
-"@busybox/tsconfig@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@busybox/tsconfig/-/tsconfig-1.3.0.tgz#e35666d7d1789aff315f56aa16d0a2ad408769bb"
-  integrity sha512-VmMY0pwBzBYjOFQTZXXmvTB2WYhAVaDsHE+YJzCHLLCJiNEQcV3nOyfBDPbJaodZj5wIvolKBNmu1X/u8/ruuQ==
+"@busybox/tsconfig@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@busybox/tsconfig/-/tsconfig-1.3.1.tgz#ca4c4ec44542103d2d88b9c98d32eaa6ff2571e5"
+  integrity sha512-3JbO5EcH84IqtxCz19jY3jJzQv0t1iiReiWrAwn2qSQyv5DBYxkk05cV1d+Ic9gHposmkP5uUxmKtAW/NvLJiw==
   dependencies:
-    "@spotify/tsconfig" "8.0.0"
+    "@spotify/tsconfig" "9.0.0"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -1781,10 +1781,10 @@
   resolved "https://registry.yarnpkg.com/@spotify/prettier-config/-/prettier-config-9.0.0.tgz#7b562d56573c6fc0094446fbc92b22bc318945dc"
   integrity sha512-In1q0tIiqTYKAGe3KOHDcFDdZRFISyQeSeipeTHGfki23ebHRZcjxvqj5SSdBkw65D4VpSREMi0s9i5iJiMcTw==
 
-"@spotify/tsconfig@8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@spotify/tsconfig/-/tsconfig-8.0.0.tgz#251dafee6982f02836ac7163f5b682025d552b4c"
-  integrity sha512-LPj5ciez1MNk/FEWTiM0I5XOpD/GMGssKY1tkY9hUMYZRriutrZFrGRtooy0q12uz5E7W7OFhUNvUyxDKA9SAA==
+"@spotify/tsconfig@9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@spotify/tsconfig/-/tsconfig-9.0.0.tgz#09cbb74fd8cda153d3fb5ced6f135395f4f27862"
+  integrity sha512-ccFQ0kJ1FeTZXoPi89llJpsUDzM26HOvVxP20+yXw+BNvCKawWqE1cz15FNdXlk/qShCoXsAvMy4C/1T6k6r5g==
 
 "@spotify/web-scripts-utils@9.0.0", "@spotify/web-scripts-utils@^9.0.0":
   version "9.0.0"
