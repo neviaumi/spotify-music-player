@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
@@ -18,8 +18,8 @@ function DummyComponentWillGetToken() {
 function DummyComponentWillSetToken() {
   const { setAccessInfo, getAccessInfo } = useAccessToken();
   setAccessInfo({
-    token: 'foobar',
     expiredAt: Number.POSITIVE_INFINITY,
+    token: 'foobar',
   });
   const token = getAccessInfo();
   return <div data-testid="access-token">{token}</div>;
@@ -27,32 +27,32 @@ function DummyComponentWillSetToken() {
 
 describe('Test useAccessToken setAccessToken hooks', () => {
   it('Should success set the token', () => {
-    const { getByTestId } = render(
+    render(
       <MemoryRouter initialEntries={['/']}>
         <AuthContextProvider>
           <DummyComponentWillSetToken />
         </AuthContextProvider>
       </MemoryRouter>,
     );
-    expect(getByTestId('access-token').textContent).toEqual('foobar');
+    expect(screen.getByTestId('access-token').textContent).toEqual('foobar');
   });
 });
 describe('Test useAccessToken getAccessToken hooks', () => {
   it('Should success get the token', () => {
-    const { getByTestId } = render(
+    render(
       <MemoryRouter initialEntries={['/']}>
         <AuthContextProvider
-          isAuthenticated
           _accessInfo={{
-            token: 'foobar',
             expiredAt: Number.POSITIVE_INFINITY,
+            token: 'foobar',
           }}
+          isAuthenticated
         >
           <DummyComponentWillGetToken />
         </AuthContextProvider>
       </MemoryRouter>,
     );
-    expect(getByTestId('access-token').textContent).toEqual('foobar');
+    expect(screen.getByTestId('access-token').textContent).toEqual('foobar');
   });
 
   it('Should fail get the token due to unauthenticated', () => {
@@ -72,11 +72,11 @@ describe('Test useAccessToken getAccessToken hooks', () => {
       render(
         <MemoryRouter initialEntries={['/']}>
           <AuthContextProvider
-            isAuthenticated
             _accessInfo={{
-              token: 'foobar',
               expiredAt: 0,
+              token: 'foobar',
             }}
+            isAuthenticated
           >
             <DummyComponentWillGetToken />
           </AuthContextProvider>

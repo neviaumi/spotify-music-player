@@ -1,14 +1,14 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import Login from '../index';
+import { Login } from '../';
 
 it('Should render without error', () => {
-  const { getByTestId } = render(
+  render(
     <MemoryRouter>
       <Login />
     </MemoryRouter>,
   );
-  expect(getByTestId('login-empty')).toBeDefined();
+  expect(screen.getByTestId('login-empty')).toBeVisible();
 });

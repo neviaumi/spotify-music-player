@@ -25,9 +25,9 @@ it('Read previous state from cookies', () => {
   authorizeUrl.hash = hashParams.toString();
   const params = verifyAuthCallback(authorizeUrl.toString());
   expect(params).toEqual({
-    token: 'foobar',
     expiredAt: 7200,
     state: { foo: 'bar' },
+    token: 'foobar',
   });
   getItemSpy.mockRestore();
 });
@@ -44,9 +44,9 @@ it('Should return valid callback params from url', () => {
   authorizeUrl.hash = hashParams.toString();
   const params = verifyAuthCallback(authorizeUrl.toString());
   expect(params).toEqual({
-    token: 'foobar',
     expiredAt: 7200,
     state: {},
+    token: 'foobar',
   });
 });
 

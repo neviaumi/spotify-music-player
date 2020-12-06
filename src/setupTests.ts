@@ -4,9 +4,14 @@
 // learn more: https://github.com/testing-library/jest-dom
 
 import '@testing-library/jest-dom';
+import 'jest-expect-message';
 
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+// @ts-expect-error no type for this module
+import MutationObserver from 'mutation-observer';
+
+global.MutationObserver = MutationObserver;
 
 configure({ adapter: new Adapter() });
 Object.assign(window.location, {

@@ -14,8 +14,8 @@ export default function AuthContextProvider({
   children,
 }: Props) {
   const contextValue: AuthContextValue = {
-    isAuthenticated: isAuthenticated || false,
     _accessInfo: _accessInfo,
+    isAuthenticated: isAuthenticated || false,
   };
 
   return (
@@ -30,11 +30,11 @@ interface TestAuthProviderProps {
 export const TestAuthProvider = ({ children }: TestAuthProviderProps) => (
   <AuthContext.Provider
     value={{
-      isAuthenticated: true,
       _accessInfo: {
-        token: process.env.REACT_APP_SPOTIFY_ACCESS_TOKEN as string,
         expiredAt: Number.MAX_SAFE_INTEGER,
+        token: process.env.REACT_APP_SPOTIFY_ACCESS_TOKEN as string,
       },
+      isAuthenticated: true,
     }}
   >
     {children}

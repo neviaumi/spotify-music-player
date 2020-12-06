@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import ThemeProvider from '../';
 import theme from '../../../themes';
+import ThemeProvider from '../';
 
 describe('Test render Panel component', () => {
   it('Should render without error', () => {

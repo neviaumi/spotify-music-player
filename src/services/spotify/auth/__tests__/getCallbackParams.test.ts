@@ -14,10 +14,10 @@ it('Should return valid callback params from url', () => {
   const params = getCallbackParams(authorizeUrl.toString());
   expect(params).toEqual({
     access_token: 'foobar',
-    token_type: 'Bearer',
+    error: null,
     expires_in: '-1',
     state: 'randomThingHere',
-    error: null,
+    token_type: 'Bearer',
   });
 });
 
@@ -29,9 +29,9 @@ it('Should return error params from url', () => {
   const params = getCallbackParams(authorizeUrl.toString());
   expect(params).toEqual({
     access_token: null,
-    token_type: null,
-    expires_in: null,
     error: 'unit-test',
+    expires_in: null,
     state: 'foobar',
+    token_type: null,
   });
 });

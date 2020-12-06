@@ -1,6 +1,7 @@
+import { createMemoryHistory } from 'history';
 import React from 'react';
-import type { MemoryRouterProps } from 'react-router';
-import { MemoryRouter } from 'react-router-dom';
+import type { RouterProps } from 'react-router';
+import { Router } from 'react-router-dom';
 
 import AuthProvider, { TestAuthProvider } from './contexts/Auth';
 import DataFetchingConfigProvider, {
@@ -8,14 +9,14 @@ import DataFetchingConfigProvider, {
   TestDataFetchingConfigProvider,
 } from './contexts/DataFetching';
 import ThemeProvider from './contexts/Theme';
-import Router from './Router';
+import AppRouter from './Router';
 
 function App() {
   return (
     <AuthProvider>
       <ThemeProvider>
         <DataFetchingConfigProvider>
-          <Router />
+          <AppRouter />
         </DataFetchingConfigProvider>
       </ThemeProvider>
     </AuthProvider>
@@ -24,21 +25,25 @@ function App() {
 
 export function TestApp({
   DataFetchingConfigProviderProps: _DataFetchingConfigProviderProps,
-  MemoryRouterProps: _MemoryRouterProps,
+  RouterProps: _RouterProps,
   children,
 }: {
   DataFetchingConfigProviderProps?: DataFetchingConfigProviderProps;
-  MemoryRouterProps?: MemoryRouterProps;
+  RouterProps?: RouterProps;
   children: React.ReactNode;
 }) {
   return (
-    <MemoryRouter {..._MemoryRouterProps}>
+    <Router
+      {...(_RouterProps ?? {
+        history: createMemoryHistory(),
+      })}
+    >
       <TestAuthProvider>
         <TestDataFetchingConfigProvider {..._DataFetchingConfigProviderProps}>
           <ThemeProvider>{children}</ThemeProvider>
         </TestDataFetchingConfigProvider>
       </TestAuthProvider>
-    </MemoryRouter>
+    </Router>
   );
 }
 

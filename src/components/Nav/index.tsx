@@ -50,8 +50,8 @@ export function Nav({ location, ...rest }: Props) {
       <Logo />
       <NavItemContainer>
         <NavItem
-          data-testid="nav-home"
           active={location.pathname === '/'}
+          data-testid="nav-home"
           onClick={() => history.push('/')}
         >
           Home

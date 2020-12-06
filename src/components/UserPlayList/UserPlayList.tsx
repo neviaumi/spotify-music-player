@@ -2,12 +2,33 @@ import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-import useDataFetcher from '../../hooks/useDataFetcher';
-import useSpotifyAPIClient from '../../hooks/useSpotifyAPIClient';
-import getAllPlaylist, {
-  Response,
-} from '../../services/spotify/playlist/getAllPlaylist';
-import withSuspense from '../HOC/withSuspense';
+import withSuspense from '../../HOC/withSuspense';
+import useUserPlayList from '../../hooks/spotify/query/useUserPlayList';
+import type { PlaylistSimplified } from '../../hooks/spotify/typings/Playlist';
+
+export interface Props {
+  onClickPlayList: (playlist: PlaylistSimplified) => void;
+  playlists?: PlaylistSimplified[];
+}
+
+export function withUserPlayList(Wrapper: React.ComponentType<Props>) {
+  return function WithUserPlayList() {
+    const history = useHistory();
+    const onClickPlayList = useCallback(
+      playlist => {
+        history.push(`/playlist/${playlist.id}`);
+      },
+      [history],
+    );
+    const response = useUserPlayList();
+    return (
+      <Wrapper
+        onClickPlayList={onClickPlayList}
+        playlists={response?.data.items}
+      />
+    );
+  };
+}
 
 const Container = styled.section`
   margin-top: 24px;
@@ -42,26 +63,14 @@ const Item = styled.a`
   }
 `;
 
-export function Playlist() {
-  const history = useHistory();
-  const onClickPlayList = useCallback(
-    playlist => {
-      history.push(`/playlist/${playlist.id}`);
-    },
-    [history],
-  );
-  const apiClient = useSpotifyAPIClient();
-  const response = useDataFetcher<Response>('me/playlists', () =>
-    getAllPlaylist(apiClient),
-  );
-  const playlists = response.data.items ?? [];
+export function PresentUserPlaylist({ playlists, onClickPlayList }: Props) {
   return (
     <Container>
       <Title>PLAYLISTS</Title>
       <ItemContainer>
-        {playlists.map(playlist => (
+        {playlists?.map(playlist => (
           <Item
-            data-testid="user-playlist"
+            href=""
             key={playlist.id}
             onClick={() => onClickPlayList(playlist)}
           >
@@ -73,4 +82,4 @@ export function Playlist() {
   );
 }
 
-export default withSuspense(Playlist);
+export default withSuspense(withUserPlayList(PresentUserPlaylist));

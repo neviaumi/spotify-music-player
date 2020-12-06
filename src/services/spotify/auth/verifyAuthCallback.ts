@@ -15,8 +15,8 @@ export default (url: string) => {
   }
   const currentTimestamp = getCurrentTimestamp();
   return {
-    token: params.access_token as string,
     expiredAt: currentTimestamp + Number(params.expires_in || 0),
     state: JSON.parse(transaction),
+    token: params.access_token as string,
   };
 };

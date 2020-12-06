@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import AuthErrorBoundary from '../index';
@@ -15,12 +15,12 @@ function ErrorComponent({ location }: { location?: Record<string, unknown> }) {
 
 describe('Test AuthErrorBoundary', () => {
   it('Should capture the error', () => {
-    const { getByTestId } = render(
+    render(
       <AuthErrorBoundary>
         <ErrorComponent location={{}} />
       </AuthErrorBoundary>,
     );
-    const errorContainer = getByTestId('error-fallback');
+    const errorContainer = screen.getByTestId('error-fallback');
     expect(errorContainer.textContent).toEqual('FooBar!');
   });
 });

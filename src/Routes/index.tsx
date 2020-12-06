@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import AuthErrorBoundary from '../components/ErrorBoundary/Auth';
 import DataFetchingErrorBoundary from '../components/ErrorBoundary/DataFetching';
-import AuthCallback from '../pages/Auth/Callback';
-import Login from '../pages/Auth/Login';
+import { Login } from '../pages/Auth/Login';
+import AuthCallback from '../pages/Auth/Login/callback';
 import ContentRoutes from './Content';
 
 export function DummyComponent() {
@@ -14,9 +14,9 @@ export function DummyComponent() {
 export default function Routes() {
   return (
     <Switch>
-      <Route exact path="/auth/login" component={Login} />
-      <Route exact path="/auth/login/callback" component={AuthCallback} />
-      <Route exact path="/metric/performance" component={DummyComponent} />
+      <Route component={Login} exact path="/auth/login" />
+      <Route component={AuthCallback} exact path="/auth/login/callback" />
+      <Route component={DummyComponent} exact path="/metric/performance" />
       <AuthErrorBoundary>
         <DataFetchingErrorBoundary>
           <ContentRoutes />
