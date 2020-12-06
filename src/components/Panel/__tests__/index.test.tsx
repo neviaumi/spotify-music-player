@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import Panel from '../';
 import ThemeProvider from '../../../contexts/Theme';
+import Panel from '../';
 
 describe('Test render Panel component', () => {
   it('Should render without error', () => {

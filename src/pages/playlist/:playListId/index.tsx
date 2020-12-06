@@ -7,6 +7,7 @@ import usePlayList from '../../../hooks/spotify/query/usePlayList';
 import type { PlaylistFull } from '../../../hooks/spotify/typings/Playlist';
 import { Heading } from './components/Heading';
 import TracksList from './components/TracksList';
+
 const Container = styled.div`
   padding: 0 32px;
 `;
