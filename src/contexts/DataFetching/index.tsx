@@ -1,7 +1,8 @@
 import React from 'react';
 import { ConfigInterface, SWRConfig } from 'swr';
 
-export interface DataFetchingConfigProviderProps extends ConfigInterface {
+export interface DataFetchingConfigProviderProps
+  extends ConfigInterface<any, any, (...args: any) => any> {
   children?: React.ReactNode;
 }
 
