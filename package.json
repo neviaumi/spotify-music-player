@@ -29,7 +29,7 @@
     "swr": "0.3.7"
   },
   "devDependencies": {
-    "@busybox/eslint-config": "5.1.1",
+    "@busybox/eslint-config": "5.2.1",
     "@busybox/npm-package-json-lint-config": "1.1.3",
     "@busybox/prettier-config": "1.1.4",
     "@busybox/renovate-config": "1.1.3",
