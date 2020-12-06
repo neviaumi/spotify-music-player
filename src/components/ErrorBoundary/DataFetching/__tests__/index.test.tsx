@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import DataFetchingError from '../../../../errors/DataFetchingError';
@@ -22,11 +22,11 @@ describe('Test DataFetchingErrorBoundary', () => {
   });
 
   it('Should capture the error', () => {
-    const { getByTestId } = render(
+    render(
       <DataFetchingErrorBoundary>
         <ErrorComponent err={new DataFetchingError(new Error(''))} />
       </DataFetchingErrorBoundary>,
     );
-    expect(getByTestId('error')).toBeDefined();
+    expect(screen.getByTestId('error')).toBeVisible();
   });
 });

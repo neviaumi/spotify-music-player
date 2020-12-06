@@ -68,7 +68,7 @@ export function Heading({ playList }: Props) {
   return (
     <Container data-testid="heading">
       <Cover>
-        <CoverImage src={playList?.images[0].url} alt="cover-image" />
+        <CoverImage alt="cover-image" src={playList?.images[0].url} />
       </Cover>
       <ContentContainer>
         <Type>PLAYLIST</Type>

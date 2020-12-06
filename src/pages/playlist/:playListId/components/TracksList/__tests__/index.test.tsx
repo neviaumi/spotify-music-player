@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-
 import React from 'react';
+
 import { TestApp } from '../../../../../../App';
 import TrackingList from '../index';
 
@@ -11,10 +11,10 @@ it('render TrackList with one Item', () => {
         items: [
           {
             track: {
-              name: 'Sunrise of love',
               album: { name: 'Disraeli Gears' },
               artists: [{ name: 'Cream' }],
               duration_ms: 1000,
+              name: 'Sunrise of love',
             },
           },
         ],

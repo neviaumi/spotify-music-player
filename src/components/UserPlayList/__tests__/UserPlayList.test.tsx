@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import events from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 import React from 'react';
@@ -28,9 +28,7 @@ describe('Test withUserPlayList HOC', () => {
       </TestApp>,
     );
 
-    await waitFor(() =>
-      expect(screen.getAllByRole('button').length).toBeGreaterThan(0),
-    );
+    await expect(screen.findAllByRole('button')).resolves.toBeDefined();
     events.click(screen.getAllByRole('button')[0]);
     expect(
       history.entries[1].pathname,

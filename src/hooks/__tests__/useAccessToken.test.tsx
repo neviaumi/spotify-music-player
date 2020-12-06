@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
@@ -27,19 +27,19 @@ function DummyComponentWillSetToken() {
 
 describe('Test useAccessToken setAccessToken hooks', () => {
   it('Should success set the token', () => {
-    const { getByTestId } = render(
+    render(
       <MemoryRouter initialEntries={['/']}>
         <AuthContextProvider>
           <DummyComponentWillSetToken />
         </AuthContextProvider>
       </MemoryRouter>,
     );
-    expect(getByTestId('access-token').textContent).toEqual('foobar');
+    expect(screen.getByTestId('access-token').textContent).toEqual('foobar');
   });
 });
 describe('Test useAccessToken getAccessToken hooks', () => {
   it('Should success get the token', () => {
-    const { getByTestId } = render(
+    render(
       <MemoryRouter initialEntries={['/']}>
         <AuthContextProvider
           _accessInfo={{
@@ -52,7 +52,7 @@ describe('Test useAccessToken getAccessToken hooks', () => {
         </AuthContextProvider>
       </MemoryRouter>,
     );
-    expect(getByTestId('access-token').textContent).toEqual('foobar');
+    expect(screen.getByTestId('access-token').textContent).toEqual('foobar');
   });
 
   it('Should fail get the token due to unauthenticated', () => {

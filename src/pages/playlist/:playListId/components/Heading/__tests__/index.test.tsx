@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-
 import React from 'react';
 
 import { TestApp } from '../../../../../../App';
@@ -7,17 +6,17 @@ import { Heading } from '../index';
 
 it('render without error', () => {
   const playlist = {
-    name: 'Cat music',
+    followers: {
+      total: 128,
+    },
     images: [
       {
         url: 'https://http.cat/404.jpg',
       },
     ],
+    name: 'Cat music',
     owner: {
       display_name: 'David Ng',
-    },
-    followers: {
-      total: 128,
     },
     tracks: {
       items: [

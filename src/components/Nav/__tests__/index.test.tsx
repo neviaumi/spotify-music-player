@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import Nav from '../';
@@ -6,16 +6,12 @@ import { TestApp } from '../../../App';
 
 describe('Test render Nav component', () => {
   it('Should render without error', () => {
-    const { getByTestId } = render(
-      <TestApp
-        DataFetchingConfigProviderProps={{ initialData: { data: {} } }}
-        MemoryRouterProps={{ initialEntries: ['/'] }}
-      >
+    render(
+      <TestApp DataFetchingConfigProviderProps={{ initialData: { data: {} } }}>
         <Nav />
       </TestApp>,
     );
-    const navHome = getByTestId('nav-home');
 
-    expect(navHome).toBeDefined();
+    expect(screen.getByTestId('nav-home')).toBeVisible();
   });
 });
