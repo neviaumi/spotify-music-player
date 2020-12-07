@@ -89,14 +89,6 @@
   "engines": {
     "node": ">=12"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn lint:script && CI=true yarn test --coverage --watchAll=false",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
-  },
   "jest": {
     "coverageReporters": [
       "text",
@@ -124,6 +116,7 @@
     "lint:package-json": "yarn npmPkgJsonLint .",
     "lint:script": "eslint --ext=ts,tsx,json,js --fix .",
     "lint:script:ci": "eslint --ext=ts,tsx,json,js .",
+    "postinstall": "husky install",
     "quicktype": "quicktype --just-types",
     "serve:lhci": "serve -l 42069 -s build",
     "start": "react-scripts start",
