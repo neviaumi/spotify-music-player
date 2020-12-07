@@ -3,23 +3,11 @@ import event from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
 import { TestApp } from '../../../../App';
+import useSuggestedPlayListByUserTopTrack from '../../../../hooks/spotify/query/useSuggestedPlayListByUserTopTrack';
 import type { Props } from '../Present/PresentSuggestionList';
 import { withSuggestPlayListByTopTrack } from '../SuggestPlayListByTopTrack';
 
-jest.mock(
-  '../../../../hooks/spotify/query/useSuggestedPlayListByUserTopTrack',
-  () =>
-    jest.fn().mockReturnValue({
-      data: {
-        playlists: [
-          {
-            id: 'example-playlist',
-          },
-        ],
-        track: { name: 'track' },
-      },
-    }),
-);
+jest.mock('../../../../hooks/spotify/query/useSuggestedPlayListByUserTopTrack');
 
 const SuggestPlayListByTopTrack = withSuggestPlayListByTopTrack(
   ({ onClickSuggestion, suggestions, title }: Props) => {
@@ -43,6 +31,16 @@ const SuggestPlayListByTopTrack = withSuggestPlayListByTopTrack(
 
 describe('Test SuggestPlayListByTopTrack component', () => {
   it('have title', () => {
+    (useSuggestedPlayListByUserTopTrack as any).mockReturnValue({
+      data: {
+        playlists: [
+          {
+            id: 'example-playlist',
+          },
+        ],
+        track: { name: 'track' },
+      },
+    });
     render(
       <TestApp>
         <SuggestPlayListByTopTrack />
@@ -52,6 +50,16 @@ describe('Test SuggestPlayListByTopTrack component', () => {
   });
 
   it('Click suggestion should jump to /playlist/:id', () => {
+    (useSuggestedPlayListByUserTopTrack as any).mockReturnValue({
+      data: {
+        playlists: [
+          {
+            id: 'example-playlist',
+          },
+        ],
+        track: { name: 'track' },
+      },
+    });
     const history = createMemoryHistory();
     render(
       <TestApp RouterProps={{ history }}>

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { ConfigInterface, SWRConfig } from 'swr';
 
 export interface DataFetchingConfigProviderProps
-  extends ConfigInterface<any, any, (...args: any) => any> {
+  extends ConfigInterface<unknown, unknown, (...args: unknown[]) => unknown> {
   children?: ReactNode;
 }
 
