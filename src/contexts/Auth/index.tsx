@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import AuthContext, { AccessInfo, AuthContextValue } from './AuthContext';
 
@@ -24,7 +24,7 @@ export default function AuthContextProvider({
 }
 
 interface TestAuthProviderProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 export const TestAuthProvider = ({ children }: TestAuthProviderProps) => (

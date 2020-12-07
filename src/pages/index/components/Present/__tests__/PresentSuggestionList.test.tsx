@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import events from '@testing-library/user-event';
-import React from 'react';
 
 import { TestApp } from '../../../../../App';
 import PresentSuggestionList from '../PresentSuggestionList';

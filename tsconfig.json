@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": false,
+    "jsx": "react-jsx",
     "noUnusedLocals": false,
     "typeRoots": ["./typings", "./node_modules/@types"]
   },

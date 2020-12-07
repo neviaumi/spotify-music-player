@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -11,7 +11,7 @@ export interface Props {
   playlists?: PlaylistSimplified[];
 }
 
-export function withUserPlayList(Wrapper: React.ComponentType<Props>) {
+export function withUserPlayList(Wrapper: ComponentType<Props>) {
   return function WithUserPlayList() {
     const history = useHistory();
     const onClickPlayList = useCallback(

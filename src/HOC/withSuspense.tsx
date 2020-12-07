@@ -1,8 +1,6 @@
-import React, { Suspense } from 'react';
+import { ComponentType, Suspense } from 'react';
 
-export default function WithSuspense<T>(
-  WrappedComponent: React.ComponentType<T>,
-) {
+export default function WithSuspense<T>(WrappedComponent: ComponentType<T>) {
   return function Wrapper(props: T) {
     return (
       <Suspense fallback={<div>Loading</div>}>

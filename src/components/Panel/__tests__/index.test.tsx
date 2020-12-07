@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import React from 'react';
 
 import ThemeProvider from '../../../contexts/Theme';
 import Panel from '../';

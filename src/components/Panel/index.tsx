@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -40,9 +40,9 @@ const ScrollAbleWrapper = styled.div`
 `;
 
 interface Props {
-  Bottom: React.ReactNode;
-  Left: React.ReactNode;
-  Right: React.ReactNode;
+  Bottom: ReactNode;
+  Left: ReactNode;
+  Right: ReactNode;
 }
 
 export default function Panel({ Left, Right, Bottom, ...rest }: Props) {

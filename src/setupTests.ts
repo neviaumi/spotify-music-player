@@ -11,11 +11,15 @@ import Adapter from 'enzyme-adapter-react-16';
 // @ts-expect-error no type for this module
 import MutationObserver from 'mutation-observer';
 
+// @ts-expect-error no type for this module
 global.MutationObserver = MutationObserver;
 
 configure({ adapter: new Adapter() });
-Object.assign(window.location, {
-  replace: jest.fn().mockReturnValue(undefined),
+Object.assign(window, {
+  location: {
+    ...window.location,
+    replace: jest.fn().mockReturnValue(undefined),
+  },
 });
 // https://github.com/facebook/react/issues/11098
 Object.assign(console, {

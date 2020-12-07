@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import React from 'react';
 import { Route } from 'react-router-dom';
 
 import Routes, { DummyComponent } from '../';
