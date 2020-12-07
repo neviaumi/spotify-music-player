@@ -1,5 +1,5 @@
 import { createMemoryHistory } from 'history';
-import React from 'react';
+import type { ReactNode } from 'react';
 import type { RouterProps } from 'react-router';
 import { Router } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ export function TestApp({
 }: {
   DataFetchingConfigProviderProps?: DataFetchingConfigProviderProps;
   RouterProps?: RouterProps;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <Router

@@ -1,14 +1,14 @@
-import React from 'react';
+import { Component, ErrorInfo } from 'react';
 
 import type AppError from '../../../errors/AppError';
 import DataFetchingError from '../../../errors/DataFetchingError';
 
-export default class DataFetchingErrorBoundary extends React.Component<
+export default class DataFetchingErrorBoundary extends Component<
   unknown,
   {
     error?: {
       err: Error | AppError;
-      info: React.ErrorInfo;
+      info: ErrorInfo;
     };
   }
 > {
@@ -17,7 +17,7 @@ export default class DataFetchingErrorBoundary extends React.Component<
     this.state = {};
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
     this.setState({
       error: {
         err: error,

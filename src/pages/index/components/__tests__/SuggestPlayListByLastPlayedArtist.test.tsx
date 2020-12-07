@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import event from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
-import React from 'react';
 
 import { TestApp } from '../../../../App';
 import type { Props } from '../Present/PresentSuggestionList';

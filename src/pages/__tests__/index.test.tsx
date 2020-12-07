@@ -1,5 +1,6 @@
+/** @jest-environment setup-polly-jest/jest-environment-jsdom */
+
 import { render, screen } from '@testing-library/react';
-import React from 'react';
 
 import { TestApp } from '../../App';
 import createPollyContext from '../../utils/tests/createPollyContext';

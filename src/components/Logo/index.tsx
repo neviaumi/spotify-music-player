@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import logo from './Spotify_Logo_RGB_White.png';

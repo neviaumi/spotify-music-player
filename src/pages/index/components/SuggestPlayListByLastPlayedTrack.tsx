@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import withSuspense from '../../../HOC/withSuspense';
@@ -6,7 +6,7 @@ import useSuggestedPlayListByLastPlayedTrack from '../../../hooks/spotify/query/
 import PresentSuggestionList, { Props } from './Present/PresentSuggestionList';
 
 export function withSuggestPlayListByLastPlayedTrack(
-  WrappedComponent: React.ComponentType<Props>,
+  WrappedComponent: ComponentType<Props>,
 ) {
   return function WithSuggestPlayListByLastPlayedTrack() {
     const history = useHistory();

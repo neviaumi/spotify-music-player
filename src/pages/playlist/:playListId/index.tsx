@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ComponentType } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 
 export function withPlayList(
-  Wrapper: React.ComponentType<{
+  Wrapper: ComponentType<{
     playList?: PlaylistFull;
   }>,
 ) {
