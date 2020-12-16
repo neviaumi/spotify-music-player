@@ -57,7 +57,7 @@
     "@types/pollyjs__core": "4.3.1",
     "@types/pollyjs__persister-fs": "2.0.1",
     "@types/prettier": "2.1.5",
-    "@types/ramda": "0.27.33",
+    "@types/ramda": "0.27.34",
     "@types/react": "17.0.0",
     "@types/react-dom": "17.0.0",
     "@types/react-router-dom": "5.1.6",
