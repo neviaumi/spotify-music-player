@@ -26,7 +26,7 @@
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.1",
     "styled-components": "5.2.1",
-    "swr": "0.3.10"
+    "swr": "0.3.11"
   },
   "devDependencies": {
     "@busybox/eslint-config": "5.2.1",
