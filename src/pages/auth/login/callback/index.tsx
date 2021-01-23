@@ -1,7 +1,7 @@
 import { Redirect } from 'react-router-dom';
 
 import useAccessToken from '../../../../hooks/useAccessToken';
-import verifyAuthCallback from '../../../../services/spotify/auth/verifyAuthCallback';
+import verifyAuthCallback from '../utils/verifyAuthCallback';
 
 export default function AuthCallback() {
   const { setAccessInfo } = useAccessToken();

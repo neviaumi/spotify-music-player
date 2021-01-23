@@ -2,8 +2,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import AuthErrorBoundary from '../components/ErrorBoundary/Auth';
 import DataFetchingErrorBoundary from '../components/ErrorBoundary/DataFetching';
-import { Login } from '../pages/Auth/Login';
-import AuthCallback from '../pages/Auth/Login/callback';
+import { Login } from '../pages/auth/login';
+import AuthCallback from '../pages/auth/login/callback';
 import ContentRoutes from './Content';
 
 export function DummyComponent() {

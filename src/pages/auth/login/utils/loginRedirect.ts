@@ -1,6 +1,12 @@
+import nanoid from 'nanoid';
+
 import openidConfiguration from './openidConfiguration';
 
-export default (transactionId: string) => {
+export interface State {
+  [key: string]: unknown;
+}
+
+export function getAuthorizeUrl(transactionId: string) {
   const authorizeUrl = new URL(openidConfiguration.authorization_endpoint);
   const queryParams = authorizeUrl.searchParams;
   queryParams.append(
@@ -21,4 +27,11 @@ export default (transactionId: string) => {
   queryParams.append('show_dialog', 'false');
   queryParams.append('state', transactionId);
   return authorizeUrl.toString();
-};
+}
+
+export function loginRedirect(state: State) {
+  const transactionId = nanoid();
+  const url = getAuthorizeUrl(transactionId);
+  window.localStorage.setItem(transactionId, JSON.stringify(state));
+  window.location.replace(url);
+}

@@ -15,12 +15,6 @@ import MutationObserver from 'mutation-observer';
 global.MutationObserver = MutationObserver;
 
 configure({ adapter: new Adapter() });
-Object.assign(window, {
-  location: {
-    ...window.location,
-    replace: jest.fn().mockReturnValue(undefined),
-  },
-});
 // https://github.com/facebook/react/issues/11098
 Object.assign(console, {
   error: jest.fn(),
