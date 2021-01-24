@@ -26,10 +26,11 @@ export default function useSuggestedPlayListByLastPlayedArtist():
       playlists: { items },
     },
   } = searchResponse;
-  return Object.assign(searchResponse, {
+  return {
+    ...searchResponse,
     data: {
       artist: lastPlayedTrackArtist,
       playlists: items,
     },
-  });
+  };
 }

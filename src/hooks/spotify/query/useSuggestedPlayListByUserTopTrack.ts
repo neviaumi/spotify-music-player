@@ -23,10 +23,11 @@ export default function useSuggestedPlayListByUserTopTrack():
       playlists: { items },
     },
   } = searchResponse;
-  return Object.assign(searchResponse, {
+  return {
+    ...searchResponse,
     data: {
       playlists: items,
       track: topTrack,
     },
-  });
+  };
 }

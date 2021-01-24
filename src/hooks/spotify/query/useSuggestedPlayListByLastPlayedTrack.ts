@@ -23,10 +23,11 @@ export default function useSuggestedPlayListByLastPlayedTrack():
       playlists: { items },
     },
   } = searchResponse;
-  return Object.assign(searchResponse, {
+  return {
+    ...searchResponse,
     data: {
       playlists: items,
       track: lastPlayedTrack,
     },
-  });
+  };
 }
