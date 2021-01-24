@@ -4,7 +4,7 @@ import AuthErrorBoundary from '../components/ErrorBoundary/Auth';
 import DataFetchingErrorBoundary from '../components/ErrorBoundary/DataFetching';
 import { Login } from '../pages/auth/login';
 import AuthCallback from '../pages/auth/login/callback';
-import ContentRoutes from './Content';
+import ContentRoutes from './ProtectedRoutes';
 
 export function DummyComponent() {
   return <div>First Content</div>;

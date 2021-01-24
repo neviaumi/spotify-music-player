@@ -23,10 +23,11 @@ export default function useSuggestedPlayListByUserTopArtist():
       playlists: { items },
     },
   } = searchResponse;
-  return Object.assign(searchResponse, {
+  return {
+    ...searchResponse,
     data: {
       artist: topArtist,
       playlists: items,
     },
-  });
+  };
 }

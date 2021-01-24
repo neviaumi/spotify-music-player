@@ -6,6 +6,8 @@ import { loginRedirect } from './utils/loginRedirect';
 export function Login() {
   const location = useLocation<Record<string, unknown>>();
 
-  useEffect(() => loginRedirect(location.state), [location]);
+  useEffect(() => {
+    loginRedirect(location.state);
+  }, [location]);
   return <div data-testid="login-empty" />;
 }

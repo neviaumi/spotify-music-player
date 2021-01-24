@@ -1,17 +1,12 @@
 import AuthenticationCallbackError from '../../../../errors/AuthenticationCallbackError';
-import getCurrentTimestamp from '../../../../utils/getCurrentTimestamp';
 
 export function getCallbackParams(url: string) {
   const _url = new URL(url);
-  const params = _url.hash
-    ? new URLSearchParams(_url.hash.slice(1))
-    : _url.searchParams;
+  const params = _url.searchParams;
   return {
-    access_token: params.get('access_token'),
+    code: params.get('code') as string,
     error: params.get('error'),
-    expires_in: params.get('expires_in'),
-    state: params.get('state'),
-    token_type: params.get('token_type'),
+    state: params.get('state') as string,
   };
 }
 
@@ -20,15 +15,13 @@ export default (url: string) => {
   if (params.error) {
     throw new AuthenticationCallbackError(params.error);
   }
-  const transactionId = params.state as string;
-  let transaction = '{}';
-  if (transactionId) {
-    transaction = window.localStorage.getItem(transactionId) || transaction;
+  const state = window.localStorage.getItem(params.state);
+  if (!state) {
+    throw new AuthenticationCallbackError(`Unknown state: ${params.state}`);
   }
-  const currentTimestamp = getCurrentTimestamp();
+  window.localStorage.removeItem(params.state);
   return {
-    expiredAt: currentTimestamp + Number(params.expires_in || 0),
-    state: JSON.parse(transaction),
-    token: params.access_token as string,
+    code: params.code,
+    state: JSON.parse(state),
   };
 };

@@ -1,20 +1,28 @@
+import { useMemo } from 'react';
 import { Redirect } from 'react-router-dom';
+import { useAsync } from 'react-use';
 
-import useAccessToken from '../../../../hooks/useAccessToken';
+import { useAuthContext } from '../../../../contexts/Auth/AuthContext';
 import verifyAuthCallback from '../utils/verifyAuthCallback';
 
 export default function AuthCallback() {
-  const { setAccessInfo } = useAccessToken();
-  const authResult = verifyAuthCallback(window.location.href);
-  setAccessInfo(authResult);
+  const { exchangeTokenFromCode } = useAuthContext();
   const {
-    state: { from: fromState },
-  } = authResult;
+    state: { codeVerifier, from },
+    code,
+  } = useMemo(() => verifyAuthCallback(window.location.href), []);
+  const { loading, error } = useAsync(
+    async () => exchangeTokenFromCode(code, codeVerifier),
+    [code, codeVerifier],
+  );
+  if (loading) return null;
+  if (error) throw error;
+
   return (
     <Redirect
       to={{
-        pathname: fromState?.pathname || '/',
-        state: { from: fromState },
+        pathname: from?.pathname || '/',
+        state: { from: from },
       }}
     />
   );
