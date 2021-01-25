@@ -52,6 +52,7 @@ const ItemContainer = styled.section`
 
 const Item = styled.a`
   display: block;
+  text-decoration: none;
   color: ${props => props.theme.colors.natural255};
   font-size: 14px;
   height: 32px;
