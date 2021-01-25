@@ -91,7 +91,7 @@
     "typesync": "0.8.0"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "jest": {
     "coverageReporters": [
