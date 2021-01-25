@@ -34,6 +34,7 @@ const Suggestion = styled.a`
   ${props => props.theme.spaces.xl};
   background: #282828;
   border-radius: 8px;
+  text-decoration: none;
   margin-right: ${props => props.theme.spaces.xl};
   :hover {
     cursor: pointer;
@@ -58,12 +59,15 @@ const SuggestionName = styled.p`
   line-height: 20px;
   font-weight: 700;
   letter-spacing: 0.24px;
+  margin: 0px;
+  color: ${props => props.theme.colors.white};
 `;
 
 const SuggestionDescription = styled.span`
   display: block;
   font-size: 12px;
   line-height: 18px;
+  margin-top: ${props => props.theme.spaces.s};
   text-overflow: ellipsis;
   white-space: nowrap;
   color: ${props => props.theme.colors.natural255};
