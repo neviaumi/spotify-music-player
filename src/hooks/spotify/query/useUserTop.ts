@@ -1,7 +1,7 @@
 import type { AxiosResponse } from 'axios';
 import useSWR from 'swr';
 
-import useSpotifyAPIClient from '../../useSpotifyAPIClient';
+import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import type { ArtistFull } from '../typings/Artist';
 import type { Paging } from '../typings/shared/Paging';
 import type { TrackFull } from '../typings/Track';
@@ -16,7 +16,9 @@ interface UseUserTopHooks {
   (type: QueryType.TRACK): AxiosResponse<Paging<TrackFull>>;
 }
 
-const useUserTop: UseUserTopHooks = function useUserTop(type: QueryType) {
+export const useUserTop: UseUserTopHooks = function useUserTop(
+  type: QueryType,
+) {
   const apiClient = useSpotifyAPIClient();
   const { data } = useSWR(['GET', `/me/top/${type}`], (method, url) =>
     apiClient.request({
@@ -29,5 +31,3 @@ const useUserTop: UseUserTopHooks = function useUserTop(type: QueryType) {
   );
   return data!;
 };
-
-export default useUserTop;

@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme';
 
-import theme from '../../../themes';
-import ThemeProvider from '../';
+import * as themes from '../../../themes';
+import { AppThemeProvider } from '../';
 
 describe('Test render Panel component', () => {
   it('Should render without error', () => {
-    const wrapper = shallow(<ThemeProvider />);
-    expect(wrapper.prop('theme')).toEqual(theme);
+    const wrapper = shallow(<AppThemeProvider />);
+    expect(wrapper.prop('theme')).toEqual(themes);
   });
 });

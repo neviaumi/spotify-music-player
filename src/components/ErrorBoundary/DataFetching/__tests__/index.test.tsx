@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import DataFetchingError from '../../../../errors/DataFetchingError';
-import DataFetchingErrorBoundary from '../index';
+import { DataFetchingError } from '../../../../errors/DataFetchingError';
+import { DataFetchingErrorBoundary } from '../index';
 
 function ErrorComponent({ err }: { err: Error }) {
   throw err;

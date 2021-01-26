@@ -1,13 +1,13 @@
 import useSWR from 'swr';
 
-import useSpotifyAPIClient from '../../useSpotifyAPIClient';
+import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import type { PlaylistSimplified } from '../typings/Playlist';
 
 interface Response {
   items: PlaylistSimplified[];
 }
 
-export default function useUserPlayList() {
+export function useUserPlayList() {
   const apiClient = useSpotifyAPIClient();
   const { data } = useSWR(['GET', '/me/playlists'], (method, url) =>
     apiClient.request<Response>({

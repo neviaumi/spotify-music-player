@@ -1,4 +1,4 @@
-import getTrackListTotalDuration from '../getTrackListTotalDuration';
+import { getTrackListTotalDuration } from '../getTrackListTotalDuration';
 
 it('Should sum total duration', () => {
   expect(

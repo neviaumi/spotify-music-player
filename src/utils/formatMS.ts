@@ -1,6 +1,6 @@
 import parseMS from 'parse-ms';
 
-export default function formatMS(ms: number) {
+export function formatMS(ms: number) {
   const { days, hours, minutes } = parseMS(ms);
   const result = [];
   if (days > 0) {

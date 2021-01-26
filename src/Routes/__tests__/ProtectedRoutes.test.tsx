@@ -2,8 +2,8 @@
 import { render, screen } from '@testing-library/react';
 
 import { TestApp } from '../../App';
-import createPollyContext from '../../utils/tests/createPollyContext';
-import ProtectedRoutes from '../ProtectedRoutes';
+import { createPollyContext } from '../../utils/tests/createPollyContext';
+import { ProtectedRoutes } from '../ProtectedRoutes';
 
 const context = createPollyContext();
 describe('ProtectedRoutes', () => {

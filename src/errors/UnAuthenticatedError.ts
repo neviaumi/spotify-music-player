@@ -1,8 +1,8 @@
 import type { Location } from 'history';
 
-import AppError from './AppError';
+import { AppError } from './AppError';
 
-export default class UnAuthenticatedError extends AppError<{
+export class UnAuthenticatedError extends AppError<{
   location: Location;
 }> {
   constructor(location: Location) {

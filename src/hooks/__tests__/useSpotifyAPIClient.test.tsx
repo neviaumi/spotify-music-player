@@ -3,8 +3,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { TestApp } from '../../App';
-import createPollyContext from '../../utils/tests/createPollyContext';
-import useSpotifyAPIClient from '../useSpotifyAPIClient';
+import { createPollyContext } from '../../utils/tests/createPollyContext';
+import { useSpotifyAPIClient } from '../useSpotifyAPIClient';
 
 const context = createPollyContext();
 

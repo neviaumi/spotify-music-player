@@ -6,7 +6,7 @@ export interface DataFetchingConfigProviderProps
   children?: ReactNode;
 }
 
-export default function DataFetchingConfigProvider({
+export function DataFetchingConfigProvider({
   children,
   ...rest
 }: DataFetchingConfigProviderProps) {

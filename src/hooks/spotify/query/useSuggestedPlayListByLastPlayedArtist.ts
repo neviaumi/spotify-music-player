@@ -2,15 +2,15 @@ import type { AxiosResponse } from 'axios';
 
 import type { ArtistSimplified } from '../typings/Artist';
 import type { PlaylistSimplified } from '../typings/Playlist';
-import useRecentPlayedTrack from './useRecentPlayedTrack';
-import useSearchPlayList from './useSearchPlayList';
+import { useRecentPlayedTrack } from './useRecentPlayedTrack';
+import { useSearchPlayList } from './useSearchPlayList';
 
 interface Response {
   artist: ArtistSimplified;
   playlists: PlaylistSimplified[];
 }
 
-export default function useSuggestedPlayListByLastPlayedArtist():
+export function useSuggestedPlayListByLastPlayedArtist():
   | AxiosResponse<Response>
   | undefined {
   const recentPlayedTrack = useRecentPlayedTrack();

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import AuthErrorBoundary from '../index';
+import { AuthErrorBoundary } from '../index';
 
 function ErrorComponent({ location }: { location?: Record<string, unknown> }) {
   throw Object.assign(new Error('FooBar!'), {

@@ -13,7 +13,7 @@ const LogoImg = styled.img`
   width: 100%;
 `;
 
-export default function Logo() {
+export function Logo() {
   return (
     <Anchor href="https://open.spotify.com/">
       <LogoImg src={logo} />

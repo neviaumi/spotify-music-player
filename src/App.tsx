@@ -8,16 +8,17 @@ import {
   TestAuthProvider,
   TestAuthProviderProps,
 } from './contexts/Auth';
-import DataFetchingConfigProvider, {
+import {
+  DataFetchingConfigProvider,
   DataFetchingConfigProviderProps,
   TestDataFetchingConfigProvider,
 } from './contexts/DataFetching';
-import ThemeProvider from './contexts/Theme';
-import Routes from './Routes';
+import { AppThemeProvider } from './contexts/Theme';
+import { Routes } from './Routes';
 
-function App() {
+export function App() {
   return (
-    <ThemeProvider>
+    <AppThemeProvider>
       <DataFetchingConfigProvider>
         <BrowserRouter>
           <AuthContextProvider>
@@ -25,7 +26,7 @@ function App() {
           </AuthContextProvider>
         </BrowserRouter>
       </DataFetchingConfigProvider>
-    </ThemeProvider>
+    </AppThemeProvider>
   );
 }
 
@@ -41,7 +42,7 @@ export function TestApp({
   children: ReactNode;
 }) {
   return (
-    <ThemeProvider>
+    <AppThemeProvider>
       <TestDataFetchingConfigProvider {..._DataFetchingConfigProviderProps}>
         <Router
           {...(_RouterProps ?? {
@@ -53,8 +54,6 @@ export function TestApp({
           </TestAuthProvider>
         </Router>
       </TestDataFetchingConfigProvider>
-    </ThemeProvider>
+    </AppThemeProvider>
   );
 }
-
-export default App;

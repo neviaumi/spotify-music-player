@@ -1,6 +1,6 @@
-import AppError from './AppError';
+import { AppError } from './AppError';
 
-export default class AuthenticationCallbackError extends AppError<{
+export class AuthenticationCallbackError extends AppError<{
   error: string;
 }> {
   constructor(error: string) {

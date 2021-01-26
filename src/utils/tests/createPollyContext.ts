@@ -4,12 +4,12 @@ import FSPersister from '@pollyjs/persister-fs';
 import path from 'path';
 import { setupPolly } from 'setup-polly-jest';
 
-import getCurrentTestPath from './getCurrentTestPath';
+import { getCurrentTestPath } from './getCurrentTestPath';
 
 Polly.register(NodeHttpAdapter);
 Polly.register(FSPersister);
 
-export default (config: PollyConfig = {}) => {
+export function createPollyContext(config: PollyConfig = {}) {
   return setupPolly({
     adapters: [NodeHttpAdapter],
     matchRequestsBy: {
@@ -28,4 +28,4 @@ export default (config: PollyConfig = {}) => {
     recordIfMissing: false,
     ...config,
   });
-};
+}

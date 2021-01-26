@@ -1,4 +1,4 @@
-export default abstract class AppError<T = unknown> extends Error {
+export abstract class AppError<T = unknown> extends Error {
   public code: string;
 
   public fallbackPath?: string;

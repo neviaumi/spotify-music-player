@@ -2,8 +2,8 @@ import { withRouter } from 'react-router';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Logo from '../Logo';
-import UserPlayList from '../UserPlayList/UserPlayList';
+import { Logo } from '../Logo';
+import { UserPlayList } from '../UserPlayList/UserPlayList';
 
 const Container = styled.nav`
   padding-top: 24px;
@@ -41,7 +41,7 @@ interface Props {
   location: { pathname: string };
 }
 
-export function Nav({ location, ...rest }: Props) {
+export function PresentNav({ location, ...rest }: Props) {
   const history = useHistory();
 
   return (
@@ -63,4 +63,4 @@ export function Nav({ location, ...rest }: Props) {
   );
 }
 
-export default withRouter(Nav);
+export const Nav = withRouter(PresentNav);

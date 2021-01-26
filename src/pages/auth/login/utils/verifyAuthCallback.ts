@@ -1,4 +1,4 @@
-import AuthenticationCallbackError from '../../../../errors/AuthenticationCallbackError';
+import { AuthenticationCallbackError } from '../../../../errors/AuthenticationCallbackError';
 
 export function getCallbackParams(url: string) {
   const _url = new URL(url);
@@ -10,7 +10,7 @@ export function getCallbackParams(url: string) {
   };
 }
 
-export default (url: string) => {
+export function verifyAuthCallback(url: string) {
   const params = getCallbackParams(url);
   if (params.error) {
     throw new AuthenticationCallbackError(params.error);
@@ -24,4 +24,4 @@ export default (url: string) => {
     code: params.code,
     state: JSON.parse(state),
   };
-};
+}

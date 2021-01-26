@@ -56,7 +56,7 @@ const Duration = styled.div`
   line-height: 22px;
 `;
 
-export default function TrackList({ playList }: Props) {
+export function TracksList({ playList }: Props) {
   return (
     <Container data-testid="track-listing">
       {playList?.tracks.items.map(playListTrack => {

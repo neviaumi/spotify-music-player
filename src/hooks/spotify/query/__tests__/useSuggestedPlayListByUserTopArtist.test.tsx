@@ -3,8 +3,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { TestApp } from '../../../../App';
-import createPollyContext from '../../../../utils/tests/createPollyContext';
-import useSuggestedPlayListByUserTopArtist from '../useSuggestedPlayListByUserTopArtist';
+import { createPollyContext } from '../../../../utils/tests/createPollyContext';
+import { useSuggestedPlayListByUserTopArtist } from '../useSuggestedPlayListByUserTopArtist';
 
 const _context = createPollyContext();
 it('Return playlist of user by top artist', async () => {

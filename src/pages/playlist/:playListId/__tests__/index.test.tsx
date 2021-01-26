@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history';
 import { Route } from 'react-router-dom';
 
 import { TestApp } from '../../../../App';
-import createPollyContext from '../../../../utils/tests/createPollyContext';
+import { createPollyContext } from '../../../../utils/tests/createPollyContext';
 import { PresentPlayList, withPlayList } from '../';
 
 describe('render PresentPlayList', () => {

@@ -3,9 +3,9 @@ import { Redirect } from 'react-router-dom';
 import { useAsync } from 'react-use';
 
 import { useAuthContext } from '../../../../contexts/Auth/AuthContext';
-import verifyAuthCallback from '../utils/verifyAuthCallback';
+import { verifyAuthCallback } from '../utils/verifyAuthCallback';
 
-export default function AuthCallback() {
+export function LoginCallbackPage() {
   const { exchangeTokenFromCode } = useAuthContext();
   const {
     state: { codeVerifier, from },

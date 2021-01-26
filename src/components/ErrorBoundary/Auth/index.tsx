@@ -2,9 +2,9 @@ import { path } from 'ramda';
 import { Component, ErrorInfo } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import AppError from '../../../errors/AppError';
+import { AppError } from '../../../errors/AppError';
 
-export default class AuthErrorBoundary extends Component<
+export class AuthErrorBoundary extends Component<
   unknown,
   {
     error?: {

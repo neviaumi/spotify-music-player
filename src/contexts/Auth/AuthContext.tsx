@@ -3,8 +3,11 @@ import constate from 'constate';
 import { useCallback, useState } from 'react';
 import { useLocation } from 'react-router';
 
-import openidConfiguration from '../../config/openidConfiguration';
-import UnAuthenticatedError from '../../errors/UnAuthenticatedError';
+import {
+  redirect_uris,
+  token_endpoint,
+} from '../../config/openidConfiguration';
+import { UnAuthenticatedError } from '../../errors/UnAuthenticatedError';
 
 function useAuth({
   accessToken,
@@ -44,13 +47,13 @@ function useAuth({
         code,
         code_verifier: codeVerifier,
         grant_type: 'authorization_code',
-        redirect_uri: openidConfiguration.redirect_uris[0],
+        redirect_uri: redirect_uris[0],
       }).toString(),
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       method: 'POST',
-      url: openidConfiguration.token_endpoint,
+      url: token_endpoint,
     });
     setToken(access_token, refresh_token);
   };
@@ -69,7 +72,7 @@ function useAuth({
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         method: 'POST',
-        url: openidConfiguration.token_endpoint,
+        url: token_endpoint,
       });
       setToken(access_token, refresh_token);
       return access_token;

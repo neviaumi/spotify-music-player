@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { TestApp } from '../../../../../../App';
-import TrackingList from '../index';
+import { TracksList } from '../index';
 
 it('render TrackList with one Item', () => {
   const props = {
@@ -22,7 +22,7 @@ it('render TrackList with one Item', () => {
   };
   render(
     <TestApp>
-      <TrackingList {...props} />
+      <TracksList {...props} />
     </TestApp>,
   );
   expect(screen.getAllByRole('listitem')).toHaveLength(1);

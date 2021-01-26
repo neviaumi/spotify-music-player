@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as rax from 'retry-axios';
 
-export default function createSpotifyAPIClient(
+export function createSpotifyAPIClient(
   accessToken: string,
   refreshTokenFunction: () => Promise<string>,
 ) {
