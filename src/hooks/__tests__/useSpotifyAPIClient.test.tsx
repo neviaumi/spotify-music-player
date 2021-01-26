@@ -1,5 +1,3 @@
-/** @jest-environment setup-polly-jest/jest-environment-jsdom */
-
 import { renderHook } from '@testing-library/react-hooks';
 
 import { TestApp } from '../../App';

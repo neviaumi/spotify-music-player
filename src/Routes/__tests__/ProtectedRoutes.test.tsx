@@ -1,4 +1,3 @@
-/** @jest-environment setup-polly-jest/jest-environment-jsdom */
 import { render, screen } from '@testing-library/react';
 
 import { TestApp } from '../../App';
@@ -12,7 +11,7 @@ describe('ProtectedRoutes', () => {
       res.status(200).json({});
     });
     render(
-      <TestApp>
+      <TestApp AuthProviderProps={{ accessToken: 'dummy' }}>
         <ProtectedRoutes />
       </TestApp>,
     );

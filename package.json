@@ -20,6 +20,7 @@
     "@waiting/base64": "4.2.9",
     "axios": "0.21.1",
     "constate": "3.1.0",
+    "lodash.kebabcase": "4.1.1",
     "nanoid": "2.1.11",
     "parse-ms": "2.1.0",
     "ramda": "0.27.1",
@@ -55,6 +56,7 @@
     "@types/jest": "26.0.20",
     "@types/jest-expect-message": "1.0.3",
     "@types/js-cookie": "2.2.6",
+    "@types/lodash.kebabcase": "4.1.6",
     "@types/nanoid": "2.1.0",
     "@types/node": "13.11.0",
     "@types/pollyjs__adapter-node-http": "2.0.1",
@@ -83,8 +85,8 @@
     "npm-package-json-lint": "5.1.0",
     "prettier": "2.2.1",
     "quicktype": "15.0.258",
+    "rimraf": "3.0.2",
     "serve": "11.3.2",
-    "setup-polly-jest": "0.9.1",
     "stylelint": "13.9.0",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-processor-styled-components": "1.10.0",
@@ -125,8 +127,8 @@
     "quicktype": "quicktype --just-types",
     "serve:lhci": "serve -l 42069 -s build",
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "test:reset": "REACT_APP_POLLY_MODE=record yarn test --watchAll --coverage"
+    "test": "react-scripts test --maxWorkers=2",
+    "test:reset": "rimraf ./src/**/*.har && REACT_APP_POLLY_MODE=record react-scripts test --watchAll --runInBand --testTimeout 60000"
   },
   "version": "0.1.0"
 }
