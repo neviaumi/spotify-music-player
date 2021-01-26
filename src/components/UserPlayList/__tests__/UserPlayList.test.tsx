@@ -1,5 +1,3 @@
-/** @jest-environment setup-polly-jest/jest-environment-jsdom */
-
 import { render, screen } from '@testing-library/react';
 import events from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';

@@ -1,5 +1,3 @@
-/** @jest-environment setup-polly-jest/jest-environment-jsdom */
-
 import { render, waitFor } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
