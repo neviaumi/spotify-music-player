@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import type { PlaylistFull } from '../../../../../hooks/spotify/typings/Playlist';
-import formatMS from '../../../../../utils/formatMS';
-import getTrackListTotalDuration from '../../../../../utils/getTrackListTotalDuration';
+import { formatMS } from '../../../../../utils/formatMS';
+import { getTrackListTotalDuration } from '../../../../../utils/getTrackListTotalDuration';
 
 interface Props {
   playList?: PlaylistFull;

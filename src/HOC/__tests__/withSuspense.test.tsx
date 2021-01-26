@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import withSuspense from '../withSuspense';
+import { withSuspense } from '../withSuspense';
 
 const Dummy = () => <div data-testid="dummy" />;
 const DummyWithSuspense = withSuspense<{ foo: string }>(Dummy);

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import events from '@testing-library/user-event';
 
 import { TestApp } from '../../../../../App';
-import PresentSuggestionList from '../PresentSuggestionList';
+import { PresentSuggestionList } from '../PresentSuggestionList';
 
 describe('Test render PresentSuggestionList component', () => {
   it('Should render Present component', () => {

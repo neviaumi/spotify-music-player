@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { loginRedirect } from './utils/loginRedirect';
 
-export function Login() {
+export function LoginPage() {
   const location = useLocation<Record<string, unknown>>();
 
   useEffect(() => {

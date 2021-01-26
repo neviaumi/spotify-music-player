@@ -1,18 +1,18 @@
 import { render, screen } from '@testing-library/react';
 
-import ThemeProvider from '../../../contexts/Theme';
-import Panel from '../';
+import { AppThemeProvider } from '../../../contexts/Theme';
+import { Panel } from '../';
 
 describe('Test render Panel component', () => {
   it('Should render without error', () => {
     render(
-      <ThemeProvider>
+      <AppThemeProvider>
         <Panel
           Bottom={<div>FooBar</div>}
           Left={<div>Hello</div>}
           Right={<div>World</div>}
         />
-      </ThemeProvider>,
+      </AppThemeProvider>,
     );
 
     expect(screen.getByTestId('panel-left')).toBeVisible();

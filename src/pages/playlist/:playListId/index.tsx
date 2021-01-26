@@ -2,11 +2,11 @@ import type { ComponentType } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
-import withSuspense from '../../../HOC/withSuspense';
-import usePlayList from '../../../hooks/spotify/query/usePlayList';
+import { withSuspense } from '../../../HOC/withSuspense';
+import { usePlayList } from '../../../hooks/spotify/query/usePlayList';
 import type { PlaylistFull } from '../../../hooks/spotify/typings/Playlist';
 import { Heading } from './components/Heading';
-import TracksList from './components/TracksList';
+import { TracksList } from './components/TracksList';
 
 const Container = styled.div`
   padding: 0 32px;
@@ -35,4 +35,4 @@ export function PresentPlayList({ playList }: { playList?: PlaylistFull }) {
   );
 }
 
-export default withSuspense(withPlayList(PresentPlayList));
+export const PlayerListPage = withSuspense(withPlayList(PresentPlayList));

@@ -45,7 +45,7 @@ interface Props {
   Right: ReactNode;
 }
 
-export default function Panel({ Left, Right, Bottom, ...rest }: Props) {
+export function Panel({ Left, Right, Bottom, ...rest }: Props) {
   return (
     <Container {...rest}>
       <LeftContainer data-testid="panel-left">{Left}</LeftContainer>

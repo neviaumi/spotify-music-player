@@ -4,8 +4,8 @@ import { render, waitFor } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { TestApp } from '../../../../../App';
-import createPollyContext from '../../../../../utils/tests/createPollyContext';
-import Callback from '../index';
+import { createPollyContext } from '../../../../../utils/tests/createPollyContext';
+import { LoginCallbackPage } from '../index';
 
 const context = createPollyContext();
 describe('Callback page', () => {
@@ -41,7 +41,7 @@ describe('Callback page', () => {
     });
     render(
       <TestApp RouterProps={{ history }}>
-        <Callback />
+        <LoginCallbackPage />
       </TestApp>,
     );
     await waitFor(() => {

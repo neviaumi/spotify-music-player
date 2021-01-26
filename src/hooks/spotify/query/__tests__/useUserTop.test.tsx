@@ -3,8 +3,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { TestApp } from '../../../../App';
-import createPollyContext from '../../../../utils/tests/createPollyContext';
-import useUserTop, { QueryType } from '../useUserTop';
+import { createPollyContext } from '../../../../utils/tests/createPollyContext';
+import { QueryType, useUserTop } from '../useUserTop';
 
 const _context = createPollyContext();
 it('Return user top artist', async () => {

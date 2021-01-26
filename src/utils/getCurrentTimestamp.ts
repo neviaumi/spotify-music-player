@@ -1,1 +1,3 @@
-export default () => Math.floor(Date.now() / 1000);
+export function getCurrentTimestamp() {
+  return Math.floor(Date.now() / 1000);
+}

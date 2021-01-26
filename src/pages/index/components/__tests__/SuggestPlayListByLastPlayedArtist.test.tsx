@@ -3,7 +3,7 @@ import event from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
 import { TestApp } from '../../../../App';
-import useSuggestedPlayListByLastPlayedArtist from '../../../../hooks/spotify/query/useSuggestedPlayListByLastPlayedArtist';
+import { useSuggestedPlayListByLastPlayedArtist } from '../../../../hooks/spotify/query/useSuggestedPlayListByLastPlayedArtist';
 import type { Props } from '../Present/PresentSuggestionList';
 import { withSuggestPlayListByLastPlayedArtist } from '../SuggestPlayListByLastPlayedArtist';
 

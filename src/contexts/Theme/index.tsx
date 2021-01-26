@@ -1,8 +1,12 @@
 import type { ReactNode } from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider as StyledComponentThemeProvider } from 'styled-components';
 
-import theme from '../../themes';
+import * as theme from '../../themes';
 
-export default function AppThemeProvider(props: { children?: ReactNode }) {
-  return <ThemeProvider theme={theme}>{props.children}</ThemeProvider>;
+export function AppThemeProvider(props: { children?: ReactNode }) {
+  return (
+    <StyledComponentThemeProvider theme={theme}>
+      {props.children}
+    </StyledComponentThemeProvider>
+  );
 }

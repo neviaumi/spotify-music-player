@@ -1,7 +1,7 @@
 import { useAuthContext } from '../contexts/Auth/AuthContext';
-import createSpotifyAPIClient from '../utils/createSpotifyAPIClient';
+import { createSpotifyAPIClient } from '../utils/createSpotifyAPIClient';
 
-export default () => {
+export function useSpotifyAPIClient() {
   const { accessToken, refreshAccessToken } = useAuthContext();
   return createSpotifyAPIClient(accessToken!, refreshAccessToken);
-};
+}

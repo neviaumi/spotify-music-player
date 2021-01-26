@@ -75,7 +75,7 @@ const SuggestionDescription = styled.span`
   overflow: hidden;
 `;
 
-export default function PresentSuggestionList({
+export function PresentSuggestionList({
   title,
   suggestions,
   onClickSuggestion,

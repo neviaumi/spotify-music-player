@@ -3,8 +3,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { TestApp } from '../../../../App';
-import createPollyContext from '../../../../utils/tests/createPollyContext';
-import useSearchPlayList from '../useSearchPlayList';
+import { createPollyContext } from '../../../../utils/tests/createPollyContext';
+import { useSearchPlayList } from '../useSearchPlayList';
 
 const _context = createPollyContext();
 it('Return playlist for given keyword', async () => {

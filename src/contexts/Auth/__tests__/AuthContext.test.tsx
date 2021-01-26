@@ -3,8 +3,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { TestApp } from '../../../App';
-import UnAuthenticatedError from '../../../errors/UnAuthenticatedError';
-import createPollyContext from '../../../utils/tests/createPollyContext';
+import { UnAuthenticatedError } from '../../../errors/UnAuthenticatedError';
+import { createPollyContext } from '../../../utils/tests/createPollyContext';
 import { useAuthContext } from '../AuthContext';
 
 const context = createPollyContext();

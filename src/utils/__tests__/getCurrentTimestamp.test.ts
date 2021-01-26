@@ -1,4 +1,4 @@
-import getCurrentTimestamp from '../getCurrentTimestamp';
+import { getCurrentTimestamp } from '../getCurrentTimestamp';
 
 it('Should get current timestamp from milliseconds', () => {
   jest.spyOn(Date, 'now').mockReturnValue(1580380185812);

@@ -1,7 +1,12 @@
 import nanoid from 'nanoid';
 import { URL } from 'url';
 
-import openidConfiguration from '../../../../../config/openidConfiguration';
+import {
+  authorization_endpoint,
+  redirect_uris,
+  response_types,
+  scopes_supported,
+} from '../../../../../config/openidConfiguration';
 import { getAuthorizeUrl, loginRedirect } from '../loginRedirect';
 
 jest.mock('nanoid');
@@ -9,15 +14,15 @@ jest.mock('nanoid');
 describe('getAuthorizeUrl', () => {
   it('Should return authorization url', () => {
     const url = getAuthorizeUrl('foobar', 'codeChallenge');
-    const authorizeUrl = new URL(openidConfiguration.authorization_endpoint);
+    const authorizeUrl = new URL(authorization_endpoint);
     const queryParams = authorizeUrl.searchParams;
     queryParams.append(
       'client_id',
       process.env.REACT_APP_SPOTIFY_CLIENT_ID as string,
     );
-    queryParams.append('scope', openidConfiguration.scopes_supported.join(' '));
-    queryParams.append('response_type', openidConfiguration.response_types[0]);
-    queryParams.append('redirect_uri', openidConfiguration.redirect_uris[0]);
+    queryParams.append('scope', scopes_supported.join(' '));
+    queryParams.append('response_type', response_types[0]);
+    queryParams.append('redirect_uri', redirect_uris[0]);
     queryParams.append('code_challenge_method', 'S256');
     queryParams.append('code_challenge', 'codeChallenge');
     queryParams.append('show_dialog', 'false');

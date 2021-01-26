@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import { Route } from 'react-router-dom';
 
-import Routes, { DummyComponent } from '../';
+import { DummyComponent, Routes } from '../';
 
 it('Should has correct route count', () => {
   const wrapper = shallow(<Routes />);

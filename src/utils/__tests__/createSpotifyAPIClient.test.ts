@@ -1,4 +1,4 @@
-import createSpotifyAPIClient from '../createSpotifyAPIClient';
+import { createSpotifyAPIClient } from '../createSpotifyAPIClient';
 
 describe('Test create API Client', () => {
   it('Should create client', () => {

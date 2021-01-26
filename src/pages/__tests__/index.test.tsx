@@ -3,8 +3,8 @@
 import { render, screen } from '@testing-library/react';
 
 import { TestApp } from '../../App';
-import createPollyContext from '../../utils/tests/createPollyContext';
-import Suggestion from '../index';
+import { createPollyContext } from '../../utils/tests/createPollyContext';
+import { Suggestion } from '../index';
 
 describe('Test render PlayListSuggestion', () => {
   const _context = createPollyContext();

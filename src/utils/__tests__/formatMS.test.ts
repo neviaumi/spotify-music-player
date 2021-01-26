@@ -1,4 +1,4 @@
-import formatMS, { formatMSToMinute } from '../formatMS';
+import { formatMS, formatMSToMinute } from '../formatMS';
 
 it('Covert to 1 hour 34 minute', () => {
   expect(formatMS(94 * 60 * 1000)).toEqual('1 hr 34 min');

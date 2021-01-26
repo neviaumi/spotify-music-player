@@ -1,7 +1,7 @@
 import { URL } from 'url';
 
-import AuthenticationCallbackError from '../../../../../errors/AuthenticationCallbackError';
-import verifyAuthCallback from '../verifyAuthCallback';
+import { AuthenticationCallbackError } from '../../../../../errors/AuthenticationCallbackError';
+import { verifyAuthCallback } from '../verifyAuthCallback';
 
 beforeEach(() => window.localStorage.clear());
 

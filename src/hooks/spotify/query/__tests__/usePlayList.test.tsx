@@ -3,8 +3,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { TestApp } from '../../../../App';
-import createPollyContext from '../../../../utils/tests/createPollyContext';
-import usePlayList from '../usePlayList';
+import { createPollyContext } from '../../../../utils/tests/createPollyContext';
+import { usePlayList } from '../usePlayList';
 
 const _context = createPollyContext();
 it('Return playlist info', async () => {
@@ -17,6 +17,8 @@ it('Return playlist info', async () => {
   await waitForNextUpdate();
   expect(result.error).toBeUndefined();
   expect(
-    result.current.data.tracks.items.every(item => item.track.type === 'track'),
+    result.current.data.tracks.items.every(
+      (item: any) => item.track.type === 'track',
+    ),
   ).toBeTruthy();
 });

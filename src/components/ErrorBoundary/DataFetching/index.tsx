@@ -1,9 +1,9 @@
 import { Component, ErrorInfo } from 'react';
 
-import type AppError from '../../../errors/AppError';
-import DataFetchingError from '../../../errors/DataFetchingError';
+import type { AppError } from '../../../errors/AppError';
+import { DataFetchingError } from '../../../errors/DataFetchingError';
 
-export default class DataFetchingErrorBoundary extends Component<
+export class DataFetchingErrorBoundary extends Component<
   unknown,
   {
     error?: {

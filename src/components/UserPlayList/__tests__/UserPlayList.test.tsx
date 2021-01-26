@@ -5,7 +5,7 @@ import events from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
 import { TestApp } from '../../../App';
-import createPollyContext from '../../../utils/tests/createPollyContext';
+import { createPollyContext } from '../../../utils/tests/createPollyContext';
 import { PresentUserPlaylist, Props, withUserPlayList } from '../UserPlayList';
 
 describe('Test withUserPlayList HOC', () => {

@@ -1,4 +1,4 @@
-import getCurrentTestPath from '../getCurrentTestPath';
+import { getCurrentTestPath } from '../getCurrentTestPath';
 
 it('should get current test path', () => {
   const currentAbsDir = __dirname;

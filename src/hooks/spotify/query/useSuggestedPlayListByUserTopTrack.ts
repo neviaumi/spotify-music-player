@@ -2,15 +2,15 @@ import type { AxiosResponse } from 'axios';
 
 import type { PlaylistSimplified } from '../typings/Playlist';
 import type { TrackFull } from '../typings/Track';
-import useSearchPlayList from './useSearchPlayList';
-import useUserTop, { QueryType } from './useUserTop';
+import { useSearchPlayList } from './useSearchPlayList';
+import { QueryType, useUserTop } from './useUserTop';
 
 interface Response {
   playlists: PlaylistSimplified[];
   track: TrackFull;
 }
 
-export default function useSuggestedPlayListByUserTopTrack():
+export function useSuggestedPlayListByUserTopTrack():
   | AxiosResponse<Response>
   | undefined {
   const userTop = useUserTop(QueryType.TRACK);

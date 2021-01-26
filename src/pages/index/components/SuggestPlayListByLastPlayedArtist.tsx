@@ -1,9 +1,9 @@
 import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import withSuspense from '../../../HOC/withSuspense';
-import useSuggestedPlayListByLastPlayedArtist from '../../../hooks/spotify/query/useSuggestedPlayListByLastPlayedArtist';
-import PresentSuggestionList, { Props } from './Present/PresentSuggestionList';
+import { withSuspense } from '../../../HOC/withSuspense';
+import { useSuggestedPlayListByLastPlayedArtist } from '../../../hooks/spotify/query/useSuggestedPlayListByLastPlayedArtist';
+import { PresentSuggestionList, Props } from './Present/PresentSuggestionList';
 
 export function withSuggestPlayListByLastPlayedArtist(
   WrappedComponent: ComponentType<Props>,
@@ -29,6 +29,6 @@ export function withSuggestPlayListByLastPlayedArtist(
   };
 }
 
-export default withSuspense(
+export const SuggestPlayListByLastPlayedArtist = withSuspense(
   withSuggestPlayListByLastPlayedArtist(PresentSuggestionList),
 );

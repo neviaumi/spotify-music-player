@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { TestApp } from '../../../App';
-import Nav from '../';
+import { Nav } from '../';
 
 describe('Test render Nav component', () => {
   it('Should render without error', () => {
