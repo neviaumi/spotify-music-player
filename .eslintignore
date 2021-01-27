@@ -4,4 +4,4 @@ build/
 coverage/
 .lighthouseci/
 serviceWorker.js
-build-lambda/
+build-functions/

@@ -1,6 +1,6 @@
 [build]
-    command = "yarn build:lambda"
-    functions = "build-lambda"
+    command = "yarn build:functions"
+    functions = "build-functions"
 
 [[redirects]]
     from = "/*"
