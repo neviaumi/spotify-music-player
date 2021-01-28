@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
+import { createPollyContext } from '../../../../../../testHelper/createPollyContext';
 import { TestApp } from '../../../../../App';
-import { createPollyContext } from '../../../../../utils/tests/createPollyContext';
 import { LoginCallbackPage } from '../index';
 
 const context = createPollyContext();

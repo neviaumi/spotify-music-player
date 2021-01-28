@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
+import { createPollyContext } from '../../../testHelper/createPollyContext';
 import { TestApp } from '../../App';
-import { createPollyContext } from '../../utils/tests/createPollyContext';
 import { ProtectedRoutes } from '../ProtectedRoutes';
 
 const context = createPollyContext();
