@@ -2,11 +2,11 @@ import createEvent from '@serverless/event-mocks';
 import type { Context } from 'aws-lambda';
 
 import { createPollyContext } from '../../testHelper/createPollyContext';
-import { handler } from '../fetch-spotify-charts-report';
+import { handler } from '../fetch-top-stream-report';
 
 createPollyContext();
 
-describe('Test fetchSpotifyChartsReport', () => {
+describe('Test fetch-top-stream-report', () => {
   it('400 if query missing', async () => {
     const event = createEvent('aws:apiGateway', {
       queryStringParameters: {},
@@ -17,7 +17,7 @@ describe('Test fetchSpotifyChartsReport', () => {
   it('Fetch csv from spotify charts and transform to JSON', async () => {
     const event = createEvent('aws:apiGateway', {
       queryStringParameters: {
-        period: 'daily',
+        period: 'weekly',
         region: 'hk',
       },
     } as any);
