@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import type { PlaylistSimplified } from '../../../../hooks/spotify/typings/Playlist';
+import type { AlbumSimplified } from '../../../../hooks/spotify/typings/Album';
 
 export interface Props {
   'data-testid': string;
-  onClickSuggestion: (suggestion: PlaylistSimplified) => void;
-  suggestions?: PlaylistSimplified[];
+  onClickSuggestion: (suggestion: AlbumSimplified) => void;
+  suggestions?: AlbumSimplified[];
   title: string;
 }
 
@@ -75,7 +75,7 @@ const SuggestionDescription = styled.span`
   overflow: hidden;
 `;
 
-export function PresentSuggestionList({
+export function PresentSuggestAlbum({
   title,
   suggestions,
   onClickSuggestion,
@@ -96,7 +96,10 @@ export function PresentSuggestionList({
             <SuggestionHeading>
               <SuggestionName>{suggestion.name}</SuggestionName>
               <SuggestionDescription>
-                {suggestion.description}
+                {suggestion.artists
+                  .map(artist => artist.name)
+                  .slice(0, 3)
+                  .join(',')}
               </SuggestionDescription>
             </SuggestionHeading>
           </Suggestion>

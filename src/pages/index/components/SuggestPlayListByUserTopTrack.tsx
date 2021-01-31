@@ -3,12 +3,15 @@ import { useHistory } from 'react-router-dom';
 
 import { withSuspense } from '../../../HOC/withSuspense';
 import { useSuggestedPlayListByUserTopTrack } from '../../../hooks/spotify/query/useSuggestedPlayListByUserTopTrack';
-import { PresentSuggestionList, Props } from './Present/PresentSuggestionList';
+import {
+  PresentSuggestPlayList,
+  Props,
+} from './Present/PresentSuggestPlayList';
 
-export function withSuggestPlayListByTopTrack(
+export function withSuggestPlayListByUserTopTrack(
   WrappedComponent: ComponentType<Props>,
 ) {
-  return function WithSuggestPlayListByTopTrack() {
+  return function WithSuggestPlayListByUserTopTrack() {
     const history = useHistory();
     const onClickPlayList = useCallback(
       playlist => {
@@ -29,6 +32,6 @@ export function withSuggestPlayListByTopTrack(
   };
 }
 
-export const SuggestPlayListByTopTrack = withSuspense(
-  withSuggestPlayListByTopTrack(PresentSuggestionList),
+export const SuggestPlayListByUserTopTrack = withSuspense(
+  withSuggestPlayListByUserTopTrack(PresentSuggestPlayList),
 );

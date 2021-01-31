@@ -3,5 +3,4 @@
 set -ex
 
 # For debugg failure on CI
-yarn test --showConfig
-yarn test --coverage
+yarn test:ci

@@ -10,7 +10,7 @@ interface Response {
   playlists: PlaylistSimplified[];
 }
 
-export function useSuggestedPlayListByLastPlayedArtist():
+export function useSuggestedPlayListByUserLastPlayedArtist():
   | AxiosResponse<Response>
   | undefined {
   const recentPlayedTrack = useRecentPlayedTrack();

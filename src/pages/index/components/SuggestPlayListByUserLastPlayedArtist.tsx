@@ -2,13 +2,16 @@ import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { withSuspense } from '../../../HOC/withSuspense';
-import { useSuggestedPlayListByLastPlayedArtist } from '../../../hooks/spotify/query/useSuggestedPlayListByLastPlayedArtist';
-import { PresentSuggestionList, Props } from './Present/PresentSuggestionList';
+import { useSuggestedPlayListByUserLastPlayedArtist } from '../../../hooks/spotify/query/useSuggestedPlayListByUserLastPlayedArtist';
+import {
+  PresentSuggestPlayList,
+  Props,
+} from './Present/PresentSuggestPlayList';
 
-export function withSuggestPlayListByLastPlayedArtist(
+export function withSuggestPlayListByUserLastPlayedArtist(
   WrappedComponent: ComponentType<Props>,
 ) {
-  return function WithSuggestPlayListByLastPlayedArtist() {
+  return function WithSuggestPlayListByUserLastPlayedArtist() {
     const history = useHistory();
     const onClickPlayList = useCallback(
       playlist => {
@@ -16,7 +19,7 @@ export function withSuggestPlayListByLastPlayedArtist(
       },
       [history],
     );
-    const response = useSuggestedPlayListByLastPlayedArtist();
+    const response = useSuggestedPlayListByUserLastPlayedArtist();
 
     return (
       <WrappedComponent
@@ -29,6 +32,6 @@ export function withSuggestPlayListByLastPlayedArtist(
   };
 }
 
-export const SuggestPlayListByLastPlayedArtist = withSuspense(
-  withSuggestPlayListByLastPlayedArtist(PresentSuggestionList),
+export const SuggestPlayListByUserLastPlayedArtist = withSuspense(
+  withSuggestPlayListByUserLastPlayedArtist(PresentSuggestPlayList),
 );

@@ -1,5 +1,7 @@
+import type { AxiosResponse } from 'axios';
 import { eqBy, prop, uniqWith } from 'ramda';
 
+import type { AlbumSimplified } from '../typings/Album';
 import type { TrackFull } from '../typings/Track';
 import { useGetSeveralTracks } from './useGetSeveralTracks';
 import {
@@ -7,7 +9,12 @@ import {
   useTopStreamingTracksReport,
 } from './useTopStreamingTracksReport';
 
-export function useTopStreamingAlbum() {
+interface Response {
+  albums: AlbumSimplified[];
+  trackIds: string[];
+}
+
+export function useTopStreamingAlbum(): AxiosResponse<Response> | undefined {
   const topTracks = useTopStreamingTracksReport({
     period: Period.Weekly,
     region: 'hk',
@@ -18,7 +25,7 @@ export function useTopStreamingAlbum() {
   const tracks = useGetSeveralTracks(trackIds);
   if (!tracks) return undefined;
 
-  const albums = uniqWith(
+  const albums = uniqWith<AlbumSimplified, void>(
     // @ts-expect-error error come from ramda internal type
     eqBy(prop('id')),
     tracks.data.tracks.map((track: TrackFull) => {
@@ -26,8 +33,10 @@ export function useTopStreamingAlbum() {
     }),
   );
   return {
+    ...tracks,
     data: {
       albums,
+      trackIds,
     },
   };
 }
