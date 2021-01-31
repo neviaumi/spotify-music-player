@@ -28,7 +28,7 @@ export function createPollyContext(config: PollyConfig = {}) {
     recordFailedRequests: true,
     ...config,
     mode: pollyMode,
-    recordIfMissing: false,
+    recordIfMissing: true,
   };
   // @ts-expect-error This file should included in test, and even context must get initialized
   const context: {
