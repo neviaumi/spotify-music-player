@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { createPollyContext } from '../../../../../testHelper/createPollyContext';
 import { TestApp } from '../../../../App';
-import { createPollyContext } from '../../../../utils/tests/createPollyContext';
 import { useRecentPlayedTrack } from '../useRecentPlayedTrack';
 
 const _context = createPollyContext();

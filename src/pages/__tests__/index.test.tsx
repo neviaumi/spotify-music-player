@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
+import { createPollyContext } from '../../../testHelper/createPollyContext';
 import { TestApp } from '../../App';
-import { createPollyContext } from '../../utils/tests/createPollyContext';
 import { Suggestion } from '../index';
 
 describe('Test render PlayListSuggestion', () => {

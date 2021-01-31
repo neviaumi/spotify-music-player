@@ -1,5 +1,13 @@
+[build]
+    command = "yarn build"
+    functions = "build-functions"
+
 [[redirects]]
     from = "/*"
     to = "/index.html"
     status = 200
     force = false
+
+[dev]
+    port = 42069
+    targetPort = 3000

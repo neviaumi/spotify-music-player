@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/coverage" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/build-lambda" />
+      <excludeFolder url="file://$MODULE_DIR$/build-functions" />
+      <excludeFolder url="file://$MODULE_DIR$/.netlify" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

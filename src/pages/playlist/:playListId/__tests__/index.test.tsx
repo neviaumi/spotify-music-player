@@ -2,8 +2,8 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { Route } from 'react-router-dom';
 
+import { createPollyContext } from '../../../../../testHelper/createPollyContext';
 import { TestApp } from '../../../../App';
-import { createPollyContext } from '../../../../utils/tests/createPollyContext';
 import { PresentPlayList, withPlayList } from '../';
 
 describe('render PresentPlayList', () => {
