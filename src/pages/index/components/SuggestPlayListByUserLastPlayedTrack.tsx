@@ -2,13 +2,13 @@ import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { withSuspense } from '../../../HOC/withSuspense';
-import { useSuggestedPlayListByLastPlayedArtist } from '../../../hooks/spotify/query/useSuggestedPlayListByLastPlayedArtist';
+import { useSuggestedPlayListByUserLastPlayedTrack } from '../../../hooks/spotify/query/useSuggestedPlayListByUserLastPlayedTrack';
 import { PresentSuggestionList, Props } from './Present/PresentSuggestionList';
 
-export function withSuggestPlayListByLastPlayedArtist(
+export function withSuggestPlayListByUserLastPlayedTrack(
   WrappedComponent: ComponentType<Props>,
 ) {
-  return function WithSuggestPlayListByLastPlayedArtist() {
+  return function WithSuggestPlayListByUserLastPlayedTrack() {
     const history = useHistory();
     const onClickPlayList = useCallback(
       playlist => {
@@ -16,19 +16,19 @@ export function withSuggestPlayListByLastPlayedArtist(
       },
       [history],
     );
-    const response = useSuggestedPlayListByLastPlayedArtist();
+    const response = useSuggestedPlayListByUserLastPlayedTrack();
 
     return (
       <WrappedComponent
-        data-testid="suggested-playlist-by-last-played-artist"
+        data-testid="suggested-playlist-by-last-played-track"
         onClickSuggestion={onClickPlayList}
         suggestions={response?.data.playlists}
-        title={`Continue with ${response?.data.artist.name}`}
+        title={`More like ${response?.data.track.name}`}
       />
     );
   };
 }
 
-export const SuggestPlayListByLastPlayedArtist = withSuspense(
-  withSuggestPlayListByLastPlayedArtist(PresentSuggestionList),
+export const SuggestPlayListByUserLastPlayedTrack = withSuspense(
+  withSuggestPlayListByUserLastPlayedTrack(PresentSuggestionList),
 );

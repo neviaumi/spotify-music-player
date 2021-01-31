@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import { SuggestPlayListByLastPlayedArtist } from './components/SuggestPlayListByLastPlayedArtist';
-import { SuggestPlayListByLastPlayedTrack } from './components/SuggestPlayListByLastPlayedTrack';
-import { SuggestPlayListByTopArtist } from './components/SuggestPlayListByTopArtist';
-import { SuggestPlayListByTopTrack } from './components/SuggestPlayListByTopTrack';
+import { SuggestPlayListByUserLastPlayedArtist } from './components/SuggestPlayListByUserLastPlayedArtist';
+import { SuggestPlayListByUserLastPlayedTrack } from './components/SuggestPlayListByUserLastPlayedTrack';
+import { SuggestPlayListByUserTopArtist } from './components/SuggestPlayListByUserTopArtist';
+import { SuggestPlayListByUserTopTrack } from './components/SuggestPlayListByUserTopTrack';
 
 const Container = styled.div`
   padding: 0 32px;
@@ -12,10 +12,10 @@ const Container = styled.div`
 export function Suggestion() {
   return (
     <Container data-testid="user-suggestion">
-      <SuggestPlayListByTopArtist />
-      <SuggestPlayListByLastPlayedArtist />
-      <SuggestPlayListByTopTrack />
-      <SuggestPlayListByLastPlayedTrack />
+      <SuggestPlayListByUserTopArtist />
+      <SuggestPlayListByUserLastPlayedArtist />
+      <SuggestPlayListByUserTopTrack />
+      <SuggestPlayListByUserLastPlayedTrack />
     </Container>
   );
 }

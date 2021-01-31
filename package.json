@@ -146,8 +146,10 @@
     "start": "react-scripts start",
     "test": "yarn test:react && yarn test:functions",
     "test:functions": "jest --config jest.config.functions.js",
+    "test:functions:reset": "rimraf ./functions/**/*.har && REACT_APP_POLLY_MODE=record jest --config jest.config.functions.js --watchAll --runInBand --testTimeout 60000",
     "test:react": "react-scripts test --maxWorkers=2",
-    "test:reset": "rimraf ./src/**/*.har && REACT_APP_POLLY_MODE=record react-scripts test --watchAll --runInBand --testTimeout 60000"
+    "test:react:reset": "rimraf ./src/**/*.har && REACT_APP_POLLY_MODE=record react-scripts test --watchAll --runInBand --testTimeout 60000",
+    "test:reset": "yarn test:react:reset && yarn test:functions:reset"
   },
   "version": "0.1.0"
 }

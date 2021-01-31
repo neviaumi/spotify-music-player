@@ -2,13 +2,13 @@ import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { withSuspense } from '../../../HOC/withSuspense';
-import { useSuggestedPlayListByUserTopArtist } from '../../../hooks/spotify/query/useSuggestedPlayListByUserTopArtist';
+import { useSuggestedPlayListByUserTopTrack } from '../../../hooks/spotify/query/useSuggestedPlayListByUserTopTrack';
 import { PresentSuggestionList, Props } from './Present/PresentSuggestionList';
 
-export function withSuggestPlayListByTopArtist(
+export function withSuggestPlayListByUserTopTrack(
   WrappedComponent: ComponentType<Props>,
 ) {
-  return function WithSuggestPlayListByTopArtist() {
+  return function WithSuggestPlayListByUserTopTrack() {
     const history = useHistory();
     const onClickPlayList = useCallback(
       playlist => {
@@ -16,19 +16,19 @@ export function withSuggestPlayListByTopArtist(
       },
       [history],
     );
-    const response = useSuggestedPlayListByUserTopArtist();
+    const response = useSuggestedPlayListByUserTopTrack();
 
     return (
       <WrappedComponent
-        data-testid="suggested-playlist-by-user-top-artist"
+        data-testid="suggested-playlist-by-user-top-track"
         onClickSuggestion={onClickPlayList}
         suggestions={response?.data.playlists}
-        title={`${response?.data.artist.name}`}
+        title={`More like ${response?.data.track?.name}`}
       />
     );
   };
 }
 
-export const SuggestPlayListByTopArtist = withSuspense(
-  withSuggestPlayListByTopArtist(PresentSuggestionList),
+export const SuggestPlayListByUserTopTrack = withSuspense(
+  withSuggestPlayListByUserTopTrack(PresentSuggestionList),
 );

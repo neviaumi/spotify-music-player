@@ -5,13 +5,13 @@ import { createMemoryHistory } from 'history';
 import { TestApp } from '../../../../App';
 import { useSuggestedPlayListByUserTopArtist } from '../../../../hooks/spotify/query/useSuggestedPlayListByUserTopArtist';
 import type { Props } from '../Present/PresentSuggestionList';
-import { withSuggestPlayListByTopArtist } from '../SuggestPlayListByTopArtist';
+import { withSuggestPlayListByUserTopArtist } from '../SuggestPlayListByUserTopArtist';
 
 jest.mock(
   '../../../../hooks/spotify/query/useSuggestedPlayListByUserTopArtist',
 );
 
-const SuggestPlayListByTopArtist = withSuggestPlayListByTopArtist(
+const SuggestPlayListByTopArtist = withSuggestPlayListByUserTopArtist(
   ({ onClickSuggestion, suggestions, title }: Props) => {
     return (
       <div>

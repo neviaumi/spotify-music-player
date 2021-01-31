@@ -3,15 +3,15 @@ import event from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
 import { TestApp } from '../../../../App';
-import { useSuggestedPlayListByLastPlayedArtist } from '../../../../hooks/spotify/query/useSuggestedPlayListByLastPlayedArtist';
+import { useSuggestedPlayListByUserLastPlayedTrack } from '../../../../hooks/spotify/query/useSuggestedPlayListByUserLastPlayedTrack';
 import type { Props } from '../Present/PresentSuggestionList';
-import { withSuggestPlayListByLastPlayedArtist } from '../SuggestPlayListByLastPlayedArtist';
+import { withSuggestPlayListByUserLastPlayedTrack } from '../SuggestPlayListByUserLastPlayedTrack';
 
 jest.mock(
-  '../../../../hooks/spotify/query/useSuggestedPlayListByLastPlayedArtist',
+  '../../../../hooks/spotify/query/useSuggestedPlayListByUserLastPlayedTrack',
 );
 
-const SuggestPlayListByLastPlayedArtist = withSuggestPlayListByLastPlayedArtist(
+const SuggestPlayListByLastPlayedTrack = withSuggestPlayListByUserLastPlayedTrack(
   ({ onClickSuggestion, suggestions, title }: Props) => {
     return (
       <div>
@@ -31,41 +31,41 @@ const SuggestPlayListByLastPlayedArtist = withSuggestPlayListByLastPlayedArtist(
   },
 );
 
-describe('Test SuggestPlayListByLastPlayedArtist component', () => {
+describe('Test SuggestPlayListByLastPlayedTrack component', () => {
   it('have title', () => {
-    (useSuggestedPlayListByLastPlayedArtist as any).mockReturnValue({
+    (useSuggestedPlayListByUserLastPlayedTrack as any).mockReturnValue({
       data: {
-        artist: { name: 'artist' },
         playlists: [
           {
             id: 'example-playlist',
           },
         ],
+        track: { name: 'track' },
       },
     });
     render(
       <TestApp>
-        <SuggestPlayListByLastPlayedArtist />
+        <SuggestPlayListByLastPlayedTrack />
       </TestApp>,
     );
-    expect(screen.getByText('Continue with artist')).toBeVisible();
+    expect(screen.getByText('More like track')).toBeVisible();
   });
 
   it('Click suggestion should jump to /playlist/:id', () => {
-    (useSuggestedPlayListByLastPlayedArtist as any).mockReturnValue({
+    (useSuggestedPlayListByUserLastPlayedTrack as any).mockReturnValue({
       data: {
-        artist: { name: 'artist' },
         playlists: [
           {
             id: 'example-playlist',
           },
         ],
+        track: { name: 'track' },
       },
     });
     const history = createMemoryHistory();
     render(
       <TestApp RouterProps={{ history }}>
-        <SuggestPlayListByLastPlayedArtist />
+        <SuggestPlayListByLastPlayedTrack />
       </TestApp>,
     );
     expect(screen.getByRole('button')).toBeVisible();
