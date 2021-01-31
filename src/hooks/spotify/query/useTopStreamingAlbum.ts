@@ -1,6 +1,7 @@
 import type { AxiosResponse } from 'axios';
 import { eqBy, prop, uniqWith } from 'ramda';
 
+import { useUserCountry } from '../../useUserCountry';
 import type { AlbumSimplified } from '../typings/Album';
 import type { TrackFull } from '../typings/Track';
 import { useGetSeveralTracks } from './useGetSeveralTracks';
@@ -15,9 +16,10 @@ interface Response {
 }
 
 export function useTopStreamingAlbum(): AxiosResponse<Response> | undefined {
+  const userCountry = useUserCountry();
   const topTracks = useTopStreamingTracksReport({
     period: Period.Weekly,
-    region: 'hk',
+    region: userCountry?.toLowerCase(),
   });
   const trackIds = topTracks?.data.data.items
     .map(({ trackId }: { trackId: string }) => trackId)

@@ -12,15 +12,17 @@ interface Props {
 
 export function useTopStreamingTracksReport({ region, period }: Props) {
   const { data } = useSWR(
-    ['GET', '/.netlify/functions/fetch-top-stream-report', region, period],
-    () =>
+    region
+      ? ['GET', '/.netlify/functions/fetch-top-stream-report', region, period]
+      : null,
+    (method, url, _region, _period) =>
       axios.request({
-        method: 'GET',
+        method,
         params: {
-          period,
-          region,
+          period: _period,
+          region: _region,
         },
-        url: '/.netlify/functions/fetch-top-stream-report',
+        url,
       }),
   );
   if (!data) return undefined;
