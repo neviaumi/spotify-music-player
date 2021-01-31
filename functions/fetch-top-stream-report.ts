@@ -1,12 +1,13 @@
 import 'reflect-metadata';
 
 import type { APIGatewayProxyEvent, Handler } from 'aws-lambda';
-import axios from 'axios';
 import { plainToClass } from 'class-transformer';
 import { IsEnum, IsString, validate } from 'class-validator';
 import camelcase from 'lodash.camelcase';
 import Papa from 'papaparse';
 import { URL } from 'url';
+
+import { httpRequest } from './utils/httpRequest';
 
 enum Period {
   Daily = 'daily',
@@ -26,7 +27,7 @@ async function fetchSpotifyCSV(
   region: string,
   period: Period,
 ): Promise<Record<string, string>[]> {
-  const { data } = await axios.request({
+  const { data } = await httpRequest({
     responseType: 'stream',
     url: `https://spotifycharts.com/regional/${region}/${period}/latest/download`,
   });
