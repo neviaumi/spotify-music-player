@@ -24,7 +24,7 @@ export function withSuggestAlbumBySpotifyTopStreamTracks(
         data-testid="suggested-album-by-top-stream-tracks"
         onClickSuggestion={onClickPlayList}
         suggestions={response?.data.albums}
-        title="Continue with top streaming artist"
+        title={`Top streaming album in ${response?.data.userCountry}`}
       />
     );
   };

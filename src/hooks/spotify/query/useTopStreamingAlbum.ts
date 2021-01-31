@@ -13,6 +13,7 @@ import {
 interface Response {
   albums: AlbumSimplified[];
   trackIds: string[];
+  userCountry: string;
 }
 
 export function useTopStreamingAlbum(): AxiosResponse<Response> | undefined {
@@ -39,6 +40,7 @@ export function useTopStreamingAlbum(): AxiosResponse<Response> | undefined {
     data: {
       albums,
       trackIds,
+      userCountry,
     },
   };
 }
