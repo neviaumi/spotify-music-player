@@ -1,5 +1,5 @@
 [build]
-    command = "yarn build:functions"
+    command = "yarn build"
     functions = "build-functions"
 
 [[redirects]]

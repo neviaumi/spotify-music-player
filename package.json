@@ -131,8 +131,9 @@
   "name": "spotify-web-player",
   "private": true,
   "scripts": {
-    "build": "react-scripts build",
+    "build": "yarn build:functions && yarn build:react",
     "build:functions": "netlify-lambda build functions",
+    "build:react": "react-scripts build",
     "dev": "netlify dev",
     "eject": "react-scripts eject",
     "lint:css": "stylelint './src/**/*.{ts,tsx}'",

@@ -27,3 +27,5 @@ yarn-error.log*
 .idea/workspace.xml
 tsconfig.tsbuildinfo
 .eslintcache
+# Local Netlify folder
+.netlify
