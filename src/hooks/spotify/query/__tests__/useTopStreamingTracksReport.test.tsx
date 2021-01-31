@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { interceptNetlifyFunctions } from '../../../../../functions/testHelper/interceptNetlifyFunctions';
 import { createPollyContext } from '../../../../../testHelper/createPollyContext';
 import { TestApp } from '../../../../App';
 import {
@@ -7,21 +8,11 @@ import {
   useTopStreamingTracksReport,
 } from '../useTopStreamingTracksReport';
 
-const context = createPollyContext();
+const context = createPollyContext({});
 describe('useTopStreamingReport', () => {
   it('fetch top steaming report from backing API', async () => {
-    context.polly.server.host('http://localhost', () => {
-      context.polly.server
-        .get('/.netlify/functions/fetch-top-stream-report')
-        .intercept((_, res) => {
-          res.status(200).json({
-            data: {
-              items: [],
-            },
-          });
-        });
-    });
-    const { result, waitForNextUpdate } = renderHook(
+    interceptNetlifyFunctions(context.polly);
+    const { result, waitFor } = renderHook(
       () =>
         useTopStreamingTracksReport({
           period: Period.Weekly,
@@ -31,11 +22,9 @@ describe('useTopStreamingReport', () => {
         wrapper: ({ children }) => <TestApp>{children}</TestApp>,
       },
     );
-    await waitForNextUpdate();
-    expect(result.current?.data).toStrictEqual({
-      data: {
-        items: [],
-      },
+    await waitFor(() => expect(result.current?.data).toBeDefined(), {
+      timeout: 8000,
     });
-  });
+    expect(result.current?.data.data.items.length).toBeGreaterThan(0);
+  }, 10000);
 });
