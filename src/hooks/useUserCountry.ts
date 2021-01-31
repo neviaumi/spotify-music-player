@@ -9,5 +9,6 @@ export function useUserCountry() {
       url,
     }),
   );
-  return data?.data.country;
+  if (!data) return undefined;
+  return data.data.country ?? 'global';
 }
