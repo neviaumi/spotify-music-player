@@ -1,14 +1,4 @@
 version: '2'
-plugins:
-  eslint:
-    enabled: true
-    channel: 'eslint-7'
-  config:
-    ignore_warnings: true
-    extensions:
-      - .js
-      - .tsx
-      - .ts
 checks:
   argument-count:
     enabled: false
