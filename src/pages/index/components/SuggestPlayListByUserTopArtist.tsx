@@ -3,7 +3,10 @@ import { useHistory } from 'react-router-dom';
 
 import { withSuspense } from '../../../HOC/withSuspense';
 import { useSuggestedPlayListByUserTopArtist } from '../../../hooks/spotify/query/useSuggestedPlayListByUserTopArtist';
-import { PresentSuggestionList, Props } from './Present/PresentSuggestionList';
+import {
+  PresentSuggestPlayList,
+  Props,
+} from './Present/PresentSuggestPlayList';
 
 export function withSuggestPlayListByUserTopArtist(
   WrappedComponent: ComponentType<Props>,
@@ -30,5 +33,5 @@ export function withSuggestPlayListByUserTopArtist(
 }
 
 export const SuggestPlayListByUserTopArtist = withSuspense(
-  withSuggestPlayListByUserTopArtist(PresentSuggestionList),
+  withSuggestPlayListByUserTopArtist(PresentSuggestPlayList),
 );

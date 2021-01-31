@@ -2,18 +2,18 @@ import { render, screen } from '@testing-library/react';
 import events from '@testing-library/user-event';
 
 import { TestApp } from '../../../../../App';
-import { PresentSuggestionList } from '../PresentSuggestionList';
+import { PresentSuggestPlayList } from '../PresentSuggestPlayList';
 
-describe('Test render PresentSuggestionList component', () => {
+describe('Test render PresentSuggestPlayList component', () => {
   it('Should render Present component', () => {
     render(
       <TestApp>
-        <PresentSuggestionList
+        <PresentSuggestPlayList
           data-testid=""
           onClickSuggestion={jest.fn()}
           suggestions={[
             {
-              description: 'FooBar',
+              description: 'FooBarDescription',
               id: 'FooBarID',
               // @ts-expect-error
               images: [{ url: 'https://www.google.com' }],
@@ -32,6 +32,10 @@ describe('Test render PresentSuggestionList component', () => {
       screen.getAllByRole('link'),
       'Should render suggestion to clickable link',
     ).toHaveLength(1);
+    expect(
+      screen.getByText('FooBarDescription'),
+      'Should use description',
+    ).toBeVisible();
   });
   it('Should trigger onClickSuggestion when Suggestion clicked', () => {
     const onClickSuggestion = jest.fn();
@@ -43,7 +47,7 @@ describe('Test render PresentSuggestionList component', () => {
     };
     render(
       <TestApp>
-        <PresentSuggestionList
+        <PresentSuggestPlayList
           data-testid=""
           onClickSuggestion={onClickSuggestion}
           // @ts-expect-error

@@ -13,6 +13,10 @@ describe('Test render PlayListSuggestion', () => {
       </TestApp>,
     );
     expect(
+      screen.getByTestId('suggested-album-by-top-stream-tracks'),
+      'Should contain suggested album by top stream tracks',
+    ).toBeVisible();
+    expect(
       screen.getByTestId('suggested-playlist-by-last-played-artist'),
       'Should contain suggested playlist by last played artist',
     ).toBeVisible();

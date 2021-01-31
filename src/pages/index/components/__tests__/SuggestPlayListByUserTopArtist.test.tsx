@@ -4,7 +4,7 @@ import { createMemoryHistory } from 'history';
 
 import { TestApp } from '../../../../App';
 import { useSuggestedPlayListByUserTopArtist } from '../../../../hooks/spotify/query/useSuggestedPlayListByUserTopArtist';
-import type { Props } from '../Present/PresentSuggestionList';
+import type { Props } from '../Present/PresentSuggestPlayList';
 import { withSuggestPlayListByUserTopArtist } from '../SuggestPlayListByUserTopArtist';
 
 jest.mock(

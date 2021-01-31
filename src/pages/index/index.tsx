@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { SuggestAlbumBySpotifyTopStreamTracks } from './components/SuggestAlbumBySpotifyTopStreamTracks';
 import { SuggestPlayListByUserLastPlayedArtist } from './components/SuggestPlayListByUserLastPlayedArtist';
 import { SuggestPlayListByUserLastPlayedTrack } from './components/SuggestPlayListByUserLastPlayedTrack';
 import { SuggestPlayListByUserTopArtist } from './components/SuggestPlayListByUserTopArtist';
@@ -12,6 +13,7 @@ const Container = styled.div`
 export function Suggestion() {
   return (
     <Container data-testid="user-suggestion">
+      <SuggestAlbumBySpotifyTopStreamTracks />
       <SuggestPlayListByUserTopArtist />
       <SuggestPlayListByUserLastPlayedArtist />
       <SuggestPlayListByUserTopTrack />
