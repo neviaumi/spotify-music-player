@@ -16,6 +16,7 @@ describe('Test useTopStreamingAlbum', () => {
       timeout: 8000,
     });
     expect(result.current?.data).toHaveProperty('albums');
+    expect(result.current?.data).toHaveProperty('userCountry');
     expect(result.current?.data.albums.length).toBeGreaterThan(0);
     expect(result.current?.data.albums.length).toBeLessThanOrEqual(50);
   }, 100000);

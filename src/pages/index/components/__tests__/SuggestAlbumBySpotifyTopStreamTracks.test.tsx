@@ -34,6 +34,7 @@ describe('Test SuggestAlbumBySpotifyTopStreamTracks', () => {
     (useTopStreamingAlbum as jest.Mock).mockReturnValue({
       data: {
         albums: [],
+        userCountry: 'HK',
       },
     });
     render(
@@ -41,9 +42,7 @@ describe('Test SuggestAlbumBySpotifyTopStreamTracks', () => {
         <SuggestAlbumBySpotifyTopStreamTracks />
       </TestApp>,
     );
-    expect(
-      screen.getByText('Continue with top streaming artist'),
-    ).toBeVisible();
+    expect(screen.getByText('Top streaming album in HK')).toBeVisible();
   });
 
   it('Click suggestion should jump to /album/:id', () => {
