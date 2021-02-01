@@ -1452,10 +1452,10 @@
   resolved "https://registry.yarnpkg.com/@busybox/renovate-config/-/renovate-config-1.1.3.tgz#a8ee45d918b5dd051d0adb73bd3a10be1de7507c"
   integrity sha512-97+TpN+hBj2Kwe7ZBcGSdQ8exP0WVHx8oFgujDiCDmpGTc01uiidJM1IO0U7ivuzOaSBQno4eRo2GF/uKZPNPA==
 
-"@busybox/tsconfig@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@busybox/tsconfig/-/tsconfig-1.3.1.tgz#ca4c4ec44542103d2d88b9c98d32eaa6ff2571e5"
-  integrity sha512-3JbO5EcH84IqtxCz19jY3jJzQv0t1iiReiWrAwn2qSQyv5DBYxkk05cV1d+Ic9gHposmkP5uUxmKtAW/NvLJiw==
+"@busybox/tsconfig@1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@busybox/tsconfig/-/tsconfig-1.3.2.tgz#641f0041867b5eb9e4906205599fbc355c6697a4"
+  integrity sha512-V2yTj/EadZdjkZYk4nHWfis+4ss3gTDOUreji9s7tQBkmrsNdOfsgiw6m0DRzjggvMNLRIJc1onSMVwhHRWbaQ==
   dependencies:
     "@spotify/tsconfig" "9.0.0"
 
