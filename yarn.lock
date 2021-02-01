@@ -1397,10 +1397,10 @@
   resolved "https://registry.yarnpkg.com/@bugsnag/safe-json-stringify/-/safe-json-stringify-6.0.0.tgz#22abdcd83e008c369902976730c34c150148a758"
   integrity sha512-htzFO1Zc57S8kgdRK9mLcPVTW1BY2ijfH7Dk2CeZmspTWKdKqSo1iwmqrq2WtRjFlo8aRZYgLX0wFrDXF/9DLA==
 
-"@busybox/babel-preset@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@busybox/babel-preset/-/babel-preset-1.1.3.tgz#43f8e1936a4540c060bb967230e4ef81e4877ce0"
-  integrity sha512-D3CwJwREbxuPORpz0GAqpvC8SXAcwz3Ck5D4sjUjWdDy7ce74rfzkjFG7z80ZKUVIzN1pYx4Q/9jJ1ccmGsEmw==
+"@busybox/babel-preset@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@busybox/babel-preset/-/babel-preset-1.1.4.tgz#8534b01aa44298bc8fb7db6c8b73e46ea7211482"
+  integrity sha512-eRGDdInRkSj874LFZAw19w/pbBeu8cmlKkRY5NknbaSubGtlWtNGMMHdfZmakghT/YciOKeimo10Aitf1LZTkA==
   dependencies:
     "@babel/core" "7.12.10"
     "@babel/plugin-proposal-decorators" "7.12.12"
