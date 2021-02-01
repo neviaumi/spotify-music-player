@@ -1,7 +1,11 @@
 interface Track {
-  track: { duration_ms: number };
+  duration_ms?: number;
+  track?: { duration_ms: number };
 }
 
 export function getTrackListTotalDuration(tracks: Track[]) {
-  return tracks.reduce((acc, item) => acc + item.track.duration_ms, 0);
+  return tracks.reduce(
+    (acc, item) => acc + (item.track?.duration_ms ?? item.duration_ms!),
+    0,
+  );
 }

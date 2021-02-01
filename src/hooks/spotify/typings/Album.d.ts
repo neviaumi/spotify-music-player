@@ -1,5 +1,7 @@
 import { ArtistSimplified } from './Artist';
 import { Image } from './shared/Image';
+import { Paging } from './shared/Paging';
+import { TrackSimplified } from './Track';
 
 export interface AlbumSimplified {
   album_group?: 'album' | 'single' | 'compilation' | 'appears_on';
@@ -15,4 +17,14 @@ export interface AlbumSimplified {
   total_tracks: number;
   type: 'album';
   uri: string;
+}
+
+export interface AlbumFull extends AlbumSimplified {
+  genres: string[];
+
+  label: string;
+
+  popularity: number;
+
+  tracks: Paging<TrackSimplified>;
 }

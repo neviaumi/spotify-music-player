@@ -4,6 +4,7 @@ import { useAsync } from 'react-use';
 import { Nav } from '../components/Nav';
 import { Panel } from '../components/Panel';
 import { useAuthContext } from '../contexts/Auth/AuthContext';
+import { AlbumPage } from '../pages/album/:albumId';
 import { Suggestion } from '../pages/index';
 import { PlayerListPage } from '../pages/playlist/:playListId';
 
@@ -12,6 +13,7 @@ export function ContentSwitch() {
     <Switch>
       <Route component={Suggestion} exact path="/" />
       <Route component={PlayerListPage} exact path="/playlist/:playListId" />
+      <Route component={AlbumPage} exact path="/album/:albumId" />
     </Switch>
   );
 }
