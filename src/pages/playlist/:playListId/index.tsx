@@ -1,10 +1,10 @@
 import type { ComponentType } from 'react';
 import { useParams } from 'react-router-dom';
+import { withSuspense } from 'src/HOC/withSuspense';
+import { usePlayList } from 'src/hooks/spotify/query/usePlayList';
+import type { PlaylistFull } from 'src/hooks/spotify/typings/Playlist';
 import styled from 'styled-components';
 
-import { withSuspense } from '../../../HOC/withSuspense';
-import { usePlayList } from '../../../hooks/spotify/query/usePlayList';
-import type { PlaylistFull } from '../../../hooks/spotify/typings/Playlist';
 import { Heading } from './components/Heading';
 import { TracksList } from './components/TracksList';
 

@@ -1,11 +1,11 @@
-import type { PlaylistFull } from 'src/hooks/spotify/typings/Playlist';
+import type { AlbumFull } from 'src/hooks/spotify/typings/Album';
 import { formatMSToMinute } from 'src/utils/formatMS';
 import styled from 'styled-components';
 
 import { ReactComponent as Clock } from './clock.svg';
 
 interface Props {
-  playList?: PlaylistFull;
+  album?: AlbumFull;
 }
 
 const Container = styled.ol`
@@ -17,10 +17,7 @@ const Header = styled.li`
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: [index] 16px [first] 6fr [var1] 4fr [var2] 3fr [last] minmax(
-      120px,
-      1fr
-    );
+  grid-template-columns: [index] 16px [first] 4fr [last] minmax(120px, 1fr);
   height: 56px;
   padding: ${props => props.theme.spaces.l} 0px;
 `;
@@ -29,7 +26,6 @@ const HeaderColumn = styled.header`
   align-items: flex-end;
   color: ${props => props.theme.colors.natural255};
   display: flex;
-  width: 100%;
 `;
 
 const Item = styled(Header)`
@@ -39,21 +35,13 @@ const Item = styled(Header)`
   }
 `;
 
-const TrackAlbumCover = styled.img`
-  max-height: 56px;
-  object-fit: cover;
-  object-position: center center;
-`;
-
 const TrackInfo = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: ${props => props.theme.spaces.xl};
 `;
 
 const TrackName = styled.h1`
-  color: ${props => props.theme.colors.white};
   display: block;
   font-size: 16px;
   line-height: 22px;
@@ -81,43 +69,31 @@ const Column = styled.div`
   width: 100%;
 `;
 
-export function TracksList({ playList }: Props) {
+export function TracksList({ album }: Props) {
   return (
-    <Container data-testid="playlist-track-listing">
-      <Header aria-label="playlist-track-header">
+    <Container data-testid="album-track-listing">
+      <Header aria-label="album-track-header">
         <HeaderColumn role="columnheader">#</HeaderColumn>
-        <HeaderColumn role="columnheader">TITLE</HeaderColumn>
-        <HeaderColumn role="columnheader">ALBUM</HeaderColumn>
-        <HeaderColumn role="columnheader">DATE ADDED</HeaderColumn>
+        <HeaderColumn role="columnheader">Title</HeaderColumn>
         <HeaderColumn role="columnheader">
           <Clock />
         </HeaderColumn>
       </Header>
-
-      {playList?.tracks.items.map((playListTrack, index) => {
-        const { track } = playListTrack;
+      {album?.tracks.items.map((albumTrack, index) => {
         const {
-          album,
           artists: [artist],
           duration_ms,
-        } = track;
+        } = albumTrack;
         return (
-          <Item aria-label="playlist-track" key={track.id}>
+          <Item aria-label="album-track" key={albumTrack.id}>
             <Column>{index + 1}</Column>
-            <Column>
-              <TrackAlbumCover
-                alt={`${album.name} cover`}
-                src={album.images.slice(-1).pop()?.url}
-              />
-              <TrackInfo>
-                <TrackName>{track.name}</TrackName>
-                <TrackMeta>
-                  <TrackArtist>{artist.name}</TrackArtist>
-                </TrackMeta>
-              </TrackInfo>
-            </Column>
-            <Column>{album.name}</Column>
-            <Column>{playListTrack.added_at}</Column>
+            <TrackInfo>
+              <TrackName>{albumTrack.name}</TrackName>
+              <TrackMeta>
+                <TrackArtist>{artist.name}</TrackArtist>
+              </TrackMeta>
+            </TrackInfo>
+
             <Column>{formatMSToMinute(duration_ms)}</Column>
           </Item>
         );

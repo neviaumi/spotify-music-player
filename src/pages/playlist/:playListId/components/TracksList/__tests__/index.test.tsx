@@ -3,30 +3,53 @@ import { render, screen } from '@testing-library/react';
 import { TestApp } from '../../../../../../App';
 import { TracksList } from '../index';
 
-it('render TrackList with one Item', () => {
-  const props = {
-    playList: {
-      tracks: {
-        items: [
-          {
-            track: {
-              album: { name: 'Disraeli Gears' },
-              artists: [{ name: 'Cream' }],
-              duration_ms: 1000,
-              name: 'Sunrise of love',
+describe('Test PlayList tracks list', () => {
+  it('render TrackList with one Item', () => {
+    const props = {
+      playList: {
+        tracks: {
+          items: [
+            {
+              track: {
+                album: {
+                  images: [{ url: 'https://www.google.com' }],
+                  name: 'Disraeli Gears',
+                },
+                artists: [{ name: 'Cream' }],
+                duration_ms: 1000,
+                name: 'Sunrise of love',
+              },
             },
-          },
-        ],
-      },
-    } as any,
-  };
-  render(
-    <TestApp>
-      <TracksList {...props} />
-    </TestApp>,
-  );
-  expect(screen.getAllByRole('listitem')).toHaveLength(1);
-  expect(screen.getByText('Sunrise of love')).toBeVisible();
-  expect(screen.getByText('Disraeli Gears')).toBeVisible();
-  expect(screen.getByText('Cream')).toBeVisible();
+          ],
+        },
+      } as any,
+    };
+    render(
+      <TestApp>
+        <TracksList {...props} />
+      </TestApp>,
+    );
+    expect(
+      screen.getAllByRole('listitem', {
+        name: 'playlist-track-header',
+      }),
+      'Have header',
+    ).toHaveLength(1);
+    expect(screen.getAllByRole('columnheader'), 'Have 5 column').toHaveLength(
+      5,
+    );
+    expect(
+      screen.getAllByRole('listitem', {
+        name: 'playlist-track',
+      }),
+      'only one record',
+    ).toHaveLength(1);
+    expect(
+      screen.getByRole('img', { name: 'Disraeli Gears cover' }),
+      'album cover',
+    ).toBeVisible();
+    expect(screen.getByText('Sunrise of love'), 'Track name').toBeVisible();
+    expect(screen.getByText('Disraeli Gears'), 'album name').toBeVisible();
+    expect(screen.getByText('Cream'), 'artist name').toBeVisible();
+  });
 });

@@ -1,10 +1,10 @@
-import type { PlaylistFull } from 'src/hooks/spotify/typings/Playlist';
+import type { AlbumFull } from 'src/hooks/spotify/typings/Album';
 import { formatMS } from 'src/utils/formatMS';
 import { getTrackListTotalDuration } from 'src/utils/getTrackListTotalDuration';
 import styled from 'styled-components';
 
 interface Props {
-  playList?: PlaylistFull;
+  album?: AlbumFull;
 }
 
 const Container = styled.section`
@@ -33,10 +33,14 @@ const Info = styled.p`
   color: ${props => props.theme.colors.natural255};
 `;
 
-const Creator = styled.a`
+const Creator = styled.figure`
+  display: flex;
+  margin: 0px;
   font-weight: bold;
   color: ${props => props.theme.colors.white};
 `;
+
+const ArtistName = styled.figcaption``;
 
 const Meta = styled.span`
   &:before {
@@ -62,20 +66,22 @@ const CoverImage = styled.img`
   height: 100%;
 `;
 
-export function Heading({ playList }: Props) {
+export function Heading({ album }: Props) {
   return (
     <Container data-testid="heading">
       <Cover>
-        <CoverImage alt="cover-image" src={playList?.images[0].url} />
+        <CoverImage alt="cover-image" src={album?.images[0].url} />
       </Cover>
       <ContentContainer>
-        <Type>PLAYLIST</Type>
-        <Title>{playList?.name}</Title>
+        <Type>ALBUM</Type>
+        <Title>{album?.name}</Title>
         <Info>
-          <Creator>{playList?.owner.display_name}</Creator>
-          <Meta>{playList?.followers.total} likes</Meta>
+          <Creator>
+            <ArtistName>{album?.artists[0].name}</ArtistName>
+          </Creator>
+          <Meta>{album?.total_tracks} songs</Meta>
           <Meta>
-            {formatMS(getTrackListTotalDuration(playList?.tracks.items ?? []))}
+            {formatMS(getTrackListTotalDuration(album?.tracks.items ?? []))}
           </Meta>
         </Info>
       </ContentContainer>

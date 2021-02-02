@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "allowJs": false,
-    "jsx": "react-jsx",
-    "noUnusedLocals": false,
+    "allowJs": true,
+    "baseUrl": ".",
     "typeRoots": ["./typings", "./node_modules/@types"]
   },
   "extends": "@busybox/tsconfig",
