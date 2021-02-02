@@ -53,7 +53,7 @@
     "@pollyjs/persister-fs": "5.0.0",
     "@serverless/event-mocks": "1.1.1",
     "@testing-library/jest-dom": "5.11.9",
-    "@testing-library/react": "11.2.4",
+    "@testing-library/react": "11.2.5",
     "@testing-library/react-hooks": "5.0.3",
     "@testing-library/user-event": "12.6.3",
     "@types/aws-lambda": "8.10.71",
