@@ -3,15 +3,15 @@ import event from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
 import { TestApp } from '../../../../App';
-import { useSuggestedPlayListByUserLastPlayedArtist } from '../../../../hooks/spotify/query/useSuggestedPlayListByUserLastPlayedArtist';
+import { useSuggestedAlbumByUserLastPlayedArtists } from '../../../../hooks/spotify/query/useSuggestedAlbumByUserLastPlayedArtists';
 import type { Props } from '../Present/PresentSuggestPlayList';
-import { withSuggestPlayListByUserLastPlayedArtist } from '../SuggestPlayListByUserLastPlayedArtist';
+import { withSuggestAlbumByUserLastPlayedArtists } from '../SuggestAlbumByUserLastPlayedArtists';
 
 jest.mock(
   '../../../../hooks/spotify/query/useSuggestedPlayListByUserLastPlayedArtist',
 );
 
-const SuggestPlayListByLastPlayedArtist = withSuggestPlayListByUserLastPlayedArtist(
+const SuggestPlayListByLastPlayedArtist = withSuggestAlbumByUserLastPlayedArtists(
   ({ onClickSuggestion, suggestions, title }: Props) => {
     return (
       <div>
@@ -33,7 +33,7 @@ const SuggestPlayListByLastPlayedArtist = withSuggestPlayListByUserLastPlayedArt
 
 describe('Test SuggestPlayListByLastPlayedArtist component', () => {
   it('have title', () => {
-    (useSuggestedPlayListByUserLastPlayedArtist as any).mockReturnValue({
+    (useSuggestedAlbumByUserLastPlayedArtists as any).mockReturnValue({
       data: {
         artist: { name: 'artist' },
         playlists: [
@@ -52,7 +52,7 @@ describe('Test SuggestPlayListByLastPlayedArtist component', () => {
   });
 
   it('Click suggestion should jump to /playlist/:id', () => {
-    (useSuggestedPlayListByUserLastPlayedArtist as any).mockReturnValue({
+    (useSuggestedAlbumByUserLastPlayedArtists as any).mockReturnValue({
       data: {
         artist: { name: 'artist' },
         playlists: [

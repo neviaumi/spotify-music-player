@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
-import { SuggestAlbumBySpotifyTopStreamTracks } from './components/SuggestAlbumBySpotifyTopStreamTracks';
-import { SuggestPlayListByUserLastPlayedArtist } from './components/SuggestPlayListByUserLastPlayedArtist';
-import { SuggestPlayListByUserLastPlayedTrack } from './components/SuggestPlayListByUserLastPlayedTrack';
-import { SuggestPlayListByUserTopArtist } from './components/SuggestPlayListByUserTopArtist';
-import { SuggestPlayListByUserTopTrack } from './components/SuggestPlayListByUserTopTrack';
+import { AlbumByTopStreamTracks } from './components/AlbumByTopStreamTracks';
+import { FeaturedPlayListsBySpotify } from './components/FeaturedPlayListsBySpotify';
+import { SuggestAlbumByUserLastPlayedArtists } from './components/SuggestAlbumByUserLastPlayedArtists';
+import { SuggestAlbumByUserLastPlayedTracks } from './components/SuggestAlbumByUserLastPlayedTracks';
+import { SuggestAlbumByUserTopArtistGenres } from './components/SuggestAlbumByUserTopArtistGenres';
+import { SuggestAlbumByUserTopArtists } from './components/SuggestAlbumByUserTopArtists';
+import { SuggestAlbumByUserTopTracks } from './components/SuggestAlbumByUserTopTracks';
 
 const Container = styled.div`
   padding: 0 32px;
@@ -13,11 +15,13 @@ const Container = styled.div`
 export function Suggestion() {
   return (
     <Container data-testid="user-suggestion">
-      <SuggestAlbumBySpotifyTopStreamTracks />
-      <SuggestPlayListByUserTopArtist />
-      <SuggestPlayListByUserLastPlayedArtist />
-      <SuggestPlayListByUserTopTrack />
-      <SuggestPlayListByUserLastPlayedTrack />
+      <FeaturedPlayListsBySpotify />
+      <SuggestAlbumByUserTopArtists />
+      <AlbumByTopStreamTracks />
+      <SuggestAlbumByUserTopTracks />
+      <SuggestAlbumByUserTopArtistGenres />
+      <SuggestAlbumByUserLastPlayedTracks />
+      <SuggestAlbumByUserLastPlayedArtists />
     </Container>
   );
 }

@@ -10,7 +10,11 @@ export function DataFetchingConfigProvider({
   children,
   ...rest
 }: DataFetchingConfigProviderProps) {
-  return <SWRConfig value={{ suspense: true, ...rest }}>{children}</SWRConfig>;
+  return (
+    <SWRConfig value={{ errorRetryCount: 3, suspense: true, ...rest }}>
+      {children}
+    </SWRConfig>
+  );
 }
 
 export function TestDataFetchingConfigProvider({

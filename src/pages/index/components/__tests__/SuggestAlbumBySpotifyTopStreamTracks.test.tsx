@@ -4,12 +4,12 @@ import { createMemoryHistory } from 'history';
 
 import { TestApp } from '../../../../App';
 import { useTopStreamingAlbum } from '../../../../hooks/spotify/query/useTopStreamingAlbum';
+import { withAlbumByTopStreamTracks } from '../AlbumByTopStreamTracks';
 import type { Props } from '../Present/PresentSuggestAlbum';
-import { withSuggestAlbumBySpotifyTopStreamTracks } from '../SuggestAlbumBySpotifyTopStreamTracks';
 
 jest.mock('../../../../hooks/spotify/query/useTopStreamingAlbum');
 
-const SuggestAlbumBySpotifyTopStreamTracks = withSuggestAlbumBySpotifyTopStreamTracks(
+const SuggestAlbumBySpotifyTopStreamTracks = withAlbumByTopStreamTracks(
   function ({ title, suggestions, onClickSuggestion }: Props) {
     return (
       <div>

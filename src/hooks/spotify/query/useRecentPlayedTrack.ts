@@ -14,6 +14,9 @@ export function useRecentPlayedTrack() {
     (method, url) =>
       apiClient.request<Response>({
         method,
+        params: {
+          limit: 50,
+        },
         url,
       }),
   );

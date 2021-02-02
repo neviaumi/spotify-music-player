@@ -1,17 +1,17 @@
 import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+import { withSuspense } from 'src/HOC/withSuspense';
+import { useTopStreamingAlbum } from 'src/hooks/spotify/query/useTopStreamingAlbum';
+import type { AlbumSimplified } from 'src/hooks/spotify/typings/Album';
 
-import { withSuspense } from '../../../HOC/withSuspense';
-import { useTopStreamingAlbum } from '../../../hooks/spotify/query/useTopStreamingAlbum';
-import type { AlbumSimplified } from '../../../hooks/spotify/typings/Album';
 import { PresentSuggestAlbum, Props } from './Present/PresentSuggestAlbum';
 
-export function withSuggestAlbumBySpotifyTopStreamTracks(
+export function withAlbumByTopStreamTracks(
   WrappedComponent: ComponentType<Props>,
 ) {
-  return function WithSuggestAlbumBySpotifyTopStreamTracks() {
+  return function WithAlbumByTopStreamTracks() {
     const history = useHistory();
-    const onClickPlayList = useCallback(
+    const onClickAlbum = useCallback(
       (album: AlbumSimplified) => {
         history.push(`/album/${album.id}`);
       },
@@ -22,7 +22,7 @@ export function withSuggestAlbumBySpotifyTopStreamTracks(
     return (
       <WrappedComponent
         data-testid="suggested-album-by-top-stream-tracks"
-        onClickSuggestion={onClickPlayList}
+        onClickSuggestion={onClickAlbum}
         suggestions={response?.data.albums}
         title={`Top streaming album in ${response?.data.userCountry}`}
       />
@@ -30,6 +30,6 @@ export function withSuggestAlbumBySpotifyTopStreamTracks(
   };
 }
 
-export const SuggestAlbumBySpotifyTopStreamTracks = withSuspense(
-  withSuggestAlbumBySpotifyTopStreamTracks(PresentSuggestAlbum),
+export const AlbumByTopStreamTracks = withSuspense(
+  withAlbumByTopStreamTracks(PresentSuggestAlbum),
 );

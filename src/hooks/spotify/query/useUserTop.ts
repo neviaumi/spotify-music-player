@@ -24,6 +24,7 @@ export const useUserTop: UseUserTopHooks = function useUserTop(
     apiClient.request({
       method,
       params: {
+        limit: 50,
         time_range: 'short_term',
       },
       url,

@@ -2,12 +2,12 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { createPollyContext } from '../../../../../testHelper/createPollyContext';
 import { TestApp } from '../../../../App';
-import { useSuggestedPlayListByUserLastPlayedTrack } from '../useSuggestedPlayListByUserLastPlayedTrack';
+import { useSuggestedAlbumByUserLastPlayedTracks } from '../useSuggestedAlbumByUserLastPlayedTracks';
 
 const _context = createPollyContext();
 it('Return playlist of user by last played track', async () => {
   const { result, waitFor } = renderHook(
-    () => useSuggestedPlayListByUserLastPlayedTrack(),
+    () => useSuggestedAlbumByUserLastPlayedTracks(),
     {
       wrapper: ({ children }) => <TestApp>{children}</TestApp>,
     },
