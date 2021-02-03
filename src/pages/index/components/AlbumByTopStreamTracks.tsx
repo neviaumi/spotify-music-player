@@ -1,6 +1,5 @@
 import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { withSuspense } from 'src/HOC/withSuspense';
 import { useTopStreamingAlbum } from 'src/hooks/spotify/query/useTopStreamingAlbum';
 import type { AlbumSimplified } from 'src/hooks/spotify/typings/Album';
 
@@ -30,6 +29,6 @@ export function withAlbumByTopStreamTracks(
   };
 }
 
-export const AlbumByTopStreamTracks = withSuspense(
-  withAlbumByTopStreamTracks(PresentSuggestAlbum),
+export const AlbumByTopStreamTracks = withAlbumByTopStreamTracks(
+  PresentSuggestAlbum,
 );

@@ -1,7 +1,10 @@
+import { ErrorBoundary } from 'react-error-boundary';
 import styled from 'styled-components';
 
+import { ErrorFallback } from '../../components/ErrorFallback';
+import { Suspense } from '../../components/Suspense/withSuspense';
 import { AlbumByTopStreamTracks } from './components/AlbumByTopStreamTracks';
-import { FeaturedPlayListsBySpotify } from './components/FeaturedPlayListsBySpotify';
+import { FeaturedPlayListBySpotify } from './components/FeaturedPlayListBySpotify';
 import { SuggestAlbumByUserLastPlayedArtists } from './components/SuggestAlbumByUserLastPlayedArtists';
 import { SuggestAlbumByUserLastPlayedTracks } from './components/SuggestAlbumByUserLastPlayedTracks';
 import { SuggestAlbumByUserTopArtistGenres } from './components/SuggestAlbumByUserTopArtistGenres';
@@ -11,17 +14,20 @@ import { SuggestAlbumByUserTopTracks } from './components/SuggestAlbumByUserTopT
 const Container = styled.div`
   padding: 0 32px;
 `;
-
 export function Suggestion() {
   return (
     <Container data-testid="user-suggestion">
-      <FeaturedPlayListsBySpotify />
-      <SuggestAlbumByUserTopArtists />
-      <AlbumByTopStreamTracks />
-      <SuggestAlbumByUserTopTracks />
-      <SuggestAlbumByUserTopArtistGenres />
-      <SuggestAlbumByUserLastPlayedTracks />
-      <SuggestAlbumByUserLastPlayedArtists />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Suspense>
+          <FeaturedPlayListBySpotify />
+          <SuggestAlbumByUserTopArtists />
+          <AlbumByTopStreamTracks />
+          <SuggestAlbumByUserTopTracks />
+          <SuggestAlbumByUserTopArtistGenres />
+          <SuggestAlbumByUserLastPlayedTracks />
+          <SuggestAlbumByUserLastPlayedArtists />
+        </Suspense>
+      </ErrorBoundary>
     </Container>
   );
 }

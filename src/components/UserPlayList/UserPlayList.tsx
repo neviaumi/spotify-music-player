@@ -2,7 +2,6 @@ import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { withSuspense } from '../../HOC/withSuspense';
 import { useUserPlayList } from '../../hooks/spotify/query/useUserPlayList';
 import type { PlaylistSimplified } from '../../hooks/spotify/typings/Playlist';
 
@@ -83,4 +82,4 @@ export function PresentUserPlaylist({ playlists, onClickPlayList }: Props) {
   );
 }
 
-export const UserPlayList = withSuspense(withUserPlayList(PresentUserPlaylist));
+export const UserPlayList = withUserPlayList(PresentUserPlaylist);

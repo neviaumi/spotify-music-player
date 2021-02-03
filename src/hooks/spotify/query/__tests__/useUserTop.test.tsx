@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { createPollyContext } from '../../../../../testHelper/createPollyContext';
+import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../../../App';
 import { QueryType, useUserTop } from '../useUserTop';
 

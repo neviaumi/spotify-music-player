@@ -1,8 +1,12 @@
-import { withRouter } from 'react-router';
+import type { PropsWithChildren } from 'react';
+import { withErrorBoundary } from 'react-error-boundary';
+import { useLocation } from 'react-router';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { ErrorFallback } from '../ErrorFallback';
 import { Logo } from '../Logo';
+import { withSuspense } from '../Suspense/withSuspense';
 import { UserPlayList } from '../UserPlayList/UserPlayList';
 
 const Container = styled.nav`
@@ -37,15 +41,11 @@ color: ${theme.colors.white};
   `}
 `;
 
-interface Props {
-  location: { pathname: string };
-}
-
-export function PresentNav({ location, ...rest }: Props) {
+export function PresentNav() {
   const history = useHistory();
-
+  const location = useLocation();
   return (
-    <Container {...rest}>
+    <Container>
       <Logo />
       <NavItemContainer>
         <NavItem
@@ -55,12 +55,15 @@ export function PresentNav({ location, ...rest }: Props) {
         >
           Home
         </NavItem>
-        <NavItem>Search</NavItem>
-        <NavItem>Your Library</NavItem>
       </NavItemContainer>
       <UserPlayList />
     </Container>
   );
 }
 
-export const Nav = withRouter(PresentNav);
+export const Nav = withErrorBoundary<PropsWithChildren<unknown>>(
+  withSuspense<PropsWithChildren<unknown>>(PresentNav),
+  {
+    FallbackComponent: ErrorFallback,
+  },
+);

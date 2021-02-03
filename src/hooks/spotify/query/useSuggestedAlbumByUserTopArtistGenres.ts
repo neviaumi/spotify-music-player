@@ -28,8 +28,6 @@ export function useSuggestedAlbumByUserTopArtistGenres():
         {},
       ) ?? {},
   ).sort(([, genreCountA], [, genreCountB]) => genreCountB - genreCountA);
-  // eslint-disable-next-line no-console
-  console.log(topArtistGenres, topArtistGenres);
   const recommendations = useRecommendations(
     topArtistGenres.map(([genre]) => genre),
     SeedType.SeedGenres,

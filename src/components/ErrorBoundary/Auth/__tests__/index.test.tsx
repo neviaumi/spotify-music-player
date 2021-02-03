@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
+import { AppThemeProvider } from '../../../../contexts/Theme';
 import { AuthErrorBoundary } from '../index';
 
 function ErrorComponent({ location }: { location?: Record<string, unknown> }) {
@@ -15,11 +16,16 @@ function ErrorComponent({ location }: { location?: Record<string, unknown> }) {
 describe('Test AuthErrorBoundary', () => {
   it('Should capture the error', () => {
     render(
-      <AuthErrorBoundary>
-        <ErrorComponent location={{}} />
-      </AuthErrorBoundary>,
+      <AppThemeProvider>
+        <AuthErrorBoundary>
+          <ErrorComponent location={{}} />
+        </AuthErrorBoundary>
+      </AppThemeProvider>,
     );
-    const errorContainer = screen.getByTestId('error-fallback');
-    expect(errorContainer.textContent).toEqual('FooBar!');
+    expect(
+      screen.getByRole('alert', {
+        name: 'FooBar!',
+      }),
+    ).toBeVisible();
   });
 });

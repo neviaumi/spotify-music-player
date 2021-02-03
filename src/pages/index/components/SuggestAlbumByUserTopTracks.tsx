@@ -1,6 +1,5 @@
 import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { withSuspense } from 'src/HOC/withSuspense';
 import { useSuggestedAlbumByUserTopTracks } from 'src/hooks/spotify/query/useSuggestedAlbumByUserTopTracks';
 
 import { PresentSuggestAlbum, Props } from './Present/PresentSuggestAlbum';
@@ -29,6 +28,6 @@ export function withSuggestAlbumByUserTopTracks(
   };
 }
 
-export const SuggestAlbumByUserTopTracks = withSuspense(
-  withSuggestAlbumByUserTopTracks(PresentSuggestAlbum),
+export const SuggestAlbumByUserTopTracks = withSuggestAlbumByUserTopTracks(
+  PresentSuggestAlbum,
 );

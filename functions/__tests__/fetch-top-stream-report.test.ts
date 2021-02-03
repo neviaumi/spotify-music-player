@@ -1,8 +1,8 @@
 import createEvent from '@serverless/event-mocks';
 import type { Context } from 'aws-lambda';
 
-import { createPollyContext } from '../../testHelper/createPollyContext';
 import { handler } from '../fetch-top-stream-report';
+import { createPollyContext } from '../testHelper/polly/createPollyContext';
 
 createPollyContext();
 

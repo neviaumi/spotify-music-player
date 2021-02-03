@@ -1,6 +1,6 @@
+import capitalize from 'lodash.capitalize';
 import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { withSuspense } from 'src/HOC/withSuspense';
 import { useSuggestedAlbumByUserTopArtistGenres } from 'src/hooks/spotify/query/useSuggestedAlbumByUserTopArtistGenres';
 
 import { PresentSuggestAlbum, Props } from './Present/PresentSuggestAlbum';
@@ -20,15 +20,15 @@ export function withSuggestAlbumByUserTopArtistGenres(
 
     return (
       <WrappedComponent
-        data-testid="suggested-album-by-user-top-artists"
+        data-testid="suggested-album-by-user-top-artists-genres"
         onClickSuggestion={onClickAlbum}
         suggestions={response?.data.albums}
-        title={`${response?.data.genres.slice(0, 3).join(',')} ...`}
+        title={capitalize(response?.data?.genres[0])}
       />
     );
   };
 }
 
-export const SuggestAlbumByUserTopArtistGenres = withSuspense(
-  withSuggestAlbumByUserTopArtistGenres(PresentSuggestAlbum),
+export const SuggestAlbumByUserTopArtistGenres = withSuggestAlbumByUserTopArtistGenres(
+  PresentSuggestAlbum,
 );

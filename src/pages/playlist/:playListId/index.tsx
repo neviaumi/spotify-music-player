@@ -1,6 +1,8 @@
 import type { ComponentType } from 'react';
+import { withErrorBoundary } from 'react-error-boundary';
 import { useParams } from 'react-router-dom';
-import { withSuspense } from 'src/HOC/withSuspense';
+import { ErrorFallback } from 'src/components/ErrorFallback';
+import { withSuspense } from 'src/components/Suspense/withSuspense';
 import { usePlayList } from 'src/hooks/spotify/query/usePlayList';
 import type { PlaylistFull } from 'src/hooks/spotify/typings/Playlist';
 import styled from 'styled-components';
@@ -8,15 +10,15 @@ import styled from 'styled-components';
 import { Heading } from './components/Heading';
 import { TracksList } from './components/TracksList';
 
+interface Props {
+  playList?: PlaylistFull;
+}
+
 const Container = styled.div`
   padding: 0 32px;
 `;
 
-export function withPlayList(
-  Wrapper: ComponentType<{
-    playList?: PlaylistFull;
-  }>,
-) {
+export function withPlayList(Wrapper: ComponentType<Props>) {
   return function WithPlayList() {
     const { playListId } = useParams<{
       playListId: string;
@@ -26,7 +28,7 @@ export function withPlayList(
   };
 }
 
-export function PresentPlayList({ playList }: { playList?: PlaylistFull }) {
+export function PresentPlayList({ playList }: Props) {
   return (
     <Container>
       <Heading playList={playList} />
@@ -35,4 +37,9 @@ export function PresentPlayList({ playList }: { playList?: PlaylistFull }) {
   );
 }
 
-export const PlayerListPage = withSuspense(withPlayList(PresentPlayList));
+export const PlayerListPage = withErrorBoundary<Props>(
+  withSuspense(withPlayList(PresentPlayList)),
+  {
+    FallbackComponent: ErrorFallback,
+  },
+);

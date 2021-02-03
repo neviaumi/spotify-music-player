@@ -7,6 +7,5 @@ export class UnAuthenticatedError extends AppError<{
 }> {
   constructor(location: Location) {
     super('UnAuthenticated', 'UnAuthenticated', { location });
-    this.fallbackPath = '/auth/login';
   }
 }
