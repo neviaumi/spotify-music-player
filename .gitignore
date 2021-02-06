@@ -10,6 +10,7 @@
 
 # production
 /build
+/build-functions/
 
 # misc
 .DS_Store
@@ -23,3 +24,8 @@ yarn-debug.log*
 yarn-error.log*
 
 .lighthouseci
+.idea/workspace.xml
+tsconfig.tsbuildinfo
+.eslintcache
+# Local Netlify folder
+.netlify

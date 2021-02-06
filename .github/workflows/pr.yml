@@ -1,0 +1,32 @@
+name: testing
+
+on: pull_request
+env:
+  CI: true
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - run: bash ./scripts/setup.sh
+      - run: bash ./scripts/lint.sh
+      - uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+        with:
+          coverageCommand: bash ./scripts/test/jest.sh
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - run: bash ./scripts/setup.sh
+      - run: bash ./scripts/test/lchi.sh

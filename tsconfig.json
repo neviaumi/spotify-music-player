@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "typeRoots": ["./typings", "./node_modules/@types"]
+  },
+  "extends": "@busybox/tsconfig",
+  "include": ["src", "typings"]
+}

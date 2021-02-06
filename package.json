@@ -1,88 +1,168 @@
 {
-  "name": "spotify-web-player",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "4.2.4",
-    "@testing-library/react": "9.4.0",
-    "@testing-library/user-event": "7.2.1",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "react-scripts": "3.3.0",
-    "stylelint-config-styled-components": "0.1.1",
-    "stylelint-processor-styled-components": "1.9.0"
-  },
-  "engines": {
-    "node": ">=12"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint ."
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ]
   },
-  "devDependencies": {
-    "@commitlint/cli": "8.3.4",
-    "@commitlint/config-conventional": "8.3.4",
-    "@lhci/cli": "0.3.7",
-    "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.2",
-    "enzyme-to-json": "3.4.3",
-    "eslint-config-prettier": "6.9.0",
-    "eslint-plugin-jest": "23.3.0",
-    "eslint-plugin-prettier": "3.1.2",
-    "eslint-plugin-simple-import-sort": "5.0.0",
-    "gitmoji-cli": "3.1.0",
-    "husky": "4.0.5",
-    "lint-staged": "9.5.0",
-    "prettier": "1.19.1",
-    "stylelint": "12.0.1"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn lint && CI=true yarn test --coverage --watchAll=false"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "dependencies": {
+    "@waiting/base64": "4.2.9",
+    "axios": "0.21.1",
+    "class-transformer": "0.3.2",
+    "class-validator": "0.13.1",
+    "constate": "3.1.0",
+    "lodash.camelcase": "4.3.0",
+    "lodash.capitalize": "4.2.1",
+    "lodash.kebabcase": "4.1.1",
+    "nanoid": "2.1.11",
+    "papaparse": "5.3.0",
+    "parse-ms": "2.1.0",
+    "ramda": "0.27.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-error-boundary": "3.1.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.2",
+    "react-use": "17.1.0",
+    "retry-axios": "2.4.0",
+    "serialize-error": "8.0.1",
+    "styled-components": "5.2.1",
+    "swr": "0.4.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "7.12.15",
+    "@busybox/babel-preset": "1.1.4",
+    "@busybox/eslint-config": "5.4.1",
+    "@busybox/npm-package-json-lint-config": "1.1.3",
+    "@busybox/prettier-config": "1.1.4",
+    "@busybox/renovate-config": "1.1.3",
+    "@busybox/tsconfig": "1.3.2",
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "@lhci/cli": "0.7.0",
+    "@pollyjs/adapter-node-http": "5.1.0",
+    "@pollyjs/adapter-xhr": "5.1.0",
+    "@pollyjs/core": "5.1.0",
+    "@pollyjs/persister-fs": "5.0.0",
+    "@serverless/event-mocks": "1.1.1",
+    "@testing-library/jest-dom": "5.11.9",
+    "@testing-library/react": "11.2.5",
+    "@testing-library/react-hooks": "5.0.3",
+    "@testing-library/user-event": "12.6.3",
+    "@types/aws-lambda": "8.10.71",
+    "@types/enzyme": "3.10.8",
+    "@types/enzyme-adapter-react-16": "1.0.6",
+    "@types/eslint": "7.2.6",
+    "@types/eslint-plugin-prettier": "3.1.0",
+    "@types/express": "4.17.11",
+    "@types/jest": "26.0.20",
+    "@types/jest-expect-message": "1.0.3",
+    "@types/js-cookie": "2.2.6",
+    "@types/lodash.camelcase": "4.3.6",
+    "@types/lodash.capitalize": "4.2.6",
+    "@types/lodash.kebabcase": "4.1.6",
+    "@types/nanoid": "2.1.0",
+    "@types/node": "13.11.0",
+    "@types/papaparse": "5.2.5",
+    "@types/pollyjs__adapter-node-http": "2.0.1",
+    "@types/pollyjs__adapter-xhr": "2.6.1",
+    "@types/pollyjs__core": "4.3.2",
+    "@types/pollyjs__persister-fs": "2.0.1",
+    "@types/prettier": "2.2.0",
+    "@types/ramda": "0.27.36",
+    "@types/react": "17.0.1",
+    "@types/react-dom": "17.0.0",
+    "@types/react-router-dom": "5.1.7",
+    "@types/setup-polly-jest": "0.5.1",
+    "@types/styled-components": "5.1.7",
+    "@types/stylelint": "9.10.1",
+    "@types/testing-library__jest-dom": "5.9.5",
+    "@types/testing-library__react": "10.0.1",
+    "aws-lambda": "1.0.6",
+    "commitizen": "4.2.3",
+    "cz-conventional-changelog": "3.3.0",
+    "dotenv": "8.2.0",
+    "eslint": "7.19.0",
+    "eslint-plugin-typescript-sort-keys": "1.5.0",
+    "express": "4.17.1",
+    "husky": "5.0.8",
+    "jest-expect-message": "1.0.2",
+    "lint-staged": "10.5.4",
+    "mutation-observer": "1.0.3",
+    "netlify-cli": "3.5.0",
+    "netlify-lambda": "2.0.3",
+    "npm-package-json-lint": "5.1.0",
+    "open": "7.4.0",
+    "prettier": "2.2.1",
+    "quicktype": "15.0.258",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.2",
+    "serve": "11.3.2",
+    "stylelint": "13.9.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-order": "4.1.0",
+    "stylelint-processor-styled-components": "1.10.0",
+    "typescript": "4.1.3",
+    "typesync": "0.8.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
     "coverageReporters": [
       "text",
       "text-summary",
       "lcov",
+      "clover",
       "json"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/index.js",
-      "!src/serviceWorker.js"
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 90,
-        "branches": 87,
-        "functions": 85,
-        "lines": 90
+        "branches": 65,
+        "functions": 84,
+        "lines": 93,
+        "statements": 90
       }
     }
-  }
+  },
+  "license": "MIT",
+  "name": "@music-player/spotify",
+  "private": true,
+  "scripts": {
+    "build": "yarn build:functions && yarn build:react",
+    "build:functions": "netlify-lambda build functions",
+    "build:react": "react-scripts build",
+    "dev": "netlify dev",
+    "eject": "react-scripts eject",
+    "lint:css": "stylelint './src/**/*.{ts,tsx}'",
+    "lint:package-json": "yarn npmPkgJsonLint .",
+    "lint:script": "eslint --ext=ts,tsx,json,js --fix .",
+    "lint:script:ci": "eslint --ext=ts,tsx,json,js .",
+    "postinstall": "husky install && netlify-lambda install",
+    "quicktype": "quicktype --just-types",
+    "serve:lhci": "serve -l 42069 -s build",
+    "signToken": "node ./testHelper/signToken/index.js",
+    "start": "react-scripts start",
+    "test": "yarn test:react && yarn test:functions",
+    "test:ci": "yarn test:ci:react && yarn test:ci:functions",
+    "test:ci:functions": "CI=true jest --config jest.config.functions.js --runInBand --coverage",
+    "test:ci:react": "CI=true react-scripts test --runInBand --coverage",
+    "test:functions": "jest --config jest.config.functions.js",
+    "test:functions:reset": "rimraf ./functions/**/*.har && POLLY_MODE=record jest --config jest.config.functions.js --watchAll --runInBand --testTimeout 60000",
+    "test:react": "react-scripts test --maxWorkers=4 --coverage --watchAll=false",
+    "test:react:reset": "rimraf ./src/**/*.har && yarn signToken && REACT_APP_POLLY_MODE=record react-scripts test --watchAll --runInBand --testTimeout 60000",
+    "test:reset": "yarn test:react:reset && yarn test:functions:reset"
+  },
+  "version": "0.1.0"
 }

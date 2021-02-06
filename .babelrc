@@ -1,0 +1,3 @@
+{
+  "presets": ["@busybox/babel-preset"]
+}
