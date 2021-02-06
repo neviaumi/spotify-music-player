@@ -12,8 +12,11 @@
       <excludeFolder url="file://$MODULE_DIR$/build-lambda" />
       <excludeFolder url="file://$MODULE_DIR$/build-functions" />
       <excludeFolder url="file://$MODULE_DIR$/.netlify" />
+      <excludePattern pattern="yarn-error.log" />
+      <excludePattern pattern="yarn.lock" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="@types/jest" level="application" />
   </component>
 </module>

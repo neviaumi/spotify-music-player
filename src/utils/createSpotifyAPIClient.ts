@@ -16,11 +16,16 @@ export function createSpotifyAPIClient(
     noResponseRetries: 0,
     onRetryAttempt: async err => {
       const { config: requestConfig } = err;
-      const accessTokenAfterRefresh = await refreshTokenFunction();
-      err.config.headers = {
-        ...requestConfig.headers,
-        Authorization: `Bearer ${accessTokenAfterRefresh}`,
-      };
+      try {
+        const accessTokenAfterRefresh = await refreshTokenFunction();
+        err.config.headers = {
+          ...requestConfig.headers,
+          Authorization: `Bearer ${accessTokenAfterRefresh}`,
+        };
+      } catch (e) {
+        if (err.config.raxConfig?.currentRetryAttempt)
+          err.config.raxConfig.currentRetryAttempt = Number.POSITIVE_INFINITY; // disable retry next time
+      }
     },
     statusCodesToRetry: [[401, 401]],
   };

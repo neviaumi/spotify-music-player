@@ -1,23 +1,33 @@
+import { ErrorBoundary } from 'react-error-boundary';
 import styled from 'styled-components';
 
-import { SuggestAlbumBySpotifyTopStreamTracks } from './components/SuggestAlbumBySpotifyTopStreamTracks';
-import { SuggestPlayListByUserLastPlayedArtist } from './components/SuggestPlayListByUserLastPlayedArtist';
-import { SuggestPlayListByUserLastPlayedTrack } from './components/SuggestPlayListByUserLastPlayedTrack';
-import { SuggestPlayListByUserTopArtist } from './components/SuggestPlayListByUserTopArtist';
-import { SuggestPlayListByUserTopTrack } from './components/SuggestPlayListByUserTopTrack';
+import { ErrorFallback } from '../../components/ErrorFallback';
+import { Suspense } from '../../components/Suspense/withSuspense';
+import { AlbumByTopStreamTracks } from './components/AlbumByTopStreamTracks';
+import { FeaturedPlayListBySpotify } from './components/FeaturedPlayListBySpotify';
+import { SuggestAlbumByUserLastPlayedArtists } from './components/SuggestAlbumByUserLastPlayedArtists';
+import { SuggestAlbumByUserLastPlayedTracks } from './components/SuggestAlbumByUserLastPlayedTracks';
+import { SuggestAlbumByUserTopArtistGenres } from './components/SuggestAlbumByUserTopArtistGenres';
+import { SuggestAlbumByUserTopArtists } from './components/SuggestAlbumByUserTopArtists';
+import { SuggestAlbumByUserTopTracks } from './components/SuggestAlbumByUserTopTracks';
 
 const Container = styled.div`
   padding: 0 32px;
 `;
-
 export function Suggestion() {
   return (
     <Container data-testid="user-suggestion">
-      <SuggestAlbumBySpotifyTopStreamTracks />
-      <SuggestPlayListByUserTopArtist />
-      <SuggestPlayListByUserLastPlayedArtist />
-      <SuggestPlayListByUserTopTrack />
-      <SuggestPlayListByUserLastPlayedTrack />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Suspense>
+          <FeaturedPlayListBySpotify />
+          <SuggestAlbumByUserTopArtists />
+          <AlbumByTopStreamTracks />
+          <SuggestAlbumByUserTopTracks />
+          <SuggestAlbumByUserTopArtistGenres />
+          <SuggestAlbumByUserLastPlayedTracks />
+          <SuggestAlbumByUserLastPlayedArtists />
+        </Suspense>
+      </ErrorBoundary>
     </Container>
   );
 }

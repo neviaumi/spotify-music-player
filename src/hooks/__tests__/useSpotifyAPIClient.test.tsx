@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { createPollyContext } from '../../../testHelper/createPollyContext';
+import { createPollyContext } from '../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../App';
 import { useSpotifyAPIClient } from '../useSpotifyAPIClient';
 
@@ -9,20 +9,7 @@ const context = createPollyContext();
 describe('useSpotifyAPIClient', () => {
   it('call spotify api by given token', async () => {
     context.polly.server.host('https://api.spotify.com', () => {
-      context.polly.server
-        .options('/v1/fake-endpoint')
-        .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
-          interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          res.status(204);
-        });
       context.polly.server.get('/v1/fake-endpoint').intercept((_, res) => {
-        res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-        res.setHeader('Access-Control-Allow-Methods', '*');
-        res.setHeader('Access-Control-Allow-Origin', '*');
         res.status(200).json({});
       });
     });
@@ -45,24 +32,11 @@ describe('useSpotifyAPIClient', () => {
   it('no retry if api endpoint non 401 fail', async () => {
     context.polly.server.host('https://api.spotify.com', () => {
       context.polly.server
-        .options('/v1/fake-endpoint')
-        .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
-          interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          res.status(204);
-        });
-      context.polly.server
         .get('/v1/fake-endpoint')
         .times(1)
         .intercept((_, res, interceptor) => {
           // @ts-expect-error don't want type
           interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
           res.status(400).json({});
         });
     });
@@ -89,9 +63,6 @@ describe('useSpotifyAPIClient', () => {
         .intercept((_, res, interceptor) => {
           // @ts-expect-error don't want type
           interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
           res.status(200).json({
             access_token: 'newAccessToken',
             refresh_token: 'newRefreshToken',
@@ -100,24 +71,11 @@ describe('useSpotifyAPIClient', () => {
     });
     context.polly.server.host('https://api.spotify.com', () => {
       context.polly.server
-        .options('/v1/fake-endpoint')
-        .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
-          interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          res.status(204);
-        });
-      context.polly.server
         .get('/v1/fake-endpoint')
         .times(1)
         .intercept((_, res, interceptor) => {
           // @ts-expect-error don't want type
           interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
           res.status(401).json({});
         });
       context.polly.server
@@ -126,9 +84,6 @@ describe('useSpotifyAPIClient', () => {
         .intercept((_, res, interceptor) => {
           // @ts-expect-error don't want type
           interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
           res.status(200).json({});
         });
     });
@@ -161,44 +116,17 @@ describe('useSpotifyAPIClient', () => {
         .intercept((_, res, interceptor) => {
           // @ts-expect-error don't want type
           interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
           res.status(400).json({});
         });
     });
     context.polly.server.host('https://api.spotify.com', () => {
       context.polly.server
-        .options('/v1/fake-endpoint')
-        .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
-          interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          res.status(204);
-        });
-      context.polly.server
         .get('/v1/fake-endpoint')
         .times(1)
         .intercept((_, res, interceptor) => {
           // @ts-expect-error don't want type
           interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
           res.status(401).json({});
-        });
-      context.polly.server
-        .get('/v1/fake-endpoint')
-        .times(1)
-        .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
-          interceptor.stopPropagation();
-          res.setHeader('Access-Control-Allow-Headers', 'Authorization');
-          res.setHeader('Access-Control-Allow-Methods', '*');
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          res.status(200).json({});
         });
     });
     const { result } = renderHook(() => useSpotifyAPIClient(), {
@@ -213,11 +141,12 @@ describe('useSpotifyAPIClient', () => {
         </TestApp>
       ),
     });
+
     await expect(
       result.current.request({
         method: 'GET',
         url: '/fake-endpoint',
       }),
-    ).rejects.toThrow(Error);
+    ).rejects.toThrow();
   });
 });

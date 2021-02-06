@@ -6,7 +6,7 @@ export interface Props {
   'data-testid': string;
   onClickSuggestion: (suggestion: PlaylistSimplified) => void;
   suggestions?: PlaylistSimplified[];
-  title: string;
+  title?: string;
 }
 
 const Container = styled.div`

@@ -2,6 +2,7 @@ import { AlbumSimplified } from './Album';
 import { ArtistSimplified } from './Artist';
 
 export interface TrackSimplified {
+  album: AlbumSimplified;
   artists: ArtistSimplified[];
   available_markets?: string[];
   disc_number: number;
@@ -18,7 +19,6 @@ export interface TrackSimplified {
 }
 
 export interface TrackFull extends TrackSimplified {
-  album: AlbumSimplified;
   is_local?: boolean;
   popularity: number;
 }

@@ -1,20 +1,17 @@
 import { render, screen } from '@testing-library/react';
 
-import { createPollyContext } from '../../../testHelper/createPollyContext';
 import { TestApp } from '../../App';
 import { ProtectedRoutes } from '../ProtectedRoutes';
 
-const context = createPollyContext();
 describe('ProtectedRoutes', () => {
-  it('Should render Panel', async () => {
-    context.polly.server.any().intercept((_req, res) => {
-      res.status(200).json({});
-    });
+  it('Should render children', async () => {
     render(
       <TestApp AuthProviderProps={{ accessToken: 'dummy' }}>
-        <ProtectedRoutes />
+        <ProtectedRoutes>
+          <div data-testid="content">HelloWorld</div>
+        </ProtectedRoutes>
       </TestApp>,
     );
-    await expect(screen.findByTestId('panel')).resolves.toBeVisible();
+    await expect(screen.findByTestId('content')).resolves.toBeVisible();
   });
 });

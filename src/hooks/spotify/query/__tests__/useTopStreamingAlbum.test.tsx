@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { interceptNetlifyFunctions } from '../../../../../functions/testHelper/interceptNetlifyFunctions';
-import { createPollyContext } from '../../../../../testHelper/createPollyContext';
+import { interceptNetlifyFunctions } from '../../../../../functions/testHelper/polly/interceptNetlifyFunctions';
+import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../../../App';
 import { useTopStreamingAlbum } from '../useTopStreamingAlbum';
 

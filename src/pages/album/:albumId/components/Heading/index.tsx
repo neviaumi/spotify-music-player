@@ -34,10 +34,10 @@ const Info = styled.p`
 `;
 
 const Creator = styled.figure`
-  display: flex;
   margin: 0px;
   font-weight: bold;
   color: ${props => props.theme.colors.white};
+  display: inline-block;
 `;
 
 const ArtistName = styled.figcaption``;

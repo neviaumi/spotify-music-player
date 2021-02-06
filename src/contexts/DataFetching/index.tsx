@@ -10,7 +10,16 @@ export function DataFetchingConfigProvider({
   children,
   ...rest
 }: DataFetchingConfigProviderProps) {
-  return <SWRConfig value={{ suspense: true, ...rest }}>{children}</SWRConfig>;
+  return (
+    <SWRConfig
+      value={{
+        suspense: true,
+        ...rest,
+      }}
+    >
+      {children}
+    </SWRConfig>
+  );
 }
 
 export function TestDataFetchingConfigProvider({
@@ -18,7 +27,7 @@ export function TestDataFetchingConfigProvider({
   ...rest
 }: DataFetchingConfigProviderProps) {
   return (
-    <DataFetchingConfigProvider suspense={false} {...rest}>
+    <DataFetchingConfigProvider {...rest}>
       {children}
     </DataFetchingConfigProvider>
   );

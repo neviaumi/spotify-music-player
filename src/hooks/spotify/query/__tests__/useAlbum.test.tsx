@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { TestApp } from 'src/App';
 
-import { createPollyContext } from '../../../../../testHelper/createPollyContext';
+import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { useAlbum } from '../useAlbum';
 
 createPollyContext();

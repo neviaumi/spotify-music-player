@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import events from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
-import { createPollyContext } from '../../../../testHelper/createPollyContext';
+import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../../App';
 import { PresentUserPlaylist, Props, withUserPlayList } from '../UserPlayList';
 

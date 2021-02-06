@@ -1,55 +1,32 @@
-import { path } from 'ramda';
-import { Component, ErrorInfo } from 'react';
+import type { PropsWithChildren } from 'react';
+import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { Redirect } from 'react-router-dom';
 
-import { AppError } from '../../../errors/AppError';
+import { UnAuthenticatedError } from '../../../errors/UnAuthenticatedError';
+import { ErrorFallback } from '../../ErrorFallback';
 
-export class AuthErrorBoundary extends Component<
-  unknown,
-  {
-    error?: {
-      err: Error | AppError;
-      info: ErrorInfo;
-    };
+function AuthErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
+  if (error instanceof UnAuthenticatedError) {
+    return (
+      <Redirect
+        to={{
+          pathname: '/auth/login',
+          state: {
+            from: error.meta?.location,
+          },
+        }}
+      />
+    );
   }
-> {
-  constructor(props: unknown) {
-    super(props);
-    this.state = {};
-  }
+  return (
+    <ErrorFallback error={error} resetErrorBoundary={resetErrorBoundary} />
+  );
+}
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    this.setState({
-      error: {
-        err: error,
-        info: errorInfo,
-      },
-    });
-    return;
-  }
-
-  render() {
-    const { error } = this.state;
-    if (error) {
-      const err = error.err;
-      if (err instanceof AppError && err.fallbackPath) {
-        const location = path(['meta', 'location'], err);
-        if (!location) {
-          return <Redirect to={err.fallbackPath} />;
-        }
-        return (
-          <Redirect
-            to={{
-              pathname: err.fallbackPath,
-              state: {
-                from: location,
-              },
-            }}
-          />
-        );
-      }
-      return <div data-testid="error-fallback">{err.message}</div>;
-    }
-    return this.props.children;
-  }
+export function AuthErrorBoundary({ children }: PropsWithChildren<unknown>) {
+  return (
+    <ErrorBoundary FallbackComponent={AuthErrorFallback}>
+      {children}
+    </ErrorBoundary>
+  );
 }
