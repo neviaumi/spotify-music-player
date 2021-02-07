@@ -16,6 +16,7 @@ interface Props {
 
 const Container = styled.div`
   padding: 0 32px;
+  height: 100%;
 `;
 
 export function withPlayList(Wrapper: ComponentType<Props>) {

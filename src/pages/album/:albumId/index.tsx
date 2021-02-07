@@ -12,6 +12,7 @@ import { TracksList } from './components/TracksList';
 
 const Container = styled.div`
   padding: 0 32px;
+  height: 100%;
 `;
 
 interface Props {
