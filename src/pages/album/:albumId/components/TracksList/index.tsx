@@ -4,6 +4,7 @@ import type { TrackSimplified } from 'src/hooks/spotify/typings/Track';
 import { formatMSToMinute } from 'src/utils/formatMS';
 import styled from 'styled-components';
 
+import { useSpotifyWebPlayback } from '../../../../../contexts/SpotifyWebPlayback';
 import { ReactComponent as Clock } from './clock.svg';
 
 interface Props {
@@ -36,18 +37,11 @@ const TrackArtist = styled.a`
 `;
 
 export function AlbumTracksList({ album }: Props) {
+  const { playTrack, pausePlayer } = useSpotifyWebPlayback();
+
   return (
     <TracksList<TrackSimplified>
       columns={[
-        {
-          field: [],
-          headerName: '#',
-          id: 'index',
-          renderColumn: function IndexColumn(_, index) {
-            return <Column>{index + 1}</Column>;
-          },
-          width: '16px',
-        },
         {
           field: [],
           headerName: 'Title',
@@ -58,7 +52,7 @@ export function AlbumTracksList({ album }: Props) {
               artists: [artist],
             } = track;
             return (
-              <TrackInfo>
+              <TrackInfo key="title">
                 <TrackName>{name}</TrackName>
                 <TrackMeta>
                   <TrackArtist>{artist.name}</TrackArtist>
@@ -73,11 +67,11 @@ export function AlbumTracksList({ album }: Props) {
           headerName: '',
           id: 'duration',
           renderColumn: function DurationColumn(value: number) {
-            return <Column>{formatMSToMinute(value)}</Column>;
+            return <Column key="duration">{formatMSToMinute(value)}</Column>;
           },
           renderColumnHeader: function DurationHeader() {
             return (
-              <HeaderColumn>
+              <HeaderColumn key="duration">
                 <Clock />
               </HeaderColumn>
             );
@@ -85,7 +79,9 @@ export function AlbumTracksList({ album }: Props) {
           width: 'minmax(120px, 1fr)',
         },
       ]}
-      rowId={track => track.id}
+      getTrackId={track => track.id}
+      onPausePlayingTrack={() => pausePlayer()}
+      onSelectTrackToPlay={track => playTrack(track)}
       tracks={album?.tracks}
     />
   );

@@ -7,6 +7,7 @@ import type { TrackFull } from 'src/hooks/spotify/typings/Track';
 import { formatMSToMinute } from 'src/utils/formatMS';
 import styled from 'styled-components';
 
+import { useSpotifyWebPlayback } from '../../../../../contexts/SpotifyWebPlayback';
 import { ReactComponent as Clock } from './clock.svg';
 
 interface Props {
@@ -47,18 +48,11 @@ const TrackArtist = styled.a`
 `;
 
 export function PlayListTracksList({ playList }: Props) {
+  const { playTrack, pausePlayer } = useSpotifyWebPlayback();
+
   return (
     <TracksList<PlayListTrack>
       columns={[
-        {
-          field: [],
-          headerName: '#',
-          id: 'index',
-          renderColumn: function IndexColumn(_, index) {
-            return <Column>{index + 1}</Column>;
-          },
-          width: '16px',
-        },
         {
           field: ['track'],
           headerName: 'TITLE',
@@ -69,7 +63,7 @@ export function PlayListTracksList({ playList }: Props) {
               artists: [artist],
             } = track;
             return (
-              <Column>
+              <Column key="title">
                 <TrackAlbumCover
                   alt={`${album.name} cover`}
                   src={album.images.slice(-1).pop()?.url}
@@ -102,11 +96,11 @@ export function PlayListTracksList({ playList }: Props) {
           headerName: '',
           id: 'duration',
           renderColumn: function DurationColumn(value: number) {
-            return <Column>{formatMSToMinute(value)}</Column>;
+            return <Column key="duration">{formatMSToMinute(value)}</Column>;
           },
           renderColumnHeader: function DurationHeader() {
             return (
-              <HeaderColumn>
+              <HeaderColumn key="duration">
                 <Clock />
               </HeaderColumn>
             );
@@ -114,7 +108,9 @@ export function PlayListTracksList({ playList }: Props) {
           width: 'minmax(120px, 1fr)',
         },
       ]}
-      rowId={track => track.track.id}
+      getTrackId={track => track.track.id}
+      onPausePlayingTrack={() => pausePlayer()}
+      onSelectTrackToPlay={track => playTrack(track.track)}
       tracks={playList?.tracks}
     />
   );

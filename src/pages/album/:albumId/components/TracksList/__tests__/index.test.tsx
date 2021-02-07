@@ -29,7 +29,7 @@ describe('Test Album track list', () => {
     );
     expect(
       screen.getAllByRole('listitem', {
-        name: 'track-item',
+        name: /^track-item/,
       }),
     ).toHaveLength(1);
     expect(screen.getByText('Sunrise of love')).toBeVisible();

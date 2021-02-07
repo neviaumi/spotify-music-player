@@ -34,7 +34,7 @@ describe('Test PlayList tracks list', () => {
     );
     expect(
       screen.getAllByRole('listitem', {
-        name: 'track-item',
+        name: /^track-item/,
       }),
       'only one record',
     ).toHaveLength(1);

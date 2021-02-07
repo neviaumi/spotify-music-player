@@ -166,7 +166,7 @@ describe('render PresentPlayList', () => {
       </TestApp>,
     );
     expect(screen.getByTestId('heading')).toBeVisible();
-    expect(screen.getByTestId('playlist-track-listing')).toBeVisible();
+    expect(screen.getByTestId('track-listing')).toBeVisible();
   });
 });
 

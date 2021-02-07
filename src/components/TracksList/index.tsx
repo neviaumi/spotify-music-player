@@ -2,13 +2,18 @@ import { path } from 'ramda';
 import type { ReactNode } from 'react';
 import styled from 'styled-components';
 
+import { useSpotifyWebPlayback } from '../../contexts/SpotifyWebPlayback';
 import type { Paging } from '../../hooks/spotify/typings/shared/Paging';
 import type { TrackSimplified } from '../../hooks/spotify/typings/Track';
+import { ReactComponent as PauseSVG } from './pause.svg';
+import { ReactComponent as PlaySVG } from './play.svg';
+import streamingGif from './streaming.gif';
 
 interface ColumnDef<Item> {
   field: string[];
   headerName: string;
   id: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   renderColumn?: (value: any, index: number, track: Item) => ReactNode;
   renderColumnHeader?: (
     columnsDef: ColumnDef<Item>,
@@ -19,7 +24,9 @@ interface ColumnDef<Item> {
 
 interface Props<T> {
   columns: ColumnDef<T>[];
-  rowId: (track: T) => string;
+  getTrackId: (track: T) => string;
+  onPausePlayingTrack: (track: T) => void;
+  onSelectTrackToPlay: (track: T) => void;
   tracks?: Paging<T>;
 }
 
@@ -41,20 +48,13 @@ const Header = styled.li<{
 
 export const HeaderColumn = styled.header.attrs({
   role: 'columnheader',
-})`
+})<{ key: string }>`
   align-items: flex-end;
   color: ${props => props.theme.colors.natural255};
   display: flex;
 `;
 
-const Item = styled(Header)`
-  border-bottom: none;
-  &:hover {
-    background-color: hsla(0, 0%, 100%, 0.1);
-  }
-`;
-
-export const Column = styled.div`
+export const Column = styled.div<{ key: string }>`
   align-items: center;
   color: ${props => props.theme.colors.natural255};
   display: flex;
@@ -63,41 +63,97 @@ export const Column = styled.div`
   width: 100%;
 `;
 
+const ControlToggle = styled.button`
+  border: none;
+  display: none;
+  background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  max-height: 100%;
+  max-width: 100%;
+`;
+
+const Index = styled.span``;
+
+const Item = styled(Header)`
+  border-bottom: none;
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.1);
+    ${ControlToggle} {
+      display: inherit;
+    }
+    ${Index} {
+      display: none;
+    }
+  }
+`;
+
 export function TracksList<T = TrackSimplified>({
   tracks,
   columns,
-  rowId,
+  getTrackId,
+  onSelectTrackToPlay,
+  onPausePlayingTrack,
 }: Props<T>) {
-  const gridTemplateColumns = columns
+  const { currentPlayingTrack } = useSpotifyWebPlayback();
+  const gridTemplateColumns = `[index] 16px ${columns
     .map(column => `[${column.id}] ${column.width}`)
-    .join(' ');
+    .join(' ')}`;
   return (
     <Container data-testid="track-listing">
       <Header
         aria-label="track-list-header"
         grid-template-columns={gridTemplateColumns}
       >
+        <HeaderColumn key="index">#</HeaderColumn>
         {columns.map((column, index) =>
           column.renderColumnHeader ? (
-            column.renderColumnHeader(column, index)
+            column.renderColumnHeader(column, index + 1)
           ) : (
             <HeaderColumn key={column.id}>{column.headerName}</HeaderColumn>
           ),
         )}
       </Header>
       {tracks?.items.map((track, index) => {
+        const trackId = getTrackId(track);
+        const isCurrentPlayingTrack = trackId === currentPlayingTrack?.id;
         return (
           <Item
-            aria-label="track-item"
+            aria-label={`track-item-${index}`}
             grid-template-columns={gridTemplateColumns}
-            key={rowId(track)}
+            key={trackId}
+            onDoubleClick={() =>
+              isCurrentPlayingTrack
+                ? onPausePlayingTrack(track)
+                : onSelectTrackToPlay(track)
+            }
           >
-            {columns.map(column => {
+            <Column key="column-0">
+              <Index>
+                {isCurrentPlayingTrack ? (
+                  <img alt="streaming" src={streamingGif} />
+                ) : (
+                  index + 1
+                )}
+              </Index>
+              <ControlToggle
+                aria-label={`control-toggle-${index}`}
+                onClick={() =>
+                  isCurrentPlayingTrack
+                    ? onPausePlayingTrack(track)
+                    : onSelectTrackToPlay(track)
+                }
+              >
+                {isCurrentPlayingTrack ? <PauseSVG /> : <PlaySVG />}
+              </ControlToggle>
+            </Column>
+            {columns.map((column, columnIndex) => {
               const value = path(column.field, track);
               return column.renderColumn ? (
-                column.renderColumn(value, index, track)
+                column.renderColumn(value, columnIndex + 1, track)
               ) : (
-                <Column>{value as string}</Column>
+                <Column key={column.id}>{value as string}</Column>
               );
             })}
           </Item>
