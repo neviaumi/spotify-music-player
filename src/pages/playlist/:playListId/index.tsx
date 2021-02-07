@@ -8,7 +8,7 @@ import type { PlaylistFull } from 'src/hooks/spotify/typings/Playlist';
 import styled from 'styled-components';
 
 import { Heading } from './components/Heading';
-import { TracksList } from './components/TracksList';
+import { PlayListTracksList } from './components/TracksList';
 
 interface Props {
   playList?: PlaylistFull;
@@ -33,7 +33,7 @@ export function PresentPlayList({ playList }: Props) {
   return (
     <Container>
       <Heading playList={playList} />
-      <TracksList playList={playList} />
+      <PlayListTracksList playList={playList} />
     </Container>
   );
 }

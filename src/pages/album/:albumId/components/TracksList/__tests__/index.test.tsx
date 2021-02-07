@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { TestApp } from 'src/App';
 
-import { TracksList } from '../index';
+import { AlbumTracksList } from '../index';
 
 describe('Test Album track list', () => {
   it('render TrackList with one Item', () => {
@@ -21,20 +21,15 @@ describe('Test Album track list', () => {
     };
     render(
       <TestApp>
-        <TracksList {...props} />
+        <AlbumTracksList {...props} />
       </TestApp>,
     );
-    expect(
-      screen.getByRole('listitem', {
-        name: 'album-track-header',
-      }),
-    ).toBeVisible();
     expect(screen.getAllByRole('columnheader'), 'have 3 column').toHaveLength(
       3,
     );
     expect(
       screen.getAllByRole('listitem', {
-        name: 'album-track',
+        name: 'track-item',
       }),
     ).toHaveLength(1);
     expect(screen.getByText('Sunrise of love')).toBeVisible();

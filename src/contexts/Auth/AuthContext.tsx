@@ -1,7 +1,6 @@
 import axios from 'axios';
 import constate from 'constate';
 import { useCallback, useState } from 'react';
-import { useLocation } from 'react-router';
 
 import {
   redirect_uris,
@@ -16,7 +15,6 @@ function useAuth({
   accessToken?: string;
   refreshToken?: string;
 }) {
-  const location = useLocation();
   const [imMemoryAccessToken, setAccessToken] = useState<string | undefined>(
     accessToken,
   );
@@ -58,7 +56,7 @@ function useAuth({
     setToken(access_token, refresh_token);
   };
   const refreshAccessToken = async () => {
-    if (!inMemoryRefreshToken) throw new UnAuthenticatedError(location);
+    if (!inMemoryRefreshToken) throw new UnAuthenticatedError();
     try {
       const {
         data: { access_token, refresh_token },
@@ -79,7 +77,7 @@ function useAuth({
     } catch (e) {
       removeRefreshToken();
       setAccessToken(undefined);
-      throw new UnAuthenticatedError(location);
+      throw new UnAuthenticatedError(e.toJSON());
     }
   };
   return {

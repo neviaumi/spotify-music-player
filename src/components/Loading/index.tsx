@@ -13,8 +13,8 @@ const Container = styled.div`
 `;
 
 const ImgContainer = styled.figure`
-  height: 300px;
-  width: 300px;
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 export function Loading() {

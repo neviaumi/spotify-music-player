@@ -1,4 +1,6 @@
+import { Column, HeaderColumn, TracksList } from 'src/components/TracksList';
 import type { AlbumFull } from 'src/hooks/spotify/typings/Album';
+import type { TrackSimplified } from 'src/hooks/spotify/typings/Track';
 import { formatMSToMinute } from 'src/utils/formatMS';
 import styled from 'styled-components';
 
@@ -7,33 +9,6 @@ import { ReactComponent as Clock } from './clock.svg';
 interface Props {
   album?: AlbumFull;
 }
-
-const Container = styled.ol`
-  margin: 0px;
-  padding: 0px;
-`;
-
-const Header = styled.li`
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-  display: grid;
-  grid-gap: 16px;
-  grid-template-columns: [index] 16px [first] 4fr [last] minmax(120px, 1fr);
-  height: 56px;
-  padding: ${props => props.theme.spaces.l} 0px;
-`;
-
-const HeaderColumn = styled.header`
-  align-items: flex-end;
-  color: ${props => props.theme.colors.natural255};
-  display: flex;
-`;
-
-const Item = styled(Header)`
-  border-bottom: none;
-  &:hover {
-    background-color: hsla(0, 0%, 100%, 0.1);
-  }
-`;
 
 const TrackInfo = styled.section`
   display: flex;
@@ -60,44 +35,58 @@ const TrackArtist = styled.a`
   opacity: 0.6;
 `;
 
-const Column = styled.div`
-  align-items: center;
-  color: ${props => props.theme.colors.natural255};
-  display: flex;
-  font-size: 12px;
-  line-height: 22px;
-  width: 100%;
-`;
-
-export function TracksList({ album }: Props) {
+export function AlbumTracksList({ album }: Props) {
   return (
-    <Container data-testid="album-track-listing">
-      <Header aria-label="album-track-header">
-        <HeaderColumn role="columnheader">#</HeaderColumn>
-        <HeaderColumn role="columnheader">Title</HeaderColumn>
-        <HeaderColumn role="columnheader">
-          <Clock />
-        </HeaderColumn>
-      </Header>
-      {album?.tracks.items.map((albumTrack, index) => {
-        const {
-          artists: [artist],
-          duration_ms,
-        } = albumTrack;
-        return (
-          <Item aria-label="album-track" key={albumTrack.id}>
-            <Column>{index + 1}</Column>
-            <TrackInfo>
-              <TrackName>{albumTrack.name}</TrackName>
-              <TrackMeta>
-                <TrackArtist>{artist.name}</TrackArtist>
-              </TrackMeta>
-            </TrackInfo>
-
-            <Column>{formatMSToMinute(duration_ms)}</Column>
-          </Item>
-        );
-      })}
-    </Container>
+    <TracksList<TrackSimplified>
+      columns={[
+        {
+          field: [],
+          headerName: '#',
+          id: 'index',
+          renderColumn: function IndexColumn(_, index) {
+            return <Column>{index + 1}</Column>;
+          },
+          width: '16px',
+        },
+        {
+          field: [],
+          headerName: 'Title',
+          id: 'title',
+          renderColumn: function TitleColumn(track: TrackSimplified) {
+            const {
+              name,
+              artists: [artist],
+            } = track;
+            return (
+              <TrackInfo>
+                <TrackName>{name}</TrackName>
+                <TrackMeta>
+                  <TrackArtist>{artist.name}</TrackArtist>
+                </TrackMeta>
+              </TrackInfo>
+            );
+          },
+          width: '4fr',
+        },
+        {
+          field: ['duration_ms'],
+          headerName: '',
+          id: 'duration',
+          renderColumn: function DurationColumn(value: number) {
+            return <Column>{formatMSToMinute(value)}</Column>;
+          },
+          renderColumnHeader: function DurationHeader() {
+            return (
+              <HeaderColumn>
+                <Clock />
+              </HeaderColumn>
+            );
+          },
+          width: 'minmax(120px, 1fr)',
+        },
+      ]}
+      rowId={track => track.id}
+      tracks={album?.tracks}
+    />
   );
 }
