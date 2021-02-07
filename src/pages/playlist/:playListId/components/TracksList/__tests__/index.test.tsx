@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { TestApp } from '../../../../../../App';
-import { TracksList } from '../index';
+import { PlayListTracksList } from '../index';
 
 describe('Test PlayList tracks list', () => {
   it('render TrackList with one Item', () => {
@@ -26,21 +26,15 @@ describe('Test PlayList tracks list', () => {
     };
     render(
       <TestApp>
-        <TracksList {...props} />
+        <PlayListTracksList {...props} />
       </TestApp>,
     );
-    expect(
-      screen.getAllByRole('listitem', {
-        name: 'playlist-track-header',
-      }),
-      'Have header',
-    ).toHaveLength(1);
     expect(screen.getAllByRole('columnheader'), 'Have 5 column').toHaveLength(
       5,
     );
     expect(
       screen.getAllByRole('listitem', {
-        name: 'playlist-track',
+        name: /^track-item/,
       }),
       'only one record',
     ).toHaveLength(1);

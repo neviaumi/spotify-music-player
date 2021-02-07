@@ -16,6 +16,10 @@ import {
   DataFetchingConfigProviderProps,
   TestDataFetchingConfigProvider,
 } from './contexts/DataFetching';
+import {
+  SpotifyWebPlaybackProps,
+  SpotifyWebPlaybackProvider,
+} from './contexts/SpotifyWebPlayback';
 import { AppThemeProvider } from './contexts/Theme';
 import { Routes } from './Routes';
 
@@ -37,11 +41,13 @@ export function TestApp({
   AuthProviderProps: _TestAuthProviderProps,
   DataFetchingConfigProviderProps: _DataFetchingConfigProviderProps,
   RouterProps: _RouterProps,
+  SpotifyWebPlaybackProps: _SpotifyWebPlaybackProps,
   children,
 }: {
   AuthProviderProps?: TestAuthProviderProps;
   DataFetchingConfigProviderProps?: DataFetchingConfigProviderProps;
   RouterProps?: RouterProps;
+  SpotifyWebPlaybackProps?: SpotifyWebPlaybackProps;
   children: ReactNode;
 }) {
   return (
@@ -53,9 +59,11 @@ export function TestApp({
           })}
         >
           <TestAuthProvider {..._TestAuthProviderProps}>
-            <ErrorBoundary FallbackComponent={ErrorFallback}>
-              <Suspense>{children}</Suspense>
-            </ErrorBoundary>
+            <SpotifyWebPlaybackProvider {..._SpotifyWebPlaybackProps}>
+              <ErrorBoundary FallbackComponent={ErrorFallback}>
+                <Suspense>{children}</Suspense>
+              </ErrorBoundary>
+            </SpotifyWebPlaybackProvider>
           </TestAuthProvider>
         </Router>
       </TestDataFetchingConfigProvider>

@@ -8,10 +8,11 @@ import styled from 'styled-components';
 
 import { ErrorFallback } from '../../../components/ErrorFallback';
 import { Heading } from './components/Heading';
-import { TracksList } from './components/TracksList';
+import { AlbumTracksList } from './components/TracksList';
 
 const Container = styled.div`
   padding: 0 32px;
+  height: 100%;
 `;
 
 interface Props {
@@ -32,7 +33,7 @@ export function PresentAlbum({ album }: Props) {
   return (
     <Container>
       <Heading album={album} />
-      <TracksList album={album} />
+      <AlbumTracksList album={album} />
     </Container>
   );
 }
