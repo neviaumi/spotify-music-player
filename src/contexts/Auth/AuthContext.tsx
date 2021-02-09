@@ -80,9 +80,15 @@ function useAuth({
       throw new UnAuthenticatedError(e.toJSON());
     }
   };
+
+  async function getOrRefreshAccessToken() {
+    return imMemoryAccessToken!;
+  }
+
   return {
     accessToken: imMemoryAccessToken,
     exchangeTokenFromCode,
+    getOrRefreshAccessToken,
     refreshAccessToken,
   };
 }
