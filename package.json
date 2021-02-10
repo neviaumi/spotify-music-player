@@ -34,7 +34,7 @@
     "react-error-boundary": "3.1.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.2",
-    "react-use": "17.1.0",
+    "react-use": "17.1.1",
     "retry-axios": "2.4.0",
     "serialize-error": "8.0.1",
     "styled-components": "5.2.1",
