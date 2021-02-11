@@ -9,27 +9,25 @@ import type { Props } from '../Present/PresentSuggestPlayList';
 
 jest.mock('../../../../hooks/spotify/query/useFeaturedPlaylists');
 
-const FeaturedPlayListBySpotify = withFeaturedPlayListBySpotify(function ({
-  title,
-  suggestions,
-  onClickSuggestion,
-}: Props) {
-  return (
-    <div>
-      <h1>{title}</h1>
-      <li>
-        {suggestions?.map(suggestion => (
-          <button
-            key={suggestion.id}
-            onClick={() => onClickSuggestion(suggestion)}
-          >
-            {suggestion.name}
-          </button>
-        ))}
-      </li>
-    </div>
-  );
-});
+const FeaturedPlayListBySpotify = withFeaturedPlayListBySpotify(
+  ({ title, suggestions, onClickSuggestion }: Props) => {
+    return (
+      <div>
+        <h1>{title}</h1>
+        <li>
+          {suggestions?.map(suggestion => (
+            <button
+              key={suggestion.id}
+              onClick={() => onClickSuggestion(suggestion)}
+            >
+              {suggestion.name}
+            </button>
+          ))}
+        </li>
+      </div>
+    );
+  },
+);
 
 describe('Test FeaturedPlayListBySpotify', () => {
   it('have title', () => {

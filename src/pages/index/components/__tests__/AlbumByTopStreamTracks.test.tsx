@@ -9,27 +9,25 @@ import type { Props } from '../Present/PresentSuggestAlbum';
 
 jest.mock('../../../../hooks/spotify/query/useTopStreamingAlbum');
 
-const AlbumByTopStreamTracks = withAlbumByTopStreamTracks(function ({
-  title,
-  suggestions,
-  onClickSuggestion,
-}: Props) {
-  return (
-    <div>
-      <h1>{title}</h1>
-      <li>
-        {suggestions?.map(suggestion => (
-          <button
-            key={suggestion.id}
-            onClick={() => onClickSuggestion(suggestion)}
-          >
-            {suggestion.name}
-          </button>
-        ))}
-      </li>
-    </div>
-  );
-});
+const AlbumByTopStreamTracks = withAlbumByTopStreamTracks(
+  ({ title, suggestions, onClickSuggestion }: Props) => {
+    return (
+      <div>
+        <h1>{title}</h1>
+        <li>
+          {suggestions?.map(suggestion => (
+            <button
+              key={suggestion.id}
+              onClick={() => onClickSuggestion(suggestion)}
+            >
+              {suggestion.name}
+            </button>
+          ))}
+        </li>
+      </div>
+    );
+  },
+);
 
 describe('Test AlbumByTopStreamTracks', () => {
   it('have title', () => {
