@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { TestApp } from '../../../App';
+import { player } from '../../../contexts/SpotifyWebPlayback/testHelpers/mockPlayer';
 import { TracksList } from '../index';
 
 describe('Test TracksList', () => {
@@ -29,6 +30,7 @@ describe('Test TracksList', () => {
             id: trackId,
             name: 'demoTrack',
           } as any,
+          player: player,
         }}
       >
         <TracksList

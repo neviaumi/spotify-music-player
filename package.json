@@ -85,6 +85,7 @@
     "@types/react-dom": "17.0.0",
     "@types/react-router-dom": "5.1.7",
     "@types/setup-polly-jest": "0.5.1",
+    "@types/spotify-web-playback-sdk": "0.1.7",
     "@types/styled-components": "5.1.7",
     "@types/stylelint": "9.10.1",
     "@types/testing-library__jest-dom": "5.9.5",
@@ -129,9 +130,9 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 65,
+        "branches": 64,
         "functions": 84,
-        "lines": 93,
+        "lines": 92,
         "statements": 90
       }
     }

@@ -37,7 +37,10 @@ const TrackArtist = styled.a`
 `;
 
 export function AlbumTracksList({ album }: Props) {
-  const { playTrack, pausePlayer } = useSpotifyWebPlayback();
+  const {
+    playTrackOnUserPlayback,
+    pauseUserPlayback,
+  } = useSpotifyWebPlayback();
 
   return (
     <TracksList<TrackSimplified>
@@ -80,8 +83,8 @@ export function AlbumTracksList({ album }: Props) {
         },
       ]}
       getTrackId={track => track.id}
-      onPausePlayingTrack={() => pausePlayer()}
-      onSelectTrackToPlay={track => playTrack(track)}
+      onPausePlayingTrack={() => pauseUserPlayback()}
+      onSelectTrackToPlay={track => playTrackOnUserPlayback(track)}
       tracks={album?.tracks}
     />
   );

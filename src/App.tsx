@@ -20,6 +20,7 @@ import {
   SpotifyWebPlaybackProps,
   SpotifyWebPlaybackProvider,
 } from './contexts/SpotifyWebPlayback';
+import { player } from './contexts/SpotifyWebPlayback/testHelpers/mockPlayer';
 import { AppThemeProvider } from './contexts/Theme';
 import { Routes } from './Routes';
 
@@ -59,7 +60,11 @@ export function TestApp({
           })}
         >
           <TestAuthProvider {..._TestAuthProviderProps}>
-            <SpotifyWebPlaybackProvider {..._SpotifyWebPlaybackProps}>
+            <SpotifyWebPlaybackProvider
+              {...(_SpotifyWebPlaybackProps ?? {
+                player,
+              })}
+            >
               <ErrorBoundary FallbackComponent={ErrorFallback}>
                 <Suspense>{children}</Suspense>
               </ErrorBoundary>

@@ -48,7 +48,10 @@ const TrackArtist = styled.a`
 `;
 
 export function PlayListTracksList({ playList }: Props) {
-  const { playTrack, pausePlayer } = useSpotifyWebPlayback();
+  const {
+    playTrackOnUserPlayback,
+    pauseUserPlayback,
+  } = useSpotifyWebPlayback();
 
   return (
     <TracksList<PlayListTrack>
@@ -109,8 +112,8 @@ export function PlayListTracksList({ playList }: Props) {
         },
       ]}
       getTrackId={track => track.track.id}
-      onPausePlayingTrack={() => pausePlayer()}
-      onSelectTrackToPlay={track => playTrack(track.track)}
+      onPausePlayingTrack={() => pauseUserPlayback()}
+      onSelectTrackToPlay={track => playTrackOnUserPlayback(track.track)}
       tracks={playList?.tracks}
     />
   );
