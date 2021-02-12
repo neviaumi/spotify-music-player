@@ -17,7 +17,7 @@ export function createPollyContext(config: PollyConfig = {}) {
     adapters: [NodeHttpAdapter],
     expiresIn: '14d',
 
-    expiryStrategy: 'warn',
+    expiryStrategy: 'error',
     flushRequestsOnStop: true,
     matchRequestsBy: {
       body: false,
