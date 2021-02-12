@@ -7,17 +7,23 @@ import {
   token_endpoint,
 } from '../../config/openidConfiguration';
 import { UnAuthenticatedError } from '../../errors/UnAuthenticatedError';
+import { getCurrentTimestamp } from '../../utils/getCurrentTimestamp';
 
 function useAuth({
   accessToken,
   refreshToken,
+  tokenExpireTime: hardCodedExpireTime,
 }: {
   accessToken?: string;
   refreshToken?: string;
+  tokenExpireTime?: number;
 }) {
   const [imMemoryAccessToken, setAccessToken] = useState<string | undefined>(
     accessToken,
   );
+  const [tokenExpireTime, setTokenExpireTime] = useState<number>(
+    hardCodedExpireTime ?? 0,
+  ); // unix timestamp
   const [inMemoryRefreshToken, setInMemoryRefreshToken] = useState<
     string | undefined | null
   >(refreshToken || window.localStorage.getItem('refresh-token'));
@@ -32,13 +38,18 @@ function useAuth({
     setInMemoryRefreshToken(undefined);
   }, []);
 
-  const setToken = (_accessToken: string, _refreshToken: string) => {
+  const setToken = (
+    _accessToken: string,
+    _refreshToken: string,
+    expireTime: number,
+  ) => {
     setAccessToken(_accessToken);
     setRefreshToken(_refreshToken);
+    setTokenExpireTime(expireTime);
   };
   const exchangeTokenFromCode = async (code: string, codeVerifier: string) => {
     const {
-      data: { access_token, refresh_token },
+      data: { access_token, refresh_token, expires_in },
     } = await axios.request({
       data: new URLSearchParams({
         client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID!,
@@ -53,13 +64,17 @@ function useAuth({
       method: 'POST',
       url: token_endpoint,
     });
-    setToken(access_token, refresh_token);
+    setToken(
+      access_token,
+      refresh_token,
+      (getCurrentTimestamp() + expires_in) * 1000,
+    );
   };
   const refreshAccessToken = async () => {
     if (!inMemoryRefreshToken) throw new UnAuthenticatedError();
     try {
       const {
-        data: { access_token, refresh_token },
+        data: { access_token, refresh_token, expires_in },
       } = await axios.request({
         data: new URLSearchParams({
           client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID!,
@@ -72,16 +87,24 @@ function useAuth({
         method: 'POST',
         url: token_endpoint,
       });
-      setToken(access_token, refresh_token);
+      setToken(
+        access_token,
+        refresh_token,
+        (getCurrentTimestamp() + expires_in) * 1000,
+      );
       return access_token;
     } catch (e) {
       removeRefreshToken();
       setAccessToken(undefined);
+      setTokenExpireTime(0);
       throw new UnAuthenticatedError(e.toJSON());
     }
   };
 
   async function getOrRefreshAccessToken() {
+    const CLOCK_TOLERANCE = 60 * 1000; // 1 minute
+    const currentTime = Date.now() - CLOCK_TOLERANCE;
+    if (currentTime >= tokenExpireTime) return refreshAccessToken();
     return imMemoryAccessToken!;
   }
 

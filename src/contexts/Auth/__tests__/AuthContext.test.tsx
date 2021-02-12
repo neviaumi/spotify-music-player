@@ -15,7 +15,6 @@ describe('AuthContext', () => {
         .post('/api/token')
         .times(1)
         .intercept((_, res, interceptor) => {
-          // @ts-expect-error no message
           interceptor.stopPropagation();
           res.setHeader('Access-Control-Allow-Headers', 'Authorization');
           res.setHeader('Access-Control-Allow-Methods', '*');
@@ -54,7 +53,6 @@ describe('AuthContext', () => {
         .post('/api/token')
         .times(1)
         .intercept((_, res, interceptor) => {
-          // @ts-expect-error no message
           interceptor.stopPropagation();
           res.setHeader('Access-Control-Allow-Headers', 'Authorization');
           res.setHeader('Access-Control-Allow-Methods', '*');
@@ -74,6 +72,55 @@ describe('AuthContext', () => {
     });
     expect(window.localStorage.getItem('refresh-token')).toEqual(
       'newRefreshToken',
+    );
+  });
+
+  it('getOrRefreshAccessToken return access token if cached token not expired', async () => {
+    const { result } = renderHook(() => useAuthContext(), {
+      wrapper: ({ children }) => (
+        <TestApp
+          AuthProviderProps={{
+            accessToken: 'fake-token',
+            tokenExpireTime: Number.POSITIVE_INFINITY,
+          }}
+        >
+          {children}
+        </TestApp>
+      ),
+    });
+    await expect(result.current.getOrRefreshAccessToken()).resolves.toEqual(
+      'fake-token',
+    );
+  });
+
+  it('getOrRefreshAccessToken refresh access token if token expired', async () => {
+    window.localStorage.setItem('refresh-token', 'refreshToken');
+    context.polly.server.host('https://accounts.spotify.com', () => {
+      context.polly.server
+        .post('/api/token')
+        .times(1)
+        .intercept((_, res, interceptor) => {
+          interceptor.stopPropagation();
+          res.status(200).json({
+            access_token: 'newAccessToken',
+            refresh_token: 'newRefreshToken',
+          });
+        });
+    });
+    const { result } = renderHook(() => useAuthContext(), {
+      wrapper: ({ children }) => (
+        <TestApp
+          AuthProviderProps={{
+            accessToken: 'fake-token',
+            tokenExpireTime: Number.NEGATIVE_INFINITY,
+          }}
+        >
+          {children}
+        </TestApp>
+      ),
+    });
+    await expect(result.current.getOrRefreshAccessToken()).resolves.toEqual(
+      'newAccessToken',
     );
   });
 });
