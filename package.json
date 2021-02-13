@@ -79,7 +79,7 @@
     "@types/pollyjs__adapter-xhr": "2.6.1",
     "@types/pollyjs__core": "4.3.2",
     "@types/pollyjs__persister-fs": "2.0.1",
-    "@types/prettier": "2.2.0",
+    "@types/prettier": "2.2.1",
     "@types/ramda": "0.27.38",
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.1",
