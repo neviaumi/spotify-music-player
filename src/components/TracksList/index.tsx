@@ -2,7 +2,10 @@ import { path } from 'ramda';
 import type { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import { useSpotifyWebPlayback } from '../../contexts/SpotifyWebPlayback';
+import {
+  PlayerState,
+  useSpotifyWebPlayback,
+} from '../../contexts/SpotifyWebPlayback';
 import type { Paging } from '../../hooks/spotify/typings/shared/Paging';
 import type { TrackSimplified } from '../../hooks/spotify/typings/Track';
 import { ReactComponent as PauseSVG } from './pause.svg';
@@ -96,7 +99,8 @@ export function TracksList<T = TrackSimplified>({
   onSelectTrackToPlay,
   onPausePlayingTrack,
 }: Props<T>) {
-  const { currentPlayingTrack } = useSpotifyWebPlayback();
+  const { currentPlayingTrack, playerConnectState } = useSpotifyWebPlayback();
+  const isPlayerPlaying = playerConnectState === PlayerState.PLAYING;
   const gridTemplateColumns = `[index] 16px ${columns
     .map(column => `[${column.id}] ${column.width}`)
     .join(' ')}`;
@@ -117,14 +121,14 @@ export function TracksList<T = TrackSimplified>({
       </Header>
       {tracks?.items.map((track, index) => {
         const trackId = getTrackId(track);
-        const isCurrentPlayingTrack = trackId === currentPlayingTrack?.id;
+        const isCurrentPlayingTrack = trackId === currentPlayingTrack?.item.id;
         return (
           <Item
             aria-label={`track-item-${index}`}
             grid-template-columns={gridTemplateColumns}
             key={trackId}
             onDoubleClick={() =>
-              isCurrentPlayingTrack
+              isCurrentPlayingTrack && isPlayerPlaying
                 ? onPausePlayingTrack(track)
                 : onSelectTrackToPlay(track)
             }
@@ -140,12 +144,16 @@ export function TracksList<T = TrackSimplified>({
               <ControlToggle
                 aria-label={`control-toggle-${index}`}
                 onClick={() =>
-                  isCurrentPlayingTrack
+                  isCurrentPlayingTrack && isPlayerPlaying
                     ? onPausePlayingTrack(track)
                     : onSelectTrackToPlay(track)
                 }
               >
-                {isCurrentPlayingTrack ? <PauseSVG /> : <PlaySVG />}
+                {isCurrentPlayingTrack && isPlayerPlaying ? (
+                  <PauseSVG />
+                ) : (
+                  <PlaySVG />
+                )}
               </ControlToggle>
             </Column>
             {columns.map((column, columnIndex) => {

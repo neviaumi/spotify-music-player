@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { TestApp } from '../../../App';
+import { PlayerState } from '../../../contexts/SpotifyWebPlayback';
 import { player } from '../../../contexts/SpotifyWebPlayback/testHelpers/mockPlayer';
 import { TracksList } from '../index';
 
@@ -26,6 +27,7 @@ describe('Test TracksList', () => {
     render(
       <TestApp
         SpotifyWebPlaybackProps={{
+          currentState: PlayerState.PLAYING,
           currentTrack: {
             id: trackId,
             name: 'demoTrack',
@@ -59,7 +61,51 @@ describe('Test TracksList', () => {
     const trackId = 'demoTrackId';
     const selectTrackToPlay = jest.fn();
     render(
-      <TestApp>
+      <TestApp
+        SpotifyWebPlaybackProps={{
+          currentState: PlayerState.PLAYING,
+          currentTrack: {
+            id: 'newTrackId',
+            name: 'demoTrack',
+          } as any,
+          player: player,
+        }}
+      >
+        <TracksList
+          columns={[]}
+          getTrackId={track => track.id}
+          onPausePlayingTrack={jest.fn()}
+          onSelectTrackToPlay={selectTrackToPlay}
+          tracks={
+            {
+              items: [
+                {
+                  id: trackId,
+                },
+              ],
+            } as any
+          }
+        />
+      </TestApp>,
+    );
+    userEvent.dblClick(screen.getByRole('listitem', { name: 'track-item-0' }));
+    expect(selectTrackToPlay).toHaveBeenCalled();
+  });
+
+  it('change playing track if player is not current device', async () => {
+    const trackId = 'demoTrackId';
+    const selectTrackToPlay = jest.fn();
+    render(
+      <TestApp
+        SpotifyWebPlaybackProps={{
+          currentState: PlayerState.PAUSED,
+          currentTrack: {
+            id: trackId,
+            name: 'demoTrack',
+          } as any,
+          player: player,
+        }}
+      >
         <TracksList
           columns={[]}
           getTrackId={track => track.id}
