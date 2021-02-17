@@ -3,9 +3,18 @@ import {
   PlayerState,
   useSpotifyWebPlayback,
 } from 'src/contexts/SpotifyWebPlayback';
+import styled from 'styled-components';
 
 import { ErrorFallback } from '../ErrorFallback';
 import { Loading } from '../Loading';
+import { TrackInfo } from './components/TrackInfo';
+
+const Container = styled.aside`
+  display: flex;
+  padding: 0 16px;
+  height: 90px;
+  align-items: center;
+`;
 
 function MusicPlayerComponent() {
   const {
@@ -17,7 +26,11 @@ function MusicPlayerComponent() {
 
   if (playerConnectState === PlayerState.DISCONNECTED) return <Loading />;
 
-  return <div>Playing {currentPlayingTrack?.item.name}</div>;
+  return (
+    <Container aria-label="music-player">
+      <TrackInfo currentPlayingTrack={currentPlayingTrack?.item} />
+    </Container>
+  );
 }
 
 export const MusicPlayer = withErrorBoundary(MusicPlayerComponent, {
