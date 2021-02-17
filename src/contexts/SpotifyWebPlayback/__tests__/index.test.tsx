@@ -6,7 +6,7 @@ import type { PropsWithChildren } from 'react';
 import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../../App';
 import type { TrackSimplified } from '../../../hooks/spotify/typings/Track';
-import { useSpotifyWebPlayback } from '../';
+import { PlayerState, useSpotifyWebPlayback } from '../';
 import { player } from '../testHelpers/mockPlayer';
 
 const context = createPollyContext();
@@ -15,11 +15,11 @@ function DummyComponents({
   track,
 }: PropsWithChildren<{ track: TrackSimplified }>) {
   const {
-    isPlaybackReady,
+    playerConnectState,
     pauseUserPlayback,
     playTrackOnUserPlayback,
   } = useSpotifyWebPlayback();
-  if (!isPlaybackReady) return null;
+  if (playerConnectState === PlayerState.DISCONNECTED) return null;
   return (
     <>
       <button onClick={pauseUserPlayback}>pause</button>
@@ -39,6 +39,7 @@ describe('Test SpotifyWebPlayback', () => {
     render(
       <TestApp
         SpotifyWebPlaybackProps={{
+          currentState: PlayerState.CONNECTED,
           player,
         }}
       >
@@ -74,6 +75,7 @@ describe('Test SpotifyWebPlayback', () => {
     render(
       <TestApp
         SpotifyWebPlaybackProps={{
+          currentState: PlayerState.CONNECTED,
           player,
         }}
       >

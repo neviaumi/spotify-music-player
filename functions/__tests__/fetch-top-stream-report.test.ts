@@ -4,7 +4,9 @@ import type { Context } from 'aws-lambda';
 import { handler } from '../fetch-top-stream-report';
 import { createPollyContext } from '../testHelper/polly/createPollyContext';
 
-createPollyContext();
+createPollyContext({
+  mode: 'record',
+});
 
 describe('Test fetch-top-stream-report', () => {
   it('400 if query missing', async () => {

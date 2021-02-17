@@ -27,7 +27,10 @@ export function createSpotifyAPIClient(
           err.config.raxConfig.currentRetryAttempt = Number.POSITIVE_INFINITY; // disable retry next time
       }
     },
-    statusCodesToRetry: [[401, 401]],
+    statusCodesToRetry: [
+      [401, 401],
+      [429, 429],
+    ],
   };
   rax.attach(client);
   return client;

@@ -2,12 +2,14 @@ import './SpotifyPlayer.d';
 
 import constate from 'constate';
 import { useCallback, useState } from 'react';
+import { useGetUsersCurrentlyPlayingTrack } from 'src/hooks/spotify/query/useGetUsersCurrentlyPlayingTrack';
 import type { TrackSimplified } from 'src/hooks/spotify/typings/Track';
 
 import { useSpotifyAPIClient } from '../../hooks/useSpotifyAPIClient';
-import { useSpotifyPlayer } from './useSpotifyPlayer';
+import { PlayerState, useSpotifyPlayer } from './useSpotifyPlayer';
 
 export interface SpotifyWebPlaybackProps {
+  currentState?: PlayerState;
   currentTrack?: Spotify.Track;
   player?: Spotify.SpotifyPlayer;
 }
@@ -15,33 +17,74 @@ export interface SpotifyWebPlaybackProps {
 function useCreateSpotifyWebPlayback({
   currentTrack,
   player: preConstructedPlayerInstance,
+  currentState,
 }: SpotifyWebPlaybackProps) {
   const [currentPlayingTrack, setCurrentPlayingTrack] = useState<
-    Spotify.Track | undefined
-  >(currentTrack);
+    { item: Spotify.Track; progress_ms: number; timestamp: number } | undefined
+  >(
+    currentTrack
+      ? { item: currentTrack, progress_ms: 0, timestamp: Date.now() }
+      : undefined,
+  );
   const apiClient = useSpotifyAPIClient();
-  const playbackStateChange = useCallback(
-    (state: null | Spotify.PlaybackState) => {
+
+  const {
+    playerConnectState,
+    transitPlayerConnectState,
+    playerError,
+    player,
+  } = useSpotifyPlayer({
+    currentState,
+    onPlayStateChange: function playStateChange(
+      state: null | Spotify.PlaybackState,
+    ) {
       if (!state) {
         // playback control may be taken from other device.
-        setCurrentPlayingTrack(undefined); // should not set to undefined actually
+        transitPlayerConnectState(PlayerState.CONNECTED);
         return;
       }
       const {
+        position,
         track_window: { current_track },
         paused,
       } = state;
-      setCurrentPlayingTrack(paused ? undefined : current_track); // @TODO: separate paused track handle
+      transitPlayerConnectState(
+        paused ? PlayerState.PAUSED : PlayerState.PLAYING,
+      );
+      setCurrentPlayingTrack({
+        item: current_track,
+        progress_ms: position,
+        timestamp: Date.now(),
+      });
     },
-    [],
-  );
-  const { isPlayerReady, player } = useSpotifyPlayer({
-    onPlayStateChange: playbackStateChange,
     player: preConstructedPlayerInstance,
   });
+
+  const {
+    data: currentPlayingTrackFromAPI,
+    error: fetchCurrentPlayingTrackError,
+  } = useGetUsersCurrentlyPlayingTrack(
+    playerConnectState === PlayerState.CONNECTED,
+    {
+      refreshInterval: 10000,
+      suspense: false,
+    },
+  );
+  if (
+    playerConnectState === PlayerState.CONNECTED &&
+    currentPlayingTrackFromAPI
+  ) {
+    const shouldUpdateCurrentTrack =
+      currentPlayingTrackFromAPI.item.uri !== currentPlayingTrack?.item.uri ||
+      currentPlayingTrackFromAPI.progress_ms >
+        (currentPlayingTrack?.progress_ms ?? 0);
+    if (shouldUpdateCurrentTrack) {
+      setCurrentPlayingTrack(currentPlayingTrackFromAPI);
+    }
+  }
   const startPlayTrackOnUserPlayback = useCallback(
     async (trackUri: string) => {
-      if (!isPlayerReady) return;
+      if (playerConnectState === PlayerState.DISCONNECTED) return;
       const { id: device_id } = player!._options;
       await apiClient.request({
         data: {
@@ -54,10 +97,10 @@ function useCreateSpotifyWebPlayback({
         url: 'me/player/play',
       });
     },
-    [isPlayerReady, player, apiClient],
+    [playerConnectState, player, apiClient],
   );
   const pauseUserPlayback = useCallback(async () => {
-    if (!isPlayerReady) return;
+    if (playerConnectState === PlayerState.DISCONNECTED) return;
     const { id: device_id } = player!._options;
     await apiClient.request({
       method: 'put',
@@ -66,14 +109,15 @@ function useCreateSpotifyWebPlayback({
       },
       url: 'me/player/pause',
     });
-  }, [isPlayerReady, player, apiClient]);
+  }, [playerConnectState, player, apiClient]);
 
   return {
     currentPlayingTrack,
-    isPlaybackReady: isPlayerReady,
+    error: playerError || fetchCurrentPlayingTrackError,
     pauseUserPlayback,
     playTrackOnUserPlayback: (track: TrackSimplified) =>
       startPlayTrackOnUserPlayback(track.uri),
+    playerConnectState,
   };
 }
 
@@ -81,4 +125,4 @@ const [SpotifyWebPlaybackProvider, useSpotifyWebPlayback] = constate(
   useCreateSpotifyWebPlayback,
 );
 
-export { SpotifyWebPlaybackProvider, useSpotifyWebPlayback };
+export { PlayerState, SpotifyWebPlaybackProvider, useSpotifyWebPlayback };

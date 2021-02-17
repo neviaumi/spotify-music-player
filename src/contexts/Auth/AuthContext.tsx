@@ -1,3 +1,5 @@
+/* eslint-disable*/
+
 import axios from 'axios';
 import constate from 'constate';
 import { useCallback, useState } from 'react';

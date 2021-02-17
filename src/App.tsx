@@ -17,6 +17,7 @@ import {
   TestDataFetchingConfigProvider,
 } from './contexts/DataFetching';
 import {
+  PlayerState,
   SpotifyWebPlaybackProps,
   SpotifyWebPlaybackProvider,
 } from './contexts/SpotifyWebPlayback';
@@ -62,6 +63,7 @@ export function TestApp({
           <TestAuthProvider {..._TestAuthProviderProps}>
             <SpotifyWebPlaybackProvider
               {...(_SpotifyWebPlaybackProps ?? {
+                currentState: PlayerState.PAUSED,
                 player,
               })}
             >
