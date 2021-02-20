@@ -91,7 +91,6 @@ export function useSpotifyPlayer({
       });
 
       playerInstance.addListener('ready', () => {
-        // @ts-expect-error type mis-match
         setSpotifyPlayer(playerInstance);
         transitPlayerConnectState(PlayerState.CONNECTED);
       });
