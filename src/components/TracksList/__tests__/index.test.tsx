@@ -1,13 +1,35 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import casual from 'casual';
+import { mutate } from 'swr';
 
+import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../../App';
-import { PlayerState } from '../../../contexts/SpotifyWebPlayback';
-import { player } from '../../../contexts/SpotifyWebPlayback/testHelpers/mockPlayer';
+import { PlaybackType } from '../../../contexts/SpotifyWebPlayback/states/PlaybackState';
 import { TracksList } from '../index';
 
+const currentPlaying = casual.CurrentlyPlayingContextObject();
+createPollyContext({
+  appConfig: {
+    enableMockServer: true,
+    mockRouteHandlers: {
+      '/me/player': (_, res) => {
+        res.status(200).json(currentPlaying);
+      },
+    },
+  },
+  pollyConfig: {
+    mode: 'passthrough',
+  },
+});
+
+async function cleanCache() {
+  // https://github.com/vercel/swr/issues/781
+  await mutate([PlaybackType.Remote, 'getPlaybackState']);
+}
+
 describe('Test TracksList', () => {
-  it('Include index column', () => {
+  it('Include index column', async () => {
     render(
       <TestApp>
         <TracksList
@@ -18,23 +40,15 @@ describe('Test TracksList', () => {
         />
       </TestApp>,
     );
-    expect(screen.getAllByRole('columnheader')).toHaveLength(1);
+    await cleanCache();
+    await expect(screen.findAllByRole('columnheader')).resolves.toHaveLength(1);
   });
 
   it('click item will pause if playing track clicked in list', async () => {
-    const trackId = 'demoTrackId';
+    const trackId = currentPlaying.item.id;
     const pausePlayingTrack = jest.fn();
     render(
-      <TestApp
-        SpotifyWebPlaybackProps={{
-          currentState: PlayerState.PLAYING,
-          currentTrack: {
-            id: trackId,
-            name: 'demoTrack',
-          } as any,
-          player: player,
-        }}
-      >
+      <TestApp>
         <TracksList
           columns={[]}
           getTrackId={track => track.id}
@@ -52,7 +66,11 @@ describe('Test TracksList', () => {
         />
       </TestApp>,
     );
-    expect(screen.getByRole('img', { name: 'streaming' })).toBeVisible();
+    await cleanCache();
+
+    await expect(
+      screen.findByRole('img', { name: 'streaming' }),
+    ).resolves.toBeVisible();
     userEvent.dblClick(screen.getByRole('listitem', { name: 'track-item-0' }));
     expect(pausePlayingTrack).toHaveBeenCalled();
   });
@@ -61,16 +79,7 @@ describe('Test TracksList', () => {
     const trackId = 'demoTrackId';
     const selectTrackToPlay = jest.fn();
     render(
-      <TestApp
-        SpotifyWebPlaybackProps={{
-          currentState: PlayerState.PLAYING,
-          currentTrack: {
-            id: 'newTrackId',
-            name: 'demoTrack',
-          } as any,
-          player: player,
-        }}
-      >
+      <TestApp>
         <TracksList
           columns={[]}
           getTrackId={track => track.id}
@@ -88,42 +97,11 @@ describe('Test TracksList', () => {
         />
       </TestApp>,
     );
-    userEvent.dblClick(screen.getByRole('listitem', { name: 'track-item-0' }));
-    expect(selectTrackToPlay).toHaveBeenCalled();
-  });
+    await cleanCache();
 
-  it('change playing track if player is not current device', async () => {
-    const trackId = 'demoTrackId';
-    const selectTrackToPlay = jest.fn();
-    render(
-      <TestApp
-        SpotifyWebPlaybackProps={{
-          currentState: PlayerState.PAUSED,
-          currentTrack: {
-            id: trackId,
-            name: 'demoTrack',
-          } as any,
-          player: player,
-        }}
-      >
-        <TracksList
-          columns={[]}
-          getTrackId={track => track.id}
-          onPausePlayingTrack={jest.fn()}
-          onSelectTrackToPlay={selectTrackToPlay}
-          tracks={
-            {
-              items: [
-                {
-                  id: trackId,
-                },
-              ],
-            } as any
-          }
-        />
-      </TestApp>,
+    userEvent.dblClick(
+      await screen.findByRole('listitem', { name: 'track-item-0' }),
     );
-    userEvent.dblClick(screen.getByRole('listitem', { name: 'track-item-0' }));
     expect(selectTrackToPlay).toHaveBeenCalled();
   });
 });

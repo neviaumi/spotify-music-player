@@ -2,10 +2,7 @@ import { path } from 'ramda';
 import type { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import {
-  PlayerState,
-  useSpotifyWebPlayback,
-} from '../../contexts/SpotifyWebPlayback';
+import { useSpotifyWebPlayback } from '../../contexts/SpotifyWebPlayback';
 import type { Paging } from '../../hooks/spotify/typings/shared/Paging';
 import type { TrackSimplified } from '../../hooks/spotify/typings/Track';
 import { ReactComponent as PauseSVG } from './pause.svg';
@@ -100,8 +97,11 @@ export function TracksList<T = TrackSimplified>({
   onSelectTrackToPlay,
   onPausePlayingTrack,
 }: Props<T>) {
-  const { currentPlayingTrack, playerConnectState } = useSpotifyWebPlayback();
-  const isPlayerPlaying = playerConnectState === PlayerState.PLAYING;
+  const {
+    data: { currentPlayingTrack, isPaused },
+  } = useSpotifyWebPlayback();
+
+  const isPlaying = !isPaused && currentPlayingTrack !== undefined;
   const gridTemplateColumns = `[index] 16px ${columns
     .map(column => `[${column.id}] ${column.width}`)
     .join(' ')}`;
@@ -122,21 +122,21 @@ export function TracksList<T = TrackSimplified>({
       </Header>
       {tracks?.items.map((track, index) => {
         const trackId = getTrackId(track);
-        const isCurrentPlayingTrack = trackId === currentPlayingTrack?.item.id;
+        const isCurrentPlayingTrack = trackId === currentPlayingTrack?.id;
         return (
           <Item
             aria-label={`track-item-${index}`}
             grid-template-columns={gridTemplateColumns}
             key={trackId}
             onDoubleClick={() =>
-              isCurrentPlayingTrack && isPlayerPlaying
+              isCurrentPlayingTrack && isPlaying
                 ? onPausePlayingTrack(track)
                 : onSelectTrackToPlay(track)
             }
           >
             <Column key="column-0">
               <Index>
-                {isCurrentPlayingTrack ? (
+                {isCurrentPlayingTrack && isPlaying ? (
                   <img alt="streaming" src={streamingGif} />
                 ) : (
                   index + 1
@@ -145,12 +145,12 @@ export function TracksList<T = TrackSimplified>({
               <ControlToggle
                 aria-label={`control-toggle-${index}`}
                 onClick={() =>
-                  isCurrentPlayingTrack && isPlayerPlaying
+                  isCurrentPlayingTrack && isPlaying
                     ? onPausePlayingTrack(track)
                     : onSelectTrackToPlay(track)
                 }
               >
-                {isCurrentPlayingTrack && isPlayerPlaying ? (
+                {isCurrentPlayingTrack && isPlaying ? (
                   <PauseSVG />
                 ) : (
                   <PlaySVG />

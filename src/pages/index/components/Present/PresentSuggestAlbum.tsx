@@ -90,7 +90,10 @@ export function PresentSuggestAlbum({
             data-testid={`${dataTestId}-item`}
             href=""
             key={suggestion.id}
-            onClick={() => onClickSuggestion(suggestion)}
+            onClick={e => {
+              e.preventDefault();
+              onClickSuggestion(suggestion);
+            }}
           >
             <SuggestionCover src={suggestion.images[0]?.url} />
             <SuggestionHeading>

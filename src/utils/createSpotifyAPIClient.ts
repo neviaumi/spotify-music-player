@@ -13,7 +13,6 @@ export function createSpotifyAPIClient(
   });
   client.defaults.raxConfig = {
     instance: client,
-    noResponseRetries: 0,
     onRetryAttempt: async err => {
       const { config: requestConfig } = err;
       try {
@@ -30,6 +29,7 @@ export function createSpotifyAPIClient(
     statusCodesToRetry: [
       [401, 401],
       [429, 429],
+      [501, 599],
     ],
   };
   rax.attach(client);

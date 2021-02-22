@@ -1,24 +1,42 @@
 import XHRAdapter from '@pollyjs/adapter-xhr';
-import { MODE, Polly, PollyConfig } from '@pollyjs/core';
+import { InterceptHandler, MODE, Polly, PollyConfig } from '@pollyjs/core';
 import FSPersister from '@pollyjs/persister-fs';
 import kebabcase from 'lodash.kebabcase';
 import path from 'path';
 
 import { getCurrentTestPath } from './getCurrentTestPath';
+import { setupMockServer } from './setupMockServer';
 
 Polly.register(XHRAdapter);
 Polly.register(FSPersister);
 
-export function createPollyContext(config: PollyConfig = {}) {
+export function createPollyContext(
+  config: {
+    appConfig?: {
+      enableMockServer: boolean;
+      mockRouteHandlers?: {
+        [key: string]: InterceptHandler;
+      };
+    };
+    pollyConfig?: PollyConfig;
+  } = {},
+) {
+  const {
+    pollyConfig = {},
+    appConfig = {
+      enableMockServer: false,
+      mockRouteHandlers: {},
+    },
+  } = config;
   const env = process.env;
   const pollyMode: MODE =
-    (env.REACT_APP_POLLY_MODE as MODE) || config.mode || 'replay';
+    (env.REACT_APP_POLLY_MODE as MODE) || pollyConfig.mode || 'replay';
   const isRunningOnRecordMode = pollyMode === 'record';
   const pollyOptions: PollyConfig = {
     adapters: [XHRAdapter],
     expiresIn: '14d',
 
-    expiryStrategy: 'error',
+    expiryStrategy: 'warn',
     flushRequestsOnStop: true,
     matchRequestsBy: {
       body: false,
@@ -27,7 +45,7 @@ export function createPollyContext(config: PollyConfig = {}) {
     persister: FSPersister,
     recordFailedRequests: true,
     recordIfMissing: false,
-    ...config,
+    ...pollyConfig,
     mode: pollyMode,
   };
   // @ts-expect-error This file should included in test, and even context must get initialized
@@ -68,7 +86,11 @@ export function createPollyContext(config: PollyConfig = {}) {
       .on('error', (req, err) => {
         // @ts-expect-error Error here defined as Network Error
         // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/status
-        const shouldIgnoreError = req.requestArguments?.xhr?.status === 0;
+        const isNetworkError = req.requestArguments?.xhr?.status === 0;
+        const isSnapshotExpiredError = err.message.includes(
+          'request has expired',
+        );
+        const shouldIgnoreError = isNetworkError && !isSnapshotExpiredError;
         if (isRunningOnRecordMode || !shouldIgnoreError) {
           throw new Error(
             [
@@ -81,6 +103,11 @@ export function createPollyContext(config: PollyConfig = {}) {
           );
         }
       });
+    if (appConfig?.enableMockServer) {
+      setupMockServer(context.polly, {
+        handlers: appConfig.mockRouteHandlers,
+      });
+    }
   });
   afterEach(async () => {
     await context.polly?.stop();

@@ -5,15 +5,14 @@
 
 import '@testing-library/jest-dom';
 import 'jest-expect-message';
+import '../testHelper/casual';
 
 import crypto from 'crypto';
 // @ts-expect-error no type for this module
 import MutationObserver from 'mutation-observer';
 import { TextEncoder } from 'util';
 
-// @ts-expect-error no type for this module
 global.MutationObserver = MutationObserver;
-// @ts-expect-error no type for this module
 global.TextEncoder = TextEncoder;
 
 // https://github.com/facebook/react/issues/11098
@@ -31,3 +30,5 @@ Object.defineProperty(global, 'crypto', {
     },
   },
 });
+
+jest.mock('./contexts/SpotifyWebPlayback/hooks/useLocalSpotifyPlayback');
