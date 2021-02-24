@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 import { ErrorFallback } from '../ErrorFallback';
 import { Loading } from '../Loading';
+import { PlaybackControl } from './components/PlaybackControl';
 import { TrackInfo } from './components/TrackInfo';
 
 const Container = styled.aside`
@@ -29,6 +30,7 @@ function MusicPlayerComponent() {
   return (
     <Container aria-label="music-player">
       <TrackInfo currentPlayingTrack={currentPlayingTrack?.item} />
+      <PlaybackControl />
     </Container>
   );
 }

@@ -68,11 +68,12 @@ export const Column = styled.div<{ key: string }>`
 
 const ControlToggle = styled.button`
   border: none;
+  outline: none;
   display: none;
   background-color: transparent;
   padding: 0px;
   margin: 0px;
-  color: white;
+  color: ${props => props.theme.colors.white};
   max-height: 100%;
   max-width: 100%;
 `;
