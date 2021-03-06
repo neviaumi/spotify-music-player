@@ -88,9 +88,7 @@ function useAuth({
       );
       return access_token;
     } catch (e) {
-      setAccessToken(undefined);
-      setTokenExpireTime(0);
-      throw new UnAuthenticatedError(e);
+      throw new UnAuthenticatedError(e.toJSON());
     }
   };
 
