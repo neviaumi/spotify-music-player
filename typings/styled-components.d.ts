@@ -1,7 +1,7 @@
 import 'styled-components';
 
-import * as themes from '../src/themes';
+import { theme } from '../src/contexts/Theme';
 
 declare module 'styled-components' {
-  export type DefaultTheme = themes;
+  export type DefaultTheme = theme;
 }

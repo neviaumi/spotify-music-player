@@ -1,11 +1,11 @@
-import type { Location } from 'history';
-
 import { AppError } from './AppError';
 
 export class UnAuthenticatedError extends AppError<{
-  location: Location;
+  orgError?: Error;
 }> {
-  constructor(location: Location) {
-    super('UnAuthenticated', 'UnAuthenticated', { location });
+  constructor(orgError?: Error) {
+    super('UnAuthenticated', 'UnAuthenticated', {
+      orgError: orgError,
+    });
   }
 }

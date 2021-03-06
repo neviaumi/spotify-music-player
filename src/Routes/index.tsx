@@ -1,8 +1,9 @@
 import { Route, Switch } from 'react-router-dom';
 
-import { AuthErrorBoundary } from '../components/ErrorBoundary/Auth';
+import { MusicPlayback } from '../components/MusicPlayback';
 import { Nav } from '../components/Nav';
 import { Panel } from '../components/Panel';
+import { SpotifyWebPlaybackProvider } from '../contexts/SpotifyWebPlayback';
 import { AlbumPage } from '../pages/album/:albumId';
 import { LoginPage } from '../pages/auth/login';
 import { LoginCallbackPage } from '../pages/auth/login/callback';
@@ -20,10 +21,10 @@ export function Routes() {
       <Route component={LoginPage} exact path="/auth/login" />
       <Route component={LoginCallbackPage} exact path="/auth/login/callback" />
       <Route component={DummyComponent} exact path="/metric/performance" />
-      <AuthErrorBoundary>
-        <ProtectedRoutes>
+      <ProtectedRoutes>
+        <SpotifyWebPlaybackProvider>
           <Panel
-            Bottom={<div>TODO!</div>}
+            Bottom={<MusicPlayback />}
             Left={<Nav />}
             Right={
               <Switch>
@@ -38,8 +39,8 @@ export function Routes() {
             }
             data-testid="panel"
           />
-        </ProtectedRoutes>
-      </AuthErrorBoundary>
+        </SpotifyWebPlaybackProvider>
+      </ProtectedRoutes>
     </Switch>
   );
 }

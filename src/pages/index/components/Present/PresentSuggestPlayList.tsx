@@ -70,7 +70,7 @@ const SuggestionDescription = styled.span`
   margin-top: ${props => props.theme.spaces.s};
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: ${props => props.theme.colors.natural255};
+  color: ${props => props.theme.colors.grey179};
   margin-top: ${props => props.theme.spaces.s};
   overflow: hidden;
 `;
@@ -90,7 +90,10 @@ export function PresentSuggestPlayList({
             data-testid={`${dataTestId}-item`}
             href=""
             key={suggestion.id}
-            onClick={() => onClickSuggestion(suggestion)}
+            onClick={e => {
+              e.preventDefault();
+              onClickSuggestion(suggestion);
+            }}
           >
             <SuggestionCover src={suggestion.images[0]?.url} />
             <SuggestionHeading>

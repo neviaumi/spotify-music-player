@@ -6,14 +6,10 @@ export function interceptNetlifyFunctions(polly: Polly) {
     server.namespace('.netlify/functions', () => {
       server.any('*').intercept(async (req, res) => {
         const functionName = req.pathname.split('/')[3];
-        const { handler } = await import(`../../${functionName}`);
-        const { body, headers, statusCode } = await handler(
-          {
-            queryStringParameters: req.query,
-          },
-          {},
+        const { body, statusCode } = await import(
+          `../../__mock__/${functionName}.json`
         );
-        res.status(statusCode).setHeaders(headers).send(body);
+        res.status(statusCode).json(body);
       });
     });
   });

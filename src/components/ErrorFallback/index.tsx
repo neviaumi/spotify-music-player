@@ -46,6 +46,9 @@ const JSONTextContainer = styled.pre`
 export function ErrorFallback({ error }: FallbackProps) {
   // @ts-expect-error react-error-boundary no way to configure error type
   const shouldSerializeError = error.isAxiosError !== true;
+  if (process.env.NODE_ENV === 'test')
+    // eslint-disable-next-line no-console
+    console.error(JSON.stringify(serializeError(error), null, 4));
   if (shouldSerializeError) {
     return (
       <Container aria-label={error.message}>

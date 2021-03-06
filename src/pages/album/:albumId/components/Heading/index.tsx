@@ -27,10 +27,10 @@ const Type = styled.span`
   font-size: 12px;
 `;
 
-const Info = styled.p`
+const Info = styled.section`
   margin: 4px 0px 0px 0px;
   font-size: 14px;
-  color: ${props => props.theme.colors.natural255};
+  color: ${props => props.theme.colors.grey179};
 `;
 
 const Creator = styled.figure`

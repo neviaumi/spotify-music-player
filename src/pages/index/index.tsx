@@ -13,6 +13,7 @@ import { SuggestAlbumByUserTopTracks } from './components/SuggestAlbumByUserTopT
 
 const Container = styled.div`
   padding: 0 32px;
+  height: 100%;
 `;
 export function Suggestion() {
   return (

@@ -30,7 +30,7 @@ const Type = styled.span`
 const Info = styled.p`
   margin: 4px 0px 0px 0px;
   font-size: 14px;
-  color: ${props => props.theme.colors.natural255};
+  color: ${props => props.theme.colors.grey179};
 `;
 
 const Creator = styled.a`

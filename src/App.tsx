@@ -16,6 +16,7 @@ import {
   DataFetchingConfigProviderProps,
   TestDataFetchingConfigProvider,
 } from './contexts/DataFetching';
+import { SpotifyWebPlaybackProvider } from './contexts/SpotifyWebPlayback';
 import { AppThemeProvider } from './contexts/Theme';
 import { Routes } from './Routes';
 
@@ -53,9 +54,11 @@ export function TestApp({
           })}
         >
           <TestAuthProvider {..._TestAuthProviderProps}>
-            <ErrorBoundary FallbackComponent={ErrorFallback}>
-              <Suspense>{children}</Suspense>
-            </ErrorBoundary>
+            <SpotifyWebPlaybackProvider>
+              <ErrorBoundary FallbackComponent={ErrorFallback}>
+                <Suspense>{children}</Suspense>
+              </ErrorBoundary>
+            </SpotifyWebPlaybackProvider>
           </TestAuthProvider>
         </Router>
       </TestDataFetchingConfigProvider>
