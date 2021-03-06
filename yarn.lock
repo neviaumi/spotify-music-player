@@ -4385,6 +4385,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/retry@0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
+  integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
+
 "@types/semver@^5.5.0":
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-5.5.0.tgz#146c2a29ee7d3bae4bf2fcb274636e264c813c45"
@@ -17406,7 +17411,7 @@ retry-axios@2.4.0:
   resolved "https://registry.yarnpkg.com/retry-axios/-/retry-axios-2.4.0.tgz#b5da2afed8dd0134c73c86206e1d1881d7c66a67"
   integrity sha512-rK7UBYgbrNoVothbSmM0tEm9DIiXapmVUrnUYn+d9AuQvF0AY5RkJU2FQvlufe9hlFwrCdDhrJTwiyRtR7wUaA==
 
-retry@^0.12.0:
+retry@0.12.0, retry@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=

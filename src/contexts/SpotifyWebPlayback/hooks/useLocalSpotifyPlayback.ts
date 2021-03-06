@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import retry from 'retry';
 
 import { useAuthContext } from '../../Auth/AuthContext';
 
@@ -48,8 +49,17 @@ export function useLocalSpotifyPlayback({ onPlayerStateChanged }: Props) {
     function setupSpotifyPlayer() {
       if (!isPlayerScriptLoaded || player) return;
       const playerInstance = new window.Spotify.Player({
-        getOAuthToken: async callback => {
-          getOrRefreshAccessToken().then(callback).catch(onPlayerError);
+        getOAuthToken(callback) {
+          const operation = retry.operation();
+
+          operation.attempt(() => {
+            getOrRefreshAccessToken()
+              .then(callback)
+              .catch(err => {
+                if (operation.retry(err)) return;
+                throw err;
+              });
+          });
         },
         name: window.location.host,
       });

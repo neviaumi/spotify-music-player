@@ -1,5 +1,3 @@
-/* eslint-disable*/
-
 import axios from 'axios';
 import constate from 'constate';
 import { useCallback, useState } from 'react';
@@ -13,11 +11,9 @@ import { getCurrentTimestamp } from '../../utils/getCurrentTimestamp';
 
 function useAuth({
   accessToken,
-  refreshToken,
   tokenExpireTime: hardCodedExpireTime,
 }: {
   accessToken?: string;
-  refreshToken?: string;
   tokenExpireTime?: number;
 }) {
   const [imMemoryAccessToken, setAccessToken] = useState<string | undefined>(
@@ -26,18 +22,13 @@ function useAuth({
   const [tokenExpireTime, setTokenExpireTime] = useState<number>(
     hardCodedExpireTime ?? 0,
   ); // unix timestamp
-  const [inMemoryRefreshToken, setInMemoryRefreshToken] = useState<
-    string | undefined | null
-  >(refreshToken || window.localStorage.getItem('refresh-token'));
 
   const setRefreshToken = useCallback((_refreshToken: string) => {
     window.localStorage.setItem('refresh-token', _refreshToken);
-    setInMemoryRefreshToken(_refreshToken);
   }, []);
 
-  const removeRefreshToken = useCallback(() => {
-    window.localStorage.removeItem('refresh-token');
-    setInMemoryRefreshToken(undefined);
+  const getRefreshToken = useCallback(() => {
+    return window.localStorage.getItem('refresh-token');
   }, []);
 
   const setToken = (
@@ -73,7 +64,8 @@ function useAuth({
     );
   };
   const refreshAccessToken = async () => {
-    if (!inMemoryRefreshToken) throw new UnAuthenticatedError();
+    const refreshToken = getRefreshToken();
+    if (!refreshToken) throw new UnAuthenticatedError();
     try {
       const {
         data: { access_token, refresh_token, expires_in },
@@ -81,7 +73,7 @@ function useAuth({
         data: new URLSearchParams({
           client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID!,
           grant_type: 'refresh_token',
-          refresh_token: inMemoryRefreshToken,
+          refresh_token: refreshToken,
         }).toString(),
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -96,10 +88,9 @@ function useAuth({
       );
       return access_token;
     } catch (e) {
-      removeRefreshToken();
       setAccessToken(undefined);
       setTokenExpireTime(0);
-      throw new UnAuthenticatedError(e.toJSON());
+      throw new UnAuthenticatedError(e);
     }
   };
 
