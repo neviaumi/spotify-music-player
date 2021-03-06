@@ -72,7 +72,10 @@ export function PresentUserPlaylist({ playlists, onClickPlayList }: Props) {
           <Item
             href=""
             key={playlist.id}
-            onClick={() => onClickPlayList(playlist)}
+            onClick={e => {
+              e.preventDefault();
+              onClickPlayList(playlist);
+            }}
           >
             {playlist.name}
           </Item>

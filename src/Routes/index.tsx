@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 
-import { MusicPlayer } from '../components/MusicPlayer';
+import { MusicPlayback } from '../components/MusicPlayback';
 import { Nav } from '../components/Nav';
 import { Panel } from '../components/Panel';
 import { SpotifyWebPlaybackProvider } from '../contexts/SpotifyWebPlayback';
@@ -24,7 +24,7 @@ export function Routes() {
       <ProtectedRoutes>
         <SpotifyWebPlaybackProvider>
           <Panel
-            Bottom={<MusicPlayer />}
+            Bottom={<MusicPlayback />}
             Left={<Nav />}
             Right={
               <Switch>
