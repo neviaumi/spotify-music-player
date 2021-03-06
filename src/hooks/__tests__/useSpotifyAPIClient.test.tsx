@@ -4,7 +4,9 @@ import { createPollyContext } from '../../../testHelper/polly/createPollyContext
 import { TestApp } from '../../App';
 import { useSpotifyAPIClient } from '../useSpotifyAPIClient';
 
-const context = createPollyContext();
+const context = createPollyContext({
+  pollyConfig: { mode: 'passthrough' },
+});
 
 describe('useSpotifyAPIClient', () => {
   it('call spotify api by given token', async () => {
@@ -35,7 +37,6 @@ describe('useSpotifyAPIClient', () => {
         .get('/v1/fake-endpoint')
         .times(1)
         .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
           interceptor.stopPropagation();
           res.status(400).json({});
         });
@@ -56,12 +57,12 @@ describe('useSpotifyAPIClient', () => {
   });
 
   it('retry api call if given token return 401', async () => {
+    window.localStorage.setItem('refresh-token', 'fakeRefreshToken');
     context.polly.server.host('https://accounts.spotify.com', () => {
       context.polly.server
         .post('/api/token')
         .times(1)
         .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
           interceptor.stopPropagation();
           res.status(200).json({
             access_token: 'newAccessToken',
@@ -74,7 +75,6 @@ describe('useSpotifyAPIClient', () => {
         .get('/v1/fake-endpoint')
         .times(1)
         .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
           interceptor.stopPropagation();
           res.status(401).json({});
         });
@@ -82,7 +82,6 @@ describe('useSpotifyAPIClient', () => {
         .get('/v1/fake-endpoint')
         .times(1)
         .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
           interceptor.stopPropagation();
           res.status(200).json({});
         });
@@ -92,7 +91,6 @@ describe('useSpotifyAPIClient', () => {
         <TestApp
           AuthProviderProps={{
             accessToken: 'fakeAccessToken',
-            refreshToken: 'fakeRefreshToken',
           }}
         >
           {children}
@@ -109,12 +107,12 @@ describe('useSpotifyAPIClient', () => {
   });
 
   it('throw exception if singToken always error', async () => {
+    window.localStorage.setItem('refresh-token', 'fakeRefreshToken');
     context.polly.server.host('https://accounts.spotify.com', () => {
       context.polly.server
         .post('/api/token')
         .times(1)
         .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
           interceptor.stopPropagation();
           res.status(400).json({});
         });
@@ -124,7 +122,6 @@ describe('useSpotifyAPIClient', () => {
         .get('/v1/fake-endpoint')
         .times(1)
         .intercept((_, res, interceptor) => {
-          // @ts-expect-error don't want type
           interceptor.stopPropagation();
           res.status(401).json({});
         });
@@ -134,7 +131,6 @@ describe('useSpotifyAPIClient', () => {
         <TestApp
           AuthProviderProps={{
             accessToken: 'fakeAccessToken',
-            refreshToken: 'fakeRefreshToken',
           }}
         >
           {children}
