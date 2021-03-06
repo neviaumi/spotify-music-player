@@ -32,11 +32,11 @@ const Button = styled.button`
   ${props => {
     if (props.disabled)
       return `
-color: ${props.theme.colors.natural128};
-fill: ${props.theme.colors.natural128};`;
+color: ${props.theme.colors.grey40};
+fill: ${props.theme.colors.grey40};`;
     return `
-color: ${props.theme.colors.natural255};
-fill: ${props.theme.colors.natural255};
+color: ${props.theme.colors.grey179};
+fill: ${props.theme.colors.grey179};
 &:hover {
   color: ${props.theme.colors.white};
   fill: ${props.theme.colors.white};
@@ -51,7 +51,7 @@ const ToggleButton = styled(Button)`
     const { disabled } = props;
     if (disabled) {
       return `
-background-color: ${props.theme.colors.natural255};
+background-color: ${props.theme.colors.grey179};
 color: ${props.theme.colors.black};
 fill: ${props.theme.colors.black};
 `;

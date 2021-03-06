@@ -50,13 +50,13 @@ export const HeaderColumn = styled.header.attrs({
   role: 'columnheader',
 })<{ key: string }>`
   align-items: flex-end;
-  color: ${props => props.theme.colors.natural255};
+  color: ${props => props.theme.colors.grey179};
   display: flex;
 `;
 
 export const Column = styled.div<{ key: string }>`
   align-items: center;
-  color: ${props => props.theme.colors.natural255};
+  color: ${props => props.theme.colors.grey179};
   display: flex;
   font-size: 12px;
   line-height: 22px;

@@ -39,7 +39,7 @@ const Title = styled.h1`
   font-size: 11px;
   line-height: 16px;
   padding-bottom: 24px;
-  border-bottom: 1px solid ${props => props.theme.colors.natural255};
+  border-bottom: 1px solid ${props => props.theme.colors.grey179};
 `;
 
 const ItemContainer = styled.section`
@@ -52,7 +52,7 @@ const ItemContainer = styled.section`
 const Item = styled.a`
   display: block;
   text-decoration: none;
-  color: ${props => props.theme.colors.natural255};
+  color: ${props => props.theme.colors.grey179};
   font-size: 14px;
   height: 32px;
   line-height: 32px;

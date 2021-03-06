@@ -70,7 +70,7 @@ const SuggestionDescription = styled.span`
   margin-top: ${props => props.theme.spaces.s};
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: ${props => props.theme.colors.natural255};
+  color: ${props => props.theme.colors.grey179};
   margin-top: ${props => props.theme.spaces.s};
   overflow: hidden;
 `;
