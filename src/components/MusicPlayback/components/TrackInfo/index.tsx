@@ -45,7 +45,7 @@ const TrackName = styled.h1`
 `;
 
 const Artist = styled.h2`
-  color: ${props => props.theme.colors.natural255};
+  color: ${props => props.theme.colors.grey179};
   font-weight: normal;
   font-size: 12px;
   text-overflow: ellipsis;

@@ -32,7 +32,7 @@ const TrackMeta = styled.aside`
 `;
 
 const TrackArtist = styled.a`
-  color: ${props => props.theme.colors.natural255};
+  color: ${props => props.theme.colors.grey179};
   opacity: 0.6;
 `;
 

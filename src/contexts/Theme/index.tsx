@@ -5,9 +5,9 @@ export const theme = {
   colors: {
     black: '#191414',
     green: '#1DB954',
+    grey179: '#b3b3b3',
+    grey40: '#282828',
     lightGreen: '#1ed760',
-    natural128: '#282828', // @TODO: rename to grey40
-    natural255: '#b3b3b3', // @TODO: rename to grey179
     white: '#FFFFFF',
   },
   spaces: {

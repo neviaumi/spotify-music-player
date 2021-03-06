@@ -30,11 +30,11 @@ const NavItem = styled.li<{ active?: boolean }>`
     active
       ? `
 color: ${theme.colors.white};
-background-color: ${theme.colors.natural128};
+background-color: ${theme.colors.grey40};
 font-weight: bold;
     `
       : `
-color: ${theme.colors.natural255};
+color: ${theme.colors.grey179};
 &:hover {
 color: ${theme.colors.white};
 }
