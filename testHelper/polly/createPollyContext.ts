@@ -1,5 +1,11 @@
 import XHRAdapter from '@pollyjs/adapter-xhr';
-import { InterceptHandler, MODE, Polly, PollyConfig } from '@pollyjs/core';
+import {
+  InterceptHandler,
+  MODE,
+  Polly,
+  PollyConfig,
+  Timing,
+} from '@pollyjs/core';
 import FSPersister from '@pollyjs/persister-fs';
 import kebabcase from 'lodash.kebabcase';
 import path from 'path';
@@ -45,6 +51,7 @@ export function createPollyContext(
     persister: FSPersister,
     recordFailedRequests: true,
     recordIfMissing: false,
+    timing: Timing.relative(1.0),
     ...pollyConfig,
     mode: pollyMode,
   };

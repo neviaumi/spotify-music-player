@@ -1,3 +1,12 @@
 import './CurrentlyPlayingContextObject';
 import './WebPlaybackState';
 import './CurrentlyPlayingObject';
+import './SimplifiedPlaylistObject';
+import './AlbumObject';
+import './PagingObject';
+import './PlayHistoryObject';
+import './RecommendationsObject';
+import './SimplifiedTrackObject';
+import './ArtistObject';
+import './TrackObject';
+import './PlaylistObject';
