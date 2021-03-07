@@ -21,24 +21,24 @@ const Container = styled.div`
 
 export function withPlayList(Wrapper: ComponentType<Props>) {
   return function WithPlayList() {
-    const { playListId } = useParams<{
-      playListId: string;
+    const { playlistId } = useParams<{
+      playlistId: string;
     }>();
-    const response = usePlayList(playListId);
+    const response = usePlayList(playlistId);
     return <Wrapper playList={response?.data} />;
   };
 }
 
 export function PresentPlayList({ playList }: Props) {
   return (
-    <Container>
+    <Container data-testid="/playlist/:playlistId">
       <Heading playList={playList} />
       <PlayListTracksList playList={playList} />
     </Container>
   );
 }
 
-export const PlayerListPage = withErrorBoundary<Props>(
+export const PlaylistPage = withErrorBoundary<Props>(
   withSuspense(withPlayList(PresentPlayList)),
   {
     FallbackComponent: ErrorFallback,

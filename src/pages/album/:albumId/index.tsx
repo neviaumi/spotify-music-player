@@ -31,7 +31,7 @@ export function withAlbum(Wrapper: ComponentType<Props>) {
 
 export function PresentAlbum({ album }: Props) {
   return (
-    <Container>
+    <Container data-testid="/album/:albumId">
       <Heading album={album} />
       <AlbumTracksList album={album} />
     </Container>

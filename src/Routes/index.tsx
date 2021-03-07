@@ -8,7 +8,7 @@ import { AlbumPage } from '../pages/album/:albumId';
 import { LoginPage } from '../pages/auth/login';
 import { LoginCallbackPage } from '../pages/auth/login/callback';
 import { Suggestion } from '../pages/index';
-import { PlayerListPage } from '../pages/playlist/:playListId';
+import { PlaylistPage } from '../pages/playlist/:playlistId';
 import { ProtectedRoutes } from './ProtectedRoutes';
 
 export function DummyComponent() {
@@ -30,9 +30,9 @@ export function Routes() {
               <Switch>
                 <Route component={Suggestion} exact path="/" />
                 <Route
-                  component={PlayerListPage}
+                  component={PlaylistPage}
                   exact
-                  path="/playlist/:playListId"
+                  path="/playlist/:playlistId"
                 />
                 <Route component={AlbumPage} exact path="/album/:albumId" />
               </Switch>
