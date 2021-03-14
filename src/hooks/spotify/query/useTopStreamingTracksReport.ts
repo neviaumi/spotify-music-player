@@ -1,5 +1,5 @@
-import axios from 'axios';
-import useSWR from 'swr';
+import axios, { AxiosRequestConfig } from 'axios';
+import { useQuery } from 'react-query';
 
 export enum Period {
   Weekly = 'weekly',
@@ -11,19 +11,33 @@ interface Props {
 }
 
 export function useTopStreamingTracksReport({ region, period }: Props) {
-  const { data } = useSWR(
-    region
-      ? ['GET', '/.netlify/functions/fetch-top-stream-report', region, period]
-      : null,
-    (method, url, _region, _period) =>
-      axios.request({
+  const queryParams: AxiosRequestConfig = {
+    method: 'GET',
+    params: {
+      period,
+      region,
+    },
+    url: '/.netlify/functions/fetch-top-stream-report',
+  };
+  const { data } = useQuery(
+    [
+      queryParams.method,
+      queryParams.url,
+      queryParams.params.region,
+      queryParams.params.period,
+    ],
+    () => {
+      const { method, params, url } = queryParams;
+      return axios.request({
         method,
-        params: {
-          period: _period,
-          region: _region,
-        },
+        params,
         url,
-      }),
+      });
+    },
+    {
+      enabled: region !== undefined,
+      staleTime: Number.POSITIVE_INFINITY,
+    },
   );
   if (!data) return undefined;
   return data;

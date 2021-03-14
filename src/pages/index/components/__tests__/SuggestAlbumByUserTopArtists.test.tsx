@@ -1,13 +1,28 @@
 import { render, screen } from '@testing-library/react';
 import event from '@testing-library/user-event';
+import casual from 'casual';
 import { createMemoryHistory } from 'history';
 import { TestApp } from 'src/App';
-import { useSuggestedAlbumByUserTopArtists } from 'src/hooks/spotify/query/useSuggestedAlbumByUserTopArtists';
 
+import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import type { Props } from '../Present/PresentSuggestAlbum';
 import { withSuggestAlbumByUserTopArtists } from '../SuggestAlbumByUserTopArtists';
 
-jest.mock('../../../../hooks/spotify/query/useSuggestedAlbumByUserTopArtists');
+const mockArtist = casual.ArtistObject({});
+const mockTrack = casual.SimplifiedTrackObject({});
+createPollyContext({
+  appConfig: {
+    enableMockServer: true,
+    mockRouteHandlers: {
+      '/me/top/artists': (_, res) => {
+        res.status(200).json(casual.PagingObject([mockArtist]));
+      },
+      '/recommendations': (_, res) => {
+        res.status(200).json(casual.RecommendationsObject([mockTrack]));
+      },
+    },
+  },
+});
 
 const SuggestPlayListByTopArtist = withSuggestAlbumByUserTopArtists(
   ({ onClickSuggestion, suggestions, title }: Props) => {
@@ -20,7 +35,7 @@ const SuggestPlayListByTopArtist = withSuggestAlbumByUserTopArtists(
               key={suggestion.id}
               onClick={() => onClickSuggestion(suggestion)}
             >
-              Dummy
+              {suggestion.name}
             </button>
           );
         })}
@@ -29,44 +44,18 @@ const SuggestPlayListByTopArtist = withSuggestAlbumByUserTopArtists(
   },
 );
 describe('Test SuggestAlbumByUserTopArtists component', () => {
-  it('have title', () => {
-    (useSuggestedAlbumByUserTopArtists as any).mockReturnValue({
-      data: {
-        albums: [
-          {
-            id: 'example-album',
-          },
-        ],
-        artists: [{ name: 'artist 1' }, { name: 'artist 2' }],
-      },
-    });
-    render(
-      <TestApp>
-        <SuggestPlayListByTopArtist />
-      </TestApp>,
-    );
-    expect(screen.getByText('More like artist 1')).toBeVisible();
-  });
-
-  it('Click suggestion should jump to /album/:id', () => {
-    (useSuggestedAlbumByUserTopArtists as any).mockReturnValue({
-      data: {
-        albums: [
-          {
-            id: 'example-album',
-          },
-        ],
-        artists: [{ name: 'artist' }],
-      },
-    });
+  it('Click suggestion should jump to /album/:id', async () => {
     const history = createMemoryHistory();
     render(
       <TestApp RouterProps={{ history }}>
         <SuggestPlayListByTopArtist />
       </TestApp>,
     );
-    expect(screen.getByRole('button')).toBeVisible();
-    event.click(screen.getByRole('button'));
-    expect(history.entries[1].pathname).toEqual('/album/example-album');
+    await expect(
+      screen.findByRole('heading', { name: `More like ${mockArtist.name}` }),
+    ).resolves.toBeVisible();
+
+    event.click(screen.getByRole('button', { name: mockTrack.album.name }));
+    expect(history.entries[1].pathname).toEqual(`/album/${mockTrack.album.id}`);
   });
 });

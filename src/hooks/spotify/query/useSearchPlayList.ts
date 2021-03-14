@@ -1,4 +1,5 @@
-import useSWR from 'swr';
+import type { AxiosRequestConfig } from 'axios';
+import { useQuery } from 'react-query';
 
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import type { PlaylistSimplified } from '../typings/Playlist';
@@ -8,18 +9,33 @@ interface Response {
 }
 
 export function useSearchPlayList(query?: string) {
+  const queryParams: AxiosRequestConfig = {
+    method: 'GET',
+    params: {
+      q: query,
+      type: 'playlist',
+    },
+    url: '/search',
+  };
   const apiClient = useSpotifyAPIClient();
-  const { data } = useSWR(
-    () => (query ? ['GET', `/search`, 'playlist', query] : null),
-    (method, url, searchType, queryString) =>
-      apiClient.request<Response>({
+  const { data } = useQuery(
+    [
+      queryParams.method,
+      queryParams.url,
+      queryParams.params.type,
+      queryParams.params.q,
+    ],
+    () => {
+      const { method, params, url } = queryParams;
+      return apiClient.request<Response>({
         method,
-        params: {
-          q: queryString,
-          type: searchType,
-        },
+        params,
         url,
-      }),
+      });
+    },
+    {
+      enabled: query !== undefined,
+    },
   );
   return data!;
 }

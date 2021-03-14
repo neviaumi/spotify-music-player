@@ -1,24 +1,38 @@
 import type { ReactNode } from 'react';
-import { ConfigInterface, SWRConfig } from 'swr';
+import {
+  QueryClient,
+  QueryClientProvider,
+  QueryClientProviderProps,
+} from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 export interface DataFetchingConfigProviderProps
-  extends ConfigInterface<unknown, unknown, (...args: unknown[]) => unknown> {
+  extends Partial<QueryClientProviderProps> {
   children?: ReactNode;
+  withDevTools?: boolean;
 }
 
 export function DataFetchingConfigProvider({
   children,
+  client,
+  withDevTools = true,
   ...rest
 }: DataFetchingConfigProviderProps) {
+  const queryClient =
+    client ??
+    new QueryClient({
+      defaultOptions: {
+        queries: {
+          refetchOnWindowFocus: false,
+          suspense: true,
+        },
+      },
+    });
   return (
-    <SWRConfig
-      value={{
-        suspense: true,
-        ...rest,
-      }}
-    >
+    <QueryClientProvider client={queryClient} {...rest}>
       {children}
-    </SWRConfig>
+      {withDevTools && <ReactQueryDevtools position="top-right" />}
+    </QueryClientProvider>
   );
 }
 
@@ -27,7 +41,7 @@ export function TestDataFetchingConfigProvider({
   ...rest
 }: DataFetchingConfigProviderProps) {
   return (
-    <DataFetchingConfigProvider {...rest}>
+    <DataFetchingConfigProvider {...rest} withDevTools={false}>
       {children}
     </DataFetchingConfigProvider>
   );

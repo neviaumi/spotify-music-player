@@ -1,8 +1,8 @@
 import type { AxiosRequestConfig } from 'axios';
 import constate from 'constate';
 import { useCallback, useState } from 'react';
+import { useQuery, useQueryClient } from 'react-query';
 import type { TrackSimplified } from 'src/hooks/spotify/typings/Track';
-import useSWR from 'swr';
 
 import { useSpotifyAPIClient } from '../../hooks/useSpotifyAPIClient';
 import { useLocalSpotifyPlayback } from './hooks/useLocalSpotifyPlayback';
@@ -13,6 +13,7 @@ import type { RepeatMode } from './states/RepeatMode';
 function useCreateSpotifyWebPlayback() {
   const playbackStateMachine = usePlaybackStateMachine(PlaybackState.INIT);
 
+  const queryClient = useQueryClient();
   const apiClient = useSpotifyAPIClient();
 
   const { playerError, player } = useLocalSpotifyPlayback({
@@ -36,19 +37,23 @@ function useCreateSpotifyWebPlayback() {
     apiClient,
     localPlayback: player,
   });
-  const {
-    data: currentPlaybackState,
-    error: getPlaybackStateError,
-    mutate: mutateCurrentPlaybackState,
-  } = useSWR(
+  const { data: currentPlaybackState, error: getPlaybackStateError } = useQuery(
     [playback.playbackType, 'getPlaybackState'],
     () => {
       return playback.getPlaybackState();
     },
     {
-      refreshInterval: playback.refreshInterval,
+      refetchInterval: playback.refreshInterval,
       suspense: false,
     },
+  );
+  const invalidCurrentPlaybackState = useCallback(
+    () =>
+      queryClient.invalidateQueries([
+        playback.playbackType,
+        'getPlaybackState',
+      ]),
+    [playback.playbackType, queryClient],
   );
   const playOnDeviceId = currentPlaybackState?.is_active
     ? currentPlaybackState?.device.id
@@ -73,7 +78,7 @@ function useCreateSpotifyWebPlayback() {
         playbackStateMachine.can(PlaybackState.PLAY_ON_LOCAL_PLAYBACK)
       )
         playbackStateMachine.playOnLocalPlayback();
-      else await mutateCurrentPlaybackState();
+      else await invalidCurrentPlaybackState();
       setIsLoading(false);
     },
     [
@@ -82,7 +87,7 @@ function useCreateSpotifyWebPlayback() {
       apiClient,
       isLocalDeviceId,
       playbackStateMachine,
-      mutateCurrentPlaybackState,
+      invalidCurrentPlaybackState,
     ],
   );
 

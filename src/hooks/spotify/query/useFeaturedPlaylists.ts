@@ -1,4 +1,5 @@
-import useSWR from 'swr';
+import type { AxiosRequestConfig } from 'axios';
+import { useQuery } from 'react-query';
 
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import { useUserCountry } from '../../useUserCountry';
@@ -14,20 +15,35 @@ export function useFeaturedPlaylists() {
   const apiClient = useSpotifyAPIClient();
   const country = useUserCountry();
 
-  const { data } = useSWR(
-    country
-      ? ['GET', 'browse/featured-playlists', country, navigator.language]
-      : null,
-    (method, url, requestCountry, locale) =>
-      apiClient.request<Response>({
+  const queryParams: AxiosRequestConfig = {
+    method: 'GET',
+    params: {
+      country,
+      locale: navigator.language.replace('-', '_'),
+    },
+    url: 'browse/featured-playlists',
+  };
+  const { data } = useQuery(
+    [
+      queryParams.method,
+      queryParams.url,
+      queryParams.params.country,
+      queryParams.params.locale,
+    ],
+    () => {
+      const { method, params, url } = queryParams;
+      return apiClient.request<Response>({
         method,
         params: {
-          country: requestCountry,
+          ...params,
           limit: 50,
-          locale: locale.replace('-', '_'),
         },
         url,
-      }),
+      });
+    },
+    {
+      enabled: country !== undefined,
+    },
   );
   return data;
 }
