@@ -14,6 +14,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.netlify" />
       <excludePattern pattern="yarn-error.log" />
       <excludePattern pattern="yarn.lock" />
+      <excludePattern pattern="*.har" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

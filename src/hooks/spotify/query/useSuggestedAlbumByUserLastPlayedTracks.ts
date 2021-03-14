@@ -19,7 +19,7 @@ export function useSuggestedAlbumByUserLastPlayedTracks():
     recentPlayedTrack?.data.items.map(item => item.track.id) ?? [],
     SeedType.SeedTracks,
   );
-  if (!recommendations) return undefined;
+  if (!recommendations || !recentPlayedTrack) return undefined;
   const {
     data: { tracks: recommendTracks },
   } = recommendations;
@@ -33,7 +33,7 @@ export function useSuggestedAlbumByUserLastPlayedTracks():
     ...recommendations,
     data: {
       albums: albums,
-      tracks: recentPlayedTrack?.data.items.map(item => item.track).slice(0, 5),
+      tracks: recentPlayedTrack.data.items.map(item => item.track).slice(0, 5),
     },
   };
 }

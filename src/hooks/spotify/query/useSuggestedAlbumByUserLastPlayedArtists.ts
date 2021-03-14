@@ -18,7 +18,7 @@ export function useSuggestedAlbumByUserLastPlayedArtists():
   const recentPlayedTrackArtists = uniqWith<ArtistSimplified, void>(
     // @ts-expect-error error come from ramda internal type
     eqBy(prop('id')),
-    recentPlayedTrack?.data?.items.map(item => item.track.artists).flat() ?? [],
+    recentPlayedTrack?.data.items.map(item => item.track.artists).flat() ?? [],
   );
 
   const recommendations = useRecommendations(

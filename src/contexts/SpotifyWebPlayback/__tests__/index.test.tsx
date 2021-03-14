@@ -3,13 +3,11 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import casual from 'casual';
 import type { PropsWithChildren } from 'react';
-import { mutate } from 'swr';
 
 import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../../App';
 import type { TrackSimplified } from '../../../hooks/spotify/typings/Track';
 import { PlaybackState, useSpotifyWebPlayback } from '../';
-import { PlaybackType } from '../states/PlaybackState';
 import { RepeatMode } from '../states/RepeatMode';
 
 const context = createPollyContext();
@@ -98,11 +96,6 @@ function DummyComponents({
   );
 }
 
-async function cleanCache() {
-  // https://github.com/vercel/swr/issues/781
-  await mutate([PlaybackType.Remote, 'getPlaybackState']);
-}
-
 describe('Test SpotifyWebPlayback', () => {
   it('.changeRepeatMode should call API', async () => {
     const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
@@ -123,7 +116,6 @@ describe('Test SpotifyWebPlayback', () => {
         />
       </TestApp>,
     );
-    await cleanCache();
     userEvent.click(
       await screen.findByRole('button', { name: 'changeRepeatMode' }),
     );
@@ -167,7 +159,6 @@ describe('Test SpotifyWebPlayback', () => {
           />
         </TestApp>,
       );
-      await cleanCache();
       userEvent.click(
         await screen.findByRole('button', { name: 'toggleShuffleMode' }),
       );
@@ -199,7 +190,6 @@ describe('Test SpotifyWebPlayback', () => {
         />
       </TestApp>,
     );
-    await cleanCache();
     userEvent.click(
       await screen.findByRole('button', { name: 'playPreviousTrack' }),
     );
@@ -229,7 +219,6 @@ describe('Test SpotifyWebPlayback', () => {
         />
       </TestApp>,
     );
-    await cleanCache();
     userEvent.click(
       await screen.findByRole('button', { name: 'playNextTrack' }),
     );
@@ -259,7 +248,6 @@ describe('Test SpotifyWebPlayback', () => {
         />
       </TestApp>,
     );
-    await cleanCache();
     userEvent.click(
       await screen.findByRole('button', { name: 'pauseUserPlayback' }),
     );
@@ -288,7 +276,6 @@ describe('Test SpotifyWebPlayback', () => {
         />
       </TestApp>,
     );
-    await cleanCache();
 
     userEvent.click(
       await screen.findByRole('button', { name: 'playTrackOnUserPlayback' }),
@@ -337,7 +324,6 @@ describe('Test SpotifyWebPlayback', () => {
           />
         </TestApp>,
       );
-      await cleanCache();
 
       userEvent.click(
         await screen.findByRole('button', { name: 'togglePlayMode' }),
@@ -399,7 +385,6 @@ describe('Test SpotifyWebPlayback', () => {
           />
         </TestApp>,
       );
-      await cleanCache();
 
       userEvent.click(
         await screen.findByRole('button', { name: 'togglePlayMode' }),

@@ -3,10 +3,14 @@ import { createMemoryHistory } from 'history';
 
 import { createPollyContext } from '../../../../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../../../../App';
-import { LoginCallbackPage } from '../index';
+import { Routes } from '../../../../index';
 
-const context = createPollyContext();
-describe('Callback page', () => {
+createPollyContext({
+  appConfig: {
+    enableMockServer: true,
+  },
+});
+describe('Test /auth/login/callback', () => {
   beforeAll(() => {
     const orgWindowLocation = window.location;
     // @ts-expect-error
@@ -30,16 +34,12 @@ describe('Callback page', () => {
         },
       }),
     );
-    const history = createMemoryHistory();
-    context.polly.server.any().intercept((_req, res) => {
-      res.setHeader('Access-Control-Allow-Headers', '*');
-      res.setHeader('Access-Control-Allow-Methods', '*');
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.status(200).json({});
+    const history = createMemoryHistory({
+      initialEntries: ['/auth/login/callback'],
     });
     render(
       <TestApp RouterProps={{ history }}>
-        <LoginCallbackPage />
+        <Routes />
       </TestApp>,
     );
     await waitFor(() => {
