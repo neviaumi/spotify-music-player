@@ -33,14 +33,14 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-error-boundary": "3.1.1",
+    "react-query": "^3.12.1",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
     "react-use": "17.2.1",
     "retry": "0.12.0",
     "retry-axios": "2.4.0",
     "serialize-error": "8.0.1",
-    "styled-components": "5.2.1",
-    "swr": "0.5.3"
+    "styled-components": "5.2.1"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "7.13.10",

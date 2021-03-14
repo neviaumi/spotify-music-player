@@ -1,5 +1,5 @@
-import type { AxiosResponse } from 'axios';
-import useSWR from 'swr';
+import type { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { useQuery } from 'react-query';
 
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import type { ArtistFull } from '../typings/Artist';
@@ -19,16 +19,21 @@ interface UseUserTopHooks {
 export const useUserTop: UseUserTopHooks = function useUserTop(
   type: QueryType,
 ) {
+  const queryParams: AxiosRequestConfig = {
+    method: 'GET',
+    url: `/me/top/${type}`,
+  };
   const apiClient = useSpotifyAPIClient();
-  const { data } = useSWR(['GET', `/me/top/${type}`], (method, url) =>
-    apiClient.request({
+  const { data } = useQuery([queryParams.method, queryParams.url], () => {
+    const { method, url } = queryParams;
+    return apiClient.request({
       method,
       params: {
         limit: 50,
         time_range: 'short_term',
       },
       url,
-    }),
-  );
+    });
+  });
   return data!;
 };

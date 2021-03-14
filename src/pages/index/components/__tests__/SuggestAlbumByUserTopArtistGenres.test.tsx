@@ -1,15 +1,29 @@
 import { render, screen } from '@testing-library/react';
 import event from '@testing-library/user-event';
+import casual from 'casual';
 import { createMemoryHistory } from 'history';
+import capitalize from 'lodash.capitalize';
 import { TestApp } from 'src/App';
-import { useSuggestedAlbumByUserTopArtistGenres } from 'src/hooks/spotify/query/useSuggestedAlbumByUserTopArtistGenres';
 
+import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import type { Props } from '../Present/PresentSuggestAlbum';
 import { withSuggestAlbumByUserTopArtistGenres } from '../SuggestAlbumByUserTopArtistGenres';
 
-jest.mock(
-  '../../../../hooks/spotify/query/useSuggestedAlbumByUserTopArtistGenres',
-);
+const mockArtist = casual.ArtistObject({});
+const mockTrack = casual.SimplifiedTrackObject({});
+createPollyContext({
+  appConfig: {
+    enableMockServer: true,
+    mockRouteHandlers: {
+      '/me/top/artists': (_, res) => {
+        res.status(200).json(casual.PagingObject([mockArtist]));
+      },
+      '/recommendations': (_, res) => {
+        res.status(200).json(casual.RecommendationsObject([mockTrack]));
+      },
+    },
+  },
+});
 
 const SuggestAlbumByUserTopArtistGenres = withSuggestAlbumByUserTopArtistGenres(
   ({ onClickSuggestion, suggestions, title }: Props) => {
@@ -22,7 +36,7 @@ const SuggestAlbumByUserTopArtistGenres = withSuggestAlbumByUserTopArtistGenres(
               key={suggestion.id}
               onClick={() => onClickSuggestion(suggestion)}
             >
-              Dummy
+              {suggestion.name}
             </button>
           );
         })}
@@ -32,44 +46,18 @@ const SuggestAlbumByUserTopArtistGenres = withSuggestAlbumByUserTopArtistGenres(
 );
 
 describe('Test SuggestAlbumByUserTopArtistGenres component', () => {
-  it('have title', () => {
-    (useSuggestedAlbumByUserTopArtistGenres as any).mockReturnValue({
-      data: {
-        albums: [
-          {
-            id: 'example-album',
-          },
-        ],
-        genres: ['Rock', 'Roll'],
-      },
-    });
-    render(
-      <TestApp>
-        <SuggestAlbumByUserTopArtistGenres />
-      </TestApp>,
-    );
-    expect(screen.getByText('Rock')).toBeVisible();
-  });
-
-  it('Click suggestion should jump to /album/:id', () => {
-    (useSuggestedAlbumByUserTopArtistGenres as any).mockReturnValue({
-      data: {
-        albums: [
-          {
-            id: 'example-album',
-          },
-        ],
-        genres: ['Rock', 'Roll'],
-      },
-    });
+  it('Click suggestion should jump to /album/:id', async () => {
     const history = createMemoryHistory();
     render(
       <TestApp RouterProps={{ history }}>
         <SuggestAlbumByUserTopArtistGenres />
       </TestApp>,
     );
-    expect(screen.getByRole('button')).toBeVisible();
-    event.click(screen.getByRole('button'));
-    expect(history.entries[1].pathname).toEqual('/album/example-album');
+    await expect(
+      screen.findByRole('heading', { name: capitalize(mockArtist.genres[0]) }),
+    ).resolves.toBeVisible();
+
+    event.click(screen.getByRole('button', { name: mockTrack.album.name }));
+    expect(history.entries[1].pathname).toEqual(`/album/${mockTrack.album.id}`);
   });
 });

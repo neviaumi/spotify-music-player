@@ -1,13 +1,24 @@
-import axios from 'axios';
-import useSWR from 'swr';
+import axios, { AxiosRequestConfig } from 'axios';
+import { useQuery } from 'react-query';
 
 export function useUserCountry() {
-  const { data } = useSWR(['GET', 'https://ipinfo.io/json'], (method, url) =>
-    axios.request({
-      method,
-      params: { token: process.env.REACT_APP_IPINFO_TOKEN },
-      url,
-    }),
+  const queryParams: AxiosRequestConfig = {
+    method: 'GET',
+    url: 'https://ipinfo.io/json',
+  };
+  const { data } = useQuery(
+    [queryParams.method, queryParams.url],
+    () => {
+      const { method, url } = queryParams;
+      return axios.request({
+        method,
+        params: { token: process.env.REACT_APP_IPINFO_TOKEN },
+        url,
+      });
+    },
+    {
+      staleTime: Number.POSITIVE_INFINITY, // Cache will never expire
+    },
   );
   if (!data) return undefined;
   return data.data.country ?? 'global';

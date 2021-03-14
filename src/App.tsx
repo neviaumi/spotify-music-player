@@ -1,10 +1,8 @@
 import { createMemoryHistory } from 'history';
 import type { ReactNode } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
 import type { RouterProps } from 'react-router';
 import { BrowserRouter, Router } from 'react-router-dom';
 
-import { ErrorFallback } from './components/ErrorFallback';
 import { Suspense } from './components/Suspense/withSuspense';
 import {
   AuthContextProvider,
@@ -55,9 +53,7 @@ export function TestApp({
         >
           <TestAuthProvider {..._TestAuthProviderProps}>
             <SpotifyWebPlaybackProvider>
-              <ErrorBoundary FallbackComponent={ErrorFallback}>
-                <Suspense>{children}</Suspense>
-              </ErrorBoundary>
+              <Suspense>{children}</Suspense>
             </SpotifyWebPlaybackProvider>
           </TestAuthProvider>
         </Router>

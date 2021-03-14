@@ -1,11 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import casual from 'casual';
-import { mutate } from 'swr';
 
 import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../../App';
-import { PlaybackType } from '../../../contexts/SpotifyWebPlayback/states/PlaybackState';
 import { TracksList } from '../index';
 
 const currentPlaying = casual.CurrentlyPlayingContextObject();
@@ -23,11 +21,6 @@ createPollyContext({
   },
 });
 
-async function cleanCache() {
-  // https://github.com/vercel/swr/issues/781
-  await mutate([PlaybackType.Remote, 'getPlaybackState']);
-}
-
 describe('Test TracksList', () => {
   it('Include index column', async () => {
     render(
@@ -40,7 +33,6 @@ describe('Test TracksList', () => {
         />
       </TestApp>,
     );
-    await cleanCache();
     await expect(screen.findAllByRole('columnheader')).resolves.toHaveLength(1);
   });
 
@@ -66,7 +58,6 @@ describe('Test TracksList', () => {
         />
       </TestApp>,
     );
-    await cleanCache();
 
     await expect(
       screen.findByRole('img', { name: 'streaming' }),
@@ -97,7 +88,6 @@ describe('Test TracksList', () => {
         />
       </TestApp>,
     );
-    await cleanCache();
 
     userEvent.dblClick(
       await screen.findByRole('listitem', { name: 'track-item-0' }),
