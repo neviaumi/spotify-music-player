@@ -34,6 +34,7 @@
     "react-dom": "17.0.1",
     "react-error-boundary": "3.1.1",
     "react-query": "3.12.1",
+    "react-range": "1.8.7",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
     "react-use": "17.2.1",

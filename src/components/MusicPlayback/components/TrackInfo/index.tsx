@@ -54,7 +54,7 @@ const Artist = styled.h2`
 `;
 
 export function TrackInfo({ currentPlayingTrack }: Props) {
-  if (!currentPlayingTrack) return <></>;
+  if (!currentPlayingTrack) return <Container />;
   return (
     <Container>
       <ThumbnailFigure>

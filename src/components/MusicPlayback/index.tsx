@@ -15,6 +15,8 @@ const Container = styled.aside`
   padding: 0 16px;
   height: 90px;
   align-items: center;
+  background-color: ${props => props.theme.colors.grey24};
+  border-top: 1px solid ${props => props.theme.colors.grey40};
 `;
 
 function MusicPlaybackComponent() {
