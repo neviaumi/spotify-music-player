@@ -64,7 +64,8 @@ export function useLocalSpotifyPlayback({ onPlayerStateChanged }: Props) {
         name: window.location.host,
       });
 
-      playerInstance.addListener('ready', () => {
+      playerInstance.addListener('ready', ({ device_id }) => {
+        playerInstance._options.id = device_id; // https://developer.spotify.com/documentation/web-playback-sdk/reference/#playing-a-spotify-uri
         setSpotifyPlayer(playerInstance);
       });
       playerInstance.addListener('player_state_changed', onPlayerStateChanged);

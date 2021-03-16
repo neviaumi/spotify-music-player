@@ -2791,10 +2791,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^9.9.5":
-  version "9.9.5"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-9.9.5.tgz#2a1532a64a8721dafdbc38262528440329a296cf"
-  integrity sha512-1IXONOLuy/Jr0+DwxQ5e3xLab7hBUlwN19EBfmTAvlRvdogrTMz2pjC+49zVZEslidd4a66Evgix+2R8ui/JSg==
+"@netlify/build@^9.9.7":
+  version "9.9.7"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-9.9.7.tgz#0410d5525fe3c0f196a21228d266a3c7644f15ae"
+  integrity sha512-IEh3GdretsA1P0sZG42CbpcFsguM3rrv76f15R4uYsPGtUBF/ETR/+lIww6am2uuKEur7DilJrY/FYJPjxOqPA==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^1.0.7"
@@ -2802,7 +2802,7 @@
     "@netlify/functions-utils" "^1.3.13"
     "@netlify/git-utils" "^1.0.8"
     "@netlify/plugin-edge-handlers" "^1.11.5"
-    "@netlify/plugins-list" "^2.4.0"
+    "@netlify/plugins-list" "^2.4.1"
     "@netlify/run-utils" "^1.0.6"
     "@netlify/zip-it-and-ship-it" "^2.7.1"
     "@sindresorhus/slugify" "^1.1.0"
@@ -2826,6 +2826,8 @@
     netlify-plugin-deploy-preview-commenting "^0.0.1-alpha.16"
     os-name "^3.1.0"
     p-event "^4.1.0"
+    p-every "^2.0.0"
+    p-locate "^4.1.0"
     p-reduce "^2.1.0"
     path-exists "^4.0.0"
     path-type "^4.0.0"
@@ -3007,10 +3009,10 @@
     rollup-plugin-terser "^7.0.2"
     typescript "^4.1.5"
 
-"@netlify/plugins-list@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-2.4.0.tgz#96d10d1bd15257ab87e887cb54422dd37c3f8921"
-  integrity sha512-006JT4L3G36rzGkFnpHr/GOVaEfapSNAfWfsfS16tcPwjwz9fGSndfODeou7x4IU5IrHgEOJ6xQQKKqNjbfj4g==
+"@netlify/plugins-list@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-2.4.1.tgz#364425ebe0612417cd17a30d5c6c677fe5472596"
+  integrity sha512-UtBdYK1LodrnOEuLmDWxBblDPQwlQADFNfKzgkmPaAQ6rGQmKpu5UqAr+u0HAJa2cjm5Pr1Zfs1dBhj0bWnmxw==
 
 "@netlify/run-utils@^1.0.6":
   version "1.0.6"
@@ -4267,10 +4269,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.10.tgz#5958a82e41863cfc71f2307b3748e3491ba03785"
   integrity sha512-J32dgx2hw8vXrSbu4ZlVhn1Nm3GbeCFNw2FWL8S5QKucHGY0cyNwjdQdO+KMBZ4wpmC7KhLCiNsdk1RFRIYUQQ==
 
-"@types/node@13.13.46":
-  version "13.13.46"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.46.tgz#5471e176f3fa15e018dea7992072bf8ca208a3a6"
-  integrity sha512-dqpbzK/KDsOlEt+oyB3rv+u1IxlLFziZu/Z0adfRKoelkr+sTd6QcgiQC+HWq/vkYkHwG5ot2LxgV05aAjnhcg==
+"@types/node@13.13.47":
+  version "13.13.47"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.47.tgz#6eca42c3462821309b26edbc2eff0db1e37ab9bc"
+  integrity sha512-R6851wTjN1YJza8ZIeX6puNBSi/ZULHVh4WVleA7q256l+cP2EtXnKbO455fTs2ytQk3dL9qkU+Wh8l/uROdKg==
 
 "@types/node@>= 8", "@types/node@^14.0.27":
   version "14.14.22"
@@ -4348,10 +4350,10 @@
   resolved "https://registry.yarnpkg.com/@types/pollyjs__persister/-/pollyjs__persister-4.3.1.tgz#4d2491bea42846ad60b2fde796396de13d8c4c18"
   integrity sha512-h8MNPbBGM5fRCXGA/xAw6bFZT1oJhnPaoTpDp07PHN63YZvRR0NdeJYphFod+PX1GOhDHrIXxtB912JlwJwGHw==
 
-"@types/prettier@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.2.2.tgz#e2280c89ddcbeef340099d6968d8c86ba155fdf6"
-  integrity sha512-i99hy7Ki19EqVOl77WplDrvgNugHnsSjECVR/wUrzw2TJXz1zlUfT2ngGckR6xN7yFYaijsMAqPkOLx9HgUqHg==
+"@types/prettier@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.2.3.tgz#ef65165aea2924c9359205bf748865b8881753c0"
+  integrity sha512-PijRCG/K3s3w1We6ynUKdxEc5AcuuH3NBmMDP8uvKVp6X43UY7NQlTzczakXP3DJR0F4dfNQIGjU2cUeRYs2AA==
 
 "@types/prettier@^2.0.0":
   version "2.1.5"
@@ -4373,10 +4375,10 @@
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.5.tgz#434711bdd49eb5ee69d90c1d67c354a9a8ecb18b"
   integrity sha512-/JHkVHtx/REVG0VVToGRGH2+23hsYLHdyG+GrvoUGlGAd0ErauXDyvHtRI/7H7mzLm+tBCKA7pfcpkQ1lf58iQ==
 
-"@types/ramda@0.27.38":
-  version "0.27.38"
-  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.27.38.tgz#797d5cdc9e00482e665dfea28142bb6c3c5f11e7"
-  integrity sha512-tZoQ0lv1WKkrpBHemL8yCkI9p8kUk/1PSMwhl0eeyqMQjD+2ePUtVLV8PpNS9Kq3OktObwOx9I3k+HumxTviRg==
+"@types/ramda@0.27.39":
+  version "0.27.39"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.27.39.tgz#7541d9d745a2003c8f635897dff8c65c12be9327"
+  integrity sha512-od24Hng0uS1NcMSPo6ZzKXN2WJxjbF7IBzQhRCtSDyIShdEJTAWXgQlyDg998aylNrXbVvQxkFJmuaLHQcfczg==
   dependencies:
     ts-toolbelt "^6.15.1"
 
@@ -4499,10 +4501,10 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.0.tgz#7036640b4e21cc2f259ae826ce843d277dad8cff"
   integrity sha512-RJJrrySY7A8havqpGObOB4W92QXKJo63/jFLLgpvOtsGUqbQZ9Sbgl35KMm1DjC6j7AvmmU2bIno+3IyEaemaw==
 
-"@types/styled-components@5.1.8":
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.8.tgz#41338fe060c543567ae94ab420036865a9b969d0"
-  integrity sha512-or4lQ12MhR4wTZ34rxRwI+Fw9vPqhd9WeEqFfF6yssDe1uS7L8p9YYMbmtDgHRbBKLR4aJIK8KHA0h9wSYifkg==
+"@types/styled-components@5.1.9":
+  version "5.1.9"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.9.tgz#00d3d84b501420521c4db727e3c195459f87a6cf"
+  integrity sha512-kbEG6YlwK8rucITpKEr6pA4Ho9KSQHUUOzZ9lY3va1mtcjvS3D0wDciFyHEiNHKLL/npZCKDQJqm0x44sPO9oA==
   dependencies:
     "@types/hoist-non-react-statics" "*"
     "@types/react" "*"
@@ -14278,12 +14280,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@3.10.12:
-  version "3.10.12"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.10.12.tgz#259c3a6fa55d4f20c2978a579553c0e68b116d18"
-  integrity sha512-W8y7oU40t5xxJLvBNiVxInZ6nvb6OgKDha/Wqmxxi9yUtoKLC+//oYctbTFLzVvtsPBTfhZwh3mm26aHPf052w==
+netlify-cli@3.11.1:
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.11.1.tgz#2c0fc72b71e1bac233e52941585dd42e03f8cbd7"
+  integrity sha512-EXogwFstd61nYTL+rg7K1TOTxRQc73KlWkZYeIfr9m9r9YOv7lmDQbUwOiL4Lyd0WFv3aHM3P4nNAxLsPRVq6w==
   dependencies:
-    "@netlify/build" "^9.9.5"
+    "@netlify/build" "^9.9.7"
     "@netlify/config" "^4.1.3"
     "@netlify/framework-info" "^2.3.0"
     "@netlify/plugin-edge-handlers" "^1.11.5"
@@ -15111,6 +15113,13 @@ p-event@^4.1.0:
   integrity sha512-KXatOjCRXXkSePPb1Nbi0p0m+gQAwdlbhi4wQKJPI1HsMQS9g+Sqp2o+QHziPr7eYJyOZet836KoHEVM1mwOrQ==
   dependencies:
     p-timeout "^3.1.0"
+
+p-every@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/p-every/-/p-every-2.0.0.tgz#ad940b82b1bd1da01c307b11e1dd25fe7286181a"
+  integrity sha512-MCz9DqD5opPC48Zsd+BHm56O/HfhYIQQtupfDzhXoVgQdg/Ux4F8/JcdRuQ+arq7zD5fB6zP3axbH3d9Nr8dlw==
+  dependencies:
+    p-map "^2.0.0"
 
 p-filter@^2.1.0:
   version "2.1.0"
@@ -16918,14 +16927,19 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-query@^3.12.1:
-  version "3.12.1"
-  resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.12.1.tgz#6d60f32f368734fe03fd7d1a291a7715f4488c12"
-  integrity sha512-NdO1yucDM2ic4JkK46qgGjGggtHjT/R7I7gCChTllYHvZn2DVtIGwH6P1UVtGZVLgL7hn5Eq3Cw7eDbMija5uA==
+react-query@3.12.2:
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.12.2.tgz#57ae8056ba0cb63c9755cd00dc4cda45b29f9bb6"
+  integrity sha512-Qq/Vy+sz4QscLPfcZMrMHfuZKbKr47tsttHgcqkOiZGhLjsnYkLGcsSnMdOSLBzhzziYhs1i3plLmF0VMZw2Ng==
   dependencies:
     "@babel/runtime" "^7.5.5"
     broadcast-channel "^3.4.1"
     match-sorter "^6.0.2"
+
+react-range@1.8.7:
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.8.7.tgz#a890bc614517b5579179f6a2b44e642786f8d96e"
+  integrity sha512-M8vaKB2vCU04BWq/kae/e5xu5WWm/lfFHXWkSiFWWm00+fqNvhYAeNYmiXR82WgwQAwRmew7Wcy7HC9pZj5QcA==
 
 react-refresh@^0.8.3:
   version "0.8.3"
