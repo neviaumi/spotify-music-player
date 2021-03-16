@@ -24,8 +24,10 @@ describe('Test useLocalSpotifyPlayback', () => {
     });
     window.onSpotifyWebPlaybackSDKReady();
     const mockPlayer = {
+      _options: {},
       addListener: jest.fn().mockImplementation((event, callback) => {
-        if (event === 'ready') setImmediate(callback);
+        if (event === 'ready')
+          setImmediate(() => callback({ device_id: 'mockId' }));
       }),
       connect: jest.fn(),
     };
@@ -41,6 +43,8 @@ describe('Test useLocalSpotifyPlayback', () => {
     const eventListened = mockPlayer.addListener.mock.calls
       .map(call => call[0])
       .sort();
+    // @ts-expect-error
+    expect(mockPlayer._options.id).toEqual('mockId');
     expect(eventListened).toEqual(
       [
         'ready',
