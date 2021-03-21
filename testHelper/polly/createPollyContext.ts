@@ -1,17 +1,11 @@
 import XHRAdapter from '@pollyjs/adapter-xhr';
-import {
-  InterceptHandler,
-  MODE,
-  Polly,
-  PollyConfig,
-  Timing,
-} from '@pollyjs/core';
+import { MODE, Polly, PollyConfig, Timing } from '@pollyjs/core';
 import FSPersister from '@pollyjs/persister-fs';
 import kebabcase from 'lodash.kebabcase';
 import path from 'path';
 
 import { getCurrentTestPath } from './getCurrentTestPath';
-import { setupMockServer } from './setupMockServer';
+import { APIMock, setupMockServer } from './setupMockServer';
 
 Polly.register(XHRAdapter);
 Polly.register(FSPersister);
@@ -20,9 +14,7 @@ export function createPollyContext(
   config: {
     appConfig?: {
       enableMockServer: boolean;
-      mockRouteHandlers?: {
-        [key: string]: InterceptHandler;
-      };
+      mockRouteHandlers?: APIMock;
     };
     pollyConfig?: PollyConfig;
   } = {},

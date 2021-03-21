@@ -37,7 +37,11 @@ function useCreateSpotifyWebPlayback() {
     apiClient,
     localPlayback: player,
   });
-  const { data: currentPlaybackState, error: getPlaybackStateError } = useQuery(
+  const {
+    data: currentPlaybackState,
+    error: getPlaybackStateError,
+    refetch,
+  } = useQuery(
     [playback.playbackType, 'getPlaybackState'],
     () => {
       return playback.getPlaybackState();
@@ -47,14 +51,13 @@ function useCreateSpotifyWebPlayback() {
       suspense: false,
     },
   );
-  const invalidCurrentPlaybackState = useCallback(
-    () =>
-      queryClient.invalidateQueries([
-        playback.playbackType,
-        'getPlaybackState',
-      ]),
-    [playback.playbackType, queryClient],
-  );
+  const invalidCurrentPlaybackState = useCallback(async () => {
+    await queryClient.invalidateQueries([
+      playback.playbackType,
+      'getPlaybackState',
+    ]);
+    await refetch();
+  }, [playback.playbackType, queryClient, refetch]);
   const playOnDeviceId = currentPlaybackState?.is_active
     ? currentPlaybackState?.device.id
     : player?._options.id;
@@ -116,22 +119,39 @@ function useCreateSpotifyWebPlayback() {
       url: 'me/player/next',
     });
   }, [controlPlaybackByAPI]);
+
+  const seekTrack = useCallback(
+    async (position_ms: number) => {
+      await controlPlaybackByAPI({
+        method: 'PUT',
+        params: {
+          position_ms,
+        },
+        url: 'me/player/seek',
+      });
+    },
+    [controlPlaybackByAPI],
+  );
   const playPreviousTrack = useCallback(async () => {
-    await controlPlaybackByAPI({
+    if (currentPlaybackState) {
+      const { progress_ms } = currentPlaybackState;
+      if (progress_ms >= 1000) return seekTrack(0);
+    }
+    return controlPlaybackByAPI({
       method: 'POST',
       url: 'me/player/previous',
     });
-  }, [controlPlaybackByAPI]);
+  }, [controlPlaybackByAPI, currentPlaybackState, seekTrack]);
   const togglePlayMode = useCallback(async () => {
     if (!currentPlaybackState) return;
     const { is_paused, is_active, track } = currentPlaybackState;
     if (!is_active) {
-      if (track.disc_number) {
+      if (track.track_number) {
         await controlPlaybackByAPI({
           data: {
             context_uri: track.album.uri,
             offset: {
-              position: track.disc_number,
+              position: track.track_number - 1,
             },
           },
           method: 'put',
@@ -198,6 +218,8 @@ function useCreateSpotifyWebPlayback() {
       playbackEnabledShuffle: currentPlaybackState?.shuffle_state,
       playbackRepeatMode: currentPlaybackState?.repeat_state,
       playbackState: playbackStateMachine.state,
+      progressMS: currentPlaybackState?.progress_ms,
+      seekTrack,
       togglePlayMode,
       toggleShuffleMode,
     },

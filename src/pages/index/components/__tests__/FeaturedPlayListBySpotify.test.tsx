@@ -13,11 +13,15 @@ createPollyContext({
   appConfig: {
     enableMockServer: true,
     mockRouteHandlers: {
-      '/browse/featured-playlists': (_, res) => {
-        res.status(200).json({
-          message: 'Testing title',
-          playlists: casual.PagingObject([mockPlaylist]),
-        });
+      spotifyAPI: {
+        get: {
+          '/v1/browse/featured-playlists': (_, res) => {
+            res.status(200).json({
+              message: 'Testing title',
+              playlists: casual.PagingObject([mockPlaylist]),
+            });
+          },
+        },
       },
     },
   },

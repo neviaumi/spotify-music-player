@@ -14,8 +14,12 @@ const context = createPollyContext({
   appConfig: {
     enableMockServer: true,
     mockRouteHandlers: {
-      '/tracks': (_, res) => {
-        res.status(200).json(casual.RecommendationsObject([mockTrack]));
+      spotifyAPI: {
+        get: {
+          '/v1/tracks': (_, res) => {
+            res.status(200).json(casual.RecommendationsObject([mockTrack]));
+          },
+        },
       },
     },
   },

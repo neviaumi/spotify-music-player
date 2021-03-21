@@ -14,11 +14,15 @@ createPollyContext({
   appConfig: {
     enableMockServer: true,
     mockRouteHandlers: {
-      '/me/player/recently-played': (_, res) => {
-        res.status(200).json(casual.CursorPagingObject([mockPlayHistory]));
-      },
-      '/recommendations': (_, res) => {
-        res.status(200).json(casual.RecommendationsObject([mockTrack]));
+      spotifyAPI: {
+        get: {
+          '/v1/me/player/recently-played': (_, res) => {
+            res.status(200).json(casual.CursorPagingObject([mockPlayHistory]));
+          },
+          '/v1/recommendations': (_, res) => {
+            res.status(200).json(casual.RecommendationsObject([mockTrack]));
+          },
+        },
       },
     },
   },
