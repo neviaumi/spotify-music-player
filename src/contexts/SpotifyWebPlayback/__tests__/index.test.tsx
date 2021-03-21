@@ -1,65 +1,26 @@
-import type { InterceptHandler, Request, Response } from '@pollyjs/core';
+import type { Request, Response } from '@pollyjs/core';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import casual from 'casual';
 import type { PropsWithChildren } from 'react';
 
 import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
+import {
+  MockHandlers,
+  setupMockServer,
+} from '../../../../testHelper/polly/setupMockServer';
 import { TestApp } from '../../../App';
 import type { TrackSimplified } from '../../../hooks/spotify/typings/Track';
 import { PlaybackState, useSpotifyWebPlayback } from '../';
 import { RepeatMode } from '../states/RepeatMode';
 
-const context = createPollyContext();
+const context = createPollyContext({});
 
-function createAPIMock(
-  handlers: {
-    [key: string]: undefined | InterceptHandler;
-  } = {},
-) {
-  context.polly?.server.host('https://api.spotify.com/v1', () => {
-    context.polly?.server.get('/me/player').intercept(
-      handlers['me/player'] ||
-        function handler(_, res) {
-          res.status(200).json(casual.CurrentlyPlayingContextObject({}));
-        },
-    );
-    context.polly?.server.put('me/player/play').intercept(
-      handlers['me/player/play'] ||
-        function handler(_, res) {
-          res.status(204);
-        },
-    );
-    context.polly?.server.put('me/player/pause').intercept(
-      handlers['me/player/pause'] ||
-        function handler(_, res) {
-          res.status(204);
-        },
-    );
-    context.polly?.server.put('me/player/shuffle').intercept(
-      handlers['me/player/shuffle'] ||
-        function handler(_, res) {
-          res.status(204);
-        },
-    );
-    context.polly?.server.put('me/player/repeat').intercept(
-      handlers['me/player/repeat'] ||
-        function handler(_, res) {
-          res.status(204);
-        },
-    );
-    context.polly?.server.post('me/player/next').intercept(
-      handlers['me/player/next'] ||
-        function handler(_, res) {
-          res.status(204);
-        },
-    );
-    context.polly?.server.post('me/player/previous').intercept(
-      handlers['me/player/previous'] ||
-        function handler(_, res) {
-          res.status(204);
-        },
-    );
+function createAPIMock(handlers?: MockHandlers) {
+  setupMockServer(context.polly, {
+    handlers: {
+      spotifyAPI: handlers,
+    },
   });
 }
 
@@ -76,6 +37,7 @@ function DummyComponents({
       changeRepeatMode,
       playNextTrack,
       playPreviousTrack,
+      seekTrack,
     },
   } = useSpotifyWebPlayback();
   if (playbackState === PlaybackState.INIT) return null;
@@ -92,6 +54,7 @@ function DummyComponents({
       </button>
       <button onClick={playNextTrack}>playNextTrack</button>
       <button onClick={playPreviousTrack}>playPreviousTrack</button>
+      <button onClick={() => seekTrack(0)}>seekTrack</button>
     </>
   );
 }
@@ -102,7 +65,9 @@ describe('Test SpotifyWebPlayback', () => {
       res.status(204);
     });
     createAPIMock({
-      'me/player/repeat': apiHandler,
+      put: {
+        '/v1/me/player/repeat': apiHandler,
+      },
     });
 
     render(
@@ -138,14 +103,18 @@ describe('Test SpotifyWebPlayback', () => {
         res.status(204);
       });
       createAPIMock({
-        'me/player': (_, res) => {
-          res.status(200).json(
-            casual.CurrentlyPlayingContextObject({
-              shuffle_state: currentShuffleMode,
-            }),
-          );
+        get: {
+          '/v1/me/player': (_, res) => {
+            res.status(200).json(
+              casual.CurrentlyPlayingContextObject({
+                shuffle_state: currentShuffleMode,
+              }),
+            );
+          },
         },
-        'me/player/shuffle': apiHandler,
+        put: {
+          '/v1/me/player/shuffle': apiHandler,
+        },
       });
 
       render(
@@ -171,12 +140,63 @@ describe('Test SpotifyWebPlayback', () => {
     },
   );
 
+  it('.playPreviousTrack should seek to beginning of track', async () => {
+    const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
+      res.status(204);
+    });
+    createAPIMock({
+      get: {
+        '/v1/me/player': (_, res) => {
+          res.status(200).json(
+            casual.CurrentlyPlayingContextObject({
+              progress_ms: 1000,
+            }),
+          );
+        },
+      },
+      put: {
+        '/v1/me/player/seek': apiHandler,
+      },
+    });
+    render(
+      <TestApp>
+        <DummyComponents
+          track={
+            {
+              uri: 'track-uri',
+            } as any
+          }
+        />
+      </TestApp>,
+    );
+    userEvent.click(
+      await screen.findByRole('button', { name: 'playPreviousTrack' }),
+    );
+    await waitFor(() => expect(apiHandler).toHaveBeenCalled());
+    const [req]: [req: Request] = apiHandler.mock.calls[0];
+    expect(req.query).toEqual({
+      device_id: 'mock-remote-player-device-id',
+      position_ms: '0',
+    });
+  });
+
   it('.playPreviousTrack should call API', async () => {
     const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
       res.status(204);
     });
     createAPIMock({
-      'me/player/previous': apiHandler,
+      get: {
+        '/v1/me/player': (_, res) => {
+          res.status(200).json(
+            casual.CurrentlyPlayingContextObject({
+              progress_ms: 0,
+            }),
+          );
+        },
+      },
+      post: {
+        '/v1/me/player/previous': apiHandler,
+      },
     });
 
     render(
@@ -205,7 +225,9 @@ describe('Test SpotifyWebPlayback', () => {
       res.status(204);
     });
     createAPIMock({
-      'me/player/next': apiHandler,
+      post: {
+        '/v1/me/player/next': apiHandler,
+      },
     });
 
     render(
@@ -234,7 +256,9 @@ describe('Test SpotifyWebPlayback', () => {
       res.status(204);
     });
     createAPIMock({
-      'me/player/pause': apiHandler,
+      put: {
+        '/v1/me/player/pause': apiHandler,
+      },
     });
 
     render(
@@ -263,7 +287,9 @@ describe('Test SpotifyWebPlayback', () => {
       res.status(204);
     });
     createAPIMock({
-      'me/player/play': apiHandler,
+      put: {
+        '/v1/me/player/play': apiHandler,
+      },
     });
     render(
       <TestApp>
@@ -294,8 +320,8 @@ describe('Test SpotifyWebPlayback', () => {
 
   it.each`
     isPaused | expectedCallAPI
-    ${false} | ${'me/player/pause'}
-    ${true}  | ${'me/player/play'}
+    ${false} | ${'/v1/me/player/pause'}
+    ${true}  | ${'/v1/me/player/play'}
   `(
     '.togglePlayMode should call $expectedCallAPI when device active and paused is $isPaused',
     async ({ expectedCallAPI, isPaused }) => {
@@ -303,13 +329,17 @@ describe('Test SpotifyWebPlayback', () => {
         res.status(204);
       });
       createAPIMock({
-        [expectedCallAPI]: apiHandler,
-        'me/player': (_, res) => {
-          res.status(200).json(
-            casual.CurrentlyPlayingContextObject({
-              is_playing: !isPaused,
-            }),
-          );
+        get: {
+          '/v1/me/player': (_, res) => {
+            res.status(200).json(
+              casual.CurrentlyPlayingContextObject({
+                is_playing: !isPaused,
+              }),
+            );
+          },
+        },
+        put: {
+          [expectedCallAPI]: apiHandler,
         },
       });
 
@@ -344,7 +374,7 @@ describe('Test SpotifyWebPlayback', () => {
     uri: 'album:uri',
   },
   disc_number: 1,
-}} | ${'me/player/play'} | ${{
+}} | ${'/v1/me/player/play'} | ${{
   context_uri: 'album:uri',
   offset: {
     position: 1,
@@ -352,7 +382,7 @@ describe('Test SpotifyWebPlayback', () => {
 }}
     ${'album missing'} | ${{
   uri: 'track:uri',
-}} | ${'me/player/play'} | ${{ uris: ['track:uri'] }}
+}} | ${'/v1/me/player/play'} | ${{ uris: ['track:uri'] }}
   `(
     '.togglePlayMode should call $expectedCallAPI when device inactive and $case',
     async ({ item, expectedCallAPI, expectedBody }) => {
@@ -360,17 +390,21 @@ describe('Test SpotifyWebPlayback', () => {
         res.status(204);
       });
       createAPIMock({
-        [expectedCallAPI]: apiHandler,
-        'me/player': (_, res) => {
-          res.status(200).json({
-            ...casual.CurrentlyPlayingContextObject({
-              device: {
-                is_active: false,
-              },
-              is_playing: false,
-            }),
-            item,
-          });
+        get: {
+          '/v1/me/player': (_, res) => {
+            res.status(200).json({
+              ...casual.CurrentlyPlayingContextObject({
+                device: {
+                  is_active: false,
+                },
+                is_playing: false,
+              }),
+              item,
+            });
+          },
+        },
+        put: {
+          [expectedCallAPI]: apiHandler,
         },
       });
 

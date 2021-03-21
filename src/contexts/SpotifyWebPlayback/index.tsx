@@ -116,12 +116,29 @@ function useCreateSpotifyWebPlayback() {
       url: 'me/player/next',
     });
   }, [controlPlaybackByAPI]);
+
+  const seekTrack = useCallback(
+    async (position_ms: number) => {
+      await controlPlaybackByAPI({
+        method: 'PUT',
+        params: {
+          position_ms,
+        },
+        url: 'me/player/seek',
+      });
+    },
+    [controlPlaybackByAPI],
+  );
   const playPreviousTrack = useCallback(async () => {
-    await controlPlaybackByAPI({
+    if (currentPlaybackState) {
+      const { progress_ms } = currentPlaybackState;
+      if (progress_ms >= 1000) return seekTrack(0);
+    }
+    return controlPlaybackByAPI({
       method: 'POST',
       url: 'me/player/previous',
     });
-  }, [controlPlaybackByAPI]);
+  }, [controlPlaybackByAPI, currentPlaybackState, seekTrack]);
   const togglePlayMode = useCallback(async () => {
     if (!currentPlaybackState) return;
     const { is_paused, is_active, track } = currentPlaybackState;
@@ -198,6 +215,8 @@ function useCreateSpotifyWebPlayback() {
       playbackEnabledShuffle: currentPlaybackState?.shuffle_state,
       playbackRepeatMode: currentPlaybackState?.repeat_state,
       playbackState: playbackStateMachine.state,
+      progressMS: currentPlaybackState?.progress_ms,
+      seekTrack,
       togglePlayMode,
       toggleShuffleMode,
     },

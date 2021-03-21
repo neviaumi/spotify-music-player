@@ -24,6 +24,7 @@ function MusicPlaybackComponent() {
     error,
     isLoading,
     data: {
+      progressMS,
       playbackState,
       currentPlayingTrack,
       playbackDisallowedActions,
@@ -36,10 +37,10 @@ function MusicPlaybackComponent() {
       togglePlayMode,
       toggleShuffleMode,
       isActive,
+      seekTrack,
     },
   } = useSpotifyWebPlayback();
   useErrorHandler(error);
-
   if (playbackState === PlaybackState.INIT) return <Loading />;
 
   return (
@@ -58,6 +59,14 @@ function MusicPlaybackComponent() {
           onClickToggleShuffleMode: toggleShuffleMode,
           repeatMode: playbackRepeatMode,
           shuffleMode: playbackEnabledShuffle,
+        }}
+        timeBar={{
+          currentProgressMS: progressMS!,
+          currentTrackId: currentPlayingTrack?.id,
+          disallowSeeking: playbackDisallowedActions?.seeking ?? false,
+          isLoading: isLoading,
+          onChangeTrackPlayingPosition: seekTrack,
+          trackDuration: currentPlayingTrack?.duration_ms,
         }}
       />
     </Container>
