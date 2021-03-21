@@ -27,7 +27,6 @@ export class LocalPlaybackState implements ActivePlaybackState {
         this.stateMachine.playOnRemotePlayback();
       return null;
     }
-
     const {
       disallows,
       position,

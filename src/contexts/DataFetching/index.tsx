@@ -24,6 +24,8 @@ export function DataFetchingConfigProvider({
       defaultOptions: {
         queries: {
           refetchOnWindowFocus: false,
+          retry: 3,
+          retryDelay: failCount => Math.max(Math.pow(failCount, 2) * 100, 3000),
           suspense: true,
         },
       },
