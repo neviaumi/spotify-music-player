@@ -43,6 +43,7 @@ export interface Props {
   currentTrackId?: string | null;
   disallowSeeking: boolean;
   isLoading: boolean;
+  isPaused?: boolean;
   onChangeTrackPlayingPosition: (newPosition: number) => void;
   trackDuration?: number;
 }
@@ -53,6 +54,7 @@ export function TimeBar({
   disallowSeeking,
   trackDuration,
   isLoading,
+  isPaused,
   onChangeTrackPlayingPosition,
 }: Props) {
   const [currentTimeBarValue, setValues] = useState([0]);
@@ -77,7 +79,7 @@ export function TimeBar({
 
   useInterval(
     latestSuccessExecuteTime => {
-      if (trackDuration === undefined || isDragging) return;
+      if (isPaused || trackDuration === undefined || isDragging) return;
       const now = Date.now();
       const patchTime = now - latestSuccessExecuteTime;
       const [currentValue] = currentTimeBarValue;

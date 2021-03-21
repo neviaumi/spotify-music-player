@@ -373,11 +373,11 @@ describe('Test SpotifyWebPlayback', () => {
   album: {
     uri: 'album:uri',
   },
-  disc_number: 1,
+  track_number: 1,
 }} | ${'/v1/me/player/play'} | ${{
   context_uri: 'album:uri',
   offset: {
-    position: 1,
+    position: 0,
   },
 }}
     ${'album missing'} | ${{

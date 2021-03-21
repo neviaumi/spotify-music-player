@@ -65,6 +65,7 @@ function MusicPlaybackComponent() {
           currentTrackId: currentPlayingTrack?.id,
           disallowSeeking: playbackDisallowedActions?.seeking ?? false,
           isLoading: isLoading,
+          isPaused,
           onChangeTrackPlayingPosition: seekTrack,
           trackDuration: currentPlayingTrack?.duration_ms,
         }}

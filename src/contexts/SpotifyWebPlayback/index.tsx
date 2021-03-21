@@ -37,7 +37,11 @@ function useCreateSpotifyWebPlayback() {
     apiClient,
     localPlayback: player,
   });
-  const { data: currentPlaybackState, error: getPlaybackStateError } = useQuery(
+  const {
+    data: currentPlaybackState,
+    error: getPlaybackStateError,
+    refetch,
+  } = useQuery(
     [playback.playbackType, 'getPlaybackState'],
     () => {
       return playback.getPlaybackState();
@@ -47,14 +51,13 @@ function useCreateSpotifyWebPlayback() {
       suspense: false,
     },
   );
-  const invalidCurrentPlaybackState = useCallback(
-    () =>
-      queryClient.invalidateQueries([
-        playback.playbackType,
-        'getPlaybackState',
-      ]),
-    [playback.playbackType, queryClient],
-  );
+  const invalidCurrentPlaybackState = useCallback(async () => {
+    await queryClient.invalidateQueries([
+      playback.playbackType,
+      'getPlaybackState',
+    ]);
+    await refetch();
+  }, [playback.playbackType, queryClient, refetch]);
   const playOnDeviceId = currentPlaybackState?.is_active
     ? currentPlaybackState?.device.id
     : player?._options.id;
@@ -143,12 +146,12 @@ function useCreateSpotifyWebPlayback() {
     if (!currentPlaybackState) return;
     const { is_paused, is_active, track } = currentPlaybackState;
     if (!is_active) {
-      if (track.disc_number) {
+      if (track.track_number) {
         await controlPlaybackByAPI({
           data: {
             context_uri: track.album.uri,
             offset: {
-              position: track.disc_number,
+              position: track.track_number - 1,
             },
           },
           method: 'put',
