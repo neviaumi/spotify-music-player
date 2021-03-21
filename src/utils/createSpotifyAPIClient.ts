@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
+import { identity } from 'ramda';
 import * as rax from 'retry-axios';
 
 export function createSpotifyAPIClient(
@@ -33,6 +34,18 @@ export function createSpotifyAPIClient(
     ],
   };
   rax.attach(client);
+  client.interceptors.response.use(identity, (err: AxiosError) => {
+    const { config, response } = err;
+    err.message = `
+Axios Error - ${err.message}
+Request to ${config.method?.toUpperCase()} ${config.url}
+Response Code : ${response?.status}
+Response Body: 
+${JSON.stringify(response?.data, null, 4)} 
+`;
+    Error.captureStackTrace(err);
+    return Promise.reject(err);
+  });
   return client;
 }
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { ControlButtons, Props as ControlButtonsProps } from './ControlButtons';
-import { TimeBar } from './TimeBar';
+import { Props as TimeBarProps, TimeBar } from './TimeBar';
 
 const Container = styled.section`
   display: flex;
@@ -14,13 +14,14 @@ const Container = styled.section`
 
 interface Props {
   controlButtons: ControlButtonsProps;
+  timeBar: TimeBarProps;
 }
 
-export function PlaybackControl({ controlButtons }: Props) {
+export function PlaybackControl({ controlButtons, timeBar }: Props) {
   return (
     <Container>
       <ControlButtons {...controlButtons} />
-      <TimeBar />
+      <TimeBar {...timeBar} />
     </Container>
   );
 }

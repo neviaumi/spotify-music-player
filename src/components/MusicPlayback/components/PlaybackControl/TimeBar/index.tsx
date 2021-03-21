@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getTrackBackground, Range } from 'react-range';
 import styled, { useTheme } from 'styled-components';
 
+import { useInterval } from '../../../../../hooks/utils/useInterval';
 import { formatMSToMinute } from '../../../../../utils/formatMS';
 
-const TimeBarTime = styled.div`
+const TimeBarTime = styled.div.attrs({
+  role: 'timer',
+})<{
+  'aria-label': string;
+}>`
   min-width: 40px;
   color: ${props => props.theme.colors.grey179};
   font-size: 11px;
@@ -33,21 +38,79 @@ const Track = styled.div`
   background-color: ${props => props.theme.colors.grey83};
 `;
 
-export function TimeBar() {
-  const [currentValue, setValues] = useState([0]);
-  const [showThumb, setShowThumb] = useState(true);
+export interface Props {
+  currentProgressMS: number;
+  currentTrackId?: string | null;
+  disallowSeeking: boolean;
+  isLoading: boolean;
+  onChangeTrackPlayingPosition: (newPosition: number) => void;
+  trackDuration?: number;
+}
+
+export function TimeBar({
+  currentTrackId,
+  currentProgressMS,
+  disallowSeeking,
+  trackDuration,
+  isLoading,
+  onChangeTrackPlayingPosition,
+}: Props) {
+  const [currentTimeBarValue, setValues] = useState([0]);
+  const [showThumb, setShowThumb] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const styledTheme: any = useTheme();
 
+  useEffect(
+    function resetState() {
+      if (currentTrackId === undefined) return;
+      if (currentTrackId === null) {
+        setValues([0]);
+        return;
+      }
+      if (!isDragging) {
+        setValues([currentProgressMS]);
+        return;
+      }
+    },
+    [setValues, currentTrackId, currentProgressMS, isDragging],
+  );
+
+  useInterval(
+    latestSuccessExecuteTime => {
+      if (trackDuration === undefined || isDragging) return;
+      const now = Date.now();
+      const patchTime = now - latestSuccessExecuteTime;
+      const [currentValue] = currentTimeBarValue;
+      const nextValue = currentValue + patchTime;
+      const newValue =
+        currentValue > trackDuration ? [trackDuration] : [nextValue];
+      setValues(newValue);
+    },
+    1000,
+    {
+      enabled: !(disallowSeeking || isLoading || isDragging),
+    },
+  );
   return (
     <TimeBarContainer
       onMouseLeave={() => setShowThumb(false)}
       onMouseOver={() => setShowThumb(true)}
     >
-      <TimeBarTime>{formatMSToMinute(currentValue[0])}</TimeBarTime>
+      <TimeBarTime aria-label="current-time">
+        {formatMSToMinute(currentTimeBarValue[0])}
+      </TimeBarTime>
       <Range
-        max={300000}
+        disabled={disallowSeeking || isLoading}
+        max={trackDuration}
         min={0}
-        onChange={values => setValues(values)}
+        onChange={values => {
+          setIsDragging(true);
+          setValues(values);
+        }}
+        onFinalChange={values => {
+          setIsDragging(false);
+          onChangeTrackPlayingPosition(values[0]);
+        }}
         renderThumb={({ props, isDragged }) => (
           <Thumb
             {...props}
@@ -74,9 +137,9 @@ export function TimeBar() {
                       : styledTheme.colors.grey179,
                     styledTheme.colors.grey83,
                   ],
-                  max: 300000,
+                  max: trackDuration!,
                   min: 0,
-                  values: currentValue,
+                  values: currentTimeBarValue,
                 }),
               }}
             >
@@ -85,9 +148,13 @@ export function TimeBar() {
           </div>
         )}
         step={500}
-        values={currentValue}
+        values={currentTimeBarValue}
       />
-      <TimeBarTime>{formatMSToMinute(300000)}</TimeBarTime>
+      <TimeBarTime aria-label="duration">
+        {trackDuration !== undefined
+          ? formatMSToMinute(trackDuration)
+          : '--:--'}
+      </TimeBarTime>
     </TimeBarContainer>
   );
 }
