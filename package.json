@@ -62,7 +62,7 @@
     "@testing-library/jest-dom": "5.11.10",
     "@testing-library/react": "11.2.5",
     "@testing-library/react-hooks": "5.1.0",
-    "@testing-library/user-event": "13.0.13",
+    "@testing-library/user-event": "13.0.16",
     "@types/aws-lambda": "8.10.73",
     "@types/enzyme": "3.10.8",
     "@types/enzyme-adapter-react-16": "1.0.6",
