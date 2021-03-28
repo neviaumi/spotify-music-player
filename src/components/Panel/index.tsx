@@ -8,8 +8,8 @@ const Container = styled.div`
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
-  background-color: ${props => props.theme.colors.black};
-  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.foreground};
   display: grid;
   grid-template-rows: auto 90px;
   grid-template-columns: 234px auto;

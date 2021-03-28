@@ -14,10 +14,10 @@ const Container = styled.div.attrs({
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.colors.black};
-  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.foreground};
   flex-direction: column;
-  padding: ${props => props.theme.spaces.xxl};
+  padding: ${props => props.theme.spaces.xl};
 `;
 
 const SectionHeading = styled.h1`
@@ -35,7 +35,7 @@ const ErrorContainer = styled.section`
 const HttpReqResContainer = styled.section`
   display: flex;
   justify-content: center;
-  gap: 0 ${props => props.theme.spaces.xxl};
+  gap: 0 ${props => props.theme.spaces.xl};
 `;
 
 const JSONTextContainer = styled.pre`

@@ -10,33 +10,33 @@ import { withSuspense } from '../Suspense/withSuspense';
 import { UserPlayList } from '../UserPlayList/UserPlayList';
 
 const Container = styled.nav`
-  padding-top: 24px;
+  padding-top: ${props => props.theme.spaces.xxl};
 `;
 
 const NavItemContainer = styled.ul`
   display: block;
   margin: 0px;
-  padding: 0 8px;
+  padding: 0 ${props => props.theme.spaces.xxs};
 `;
 
 const NavItem = styled.li<{ active?: boolean }>`
   display: block;
-  font-size: 14px;
+  font-size: ${props => props.theme.typography.size.s};
   height: 40px;
   line-height: 40px;
   border-radius: 4px;
-  padding: 0 16px;
+  padding: 0 ${props => props.theme.spaces.m};
   ${({ active, theme }) =>
     active
       ? `
-color: ${theme.colors.white};
-background-color: ${theme.colors.grey40};
+color: ${theme.colors.foreground};
+background-color: ${theme.colors.contrast2};
 font-weight: bold;
     `
       : `
-color: ${theme.colors.grey179};
+color: ${theme.colors.contrast4};
 &:hover {
-color: ${theme.colors.white};
+color: ${theme.colors.foreground};
 }
   `}
 `;

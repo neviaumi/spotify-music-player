@@ -32,22 +32,22 @@ const StyledLink = styled(Link)`
 `;
 
 const TrackInfoContainer = styled.figcaption`
-  margin: 0 ${props => props.theme.spaces.l};
+  margin: 0 ${props => props.theme.spaces.s};
 `;
 
 const TrackName = styled.h1`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.foreground};
   font-weight: normal;
-  font-size: 14px;
+  font-size: ${props => props.theme.typography.size.s};
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 `;
 
 const Artist = styled.h2`
-  color: ${props => props.theme.colors.grey179};
+  color: ${props => props.theme.colors.contrast4};
   font-weight: normal;
-  font-size: 12px;
+  font-size: ${props => props.theme.typography.size.xs};
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

@@ -8,8 +8,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.colors.black};
-  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.background};
+  color: ${props => props.theme.colors.foreground};
 `;
 
 const ImgContainer = styled.figure`
