@@ -12,11 +12,11 @@ import { TrackInfo } from './components/TrackInfo';
 
 const Container = styled.aside`
   display: flex;
-  padding: 0 16px;
+  padding: 0 ${props => props.theme.spaces.m};
   height: 90px;
   align-items: center;
-  background-color: ${props => props.theme.colors.grey24};
-  border-top: 1px solid ${props => props.theme.colors.grey40};
+  background-color: ${props => props.theme.colors.contrast1};
+  border-top: 1px solid ${props => props.theme.colors.contrast2};
 `;
 
 function MusicPlaybackComponent() {

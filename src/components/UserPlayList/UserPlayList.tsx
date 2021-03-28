@@ -30,16 +30,16 @@ export function withUserPlayList(Wrapper: ComponentType<Props>) {
 }
 
 const Container = styled.section`
-  margin-top: 24px;
-  padding: 0px 24px;
+  margin-top: ${props => props.theme.spaces.xxl};
+  padding: 0px ${props => props.theme.spaces.xl};
 `;
 
 const Title = styled.h1`
-  color: #b3b3b3;
-  font-size: 11px;
+  color: ${props => props.theme.colors.contrast4};
+  font-size: ${props => props.theme.typography.size.xxs};
   line-height: 16px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid ${props => props.theme.colors.grey179};
+  padding-bottom: ${props => props.theme.spaces.xl};
+  border-bottom: 1px solid ${props => props.theme.colors.contrast4};
 `;
 
 const ItemContainer = styled.section`
@@ -52,14 +52,14 @@ const ItemContainer = styled.section`
 const Item = styled.a`
   display: block;
   text-decoration: none;
-  color: ${props => props.theme.colors.grey179};
-  font-size: 14px;
+  color: ${props => props.theme.colors.contrast4};
+  font-size: ${props => props.theme.typography.size.s};
   height: 32px;
   line-height: 32px;
   text-overflow: ellipsis;
   white-space: nowrap;
   &:hover {
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.foreground};
   }
 `;
 

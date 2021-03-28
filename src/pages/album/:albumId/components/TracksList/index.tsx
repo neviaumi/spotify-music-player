@@ -19,7 +19,7 @@ const TrackInfo = styled.section`
 
 const TrackName = styled.h1`
   display: block;
-  font-size: 16px;
+  font-size: ${props => props.theme.typography.size.m};
   line-height: 22px;
   margin: 0px;
   padding: 0px;
@@ -27,12 +27,12 @@ const TrackName = styled.h1`
 
 const TrackMeta = styled.aside`
   display: inline-block;
-  font-size: 12px;
+  font-size: ${props => props.theme.typography.size.xs};
   line-height: 22px;
 `;
 
 const TrackArtist = styled.a`
-  color: ${props => props.theme.colors.grey179};
+  color: ${props => props.theme.colors.contrast4};
   opacity: 0.6;
 `;
 

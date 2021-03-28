@@ -12,7 +12,7 @@ import { SuggestAlbumByUserTopArtists } from './components/SuggestAlbumByUserTop
 import { SuggestAlbumByUserTopTracks } from './components/SuggestAlbumByUserTopTracks';
 
 const Container = styled.div`
-  padding: 0 32px;
+  padding: 0 ${props => props.theme.spaces.xxxl};
   height: 100%;
 `;
 export function Suggestion() {

@@ -15,7 +15,7 @@ interface Props {
 }
 
 const Container = styled.div`
-  padding: 0 32px;
+  padding: 0 ${props => props.theme.spaces.xxxl};
   height: 100%;
 `;
 
