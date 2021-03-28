@@ -86,11 +86,8 @@ export function createPollyContext(
         // @ts-expect-error Error here defined as Network Error
         // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/status
         const isNetworkError = req.requestArguments?.xhr?.status === 0;
-        const isSnapshotExpiredError = err.message.includes(
-          'request has expired',
-        );
-        const shouldIgnoreError = isNetworkError && !isSnapshotExpiredError;
-        if (isRunningOnRecordMode || !shouldIgnoreError) {
+        const shouldIgnoreError = isNetworkError;
+        if (!shouldIgnoreError) {
           throw new Error(
             [
               '\n',
