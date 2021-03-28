@@ -2710,10 +2710,10 @@
     "@spotify/web-scripts-utils" "9.0.0"
     babel-plugin-transform-typescript-metadata "0.3.2"
 
-"@busybox/eslint-config@5.4.4":
-  version "5.4.4"
-  resolved "https://registry.yarnpkg.com/@busybox/eslint-config/-/eslint-config-5.4.4.tgz#482c50d35fd619c5ba3529c21ee54f1389b59bc5"
-  integrity sha512-IYdBixqfWlpMARt8wzU1q849rwXHxMdwQeDTbogwH++n8jhoQSkUndSXUagUqPZgJfOfYhSj46kzlhvDP0r04Q==
+"@busybox/eslint-config@5.4.5":
+  version "5.4.5"
+  resolved "https://registry.yarnpkg.com/@busybox/eslint-config/-/eslint-config-5.4.5.tgz#791174c0bd0629f24ade17bd41e732f02dae30c9"
+  integrity sha512-4itc7ayzEI3pzI5MRsVXqg97YZwDy8iCXwAQayezw0qfkAJFhZhmUSzUX1k8lG1UHeq1LiKnKQv73DwPmxcEYA==
   dependencies:
     "@spotify/eslint-config-base" "9.0.2"
     "@spotify/web-scripts-utils" "9.0.0"
