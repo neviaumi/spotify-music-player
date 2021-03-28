@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const Container = styled.div`
-  padding: ${props => props.theme.spaces.xl} 0;
+  padding: ${props => props.theme.spaces.m} 0;
 `;
 
 const SuggestionsContainer = styled.article`
@@ -20,7 +20,7 @@ const SuggestionsContainer = styled.article`
 `;
 
 const Heading = styled.h1`
-  font-size: 28px;
+  font-size: ${props => props.theme.typography.size.l};
   line-height: 1.6;
   display: block;
 `;
@@ -29,13 +29,13 @@ const Suggestion = styled.a`
   display: block;
   width: 164px;
   min-width: 164px;
-  padding: ${props => props.theme.spaces.xxl};
-  ${props => props.theme.spaces.xxl};
+  padding: ${props => props.theme.spaces.xl};
   ${props => props.theme.spaces.xl};
-  background: #282828;
+  ${props => props.theme.spaces.m};
+  background: ${props => props.theme.colors.contrast2};
   border-radius: 8px;
   text-decoration: none;
-  margin-right: ${props => props.theme.spaces.xl};
+  margin-right: ${props => props.theme.spaces.m};
   :hover {
     cursor: pointer;
   }
@@ -46,7 +46,7 @@ const SuggestionCover = styled.img`
   height: 164px;
   display: block;
   object-fit: cover;
-  margin-bottom: ${props => props.theme.spaces.xl};
+  margin-bottom: ${props => props.theme.spaces.m};
 `;
 
 const SuggestionHeading = styled.section`
@@ -55,23 +55,23 @@ const SuggestionHeading = styled.section`
 `;
 
 const SuggestionName = styled.p`
-  font-size: 14px;
+  font-size: ${props => props.theme.typography.size.s};
   line-height: 20px;
   font-weight: 700;
   letter-spacing: 0.24px;
   margin: 0px;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.foreground};
 `;
 
 const SuggestionDescription = styled.span`
   display: block;
-  font-size: 12px;
+  font-size: ${props => props.theme.typography.size.xs};
   line-height: 18px;
-  margin-top: ${props => props.theme.spaces.s};
+  margin-top: ${props => props.theme.spaces.xxxs};
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: ${props => props.theme.colors.grey179};
-  margin-top: ${props => props.theme.spaces.s};
+  color: ${props => props.theme.colors.contrast4};
+  margin-top: ${props => props.theme.spaces.xxxs};
   overflow: hidden;
 `;
 

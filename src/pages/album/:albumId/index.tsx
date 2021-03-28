@@ -11,7 +11,7 @@ import { Heading } from './components/Heading';
 import { AlbumTracksList } from './components/TracksList';
 
 const Container = styled.div`
-  padding: 0 32px;
+  padding: 0 ${props => props.theme.spaces.xxxl};
   height: 100%;
 `;
 

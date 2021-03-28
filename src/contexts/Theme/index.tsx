@@ -1,24 +1,52 @@
+// Intention sort object key by meaning
+/* eslint-disable sort-keys-fix/sort-keys-fix, @typescript-eslint/member-ordering, typescript-sort-keys/interface*/
+
 import type { ReactNode } from 'react';
 import { ThemeProvider as StyledComponentThemeProvider } from 'styled-components';
 
+interface SizingSystem<T extends string | number> {
+  xxxs?: T;
+  xxs?: T;
+  xs?: T;
+  s?: T;
+  m?: T;
+  l?: T;
+  xl?: T;
+  xxl?: T;
+  xxxl?: T;
+}
+
 export const theme = {
   colors: {
-    black: '#191414',
     green: '#1DB954',
-    grey179: '#b3b3b3',
-    grey24: '#181818',
-    grey40: '#282828',
-    grey83: '#535353',
     lightGreen: '#1ed760',
-    white: '#FFFFFF',
+    background: '#191414',
+    contrast1: '#181818',
+    contrast2: '#282828',
+    contrast3: '#535353',
+    contrast4: '#b3b3b3',
+    foreground: '#FFFFFF',
   },
   spaces: {
-    l: '12px',
-    m: '8px',
-    s: '4px',
-    xl: '16px',
-    xs: '2px',
-    xxl: '20px',
+    xxxs: '4px',
+    xxs: '8px',
+    xs: '10px',
+    s: '12px',
+    m: '15px',
+    l: '18px',
+    xl: '20px',
+    xxl: '24px',
+    xxxl: '32px',
+  } as SizingSystem<string>,
+  typography: {
+    size: {
+      xxs: '11px',
+      xs: '12px',
+      s: '14px',
+      m: '16px',
+      l: '28px',
+      xl: '48px',
+    } as SizingSystem<string>,
   },
 };
 

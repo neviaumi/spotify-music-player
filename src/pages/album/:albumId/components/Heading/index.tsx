@@ -13,30 +13,30 @@ const Container = styled.section`
 `;
 
 const ContentContainer = styled.main`
-  margin-left: 24px;
+  margin-left: ${props => props.theme.spaces.xxl};
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: ${props => props.theme.typography.size.xl};
   line-height: 48px;
   margin: 0px;
-  padding: ${props => props.theme.spaces.l} 0px;
+  padding: ${props => props.theme.spaces.s} 0px;
 `;
 
 const Type = styled.span`
-  font-size: 12px;
+  font-size: ${props => props.theme.typography.size.xs};
 `;
 
 const Info = styled.section`
-  margin: 4px 0px 0px 0px;
-  font-size: 14px;
-  color: ${props => props.theme.colors.grey179};
+  margin: ${props => props.theme.spaces.xxxs} 0px 0px 0px;
+  font-size: ${props => props.theme.typography.size.s};
+  color: ${props => props.theme.colors.contrast4};
 `;
 
 const Creator = styled.figure`
   margin: 0px;
   font-weight: bold;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.foreground};
   display: inline-block;
 `;
 
@@ -45,7 +45,7 @@ const ArtistName = styled.figcaption``;
 const Meta = styled.span`
   &:before {
     content: '•';
-    margin: 0px 4px;
+    margin: 0px ${props => props.theme.spaces.xxxs};
   }
 `;
 

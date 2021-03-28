@@ -43,22 +43,22 @@ const Header = styled.li<{
   grid-gap: 16px;
   grid-template-columns: ${props => props['grid-template-columns']};
   height: 56px;
-  padding: ${props => props.theme.spaces.l} 0px;
+  padding: ${props => props.theme.spaces.s} 0px;
 `;
 
 export const HeaderColumn = styled.header.attrs({
   role: 'columnheader',
 })<{ key: string }>`
   align-items: flex-end;
-  color: ${props => props.theme.colors.grey179};
+  color: ${props => props.theme.colors.contrast4};
   display: flex;
 `;
 
 export const Column = styled.div<{ key: string }>`
   align-items: center;
-  color: ${props => props.theme.colors.grey179};
+  color: ${props => props.theme.colors.contrast4};
   display: flex;
-  font-size: 12px;
+  font-size: ${props => props.theme.typography.size.xs};
   line-height: 22px;
   width: 100%;
 `;
@@ -70,7 +70,7 @@ const ControlToggle = styled.button`
   background-color: transparent;
   padding: 0px;
   margin: 0px;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.foreground};
   max-height: 100%;
   max-width: 100%;
 `;

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getTrackBackground, Range } from 'react-range';
 import styled, { useTheme } from 'styled-components';
 
+import type { theme } from '../../../../../contexts/Theme';
 import { useInterval } from '../../../../../hooks/utils/useInterval';
 import { formatMSToMinute } from '../../../../../utils/formatMS';
 
@@ -11,8 +12,8 @@ const TimeBarTime = styled.div.attrs({
   'aria-label': string;
 }>`
   min-width: 40px;
-  color: ${props => props.theme.colors.grey179};
-  font-size: 11px;
+  color: ${props => props.theme.colors.contrast4};
+  font-size: ${props => props.theme.typography.size.xxs};
   text-align: center;
 `;
 
@@ -23,7 +24,7 @@ const TimeBarContainer = styled.section`
 `;
 
 const Thumb = styled.button`
-  background-color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.foreground};
   outline: 0;
   border: 0px;
   border-radius: 50%;
@@ -35,7 +36,7 @@ const Track = styled.div`
   height: 4px;
   border-radius: 2px;
   width: 100%;
-  background-color: ${props => props.theme.colors.grey83};
+  background-color: ${props => props.theme.colors.contrast3};
 `;
 
 export interface Props {
@@ -60,7 +61,7 @@ export function TimeBar({
   const [currentTimeBarValue, setValues] = useState([0]);
   const [showThumb, setShowThumb] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
-  const styledTheme: any = useTheme();
+  const styledTheme = useTheme() as typeof theme;
 
   useEffect(
     function resetState() {
@@ -136,8 +137,8 @@ export function TimeBar({
                   colors: [
                     showThumb || isDragged
                       ? styledTheme.colors.green
-                      : styledTheme.colors.grey179,
-                    styledTheme.colors.grey83,
+                      : styledTheme.colors.contrast4,
+                    styledTheme.colors.contrast3,
                   ],
                   max: trackDuration!,
                   min: 0,

@@ -13,7 +13,7 @@ import { ReactComponent as Shuffle } from './shuffle.svg';
 
 const Container = styled.section`
   display: flex;
-  margin-bottom: 12px;
+  margin-bottom: ${props => props.theme.spaces.s};
   width: 224px;
   justify-content: space-between;
 `;
@@ -27,19 +27,19 @@ const Button = styled.button`
   align-items: center;
   background-color: transparent;
   border: none;
-  gap: ${props => props.theme.spaces.s};
+  gap: ${props => props.theme.spaces.xxxs};
   outline: none;
   ${props => {
     if (props.disabled)
       return `
-color: ${props.theme.colors.grey40};
-fill: ${props.theme.colors.grey40};`;
+color: ${props.theme.colors.contrast2};
+fill: ${props.theme.colors.contrast2};`;
     return `
-color: ${props.theme.colors.grey179};
-fill: ${props.theme.colors.grey179};
+color: ${props.theme.colors.contrast4};
+fill: ${props.theme.colors.contrast4};
 &:hover {
-  color: ${props.theme.colors.white};
-  fill: ${props.theme.colors.white};
+  color: ${props.theme.colors.foreground};
+  fill: ${props.theme.colors.foreground};
 }`;
   }}
 `;
@@ -51,18 +51,18 @@ const ToggleButton = styled(Button)`
     const { disabled } = props;
     if (disabled) {
       return `
-background-color: ${props.theme.colors.grey179};
-color: ${props.theme.colors.black};
-fill: ${props.theme.colors.black};
+background-color: ${props.theme.colors.contrast4};
+color: ${props.theme.colors.background};
+fill: ${props.theme.colors.background};
 `;
     }
     return `
-background-color: ${props.theme.colors.white};
-color: ${props.theme.colors.black};
-fill: ${props.theme.colors.black};
+background-color: ${props.theme.colors.foreground};
+color: ${props.theme.colors.background};
+fill: ${props.theme.colors.background};
 &:hover {
-  color: ${props.theme.colors.black};
-  fill: ${props.theme.colors.black};
+  color: ${props.theme.colors.background};
+  fill: ${props.theme.colors.background};
   transform: scale(1.06);
 }
 `;
