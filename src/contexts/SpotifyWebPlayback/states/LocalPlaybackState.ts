@@ -22,6 +22,7 @@ export class LocalPlaybackState implements ActivePlaybackState {
 
   async getPlaybackState() {
     const state = await this.localPlayback.getCurrentState();
+    const currentVolume = await this.localPlayback.getVolume();
     if (!state) {
       if (this.stateMachine.can(PlaybackState.PLAY_ON_REMOTE_PLAYBACK))
         this.stateMachine.playOnRemotePlayback();
@@ -44,7 +45,7 @@ export class LocalPlaybackState implements ActivePlaybackState {
         is_restricted: false,
         name: this.localPlayback._options.name,
         type: 'Computer',
-        volume_percent: (this.localPlayback._options.volume ?? 0) * 100,
+        volume_percent: currentVolume * 100,
       },
       is_active: true,
       is_paused: paused,
