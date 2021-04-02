@@ -38,6 +38,7 @@ function DummyComponents({
       playNextTrack,
       playPreviousTrack,
       seekTrack,
+      setVolume,
     },
   } = useSpotifyWebPlayback();
   if (playbackState === PlaybackState.INIT) return null;
@@ -55,6 +56,7 @@ function DummyComponents({
       <button onClick={playNextTrack}>playNextTrack</button>
       <button onClick={playPreviousTrack}>playPreviousTrack</button>
       <button onClick={() => seekTrack(0)}>seekTrack</button>
+      <button onClick={() => setVolume(50)}>setVolume</button>
     </>
   );
 }
@@ -316,6 +318,36 @@ describe('Test SpotifyWebPlayback', () => {
         uris: ['track-uri'],
       }),
     );
+  });
+
+  it('.setVolume should call API', async () => {
+    const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
+      res.status(204);
+    });
+    createAPIMock({
+      put: {
+        '/v1/me/player/volume': apiHandler,
+      },
+    });
+    render(
+      <TestApp>
+        <DummyComponents
+          track={
+            {
+              uri: 'track-uri',
+            } as any
+          }
+        />
+      </TestApp>,
+    );
+
+    userEvent.click(await screen.findByRole('button', { name: 'setVolume' }));
+    await waitFor(() => expect(apiHandler).toHaveBeenCalled());
+    const [req]: [req: Request] = apiHandler.mock.calls[0];
+    expect(req.query).toEqual({
+      device_id: 'mock-remote-player-device-id',
+      volume_percent: '50',
+    });
   });
 
   it.each`
