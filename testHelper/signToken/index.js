@@ -53,7 +53,7 @@ app.get('/auth/login/callback', async (req, res, next) => {
   const { code } = req.query;
 
   const {
-    data: { access_token },
+    data: { access_token: accessToken },
   } = await axios.request({
     data: new URLSearchParams({
       client_id: clientId,
@@ -72,7 +72,7 @@ app.get('/auth/login/callback', async (req, res, next) => {
     access_token,
   });
   next();
-  await writeAccessTokenToFile(access_token);
+  await writeAccessTokenToFile(accessToken);
   process.exit(0);
 });
 
