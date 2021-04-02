@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 import { ErrorFallback } from '../ErrorFallback';
 import { Loading } from '../Loading';
+import { ExtraControl } from './components/ExtraControl';
 import { PlaybackControl } from './components/PlaybackControl';
 import { TrackInfo } from './components/TrackInfo';
 
@@ -38,6 +39,8 @@ function MusicPlaybackComponent() {
       toggleShuffleMode,
       isActive,
       seekTrack,
+      playbackType,
+      volumePercent,
     },
   } = useSpotifyWebPlayback();
   useErrorHandler(error);
@@ -67,7 +70,19 @@ function MusicPlaybackComponent() {
           isLoading: isLoading,
           isPaused,
           onChangeTrackPlayingPosition: seekTrack,
+          playbackType,
           trackDuration: currentPlayingTrack?.duration_ms,
+        }}
+      />
+      <ExtraControl
+        volumeBar={{
+          currentVolume: volumePercent,
+          isLoading,
+          onChangeVolume: (val: number) => {
+            // eslint-disable-next-line no-console
+            console.log(`setVolume to ${val}`);
+          },
+          playbackType,
         }}
       />
     </Container>
