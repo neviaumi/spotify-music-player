@@ -38,6 +38,7 @@ function MusicPlaybackComponent() {
       toggleShuffleMode,
       isActive,
       seekTrack,
+      playbackType,
     },
   } = useSpotifyWebPlayback();
   useErrorHandler(error);
@@ -67,6 +68,7 @@ function MusicPlaybackComponent() {
           isLoading: isLoading,
           isPaused,
           onChangeTrackPlayingPosition: seekTrack,
+          playbackType,
           trackDuration: currentPlayingTrack?.duration_ms,
         }}
       />

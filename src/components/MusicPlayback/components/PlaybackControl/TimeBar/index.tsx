@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getTrackBackground, Range } from 'react-range';
 import styled, { useTheme } from 'styled-components';
 
+import { PlaybackType } from '../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
 import type { theme } from '../../../../../contexts/Theme';
 import { useInterval } from '../../../../../hooks/utils/useInterval';
 import { formatMSToMinute } from '../../../../../utils/formatMS';
@@ -46,6 +47,7 @@ export interface Props {
   isLoading: boolean;
   isPaused?: boolean;
   onChangeTrackPlayingPosition: (newPosition: number) => void;
+  playbackType: PlaybackType;
   trackDuration?: number;
 }
 
@@ -57,6 +59,7 @@ export function TimeBar({
   isLoading,
   isPaused,
   onChangeTrackPlayingPosition,
+  playbackType,
 }: Props) {
   const [currentTimeBarValue, setValues] = useState([0]);
   const [showThumb, setShowThumb] = useState(false);
@@ -80,7 +83,13 @@ export function TimeBar({
 
   useInterval(
     latestSuccessExecuteTime => {
-      if (isPaused || trackDuration === undefined || isDragging) return;
+      if (
+        isPaused ||
+        trackDuration === undefined ||
+        isDragging ||
+        playbackType === PlaybackType.Local
+      )
+        return;
       const now = Date.now();
       const patchTime = now - latestSuccessExecuteTime;
       const [currentValue] = currentTimeBarValue;
@@ -91,7 +100,9 @@ export function TimeBar({
     },
     1000,
     {
-      enabled: !(disallowSeeking || isLoading || isDragging),
+      enabled:
+        !(disallowSeeking || isLoading || isDragging) &&
+        playbackType !== PlaybackType.Local,
     },
   );
   return (
@@ -103,8 +114,8 @@ export function TimeBar({
         {formatMSToMinute(currentTimeBarValue[0])}
       </TimeBarTime>
       <Range
-        disabled={disallowSeeking || isLoading}
-        max={trackDuration}
+        disabled={disallowSeeking || isLoading || trackDuration === undefined}
+        max={trackDuration ?? 500}
         min={0}
         onChange={values => {
           setIsDragging(true);

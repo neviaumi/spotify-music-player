@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
+import { PlaybackType } from '../../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
 import { AppThemeProvider } from '../../../../../../contexts/Theme';
 import { TimeBar } from '../index';
 
@@ -12,6 +13,7 @@ describe('Test TimeBar components', () => {
           disallowSeeking={false}
           isLoading={false}
           onChangeTrackPlayingPosition={jest.fn()}
+          playbackType={PlaybackType.Local}
         />
       </AppThemeProvider>,
     );
@@ -34,6 +36,7 @@ describe('Test TimeBar components', () => {
           disallowSeeking={false}
           isLoading={false}
           onChangeTrackPlayingPosition={jest.fn()}
+          playbackType={PlaybackType.Local}
           trackDuration={300000} // 5 minutes
         />
       </AppThemeProvider>,
