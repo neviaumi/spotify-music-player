@@ -203,6 +203,18 @@ function useCreateSpotifyWebPlayback() {
     [controlPlaybackByAPI],
   );
 
+  const setVolume = useCallback(
+    (volume: number) =>
+      controlPlaybackByAPI({
+        method: 'PUT',
+        params: {
+          volume_percent: volume,
+        },
+        url: 'me/player/volume',
+      }),
+    [controlPlaybackByAPI],
+  );
+
   return {
     data: {
       changeRepeatMode,
@@ -221,6 +233,7 @@ function useCreateSpotifyWebPlayback() {
       playbackType: playback.playbackType,
       progressMS: currentPlaybackState?.progress_ms,
       seekTrack,
+      setVolume,
       togglePlayMode,
       toggleShuffleMode,
       volumePercent: currentPlaybackState?.device.volume_percent,
