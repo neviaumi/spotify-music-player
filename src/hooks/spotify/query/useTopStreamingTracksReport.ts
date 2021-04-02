@@ -19,7 +19,7 @@ export function useTopStreamingTracksReport({ region, period }: Props) {
     },
     url: '/.netlify/functions/fetch-top-stream-report',
   };
-  const { data } = useQuery(
+  const { data, error } = useQuery(
     [
       queryParams.method,
       queryParams.url,
@@ -37,8 +37,10 @@ export function useTopStreamingTracksReport({ region, period }: Props) {
     {
       enabled: region !== undefined,
       staleTime: Number.POSITIVE_INFINITY,
+      suspense: false,
+      useErrorBoundary: false,
     },
   );
-  if (!data) return undefined;
+  if (!data || error) return undefined;
   return data;
 }
