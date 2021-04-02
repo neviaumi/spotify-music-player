@@ -80,6 +80,7 @@ export function PresentSuggestAlbum({
   onClickSuggestion,
   'data-testid': dataTestId,
 }: Props) {
+  if (!suggestions || suggestions?.length === 0) return null;
   return (
     <Container data-testid={dataTestId}>
       <Heading>{title}</Heading>

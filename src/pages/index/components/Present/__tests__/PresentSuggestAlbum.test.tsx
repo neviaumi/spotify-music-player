@@ -5,6 +5,32 @@ import { TestApp } from '../../../../../App';
 import { PresentSuggestAlbum } from '../PresentSuggestAlbum';
 
 describe('Test render PresentSuggestAlbum component', () => {
+  it('Should render nothing if given suggestion is undefined', () => {
+    render(
+      <TestApp>
+        <PresentSuggestAlbum
+          data-testid=""
+          onClickSuggestion={jest.fn()}
+          suggestions={undefined}
+          title="Hello World"
+        />
+      </TestApp>,
+    );
+    expect(() => screen.getAllByText(/.+/)).toThrow();
+  });
+  it('Should render nothing if given suggestion is empty', () => {
+    render(
+      <TestApp>
+        <PresentSuggestAlbum
+          data-testid=""
+          onClickSuggestion={jest.fn()}
+          suggestions={[]}
+          title="Hello World"
+        />
+      </TestApp>,
+    );
+    expect(() => screen.getAllByText(/.+/)).toThrow();
+  });
   it('Should render Present component', () => {
     render(
       <TestApp>
