@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/contexts/SpotifyWebPlayback/hooks/usePlaybackStateMachine.ts">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/pages/index/components/Present/PresentSuggestAlbum.tsx">
           <value>
             <Attribute>
