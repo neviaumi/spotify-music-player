@@ -19,6 +19,7 @@ const Container = styled.section.attrs({
 const ThumbnailFigure = styled.figure`
   margin: 0px;
   display: flex;
+  max-width: 100%;
 `;
 
 const Thumbnail = styled.img`
@@ -33,6 +34,8 @@ const StyledLink = styled(Link)`
 
 const TrackInfoContainer = styled.figcaption`
   margin: 0 ${props => props.theme.spaces.s};
+  max-width: 100%;
+  overflow: hidden;
 `;
 
 const TrackName = styled.h1`
