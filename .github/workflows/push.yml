@@ -1,4 +1,4 @@
-name: before-push
+name: after-push
 
 on:
   push:

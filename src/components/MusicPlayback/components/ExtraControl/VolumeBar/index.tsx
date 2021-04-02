@@ -88,12 +88,13 @@ export function VolumeBar({
       onMouseOver={() => setShowThumb(true)}
     >
       <VolumeStateButton
+        disabled={currentVolumeValue[0] === 0}
         onClick={() => currentVolumeValue[0] !== 0 && onChangeVolume(0)}
       >
         <VolumeBarButtonIcon currentVolume={currentVolumeValue[0]} />
       </VolumeStateButton>
       <Range
-        disabled={isLoading}
+        disabled={isLoading || currentVolume === undefined}
         max={100}
         min={0}
         onChange={values => {

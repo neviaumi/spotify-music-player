@@ -41,6 +41,7 @@ function MusicPlaybackComponent() {
       seekTrack,
       playbackType,
       volumePercent,
+      setVolume,
     },
   } = useSpotifyWebPlayback();
   useErrorHandler(error);
@@ -78,10 +79,7 @@ function MusicPlaybackComponent() {
         volumeBar={{
           currentVolume: volumePercent,
           isLoading,
-          onChangeVolume: (val: number) => {
-            // eslint-disable-next-line no-console
-            console.log(`setVolume to ${val}`);
-          },
+          onChangeVolume: setVolume,
           playbackType,
         }}
       />

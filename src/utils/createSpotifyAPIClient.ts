@@ -38,7 +38,7 @@ export function createSpotifyAPIClient(
     const { config, response } = err;
     err.message = `
 Axios Error - ${err.message}
-Request to ${config.method?.toUpperCase()} ${config.url}
+Request to ${config.method?.toUpperCase()} ${config.baseURL}/${config.url}
 Response Code : ${response?.status}
 Response Body: 
 ${JSON.stringify(response?.data, null, 4)} 
