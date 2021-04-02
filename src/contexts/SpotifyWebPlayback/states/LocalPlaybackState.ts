@@ -22,12 +22,12 @@ export class LocalPlaybackState implements ActivePlaybackState {
 
   async getPlaybackState() {
     const state = await this.localPlayback.getCurrentState();
-    const currentVolume = await this.localPlayback.getVolume();
     if (!state) {
       if (this.stateMachine.can(PlaybackState.PLAY_ON_REMOTE_PLAYBACK))
         this.stateMachine.playOnRemotePlayback();
       return null;
     }
+    const currentVolume = await this.localPlayback.getVolume();
     const {
       disallows,
       position,

@@ -14,6 +14,7 @@ describe('Test LocalPlaybackState', () => {
         id: 'fake-device-id',
       },
       getCurrentState: jest.fn().mockResolvedValue(null),
+      getVolume: jest.fn().mockResolvedValue(1.0),
     } as unknown) as Spotify.SpotifyPlayer;
     const playback = new LocalPlaybackState(player, stateMachine);
     await playback.getPlaybackState();
@@ -29,9 +30,9 @@ describe('Test LocalPlaybackState', () => {
       _options: {
         id: 'fake-device-id',
         name: 'fake-playback-name',
-        volume: 0.5,
       },
       getCurrentState: jest.fn().mockResolvedValue(currentState),
+      getVolume: jest.fn().mockResolvedValue(1.0),
     } as unknown) as Spotify.SpotifyPlayer;
     const playback = new LocalPlaybackState(player, stateMachine);
     const state = await playback.getPlaybackState();
@@ -44,7 +45,7 @@ describe('Test LocalPlaybackState', () => {
         is_restricted: false,
         name: player._options.name,
         type: 'Computer',
-        volume_percent: (player._options.volume ?? 0) * 100,
+        volume_percent: 100,
       },
       is_active: true,
       is_paused: currentState.paused,
