@@ -103,7 +103,7 @@
     "netlify-cli": "3.13.10",
     "netlify-lambda": "2.0.3",
     "npm-package-json-lint": "5.1.0",
-    "open": "8.0.4",
+    "open": "8.0.5",
     "prettier": "2.2.1",
     "quicktype": "15.0.260",
     "reflect-metadata": "0.1.13",
