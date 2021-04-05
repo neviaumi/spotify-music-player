@@ -218,6 +218,7 @@ function useCreateSpotifyWebPlayback() {
   return {
     data: {
       changeRepeatMode,
+      currentPlaybackDevice: currentPlaybackState?.device,
       currentPlayingTrack: currentPlaybackState?.track,
       isActive: currentPlaybackState?.is_active ?? false,
       isPaused: currentPlaybackState?.is_paused,
