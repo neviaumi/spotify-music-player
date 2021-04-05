@@ -44,8 +44,9 @@ export const theme = {
       xs: '12px',
       s: '14px',
       m: '16px',
-      l: '28px',
-      xl: '48px',
+      l: '24px',
+      xl: '28px',
+      xxl: '48px',
     } as SizingSystem<string>,
   },
 };

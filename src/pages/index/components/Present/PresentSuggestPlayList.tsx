@@ -20,7 +20,7 @@ const SuggestionsContainer = styled.article`
 `;
 
 const Heading = styled.h1`
-  font-size: ${props => props.theme.typography.size.l};
+  font-size: ${props => props.theme.typography.size.xl};
   line-height: 1.6;
   display: block;
 `;

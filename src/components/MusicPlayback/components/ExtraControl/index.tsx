@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { PickConnectedDevice } from './PickConnectedDevice';
 import { Props as VolumeBarProps, VolumeBar } from './VolumeBar';
 
 const Container = styled.aside`
@@ -16,6 +17,7 @@ interface Props {
 export function ExtraControl({ volumeBar }: Props) {
   return (
     <Container>
+      <PickConnectedDevice />
       <VolumeBar {...volumeBar} />
     </Container>
   );
