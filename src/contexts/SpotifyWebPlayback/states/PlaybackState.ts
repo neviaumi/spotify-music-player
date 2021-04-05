@@ -102,6 +102,16 @@ export enum PlaybackType {
   Remote = 'remote',
 }
 
+export interface PlaybackDevice {
+  id: string;
+  is_active: boolean;
+  is_private_session: boolean;
+  is_restricted: boolean;
+  name: string;
+  type: string;
+  volume_percent: number;
+}
+
 export interface ActivePlaybackState {
   readonly playbackType: PlaybackType;
   readonly refreshInterval: number;
@@ -111,15 +121,7 @@ export interface ActivePlaybackState {
     actions: {
       disallows: Spotify.PlaybackDisallows;
     };
-    device: {
-      id: string;
-      is_active: boolean;
-      is_private_session: boolean;
-      is_restricted: boolean;
-      name: string;
-      type: string;
-      volume_percent: number;
-    };
+    device: PlaybackDevice;
     is_active: boolean;
     is_paused: boolean;
     progress_ms: number;

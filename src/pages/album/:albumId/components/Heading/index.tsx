@@ -17,7 +17,7 @@ const ContentContainer = styled.main`
 `;
 
 const Title = styled.h1`
-  font-size: ${props => props.theme.typography.size.xl};
+  font-size: ${props => props.theme.typography.size.xxl};
   line-height: 48px;
   margin: 0px;
   padding: ${props => props.theme.spaces.s} 0px;
