@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { MusicPlayback } from '../components/MusicPlayback';
 import { Nav } from '../components/Nav';
 import { Panel } from '../components/Panel';
+import { RemotePlaybackBannerWrapper } from '../components/RemotePlaybackBanner';
 import { SpotifyWebPlaybackProvider } from '../contexts/SpotifyWebPlayback';
 import { AlbumPage } from '../pages/album/:albumId';
 import { LoginPage } from '../pages/auth/login';
@@ -23,22 +24,24 @@ export function Routes() {
       <Route component={DummyComponent} exact path="/metric/performance" />
       <ProtectedRoutes>
         <SpotifyWebPlaybackProvider>
-          <Panel
-            Bottom={<MusicPlayback />}
-            Left={<Nav />}
-            Right={
-              <Switch>
-                <Route component={Suggestion} exact path="/" />
-                <Route
-                  component={PlaylistPage}
-                  exact
-                  path="/playlist/:playlistId"
-                />
-                <Route component={AlbumPage} exact path="/album/:albumId" />
-              </Switch>
-            }
-            data-testid="panel"
-          />
+          <RemotePlaybackBannerWrapper>
+            <Panel
+              Bottom={<MusicPlayback />}
+              Left={<Nav />}
+              Right={
+                <Switch>
+                  <Route component={Suggestion} exact path="/" />
+                  <Route
+                    component={PlaylistPage}
+                    exact
+                    path="/playlist/:playlistId"
+                  />
+                  <Route component={AlbumPage} exact path="/album/:albumId" />
+                </Switch>
+              }
+              data-testid="panel"
+            />
+          </RemotePlaybackBannerWrapper>
         </SpotifyWebPlaybackProvider>
       </ProtectedRoutes>
     </Switch>

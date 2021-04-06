@@ -73,6 +73,12 @@ export function PickConnectedDevice() {
                   'Testing Device 3 Testing Device 3 Testing Device 3 Testing Device 3 Testing Device 3',
                 type: 'smartphone',
               } as any,
+              {
+                id: '40',
+                name:
+                  'Testing Device 4 Testing Device 4 Testing Device 4 Testing Device 4 Testing Device 4',
+                type: 'smartphone',
+              } as any,
             ]}
             {...rest}
           />
