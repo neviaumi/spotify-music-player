@@ -3,31 +3,36 @@ import type { Key } from 'react';
 import styled from 'styled-components';
 
 import type { PlaybackDevice } from '../../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
+import { ReactComponent as ConnectIcon } from './spotify-connect-icon.svg';
 
 interface ConnectedDeviceItemProps {
   device: PlaybackDevice;
 }
 
 const ConnectDeviceItemContainer = styled.li`
-  display: flex;
   margin: 0px;
   overflow: hidden;
-  max-width: 100%;
-  align-items: center;
-  justify-content: center;
   &:hover {
     background-color: ${props => props.theme.colors.contrast3};
   }
-  padding: ${props => props.theme.spaces.xs} ${props => props.theme.spaces.xxxl};
+  padding: ${props => props.theme.spaces.xs} ${props => props.theme.spaces.xxxl}
+    ${props => props.theme.spaces.xs} ${props => props.theme.spaces.s};
+  button {
+    max-width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding: 0px;
+  }
 `;
 
 const DeviceTypeIconContainer = styled.div`
   height: 32px;
-  width: 47px;
   svg {
     fill: ${props => props.theme.colors.foreground};
     height: 32px;
-    width: 47px;
   }
 `;
 
@@ -53,23 +58,45 @@ const DeviceItemHeadline = styled.h1`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  text-align: left;
 `;
 
 const CurrentDeviceItemHeadline = styled(DeviceItemHeadline)`
   color: ${props => props.theme.colors.green};
 `;
 
-const DeviceItemSecondLine = styled.span`
+const DeviceItemSecondLine = styled.div`
   margin-top: ${props => props.theme.spaces.xxs};
   color: ${props => props.theme.colors.contrast4};
   font-size: ${props => props.theme.typography.size.xxs};
+  display: flex;
+  align-items: center;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  text-align: left;
+  svg {
+    fill: ${props => props.theme.colors.contrast4};
+  }
 `;
 
 const CurrentDeviceItemSecondLine = styled(DeviceItemSecondLine)`
   color: ${props => props.theme.colors.green};
+  svg {
+    fill: ${props => props.theme.colors.green};
+  }
+  #name-wrapper {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+`;
+
+const SpotifyConnectIconWrapper = styled.div`
+  height: 16px;
+  width: 16px;
+  margin-right: ${props => props.theme.spaces.xxxs};
 `;
 
 function CandidateConnectDeviceItem({ device }: ConnectedDeviceItemProps) {
@@ -81,13 +108,20 @@ function CandidateConnectDeviceItem({ device }: ConnectedDeviceItemProps) {
     }[device.type] ?? Speaker;
   return (
     <ConnectDeviceItemContainer>
-      <DeviceTypeIconContainer>
-        <DeviceTypeIcon />
-      </DeviceTypeIconContainer>
-      <DeviceItemInfo>
-        <DeviceItemHeadline>{device.name}</DeviceItemHeadline>
-        <DeviceItemSecondLine>Spotify Connect</DeviceItemSecondLine>
-      </DeviceItemInfo>
+      <button>
+        <DeviceTypeIconContainer>
+          <DeviceTypeIcon />
+        </DeviceTypeIconContainer>
+        <DeviceItemInfo>
+          <DeviceItemHeadline>{device.name}</DeviceItemHeadline>
+          <DeviceItemSecondLine>
+            <SpotifyConnectIconWrapper>
+              <ConnectIcon />
+            </SpotifyConnectIconWrapper>
+            Spotify Connect
+          </DeviceItemSecondLine>
+        </DeviceItemInfo>
+      </button>
     </ConnectDeviceItemContainer>
   );
 }
@@ -101,13 +135,20 @@ function CurrentConnectedDeviceItem({ device }: ConnectedDeviceItemProps) {
     }[device.type] ?? Speaker;
   return (
     <ConnectDeviceItemContainer>
-      <CurrentDeviceTypeIconContainer>
-        <DeviceTypeIcon />
-      </CurrentDeviceTypeIconContainer>
-      <DeviceItemInfo>
-        <CurrentDeviceItemHeadline>Listing On</CurrentDeviceItemHeadline>
-        <CurrentDeviceItemSecondLine>{device.name}</CurrentDeviceItemSecondLine>
-      </DeviceItemInfo>
+      <button>
+        <CurrentDeviceTypeIconContainer>
+          <DeviceTypeIcon />
+        </CurrentDeviceTypeIconContainer>
+        <DeviceItemInfo>
+          <CurrentDeviceItemHeadline>Listing On</CurrentDeviceItemHeadline>
+          <CurrentDeviceItemSecondLine>
+            <SpotifyConnectIconWrapper>
+              <ConnectIcon />
+            </SpotifyConnectIconWrapper>
+            <div id={'name-wrapper'}>{device.name}</div>
+          </CurrentDeviceItemSecondLine>
+        </DeviceItemInfo>
+      </button>
     </ConnectDeviceItemContainer>
   );
 }
