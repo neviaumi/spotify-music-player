@@ -20,7 +20,7 @@ const SuggestionsContainer = styled.article`
 `;
 
 const Heading = styled.h1`
-  font-size: ${props => props.theme.typography.size.l};
+  font-size: ${props => props.theme.typography.size.xl};
   line-height: 1.6;
   display: block;
 `;
@@ -56,17 +56,18 @@ const SuggestionHeading = styled.section`
 
 const SuggestionName = styled.p`
   font-size: ${props => props.theme.typography.size.s};
-  line-height: 20px;
-  font-weight: 700;
-  letter-spacing: 0.24px;
+  font-weight: bold;
   margin: 0px;
   color: ${props => props.theme.colors.foreground};
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 const SuggestionDescription = styled.span`
   display: block;
   font-size: ${props => props.theme.typography.size.xs};
-  line-height: 18px;
+  line-height: ${props => props.theme.typography.size.l};
   margin-top: ${props => props.theme.spaces.xxxs};
   text-overflow: ellipsis;
   white-space: nowrap;
