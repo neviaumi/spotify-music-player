@@ -2,6 +2,7 @@ import type { AxiosInstance } from 'axios';
 // @ts-expect-error https://github.com/jakesgordon/javascript-state-machine/issues/91
 import JSStateMachine from 'javascript-state-machine';
 
+import { IdlePlaybackState } from './IdlePlaybackState';
 import { LocalPlaybackState } from './LocalPlaybackState';
 import { RemotePlaybackState } from './RemotePlaybackState';
 import type { RepeatMode } from './RepeatMode';
@@ -63,9 +64,24 @@ export function createPlaybackStateMachine(
       getPlayback({ apiClient, localPlayback }) {
         const { state } = this;
         if (state === PlaybackState.PLAY_ON_LOCAL_PLAYBACK && localPlayback) {
-          return new LocalPlaybackState(localPlayback, this);
+          return new LocalPlaybackState({
+            localPlayback,
+            stateMachine: this,
+          });
         }
-        return new RemotePlaybackState(apiClient, this);
+        if (state === PlaybackState.IDLE) {
+          return new IdlePlaybackState({
+            apiClient,
+            localPlayback,
+            stateMachine: this,
+          });
+        }
+
+        return new RemotePlaybackState({
+          apiClient,
+          localPlayback,
+          stateMachine: this,
+        });
       },
     },
     transitions: [

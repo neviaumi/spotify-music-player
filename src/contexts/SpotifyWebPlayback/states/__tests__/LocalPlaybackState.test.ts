@@ -16,7 +16,10 @@ describe('Test LocalPlaybackState', () => {
       getCurrentState: jest.fn().mockResolvedValue(null),
       getVolume: jest.fn().mockResolvedValue(1.0),
     } as unknown) as Spotify.SpotifyPlayer;
-    const playback = new LocalPlaybackState(player, stateMachine);
+    const playback = new LocalPlaybackState({
+      localPlayback: player,
+      stateMachine,
+    });
     await playback.getPlaybackState();
     expect(stateMachine.state).toEqual(PlaybackState.PLAY_ON_REMOTE_PLAYBACK);
   });
@@ -34,7 +37,10 @@ describe('Test LocalPlaybackState', () => {
       getCurrentState: jest.fn().mockResolvedValue(currentState),
       getVolume: jest.fn().mockResolvedValue(1.0),
     } as unknown) as Spotify.SpotifyPlayer;
-    const playback = new LocalPlaybackState(player, stateMachine);
+    const playback = new LocalPlaybackState({
+      localPlayback: player,
+      stateMachine,
+    });
     const state = await playback.getPlaybackState();
     expect(state).toStrictEqual({
       actions: { disallows: currentState.disallows },

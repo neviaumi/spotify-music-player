@@ -74,8 +74,7 @@ export function RemotePlaybackBannerWrapper({
   const {
     data: { currentPlaybackDevice, playbackType },
   } = useSpotifyWebPlayback();
-  const shouldShowRemotePlaybackBanner =
-    currentPlaybackDevice?.is_active && playbackType === PlaybackType.Remote;
+  const shouldShowRemotePlaybackBanner = playbackType === PlaybackType.Remote;
   return (
     <RemotePlaybackBannerWrapperContainer>
       {children}
