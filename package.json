@@ -12,7 +12,7 @@
     ]
   },
   "dependencies": {
-    "@styled-icons/bootstrap": "10.29.0",
+    "@styled-icons/bootstrap": "10.33.0",
     "@waiting/base64": "4.2.9",
     "axios": "0.21.1",
     "class-transformer": "0.4.0",
