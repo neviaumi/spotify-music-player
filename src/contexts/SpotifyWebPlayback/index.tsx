@@ -5,7 +5,6 @@ import { useQuery, useQueryClient } from 'react-query';
 import type { TrackSimplified } from 'src/hooks/spotify/typings/Track';
 
 import { useSpotifyAPIClient } from '../../hooks/useSpotifyAPIClient';
-import { debug } from '../../utils/logger';
 import { useLocalSpotifyPlayback } from './hooks/useLocalSpotifyPlayback';
 import { usePlaybackStateMachine } from './hooks/usePlaybackStateMachine';
 import { PlaybackState } from './states/PlaybackState';
@@ -71,10 +70,6 @@ function useCreateSpotifyWebPlayback() {
       if (!playOnDeviceId) return;
       if (isLoading) return; // disable concurrent send command to player
       setIsLoading(true);
-      debug('controlPlaybackByAPI', {
-        isLocalDeviceId,
-        playOnDeviceId,
-      });
       await apiClient.request({
         ...config,
         params: {

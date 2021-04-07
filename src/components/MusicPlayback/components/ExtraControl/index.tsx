@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
+import { useSpotifyWebPlayback } from '../../../../contexts/SpotifyWebPlayback';
 import { PickConnectedDevice } from './PickConnectedDevice';
-import { Props as VolumeBarProps, VolumeBar } from './VolumeBar';
+import { VolumeBar } from './VolumeBar';
 
 const Container = styled.aside`
   display: flex;
@@ -10,15 +11,20 @@ const Container = styled.aside`
   flex-grow: 1;
 `;
 
-interface Props {
-  volumeBar: VolumeBarProps;
-}
-
-export function ExtraControl({ volumeBar }: Props) {
+export function ExtraControl() {
+  const {
+    data: { volumePercent, setVolume, playbackType },
+    isLoading,
+  } = useSpotifyWebPlayback();
   return (
     <Container>
       <PickConnectedDevice />
-      <VolumeBar {...volumeBar} />
+      <VolumeBar
+        currentVolume={volumePercent}
+        isLoading={isLoading}
+        onChangeVolume={setVolume}
+        playbackType={playbackType}
+      />
     </Container>
   );
 }

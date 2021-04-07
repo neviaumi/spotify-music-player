@@ -1,12 +1,11 @@
 import 'src/contexts/SpotifyWebPlayback/SpotifyPlayer.d';
 
+import { last } from 'ramda';
 import { Link } from 'react-router-dom';
 import { getIdFromSpotifyURI } from 'src/utils/getIdFromSpotifyURI';
 import styled from 'styled-components';
 
-interface Props {
-  currentPlayingTrack?: Spotify.Track;
-}
+import { useSpotifyWebPlayback } from '../../../../contexts/SpotifyWebPlayback';
 
 const Container = styled.section.attrs({
   'aris-label': 'track-info-container',
@@ -56,14 +55,17 @@ const Artist = styled.h2`
   overflow: hidden;
 `;
 
-export function TrackInfo({ currentPlayingTrack }: Props) {
+export function TrackInfo() {
+  const {
+    data: { currentPlayingTrack },
+  } = useSpotifyWebPlayback();
   if (!currentPlayingTrack) return <Container />;
   return (
     <Container>
       <ThumbnailFigure>
         <Thumbnail
           alt={currentPlayingTrack.album.name}
-          src={currentPlayingTrack.album.images.pop()?.url}
+          src={last(currentPlayingTrack.album.images)?.url}
         />
         <TrackInfoContainer>
           <StyledLink

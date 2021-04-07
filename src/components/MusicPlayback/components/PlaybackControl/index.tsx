@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-import { ControlButtons, Props as ControlButtonsProps } from './ControlButtons';
-import { Props as TimeBarProps, TimeBar } from './TimeBar';
+import { useSpotifyWebPlayback } from '../../../../contexts/SpotifyWebPlayback';
+import { ControlButtons } from './ControlButtons';
+import { TimeBar } from './TimeBar';
 
 const Container = styled.section`
   display: flex;
@@ -12,16 +13,51 @@ const Container = styled.section`
   align-items: center;
 `;
 
-interface Props {
-  controlButtons: ControlButtonsProps;
-  timeBar: TimeBarProps;
-}
-
-export function PlaybackControl({ controlButtons, timeBar }: Props) {
+export function PlaybackControl() {
+  const {
+    data: {
+      progressMS,
+      currentPlayingTrack,
+      playbackDisallowedActions,
+      playbackRepeatMode,
+      playbackEnabledShuffle,
+      isPaused,
+      changeRepeatMode,
+      playNextTrack,
+      playPreviousTrack,
+      togglePlayMode,
+      toggleShuffleMode,
+      isActive,
+      seekTrack,
+      playbackType,
+    },
+    isLoading,
+  } = useSpotifyWebPlayback();
   return (
     <Container>
-      <ControlButtons {...controlButtons} />
-      <TimeBar {...timeBar} />
+      <ControlButtons
+        disallows={playbackDisallowedActions}
+        isActive={isActive}
+        isLoading={isLoading}
+        isPaused={isPaused}
+        onClickChangeRepeatMode={changeRepeatMode}
+        onClickNextTrack={playNextTrack}
+        onClickPreviousTrack={playPreviousTrack}
+        onClickTogglePlay={togglePlayMode}
+        onClickToggleShuffleMode={toggleShuffleMode}
+        repeatMode={playbackRepeatMode}
+        shuffleMode={playbackEnabledShuffle}
+      />
+      <TimeBar
+        currentProgressMS={progressMS!}
+        currentTrackId={currentPlayingTrack?.id}
+        disallowSeeking={playbackDisallowedActions?.seeking ?? false}
+        isLoading={isLoading}
+        isPaused={isPaused}
+        onChangeTrackPlayingPosition={seekTrack}
+        playbackType={playbackType}
+        trackDuration={currentPlayingTrack?.duration_ms}
+      />
     </Container>
   );
 }
