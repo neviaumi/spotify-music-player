@@ -47,7 +47,7 @@ export function RemotePlaybackBanner({
   currentDevice: PlaybackDevice;
 }) {
   return (
-    <RemotePlaybackBannerContainer>
+    <RemotePlaybackBannerContainer aria-label={'remote-playback-banner'}>
       <RemotePlaybackBannerArrow />
       <RemotePlaybackBannerIcon />
       {"You're listening on"}
