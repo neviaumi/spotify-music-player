@@ -42,7 +42,7 @@ function useCreateSpotifyWebPlayback() {
     error: getPlaybackStateError,
     refetch,
   } = useQuery(
-    [playback.playbackType, 'getPlaybackState'],
+    [playback.playbackType, playbackStateMachine.state, 'getPlaybackState'],
     () => {
       return playback.getPlaybackState();
     },
@@ -54,10 +54,11 @@ function useCreateSpotifyWebPlayback() {
   const invalidCurrentPlaybackState = useCallback(async () => {
     await queryClient.invalidateQueries([
       playback.playbackType,
+      playbackStateMachine.state,
       'getPlaybackState',
     ]);
     await refetch();
-  }, [playback.playbackType, queryClient, refetch]);
+  }, [playback.playbackType, playbackStateMachine.state, queryClient, refetch]);
   const playOnDeviceId = currentPlaybackState?.is_active
     ? currentPlaybackState?.device.id
     : player?._options.id;
@@ -68,7 +69,7 @@ function useCreateSpotifyWebPlayback() {
     async (config: AxiosRequestConfig) => {
       if (!playOnDeviceId) return;
       if (isLoading) return; // disable concurrent send command to player
-      setIsLoading(isLoading);
+      setIsLoading(true);
       await apiClient.request({
         ...config,
         params: {

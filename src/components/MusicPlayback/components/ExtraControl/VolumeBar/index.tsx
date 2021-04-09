@@ -98,6 +98,7 @@ export function VolumeBar({
         max={100}
         min={0}
         onChange={values => {
+          onChangeVolume(values[0]);
           setValues(values);
         }}
         onFinalChange={values => {

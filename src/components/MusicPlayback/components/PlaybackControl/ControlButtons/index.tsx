@@ -32,8 +32,8 @@ const Button = styled.button`
   ${props => {
     if (props.disabled)
       return `
-color: ${props.theme.colors.contrast2};
-fill: ${props.theme.colors.contrast2};`;
+color: ${props.theme.colors.contrast3};
+fill: ${props.theme.colors.contrast3};`;
     return `
 color: ${props.theme.colors.contrast4};
 fill: ${props.theme.colors.contrast4};
@@ -165,7 +165,7 @@ export function ControlButtons({
     <Container>
       <ShuffleButton
         active={shuffleMode ?? false}
-        disabled={isLoading}
+        disabled={isLoading || !isActive}
         onClick={onEnabledButtonClick(onClickToggleShuffleMode)}
         title={`${shuffleMode ? 'Disable' : 'Enable'} shuffle mode`}
       >
@@ -198,7 +198,7 @@ export function ControlButtons({
       </NextButton>
       <RepeatButton
         active={repeatMode !== RepeatMode.Off}
-        disabled={isLoading}
+        disabled={isLoading || !isActive}
         onClick={onEnabledButtonClick(() => {
           if (!nextRepeatMode) return;
 
