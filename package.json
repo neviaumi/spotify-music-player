@@ -12,7 +12,7 @@
     ]
   },
   "dependencies": {
-    "@styled-icons/bootstrap": "10.29.0",
+    "@styled-icons/bootstrap": "10.33.0",
     "@waiting/base64": "4.2.9",
     "axios": "0.21.1",
     "class-transformer": "0.4.0",
@@ -29,7 +29,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-error-boundary": "3.1.1",
-    "react-query": "3.13.4",
+    "react-query": "3.13.5",
     "react-range": "1.8.7",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
@@ -41,7 +41,7 @@
     "styled-components": "5.2.3"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "7.13.10",
+    "@babel/plugin-transform-runtime": "7.13.15",
     "@busybox/babel-preset": "1.1.7",
     "@busybox/eslint-config": "5.4.5",
     "@busybox/npm-package-json-lint-config": "1.1.3",
@@ -60,7 +60,7 @@
     "@testing-library/react": "11.2.6",
     "@testing-library/react-hooks": "5.1.1",
     "@testing-library/user-event": "13.1.1",
-    "@types/aws-lambda": "8.10.73",
+    "@types/aws-lambda": "8.10.75",
     "@types/enzyme": "3.10.8",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/eslint": "7.2.8",
@@ -80,7 +80,7 @@
     "@types/pollyjs__core": "4.3.2",
     "@types/pollyjs__persister-fs": "2.0.1",
     "@types/prettier": "2.2.3",
-    "@types/ramda": "0.27.39",
+    "@types/ramda": "0.27.40",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
     "@types/react-router-dom": "5.1.7",
@@ -102,7 +102,7 @@
     "jest-expect-message": "1.0.2",
     "lint-staged": "10.5.4",
     "mutation-observer": "1.0.3",
-    "netlify-cli": "3.15.1",
+    "netlify-cli": "3.16.2",
     "netlify-lambda": "2.0.3",
     "npm-package-json-lint": "5.1.0",
     "open": "8.0.5",
@@ -115,7 +115,7 @@
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-order": "4.1.0",
     "stylelint-processor-styled-components": "1.10.0",
-    "typescript": "4.2.3",
+    "typescript": "4.2.4",
     "typesync": "0.8.0"
   },
   "engines": {
