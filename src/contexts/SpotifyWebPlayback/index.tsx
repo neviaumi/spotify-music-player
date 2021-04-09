@@ -209,7 +209,7 @@ function useCreateSpotifyWebPlayback() {
       controlPlaybackByAPI({
         method: 'PUT',
         params: {
-          volume_percent: volume,
+          volume_percent: Math.floor(volume),
         },
         url: 'me/player/volume',
       }),
