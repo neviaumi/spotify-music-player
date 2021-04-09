@@ -110,6 +110,7 @@ describe('Test ControlButtons', () => {
     ${false}    | ${'Enable shuffle mode'}
   `('render shuffleMode is $shuffleMode', ({ shuffleMode, buttonTitle }) => {
     const props = createMockProps({
+      isActive: true,
       shuffleMode: shuffleMode,
     });
     render(

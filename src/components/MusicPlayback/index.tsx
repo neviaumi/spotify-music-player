@@ -23,66 +23,17 @@ const Container = styled.aside`
 function MusicPlaybackComponent() {
   const {
     error,
-    isLoading,
-    data: {
-      progressMS,
-      playbackState,
-      currentPlayingTrack,
-      playbackDisallowedActions,
-      playbackRepeatMode,
-      playbackEnabledShuffle,
-      isPaused,
-      changeRepeatMode,
-      playNextTrack,
-      playPreviousTrack,
-      togglePlayMode,
-      toggleShuffleMode,
-      isActive,
-      seekTrack,
-      playbackType,
-      volumePercent,
-      setVolume,
-    },
+    data: { playbackState },
   } = useSpotifyWebPlayback();
   useErrorHandler(error);
+
   if (playbackState === PlaybackState.INIT) return <Loading />;
 
   return (
     <Container aria-label="music-playback">
-      <TrackInfo currentPlayingTrack={currentPlayingTrack} />
-      <PlaybackControl
-        controlButtons={{
-          disallows: playbackDisallowedActions,
-          isActive,
-          isLoading,
-          isPaused,
-          onClickChangeRepeatMode: changeRepeatMode,
-          onClickNextTrack: playNextTrack,
-          onClickPreviousTrack: playPreviousTrack,
-          onClickTogglePlay: togglePlayMode,
-          onClickToggleShuffleMode: toggleShuffleMode,
-          repeatMode: playbackRepeatMode,
-          shuffleMode: playbackEnabledShuffle,
-        }}
-        timeBar={{
-          currentProgressMS: progressMS!,
-          currentTrackId: currentPlayingTrack?.id,
-          disallowSeeking: playbackDisallowedActions?.seeking ?? false,
-          isLoading: isLoading,
-          isPaused,
-          onChangeTrackPlayingPosition: seekTrack,
-          playbackType,
-          trackDuration: currentPlayingTrack?.duration_ms,
-        }}
-      />
-      <ExtraControl
-        volumeBar={{
-          currentVolume: volumePercent,
-          isLoading,
-          onChangeVolume: setVolume,
-          playbackType,
-        }}
-      />
+      <TrackInfo />
+      <PlaybackControl />
+      <ExtraControl />
     </Container>
   );
 }

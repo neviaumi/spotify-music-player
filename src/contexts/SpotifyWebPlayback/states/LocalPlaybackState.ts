@@ -7,6 +7,8 @@ import {
 import { RepeatMode } from './RepeatMode';
 
 export class LocalPlaybackState implements ActivePlaybackState {
+  readonly localPlayback: Spotify.SpotifyPlayer;
+
   readonly playbackType: PlaybackType = PlaybackType.Local;
 
   readonly refreshInterval: number = 500; // 0.5s
@@ -14,10 +16,13 @@ export class LocalPlaybackState implements ActivePlaybackState {
   readonly stateMachine: StateMachine;
 
   constructor(
-    private readonly localPlayback: Spotify.SpotifyPlayer,
-    stateMachine: StateMachine,
+    readonly options: {
+      localPlayback: Spotify.SpotifyPlayer;
+      stateMachine: StateMachine;
+    },
   ) {
-    this.stateMachine = stateMachine;
+    this.stateMachine = options.stateMachine;
+    this.localPlayback = options.localPlayback;
   }
 
   async getPlaybackState() {
