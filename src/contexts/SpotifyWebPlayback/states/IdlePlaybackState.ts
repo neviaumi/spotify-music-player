@@ -53,6 +53,7 @@ export class IdlePlaybackState implements ActivePlaybackState {
       actions,
       device: {
         ...device,
+        id: this.localPlayback?._options?.id,
         volume_percent: currentVolume * 100,
       } as any,
       is_active: false,

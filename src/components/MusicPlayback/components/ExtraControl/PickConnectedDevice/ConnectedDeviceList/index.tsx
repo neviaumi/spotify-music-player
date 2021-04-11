@@ -1,7 +1,7 @@
 import { QuestionCircle } from '@styled-icons/bootstrap';
 import styled from 'styled-components';
 
-import type { PlaybackDevice } from '../../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
+import type { UserDevice } from '../../../../../../hooks/spotify/typings/UserDevice';
 import headerImg from './connect-header.png';
 import { ConnectedDeviceItem } from './ConnectedDeviceItem';
 
@@ -52,9 +52,10 @@ export function ConnectedDeviceList({
   currentDeviceId,
   devices,
 }: {
-  currentDeviceId: string;
-  devices: PlaybackDevice[];
+  currentDeviceId?: string;
+  devices: UserDevice[];
 }) {
+  if (devices.length === 0 || !currentDeviceId) return null;
   return (
     <DeviceListContainer>
       <InfoTitle>
@@ -76,7 +77,7 @@ export function ConnectedDeviceList({
           <ConnectedDeviceItem
             device={device}
             isCurrentDevice={currentDeviceId === device.id}
-            key={device.id}
+            key={device.id ?? device.name}
           />
         ))}
       </ListContainer>
