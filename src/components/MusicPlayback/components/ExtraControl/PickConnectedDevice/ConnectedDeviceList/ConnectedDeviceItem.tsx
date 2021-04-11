@@ -2,11 +2,11 @@ import { Laptop, Phone, Speaker } from '@styled-icons/bootstrap';
 import type { Key } from 'react';
 import styled from 'styled-components';
 
-import type { PlaybackDevice } from '../../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
+import type { UserDevice } from '../../../../../../hooks/spotify/typings/UserDevice';
 import { ReactComponent as ConnectIcon } from './spotify-connect-icon.svg';
 
 interface ConnectedDeviceItemProps {
-  device: PlaybackDevice;
+  device: UserDevice;
 }
 
 const ConnectDeviceItemContainer = styled.li`
@@ -102,9 +102,9 @@ const SpotifyConnectIconWrapper = styled.div`
 function CandidateConnectDeviceItem({ device }: ConnectedDeviceItemProps) {
   const DeviceTypeIcon =
     {
-      computer: Laptop,
-      smartphone: Phone,
-      speaker: Speaker,
+      Computer: Laptop,
+      Smartphone: Phone,
+      Speaker: Speaker,
     }[device.type] ?? Speaker;
   return (
     <ConnectDeviceItemContainer>
@@ -129,9 +129,9 @@ function CandidateConnectDeviceItem({ device }: ConnectedDeviceItemProps) {
 function CurrentConnectedDeviceItem({ device }: ConnectedDeviceItemProps) {
   const DeviceTypeIcon =
     {
-      computer: Laptop,
-      smartphone: Phone,
-      speaker: Speaker,
+      Computer: Laptop,
+      Smartphone: Phone,
+      Speaker: Speaker,
     }[device.type] ?? Speaker;
   return (
     <ConnectDeviceItemContainer>
@@ -154,7 +154,7 @@ function CurrentConnectedDeviceItem({ device }: ConnectedDeviceItemProps) {
 }
 
 interface Props {
-  device: PlaybackDevice;
+  device: UserDevice;
   isCurrentDevice: boolean;
   key: Key;
 }

@@ -1,10 +1,12 @@
 import { MusicPlayer } from '@styled-icons/bootstrap';
+import { useErrorHandler } from 'react-error-boundary';
 import { ArrowContainer, Popover } from 'react-tiny-popover';
 import styled, { useTheme } from 'styled-components';
 
 import { useSpotifyWebPlayback } from '../../../../../contexts/SpotifyWebPlayback';
 import { PlaybackType } from '../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
 import type { theme } from '../../../../../contexts/Theme';
+import { useAvailableDevices } from '../../../../../hooks/spotify/query/useAvailableDevices';
 import { useToggle } from '../../../../../hooks/utils/useToggle';
 import { ConnectedDeviceList } from './ConnectedDeviceList';
 
@@ -17,7 +19,11 @@ const PickConnectedDeviceButton = styled.button<{ isPlayingOnRemote: boolean }>`
   background-color: transparent;
   svg {
     ${props => {
-      const { isPlayingOnRemote, theme } = props;
+      const { isPlayingOnRemote, theme, disabled } = props;
+      if (disabled) {
+        return `
+fill: ${theme.colors.contrast3};`;
+      }
       if (isPlayingOnRemote) {
         return `
 fill: ${theme.colors.green};
@@ -36,7 +42,7 @@ fill: ${theme.colors.contrast4};
 
 export function PickConnectedDevice() {
   const {
-    data: { playbackType, isActive },
+    data: { playbackType, isActive, currentPlaybackDevice },
   } = useSpotifyWebPlayback();
 
   const styledTheme = useTheme() as typeof theme;
@@ -44,6 +50,12 @@ export function PickConnectedDevice() {
   const [isPopOverOpen, togglePopOver] = useToggle();
   const isPlayingOnRemoteDevice =
     playbackType === PlaybackType.Remote && isActive;
+  const { data, error } = useAvailableDevices({
+    refetchInterval: 3000,
+    suspense: false,
+  });
+  useErrorHandler(error);
+  const devices = data?.data?.devices ?? [];
   return (
     <Popover
       content={({ position, childRect, popoverRect, ...rest }) => (
@@ -55,31 +67,8 @@ export function PickConnectedDevice() {
           position={position}
         >
           <ConnectedDeviceList
-            currentDeviceId={'30'}
-            devices={[
-              {
-                id: '10',
-                name: 'Testing Device 1',
-                type: 'computer',
-              } as any,
-              {
-                id: '20',
-                name: 'Testing Device 2',
-                type: 'smartphone',
-              } as any,
-              {
-                id: '30',
-                name:
-                  'Testing Device 3 Testing Device 3 Testing Device 3 Testing Device 3 Testing Device 3',
-                type: 'smartphone',
-              } as any,
-              {
-                id: '40',
-                name:
-                  'Testing Device 4 Testing Device 4 Testing Device 4 Testing Device 4 Testing Device 4',
-                type: 'smartphone',
-              } as any,
-            ]}
+            currentDeviceId={currentPlaybackDevice?.id}
+            devices={devices}
             {...rest}
           />
         </ArrowContainer>
@@ -88,6 +77,7 @@ export function PickConnectedDevice() {
       onClickOutside={() => togglePopOver()}
     >
       <PickConnectedDeviceButton
+        disabled={devices.length === 0}
         isPlayingOnRemote={isPlayingOnRemoteDevice}
         onClick={() => togglePopOver()}
       >

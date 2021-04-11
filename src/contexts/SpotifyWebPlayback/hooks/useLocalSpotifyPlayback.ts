@@ -62,7 +62,7 @@ export function useLocalSpotifyPlayback({ onPlayerStateChanged }: Props) {
           });
         },
         name: window.location.host,
-        volume: 0.5,
+        volume: 0.2,
       });
 
       playerInstance.addListener('ready', ({ device_id }) => {
