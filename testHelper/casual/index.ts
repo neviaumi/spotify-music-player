@@ -10,3 +10,4 @@ import './SimplifiedTrackObject';
 import './ArtistObject';
 import './TrackObject';
 import './PlaylistObject';
+import './DeviceObject';

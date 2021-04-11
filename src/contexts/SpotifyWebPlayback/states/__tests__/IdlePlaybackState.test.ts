@@ -65,7 +65,7 @@ describe('IdlePlaybackState', () => {
     expect(stateMachine.state).toEqual(PlaybackState.IDLE);
     expect(playbackState).toStrictEqual({
       actions: { disallows: { resuming: true } },
-      device: { is_active: false, volume_percent: 10 },
+      device: { id: undefined, is_active: false, volume_percent: 10 },
       is_active: false,
       is_paused: true,
       progress_ms: 0,
@@ -195,6 +195,7 @@ describe('IdlePlaybackState', () => {
         },
       },
       device: {
+        id: undefined,
         is_active: false,
         volume_percent: 10,
       },

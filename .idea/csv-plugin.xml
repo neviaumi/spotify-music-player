@@ -31,6 +31,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/hooks/spotify/query/useAvailableDevices.ts">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/pages/index/components/Present/PresentSuggestAlbum.tsx">
           <value>
             <Attribute>
