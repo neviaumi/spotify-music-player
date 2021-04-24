@@ -39,6 +39,7 @@ function DummyComponents({
       playPreviousTrack,
       seekTrack,
       setVolume,
+      transferPlayback,
     },
   } = useSpotifyWebPlayback();
   if (playbackState === PlaybackState.INIT) return null;
@@ -57,11 +58,40 @@ function DummyComponents({
       <button onClick={playPreviousTrack}>playPreviousTrack</button>
       <button onClick={() => seekTrack(0)}>seekTrack</button>
       <button onClick={() => setVolume(50)}>setVolume</button>
+      <button onClick={() => transferPlayback('mock-device-id')}>
+        transferPlayback
+      </button>
     </>
   );
 }
 
 describe('Test SpotifyWebPlayback', () => {
+  it('.transferPlayback should call API', async () => {
+    const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
+      res.status(204);
+    });
+    createAPIMock({
+      put: {
+        '/v1/me/player': apiHandler,
+      },
+    });
+
+    render(
+      <TestApp>
+        <DummyComponents
+          track={
+            {
+              uri: 'track-uri',
+            } as any
+          }
+        />
+      </TestApp>,
+    );
+    userEvent.click(
+      await screen.findByRole('button', { name: 'transferPlayback' }),
+    );
+    await waitFor(() => expect(apiHandler).toHaveBeenCalled());
+  });
   it('.changeRepeatMode should call API', async () => {
     const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
       res.status(204);

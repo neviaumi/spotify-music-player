@@ -59,9 +59,10 @@ function useCreateSpotifyWebPlayback() {
     ]);
     await refetch();
   }, [playback.playbackType, playbackStateMachine.state, queryClient, refetch]);
+  const localPlaybackId = player?._options.id;
   const playOnDeviceId = currentPlaybackState?.is_active
     ? currentPlaybackState?.device.id
-    : player?._options.id;
+    : localPlaybackId;
   const isLocalDeviceId =
     player?._options.id && playOnDeviceId === player?._options.id;
 
@@ -216,6 +217,37 @@ function useCreateSpotifyWebPlayback() {
     [controlPlaybackByAPI],
   );
 
+  const transferPlayback = useCallback(
+    async (targetPlaybackDeviceId: string) => {
+      if (!playOnDeviceId) return;
+      if (isLoading) return; // disable concurrent send command to player
+      setIsLoading(true);
+      await apiClient.request({
+        data: {
+          device_ids: [targetPlaybackDeviceId],
+          play: true,
+        },
+        method: 'PUT',
+        url: 'me/player',
+      });
+      setIsLoading(false);
+      if (
+        targetPlaybackDeviceId === localPlaybackId &&
+        playbackStateMachine.can(PlaybackState.PLAY_ON_LOCAL_PLAYBACK)
+      )
+        playbackStateMachine.playOnLocalPlayback();
+      else if (playbackStateMachine.can(PlaybackState.PLAY_ON_REMOTE_PLAYBACK))
+        playbackStateMachine.playOnRemotePlayback();
+    },
+    [
+      apiClient,
+      isLoading,
+      localPlaybackId,
+      playOnDeviceId,
+      playbackStateMachine,
+    ],
+  );
+
   return {
     data: {
       changeRepeatMode,
@@ -238,6 +270,7 @@ function useCreateSpotifyWebPlayback() {
       setVolume,
       togglePlayMode,
       toggleShuffleMode,
+      transferPlayback,
       volumePercent: currentPlaybackState?.device.volume_percent,
     },
     error: playerError || getPlaybackStateError,
