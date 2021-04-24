@@ -87,6 +87,11 @@ export function setupMockServer(
   });
   polly?.server.host('https://api.spotify.com/v1', () => {
     const mockAPI = handlers?.spotifyAPI;
+    polly?.server.put('/me/player').intercept(
+      withMockHandler(mockAPI)(function handler(_, res) {
+        res.status(204);
+      }),
+    );
     polly?.server.get('/me/player/devices').intercept(
       withMockHandler(mockAPI)(function handler(_, res) {
         res.status(200).json({ devices: [casual.DeviceObject()] });

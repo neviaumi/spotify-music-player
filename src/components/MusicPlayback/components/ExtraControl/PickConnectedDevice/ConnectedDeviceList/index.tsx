@@ -51,9 +51,11 @@ const ListContainer = styled.ul`
 export function ConnectedDeviceList({
   currentDeviceId,
   devices,
+  onSelectDevice,
 }: {
   currentDeviceId?: string;
   devices: UserDevice[];
+  onSelectDevice: (deviceId: string) => void;
 }) {
   if (devices.length === 0 || !currentDeviceId) return null;
   return (
@@ -78,6 +80,7 @@ export function ConnectedDeviceList({
             device={device}
             isCurrentDevice={currentDeviceId === device.id}
             key={device.id ?? device.name}
+            onClick={onSelectDevice}
           />
         ))}
       </ListContainer>

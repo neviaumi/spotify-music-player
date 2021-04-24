@@ -42,7 +42,7 @@ fill: ${theme.colors.contrast4};
 
 export function PickConnectedDevice() {
   const {
-    data: { playbackType, isActive, currentPlaybackDevice },
+    data: { playbackType, isActive, currentPlaybackDevice, transferPlayback },
   } = useSpotifyWebPlayback();
 
   const styledTheme = useTheme() as typeof theme;
@@ -69,6 +69,10 @@ export function PickConnectedDevice() {
           <ConnectedDeviceList
             currentDeviceId={currentPlaybackDevice?.id}
             devices={devices}
+            onSelectDevice={(deviceId: string) => {
+              transferPlayback(deviceId);
+              togglePopOver();
+            }}
             {...rest}
           />
         </ArrowContainer>
@@ -77,6 +81,7 @@ export function PickConnectedDevice() {
       onClickOutside={() => togglePopOver()}
     >
       <PickConnectedDeviceButton
+        aria-label={'pick-connected-device-button'}
         disabled={devices.length === 0}
         isPlayingOnRemote={isPlayingOnRemoteDevice}
         onClick={() => togglePopOver()}
