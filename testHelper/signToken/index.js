@@ -52,9 +52,7 @@ async function writeAccessTokenToFile(accessToken) {
 app.get('/auth/login/callback', async (req, res, next) => {
   const { code } = req.query;
 
-  const {
-    data: { access_token: accessToken },
-  } = await axios.request({
+  const { data } = await axios.request({
     data: new URLSearchParams({
       client_id: clientId,
       code,
@@ -68,8 +66,9 @@ app.get('/auth/login/callback', async (req, res, next) => {
     method: 'POST',
     url: 'https://accounts.spotify.com/api/token',
   });
+  const { access_token: accessToken } = data;
   res.status(200).json({
-    access_token,
+    access_token: accessToken,
   });
   next();
   await writeAccessTokenToFile(accessToken);
