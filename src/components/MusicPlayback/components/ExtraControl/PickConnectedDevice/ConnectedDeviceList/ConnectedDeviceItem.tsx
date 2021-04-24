@@ -7,6 +7,7 @@ import { ReactComponent as ConnectIcon } from './spotify-connect-icon.svg';
 
 interface ConnectedDeviceItemProps {
   device: UserDevice;
+  onClick?: (id: string) => void;
 }
 
 const ConnectDeviceItemContainer = styled.li`
@@ -19,6 +20,7 @@ const ConnectDeviceItemContainer = styled.li`
     ${props => props.theme.spaces.xs} ${props => props.theme.spaces.s};
   button {
     max-width: 100%;
+    width: 100%;
     outline: none;
     border: none;
     background: transparent;
@@ -99,7 +101,10 @@ const SpotifyConnectIconWrapper = styled.div`
   margin-right: ${props => props.theme.spaces.xxxs};
 `;
 
-function CandidateConnectDeviceItem({ device }: ConnectedDeviceItemProps) {
+function CandidateConnectDeviceItem({
+  device,
+  onClick,
+}: ConnectedDeviceItemProps) {
   const DeviceTypeIcon =
     {
       Computer: Laptop,
@@ -108,7 +113,13 @@ function CandidateConnectDeviceItem({ device }: ConnectedDeviceItemProps) {
     }[device.type] ?? Speaker;
   return (
     <ConnectDeviceItemContainer>
-      <button>
+      <button
+        aria-label={device.name}
+        onClick={e => {
+          e.stopPropagation();
+          if (device.id && onClick) onClick(device.id);
+        }}
+      >
         <DeviceTypeIconContainer>
           <DeviceTypeIcon />
         </DeviceTypeIconContainer>
@@ -135,7 +146,7 @@ function CurrentConnectedDeviceItem({ device }: ConnectedDeviceItemProps) {
     }[device.type] ?? Speaker;
   return (
     <ConnectDeviceItemContainer>
-      <button>
+      <button aria-label={device.name}>
         <CurrentDeviceTypeIconContainer>
           <DeviceTypeIcon />
         </CurrentDeviceTypeIconContainer>
@@ -157,11 +168,16 @@ interface Props {
   device: UserDevice;
   isCurrentDevice: boolean;
   key: Key;
+  onClick: (id: string) => void;
 }
 
-export function ConnectedDeviceItem({ isCurrentDevice, device }: Props) {
+export function ConnectedDeviceItem({
+  isCurrentDevice,
+  device,
+  onClick,
+}: Props) {
   if (isCurrentDevice) {
     return <CurrentConnectedDeviceItem device={device} />;
   }
-  return <CandidateConnectDeviceItem device={device} />;
+  return <CandidateConnectDeviceItem device={device} onClick={onClick} />;
 }
