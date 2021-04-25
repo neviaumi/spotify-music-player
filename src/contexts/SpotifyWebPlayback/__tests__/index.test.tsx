@@ -12,7 +12,7 @@ import {
 import { TestApp } from '../../../App';
 import type { TrackSimplified } from '../../../hooks/spotify/typings/Track';
 import { PlaybackState, useSpotifyWebPlayback } from '../';
-import { RepeatMode } from '../states/RepeatMode';
+import { RepeatMode } from '../typings/RepeatMode';
 
 const context = createPollyContext({});
 
@@ -29,6 +29,7 @@ function DummyComponents({
 }: PropsWithChildren<{ track: TrackSimplified }>) {
   const {
     data: {
+      currentPlayingTrack,
       playbackState,
       pauseUserPlayback,
       playTrackOnUserPlayback,
@@ -45,6 +46,8 @@ function DummyComponents({
   if (playbackState === PlaybackState.INIT) return null;
   return (
     <>
+      <h1>{playbackState}</h1>
+      <h1>Track name: {currentPlayingTrack?.name}</h1>
       <button onClick={pauseUserPlayback}>pauseUserPlayback</button>
       <button onClick={() => playTrackOnUserPlayback(track)}>
         playTrackOnUserPlayback
@@ -435,6 +438,7 @@ describe('Test SpotifyWebPlayback', () => {
   album: {
     uri: 'album:uri',
   },
+  name: 'Dummy Track',
   track_number: 1,
 }} | ${'/v1/me/player/play'} | ${{
   context_uri: 'album:uri',
@@ -443,6 +447,7 @@ describe('Test SpotifyWebPlayback', () => {
   },
 }}
     ${'album missing'} | ${{
+  name: 'Dummy Track',
   uri: 'track:uri',
 }} | ${'/v1/me/player/play'} | ${{ uris: ['track:uri'] }}
   `(
@@ -454,15 +459,19 @@ describe('Test SpotifyWebPlayback', () => {
       createAPIMock({
         get: {
           '/v1/me/player': (_, res) => {
-            res.status(200).json({
-              ...casual.CurrentlyPlayingContextObject({
-                device: {
-                  is_active: false,
-                },
-                is_playing: false,
-              }),
-              item,
-            });
+            res.status(204);
+          },
+          '/v1/me/player/currently-playing': (_, res) => {
+            res.status(204);
+          },
+          '/v1/me/player/recently-played': (_, res) => {
+            res.status(200).json(
+              casual.CursorPagingObject([
+                casual.PlayHistoryObject({
+                  track: { ...item, type: 'track' },
+                }),
+              ]),
+            );
           },
         },
         put: {
@@ -481,7 +490,9 @@ describe('Test SpotifyWebPlayback', () => {
           />
         </TestApp>,
       );
-
+      await expect(
+        screen.findByRole('heading', { name: PlaybackState.IDLE }),
+      ).resolves.toBeVisible();
       userEvent.click(
         await screen.findByRole('button', { name: 'togglePlayMode' }),
       );

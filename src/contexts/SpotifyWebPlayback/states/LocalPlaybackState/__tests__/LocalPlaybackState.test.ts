@@ -1,8 +1,10 @@
 import casual from 'casual';
 
-import { LocalPlaybackState } from '../LocalPlaybackState';
-import { createPlaybackStateMachine, PlaybackState } from '../PlaybackState';
-import { RepeatMode } from '../RepeatMode';
+import { createSpotifyAPIClientForTesting } from '../../../../../utils/createSpotifyAPIClient';
+import { PlaybackState } from '../../../typings/Playback';
+import { RepeatMode } from '../../../typings/RepeatMode';
+import { createPlaybackStateMachine } from '../../PlaybackState';
+import { LocalPlaybackState } from '../index';
 
 describe('Test LocalPlaybackState', () => {
   it('.getPlaybackState transit state to PLAY_ON_REMOTE_PLAYBACK if state unavailable', async () => {
@@ -16,7 +18,10 @@ describe('Test LocalPlaybackState', () => {
       getCurrentState: jest.fn().mockResolvedValue(null),
       getVolume: jest.fn().mockResolvedValue(1.0),
     } as unknown) as Spotify.SpotifyPlayer;
+    const apiClient = createSpotifyAPIClientForTesting();
+
     const playback = new LocalPlaybackState({
+      apiClient,
       localPlayback: player,
       stateMachine,
     });
@@ -29,6 +34,8 @@ describe('Test LocalPlaybackState', () => {
     const stateMachine = createPlaybackStateMachine(
       PlaybackState.PLAY_ON_LOCAL_PLAYBACK,
     );
+    const apiClient = createSpotifyAPIClientForTesting();
+
     const player = ({
       _options: {
         id: 'fake-device-id',
@@ -38,6 +45,7 @@ describe('Test LocalPlaybackState', () => {
       getVolume: jest.fn().mockResolvedValue(1.0),
     } as unknown) as Spotify.SpotifyPlayer;
     const playback = new LocalPlaybackState({
+      apiClient,
       localPlayback: player,
       stateMachine,
     });

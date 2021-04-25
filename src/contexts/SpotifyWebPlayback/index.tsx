@@ -1,4 +1,3 @@
-import type { AxiosRequestConfig } from 'axios';
 import constate from 'constate';
 import { useCallback, useState } from 'react';
 import { useQuery, useQueryClient } from 'react-query';
@@ -7,8 +6,9 @@ import type { TrackSimplified } from 'src/hooks/spotify/typings/Track';
 import { useSpotifyAPIClient } from '../../hooks/useSpotifyAPIClient';
 import { useLocalSpotifyPlayback } from './hooks/useLocalSpotifyPlayback';
 import { usePlaybackStateMachine } from './hooks/usePlaybackStateMachine';
-import { PlaybackState } from './states/PlaybackState';
-import type { RepeatMode } from './states/RepeatMode';
+import { Command, CommandExecutor } from './typings/Command';
+import { PlaybackState, PlaybackType } from './typings/Playback';
+import type { RepeatMode } from './typings/RepeatMode';
 
 function useCreateSpotifyWebPlayback() {
   const playbackStateMachine = usePlaybackStateMachine(PlaybackState.INIT);
@@ -66,18 +66,11 @@ function useCreateSpotifyWebPlayback() {
   const isLocalDeviceId =
     player?._options.id && playOnDeviceId === player?._options.id;
 
-  const controlPlaybackByAPI = useCallback(
-    async (config: AxiosRequestConfig) => {
-      if (!playOnDeviceId) return;
+  const triggerCommandOnPlayback = useCallback<CommandExecutor>(
+    async (command: any, payload: any) => {
       if (isLoading) return; // disable concurrent send command to player
       setIsLoading(true);
-      await apiClient.request({
-        ...config,
-        params: {
-          ...config.params,
-          device_id: playOnDeviceId,
-        },
-      });
+      await playback.execute(command, payload);
       if (
         isLocalDeviceId &&
         playbackStateMachine.can(PlaybackState.PLAY_ON_LOCAL_PLAYBACK)
@@ -87,9 +80,8 @@ function useCreateSpotifyWebPlayback() {
       setIsLoading(false);
     },
     [
-      playOnDeviceId,
       isLoading,
-      apiClient,
+      playback,
       isLocalDeviceId,
       playbackStateMachine,
       invalidCurrentPlaybackState,
@@ -98,123 +90,80 @@ function useCreateSpotifyWebPlayback() {
 
   const startPlayTrackOnUserPlayback = useCallback(
     async (trackUri: string) => {
-      await controlPlaybackByAPI({
-        data: {
-          uris: [trackUri],
-        },
-        method: 'put',
-        url: 'me/player/play',
+      await triggerCommandOnPlayback(Command.StartPlayback, {
+        uris: [trackUri],
       });
     },
-    [controlPlaybackByAPI],
+    [triggerCommandOnPlayback],
   );
   const pauseUserPlayback = useCallback(async () => {
-    await controlPlaybackByAPI({
-      method: 'put',
-      url: 'me/player/pause',
-    });
-  }, [controlPlaybackByAPI]);
+    await triggerCommandOnPlayback(Command.PausePlayback);
+  }, [triggerCommandOnPlayback]);
 
   const playNextTrack = useCallback(async () => {
-    await controlPlaybackByAPI({
-      method: 'POST',
-      url: 'me/player/next',
-    });
-  }, [controlPlaybackByAPI]);
+    await triggerCommandOnPlayback(Command.NextTrack);
+  }, [triggerCommandOnPlayback]);
 
   const seekTrack = useCallback(
     async (position_ms: number) => {
-      await controlPlaybackByAPI({
-        method: 'PUT',
-        params: {
-          position_ms,
-        },
-        url: 'me/player/seek',
+      await triggerCommandOnPlayback(Command.SeekPlayback, {
+        position_ms: Math.floor(position_ms),
       });
     },
-    [controlPlaybackByAPI],
+    [triggerCommandOnPlayback],
   );
   const playPreviousTrack = useCallback(async () => {
     if (currentPlaybackState) {
       const { progress_ms } = currentPlaybackState;
       if (progress_ms >= 1000) return seekTrack(0);
     }
-    return controlPlaybackByAPI({
-      method: 'POST',
-      url: 'me/player/previous',
-    });
-  }, [controlPlaybackByAPI, currentPlaybackState, seekTrack]);
+    return triggerCommandOnPlayback(Command.PreviousTrack);
+  }, [triggerCommandOnPlayback, currentPlaybackState, seekTrack]);
   const togglePlayMode = useCallback(async () => {
     if (!currentPlaybackState) return;
     const { is_paused, is_active, track } = currentPlaybackState;
     if (!is_active) {
       if (track.track_number) {
-        await controlPlaybackByAPI({
-          data: {
-            context_uri: track.album.uri,
-            offset: {
-              position: track.track_number - 1,
-            },
+        await triggerCommandOnPlayback(Command.StartPlayback, {
+          context_uri: track.album.uri,
+          offset: {
+            position: track.track_number - 1,
           },
-          method: 'put',
-          url: 'me/player/play',
         });
       } else {
-        await controlPlaybackByAPI({
-          data: {
-            uris: [track.uri],
-          },
-          method: 'put',
-          url: 'me/player/play',
+        await triggerCommandOnPlayback(Command.StartPlayback, {
+          uris: [track.uri],
         });
       }
       return;
     }
     if (is_paused) {
-      await controlPlaybackByAPI({
-        method: 'put',
-        url: 'me/player/play',
-      });
+      await triggerCommandOnPlayback(Command.ResumePlayback);
     } else {
-      await controlPlaybackByAPI({
-        method: 'put',
-        url: 'me/player/pause',
-      });
+      await triggerCommandOnPlayback(Command.PausePlayback);
     }
-  }, [currentPlaybackState, controlPlaybackByAPI]);
+  }, [currentPlaybackState, triggerCommandOnPlayback]);
   const toggleShuffleMode = useCallback(async () => {
     if (!currentPlaybackState) return;
-    await controlPlaybackByAPI({
-      method: 'PUT',
-      params: {
-        state: !currentPlaybackState.shuffle_state,
-      },
-      url: 'me/player/shuffle',
+    await triggerCommandOnPlayback(Command.SetShuffleMode, {
+      shouldPlayOnShuffleMode: !currentPlaybackState.shuffle_state,
     });
-  }, [controlPlaybackByAPI, currentPlaybackState]);
+  }, [triggerCommandOnPlayback, currentPlaybackState]);
   const changeRepeatMode = useCallback(
     async (newMode: RepeatMode) => {
-      await controlPlaybackByAPI({
-        method: 'PUT',
-        params: {
-          state: newMode,
-        },
-        url: 'me/player/repeat',
+      await triggerCommandOnPlayback(Command.SetRepeatMode, {
+        repeatMode: newMode,
       });
     },
-    [controlPlaybackByAPI],
+    [triggerCommandOnPlayback],
   );
 
   const setVolume = useCallback(
     (volume: number) =>
-      controlPlaybackByAPI({
-        method: 'PUT',
-        params: {
-          volume_percent: Math.floor(volume),
-        },
-        url: 'me/player/volume',
+      triggerCommandOnPlayback(Command.SetVolume, {
+        volume: Math.floor(volume),
       }),
-    [controlPlaybackByAPI],
+    [triggerCommandOnPlayback],
   );
 
   const transferPlayback = useCallback(
@@ -282,4 +231,9 @@ const [SpotifyWebPlaybackProvider, useSpotifyWebPlayback] = constate(
   useCreateSpotifyWebPlayback,
 );
 
-export { PlaybackState, SpotifyWebPlaybackProvider, useSpotifyWebPlayback };
+export {
+  PlaybackState,
+  PlaybackType,
+  SpotifyWebPlaybackProvider,
+  useSpotifyWebPlayback,
+};

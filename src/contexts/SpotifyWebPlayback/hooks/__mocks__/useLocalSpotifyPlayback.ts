@@ -4,6 +4,7 @@ const result = {
       id: 'mock-local-player-device-id',
     },
     getCurrentState: jest.fn(),
+    getVolume: jest.fn().mockReturnValue(0),
   },
   playerError: undefined,
 };

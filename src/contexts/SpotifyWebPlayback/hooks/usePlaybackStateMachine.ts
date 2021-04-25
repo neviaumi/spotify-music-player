@@ -1,10 +1,8 @@
 import { useMemo, useState } from 'react';
 
-import {
-  createPlaybackStateMachine,
-  PlaybackState,
-  StateMachine,
-} from '../states/PlaybackState';
+import { createPlaybackStateMachine } from '../states/PlaybackState';
+import type { PlaybackState } from '../typings/Playback';
+import type { StateMachine } from '../typings/State';
 
 export function usePlaybackStateMachine(initialState: PlaybackState) {
   const [, setPlaybackState] = useState<PlaybackState>();
