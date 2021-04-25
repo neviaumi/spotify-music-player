@@ -30,6 +30,7 @@ function useCreateSpotifyWebPlayback() {
       [playbackStateMachine],
     ),
   });
+  const localPlaybackId = player?._options.id;
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -59,33 +60,16 @@ function useCreateSpotifyWebPlayback() {
     ]);
     await refetch();
   }, [playback.playbackType, playbackStateMachine.state, queryClient, refetch]);
-  const localPlaybackId = player?._options.id;
-  const playOnDeviceId = currentPlaybackState?.is_active
-    ? currentPlaybackState?.device.id
-    : localPlaybackId;
-  const isLocalDeviceId =
-    player?._options.id && playOnDeviceId === player?._options.id;
 
   const triggerCommandOnPlayback = useCallback<CommandExecutor>(
     async (command: any, payload: any) => {
       if (isLoading) return; // disable concurrent send command to player
       setIsLoading(true);
       await playback.execute(command, payload);
-      if (
-        isLocalDeviceId &&
-        playbackStateMachine.can(PlaybackState.PLAY_ON_LOCAL_PLAYBACK)
-      )
-        playbackStateMachine.playOnLocalPlayback();
-      else await invalidCurrentPlaybackState();
+      await invalidCurrentPlaybackState();
       setIsLoading(false);
     },
-    [
-      isLoading,
-      playback,
-      isLocalDeviceId,
-      playbackStateMachine,
-      invalidCurrentPlaybackState,
-    ],
+    [isLoading, playback, invalidCurrentPlaybackState],
   );
 
   const startPlayTrackOnUserPlayback = useCallback(
@@ -168,7 +152,6 @@ function useCreateSpotifyWebPlayback() {
 
   const transferPlayback = useCallback(
     async (targetPlaybackDeviceId: string) => {
-      if (!playOnDeviceId) return;
       if (isLoading) return; // disable concurrent send command to player
       setIsLoading(true);
       await apiClient.request({
@@ -188,13 +171,7 @@ function useCreateSpotifyWebPlayback() {
       else if (playbackStateMachine.can(PlaybackState.PLAY_ON_REMOTE_PLAYBACK))
         playbackStateMachine.playOnRemotePlayback();
     },
-    [
-      apiClient,
-      isLoading,
-      localPlaybackId,
-      playOnDeviceId,
-      playbackStateMachine,
-    ],
+    [apiClient, isLoading, localPlaybackId, playbackStateMachine],
   );
 
   return {

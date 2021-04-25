@@ -44,6 +44,8 @@ export class IdlePlaybackState implements ActivePlaybackState {
           deviceId,
           payload,
         });
+        if (this.stateMachine.can(PlaybackState.PLAY_ON_LOCAL_PLAYBACK))
+          this.stateMachine.playOnLocalPlayback();
         break;
       default:
         break;
