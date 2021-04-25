@@ -3,8 +3,9 @@ import casual from 'casual';
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
 import { createSpotifyAPIClientForTesting } from '../../../../utils/createSpotifyAPIClient';
+import { PlaybackState } from '../../typings/Playback';
 import { IdlePlaybackState } from '../IdlePlaybackState';
-import { createPlaybackStateMachine, PlaybackState } from '../PlaybackState';
+import { createPlaybackStateMachine } from '../PlaybackState';
 
 const context = createPollyContext({});
 describe('IdlePlaybackState', () => {

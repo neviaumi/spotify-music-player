@@ -1,4 +1,4 @@
-import 'src/contexts/SpotifyWebPlayback/SpotifyPlayer.d';
+import 'src/contexts/SpotifyWebPlayback/typings/SpotifyPlayer.d';
 
 import { last } from 'ramda';
 import { Link } from 'react-router-dom';

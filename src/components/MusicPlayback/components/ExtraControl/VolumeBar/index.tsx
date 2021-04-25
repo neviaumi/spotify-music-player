@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getTrackBackground, Range } from 'react-range';
 import styled, { useTheme } from 'styled-components';
 
-import type { PlaybackType } from '../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
+import type { PlaybackType } from '../../../../../contexts/SpotifyWebPlayback';
 import type { theme } from '../../../../../contexts/Theme';
 import { ReactComponent as VolumeHigh } from './volume-high.svg';
 import { ReactComponent as VolumeLow } from './volume-low.svg';

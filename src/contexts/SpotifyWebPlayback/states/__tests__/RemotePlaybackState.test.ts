@@ -3,7 +3,8 @@ import casual from 'casual';
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
 import { createSpotifyAPIClientForTesting } from '../../../../utils/createSpotifyAPIClient';
-import { createPlaybackStateMachine, PlaybackState } from '../PlaybackState';
+import { PlaybackState } from '../../typings/Playback';
+import { createPlaybackStateMachine } from '../PlaybackState';
 import { RemotePlaybackState } from '../RemotePlaybackState';
 
 const context = createPollyContext({});

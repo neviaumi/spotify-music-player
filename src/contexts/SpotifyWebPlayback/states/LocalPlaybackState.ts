@@ -2,8 +2,8 @@ import {
   ActivePlaybackState,
   PlaybackState,
   PlaybackType,
-  StateMachine,
-} from './PlaybackState';
+} from '../typings/Playback';
+import type { StateMachine } from '../typings/State';
 import { RepeatMode } from './RepeatMode';
 
 export class LocalPlaybackState implements ActivePlaybackState {

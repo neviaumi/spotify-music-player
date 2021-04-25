@@ -7,8 +7,8 @@ import type { TrackSimplified } from 'src/hooks/spotify/typings/Track';
 import { useSpotifyAPIClient } from '../../hooks/useSpotifyAPIClient';
 import { useLocalSpotifyPlayback } from './hooks/useLocalSpotifyPlayback';
 import { usePlaybackStateMachine } from './hooks/usePlaybackStateMachine';
-import { PlaybackState } from './states/PlaybackState';
 import type { RepeatMode } from './states/RepeatMode';
+import { PlaybackState, PlaybackType } from './typings/Playback';
 
 function useCreateSpotifyWebPlayback() {
   const playbackStateMachine = usePlaybackStateMachine(PlaybackState.INIT);
@@ -282,4 +282,9 @@ const [SpotifyWebPlaybackProvider, useSpotifyWebPlayback] = constate(
   useCreateSpotifyWebPlayback,
 );
 
-export { PlaybackState, SpotifyWebPlaybackProvider, useSpotifyWebPlayback };
+export {
+  PlaybackState,
+  PlaybackType,
+  SpotifyWebPlaybackProvider,
+  useSpotifyWebPlayback,
+};

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getTrackBackground, Range } from 'react-range';
 import styled, { useTheme } from 'styled-components';
 
-import { PlaybackType } from '../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
+import { PlaybackType } from '../../../../../contexts/SpotifyWebPlayback';
 import type { theme } from '../../../../../contexts/Theme';
 import { useInterval } from '../../../../../hooks/utils/useInterval';
 import { formatMSToMinute } from '../../../../../utils/formatMS';

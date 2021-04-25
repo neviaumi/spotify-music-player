@@ -2,8 +2,8 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { IdlePlaybackState } from '../../states/IdlePlaybackState';
 import { LocalPlaybackState } from '../../states/LocalPlaybackState';
-import { PlaybackState } from '../../states/PlaybackState';
 import { RemotePlaybackState } from '../../states/RemotePlaybackState';
+import { PlaybackState } from '../../typings/Playback';
 import { usePlaybackStateMachine } from '../usePlaybackStateMachine';
 
 describe('Test usePlaybackStateMachine', () => {

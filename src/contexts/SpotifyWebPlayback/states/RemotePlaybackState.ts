@@ -1,7 +1,11 @@
 import type { AxiosInstance } from 'axios';
 
-import type { ActivePlaybackState } from './PlaybackState';
-import { PlaybackState, PlaybackType, StateMachine } from './PlaybackState';
+import {
+  ActivePlaybackState,
+  PlaybackState,
+  PlaybackType,
+} from '../typings/Playback';
+import type { StateMachine } from '../typings/State';
 
 export class RemotePlaybackState implements ActivePlaybackState {
   readonly apiClient: AxiosInstance;

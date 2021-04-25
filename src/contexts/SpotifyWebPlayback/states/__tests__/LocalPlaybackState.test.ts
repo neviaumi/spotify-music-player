@@ -1,7 +1,8 @@
 import casual from 'casual';
 
+import { PlaybackState } from '../../typings/Playback';
 import { LocalPlaybackState } from '../LocalPlaybackState';
-import { createPlaybackStateMachine, PlaybackState } from '../PlaybackState';
+import { createPlaybackStateMachine } from '../PlaybackState';
 import { RepeatMode } from '../RepeatMode';
 
 describe('Test LocalPlaybackState', () => {
