@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import { TestApp } from 'src/App';
 
+import { createPollyContext } from '../../../../../../../testHelper/polly/createPollyContext';
+import { setupMockServer } from '../../../../../../../testHelper/polly/setupMockServer';
 import { AlbumTracksList } from '../index';
 
+const context = createPollyContext();
+
 describe('Test Album track list', () => {
-  it('render TrackList with one Item', () => {
+  it('render TrackList with one Item', async () => {
+    setupMockServer(context.polly, {});
     const props = {
       album: {
         tracks: {
@@ -24,9 +29,10 @@ describe('Test Album track list', () => {
         <AlbumTracksList {...props} />
       </TestApp>,
     );
-    expect(screen.getAllByRole('columnheader'), 'have 3 column').toHaveLength(
-      3,
-    );
+    await expect(
+      screen.findAllByRole('columnheader'),
+      'have 3 column',
+    ).resolves.toHaveLength(3);
     expect(
       screen.getAllByRole('listitem', {
         name: /^track-item/,

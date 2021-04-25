@@ -74,14 +74,17 @@ export function RemotePlaybackBannerWrapper({
   children,
 }: PropsWithChildren<unknown>) {
   const {
-    data: { currentPlaybackDevice, playbackType },
+    data: { currentPlaybackState, playbackType },
   } = useSpotifyWebPlayback();
-  const shouldShowRemotePlaybackBanner = playbackType === PlaybackType.Remote;
+  const shouldShowRemotePlaybackBanner =
+    currentPlaybackState &&
+    currentPlaybackState?.device &&
+    playbackType === PlaybackType.Remote;
   return (
     <RemotePlaybackBannerWrapperContainer>
       {children}
-      {currentPlaybackDevice && shouldShowRemotePlaybackBanner && (
-        <RemotePlaybackBanner currentDevice={currentPlaybackDevice} />
+      {currentPlaybackState?.device && shouldShowRemotePlaybackBanner && (
+        <RemotePlaybackBanner currentDevice={currentPlaybackState?.device} />
       )}
     </RemotePlaybackBannerWrapperContainer>
   );

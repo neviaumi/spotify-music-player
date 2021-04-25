@@ -13,14 +13,18 @@ const Container = styled.aside`
 
 export function ExtraControl() {
   const {
-    data: { volumePercent, setVolume, playbackType },
+    actions: { setVolume },
+    data: { currentPlaybackState, playbackType },
     isLoading,
   } = useSpotifyWebPlayback();
+  const {
+    device: { volume_percent },
+  } = currentPlaybackState!;
   return (
     <Container>
       <PickConnectedDevice />
       <VolumeBar
-        currentVolume={volumePercent}
+        currentVolume={volume_percent}
         isLoading={isLoading}
         onChangeVolume={setVolume}
         playbackType={playbackType}

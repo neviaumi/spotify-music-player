@@ -4,19 +4,22 @@ import { createMemoryHistory } from 'history';
 import { Route } from 'react-router-dom';
 
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
+import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
 import { TestApp } from '../../../../App';
 import { PresentPlayList, withPlayList } from '../';
 
 describe('render PresentPlayList', () => {
+  const context = createPollyContext();
   const playlist = casual.PlaylistObject();
-  it('should render heading', () => {
+  it('should render heading', async () => {
+    setupMockServer(context.polly, {});
     render(
       <TestApp>
         <PresentPlayList playList={playlist as any} />
       </TestApp>,
     );
     expect(screen.getByTestId('heading')).toBeVisible();
-    expect(screen.getByTestId('track-listing')).toBeVisible();
+    await expect(screen.findByTestId('track-listing')).resolves.toBeVisible();
   });
 });
 
