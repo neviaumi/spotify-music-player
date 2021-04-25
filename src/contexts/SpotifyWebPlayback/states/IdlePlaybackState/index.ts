@@ -1,12 +1,14 @@
 import type { AxiosInstance } from 'axios';
 
+import { Command } from '../../typings/Command';
 import {
   ActivePlaybackState,
   PlaybackState,
   PlaybackType,
-} from '../typings/Playback';
-import type { StateMachine } from '../typings/State';
-import { RepeatMode } from './RepeatMode';
+} from '../../typings/Playback';
+import { RepeatMode } from '../../typings/RepeatMode';
+import type { StateMachine } from '../../typings/State';
+import { startPlayback } from '../LocalPlaybackState/commands/startPlayback';
 
 export class IdlePlaybackState implements ActivePlaybackState {
   readonly apiClient: AxiosInstance;
@@ -29,6 +31,24 @@ export class IdlePlaybackState implements ActivePlaybackState {
     this.stateMachine = options.stateMachine;
     this.localPlayback = options.localPlayback;
     this.apiClient = options.apiClient;
+  }
+
+  async execute(command: Command, payload: any) {
+    const currentState = await this.getPlaybackState();
+    const deviceId = currentState?.device.id;
+    if (!deviceId) return;
+    switch (command) {
+      case Command.StartPlayback:
+        await startPlayback({
+          apiClient: this.apiClient,
+          deviceId,
+          payload,
+        });
+        break;
+      default:
+        break;
+    }
+    return;
   }
 
   async getPlaybackState() {

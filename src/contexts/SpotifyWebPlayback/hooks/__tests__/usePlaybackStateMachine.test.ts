@@ -58,7 +58,7 @@ while state is ${PlaybackState.PLAY_ON_LOCAL_PLAYBACK} and localPlayback unavail
     ).toBeInstanceOf(RemotePlaybackState);
   });
 
-  it(`Use IdlePlaybackState for get current playback state while state is %s`, async () => {
+  it(`Use IdlePlaybackState for get current playback state while state is ${PlaybackState.IDLE}`, async () => {
     const { result } = renderHook(() =>
       usePlaybackStateMachine(PlaybackState.IDLE),
     );

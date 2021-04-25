@@ -1,4 +1,7 @@
-import type { RepeatMode } from '../states/RepeatMode';
+/* eslint-disable typescript-sort-keys/interface */
+
+import type { CommandExecutor } from './Command';
+import type { RepeatMode } from './RepeatMode';
 import type { StateMachine } from './State';
 
 export enum PlaybackState {
@@ -24,10 +27,14 @@ export interface PlaybackDevice {
 }
 
 export interface ActivePlaybackState {
+  execute: CommandExecutor;
+
   readonly playbackType: PlaybackType;
+
   readonly refreshInterval: number;
+
   readonly stateMachine: StateMachine;
-  // eslint-disable-next-line typescript-sort-keys/interface
+
   getPlaybackState(): Promise<null | {
     actions: {
       disallows: Spotify.PlaybackDisallows;

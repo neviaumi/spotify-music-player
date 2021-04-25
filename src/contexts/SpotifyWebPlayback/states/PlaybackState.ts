@@ -17,6 +17,7 @@ export function createPlaybackStateMachine(
         const { state } = this;
         if (state === PlaybackState.PLAY_ON_LOCAL_PLAYBACK && localPlayback) {
           return new LocalPlaybackState({
+            apiClient,
             localPlayback,
             stateMachine: this,
           });
