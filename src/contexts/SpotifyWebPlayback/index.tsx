@@ -175,29 +175,22 @@ function useCreateSpotifyWebPlayback() {
   );
 
   return {
-    data: {
+    actions: {
       changeRepeatMode,
-      currentPlaybackDevice: currentPlaybackState?.device,
-      currentPlayingTrack: currentPlaybackState?.track,
-      isActive: currentPlaybackState?.is_active ?? false,
-      isPaused: currentPlaybackState?.is_paused,
       pauseUserPlayback,
       playNextTrack,
       playPreviousTrack,
       playTrackOnUserPlayback: (track: TrackSimplified) =>
         startPlayTrackOnUserPlayback(track.uri),
-      playbackDisallowedActions: currentPlaybackState?.actions.disallows,
-      playbackEnabledShuffle: currentPlaybackState?.shuffle_state,
-      playbackRepeatMode: currentPlaybackState?.repeat_state,
-      playbackState: playbackStateMachine.state,
-      playbackType: playback.playbackType,
-      progressMS: currentPlaybackState?.progress_ms,
       seekTrack,
       setVolume,
       togglePlayMode,
       toggleShuffleMode,
       transferPlayback,
-      volumePercent: currentPlaybackState?.device.volume_percent,
+    },
+    data: {
+      currentPlaybackState,
+      playbackType: playback.playbackType,
     },
     error: playerError || getPlaybackStateError,
     isLoading,

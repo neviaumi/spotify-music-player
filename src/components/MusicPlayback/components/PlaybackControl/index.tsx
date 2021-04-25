@@ -15,48 +15,54 @@ const Container = styled.section`
 
 export function PlaybackControl() {
   const {
-    data: {
-      progressMS,
-      currentPlayingTrack,
-      playbackDisallowedActions,
-      playbackRepeatMode,
-      playbackEnabledShuffle,
-      isPaused,
+    actions: {
       changeRepeatMode,
       playNextTrack,
       playPreviousTrack,
       togglePlayMode,
       toggleShuffleMode,
-      isActive,
       seekTrack,
+    },
+    data: {
+      currentPlaybackState,
+
       playbackType,
     },
     isLoading,
   } = useSpotifyWebPlayback();
+  const {
+    progress_ms,
+    is_paused,
+    actions: { disallows },
+    track,
+    repeat_state,
+    shuffle_state,
+    device: { is_active },
+  } = currentPlaybackState!;
   return (
     <Container>
       <ControlButtons
-        disallows={playbackDisallowedActions}
-        isActive={isActive}
+        disallows={disallows}
+        isActive={is_active}
         isLoading={isLoading}
-        isPaused={isPaused}
+        isPaused={is_paused}
         onClickChangeRepeatMode={changeRepeatMode}
         onClickNextTrack={playNextTrack}
         onClickPreviousTrack={playPreviousTrack}
         onClickTogglePlay={togglePlayMode}
         onClickToggleShuffleMode={toggleShuffleMode}
-        repeatMode={playbackRepeatMode}
-        shuffleMode={playbackEnabledShuffle}
+        repeatMode={repeat_state}
+        shuffleMode={shuffle_state}
       />
       <TimeBar
-        currentProgressMS={progressMS!}
-        currentTrackId={currentPlayingTrack?.id}
-        disallowSeeking={playbackDisallowedActions?.seeking ?? false}
+        currentProgressMS={progress_ms}
+        currentTrackId={track?.id}
+        disallowSeeking={disallows?.seeking ?? false}
         isLoading={isLoading}
-        isPaused={isPaused}
+        isPaused={is_paused}
         onChangeTrackPlayingPosition={seekTrack}
         playbackType={playbackType}
-        trackDuration={currentPlayingTrack?.duration_ms}
+        trackDuration={track?.duration_ms}
       />
     </Container>
   );

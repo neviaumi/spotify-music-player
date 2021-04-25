@@ -11,7 +11,7 @@ import {
 } from '../../../../testHelper/polly/setupMockServer';
 import { TestApp } from '../../../App';
 import type { TrackSimplified } from '../../../hooks/spotify/typings/Track';
-import { PlaybackState, useSpotifyWebPlayback } from '../';
+import { useSpotifyWebPlayback } from '../';
 import { RepeatMode } from '../typings/RepeatMode';
 
 const context = createPollyContext({});
@@ -28,9 +28,7 @@ function DummyComponents({
   track,
 }: PropsWithChildren<{ track: TrackSimplified }>) {
   const {
-    data: {
-      currentPlayingTrack,
-      playbackState,
+    actions: {
       pauseUserPlayback,
       playTrackOnUserPlayback,
       togglePlayMode,
@@ -42,12 +40,14 @@ function DummyComponents({
       setVolume,
       transferPlayback,
     },
+    data: { currentPlaybackState },
+    error,
   } = useSpotifyWebPlayback();
-  if (playbackState === PlaybackState.INIT) return null;
+  if (!currentPlaybackState) return null;
+  if (error) throw error;
   return (
     <>
-      <h1>{playbackState}</h1>
-      <h1>Track name: {currentPlayingTrack?.name}</h1>
+      <h1>Track name: {currentPlaybackState?.track.name}</h1>
       <button onClick={pauseUserPlayback}>pauseUserPlayback</button>
       <button onClick={() => playTrackOnUserPlayback(track)}>
         playTrackOnUserPlayback
@@ -491,7 +491,9 @@ describe('Test SpotifyWebPlayback', () => {
         </TestApp>,
       );
       await expect(
-        screen.findByRole('heading', { name: PlaybackState.IDLE }),
+        screen.findByRole('heading', {
+          name: `Track name: Dummy Track`,
+        }),
       ).resolves.toBeVisible();
       userEvent.click(
         await screen.findByRole('button', { name: 'togglePlayMode' }),

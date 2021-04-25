@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { useSpotifyWebPlayback } from '../../contexts/SpotifyWebPlayback';
 import type { Paging } from '../../hooks/spotify/typings/shared/Paging';
 import type { TrackSimplified } from '../../hooks/spotify/typings/Track';
+import { Loading } from '../Loading';
 import { ReactComponent as PauseSVG } from './pause.svg';
 import { ReactComponent as PlaySVG } from './play.svg';
 import streamingGif from './streaming.gif';
@@ -98,10 +99,14 @@ export function TracksList<T = TrackSimplified>({
   onPausePlayingTrack,
 }: Props<T>) {
   const {
-    data: { currentPlayingTrack, isPaused },
+    data: { currentPlaybackState },
   } = useSpotifyWebPlayback();
 
-  const isPlaying = !isPaused && currentPlayingTrack !== undefined;
+  if (!currentPlaybackState) return <Loading />;
+
+  const { is_paused, track: currentPlayingTrack } = currentPlaybackState;
+
+  const isPlaying = !is_paused && currentPlayingTrack !== undefined;
   const gridTemplateColumns = `[index] 16px ${columns
     .map(column => `[${column.id}] ${column.width}`)
     .join(' ')}`;
