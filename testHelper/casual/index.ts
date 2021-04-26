@@ -11,3 +11,4 @@ import './ArtistObject';
 import './TrackObject';
 import './PlaylistObject';
 import './DeviceObject';
+import './SpotifyPlayer';
