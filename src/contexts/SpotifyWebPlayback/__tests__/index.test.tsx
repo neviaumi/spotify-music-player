@@ -11,8 +11,8 @@ import {
 } from '../../../../testHelper/polly/setupMockServer';
 import { TestApp } from '../../../App';
 import type { TrackSimplified } from '../../../hooks/spotify/typings/Track';
-import { PlaybackState, useSpotifyWebPlayback } from '../';
-import { RepeatMode } from '../states/RepeatMode';
+import { useSpotifyWebPlayback } from '../';
+import { RepeatMode } from '../typings/RepeatMode';
 
 const context = createPollyContext({});
 
@@ -28,8 +28,7 @@ function DummyComponents({
   track,
 }: PropsWithChildren<{ track: TrackSimplified }>) {
   const {
-    data: {
-      playbackState,
+    actions: {
       pauseUserPlayback,
       playTrackOnUserPlayback,
       togglePlayMode,
@@ -39,11 +38,16 @@ function DummyComponents({
       playPreviousTrack,
       seekTrack,
       setVolume,
+      transferPlayback,
     },
+    data: { currentPlaybackState },
+    error,
   } = useSpotifyWebPlayback();
-  if (playbackState === PlaybackState.INIT) return null;
+  if (!currentPlaybackState) return null;
+  if (error) throw error;
   return (
     <>
+      <h1>Track name: {currentPlaybackState?.track.name}</h1>
       <button onClick={pauseUserPlayback}>pauseUserPlayback</button>
       <button onClick={() => playTrackOnUserPlayback(track)}>
         playTrackOnUserPlayback
@@ -57,11 +61,40 @@ function DummyComponents({
       <button onClick={playPreviousTrack}>playPreviousTrack</button>
       <button onClick={() => seekTrack(0)}>seekTrack</button>
       <button onClick={() => setVolume(50)}>setVolume</button>
+      <button onClick={() => transferPlayback('mock-device-id')}>
+        transferPlayback
+      </button>
     </>
   );
 }
 
 describe('Test SpotifyWebPlayback', () => {
+  it('.transferPlayback should call API', async () => {
+    const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
+      res.status(204);
+    });
+    createAPIMock({
+      put: {
+        '/v1/me/player': apiHandler,
+      },
+    });
+
+    render(
+      <TestApp>
+        <DummyComponents
+          track={
+            {
+              uri: 'track-uri',
+            } as any
+          }
+        />
+      </TestApp>,
+    );
+    userEvent.click(
+      await screen.findByRole('button', { name: 'transferPlayback' }),
+    );
+    await waitFor(() => expect(apiHandler).toHaveBeenCalled());
+  });
   it('.changeRepeatMode should call API', async () => {
     const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
       res.status(204);
@@ -405,6 +438,7 @@ describe('Test SpotifyWebPlayback', () => {
   album: {
     uri: 'album:uri',
   },
+  name: 'Dummy Track',
   track_number: 1,
 }} | ${'/v1/me/player/play'} | ${{
   context_uri: 'album:uri',
@@ -413,6 +447,7 @@ describe('Test SpotifyWebPlayback', () => {
   },
 }}
     ${'album missing'} | ${{
+  name: 'Dummy Track',
   uri: 'track:uri',
 }} | ${'/v1/me/player/play'} | ${{ uris: ['track:uri'] }}
   `(
@@ -424,15 +459,19 @@ describe('Test SpotifyWebPlayback', () => {
       createAPIMock({
         get: {
           '/v1/me/player': (_, res) => {
-            res.status(200).json({
-              ...casual.CurrentlyPlayingContextObject({
-                device: {
-                  is_active: false,
-                },
-                is_playing: false,
-              }),
-              item,
-            });
+            res.status(204);
+          },
+          '/v1/me/player/currently-playing': (_, res) => {
+            res.status(204);
+          },
+          '/v1/me/player/recently-played': (_, res) => {
+            res.status(200).json(
+              casual.CursorPagingObject([
+                casual.PlayHistoryObject({
+                  track: { ...item, type: 'track' },
+                }),
+              ]),
+            );
           },
         },
         put: {
@@ -451,7 +490,11 @@ describe('Test SpotifyWebPlayback', () => {
           />
         </TestApp>,
       );
-
+      await expect(
+        screen.findByRole('heading', {
+          name: `Track name: Dummy Track`,
+        }),
+      ).resolves.toBeVisible();
       userEvent.click(
         await screen.findByRole('button', { name: 'togglePlayMode' }),
       );

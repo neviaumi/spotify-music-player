@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { PlaybackType } from '../../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
+import { PlaybackType } from '../../../../../../contexts/SpotifyWebPlayback/';
 import { AppThemeProvider } from '../../../../../../contexts/Theme';
 import { TimeBar } from '../index';
 

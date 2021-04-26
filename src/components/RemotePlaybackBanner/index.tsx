@@ -1,9 +1,11 @@
 import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-import { useSpotifyWebPlayback } from '../../contexts/SpotifyWebPlayback';
-import type { PlaybackDevice } from '../../contexts/SpotifyWebPlayback/states/PlaybackState';
-import { PlaybackType } from '../../contexts/SpotifyWebPlayback/states/PlaybackState';
+import {
+  PlaybackType,
+  useSpotifyWebPlayback,
+} from '../../contexts/SpotifyWebPlayback';
+import type { PlaybackDevice } from '../../contexts/SpotifyWebPlayback/typings/Playback';
 import { ReactComponent as ConnectIcon } from './spotify-connect-icon.svg';
 
 const RemotePlaybackBannerContainer = styled.aside`
@@ -72,14 +74,17 @@ export function RemotePlaybackBannerWrapper({
   children,
 }: PropsWithChildren<unknown>) {
   const {
-    data: { currentPlaybackDevice, playbackType },
+    data: { currentPlaybackState, playbackType },
   } = useSpotifyWebPlayback();
-  const shouldShowRemotePlaybackBanner = playbackType === PlaybackType.Remote;
+  const shouldShowRemotePlaybackBanner =
+    currentPlaybackState &&
+    currentPlaybackState?.device &&
+    playbackType === PlaybackType.Remote;
   return (
     <RemotePlaybackBannerWrapperContainer>
       {children}
-      {currentPlaybackDevice && shouldShowRemotePlaybackBanner && (
-        <RemotePlaybackBanner currentDevice={currentPlaybackDevice} />
+      {currentPlaybackState?.device && shouldShowRemotePlaybackBanner && (
+        <RemotePlaybackBanner currentDevice={currentPlaybackState?.device} />
       )}
     </RemotePlaybackBannerWrapperContainer>
   );

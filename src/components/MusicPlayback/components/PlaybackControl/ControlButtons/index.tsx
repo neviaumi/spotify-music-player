@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react';
 import { useCallback } from 'react';
-import { RepeatMode } from 'src/contexts/SpotifyWebPlayback/states/RepeatMode';
+import { RepeatMode } from 'src/contexts/SpotifyWebPlayback/typings/RepeatMode';
 import styled from 'styled-components';
 
 import { ReactComponent as Next } from './next.svg';

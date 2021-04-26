@@ -2,8 +2,8 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { IdlePlaybackState } from '../../states/IdlePlaybackState';
 import { LocalPlaybackState } from '../../states/LocalPlaybackState';
-import { PlaybackState } from '../../states/PlaybackState';
 import { RemotePlaybackState } from '../../states/RemotePlaybackState';
+import { PlaybackState } from '../../typings/Playback';
 import { usePlaybackStateMachine } from '../usePlaybackStateMachine';
 
 describe('Test usePlaybackStateMachine', () => {
@@ -58,7 +58,7 @@ while state is ${PlaybackState.PLAY_ON_LOCAL_PLAYBACK} and localPlayback unavail
     ).toBeInstanceOf(RemotePlaybackState);
   });
 
-  it(`Use IdlePlaybackState for get current playback state while state is %s`, async () => {
+  it(`Use IdlePlaybackState for get current playback state while state is ${PlaybackState.IDLE}`, async () => {
     const { result } = renderHook(() =>
       usePlaybackStateMachine(PlaybackState.IDLE),
     );

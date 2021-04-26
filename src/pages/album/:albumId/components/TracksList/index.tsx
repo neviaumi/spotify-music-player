@@ -38,7 +38,7 @@ const TrackArtist = styled.a`
 
 export function AlbumTracksList({ album }: Props) {
   const {
-    data: { playTrackOnUserPlayback, pauseUserPlayback },
+    actions: { playTrackOnUserPlayback, pauseUserPlayback },
   } = useSpotifyWebPlayback();
 
   return (

@@ -1,4 +1,4 @@
-import 'src/contexts/SpotifyWebPlayback/SpotifyPlayer.d';
+import 'src/contexts/SpotifyWebPlayback/typings/SpotifyPlayer.d';
 
 import { last } from 'ramda';
 import { Link } from 'react-router-dom';
@@ -57,9 +57,11 @@ const Artist = styled.h2`
 
 export function TrackInfo() {
   const {
-    data: { currentPlayingTrack },
+    data: { currentPlaybackState },
   } = useSpotifyWebPlayback();
-  if (!currentPlayingTrack) return <Container />;
+  if (!currentPlaybackState || !currentPlaybackState.track)
+    return <Container />;
+  const { track: currentPlayingTrack } = currentPlaybackState;
   return (
     <Container>
       <ThumbnailFigure>

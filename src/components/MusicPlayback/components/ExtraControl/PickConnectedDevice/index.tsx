@@ -3,8 +3,10 @@ import { useErrorHandler } from 'react-error-boundary';
 import { ArrowContainer, Popover } from 'react-tiny-popover';
 import styled, { useTheme } from 'styled-components';
 
-import { useSpotifyWebPlayback } from '../../../../../contexts/SpotifyWebPlayback';
-import { PlaybackType } from '../../../../../contexts/SpotifyWebPlayback/states/PlaybackState';
+import {
+  PlaybackType,
+  useSpotifyWebPlayback,
+} from '../../../../../contexts/SpotifyWebPlayback';
 import type { theme } from '../../../../../contexts/Theme';
 import { useAvailableDevices } from '../../../../../hooks/spotify/query/useAvailableDevices';
 import { useToggle } from '../../../../../hooks/utils/useToggle';
@@ -42,14 +44,17 @@ fill: ${theme.colors.contrast4};
 
 export function PickConnectedDevice() {
   const {
-    data: { playbackType, isActive, currentPlaybackDevice },
+    actions: { transferPlayback },
+    data: { playbackType, currentPlaybackState },
   } = useSpotifyWebPlayback();
 
   const styledTheme = useTheme() as typeof theme;
 
   const [isPopOverOpen, togglePopOver] = useToggle();
   const isPlayingOnRemoteDevice =
-    playbackType === PlaybackType.Remote && isActive;
+    (playbackType === PlaybackType.Remote &&
+      currentPlaybackState &&
+      currentPlaybackState.is_active) === true;
   const { data, error } = useAvailableDevices({
     refetchInterval: 3000,
     suspense: false,
@@ -67,8 +72,12 @@ export function PickConnectedDevice() {
           position={position}
         >
           <ConnectedDeviceList
-            currentDeviceId={currentPlaybackDevice?.id}
+            currentDeviceId={currentPlaybackState?.device.id}
             devices={devices}
+            onSelectDevice={(deviceId: string) => {
+              transferPlayback(deviceId);
+              togglePopOver();
+            }}
             {...rest}
           />
         </ArrowContainer>
@@ -77,6 +86,7 @@ export function PickConnectedDevice() {
       onClickOutside={() => togglePopOver()}
     >
       <PickConnectedDeviceButton
+        aria-label={'pick-connected-device-button'}
         disabled={devices.length === 0}
         isPlayingOnRemote={isPlayingOnRemoteDevice}
         onClick={() => togglePopOver()}

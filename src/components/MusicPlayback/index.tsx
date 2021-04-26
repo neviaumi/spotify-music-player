@@ -1,8 +1,5 @@
 import { useErrorHandler, withErrorBoundary } from 'react-error-boundary';
-import {
-  PlaybackState,
-  useSpotifyWebPlayback,
-} from 'src/contexts/SpotifyWebPlayback';
+import { useSpotifyWebPlayback } from 'src/contexts/SpotifyWebPlayback';
 import styled from 'styled-components';
 
 import { ErrorFallback } from '../ErrorFallback';
@@ -23,11 +20,11 @@ const Container = styled.aside`
 function MusicPlaybackComponent() {
   const {
     error,
-    data: { playbackState },
+    data: { currentPlaybackState },
   } = useSpotifyWebPlayback();
   useErrorHandler(error);
 
-  if (playbackState === PlaybackState.INIT) return <Loading />;
+  if (!currentPlaybackState) return <Loading />;
 
   return (
     <Container aria-label="music-playback">

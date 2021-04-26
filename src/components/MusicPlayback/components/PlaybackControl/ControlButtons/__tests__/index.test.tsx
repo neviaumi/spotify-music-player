@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { RepeatMode } from '../../../../../../contexts/SpotifyWebPlayback/states/RepeatMode';
+import { RepeatMode } from '../../../../../../contexts/SpotifyWebPlayback/typings/RepeatMode';
 import { AppThemeProvider } from '../../../../../../contexts/Theme';
 import { ControlButtons, Props } from '../';
 

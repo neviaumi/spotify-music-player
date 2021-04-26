@@ -14,7 +14,7 @@ describe('Test fetch-top-stream-report', () => {
     const response = await handler(event, {} as Context, jest.fn());
     expect(response.statusCode).toStrictEqual(400);
   });
-  it('Fetch csv from spotify charts and transform to JSON', async () => {
+  it.skip('Fetch csv from spotify charts and transform to JSON', async () => {
     const event = createEvent('aws:apiGateway', {
       queryStringParameters: {
         period: 'weekly',

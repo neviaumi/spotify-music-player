@@ -49,7 +49,7 @@ const TrackArtist = styled.a`
 
 export function PlayListTracksList({ playList }: Props) {
   const {
-    data: { playTrackOnUserPlayback, pauseUserPlayback },
+    actions: { playTrackOnUserPlayback, pauseUserPlayback },
   } = useSpotifyWebPlayback();
 
   return (
