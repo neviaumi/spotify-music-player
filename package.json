@@ -41,7 +41,7 @@
     "styled-components": "5.3.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "7.13.15",
+    "@babel/plugin-transform-runtime": "7.14.2",
     "@busybox/babel-preset": "1.1.7",
     "@busybox/eslint-config": "5.4.5",
     "@busybox/npm-package-json-lint-config": "1.1.3",
