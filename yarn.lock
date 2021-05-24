@@ -17874,10 +17874,10 @@ react-query@3.16.0:
     broadcast-channel "^3.4.1"
     match-sorter "^6.0.2"
 
-react-range@1.8.7:
-  version "1.8.7"
-  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.8.7.tgz#a890bc614517b5579179f6a2b44e642786f8d96e"
-  integrity sha512-M8vaKB2vCU04BWq/kae/e5xu5WWm/lfFHXWkSiFWWm00+fqNvhYAeNYmiXR82WgwQAwRmew7Wcy7HC9pZj5QcA==
+react-range@1.8.8:
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.8.8.tgz#2fe35596457f037357f5d53004ca8cfbfeaad427"
+  integrity sha512-6pWBUYfIPB6UjycSUqQBhKd7Og4Jnqd42ryllWwE/xumTQ+XY4FzMqssn7HmDxNqsuaYICUu6Q7Bp69/2+iDGg==
 
 react-refresh@^0.8.3:
   version "0.8.3"
