@@ -102,7 +102,7 @@
     "jest-expect-message": "1.0.2",
     "lint-staged": "11.0.0",
     "mutation-observer": "1.0.3",
-    "netlify-cli": "3.32.6",
+    "netlify-cli": "3.33.0",
     "netlify-lambda": "2.0.8",
     "npm-package-json-lint": "5.1.0",
     "open": "8.2.0",
