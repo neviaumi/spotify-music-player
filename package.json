@@ -52,7 +52,7 @@
     "@commitlint/config-conventional": "12.1.4",
     "@lhci/cli": "0.7.2",
     "@pollyjs/adapter-node-http": "5.1.1",
-    "@pollyjs/adapter-xhr": "5.1.0",
+    "@pollyjs/adapter-xhr": "5.1.1",
     "@pollyjs/core": "5.1.0",
     "@pollyjs/persister-fs": "5.0.0",
     "@serverless/event-mocks": "1.1.1",

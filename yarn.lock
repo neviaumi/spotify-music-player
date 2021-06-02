@@ -4051,22 +4051,15 @@
     lodash-es "^4.17.11"
     nock "^12.0.3"
 
-"@pollyjs/adapter-xhr@5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@pollyjs/adapter-xhr/-/adapter-xhr-5.1.0.tgz#29d8ed35b18779ddf1ca17c98bd39bef1a7a298c"
-  integrity sha512-VeS8cnXNPD4D3d2sijAh7LS4Vf8xCIovswYqlVod2e/gQwGqVSKKFjIkaBmL9eI2ECFGiIfrzDZDG5hQbX0LUw==
+"@pollyjs/adapter-xhr@5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@pollyjs/adapter-xhr/-/adapter-xhr-5.1.1.tgz#9e1f0e3fa5fb83065da71fa6e66ae36fa293415a"
+  integrity sha512-mTht8nEvl+RakYX2WorGkOPnyMIsQskZqZPwGCH+dQtvvErsZUlIgJFF4QsgUF2/+MFDer9GECoJ8tQnHLUZyg==
   dependencies:
     "@offirgolan/nise" "^4.1.0"
-    "@pollyjs/adapter" "^5.0.0"
-    "@pollyjs/utils" "^5.0.0"
+    "@pollyjs/adapter" "^5.1.1"
+    "@pollyjs/utils" "^5.1.1"
     to-arraybuffer "^1.0.1"
-
-"@pollyjs/adapter@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@pollyjs/adapter/-/adapter-5.0.0.tgz#faba5a7e68db38f56b4bf04271d8f5a10d5ca8c2"
-  integrity sha512-GaJUp9hKKKbRbh1FDbjVfxNGIYs8/1QQI5SR+zjz+OjpjV2btRPFCq1cqO4ORrHA2pTIC8IvEL3lgPSG4v/cPg==
-  dependencies:
-    "@pollyjs/utils" "^5.0.0"
 
 "@pollyjs/adapter@^5.1.1":
   version "5.1.1"
