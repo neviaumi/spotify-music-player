@@ -43,7 +43,7 @@
   "devDependencies": {
     "@babel/plugin-transform-runtime": "7.14.3",
     "@busybox/babel-preset": "1.1.8",
-    "@busybox/eslint-config": "5.4.7",
+    "@busybox/eslint-config": "5.4.8",
     "@busybox/npm-package-json-lint-config": "1.1.3",
     "@busybox/prettier-config": "1.1.5",
     "@busybox/renovate-config": "1.1.3",
