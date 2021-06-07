@@ -73,7 +73,7 @@
     "@types/lodash.capitalize": "4.2.6",
     "@types/lodash.kebabcase": "4.1.6",
     "@types/nanoid": "2.1.0",
-    "@types/node": "14.17.2",
+    "@types/node": "14.17.3",
     "@types/papaparse": "5.2.5",
     "@types/pollyjs__adapter-node-http": "2.0.1",
     "@types/pollyjs__adapter-xhr": "2.6.1",
