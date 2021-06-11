@@ -89,7 +89,7 @@
     "@types/spotify-web-playback-sdk": "0.1.8",
     "@types/styled-components": "5.1.10",
     "@types/stylelint": "13.13.0",
-    "@types/testing-library__jest-dom": "5.13.0",
+    "@types/testing-library__jest-dom": "5.14.0",
     "@types/testing-library__react": "10.0.1",
     "aws-lambda": "1.0.6",
     "casual": "1.6.2",
