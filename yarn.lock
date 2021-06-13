@@ -3001,10 +3001,10 @@
     eslint-plugin-testing-library "4.6.0"
     eslint-plugin-typescript-sort-keys "1.6.0"
 
-"@busybox/npm-package-json-lint-config@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@busybox/npm-package-json-lint-config/-/npm-package-json-lint-config-1.1.4.tgz#98b0481c8bdde9d4f0688dfc4c01172965ab1b33"
-  integrity sha512-MC/MQBKSsgwJgxML09kB4dc/3eqlNY/vRrG5kZD8piFr0GRx42dnol04QtVenxuYLglsFltU0RdpMD/HK0AyOA==
+"@busybox/npm-package-json-lint-config@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@busybox/npm-package-json-lint-config/-/npm-package-json-lint-config-1.2.0.tgz#e5ec144250a0657828db314f80ff73d3e528336f"
+  integrity sha512-GbRgh5Cl0vBxZ4oC5K1uXqzNk3yWuRbGJYosJEEnQd+WN1gQ/K2z/pTlUDi3Xx1XU3AtkHJRq72zcNMHfIdZKA==
   dependencies:
     npm-package-json-lint-config-default "3.0.0"
 
