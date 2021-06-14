@@ -3769,6 +3769,30 @@
     rollup-plugin-terser "^7.0.2"
     typescript "^4.1.5"
 
+"@netlify/plugin-edge-handlers@^1.11.17":
+  version "1.11.17"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-edge-handlers/-/plugin-edge-handlers-1.11.17.tgz#dcdf8e268779a7000367b0e755d6fead7a75c112"
+  integrity sha512-lx5FiRYcGb2fLox/8yx0IbKK3RElew3K6j7+QNbpr2jfRm9Fa5DRgTRAK/XFiZBd7lwCUTZBcMDdbIna1fR9gQ==
+  dependencies:
+    "@babel/core" "^7.11.4"
+    "@babel/preset-env" "^7.11.5"
+    "@rollup/plugin-babel" "^5.2.0"
+    "@rollup/plugin-commonjs" "^18.0.0"
+    "@rollup/plugin-inject" "^4.0.2"
+    "@rollup/plugin-json" "^4.1.0"
+    "@rollup/plugin-node-resolve" "^11.0.0"
+    "@types/node" "^14.0.27"
+    buffer-es6 "^4.9.3"
+    del "^6.0.0"
+    make-dir "^3.1.0"
+    node-fetch "^2.6.1"
+    path-type "^4.0.0"
+    process-es6 "^0.11.6"
+    rollup "^2.23.1"
+    rollup-plugin-node-polyfills "^0.2.1"
+    rollup-plugin-terser "^7.0.2"
+    typescript "^4.1.5"
+
 "@netlify/plugins-list@^2.15.0":
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-2.15.0.tgz#56e2ad5c30e98d61f7770d4d5536c50aa8aeb0cb"
@@ -9585,6 +9609,13 @@ dot-prop@^5.1.0, dot-prop@^5.2.0, dot-prop@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.3.0.tgz#90ccce708cd9cd82cc4dc8c3ddd9abdd55b20e88"
   integrity sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==
+  dependencies:
+    is-obj "^2.0.0"
+
+dot-prop@^6.0.0:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-6.0.1.tgz#fc26b3cf142b9e59b74dbd39ed66ce620c681083"
+  integrity sha512-tE7ztYzXHIeyvc7N+hR3oi7FIbf/NIjVP9hmAt3yMXzrQ072/fpjGLx2GxNxGxUl5V73MEqYzioOMoVhGMJ5cA==
   dependencies:
     is-obj "^2.0.0"
 
@@ -15464,15 +15495,15 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@3.37.17:
-  version "3.37.17"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.37.17.tgz#61057cd4f75bcea9417bf500f07045803f4a8503"
-  integrity sha512-2l7lrDTCBWQUngfNKc/S0aHweeCgHCOnGZI9RBtoo6r5VQBYkoZQMYg3xAIqUKKELEsg4d5HWUhrWN9QOyXLtw==
+netlify-cli@3.37.18:
+  version "3.37.18"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.37.18.tgz#e97114d766fa881a0c88b7692558974002cb87fd"
+  integrity sha512-Qv8GrZC4ApNU49miw0kMyMEjzrHSWVM6Zj2LCs7LnefAk+U6wN/krCUHyKYMkTTwezYq9SaDcpVd2Q+s6vKkwA==
   dependencies:
     "@netlify/build" "^12.1.0"
     "@netlify/config" "^7.2.0"
     "@netlify/framework-info" "^5.2.0"
-    "@netlify/plugin-edge-handlers" "^1.11.16"
+    "@netlify/plugin-edge-handlers" "^1.11.17"
     "@netlify/plugins-list" "^2.15.0"
     "@netlify/routing-local-proxy" "^0.30.0"
     "@netlify/zip-it-and-ship-it" "4.2.7"
@@ -15504,7 +15535,7 @@ netlify-cli@3.37.17:
     copy-template-dir "^1.4.0"
     debug "^4.1.1"
     del "^6.0.0"
-    dot-prop "^5.1.0"
+    dot-prop "^6.0.0"
     dotenv "^10.0.0"
     env-paths "^2.2.0"
     envinfo "^7.3.1"
