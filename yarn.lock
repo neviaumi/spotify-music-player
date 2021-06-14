@@ -3798,6 +3798,11 @@
   resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-2.15.0.tgz#56e2ad5c30e98d61f7770d4d5536c50aa8aeb0cb"
   integrity sha512-UOkQGvLjy5XDQsVpaaur/QOTPCXS6xCIbMWRYgboEH/BtMNh7ATv7fkF1kQgrJ1+hdguWzRYhww8/4A+G/kcxw==
 
+"@netlify/plugins-list@^2.15.1":
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/@netlify/plugins-list/-/plugins-list-2.15.1.tgz#32a5084009018d5bf9e095a6325d79a6294bd04f"
+  integrity sha512-455aOR8JMidQR8WJvtoWdvuRm+jYLiQf8Y83dr4OnVzCcnsi3sCSqWp3107JuLwYIN3TE5c/UZ2h9C8gIA08jA==
+
 "@netlify/routing-local-proxy-darwin-arm64@^0.30.0":
   version "0.30.0"
   resolved "https://registry.yarnpkg.com/@netlify/routing-local-proxy-darwin-arm64/-/routing-local-proxy-darwin-arm64-0.30.0.tgz#e4782255558fbd0d573ee2205fee7c75bac7add2"
@@ -15495,16 +15500,16 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@3.37.18:
-  version "3.37.18"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.37.18.tgz#e97114d766fa881a0c88b7692558974002cb87fd"
-  integrity sha512-Qv8GrZC4ApNU49miw0kMyMEjzrHSWVM6Zj2LCs7LnefAk+U6wN/krCUHyKYMkTTwezYq9SaDcpVd2Q+s6vKkwA==
+netlify-cli@3.37.19:
+  version "3.37.19"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.37.19.tgz#de9567d82675f7b9ed87892de33ef10b646e0818"
+  integrity sha512-bsyLN6h9TBgCCPGd/qP3Fxi8I21+esATsiCFJoE9eOBOaSk3Ov4a/ZPZo7GQkUcE3HMdRSBUvaaLZaolsFh1jw==
   dependencies:
     "@netlify/build" "^12.1.0"
     "@netlify/config" "^7.2.0"
     "@netlify/framework-info" "^5.2.0"
     "@netlify/plugin-edge-handlers" "^1.11.17"
-    "@netlify/plugins-list" "^2.15.0"
+    "@netlify/plugins-list" "^2.15.1"
     "@netlify/routing-local-proxy" "^0.30.0"
     "@netlify/zip-it-and-ship-it" "4.2.7"
     "@oclif/command" "^1.6.1"
