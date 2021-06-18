@@ -10279,6 +10279,15 @@ eslint-plugin-typescript-sort-keys@1.6.0:
     json-schema "^0.2.5"
     natural-compare-lite "^1.4.0"
 
+eslint-plugin-typescript-sort-keys@1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-typescript-sort-keys/-/eslint-plugin-typescript-sort-keys-1.7.0.tgz#efdef0c66ede1258097a0839b424776f986ee5c6"
+  integrity sha512-YEuksNJuCNEWILmQhD/PUX2NgkIblRMW2L+t+6QUsLuavz35UWDlKJIMsCoAVh4scJXDmR2cPe1MD2xYbt5YPQ==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "^2.32.0"
+    json-schema "^0.2.5"
+    natural-compare-lite "^1.4.0"
+
 eslint-scope@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-4.0.3.tgz#ca03833310f6889a3264781aa82e63eb9cfe7848"
