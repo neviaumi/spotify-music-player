@@ -17,7 +17,7 @@
     "axios": "0.21.1",
     "class-transformer": "0.4.0",
     "class-validator": "0.13.1",
-    "constate": "3.2.0",
+    "constate": "3.3.0",
     "javascript-state-machine": "3.1.0",
     "lodash.camelcase": "4.3.0",
     "lodash.capitalize": "4.2.1",
