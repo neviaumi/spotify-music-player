@@ -3584,7 +3584,7 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^12.14.0":
+"@netlify/build@^12.17.0":
   version "12.17.0"
   resolved "https://registry.yarnpkg.com/@netlify/build/-/build-12.17.0.tgz#63913a46ad0b469e3e6eacfd4bdaab382bdddbf7"
   integrity sha512-niU8MjH6LiO1dcJSm9CKkWut3sR7QGyIimdIltgry2iC1SHNAj75HCbnQvddTHEz7+mg3FcC1T28LlsF7r3W0Q==
@@ -6427,7 +6427,7 @@ aws-lambda@1.0.6:
     js-yaml "^3.13.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@*, aws-sdk@^2.689.0:
+aws-sdk@*:
   version "2.831.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.831.0.tgz#02607cc911a2136e5aabe624c1282e821830aef2"
   integrity sha512-lrOjbGFpjk2xpESyUx2PGsTZgptCy5xycZazPeakNbFO19cOoxjHx3xyxOHsMCYb3pQwns35UvChQT60B4u6cw==
@@ -8110,11 +8110,6 @@ commander@^5.1.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
 
-commander@^6.1.0:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
-  integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
-
 commander@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
@@ -9641,7 +9636,7 @@ dotenv@10.0.0, dotenv@^10.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
   integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
-dotenv@8.2.0, dotenv@^8.2.0:
+dotenv@8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
   integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
@@ -14119,15 +14114,14 @@ kuler@^2.0.0:
   resolved "https://registry.yarnpkg.com/kuler/-/kuler-2.0.0.tgz#e2c570a3800388fb44407e851531c1d670b061b3"
   integrity sha512-Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A==
 
-lambda-local@^1.7.1:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/lambda-local/-/lambda-local-1.7.4.tgz#26247fa8ba6a5226600b4add77cf8d4e6dda89af"
-  integrity sha512-uLrFPGj2//glOgJGLZn8hNTNlhU+eGx0WFRLZxIoC39nfjLRZ1fncHcPK2t5gA2GcvgtGUT2dnw60M8vJAOIkQ==
+lambda-local@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/lambda-local/-/lambda-local-2.0.0.tgz#91714d612e6fa7c614e1373578f8a670315c4f33"
+  integrity sha512-5Z7ZEhqVYJSm3djoq7QLDkEk7Ao+jNYbARo3nk3wtjKpgCnEbzOuraxDPDWg7OlZ4JKcsRDP+wNLeORMdbF2ow==
   dependencies:
-    aws-sdk "^2.689.0"
-    commander "^6.1.0"
-    dotenv "^8.2.0"
-    winston "^3.2.1"
+    commander "^7.2.0"
+    dotenv "^10.0.0"
+    winston "^3.3.3"
 
 language-subtag-registry@~0.3.2:
   version "0.3.21"
@@ -15502,12 +15496,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@3.39.3:
-  version "3.39.3"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-3.39.3.tgz#68d09132e16ff4acd58b9e94a69af2ddb5e6f932"
-  integrity sha512-AeD5P73ssUP1A9qw0xkFCuK4v4zj2Q5ttO3rcO77+STfxLHXfQ6Z1Lwhe3x51C0GNzIYSQTBHTW0Xfgt2/sXyw==
+netlify-cli@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.0.0.tgz#e2e4ed215cfb48006b05d60d8db0e0a8f551a55a"
+  integrity sha512-5SvuY1X4os/W40yshzOHoDO6bGH/J8kCGJM9Fk//j/qHChVITashpDuLQvYQls5Ovhn0QptUMuVKtKWiaRZA9g==
   dependencies:
-    "@netlify/build" "^12.14.0"
+    "@netlify/build" "^12.17.0"
     "@netlify/config" "^9.3.0"
     "@netlify/framework-info" "^5.4.0"
     "@netlify/plugin-edge-handlers" "^1.11.19"
@@ -15571,7 +15565,7 @@ netlify-cli@3.39.3:
     is-plain-obj "^3.0.0"
     isexe "^2.0.0"
     jwt-decode "^3.0.0"
-    lambda-local "^1.7.1"
+    lambda-local "^2.0.0"
     listr "^0.14.3"
     locate-path "^6.0.0"
     lodash "^4.17.20"
@@ -21989,7 +21983,7 @@ winston-transport@^4.4.0:
     readable-stream "^2.3.7"
     triple-beam "^1.2.0"
 
-winston@^3.2.1:
+winston@^3.2.1, winston@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/winston/-/winston-3.3.3.tgz#ae6172042cafb29786afa3d09c8ff833ab7c9170"
   integrity sha512-oEXTISQnC8VlSAKf1KYSSd7J6IWuRPQqDdo8eoRNaYKLvwSb5+79Z3Yi1lrl6KDpU6/VWaxpakDAtb1oQ4n9aw==
