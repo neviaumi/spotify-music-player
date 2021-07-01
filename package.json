@@ -80,7 +80,7 @@
     "@types/pollyjs__core": "4.3.2",
     "@types/pollyjs__persister-fs": "2.0.1",
     "@types/prettier": "2.2.3",
-    "@types/ramda": "0.27.41",
+    "@types/ramda": "0.27.42",
     "@types/react": "17.0.12",
     "@types/react-dom": "17.0.8",
     "@types/react-router-dom": "5.1.7",
