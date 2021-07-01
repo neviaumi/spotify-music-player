@@ -3584,10 +3584,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^12.22.0":
-  version "12.23.0"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-12.23.0.tgz#5bb13aed440041fc77125533fc00fdf030ec5808"
-  integrity sha512-R6u/htM3aZONn9W4QUzeQASE6dvhFP6WPr41lB0e+ADFZ9OpY50DhlOENEVaNOgcRlP9wbSyBQaeQZ1OIsSNgg==
+"@netlify/build@^12.25.0":
+  version "12.26.0"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-12.26.0.tgz#6e2ef8aee1396aa4b744f5410d1f2ffb69267f70"
+  integrity sha512-wRBOxaZXJ0OCzg2YVp+SsKIE6fmLzwk68X7I8X6/jEL7np4Rq1H0BornxSGu9ewbCJseCl3zGKgd6aiBR4E8Pg==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^1.0.7"
@@ -3620,6 +3620,7 @@
     os-name "^3.1.0"
     p-event "^4.1.0"
     p-every "^2.0.0"
+    p-filter "^2.1.0"
     p-locate "^4.1.0"
     p-reduce "^2.1.0"
     path-exists "^4.0.0"
@@ -15494,12 +15495,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@4.0.4:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.0.4.tgz#60d2b7fd682fd9242810920f77941e574bd19aad"
-  integrity sha512-q9nDupTivwI3j5RtQQH43ATQz8ryK5vtLnCYIFS047g24mJHtzw+x82XVG33wDcboHQt0oK9y2vG/5niscX3Yw==
+netlify-cli@4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.0.5.tgz#e9fc657917505c50818773b8a9f52a2b1ea3f4b3"
+  integrity sha512-p1wJwMMWHM/Av5/Bsabtr0UTX4lTJVZg7Hz+G9kbA/n2wdKoWAj5P5B+shDRGRBhaFDbCiHf36baKtLJWP4SiQ==
   dependencies:
-    "@netlify/build" "^12.22.0"
+    "@netlify/build" "^12.25.0"
     "@netlify/config" "^9.5.0"
     "@netlify/framework-info" "^5.5.0"
     "@netlify/plugin-edge-handlers" "^1.11.19"
