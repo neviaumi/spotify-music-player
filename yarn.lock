@@ -5279,10 +5279,10 @@
     "@types/react" "*"
     csstype "^3.0.2"
 
-"@types/stylelint@13.13.0":
-  version "13.13.0"
-  resolved "https://registry.yarnpkg.com/@types/stylelint/-/stylelint-13.13.0.tgz#8e0d99f1133b235f6ac629a8e6162e61e6854e34"
-  integrity sha512-/PxG8arC6lNjOGQ2QkWr60v9yQ6vnyOdDmyoM8ysU1UCdTm71+IztrHm5jCTJob9/HTqGNcemwsCDo0mjdjSzA==
+"@types/stylelint@13.13.1":
+  version "13.13.1"
+  resolved "https://registry.yarnpkg.com/@types/stylelint/-/stylelint-13.13.1.tgz#c7534ccf35efc019f29d883e2655c651dc3c9b7b"
+  integrity sha512-CBXFUqaMwCw0PX/sVSlT4JR+wTXJ3rv67cdhIH4EoekbrlNeNw8Dx791p2cTTozYJItMOZJa4/j7Br1mmUHdCw==
   dependencies:
     globby "11.x.x"
     postcss "7.x.x"
