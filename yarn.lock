@@ -3598,10 +3598,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^13.3.0":
-  version "13.3.0"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-13.3.0.tgz#a837c82b08d79e363be3a8042d2f67d34f0f1d3b"
-  integrity sha512-cybMgDSuLDyjllxMc1HL1TdoXVty0JRthRiBN9FzJxUrSDT90NE/1BEpzArZjszLS6J8uT836McXKxEh3T3+sw==
+"@netlify/build@^13.3.1":
+  version "13.3.1"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-13.3.1.tgz#12c6fc9b94b3cddaf892c428887e17cfa1988607"
+  integrity sha512-2cFYomeDuq1cbIqXshlruHkwmyuT2NIotD3HWXp+6jU/sdn7BDEVQH2EJvqc56rB+MLi6XxDeZwtQTOcE9jSTw==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^1.0.7"
@@ -3611,7 +3611,7 @@
     "@netlify/plugin-edge-handlers" "^1.11.20"
     "@netlify/plugins-list" "^2.18.1"
     "@netlify/run-utils" "^1.0.6"
-    "@netlify/zip-it-and-ship-it" "^4.9.0"
+    "@netlify/zip-it-and-ship-it" "^4.11.0"
     "@sindresorhus/slugify" "^1.1.0"
     "@ungap/from-entries" "^0.2.1"
     ansi-escapes "^4.3.2"
@@ -3876,7 +3876,7 @@
     unixify "^1.0.0"
     yargs "^15.4.1"
 
-"@netlify/zip-it-and-ship-it@^4.9.0":
+"@netlify/zip-it-and-ship-it@^4.11.0":
   version "4.11.0"
   resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-4.11.0.tgz#f600ee04601cee59c68f55f5e0411cd8cac73875"
   integrity sha512-QTiBzxqP44W0FrSuiRUni+ryi/YzLrkXaIRO5Al6QESEe+Ut8LVxuTClzmU86+hsSUnT0X0kDly19EdC/KwoCQ==
@@ -6936,7 +6936,7 @@ boxen@^3.0.0:
     type-fest "^0.3.0"
     widest-line "^2.0.0"
 
-boxen@^4.1.0, boxen@^4.2.0:
+boxen@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-4.2.0.tgz#e411b62357d6d6d36587c8ac3d5d974daa070e64"
   integrity sha512-eB4uT9RGzg2odpER62bBwSLvUeGC+WbRjjyyFhGsKnc8wp/m0+hQsMUvUe3H2V0D5vw0nBdO1hCJoZo5mKeuIQ==
@@ -15513,12 +15513,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.1.2.tgz#82eb9d136b0a996db41355f40a0f65030219d487"
-  integrity sha512-8BBSTQRrxLBFvj/PNho62fHzrJCDoxBrz7MT8ZrnGidv4P1KjpeCgRqIf15ARzML+Ub4Bc2N9M+h2Vo6eW1w0Q==
+netlify-cli@4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.1.4.tgz#c836e4966f160b700abbb33229ae27cf7defff79"
+  integrity sha512-2yrjWfp3Jfs0OPID+F8GFMSL0dLhRCiTJdqwmBkTX85fDKbZHv7AS5a7+7VqPrDj+Q8dtGaEIftyB5RyDbSJ6g==
   dependencies:
-    "@netlify/build" "^13.3.0"
+    "@netlify/build" "^13.3.1"
     "@netlify/config" "^10.3.0"
     "@netlify/framework-info" "^5.6.0"
     "@netlify/plugin-edge-handlers" "^1.11.20"
@@ -15540,7 +15540,7 @@ netlify-cli@4.1.2:
     backoff "^2.5.0"
     better-opn "^2.1.1"
     body-parser "^1.19.0"
-    boxen "^4.1.0"
+    boxen "^5.0.0"
     chalk "^4.0.0"
     chokidar "^3.0.2"
     ci-info "^3.0.0"
@@ -15628,7 +15628,6 @@ netlify-cli@4.1.2:
     wait-port "^0.2.2"
     which "^2.0.2"
     winston "^3.2.1"
-    wrap-ansi "^7.0.0"
     write-file-atomic "^3.0.0"
 
 netlify-lambda@2.0.11:
