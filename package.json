@@ -61,7 +61,7 @@
     "@testing-library/react-hooks": "7.0.1",
     "@testing-library/user-event": "13.1.9",
     "@types/aws-lambda": "8.10.78",
-    "@types/enzyme": "3.10.8",
+    "@types/enzyme": "3.10.9",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/eslint": "7.2.13",
     "@types/eslint-plugin-prettier": "3.1.0",
