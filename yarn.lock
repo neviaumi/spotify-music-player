@@ -3704,6 +3704,37 @@
     validate-npm-package-name "^3.0.0"
     yargs "^15.3.0"
 
+"@netlify/config@^12.0.1":
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-12.0.1.tgz#872d92de6f6c2be92ef2799809d8f76ab02eff09"
+  integrity sha512-NhUMrJIoUlsMrvIxxoIiYfPLxQyYqKTLFE20tUcn3IN2GPjmsH6Tkbzync/jSZRKzK/H1mi/SnDTaIDtny+1YA==
+  dependencies:
+    "@ungap/from-entries" "^0.2.1"
+    array-flat-polyfill "^1.0.1"
+    chalk "^3.0.0"
+    deepmerge "^4.2.2"
+    dot-prop "^5.3.0"
+    execa "^3.4.0"
+    fast-safe-stringify "^2.0.7"
+    figures "^3.2.0"
+    filter-obj "^2.0.1"
+    find-up "^4.1.0"
+    indent-string "^4.0.0"
+    is-plain-obj "^2.1.0"
+    js-yaml "^4.0.0"
+    make-dir "^3.1.0"
+    map-obj "^4.0.0"
+    netlify "^7.0.1"
+    netlify-redirect-parser "^8.0.0"
+    omit.js "^2.0.2"
+    p-locate "^4.1.0"
+    path-exists "^4.0.0"
+    path-type "^4.0.0"
+    toml "^3.0.0"
+    tomlify-j0.4 "^3.0.0"
+    validate-npm-package-name "^3.0.0"
+    yargs "^15.3.0"
+
 "@netlify/esbuild@^0.13.6":
   version "0.13.6"
   resolved "https://registry.yarnpkg.com/@netlify/esbuild/-/esbuild-0.13.6.tgz#ef0fda98604e708528ef0a57e853c50a6fc987f2"
@@ -15526,13 +15557,13 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@4.1.6:
-  version "4.1.6"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.1.6.tgz#ed6d513b819389e19e05400d1ef0494d1638c5f9"
-  integrity sha512-afy0zDz9znm50t3XU3xi7jTIgQy6TTXva5G4Mk3G8usw5ytI1KWXnJMJzEFiZcfQc6RHv4XaQZTZcL5UHz0ySg==
+netlify-cli@4.1.7:
+  version "4.1.7"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.1.7.tgz#cbc889b76d0493bf3cfc71ae908adcbdcdb1a13f"
+  integrity sha512-a+UKdZTAeVbsrkA8Z81qK3BtxTdnbpjdS/kFlFO20XQQmE7UfJ/3zXJjRctr9jES8a4CHvq7fQ+pbnHciKqurA==
   dependencies:
     "@netlify/build" "^15.1.0"
-    "@netlify/config" "^12.0.0"
+    "@netlify/config" "^12.0.1"
     "@netlify/framework-info" "^5.6.0"
     "@netlify/plugin-edge-handlers" "^1.11.20"
     "@netlify/plugins-list" "^2.18.1"
