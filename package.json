@@ -77,7 +77,7 @@
     "@types/papaparse": "5.2.6",
     "@types/pollyjs__adapter-node-http": "2.0.1",
     "@types/pollyjs__adapter-xhr": "2.6.1",
-    "@types/pollyjs__core": "4.3.2",
+    "@types/pollyjs__core": "4.3.3",
     "@types/pollyjs__persister-fs": "2.0.1",
     "@types/prettier": "2.2.3",
     "@types/ramda": "0.27.42",
