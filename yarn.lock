@@ -3598,10 +3598,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^15.6.0":
-  version "15.7.0"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-15.7.0.tgz#d1441462d58109142cae110c804a0c2ae3a08e2b"
-  integrity sha512-A8RAS9mYSDPOGEpavj/Egk1OwGKRp6CfLkIYb7QHV0z8/mc7ShKcg0yHt5/MwHKCG7IZ7ztF3zTt/ofgNDdBbA==
+"@netlify/build@^15.9.0":
+  version "15.11.0"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-15.11.0.tgz#5ad6b6899f6bf5540d4ae56685c8d45c9325feb0"
+  integrity sha512-Sw4AGRGJUPzBJMNsvJUWjmr60rlWB1GYiynmTlI/qhUnjB2LgnP7bZLMFDTiHbfgigiK7WEV3NObqNEbE1r8CA==
   dependencies:
     "@bugsnag/js" "^7.0.0"
     "@netlify/cache-utils" "^1.0.7"
@@ -3706,14 +3706,15 @@
     validate-npm-package-name "^3.0.0"
     yargs "^15.3.0"
 
-"@netlify/config@^12.2.1":
-  version "12.3.0"
-  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-12.3.0.tgz#787c2197798a03bad1ed1e2fc604fd63d27ff8b5"
-  integrity sha512-Z8t3TQUVFIEy1oACfyPRYj5QixyomgwvRNkGUk8BMukenEXWQNwddJAvPTycKwkTNFz3B39EeX6i86JQHYwnLg==
+"@netlify/config@^12.4.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-12.6.0.tgz#5428ae3fe20ec5939c83423953aef6dddf81578d"
+  integrity sha512-L+ZmoGsO2Gql+T6+147G7ZctcXgViuh8Q1ReADICM4xdaYVmipRFC+ICU4iJ8I9UQnc0M7qM0ZHzKuhTdPJfiA==
   dependencies:
     "@ungap/from-entries" "^0.2.1"
     array-flat-polyfill "^1.0.1"
     chalk "^3.0.0"
+    cp-file "^7.0.0"
     deepmerge "^4.2.2"
     dot-prop "^5.3.0"
     execa "^3.4.0"
@@ -15526,13 +15527,13 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@4.1.16:
-  version "4.1.16"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.1.16.tgz#375937499f1bf2c9bbd400d1f3d43eb3b893efa4"
-  integrity sha512-iptn1M+Y63y5dK4F+Hs1rBSTBA4/HzkxzwLVoqg/MLW5b3kidb2QxYhanXLoblHswes0bk2Sk5xLPOQ4V4/gWA==
+netlify-cli@4.1.18:
+  version "4.1.18"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-4.1.18.tgz#1891c23831462dbe25d59cbec9dfa085ea152f01"
+  integrity sha512-urJ/UEOwS5jL+bhNccADuBBFbaewgIj5LZxTsFgM56bCPxNIGEwVrwW4kaVGZqujNYLaZrUn1BlhKaXW6nIUnA==
   dependencies:
-    "@netlify/build" "^15.6.0"
-    "@netlify/config" "^12.2.1"
+    "@netlify/build" "^15.9.0"
+    "@netlify/config" "^12.4.0"
     "@netlify/framework-info" "^5.6.0"
     "@netlify/plugin-edge-handlers" "^1.11.20"
     "@netlify/plugins-list" "^2.19.1"
