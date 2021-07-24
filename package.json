@@ -100,7 +100,7 @@
     "express": "4.17.1",
     "husky": "7.0.1",
     "jest-expect-message": "1.0.2",
-    "lint-staged": "11.1.0",
+    "lint-staged": "11.1.1",
     "mutation-observer": "1.0.3",
     "netlify-cli": "5.2.3",
     "netlify-lambda": "2.0.11",
