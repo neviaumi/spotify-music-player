@@ -15639,10 +15639,10 @@ netlify-cli@5.4.1:
     winston "^3.2.1"
     write-file-atomic "^3.0.0"
 
-netlify-lambda@2.0.12:
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-2.0.12.tgz#1cc78166dfa29413f2e1321cc45bae18b5ea414b"
-  integrity sha512-3cbFyd/nmbCXqBo1zBKaKgXuYm1leugtGwFnmA3ryw7rN1sib9HpidFeAs5Q48fTCaTeinVck3UBPHgDmnE0mA==
+netlify-lambda@2.0.13:
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-2.0.13.tgz#5219e30f7d11867be3b582fea739e074dad48267"
+  integrity sha512-Ppqqqm+C+Ju/wWhiIin43ct8+AL8hsX1plcl8xinKv05vX5qBQ0C9WNqxSSA9vn5d2tzAnQ1uaUlFNpCwVmqiw==
   dependencies:
     "@babel/core" "^7.10.4"
     "@babel/plugin-proposal-class-properties" "^7.10.4"
