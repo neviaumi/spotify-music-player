@@ -3599,7 +3599,7 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^17.4.3":
+"@netlify/build@^17.5.0":
   version "17.5.0"
   resolved "https://registry.yarnpkg.com/@netlify/build/-/build-17.5.0.tgz#cccd09d7b599591dc142b3b2254c2005eba55e9d"
   integrity sha512-RoduCaYiLJweuxFi/dbsj9txPFY76zuutoxM1Qa56AAxmrP3pek8ytp2PLSPrCSrxmu4Ss+O/tTg9LcDiDS1gA==
@@ -15558,12 +15558,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@5.4.6:
-  version "5.4.6"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-5.4.6.tgz#072248a4269cbb9566821d0d88555207c04bb5c9"
-  integrity sha512-ZZ3xYzEs4H6U9/xQUi9DTBJmkkmHFuJYznjXnFzABDFUA3Q+uWr+S3oUdumezq240NV/X33kxZFqMFwHW9Oc7w==
+netlify-cli@5.4.7:
+  version "5.4.7"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-5.4.7.tgz#6c3fdb1075ac8ecdcff6d0f8c69c4f96b42a9020"
+  integrity sha512-oH0ijd+X8E13N0y81KZ9NF4gBgFNBb+8ncziqSjCrkmDaF0GJPrH2VlWN1W9C+bCpLzII0pz7OEsX1bHZtoWnA==
   dependencies:
-    "@netlify/build" "^17.4.3"
+    "@netlify/build" "^17.5.0"
     "@netlify/config" "^14.1.1"
     "@netlify/framework-info" "^5.7.3"
     "@netlify/local-functions-proxy" "^1.1.0"
