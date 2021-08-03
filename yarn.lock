@@ -3599,7 +3599,7 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/build@^17.7.0":
+"@netlify/build@^17.7.1":
   version "17.7.1"
   resolved "https://registry.yarnpkg.com/@netlify/build/-/build-17.7.1.tgz#f14fd8dc562774a018beeefc301cb8dbdffd0262"
   integrity sha512-HC0oGu72WdeHJMFp8rmJU8wMAHWc0ik1ywFyOJc2RK2HIqLbKb4H92iEqYSD8X4OlmyD7DU/a4whXU931eDJrQ==
@@ -3746,10 +3746,10 @@
   resolved "https://registry.yarnpkg.com/@netlify/esbuild/-/esbuild-0.13.6.tgz#ef0fda98604e708528ef0a57e853c50a6fc987f2"
   integrity sha512-tiKmDcHM2riSVN79c0mJY/67EBDafXQAMitHuLiCDAMdtz3kfv+NqdVG5krgf5lWR8Uf8AeZrUW5Q9RP25REvw==
 
-"@netlify/framework-info@^5.7.3":
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/@netlify/framework-info/-/framework-info-5.7.3.tgz#0e71238dd27fdd3ccd0774d70394cf1159ebd8b0"
-  integrity sha512-8u3ElX3VBjw+yH5eh5t0pCt4LsiA23cWMhHEHVXCWkty+spyW8LMNDU503mwrz3NwYqSs9sXEsJOwFlThHp1/w==
+"@netlify/framework-info@^5.8.0":
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/@netlify/framework-info/-/framework-info-5.8.0.tgz#10fcc59b4762e1e71059661c0c444f7d6b07a147"
+  integrity sha512-gc8K0BT6CSHnYFirLmUWLoKah+AjStWBsGmwa7gbRmeAaRThJhkRcRVE03EhSnrMQkAMO3IIIMklbE8i/9UpEg==
   dependencies:
     ajv "^8.0.0"
     filter-obj "^2.0.1"
@@ -15558,14 +15558,14 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@5.4.12:
-  version "5.4.12"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-5.4.12.tgz#508662ecdc8f0a7993006f56bfcd4f37c72cc818"
-  integrity sha512-6vG0tCwNdwo/rzkAfDeyEzay4l6mKbeswxRuiTRkXdIr3+mKrqKDI0hG4WdppHr6wSR34Waxvif4Jx31GcaYmQ==
+netlify-cli@5.4.15:
+  version "5.4.15"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-5.4.15.tgz#05ae22a2a877c6ce89bac289f27a630d9b896c9f"
+  integrity sha512-QdFnANVpP9J2C6Vkl3Qj48GFjoDE7hnJK9IFWTarc9TiSphSZuPjqvCfD+R/t9T4Yx5H6dcUjB3mC/Q6/PT7mQ==
   dependencies:
-    "@netlify/build" "^17.7.0"
+    "@netlify/build" "^17.7.1"
     "@netlify/config" "^14.2.0"
-    "@netlify/framework-info" "^5.7.3"
+    "@netlify/framework-info" "^5.8.0"
     "@netlify/local-functions-proxy" "^1.1.0"
     "@netlify/plugin-edge-handlers" "^1.11.22"
     "@netlify/plugins-list" "^3.2.0"
