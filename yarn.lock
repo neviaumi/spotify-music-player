@@ -18358,10 +18358,10 @@ react-scripts@4.0.3:
   optionalDependencies:
     fsevents "^2.1.3"
 
-react-tiny-popover@6.0.6:
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/react-tiny-popover/-/react-tiny-popover-6.0.6.tgz#7bef2bc04ebad727ece4f08a02119d48312f769e"
-  integrity sha512-iJjwP9+83MLELZnSCKyO+47+x8A7mFGnBiQXAUJi2UuQL9RC+Dt1m9FHMbgvIjKd/B6iGTNyv3ft9MSXtKPmJA==
+react-tiny-popover@6.0.10:
+  version "6.0.10"
+  resolved "https://registry.yarnpkg.com/react-tiny-popover/-/react-tiny-popover-6.0.10.tgz#6167a1b4a1ae6cf847d2909057defd00d95d726c"
+  integrity sha512-ECMucd701SxWHGa+2YuVvccCxxTjmhomcD0ZYTF+Qmi5qNAj8pdlExFN+k+p1G78QTYIGPGNLocxRb9f6cZ0Mw==
 
 react-universal-interface@^0.6.2:
   version "0.6.2"
