@@ -103,7 +103,7 @@
     "lint-staged": "11.1.2",
     "mutation-observer": "1.0.3",
     "netlify-cli": "6.0.8",
-    "netlify-lambda": "2.0.13",
+    "netlify-lambda": "2.0.14",
     "npm-package-json-lint": "5.2.2",
     "open": "8.2.1",
     "prettier": "2.2.1",
