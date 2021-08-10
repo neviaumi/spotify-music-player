@@ -4804,10 +4804,10 @@
   resolved "https://registry.yarnpkg.com/@types/aria-query/-/aria-query-4.2.0.tgz#14264692a9d6e2fa4db3df5e56e94b5e25647ac0"
   integrity sha512-iIgQNzCm0v7QMhhe4Jjn9uRh+I6GoPmt03CbEtwx3ao8/EfoQcmgtqH4vQ5Db/lxiIGaWDv6nwvunuh0RyX0+A==
 
-"@types/aws-lambda@8.10.81":
-  version "8.10.81"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.81.tgz#6d405269aad82e05a348687631aa9a587cdbe158"
-  integrity sha512-C1rFKGVZ8KwqhwBOYlpoybTSRtxu2433ea6JaO3amc6ubEe08yQoFsPa9aU9YqvX7ppeZ25CnCtC4AH9mhtxsQ==
+"@types/aws-lambda@8.10.82":
+  version "8.10.82"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.82.tgz#336062d3270f52d2156eeb7d9e497fd63684572a"
+  integrity sha512-sJo8pz8hu+OzLRAj7Do2g66zYLizWtB3kGK6K45RWmGW+S54XXMoK3sNbvzKXfndBxYiSVExHoCNiSlt2gPmxw==
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.12"
