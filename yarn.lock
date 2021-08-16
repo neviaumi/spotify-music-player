@@ -15764,10 +15764,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@6.3.5:
-  version "6.3.5"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-6.3.5.tgz#1d183cf714819434e43c723c9fed245e6c5b2ca9"
-  integrity sha512-ve09paxF4/aoPDScVMt+N/oRoiWLad4xF2HHWHGAq0PJFah13W6Q/9rQADafxgVBk1OHFN6zW1WOJGZCdH3+pQ==
+netlify-cli@6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-6.4.0.tgz#1b04cf3e6abbc4d8e5683a559c2b12c5b3e3c05a"
+  integrity sha512-x68Mpn5UkknbHa5Rl4BChZkg47wlAQpwDAkoeFLlnyr7Xjn5zPE0dEu5eGQtcGgBHIgaJJNZhYNOD/H+EWfk3A==
   dependencies:
     "@netlify/build" "^18.2.7"
     "@netlify/config" "^15.3.0"
@@ -15844,7 +15844,7 @@ netlify-cli@6.3.5:
     minimist "^1.2.5"
     multiparty "^4.2.1"
     netlify "^8.0.0"
-    netlify-redirect-parser "^10.1.0"
+    netlify-redirect-parser "^11.0.0"
     netlify-redirector "^0.2.1"
     node-fetch "^2.6.0"
     node-version-alias "^1.0.1"
@@ -15927,6 +15927,16 @@ netlify-redirect-parser@^10.1.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/netlify-redirect-parser/-/netlify-redirect-parser-10.1.0.tgz#9dc4ef528358f698d88042e2c9a070b674cd3e12"
   integrity sha512-lnNp2nlyFajv3/hQmIDjzhkB6B8TqFd/5HUE9oPd16DK0S0tERiwPiZaL25XroBJFU4nvZM4xSPN907YiGcY0w==
+  dependencies:
+    filter-obj "^2.0.2"
+    is-plain-obj "^2.1.0"
+    path-exists "^4.0.0"
+    toml "^3.0.0"
+
+netlify-redirect-parser@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/netlify-redirect-parser/-/netlify-redirect-parser-11.0.0.tgz#f3e231ac987d2bbc988cc4a3822c37c8401c2a60"
+  integrity sha512-5jpzUL5ZIkH8utmDPr9eVD1qNJXMIyIkbb8x170DqAMI+buvxcCT5cr7JycwLCfDN8nxZEm3msrCHj2VKy6QpA==
   dependencies:
     filter-obj "^2.0.2"
     is-plain-obj "^2.1.0"
