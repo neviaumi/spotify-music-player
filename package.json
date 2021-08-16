@@ -104,7 +104,7 @@
     "mutation-observer": "1.0.3",
     "netlify-cli": "6.4.2",
     "netlify-lambda": "2.0.14",
-    "npm-package-json-lint": "5.2.2",
+    "npm-package-json-lint": "5.2.3",
     "open": "8.2.1",
     "prettier": "2.2.1",
     "quicktype": "15.0.260",
