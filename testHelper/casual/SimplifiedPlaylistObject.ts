@@ -31,8 +31,7 @@ function SimplifiedPlaylistObjectFactory(attributes?: any) {
     public: true,
     snapshot_id: 'NSw2Y2M1NjllMmQ2MWQwYzIyNzMyZmFlNGFlNmUyNDdjZTk3YzAxNzA3',
     tracks: {
-      href:
-        'https://api.spotify.com/v1/playlists/1bTZ1OTnP2JP4TM2nNpcqp/tracks',
+      href: 'https://api.spotify.com/v1/playlists/1bTZ1OTnP2JP4TM2nNpcqp/tracks',
       total: 2,
     },
     type: 'playlist',

@@ -41,6 +41,5 @@ export function withSuggestAlbumByUserTopArtistGenres(
   };
 }
 
-export const SuggestAlbumByUserTopArtistGenres = withSuggestAlbumByUserTopArtistGenres(
-  PresentSuggestAlbum,
-);
+export const SuggestAlbumByUserTopArtistGenres =
+  withSuggestAlbumByUserTopArtistGenres(PresentSuggestAlbum);

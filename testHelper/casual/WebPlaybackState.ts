@@ -27,20 +27,17 @@ const WebPlaybackStateFactory = (attributes?: any) => {
           images: [
             {
               height: 300,
-              url:
-                'https://i.scdn.co/image/ab67616d00001e02dbeec63ad914c973e75c24df',
+              url: 'https://i.scdn.co/image/ab67616d00001e02dbeec63ad914c973e75c24df',
               width: 300,
             },
             {
               height: 64,
-              url:
-                'https://i.scdn.co/image/ab67616d00004851dbeec63ad914c973e75c24df',
+              url: 'https://i.scdn.co/image/ab67616d00004851dbeec63ad914c973e75c24df',
               width: 64,
             },
             {
               height: 640,
-              url:
-                'https://i.scdn.co/image/ab67616d0000b273dbeec63ad914c973e75c24df',
+              url: 'https://i.scdn.co/image/ab67616d0000b273dbeec63ad914c973e75c24df',
               width: 640,
             },
           ],
@@ -73,20 +70,17 @@ const WebPlaybackStateFactory = (attributes?: any) => {
             images: [
               {
                 height: 300,
-                url:
-                  'https://i.scdn.co/image/ab67616d00001e02dbeec63ad914c973e75c24df',
+                url: 'https://i.scdn.co/image/ab67616d00001e02dbeec63ad914c973e75c24df',
                 width: 300,
               },
               {
                 height: 64,
-                url:
-                  'https://i.scdn.co/image/ab67616d00004851dbeec63ad914c973e75c24df',
+                url: 'https://i.scdn.co/image/ab67616d00004851dbeec63ad914c973e75c24df',
                 width: 64,
               },
               {
                 height: 640,
-                url:
-                  'https://i.scdn.co/image/ab67616d0000b273dbeec63ad914c973e75c24df',
+                url: 'https://i.scdn.co/image/ab67616d0000b273dbeec63ad914c973e75c24df',
                 width: 640,
               },
             ],
@@ -118,20 +112,17 @@ const WebPlaybackStateFactory = (attributes?: any) => {
             images: [
               {
                 height: 300,
-                url:
-                  'https://i.scdn.co/image/ab67616d00001e02e230f303815e82a86713eedd',
+                url: 'https://i.scdn.co/image/ab67616d00001e02e230f303815e82a86713eedd',
                 width: 300,
               },
               {
                 height: 64,
-                url:
-                  'https://i.scdn.co/image/ab67616d00004851e230f303815e82a86713eedd',
+                url: 'https://i.scdn.co/image/ab67616d00004851e230f303815e82a86713eedd',
                 width: 64,
               },
               {
                 height: 640,
-                url:
-                  'https://i.scdn.co/image/ab67616d0000b273e230f303815e82a86713eedd',
+                url: 'https://i.scdn.co/image/ab67616d0000b273e230f303815e82a86713eedd',
                 width: 640,
               },
             ],
@@ -165,20 +156,17 @@ const WebPlaybackStateFactory = (attributes?: any) => {
             images: [
               {
                 height: 300,
-                url:
-                  'https://i.scdn.co/image/ab67616d00001e02dbeec63ad914c973e75c24df',
+                url: 'https://i.scdn.co/image/ab67616d00001e02dbeec63ad914c973e75c24df',
                 width: 300,
               },
               {
                 height: 64,
-                url:
-                  'https://i.scdn.co/image/ab67616d00004851dbeec63ad914c973e75c24df',
+                url: 'https://i.scdn.co/image/ab67616d00004851dbeec63ad914c973e75c24df',
                 width: 64,
               },
               {
                 height: 640,
-                url:
-                  'https://i.scdn.co/image/ab67616d0000b273dbeec63ad914c973e75c24df',
+                url: 'https://i.scdn.co/image/ab67616d0000b273dbeec63ad914c973e75c24df',
                 width: 640,
               },
             ],
@@ -210,20 +198,17 @@ const WebPlaybackStateFactory = (attributes?: any) => {
             images: [
               {
                 height: 300,
-                url:
-                  'https://i.scdn.co/image/ab67616d00001e02582d56ce20fe0146ffa0e5cf',
+                url: 'https://i.scdn.co/image/ab67616d00001e02582d56ce20fe0146ffa0e5cf',
                 width: 300,
               },
               {
                 height: 64,
-                url:
-                  'https://i.scdn.co/image/ab67616d00004851582d56ce20fe0146ffa0e5cf',
+                url: 'https://i.scdn.co/image/ab67616d00004851582d56ce20fe0146ffa0e5cf',
                 width: 64,
               },
               {
                 height: 640,
-                url:
-                  'https://i.scdn.co/image/ab67616d0000b273582d56ce20fe0146ffa0e5cf',
+                url: 'https://i.scdn.co/image/ab67616d0000b273582d56ce20fe0146ffa0e5cf',
                 width: 640,
               },
             ],
