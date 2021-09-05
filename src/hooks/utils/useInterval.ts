@@ -19,7 +19,7 @@ export function useInterval(
       setRunning(true);
       try {
         await handler(latestSuccessExecuteTime);
-      } catch (e) {
+      } catch (e: any) {
         setError(e);
       } finally {
         setRunning(false);
