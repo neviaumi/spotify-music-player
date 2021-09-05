@@ -1,5 +1,5 @@
 import { b64urlFromBuffer } from '@waiting/base64';
-import nanoid from 'nanoid';
+import { nanoid } from 'nanoid';
 
 import {
   authorization_endpoint,
