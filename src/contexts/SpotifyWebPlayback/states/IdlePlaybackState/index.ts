@@ -13,7 +13,7 @@ import { startPlayback } from '../LocalPlaybackState/commands/startPlayback';
 export class IdlePlaybackState implements ActivePlaybackState {
   readonly apiClient: AxiosInstance;
 
-  readonly localPlayback?: Spotify.SpotifyPlayer;
+  readonly localPlayback?: Spotify.Player;
 
   readonly playbackType: PlaybackType = PlaybackType.Local;
 
@@ -24,7 +24,7 @@ export class IdlePlaybackState implements ActivePlaybackState {
   constructor(
     readonly options: {
       apiClient: AxiosInstance;
-      localPlayback?: Spotify.SpotifyPlayer;
+      localPlayback?: Spotify.Player;
       stateMachine: StateMachine;
     },
   ) {
@@ -69,10 +69,11 @@ export class IdlePlaybackState implements ActivePlaybackState {
       ? await this.localPlayback.getVolume()
       : 0;
 
-    const { device, item: track, actions } = currentPlaying;
+    const { device, item: track, actions, context } = currentPlaying;
 
     return {
       actions,
+      context,
       device: {
         ...device,
         id: this.localPlayback?._options?.id,
@@ -100,6 +101,7 @@ export class IdlePlaybackState implements ActivePlaybackState {
     }
     return {
       actions: data.actions,
+      context: data.context,
       currently_playing_type: data.currently_playing_type,
       device: {
         is_active: data.is_playing,
@@ -122,7 +124,7 @@ export class IdlePlaybackState implements ActivePlaybackState {
       return null;
     }
     const {
-      items: [{ track: item }],
+      items: [{ track: item, context }],
     } = data;
     if (!item) return null;
     return {
@@ -137,6 +139,7 @@ export class IdlePlaybackState implements ActivePlaybackState {
           skipping_prev: true,
         },
       },
+      context,
       currently_playing_type: item.type,
       device: {
         is_active: false,

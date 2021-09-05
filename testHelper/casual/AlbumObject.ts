@@ -21,8 +21,7 @@ function AlbumObjectFactory(attributes?: any) {
         type: 'C',
       },
       {
-        text:
-          '℗ 2015 Calderstone Productions Limited (a division of Universal Music Group)',
+        text: '℗ 2015 Calderstone Productions Limited (a division of Universal Music Group)',
         type: 'P',
       },
     ],
@@ -59,8 +58,7 @@ function AlbumObjectFactory(attributes?: any) {
     release_date_precision: 'day',
     total_tracks: 13,
     tracks: {
-      href:
-        'https://api.spotify.com/v1/albums/6wCttLq0ADzkPgtRnUihLV/tracks?offset=0&limit=50&market=HK',
+      href: 'https://api.spotify.com/v1/albums/6wCttLq0ADzkPgtRnUihLV/tracks?offset=0&limit=50&market=HK',
       items: [
         {
           artists: [

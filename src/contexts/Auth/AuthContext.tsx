@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import constate from 'constate';
 import { useCallback, useState } from 'react';
 
@@ -88,7 +88,10 @@ function useAuth({
       );
       return access_token;
     } catch (e) {
-      throw new UnAuthenticatedError(e.toJSON());
+      if (axios.isAxiosError(e)) {
+        throw new UnAuthenticatedError(e.toJSON() as AxiosError);
+      }
+      throw e;
     }
   };
 

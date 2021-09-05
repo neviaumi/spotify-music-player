@@ -4,7 +4,7 @@ const path = require('path');
 const { promises: fs } = require('fs');
 const crypto = require('crypto');
 const express = require('express');
-const nanoid = require('nanoid');
+const { nanoid } = require('nanoid');
 const open = require('open');
 const { TextEncoder } = require('util');
 

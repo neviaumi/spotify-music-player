@@ -16,20 +16,17 @@ function PlaylistObjectFactory(attributes?: any) {
     images: [
       {
         height: 640,
-        url:
-          'https://mosaic.scdn.co/640/ab67616d0000b273582d56ce20fe0146ffa0e5cfab67616d0000b2735ef4660298ae29ee18799fc2ab67616d0000b273dbeec63ad914c973e75c24dfab67616d0000b273e230f303815e82a86713eedd',
+        url: 'https://mosaic.scdn.co/640/ab67616d0000b273582d56ce20fe0146ffa0e5cfab67616d0000b2735ef4660298ae29ee18799fc2ab67616d0000b273dbeec63ad914c973e75c24dfab67616d0000b273e230f303815e82a86713eedd',
         width: 640,
       },
       {
         height: 300,
-        url:
-          'https://mosaic.scdn.co/300/ab67616d0000b273582d56ce20fe0146ffa0e5cfab67616d0000b2735ef4660298ae29ee18799fc2ab67616d0000b273dbeec63ad914c973e75c24dfab67616d0000b273e230f303815e82a86713eedd',
+        url: 'https://mosaic.scdn.co/300/ab67616d0000b273582d56ce20fe0146ffa0e5cfab67616d0000b2735ef4660298ae29ee18799fc2ab67616d0000b273dbeec63ad914c973e75c24dfab67616d0000b273e230f303815e82a86713eedd',
         width: 300,
       },
       {
         height: 60,
-        url:
-          'https://mosaic.scdn.co/60/ab67616d0000b273582d56ce20fe0146ffa0e5cfab67616d0000b2735ef4660298ae29ee18799fc2ab67616d0000b273dbeec63ad914c973e75c24dfab67616d0000b273e230f303815e82a86713eedd',
+        url: 'https://mosaic.scdn.co/60/ab67616d0000b273582d56ce20fe0146ffa0e5cfab67616d0000b2735ef4660298ae29ee18799fc2ab67616d0000b273dbeec63ad914c973e75c24dfab67616d0000b273e230f303815e82a86713eedd',
         width: 60,
       },
     ],
@@ -48,8 +45,7 @@ function PlaylistObjectFactory(attributes?: any) {
     public: true,
     snapshot_id: 'NDQsZmJiMTdkZmE4MjJkNzAxZmYwODBmOTdhNDhjNTgxYzUyYzNmYWNkYg==',
     tracks: {
-      href:
-        'https://api.spotify.com/v1/playlists/7oY4n9cdzh1n1imevE68cD/tracks?offset=0&limit=100&market=HK',
+      href: 'https://api.spotify.com/v1/playlists/7oY4n9cdzh1n1imevE68cD/tracks?offset=0&limit=100&market=HK',
       items: [
         {
           added_at: '2021-02-21T15:05:13Z',
@@ -74,8 +70,7 @@ function PlaylistObjectFactory(attributes?: any) {
                     spotify:
                       'https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2',
                   },
-                  href:
-                    'https://api.spotify.com/v1/artists/3WrFJ7ztbogyGnTHbHJFl2',
+                  href: 'https://api.spotify.com/v1/artists/3WrFJ7ztbogyGnTHbHJFl2',
                   id: '3WrFJ7ztbogyGnTHbHJFl2',
                   name: 'The Beatles',
                   type: 'artist',
@@ -91,20 +86,17 @@ function PlaylistObjectFactory(attributes?: any) {
               images: [
                 {
                   height: 640,
-                  url:
-                    'https://i.scdn.co/image/ab67616d0000b273e230f303815e82a86713eedd',
+                  url: 'https://i.scdn.co/image/ab67616d0000b273e230f303815e82a86713eedd',
                   width: 640,
                 },
                 {
                   height: 300,
-                  url:
-                    'https://i.scdn.co/image/ab67616d00001e02e230f303815e82a86713eedd',
+                  url: 'https://i.scdn.co/image/ab67616d00001e02e230f303815e82a86713eedd',
                   width: 300,
                 },
                 {
                   height: 64,
-                  url:
-                    'https://i.scdn.co/image/ab67616d00004851e230f303815e82a86713eedd',
+                  url: 'https://i.scdn.co/image/ab67616d00004851e230f303815e82a86713eedd',
                   width: 64,
                 },
               ],
@@ -121,8 +113,7 @@ function PlaylistObjectFactory(attributes?: any) {
                   spotify:
                     'https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2',
                 },
-                href:
-                  'https://api.spotify.com/v1/artists/3WrFJ7ztbogyGnTHbHJFl2',
+                href: 'https://api.spotify.com/v1/artists/3WrFJ7ztbogyGnTHbHJFl2',
                 id: '3WrFJ7ztbogyGnTHbHJFl2',
                 name: 'The Beatles',
                 type: 'artist',

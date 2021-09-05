@@ -21,7 +21,7 @@ import { startPlayback } from './commands/startPlayback';
 export class LocalPlaybackState implements ActivePlaybackState {
   readonly apiClient: AxiosInstance;
 
-  readonly localPlayback: Spotify.SpotifyPlayer;
+  readonly localPlayback: Spotify.Player;
 
   readonly playbackType: PlaybackType = PlaybackType.Local;
 
@@ -32,7 +32,7 @@ export class LocalPlaybackState implements ActivePlaybackState {
   constructor(
     readonly options: {
       apiClient: AxiosInstance;
-      localPlayback: Spotify.SpotifyPlayer;
+      localPlayback: Spotify.Player;
       stateMachine: StateMachine;
     },
   ) {
@@ -114,6 +114,7 @@ export class LocalPlaybackState implements ActivePlaybackState {
     }
     const currentVolume = await this.localPlayback.getVolume();
     const {
+      context,
       disallows,
       position,
       paused,
@@ -123,6 +124,7 @@ export class LocalPlaybackState implements ActivePlaybackState {
     } = state;
     return {
       actions: { disallows },
+      context,
       device: {
         id: this.localPlayback._options.id,
         is_active: true,

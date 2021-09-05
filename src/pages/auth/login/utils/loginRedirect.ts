@@ -1,5 +1,5 @@
 import { b64urlFromBuffer } from '@waiting/base64';
-import nanoid from 'nanoid';
+import { nanoid } from 'nanoid';
 
 import {
   authorization_endpoint,
@@ -54,10 +54,8 @@ export function getAuthorizeUrl(transactionId: string, codeChallenge: string) {
 }
 
 export async function loginRedirect(state: State) {
-  const {
-    codeVerifier,
-    codeChallenge,
-  } = await generateCodeVerifierAndChallenge();
+  const { codeVerifier, codeChallenge } =
+    await generateCodeVerifierAndChallenge();
   const transactionId = nanoid();
   const url = getAuthorizeUrl(transactionId, codeChallenge);
   window.localStorage.setItem(

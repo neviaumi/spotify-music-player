@@ -13,8 +13,7 @@ function CurrentlyPlayingObjectFactory(attributes?: any) {
       },
       href: 'https://api.spotify.com/v1/playlists/7oY4n9cdzh1n1imevE68cD',
       type: 'playlist',
-      uri:
-        'spotify:user:22ekb6z247ehuekkeofnzwe4y:playlist:7oY4n9cdzh1n1imevE68cD',
+      uri: 'spotify:user:22ekb6z247ehuekkeofnzwe4y:playlist:7oY4n9cdzh1n1imevE68cD',
     },
     currently_playing_type: 'track',
     is_playing: true,
@@ -41,20 +40,17 @@ function CurrentlyPlayingObjectFactory(attributes?: any) {
         images: [
           {
             height: 640,
-            url:
-              'https://i.scdn.co/image/ab67616d0000b2735ef4660298ae29ee18799fc2',
+            url: 'https://i.scdn.co/image/ab67616d0000b2735ef4660298ae29ee18799fc2',
             width: 640,
           },
           {
             height: 300,
-            url:
-              'https://i.scdn.co/image/ab67616d00001e025ef4660298ae29ee18799fc2',
+            url: 'https://i.scdn.co/image/ab67616d00001e025ef4660298ae29ee18799fc2',
             width: 300,
           },
           {
             height: 64,
-            url:
-              'https://i.scdn.co/image/ab67616d000048515ef4660298ae29ee18799fc2',
+            url: 'https://i.scdn.co/image/ab67616d000048515ef4660298ae29ee18799fc2',
             width: 64,
           },
         ],

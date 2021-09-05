@@ -1,7 +1,7 @@
 import casual from 'casual';
 
-function SpotifyPlayerFactory(attributes?: any): Spotify.SpotifyPlayer {
-  return ({
+function SpotifyPlayerFactory(attributes?: any): Spotify.Player {
+  return {
     _options: {
       id: 'fake-device-id',
       name: 'fake-device',
@@ -15,7 +15,7 @@ function SpotifyPlayerFactory(attributes?: any): Spotify.SpotifyPlayer {
     seek: jest.fn(),
     setVolume: jest.fn(),
     ...attributes,
-  } as unknown) as Spotify.SpotifyPlayer;
+  } as unknown as Spotify.Player;
 }
 
 casual.define('SpotifyPlayer', SpotifyPlayerFactory);
