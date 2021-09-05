@@ -86,13 +86,13 @@ describe('Test LocalPlaybackState', () => {
     const stateMachine = createPlaybackStateMachine(
       PlaybackState.PLAY_ON_LOCAL_PLAYBACK,
     );
-    const player = ({
+    const player = {
       _options: {
         id: 'fake-device-id',
       },
       getCurrentState: jest.fn().mockResolvedValue(null),
       getVolume: jest.fn().mockResolvedValue(1.0),
-    } as unknown) as Spotify.Player;
+    } as unknown as Spotify.Player;
     const apiClient = createSpotifyAPIClientForTesting();
 
     const playback = new LocalPlaybackState({
@@ -111,14 +111,14 @@ describe('Test LocalPlaybackState', () => {
     );
     const apiClient = createSpotifyAPIClientForTesting();
 
-    const player = ({
+    const player = {
       _options: {
         id: 'fake-device-id',
         name: 'fake-playback-name',
       },
       getCurrentState: jest.fn().mockResolvedValue(currentState),
       getVolume: jest.fn().mockResolvedValue(1.0),
-    } as unknown) as Spotify.Player;
+    } as unknown as Spotify.Player;
     const playback = new LocalPlaybackState({
       apiClient,
       localPlayback: player,

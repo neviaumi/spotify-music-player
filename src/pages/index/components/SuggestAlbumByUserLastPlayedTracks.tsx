@@ -40,6 +40,5 @@ export function withSuggestAlbumByUserLastPlayedTracks(
   };
 }
 
-export const SuggestAlbumByUserLastPlayedTracks = withSuggestAlbumByUserLastPlayedTracks(
-  PresentSuggestAlbum,
-);
+export const SuggestAlbumByUserLastPlayedTracks =
+  withSuggestAlbumByUserLastPlayedTracks(PresentSuggestAlbum);

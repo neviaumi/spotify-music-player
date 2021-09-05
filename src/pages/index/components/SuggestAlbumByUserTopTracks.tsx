@@ -40,6 +40,5 @@ export function withSuggestAlbumByUserTopTracks(
   };
 }
 
-export const SuggestAlbumByUserTopTracks = withSuggestAlbumByUserTopTracks(
-  PresentSuggestAlbum,
-);
+export const SuggestAlbumByUserTopTracks =
+  withSuggestAlbumByUserTopTracks(PresentSuggestAlbum);

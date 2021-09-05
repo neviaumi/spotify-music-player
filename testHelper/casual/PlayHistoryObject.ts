@@ -35,20 +35,17 @@ function PlayHistoryObjectFactory(attributes?: any) {
         images: [
           {
             height: 640,
-            url:
-              'https://i.scdn.co/image/ab67616d0000b273dbeec63ad914c973e75c24df',
+            url: 'https://i.scdn.co/image/ab67616d0000b273dbeec63ad914c973e75c24df',
             width: 640,
           },
           {
             height: 300,
-            url:
-              'https://i.scdn.co/image/ab67616d00001e02dbeec63ad914c973e75c24df',
+            url: 'https://i.scdn.co/image/ab67616d00001e02dbeec63ad914c973e75c24df',
             width: 300,
           },
           {
             height: 64,
-            url:
-              'https://i.scdn.co/image/ab67616d00004851dbeec63ad914c973e75c24df',
+            url: 'https://i.scdn.co/image/ab67616d00004851dbeec63ad914c973e75c24df',
             width: 64,
           },
         ],
