@@ -61,7 +61,6 @@ describe('useSpotifyAPIClient', () => {
     context.polly.server.host('https://accounts.spotify.com', () => {
       context.polly.server
         .post('/api/token')
-        .times(1)
         .intercept((_, res, interceptor) => {
           interceptor.stopPropagation();
           res.status(200).json({
@@ -111,7 +110,6 @@ describe('useSpotifyAPIClient', () => {
     context.polly.server.host('https://accounts.spotify.com', () => {
       context.polly.server
         .post('/api/token')
-        .times(1)
         .intercept((_, res, interceptor) => {
           interceptor.stopPropagation();
           res.status(400).json({});
