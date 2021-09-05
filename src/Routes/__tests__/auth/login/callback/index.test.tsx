@@ -22,7 +22,7 @@ describe('Test /auth/login/callback', () => {
       },
     });
   });
-  beforeEach(() => window.localStorage.clear());
+  // beforeEach(() => window.localStorage.clear());
 
   it('Should redirect to page that before login', async () => {
     window.localStorage.setItem(
@@ -43,8 +43,7 @@ describe('Test /auth/login/callback', () => {
       </TestApp>,
     );
     await waitFor(() => {
-      expect(history.entries).toHaveLength(1);
+      expect(history.entries[0].pathname).toEqual('/redirect-after-sign-token');
     });
-    expect(history.entries[0].pathname).toEqual('/redirect-after-sign-token');
   });
 });

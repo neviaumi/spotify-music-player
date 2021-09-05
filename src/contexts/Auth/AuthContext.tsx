@@ -88,7 +88,6 @@ function useAuth({
       );
       return access_token;
     } catch (e) {
-      // Works! We can narrow 'err' from 'unknown' to 'Error'.
       if (axios.isAxiosError(e)) {
         throw new UnAuthenticatedError(e.toJSON() as AxiosError);
       }
