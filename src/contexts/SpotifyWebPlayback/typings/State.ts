@@ -12,7 +12,7 @@ export interface StateMachine {
   can: (newState: PlaybackState) => boolean;
   getPlayback: (options: {
     apiClient: AxiosInstance;
-    localPlayback?: Spotify.SpotifyPlayer;
+    localPlayback?: Spotify.Player;
   }) => ActivePlaybackState;
   idle: () => void;
   is: (currentState: PlaybackState) => boolean;
@@ -32,7 +32,7 @@ export type StateMachineOptions = {
       this: StateMachine,
       options: {
         apiClient: AxiosInstance;
-        localPlayback?: Spotify.SpotifyPlayer;
+        localPlayback?: Spotify.Player;
       },
     ) => ActivePlaybackState;
   };
