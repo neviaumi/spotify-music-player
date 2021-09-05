@@ -1,7 +1,7 @@
 import type { SeekPlaybackPayload } from '../../../typings/Command';
 
 export async function seekPlayback(params: {
-  localPlayback: Spotify.SpotifyPlayer;
+  localPlayback: Spotify.Player;
   payload: SeekPlaybackPayload;
 }) {
   const {

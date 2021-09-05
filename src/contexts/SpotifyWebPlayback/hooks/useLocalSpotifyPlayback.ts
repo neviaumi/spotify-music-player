@@ -13,9 +13,9 @@ export function useLocalSpotifyPlayback({ onPlayerStateChanged }: Props) {
   const [isPlayerScriptLoaded, togglePlayerScriptLoaded] = useState(
     document.getElementById(playbackScriptId) !== null,
   );
-  const [player, setSpotifyPlayer] = useState<
-    Spotify.SpotifyPlayer | undefined
-  >(undefined);
+  const [player, setSpotifyPlayer] = useState<Spotify.Player | undefined>(
+    undefined,
+  );
   const [playerError, setPlayerError] = useState<Spotify.Error | undefined>(
     undefined,
   );

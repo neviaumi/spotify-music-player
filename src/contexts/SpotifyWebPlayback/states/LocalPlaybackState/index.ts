@@ -21,7 +21,7 @@ import { startPlayback } from './commands/startPlayback';
 export class LocalPlaybackState implements ActivePlaybackState {
   readonly apiClient: AxiosInstance;
 
-  readonly localPlayback: Spotify.SpotifyPlayer;
+  readonly localPlayback: Spotify.Player;
 
   readonly playbackType: PlaybackType = PlaybackType.Local;
 
@@ -32,7 +32,7 @@ export class LocalPlaybackState implements ActivePlaybackState {
   constructor(
     readonly options: {
       apiClient: AxiosInstance;
-      localPlayback: Spotify.SpotifyPlayer;
+      localPlayback: Spotify.Player;
       stateMachine: StateMachine;
     },
   ) {
