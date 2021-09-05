@@ -25,20 +25,17 @@ function SimplifiedTrackObjectFactory(attributes?: any) {
       images: [
         {
           height: 640,
-          url:
-            'https://i.scdn.co/image/ab67616d0000b2734ce8b4e42588bf18182a1ad2',
+          url: 'https://i.scdn.co/image/ab67616d0000b2734ce8b4e42588bf18182a1ad2',
           width: 640,
         },
         {
           height: 300,
-          url:
-            'https://i.scdn.co/image/ab67616d00001e024ce8b4e42588bf18182a1ad2',
+          url: 'https://i.scdn.co/image/ab67616d00001e024ce8b4e42588bf18182a1ad2',
           width: 300,
         },
         {
           height: 64,
-          url:
-            'https://i.scdn.co/image/ab67616d000048514ce8b4e42588bf18182a1ad2',
+          url: 'https://i.scdn.co/image/ab67616d000048514ce8b4e42588bf18182a1ad2',
           width: 64,
         },
       ],

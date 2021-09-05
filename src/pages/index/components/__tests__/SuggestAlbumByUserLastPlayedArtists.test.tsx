@@ -13,25 +13,26 @@ const mockPlayHistory = casual.PlayHistoryObject({});
 const mockTrack = casual.SimplifiedTrackObject({});
 const context = createPollyContext();
 
-const SuggestAlbumByUserLastPlayedArtists = withSuggestAlbumByUserLastPlayedArtists(
-  ({ onClickSuggestion, suggestions, title }: Props) => {
-    return (
-      <div>
-        <h1>{title}</h1>
-        {suggestions?.map(suggestion => {
-          return (
-            <button
-              key={suggestion.id}
-              onClick={() => onClickSuggestion(suggestion)}
-            >
-              {suggestion.name}
-            </button>
-          );
-        })}
-      </div>
-    );
-  },
-);
+const SuggestAlbumByUserLastPlayedArtists =
+  withSuggestAlbumByUserLastPlayedArtists(
+    ({ onClickSuggestion, suggestions, title }: Props) => {
+      return (
+        <div>
+          <h1>{title}</h1>
+          {suggestions?.map(suggestion => {
+            return (
+              <button
+                key={suggestion.id}
+                onClick={() => onClickSuggestion(suggestion)}
+              >
+                {suggestion.name}
+              </button>
+            );
+          })}
+        </div>
+      );
+    },
+  );
 
 describe('Test SuggestAlbumByUserLastPlayedArtists component', () => {
   it('Click suggestion should jump to /album/:id', async () => {

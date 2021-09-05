@@ -25,20 +25,17 @@ function TrackObjectFactory(attributes?: any) {
       images: [
         {
           height: 640,
-          url:
-            'https://i.scdn.co/image/ab67616d0000b273582d56ce20fe0146ffa0e5cf',
+          url: 'https://i.scdn.co/image/ab67616d0000b273582d56ce20fe0146ffa0e5cf',
           width: 640,
         },
         {
           height: 300,
-          url:
-            'https://i.scdn.co/image/ab67616d00001e02582d56ce20fe0146ffa0e5cf',
+          url: 'https://i.scdn.co/image/ab67616d00001e02582d56ce20fe0146ffa0e5cf',
           width: 300,
         },
         {
           height: 64,
-          url:
-            'https://i.scdn.co/image/ab67616d00004851582d56ce20fe0146ffa0e5cf',
+          url: 'https://i.scdn.co/image/ab67616d00004851582d56ce20fe0146ffa0e5cf',
           width: 64,
         },
       ],

@@ -40,6 +40,5 @@ export function withSuggestAlbumByUserLastPlayedArtists(
   };
 }
 
-export const SuggestAlbumByUserLastPlayedArtists = withSuggestAlbumByUserLastPlayedArtists(
-  PresentSuggestAlbum,
-);
+export const SuggestAlbumByUserLastPlayedArtists =
+  withSuggestAlbumByUserLastPlayedArtists(PresentSuggestAlbum);
