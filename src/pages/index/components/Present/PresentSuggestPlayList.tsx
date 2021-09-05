@@ -132,8 +132,8 @@ export function PresentSuggestPlayList({
       <SuggestionsContainer>
         {suggestions?.map(suggestion => (
           <Suggestion
-            data-testid={`${dataTestId}-item`}
             aria-label={suggestion.name}
+            data-testid={`${dataTestId}-item`}
             href=""
             key={suggestion.id}
             onClick={e => {
