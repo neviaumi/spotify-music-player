@@ -2,11 +2,10 @@ import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { TestApp } from 'src/App';
 
-import { interceptNetlifyFunctions } from '../../../../functions/testHelper/polly/interceptNetlifyFunctions';
 import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
 import { Routes } from '../../index';
 
-const context = createPollyContext({
+createPollyContext({
   appConfig: {
     enableMockServer: true,
   },
@@ -14,7 +13,6 @@ const context = createPollyContext({
 
 describe('Test /', () => {
   it('render home page', async () => {
-    interceptNetlifyFunctions(context.polly);
     render(
       <TestApp
         AuthProviderProps={{
