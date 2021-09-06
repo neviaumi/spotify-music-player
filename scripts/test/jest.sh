@@ -2,5 +2,4 @@
 
 set -ex
 
-# For debugg failure on CI
 yarn test:ci
