@@ -14,7 +14,7 @@
   "dependencies": {
     "@styled-icons/bootstrap": "10.34.0",
     "@waiting/base64": "4.2.9",
-    "axios": "0.21.3",
+    "axios": "0.21.4",
     "constate": "3.3.0",
     "javascript-state-machine": "3.1.0",
     "lodash.camelcase": "4.3.0",
