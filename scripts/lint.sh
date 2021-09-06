@@ -3,3 +3,4 @@
 set -ex
 
 yarn lint:script:ci
+yarn lint:css:ci
