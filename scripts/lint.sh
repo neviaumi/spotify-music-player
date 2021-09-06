@@ -2,5 +2,5 @@
 
 set -ex
 
-yarn lint:script:ci
-yarn lint:css:ci
+npm run lint:script:ci
+npm run lint:css:ci

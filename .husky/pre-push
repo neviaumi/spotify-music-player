@@ -1,7 +1,5 @@
 #!/bin/sh
 
-. "$(dirname $0)/_/husky.sh"
-
 set -e
-yarn lint:script:ci
-CI=true yarn test --coverage --watchAll=false
+npm run lint:script:ci
+CI=true npm test --coverage --watchAll=false

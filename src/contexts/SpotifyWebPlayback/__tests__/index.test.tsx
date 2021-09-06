@@ -138,7 +138,7 @@ describe('Test SpotifyWebPlayback', () => {
     ${true}
     ${false}
   `(
-    '.toggleShuffleMode should call API with reversed of $currentShuffleMode ',
+    '.toggleShuffleMode should call API with reversed of $currentShuffleMode',
     async ({ currentShuffleMode }) => {
       const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
         res.status(204);

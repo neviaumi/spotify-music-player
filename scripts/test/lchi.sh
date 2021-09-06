@@ -2,4 +2,4 @@
 
 set -ex
 
-yarn lhci autorun
+npx lhci autorun
