@@ -1,15 +1,15 @@
 {
-  "*.json": ["yarn eslint --fix", "yarn prettier --write"],
-  "*.svg": ["yarn prettier --parser html --write"],
-  "*.{css,md,yaml,yml}": ["yarn prettier --write"],
+  "*.json": ["npx eslint --fix", "npx prettier --write"],
+  "*.svg": ["npx prettier --parser html --write"],
+  "*.{css,md,yaml,yml}": ["npx prettier --write"],
   "*.{js,jsx,ts,tsx}": [
-    "yarn prettier --write",
-    "yarn eslint --fix",
-    "yarn stylelint"
+    "npx prettier --write",
+    "npx eslint --fix",
+    "npx stylelint"
   ],
   "package.json": [
-    "yarn eslint --fix",
-    "yarn prettier --write",
-    "yarn npmPkgJsonLint"
+    "npx eslint --fix",
+    "npx prettier --write",
+    "npx npmPkgJsonLint"
   ]
 }

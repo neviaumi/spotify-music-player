@@ -14,20 +14,20 @@
 # Installation
 
 ```bash
-yarn
-yarn start
+npm install
+npm start
 ```
 
 # Testing
 
 ```bash
-yarn test
+npm test
 ```
 
 ## Refresh polly snapshot
 
 ```bash
-yarn test:reset
+npm run test:reset
 ```
 
 # Live environment

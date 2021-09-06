@@ -38,7 +38,6 @@
     "styled-components": "5.3.1"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "7.15.0",
     "@busybox/babel-preset": "1.1.10",
     "@busybox/eslint-config": "5.4.11",
     "@busybox/npm-package-json-lint-config": "1.2.0",
@@ -52,7 +51,6 @@
     "@pollyjs/adapter-xhr": "5.1.1",
     "@pollyjs/core": "5.1.1",
     "@pollyjs/persister-fs": "5.1.1",
-    "@serverless/event-mocks": "1.1.1",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@testing-library/react-hooks": "7.0.2",
@@ -86,10 +84,8 @@
     "@types/testing-library__jest-dom": "5.14.1",
     "@types/testing-library__react": "10.0.1",
     "casual": "1.6.2",
-    "cz-conventional-changelog": "3.3.0",
     "dotenv": "10.0.0",
     "eslint": "7.32.0",
-    "eslint-plugin-typescript-sort-keys": "1.8.0",
     "express": "4.17.1",
     "husky": "7.0.2",
     "jest-expect-message": "1.0.2",
@@ -104,8 +100,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-order": "4.1.0",
-    "typescript": "4.4.2",
-    "typesync": "0.8.0"
+    "typescript": "4.4.2"
   },
   "engines": {
     "node": "16"
@@ -140,7 +135,7 @@
     "eject": "react-scripts eject",
     "lint:css": "stylelint --fix './src/**/*.{ts,tsx}'",
     "lint:css:ci": "stylelint './src/**/*.{ts,tsx}'",
-    "lint:package-json": "yarn npmPkgJsonLint .",
+    "lint:package-json": "npmPkgJsonLint .",
     "lint:script": "eslint --ext=ts,tsx,json,js --fix .",
     "lint:script:ci": "eslint --ext=ts,tsx,json,js .",
     "postinstall": "husky install",
@@ -149,7 +144,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test --maxWorkers=50% --coverage --watchAll=false",
     "test:ci": "CI=true react-scripts test --runInBand --coverage",
-    "test:reset": "rimraf ./src/**/*.har && yarn signToken && REACT_APP_POLLY_MODE=record react-scripts test --watchAll=false --runInBand --testTimeout 60000"
+    "test:reset": "rimraf ./src/**/*.har && npm run signToken && REACT_APP_POLLY_MODE=record react-scripts test --watchAll=false --runInBand --testTimeout 60000"
   },
   "version": "0.1.0"
 }

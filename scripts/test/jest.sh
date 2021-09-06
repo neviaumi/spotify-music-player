@@ -2,4 +2,4 @@
 
 set -ex
 
-yarn test:ci
+npm run test:ci
