@@ -104,7 +104,6 @@
     "stylelint": "13.13.1",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-order": "4.1.0",
-    "stylelint-processor-styled-components": "1.10.0",
     "typescript": "4.4.2",
     "typesync": "0.8.0"
   },
@@ -139,7 +138,8 @@
     "build": "react-scripts build",
     "dev": "react-scripts start",
     "eject": "react-scripts eject",
-    "lint:css": "stylelint './src/**/*.{ts,tsx}'",
+    "lint:css": "stylelint --fix './src/**/*.{ts,tsx}'",
+    "lint:css:ci": "stylelint './src/**/*.{ts,tsx}'",
     "lint:package-json": "yarn npmPkgJsonLint .",
     "lint:script": "eslint --ext=ts,tsx,json,js --fix .",
     "lint:script:ci": "eslint --ext=ts,tsx,json,js .",
