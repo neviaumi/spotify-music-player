@@ -1,14 +1,18 @@
-import { Column, HeaderColumn, TracksList } from 'src/components/TracksList';
+import styled from 'styled-components';
+
+import {
+  Column,
+  HeaderColumn,
+  TracksList,
+} from '../../../../../components/TracksList';
+import { useSpotifyWebPlayback } from '../../../../../contexts/SpotifyWebPlayback';
 import type {
   PlaylistFull,
   PlayListTrack,
-} from 'src/hooks/spotify/typings/Playlist';
-import type { TrackFull } from 'src/hooks/spotify/typings/Track';
-import { formatMSToMinute } from 'src/utils/formatMS';
-import styled from 'styled-components';
-
-import { useSpotifyWebPlayback } from '../../../../../contexts/SpotifyWebPlayback';
-import { ReactComponent as Clock } from './clock.svg';
+} from '../../../../../hooks/spotify/typings/Playlist';
+import type { TrackFull } from '../../../../../hooks/spotify/typings/Track';
+import { formatMSToMinute } from '../../../../../utils/formatMS';
+import Clock from './clock.svg';
 
 interface Props {
   playList?: PlaylistFull;

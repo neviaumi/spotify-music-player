@@ -1,15 +1,9 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-
 import '@testing-library/jest-dom';
 import 'jest-expect-message';
-import '../testHelper/casual';
+import './testHelper/casual';
 
 import { configure } from '@testing-library/react';
 import crypto from 'crypto';
-// @ts-expect-error no type for this module
 import MutationObserver from 'mutation-observer';
 import { TextEncoder } from 'util';
 
@@ -27,13 +21,12 @@ Object.assign(console, {
 
 Object.defineProperty(global, 'crypto', {
   value: {
-    getRandomValues: (arr: any) =>
-      new Uint8Array(crypto.randomBytes(arr.length)),
+    getRandomValues: arr => new Uint8Array(crypto.randomBytes(arr.length)),
     subtle: {
-      digest: (byteArray: any) =>
+      digest: byteArray =>
         new Uint8Array(crypto.createHash('SHA256').update(byteArray).digest()),
     },
   },
 });
 
-jest.mock('./contexts/SpotifyWebPlayback/hooks/useLocalSpotifyPlayback');
+jest.mock('./src/contexts/SpotifyWebPlayback/hooks/useLocalSpotifyPlayback');

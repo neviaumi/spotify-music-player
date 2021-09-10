@@ -1,8 +1,8 @@
 import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSuggestedAlbumByUserTopArtists } from 'src/hooks/spotify/query/useSuggestedAlbumByUserTopArtists';
 
 import { useSpotifyWebPlayback } from '../../../contexts/SpotifyWebPlayback';
+import { useSuggestedAlbumByUserTopArtists } from '../../../hooks/spotify/query/useSuggestedAlbumByUserTopArtists';
 import { PresentSuggestAlbum, Props } from './Present/PresentSuggestAlbum';
 
 export function withSuggestAlbumByUserTopArtists(

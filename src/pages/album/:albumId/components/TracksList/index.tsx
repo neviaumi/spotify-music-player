@@ -1,11 +1,15 @@
-import { Column, HeaderColumn, TracksList } from 'src/components/TracksList';
-import type { AlbumFull } from 'src/hooks/spotify/typings/Album';
-import type { TrackSimplified } from 'src/hooks/spotify/typings/Track';
-import { formatMSToMinute } from 'src/utils/formatMS';
 import styled from 'styled-components';
 
+import {
+  Column,
+  HeaderColumn,
+  TracksList,
+} from '../../../../../components/TracksList';
 import { useSpotifyWebPlayback } from '../../../../../contexts/SpotifyWebPlayback';
-import { ReactComponent as Clock } from './clock.svg';
+import type { AlbumFull } from '../../../../../hooks/spotify/typings/Album';
+import type { TrackSimplified } from '../../../../../hooks/spotify/typings/Track';
+import { formatMSToMinute } from '../../../../../utils/formatMS';
+import Clock from './clock.svg';
 
 interface Props {
   album?: AlbumFull;

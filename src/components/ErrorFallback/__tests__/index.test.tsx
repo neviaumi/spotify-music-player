@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import type { AxiosError } from 'axios';
-import { TestApp } from 'src/App';
 
+import { TestApp } from '../../../App';
 import { ErrorFallback } from '../';
 
 describe('Test ErrorFallback', () => {

@@ -26,9 +26,9 @@ export function createPollyContext(
       mockRouteHandlers: {},
     },
   } = config;
-  const env = process.env;
+  const env = import.meta.env;
   const pollyMode: MODE =
-    (env.REACT_APP_POLLY_MODE as MODE) || pollyConfig.mode || 'replay';
+    env.SNOWPACK_PUBLIC_POLLY_MODE || pollyConfig.mode || 'replay';
   const isRunningOnRecordMode = pollyMode === 'record';
   const pollyOptions: PollyConfig = {
     adapters: [XHRAdapter],
@@ -43,7 +43,7 @@ export function createPollyContext(
     persister: FSPersister,
     recordFailedRequests: true,
     recordIfMissing: false,
-    timing: Timing.relative(1.0),
+    timing: Timing.fixed(100),
     ...pollyConfig,
     mode: pollyMode,
   };

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import { TestApp } from 'src/App';
 
 import { createPollyContext } from '../../../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../../../testHelper/polly/setupMockServer';
+import { TestApp } from '../../../../../../App';
 import { AlbumTracksList } from '../index';
 
 const context = createPollyContext();

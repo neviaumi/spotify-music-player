@@ -1,30 +1,28 @@
-import 'src/contexts/SpotifyWebPlayback/typings/SpotifyPlayer.d';
-
 import { last } from 'ramda';
 import { Link } from 'react-router-dom';
-import { getIdFromSpotifyURI } from 'src/utils/getIdFromSpotifyURI';
 import styled from 'styled-components';
 
 import { useSpotifyWebPlayback } from '../../../../contexts/SpotifyWebPlayback';
+import { getIdFromSpotifyURI } from '../../../../utils/getIdFromSpotifyURI';
 
 const Container = styled.section.attrs({
   'aris-label': 'track-info-container',
 })`
-  width: 30%;
-  min-width: 180px;
   display: flex;
+  min-width: 180px;
+  width: 30%;
 `;
 
 const ThumbnailFigure = styled.figure`
-  margin: 0px;
   display: flex;
+  margin: 0px;
   max-width: 100%;
 `;
 
 const Thumbnail = styled.img`
-  width: 56px;
   height: 56px;
   object-fit: cover;
+  width: 56px;
 `;
 
 const StyledLink = styled(Link)`
@@ -39,20 +37,20 @@ const TrackInfoContainer = styled.figcaption`
 
 const TrackName = styled.h1`
   color: ${props => props.theme.colors.foreground};
-  font-weight: normal;
   font-size: ${props => props.theme.typography.size.s};
+  font-weight: normal;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 `;
 
 const Artist = styled.h2`
   color: ${props => props.theme.colors.contrast4};
-  font-weight: normal;
   font-size: ${props => props.theme.typography.size.xs};
+  font-weight: normal;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 `;
 
 export function TrackInfo() {

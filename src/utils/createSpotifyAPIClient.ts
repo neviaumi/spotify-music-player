@@ -50,7 +50,8 @@ ${JSON.stringify(response?.data, null, 4)}
 }
 
 export function createSpotifyAPIClientForTesting() {
-  const accessToken = process.env.REACT_APP_SPOTIFY_ACCESS_TOKEN as string;
+  const accessToken = import.meta.env
+    .SNOWPACK_PUBLIC_SPOTIFY_ACCESS_TOKEN as string;
   return createSpotifyAPIClient(accessToken, () =>
     Promise.resolve(accessToken),
   );

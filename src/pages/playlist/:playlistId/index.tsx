@@ -1,12 +1,12 @@
 import type { ComponentType } from 'react';
 import { withErrorBoundary } from 'react-error-boundary';
 import { useParams } from 'react-router-dom';
-import { ErrorFallback } from 'src/components/ErrorFallback';
-import { withSuspense } from 'src/components/Suspense/withSuspense';
-import { usePlayList } from 'src/hooks/spotify/query/usePlayList';
-import type { PlaylistFull } from 'src/hooks/spotify/typings/Playlist';
 import styled from 'styled-components';
 
+import { ErrorFallback } from '../../../components/ErrorFallback';
+import { withSuspense } from '../../../components/Suspense/withSuspense';
+import { usePlayList } from '../../../hooks/spotify/query/usePlayList';
+import type { PlaylistFull } from '../../../hooks/spotify/typings/Playlist';
 import { Heading } from './components/Heading';
 import { PlayListTracksList } from './components/TracksList';
 
@@ -15,8 +15,8 @@ interface Props {
 }
 
 const Container = styled.div`
-  padding: 0 ${props => props.theme.spaces.xxxl};
   height: 100%;
+  padding: 0 ${props => props.theme.spaces.xxxl};
 `;
 
 export function withPlayList(Wrapper: ComponentType<Props>) {

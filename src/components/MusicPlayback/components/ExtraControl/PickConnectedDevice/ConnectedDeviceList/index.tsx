@@ -6,14 +6,14 @@ import headerImg from './connect-header.png';
 import { ConnectedDeviceItem } from './ConnectedDeviceItem';
 
 const DeviceListContainer = styled.section`
-  width: 280px;
-  border-radius: 5px;
   background-color: ${props => props.theme.colors.contrast2};
+  border-radius: 5px;
+  width: 280px;
 `;
 
 const InfoTitle = styled.section`
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-evenly;
   padding: ${props => props.theme.spaces.s} ${props => props.theme.spaces.xxs};
 `;
@@ -29,8 +29,8 @@ const Link = styled.a`
   outline: none;
   svg {
     fill: ${props => props.theme.colors.foreground};
-    width: 16px;
     height: 24px;
+    width: 16px;
   }
 `;
 
@@ -41,11 +41,11 @@ const ImageWrapper = styled.section`
 `;
 
 const ListContainer = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 `;
 
 export function ConnectedDeviceList({

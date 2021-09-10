@@ -1,5 +1,3 @@
-@import-normalize; /* bring in normalize.css styles */
-
 html body #root {
   height: 100vh;
   overflow: hidden;

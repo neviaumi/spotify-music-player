@@ -1,7 +1,7 @@
 import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { useQuery, UseQueryOptions } from 'react-query';
-import { useSpotifyAPIClient } from 'src/hooks/useSpotifyAPIClient';
 
+import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import type { UserDevice } from '../typings/UserDevice';
 
 interface Response {

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
-import { TestApp } from 'src/App';
 
 import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
+import { TestApp } from '../../../App';
 import { Routes } from '../../index';
 
 createPollyContext({

@@ -1,4 +1,5 @@
 {
+  "author": "",
   "browserslist": {
     "development": [
       "last 1 chrome version",
@@ -11,6 +12,9 @@
       "not op_mini all"
     ]
   },
+  "bugs": {
+    "url": "https://github.com/davidNHK/spotify-music-player/issues"
+  },
   "dependencies": {
     "@styled-icons/bootstrap": "10.34.0",
     "@waiting/base64": "4.2.9",
@@ -21,6 +25,7 @@
     "lodash.capitalize": "4.2.1",
     "lodash.kebabcase": "4.1.1",
     "nanoid": "3.1.25",
+    "normalize.css": "8.0.1",
     "parse-ms": "3.0.0",
     "ramda": "0.27.1",
     "react": "17.0.2",
@@ -29,7 +34,6 @@
     "react-query": "3.23.2",
     "react-range": "1.8.11",
     "react-router-dom": "5.3.0",
-    "react-scripts": "4.0.3",
     "react-tiny-popover": "7.0.0",
     "react-use": "17.3.1",
     "retry": "0.13.1",
@@ -37,6 +41,7 @@
     "serialize-error": "8.1.0",
     "styled-components": "5.3.1"
   },
+  "description": "![](https://github.com/davidNHK/spotify-music-player/workflows/testing/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/31550918-79b7-4439-b069-cb67bd21da7f/deploy-status)](https://app.netlify.com/sites/dnghk-spotify-player/deploys) [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)",
   "devDependencies": {
     "@busybox/babel-preset": "1.2.0",
     "@busybox/eslint-config": "5.5.0",
@@ -45,11 +50,14 @@
     "@busybox/tsconfig": "1.4.0",
     "@commitlint/cli": "13.1.0",
     "@commitlint/config-conventional": "13.1.0",
+    "@jest/globals": "26.6.2",
     "@lhci/cli": "0.8.1",
     "@pollyjs/adapter-node-http": "5.1.1",
     "@pollyjs/adapter-xhr": "5.1.1",
     "@pollyjs/core": "5.1.1",
     "@pollyjs/persister-fs": "5.1.1",
+    "@snowpack/app-scripts-react": "2.0.1",
+    "@snowpack/plugin-dotenv": "2.2.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@testing-library/react-hooks": "7.0.2",
@@ -83,17 +91,21 @@
     "casual": "1.6.2",
     "dotenv": "10.0.0",
     "eslint": "7.32.0",
-    "express": "4.17.1",
+    "eslint-plugin-typescript-sort-keys": "1.8.0",
     "husky": "7.0.2",
+    "jest": "26.6.3",
     "jest-expect-message": "1.0.2",
     "lint-staged": "11.1.2",
     "mutation-observer": "1.0.3",
     "npm-package-json-lint": "5.2.3",
     "open": "8.2.1",
+    "patch-package": "6.4.7",
     "prettier": "2.4.0",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "serve": "12.0.1",
+    "snowpack": "3.8.8",
+    "snowpack-plugin-svgr": "0.1.2",
     "stylelint": "13.13.1",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-order": "4.1.0",
@@ -102,46 +114,29 @@
   "engines": {
     "node": "16"
   },
-  "jest": {
-    "coverageReporters": [
-      "text",
-      "text-summary",
-      "lcov",
-      "clover",
-      "json"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 64,
-        "functions": 84,
-        "lines": 80,
-        "statements": 80
-      }
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!(parse-ms)).*\\.js$"
-    ]
-  },
+  "homepage": "https://github.com/davidNHK/spotify-music-player#readme",
   "license": "MIT",
+  "main": "index.js",
   "name": "@music-player/spotify",
   "private": true,
-  "repository": "git@github.com:davidNHK/spotify-music-player.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/davidNHK/spotify-music-player.git"
+  },
   "scripts": {
-    "build": "react-scripts build",
-    "dev": "react-scripts start",
-    "eject": "react-scripts eject",
-    "lint:css": "stylelint --fix './src/**/*.{ts,tsx}'",
-    "lint:css:ci": "stylelint './src/**/*.{ts,tsx}'",
+    "build": "snowpack build",
+    "lint:css": "stylelint --fix './src/**/*.tsx'",
+    "lint:css:ci": "stylelint './src/**/*.tsx'",
     "lint:package-json": "npmPkgJsonLint .",
     "lint:script": "eslint --ext=ts,tsx,json,js --fix .",
     "lint:script:ci": "eslint --ext=ts,tsx,json,js .",
-    "postinstall": "husky install",
-    "serve:lhci": "serve -l 42069 -s build",
+    "postinstall": "husky install && patch-package",
+    "serve:lhci": "serve -l 3000 -s build",
     "signToken": "node ./testHelper/signToken/index.js",
-    "start": "react-scripts start",
-    "test": "react-scripts test --maxWorkers=50% --coverage --watchAll=false",
-    "test:ci": "CI=true react-scripts test --runInBand --coverage",
-    "test:reset": "rimraf ./src/**/*.har && npm run signToken && REACT_APP_POLLY_MODE=record react-scripts test --watchAll=false --runInBand --testTimeout 60000"
+    "start": "snowpack dev",
+    "test": "jest --maxWorkers=50% --coverage --watchAll=false",
+    "test:ci": "CI=true jest --runInBand --coverage",
+    "test:reset": "rimraf ./src/**/*.har && npm run signToken && REACT_APP_POLLY_MODE=record jest --watchAll=false --runInBand --testTimeout 60000"
   },
   "version": "0.1.0"
 }

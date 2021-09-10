@@ -15,6 +15,6 @@ it('Return user recently played track', async () => {
   await waitForNextUpdate();
   expect(result.error).toBeUndefined();
   expect(
-    result.current.data.items.every((item: any) => item.track !== undefined),
+    result?.current?.data.items.every((item: any) => item.track !== undefined),
   ).toBeTruthy();
 });

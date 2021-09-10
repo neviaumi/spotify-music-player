@@ -35,27 +35,27 @@ const Container = styled.section`
 `;
 
 const Title = styled.h1`
+  border-bottom: 1px solid ${props => props.theme.colors.contrast4};
   color: ${props => props.theme.colors.contrast4};
   font-size: ${props => props.theme.typography.size.xxs};
   line-height: 16px;
   padding-bottom: ${props => props.theme.spaces.xl};
-  border-bottom: 1px solid ${props => props.theme.colors.contrast4};
 `;
 
 const ItemContainer = styled.section`
   height: 513px;
   max-width: 230px;
-  overflow-y: scroll;
   overflow-x: hidden;
+  overflow-y: scroll;
 `;
 
 const Item = styled.a`
-  display: block;
-  text-decoration: none;
   color: ${props => props.theme.colors.contrast4};
+  display: block;
   font-size: ${props => props.theme.typography.size.s};
   height: 32px;
   line-height: 32px;
+  text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   &:hover {

@@ -1,8 +1,8 @@
 import constate from 'constate';
 import { useCallback, useState } from 'react';
 import { useQuery, useQueryClient } from 'react-query';
-import type { TrackSimplified } from 'src/hooks/spotify/typings/Track';
 
+import type { TrackSimplified } from '../../hooks/spotify/typings/Track';
 import { useSpotifyAPIClient } from '../../hooks/useSpotifyAPIClient';
 import { useLocalSpotifyPlayback } from './hooks/useLocalSpotifyPlayback';
 import { usePlaybackStateMachine } from './hooks/usePlaybackStateMachine';

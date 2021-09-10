@@ -26,25 +26,25 @@ const SuggestionsContainer = styled.article`
 `;
 
 const Heading = styled.h1`
+  display: block;
   font-size: ${props => props.theme.typography.size.xl};
   line-height: 1.6;
-  display: block;
 `;
 
 const Suggestion = styled.a`
+  background: ${props => props.theme.colors.contrast1};
+  border-radius: 8px;
   display: block;
-  width: 164px;
+  margin-right: ${props => props.theme.spaces.m};
   min-width: 164px;
   padding: ${props => props.theme.spaces.xl} ${props => props.theme.spaces.xl}
     ${props => props.theme.spaces.m};
-  background: ${props => props.theme.colors.contrast1};
   position: relative;
-  border-radius: 8px;
   text-decoration: none;
-  margin-right: ${props => props.theme.spaces.m};
+  width: 164px;
   :hover {
-    cursor: pointer;
     background: ${props => props.theme.colors.contrast2};
+    cursor: pointer;
   }
 `;
 
@@ -82,11 +82,11 @@ const ToggleButton = styled(TogglePlayerPlayingStateButton)<
 `;
 
 const SuggestionCover = styled.img`
-  width: 100%;
-  height: 164px;
   display: block;
-  object-fit: cover;
+  height: 164px;
   margin-bottom: ${props => props.theme.spaces.m};
+  object-fit: cover;
+  width: 100%;
 `;
 
 const SuggestionHeading = styled.section`
@@ -95,25 +95,25 @@ const SuggestionHeading = styled.section`
 `;
 
 const SuggestionName = styled.p`
+  color: ${props => props.theme.colors.foreground};
   font-size: ${props => props.theme.typography.size.s};
   font-weight: bold;
   margin: 0px;
-  color: ${props => props.theme.colors.foreground};
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 `;
 
 const SuggestionDescription = styled.span`
+  color: ${props => props.theme.colors.contrast4};
   display: block;
   font-size: ${props => props.theme.typography.size.xs};
   line-height: ${props => props.theme.typography.size.l};
   margin-top: ${props => props.theme.spaces.xxxs};
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: ${props => props.theme.colors.contrast4};
   margin-top: ${props => props.theme.spaces.xxxs};
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 export function PresentSuggestPlayList({

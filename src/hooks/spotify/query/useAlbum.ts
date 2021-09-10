@@ -1,7 +1,7 @@
 import type { AxiosRequestConfig } from 'axios';
 import { useQuery } from 'react-query';
-import { useSpotifyAPIClient } from 'src/hooks/useSpotifyAPIClient';
 
+import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import type { AlbumFull } from '../typings/Album';
 
 export function useAlbum(albumId: string) {

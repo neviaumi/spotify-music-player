@@ -1,8 +1,8 @@
 import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useFeaturedPlaylists } from 'src/hooks/spotify/query/useFeaturedPlaylists';
 
 import { useSpotifyWebPlayback } from '../../../contexts/SpotifyWebPlayback';
+import { useFeaturedPlaylists } from '../../../hooks/spotify/query/useFeaturedPlaylists';
 import {
   PresentSuggestPlayList,
   Props,

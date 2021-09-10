@@ -1,21 +1,21 @@
 import type { MouseEvent } from 'react';
 import { useCallback } from 'react';
-import { RepeatMode } from 'src/contexts/SpotifyWebPlayback/typings/RepeatMode';
 import styled from 'styled-components';
 
-import { ReactComponent as Next } from './next.svg';
-import { ReactComponent as Pause } from './pause.svg';
-import { ReactComponent as Play } from './play.svg';
-import { ReactComponent as Previous } from './previous.svg';
-import { ReactComponent as Repeat } from './repeat.svg';
-import { ReactComponent as RepeatOne } from './repeat-one.svg';
-import { ReactComponent as Shuffle } from './shuffle.svg';
+import { RepeatMode } from '../../../../../contexts/SpotifyWebPlayback/typings/RepeatMode';
+import Next from './next.svg';
+import Pause from './pause.svg';
+import Play from './play.svg';
+import Previous from './previous.svg';
+import Repeat from './repeat.svg';
+import RepeatOne from './repeat-one.svg';
+import Shuffle from './shuffle.svg';
 
 const Container = styled.section`
   display: flex;
+  justify-content: space-between;
   margin-bottom: ${props => props.theme.spaces.s};
   width: 224px;
-  justify-content: space-between;
 `;
 
 const Button = styled.button`

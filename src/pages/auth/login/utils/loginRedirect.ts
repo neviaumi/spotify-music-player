@@ -38,7 +38,7 @@ export function getAuthorizeUrl(transactionId: string, codeChallenge: string) {
   const queryParams = authorizeUrl.searchParams;
   queryParams.append(
     'client_id',
-    process.env.REACT_APP_SPOTIFY_CLIENT_ID as string,
+    import.meta.env.SNOWPACK_PUBLIC_SPOTIFY_CLIENT_ID,
   );
   queryParams.append('scope', scopes_supported.join(' '));
   queryParams.append('response_type', response_types[0]);
@@ -57,6 +57,7 @@ export async function loginRedirect(state: State) {
   const { codeVerifier, codeChallenge } =
     await generateCodeVerifierAndChallenge();
   const transactionId = nanoid();
+
   const url = getAuthorizeUrl(transactionId, codeChallenge);
   window.localStorage.setItem(
     transactionId,

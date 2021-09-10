@@ -31,7 +31,6 @@ describe('Test useLocalSpotifyPlayback', () => {
       }),
       connect: jest.fn(),
     };
-    // @ts-expect-error Mock because onSpotifyWebPlaybackSDKReady never get call in test
     window.Spotify = {
       Player: jest.fn().mockReturnValue(mockPlayer),
     };

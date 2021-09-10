@@ -1,9 +1,9 @@
 import capitalize from 'lodash.capitalize';
 import { ComponentType, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSuggestedAlbumByUserTopArtistGenres } from 'src/hooks/spotify/query/useSuggestedAlbumByUserTopArtistGenres';
 
 import { useSpotifyWebPlayback } from '../../../contexts/SpotifyWebPlayback';
+import { useSuggestedAlbumByUserTopArtistGenres } from '../../../hooks/spotify/query/useSuggestedAlbumByUserTopArtistGenres';
 import { PresentSuggestAlbum, Props } from './Present/PresentSuggestAlbum';
 
 export function withSuggestAlbumByUserTopArtistGenres(

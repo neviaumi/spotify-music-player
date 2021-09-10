@@ -11,8 +11,8 @@ import { SuggestAlbumByUserTopArtists } from './components/SuggestAlbumByUserTop
 import { SuggestAlbumByUserTopTracks } from './components/SuggestAlbumByUserTopTracks';
 
 const Container = styled.div`
-  padding: 0 ${props => props.theme.spaces.xxxl};
   height: 100%;
+  padding: 0 ${props => props.theme.spaces.xxxl};
 `;
 export function Suggestion() {
   return (

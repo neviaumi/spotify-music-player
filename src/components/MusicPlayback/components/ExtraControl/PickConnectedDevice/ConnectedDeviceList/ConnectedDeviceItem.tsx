@@ -3,7 +3,7 @@ import type { Key } from 'react';
 import styled from 'styled-components';
 
 import type { UserDevice } from '../../../../../../hooks/spotify/typings/UserDevice';
-import { ReactComponent as ConnectIcon } from './spotify-connect-icon.svg';
+import ConnectIcon from './spotify-connect-icon.svg';
 
 interface ConnectedDeviceItemProps {
   device: UserDevice;
@@ -13,20 +13,20 @@ interface ConnectedDeviceItemProps {
 const ConnectDeviceItemContainer = styled.li`
   margin: 0px;
   overflow: hidden;
+  padding: ${props => props.theme.spaces.xs} ${props => props.theme.spaces.xxxl}
+    ${props => props.theme.spaces.xs} ${props => props.theme.spaces.s};
   &:hover {
     background-color: ${props => props.theme.colors.contrast3};
   }
-  padding: ${props => props.theme.spaces.xs} ${props => props.theme.spaces.xxxl}
-    ${props => props.theme.spaces.xs} ${props => props.theme.spaces.s};
   button {
-    max-width: 100%;
-    width: 100%;
-    outline: none;
-    border: none;
-    background: transparent;
-    display: flex;
     align-items: center;
+    background: transparent;
+    border: none;
+    display: flex;
+    max-width: 100%;
+    outline: none;
     padding: 0px;
+    width: 100%;
   }
 `;
 
@@ -45,22 +45,22 @@ const CurrentDeviceTypeIconContainer = styled(DeviceTypeIconContainer)`
 `;
 
 const DeviceItemInfo = styled.section`
-  flex: 1;
+  box-sizing: border-box;
   display: flex;
+  flex: 1;
   flex-direction: column;
   max-width: 100%;
-  box-sizing: border-box;
   padding: 0px ${props => props.theme.spaces.xs};
 `;
 
 const DeviceItemHeadline = styled.h1`
-  margin: 0px;
   color: ${props => props.theme.colors.foreground};
   font-size: ${props => props.theme.typography.size.s};
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  margin: 0px;
   overflow: hidden;
   text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const CurrentDeviceItemHeadline = styled(DeviceItemHeadline)`
@@ -68,15 +68,15 @@ const CurrentDeviceItemHeadline = styled(DeviceItemHeadline)`
 `;
 
 const DeviceItemSecondLine = styled.div`
-  margin-top: ${props => props.theme.spaces.xxs};
-  color: ${props => props.theme.colors.contrast4};
-  font-size: ${props => props.theme.typography.size.xxs};
-  display: flex;
   align-items: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  color: ${props => props.theme.colors.contrast4};
+  display: flex;
+  font-size: ${props => props.theme.typography.size.xxs};
+  margin-top: ${props => props.theme.spaces.xxs};
   overflow: hidden;
   text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   svg {
     fill: ${props => props.theme.colors.contrast4};
   }
@@ -89,16 +89,16 @@ const CurrentDeviceItemSecondLine = styled(DeviceItemSecondLine)`
   }
   #name-wrapper {
     max-width: 100%;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
   }
 `;
 
 const SpotifyConnectIconWrapper = styled.div`
   height: 16px;
-  width: 16px;
   margin-right: ${props => props.theme.spaces.xxxs};
+  width: 16px;
 `;
 
 function CandidateConnectDeviceItem({

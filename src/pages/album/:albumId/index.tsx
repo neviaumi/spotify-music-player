@@ -1,18 +1,18 @@
 import type { ComponentType } from 'react';
 import { withErrorBoundary } from 'react-error-boundary';
 import { useParams } from 'react-router-dom';
-import { withSuspense } from 'src/components/Suspense/withSuspense';
-import { useAlbum } from 'src/hooks/spotify/query/useAlbum';
-import type { AlbumFull } from 'src/hooks/spotify/typings/Album';
 import styled from 'styled-components';
 
 import { ErrorFallback } from '../../../components/ErrorFallback';
+import { withSuspense } from '../../../components/Suspense/withSuspense';
+import { useAlbum } from '../../../hooks/spotify/query/useAlbum';
+import type { AlbumFull } from '../../../hooks/spotify/typings/Album';
 import { Heading } from './components/Heading';
 import { AlbumTracksList } from './components/TracksList';
 
 const Container = styled.div`
-  padding: 0 ${props => props.theme.spaces.xxxl};
   height: 100%;
+  padding: 0 ${props => props.theme.spaces.xxxl};
 `;
 
 interface Props {

@@ -9,33 +9,33 @@ import { jsonParse } from '../../utils/jsonParse';
 const Container = styled.div.attrs({
   role: 'alert',
 })`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.foreground};
+  display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: center;
   padding: ${props => props.theme.spaces.xl};
+  width: 100%;
 `;
 
 const SectionHeading = styled.h1`
   display: flex;
-  margin: 0px;
   justify-content: center;
+  margin: 0px;
 `;
 
 const ErrorContainer = styled.section`
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
 `;
 
 const HttpReqResContainer = styled.section`
   display: flex;
-  justify-content: center;
   gap: 0 ${props => props.theme.spaces.xl};
+  justify-content: center;
 `;
 
 const JSONTextContainer = styled.pre`

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { TestApp } from 'src/App';
 
+import { TestApp } from '../../../../../../App';
 import { Heading } from '../index';
 
 it('render without error', () => {

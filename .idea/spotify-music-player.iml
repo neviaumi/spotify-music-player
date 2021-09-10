@@ -16,6 +16,8 @@
       <excludePattern pattern="yarn-error.log" />
       <excludePattern pattern="yarn.lock" />
       <excludePattern pattern="*.har" />
+      <excludePattern pattern="package-lock.json" />
+      <excludePattern pattern="tsconfig.tsbuildinfo" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
