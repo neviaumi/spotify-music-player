@@ -7,6 +7,7 @@ import '@testing-library/jest-dom';
 import 'jest-expect-message';
 import '../testHelper/casual';
 
+import { configure } from '@testing-library/dom';
 import crypto from 'crypto';
 // @ts-expect-error no type for this module
 import MutationObserver from 'mutation-observer';
@@ -14,6 +15,10 @@ import { TextEncoder } from 'util';
 
 global.MutationObserver = MutationObserver;
 global.TextEncoder = TextEncoder;
+
+configure({
+  asyncUtilTimeout: 5000,
+});
 
 // https://github.com/facebook/react/issues/11098
 Object.assign(console, {
