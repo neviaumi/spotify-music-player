@@ -119,7 +119,6 @@
         "statements": 80
       }
     },
-    "testTimeout": 10000,
     "transformIgnorePatterns": [
       "node_modules/(?!(parse-ms)).*\\.js$"
     ]

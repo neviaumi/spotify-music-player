@@ -7,7 +7,7 @@ import '@testing-library/jest-dom';
 import 'jest-expect-message';
 import '../testHelper/casual';
 
-import { configure } from '@testing-library/dom';
+import { configure } from '@testing-library/react';
 import crypto from 'crypto';
 // @ts-expect-error no type for this module
 import MutationObserver from 'mutation-observer';
