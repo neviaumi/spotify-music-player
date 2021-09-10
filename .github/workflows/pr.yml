@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Read .nvmrc
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        id: nvm
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
       - run: bash ./scripts/setup.sh
       - run: bash ./scripts/lint.sh
       - uses: paambaati/codeclimate-action@v2.7.5
@@ -24,9 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Read .nvmrc
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        id: nvm
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
       - run: bash ./scripts/setup.sh
       - run: bash ./scripts/test/lchi.sh
