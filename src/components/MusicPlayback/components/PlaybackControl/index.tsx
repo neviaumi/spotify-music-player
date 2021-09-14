@@ -5,12 +5,12 @@ import { ControlButtons } from './ControlButtons';
 import { TimeBar } from './TimeBar';
 
 const Container = styled.section`
-  display: flex;
-  justify-content: center;
-  width: 40%;
-  max-width: 722px;
-  flex-direction: column;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 722px;
+  width: 40%;
 `;
 
 export function PlaybackControl() {

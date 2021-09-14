@@ -1,15 +1,16 @@
-import type { PlaylistFull } from 'src/hooks/spotify/typings/Playlist';
-import { formatMS } from 'src/utils/formatMS';
-import { getTrackListTotalDuration } from 'src/utils/getTrackListTotalDuration';
 import styled from 'styled-components';
+
+import type { PlaylistFull } from '../../../../../hooks/spotify/typings/Playlist';
+import { formatMS } from '../../../../../utils/formatMS';
+import { getTrackListTotalDuration } from '../../../../../utils/getTrackListTotalDuration';
 
 interface Props {
   playList?: PlaylistFull;
 }
 
 const Container = styled.section`
-  display: flex;
   align-items: flex-end;
+  display: flex;
 `;
 
 const ContentContainer = styled.main`
@@ -28,14 +29,14 @@ const Type = styled.span`
 `;
 
 const Info = styled.p`
-  margin: ${props => props.theme.spaces.xxxs} 0px 0px 0px;
-  font-size: ${props => props.theme.typography.size.s};
   color: ${props => props.theme.colors.contrast4};
+  font-size: ${props => props.theme.typography.size.s};
+  margin: ${props => props.theme.spaces.xxxs} 0px 0px 0px;
 `;
 
 const Creator = styled.a`
-  font-weight: bold;
   color: ${props => props.theme.colors.foreground};
+  font-weight: bold;
 `;
 
 const Meta = styled.span`
@@ -46,20 +47,20 @@ const Meta = styled.span`
 `;
 
 const Cover = styled.figure`
-  width: 192px;
-  height: 192px;
   box-shadow: 0 4px 60px rgba(255, 255, 255, 0.5);
+  height: 192px;
   margin: 0px;
+  width: 192px;
 
   @media screen and (min-width: 1280px) {
-    width: 232px;
     height: 232px;
+    width: 232px;
   }
 `;
 const CoverImage = styled.img`
+  height: 100%;
   object-fit: cover;
   width: 100%;
-  height: 100%;
 `;
 
 export function Heading({ playList }: Props) {

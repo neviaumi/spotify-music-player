@@ -4,9 +4,9 @@ import logo from './Spotify_Logo_RGB_White.png';
 
 const Anchor = styled.a`
   display: block;
+  max-width: 100%;
   padding: 0px ${props => props.theme.spaces.xxl}
     ${props => props.theme.spaces.l} ${props => props.theme.spaces.xxl};
-  max-width: 100%;
 `;
 
 const LogoImg = styled.img`

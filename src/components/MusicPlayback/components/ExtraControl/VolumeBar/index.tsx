@@ -4,24 +4,24 @@ import styled, { useTheme } from 'styled-components';
 
 import type { PlaybackType } from '../../../../../contexts/SpotifyWebPlayback';
 import type { theme } from '../../../../../contexts/Theme';
-import { ReactComponent as VolumeHigh } from './volume-high.svg';
-import { ReactComponent as VolumeLow } from './volume-low.svg';
-import { ReactComponent as VolumeMedium } from './volume-medium.svg';
-import { ReactComponent as VolumeOff } from './volume-off.svg';
+import VolumeHigh from './volume-high.svg';
+import VolumeLow from './volume-low.svg';
+import VolumeMedium from './volume-medium.svg';
+import VolumeOff from './volume-off.svg';
 
 const VolumeBarContainer = styled.section`
-  width: 125px;
-  display: flex;
   align-items: center;
+  display: flex;
+  width: 125px;
 `;
 
 const VolumeStateButton = styled.button`
-  border: 0;
-  outline: 0;
   background-color: transparent;
-  width: 32px;
-  min-width: 32px;
+  border: 0;
   height: 32px;
+  min-width: 32px;
+  outline: 0;
+  width: 32px;
   svg {
     fill: ${props => props.theme.colors.contrast4};
   }
@@ -34,18 +34,18 @@ const VolumeStateButton = styled.button`
 
 const Thumb = styled.button`
   background-color: ${props => props.theme.colors.foreground};
-  outline: 0;
   border: 0px;
   border-radius: 50%;
   height: 12px;
+  outline: 0;
   width: 12px;
 `;
 
 const Track = styled.div`
-  height: 4px;
-  border-radius: 2px;
-  width: 100%;
   background-color: ${props => props.theme.colors.contrast3};
+  border-radius: 2px;
+  height: 4px;
+  width: 100%;
 `;
 
 export interface Props {
@@ -56,15 +56,16 @@ export interface Props {
 }
 
 function VolumeBarButtonIcon({ currentVolume }: { currentVolume?: number }) {
-  if (!currentVolume || currentVolume === 0) return <VolumeOff />;
+  if (!currentVolume || currentVolume === 0)
+    return <VolumeOff aria-label={'volume-off'} role={'button'} />;
   const interval = 100 / 3;
   switch (Math.ceil(currentVolume / interval)) {
     case 1:
-      return <VolumeLow />;
+      return <VolumeLow aria-label={'volume-low'} role={'button'} />;
     case 2:
-      return <VolumeMedium />;
+      return <VolumeMedium aria-label={'volume-medium'} role={'button'} />;
     default:
-      return <VolumeHigh />;
+      return <VolumeHigh aria-label={'volume-high'} role={'button'} />;
   }
 }
 

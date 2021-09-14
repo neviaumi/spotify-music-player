@@ -45,7 +45,7 @@ function useAuth({
       data: { access_token, refresh_token, expires_in },
     } = await axios.request({
       data: new URLSearchParams({
-        client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID!,
+        client_id: import.meta.env.SNOWPACK_PUBLIC_SPOTIFY_CLIENT_ID,
         code,
         code_verifier: codeVerifier,
         grant_type: 'authorization_code',
@@ -71,7 +71,7 @@ function useAuth({
         data: { access_token, refresh_token, expires_in },
       } = await axios.request({
         data: new URLSearchParams({
-          client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID!,
+          client_id: import.meta.env.SNOWPACK_PUBLIC_SPOTIFY_CLIENT_ID,
           grant_type: 'refresh_token',
           refresh_token: refreshToken,
         }).toString(),

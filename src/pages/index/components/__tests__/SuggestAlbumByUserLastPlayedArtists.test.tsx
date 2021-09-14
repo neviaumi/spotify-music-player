@@ -2,10 +2,10 @@ import { render, screen } from '@testing-library/react';
 import event from '@testing-library/user-event';
 import casual from 'casual';
 import { createMemoryHistory } from 'history';
-import { TestApp } from 'src/App';
 
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
+import { TestApp } from '../../../../App';
 import type { Props } from '../Present/PresentSuggestAlbum';
 import { withSuggestAlbumByUserLastPlayedArtists } from '../SuggestAlbumByUserLastPlayedArtists';
 

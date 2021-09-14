@@ -12,7 +12,7 @@ export function useUserCountry() {
       const { method, url } = queryParams;
       return axios.request({
         method,
-        params: { token: process.env.REACT_APP_IPINFO_TOKEN },
+        params: { token: import.meta.env.SNOWPACK_PUBLIC_IPINFO_TOKEN },
         url,
       });
     },

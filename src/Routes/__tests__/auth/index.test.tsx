@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
-import { TestApp } from 'src/App';
 
 import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
+import { TestApp } from '../../../App';
 import { Routes } from '../../index';
 
 createPollyContext({
@@ -10,6 +10,10 @@ createPollyContext({
     enableMockServer: true,
   },
 });
+
+jest.mock('nanoid', () => ({
+  nanoid: () => import('crypto').then(({ randomUUID }) => randomUUID()),
+}));
 
 describe('Test /auth/login', () => {
   it('render login page with empty content', async () => {

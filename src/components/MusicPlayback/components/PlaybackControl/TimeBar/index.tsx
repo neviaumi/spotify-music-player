@@ -12,32 +12,32 @@ const TimeBarTime = styled.div.attrs({
 })<{
   'aria-label': string;
 }>`
-  min-width: 40px;
   color: ${props => props.theme.colors.contrast4};
   font-size: ${props => props.theme.typography.size.xxs};
+  min-width: 40px;
   text-align: center;
 `;
 
 const TimeBarContainer = styled.section`
-  width: 100%;
-  display: flex;
   align-items: center;
+  display: flex;
+  width: 100%;
 `;
 
 const Thumb = styled.button`
   background-color: ${props => props.theme.colors.foreground};
-  outline: 0;
   border: 0px;
   border-radius: 50%;
   height: 12px;
+  outline: 0;
   width: 12px;
 `;
 
 const Track = styled.div`
-  height: 4px;
-  border-radius: 2px;
-  width: 100%;
   background-color: ${props => props.theme.colors.contrast3};
+  border-radius: 2px;
+  height: 4px;
+  width: 100%;
 `;
 
 export interface Props {

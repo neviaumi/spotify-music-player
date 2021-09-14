@@ -13,7 +13,11 @@ describe('Test TogglePlayerPlayingState', () => {
         onClickToggleButton={jest.fn()}
       />,
     );
-    expect(screen.getByText('play.svg')).toBeVisible();
+    expect(
+      screen.getByRole('button', {
+        name: 'play-button',
+      }),
+    ).toBeVisible();
   });
 
   it('show pause icon when current item belong to current track', () => {
@@ -24,7 +28,11 @@ describe('Test TogglePlayerPlayingState', () => {
         onClickToggleButton={jest.fn()}
       />,
     );
-    expect(screen.getByText('pause.svg')).toBeVisible();
+    expect(
+      screen.getByRole('button', {
+        name: 'pause-button',
+      }),
+    ).toBeVisible();
   });
 
   it('onClick button will call .onClickToggleButton', async () => {
@@ -37,10 +45,14 @@ describe('Test TogglePlayerPlayingState', () => {
         onClickToggleButton={onClickToggleButton}
       />,
     );
-    expect(screen.getByText('play.svg')).toBeVisible();
+    expect(
+      screen.getByRole('button', {
+        name: 'play-button',
+      }),
+    ).toBeVisible();
     events.click(
       screen.getByRole('button', {
-        name: 'toggle-button',
+        name: 'play-button',
       }),
     );
     await waitFor(() => expect(onClickToggleButton).toHaveBeenCalledWith(item));

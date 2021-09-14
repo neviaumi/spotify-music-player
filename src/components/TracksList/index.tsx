@@ -6,8 +6,8 @@ import { useSpotifyWebPlayback } from '../../contexts/SpotifyWebPlayback';
 import type { Paging } from '../../hooks/spotify/typings/shared/Paging';
 import type { TrackSimplified } from '../../hooks/spotify/typings/Track';
 import { Loading } from '../Loading';
-import { ReactComponent as PauseSVG } from './pause.svg';
-import { ReactComponent as PlaySVG } from './play.svg';
+import PauseSVG from './pause.svg';
+import PlaySVG from './play.svg';
 import streamingGif from './streaming.gif';
 
 interface ColumnDef<Item> {
@@ -65,15 +65,15 @@ export const Column = styled.div<{ key: string }>`
 `;
 
 const ControlToggle = styled.button`
-  border: none;
-  outline: none;
-  display: none;
   background-color: transparent;
-  padding: 0px;
-  margin: 0px;
+  border: none;
   color: ${props => props.theme.colors.foreground};
+  display: none;
+  margin: 0px;
   max-height: 100%;
   max-width: 100%;
+  outline: none;
+  padding: 0px;
 `;
 
 const Index = styled.span``;

@@ -17,7 +17,7 @@ export interface TestAuthProviderProps {
 }
 
 export const TestAuthProvider = ({
-  accessToken = process.env.REACT_APP_SPOTIFY_ACCESS_TOKEN,
+  accessToken = import.meta.env.SNOWPACK_PUBLIC_SPOTIFY_ACCESS_TOKEN,
   tokenExpireTime,
   children,
 }: TestAuthProviderProps) => {

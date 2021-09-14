@@ -9,7 +9,9 @@ import {
 } from '../../../../../config/openidConfiguration';
 import { getAuthorizeUrl, loginRedirect } from '../loginRedirect';
 
-jest.mock('nanoid');
+jest.mock('nanoid', () => ({
+  nanoid: jest.fn(),
+}));
 
 describe('getAuthorizeUrl', () => {
   it('Should return authorization url', () => {
@@ -18,7 +20,7 @@ describe('getAuthorizeUrl', () => {
     const queryParams = authorizeUrl.searchParams;
     queryParams.append(
       'client_id',
-      process.env.REACT_APP_SPOTIFY_CLIENT_ID as string,
+      import.meta.env.SNOWPACK_PUBLIC_SPOTIFY_CLIENT_ID as string,
     );
     queryParams.append('scope', scopes_supported.join(' '));
     queryParams.append('response_type', response_types[0]);
@@ -46,7 +48,7 @@ describe('loginRedirect', () => {
   beforeEach(() => window.localStorage.clear());
 
   it('redirect user to url', async () => {
-    // @ts-expect-error
+    // @ts-expect-error typescript can't refer the type on jest mock
     nanoid.mockReturnValue('randomId');
     const redirectUrl = await loginRedirect({
       location: 'https://www.google.com',

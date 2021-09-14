@@ -1,7 +1,7 @@
 import type { AlbumSimplified } from '../../hooks/spotify/typings/Album';
 import type { PlaylistSimplified } from '../../hooks/spotify/typings/Playlist';
-import { ReactComponent as Pause } from './pause.svg';
-import { ReactComponent as Play } from './play.svg';
+import Pause from './pause.svg';
+import Play from './play.svg';
 
 export interface Props<T> {
   className?: string;
@@ -18,7 +18,7 @@ export function TogglePlayerPlayingStateButton({
 }: Props<AlbumSimplified | PlaylistSimplified>) {
   return (
     <button
-      aria-label={'toggle-button'}
+      aria-label={isBelongCurrentTrack ? 'pause-button' : 'play-button'}
       className={className}
       onClick={e => {
         e.preventDefault();

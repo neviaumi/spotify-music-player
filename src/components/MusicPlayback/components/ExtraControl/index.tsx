@@ -5,10 +5,10 @@ import { PickConnectedDevice } from './PickConnectedDevice';
 import { VolumeBar } from './VolumeBar';
 
 const Container = styled.aside`
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
+  display: flex;
   flex-grow: 1;
+  justify-content: flex-end;
 `;
 
 export function ExtraControl() {

@@ -5,5 +5,5 @@
     "typeRoots": ["./typings", "./node_modules/@types"]
   },
   "extends": "@busybox/tsconfig",
-  "include": ["src", "typings"]
+  "include": ["src", "typings", "index.tsx", "testHelper"]
 }

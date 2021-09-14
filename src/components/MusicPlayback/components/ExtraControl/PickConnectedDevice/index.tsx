@@ -13,12 +13,12 @@ import { useToggle } from '../../../../../hooks/utils/useToggle';
 import { ConnectedDeviceList } from './ConnectedDeviceList';
 
 const PickConnectedDeviceButton = styled.button<{ isPlayingOnRemote: boolean }>`
-  outline: none;
+  background-color: transparent;
   border: none;
   height: 32px;
-  width: 32px;
+  outline: none;
   padding: 0px;
-  background-color: transparent;
+  width: 32px;
   svg {
     ${props => {
       const { isPlayingOnRemote, theme, disabled } = props;

@@ -6,24 +6,24 @@ import {
   useSpotifyWebPlayback,
 } from '../../contexts/SpotifyWebPlayback';
 import type { PlaybackDevice } from '../../contexts/SpotifyWebPlayback/typings/Playback';
-import { ReactComponent as ConnectIcon } from './spotify-connect-icon.svg';
+import ConnectIcon from './spotify-connect-icon.svg';
 
 const RemotePlaybackBannerContainer = styled.aside`
+  align-items: center;
   background-color: ${props => props.theme.colors.lightGreen};
-  height: 24px;
-  padding: ${props => props.theme.spaces.xxxs} ${props => props.theme.spaces.m};
   box-sizing: border-box;
   color: ${props => props.theme.colors.background};
-  font-size: ${props => props.theme.typography.size.s};
   display: flex;
-  align-items: center;
+  font-size: ${props => props.theme.typography.size.s};
+  height: 24px;
   justify-content: flex-end;
+  padding: ${props => props.theme.spaces.xxxs} ${props => props.theme.spaces.m};
   position: relative;
 `;
 
 const RemotePlaybackBannerHeading = styled.h1`
-  font-size: ${props => props.theme.typography.size.s};
   display: inline;
+  font-size: ${props => props.theme.typography.size.s};
   margin-left: ${props => props.theme.spaces.xxxs};
   z-index: 1;
 `;
@@ -35,12 +35,12 @@ const RemotePlaybackBannerIcon = styled(ConnectIcon)`
 
 const RemotePlaybackBannerArrow = styled.div`
   background-color: ${props => props.theme.colors.lightGreen};
-  position: absolute;
-  width: 15px;
   height: 15px;
-  top: -7px;
+  position: absolute;
   right: 150px;
+  top: -7px;
   transform: rotate(45deg);
+  width: 15px;
 `;
 
 export function RemotePlaybackBanner({
@@ -61,13 +61,13 @@ export function RemotePlaybackBanner({
 }
 
 const RemotePlaybackBannerWrapperContainer = styled.div`
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
   display: grid;
   grid-gap: 0 0;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  width: 100%;
 `;
 
 export function RemotePlaybackBannerWrapper({

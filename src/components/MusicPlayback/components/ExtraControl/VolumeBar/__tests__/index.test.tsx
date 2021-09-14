@@ -19,7 +19,7 @@ describe('Test VolumeBar', () => {
     );
     expect(
       screen.getByRole('button', {
-        name: 'volume-off.svg',
+        name: 'volume-off',
       }),
     ).toBeVisible();
   });
@@ -38,12 +38,12 @@ describe('Test VolumeBar', () => {
     );
     expect(
       screen.getByRole('button', {
-        name: 'volume-low.svg',
+        name: 'volume-low',
       }),
     ).toBeVisible();
     userEvent.click(
       screen.getByRole('button', {
-        name: 'volume-low.svg',
+        name: 'volume-low',
       }),
     );
     expect(handleChangeVolume).toHaveBeenCalledWith(0);
@@ -63,12 +63,12 @@ describe('Test VolumeBar', () => {
     );
     expect(
       screen.getByRole('button', {
-        name: 'volume-off.svg',
+        name: 'volume-off',
       }),
     ).toBeVisible();
     userEvent.click(
       screen.getByRole('button', {
-        name: 'volume-off.svg',
+        name: 'volume-off',
       }),
     );
     expect(handleChangeVolume).not.toHaveBeenCalled();
