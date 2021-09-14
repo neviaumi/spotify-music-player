@@ -3,11 +3,11 @@
 /** @type {import('snowpack').SnowpackUserConfig } */
 export default {
   optimize: {
-    // bundle: true,
-    minify: true,
-    splitting: true,
-    treeshake: true,
-    manifest: true,
+    bundle: true,
+    loader: {
+      ".png": 'file',
+      ".gif": 'file'
+    }
   },
   exclude: [
     '**/.github/**/*',
@@ -34,18 +34,7 @@ export default {
   ],
   plugins: [
     ['snowpack-plugin-svgr', { /* see "Plugin Options" below */}],
-    '@snowpack/plugin-dotenv',
-    // [
-    //   '@snowpack/plugin-webpack',
-    //   {
-    //     extendConfig: (config) => {
-    //       config.optimization = {
-    //         minimize: false,
-    //       }
-    //       return config;
-    //     },
-    //   },
-    // ],
+    '@snowpack/plugin-dotenv'
   ],
   packageOptions: {
     polyfillNode: true,
