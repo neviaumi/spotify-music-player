@@ -5,9 +5,10 @@ export default {
   optimize: {
     bundle: true,
     loader: {
-      ".png": 'file',
-      ".gif": 'file'
-    }
+      ".png": 'dataurl',
+      ".gif": 'dataurl'
+    },
+    target: "es2020"
   },
   exclude: [
     '**/.github/**/*',
@@ -47,4 +48,7 @@ export default {
   buildOptions: {
     jsxInject: 'import React from \'react\''
   },
+  testOptions: {
+    files: ["__tests__/**/*","__mocks__/**/*", "**/*.@(spec|test).*","**/*.har"]
+  }
 };
