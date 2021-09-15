@@ -4,9 +4,13 @@
 export default {
   optimize: {
     bundle: true,
+    splitting: true,
+    treeshake: true,
+    manifest: true,
+    minify: true,
     loader: {
-      ".png": 'dataurl',
-      ".gif": 'dataurl'
+      ".png": 'file',
+      ".gif": 'file'
     },
     target: "es2020"
   },
