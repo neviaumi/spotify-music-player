@@ -2,5 +2,4 @@
 
 set -ex
 
-echo "Tmp disabled!"
-#npx lhci autorun
+npx lhci autorun

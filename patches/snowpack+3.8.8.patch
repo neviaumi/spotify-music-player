@@ -1,0 +1,26 @@
+diff --git a/node_modules/snowpack/lib/cjs/build/optimize.js b/node_modules/snowpack/lib/cjs/build/optimize.js
+index 156b0ab..098bd83 100644
+--- a/node_modules/snowpack/lib/cjs/build/optimize.js
++++ b/node_modules/snowpack/lib/cjs/build/optimize.js
+@@ -351,7 +351,7 @@ async function runEsbuildOnBuildDirectory(bundleEntrypoints, allFiles, config) {
+         minify: config.optimize.minify,
+         target: config.optimize.target,
+         external: Array.from(new Set(allFiles.map((f) => '*' + path_1.default.extname(f))))
+-            .filter((ext) => ext !== '*.js' && ext !== '*.mjs' && ext !== '*.css' && ext !== '*')
++            .filter((ext) => !["*.js", "*.mjs", "*.css", "*", "*.png", "*.gif"].includes(ext))
+             .concat((_b = (_a = config.packageOptions) === null || _a === void 0 ? void 0 : _a.external) !== null && _b !== void 0 ? _b : []),
+         charset: 'utf8',
+     });
+diff --git a/node_modules/snowpack/lib/esm/build/optimize.js b/node_modules/snowpack/lib/esm/build/optimize.js
+index 70fd85a..b809ce2 100644
+--- a/node_modules/snowpack/lib/esm/build/optimize.js
++++ b/node_modules/snowpack/lib/esm/build/optimize.js
+@@ -326,7 +326,7 @@ async function runEsbuildOnBuildDirectory(bundleEntrypoints, allFiles, config) {
+         minify: config.optimize.minify,
+         target: config.optimize.target,
+         external: Array.from(new Set(allFiles.map((f) => '*' + path.extname(f))))
+-            .filter((ext) => ext !== '*.js' && ext !== '*.mjs' && ext !== '*.css' && ext !== '*')
++            .filter((ext) => !["*.js", "*.mjs", "*.css", "*", "*.png", "*.gif"].includes(ext))
+             .concat((_b = (_a = config.packageOptions) === null || _a === void 0 ? void 0 : _a.external) !== null && _b !== void 0 ? _b : []),
+         charset: 'utf8',
+     });
