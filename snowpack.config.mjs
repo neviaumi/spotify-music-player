@@ -3,11 +3,16 @@
 /** @type {import('snowpack').SnowpackUserConfig } */
 export default {
   optimize: {
-    // bundle: true,
-    minify: true,
+    bundle: true,
     splitting: true,
     treeshake: true,
     manifest: true,
+    minify: true,
+    loader: {
+      ".png": 'file',
+      ".gif": 'file'
+    },
+    target: "es2020"
   },
   exclude: [
     '**/.github/**/*',
@@ -34,18 +39,7 @@ export default {
   ],
   plugins: [
     ['snowpack-plugin-svgr', { /* see "Plugin Options" below */}],
-    '@snowpack/plugin-dotenv',
-    // [
-    //   '@snowpack/plugin-webpack',
-    //   {
-    //     extendConfig: (config) => {
-    //       config.optimization = {
-    //         minimize: false,
-    //       }
-    //       return config;
-    //     },
-    //   },
-    // ],
+    '@snowpack/plugin-dotenv'
   ],
   packageOptions: {
     polyfillNode: true,
@@ -58,4 +52,7 @@ export default {
   buildOptions: {
     jsxInject: 'import React from \'react\''
   },
+  testOptions: {
+    files: ["__tests__/**/*","__mocks__/**/*", "**/*.@(spec|test).*","**/*.har"]
+  }
 };
