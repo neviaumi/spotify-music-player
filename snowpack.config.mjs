@@ -38,19 +38,26 @@ export default {
     },
   ],
   plugins: [
+    '@snowpack/plugin-react-refresh',
     ['snowpack-plugin-svgr', { /* see "Plugin Options" below */}],
     '@snowpack/plugin-dotenv'
   ],
   packageOptions: {
     polyfillNode: true,
     // https://github.com/snowpackjs/snowpack/issues/3682
-    external: ['crypto', 'path', 'util', 'braces', 'debug', 'fs-extra', 'micromatch', 'ms', 'slash', 'source-map']
+    external: [
+      'crypto',
+      'path',
+      'util',
+      'url',
+    ]
   },
   devOptions: {
     port: 3000
   },
   buildOptions: {
-    jsxInject: 'import React from \'react\''
+    jsxInject: 'import React from \'react\'',
+    sourcemap: true
   },
   testOptions: {
     files: ["__tests__/**/*","__mocks__/**/*", "**/*.@(spec|test).*","**/*.har"]

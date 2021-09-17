@@ -53,7 +53,10 @@ export function createPollyContext(
   } = {};
   // https://netflix.github.io/pollyjs/#/test-frameworks/jest-jasmine?id=test-hook-ordering
   beforeEach(() => {
-    const { testPath: currentTestPath, currentTestName } = expect.getState();
+    const { testPath: currentTestPath, currentTestName } = {
+      currentTestName: '',
+      testPath: '',
+    };
     context.polly = new Polly(kebabcase(currentTestName), {
       ...pollyOptions,
       persisterOptions: {
