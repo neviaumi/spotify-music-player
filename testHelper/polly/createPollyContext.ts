@@ -1,20 +1,19 @@
 import XHRAdapter from '@pollyjs/adapter-xhr';
-import { MODE, Polly, PollyConfig, Timing } from '@pollyjs/core';
-import FSPersister from '@pollyjs/persister-fs';
-import kebabcase from 'lodash.kebabcase';
-import path from 'path';
+import RESTPersister from '@pollyjs/persister-rest';
 
-import { getCurrentTestPath } from './getCurrentTestPath';
-import { APIMock, setupMockServer } from './setupMockServer';
+import { MODE, Polly, PollyConfig, Timing } from '@pollyjs/core';
+import kebabcase from 'lodash.kebabcase';
+
+// import { APIMock, setupMockServer } from './setupMockServer';
 
 Polly.register(XHRAdapter);
-Polly.register(FSPersister);
+Polly.register(RESTPersister);
 
 export function createPollyContext(
   config: {
     appConfig?: {
       enableMockServer: boolean;
-      mockRouteHandlers?: APIMock;
+      // mockRouteHandlers?: APIMock;
     };
     pollyConfig?: PollyConfig;
   } = {},
@@ -33,14 +32,13 @@ export function createPollyContext(
   const pollyOptions: PollyConfig = {
     adapters: [XHRAdapter],
     expiresIn: '14d',
-
     expiryStrategy: 'warn',
     flushRequestsOnStop: true,
     matchRequestsBy: {
       body: false,
       headers: false,
     },
-    persister: FSPersister,
+    persister: RESTPersister,
     recordFailedRequests: true,
     recordIfMissing: false,
     timing: Timing.fixed(100),
@@ -61,13 +59,6 @@ export function createPollyContext(
       ...pollyOptions,
       persisterOptions: {
         keepUnusedRequests: false,
-        [FSPersister.id]: {
-          recordingsDir: path.join(
-            getCurrentTestPath(),
-            '__recordings__',
-            path.parse(currentTestPath).name,
-          ),
-        },
       },
     });
     if (!isRunningOnRecordMode) {
@@ -102,11 +93,11 @@ export function createPollyContext(
           );
         }
       });
-    if (appConfig?.enableMockServer) {
-      setupMockServer(context.polly, {
-        handlers: appConfig.mockRouteHandlers,
-      });
-    }
+    // if (appConfig?.enableMockServer) {
+    //   setupMockServer(context.polly, {
+    //     handlers: appConfig.mockRouteHandlers,
+    //   });
+    // }
   });
   afterEach(async () => {
     await context.polly?.stop();

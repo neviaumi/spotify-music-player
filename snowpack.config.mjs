@@ -1,18 +1,15 @@
 // Snowpack Configuration File
+
 // See all supported options: https://www.snowpack.dev/reference/configuration
 /** @type {import('snowpack').SnowpackUserConfig } */
+// eslint-disable-next-line import/no-default-export
 export default {
-  optimize: {
-    bundle: true,
-    splitting: true,
-    treeshake: true,
-    manifest: true,
-    minify: true,
-    loader: {
-      ".png": 'file',
-      ".gif": 'file'
-    },
-    target: "es2020"
+  buildOptions: {
+    jsxInject: "import React from 'react'",
+    sourcemap: true,
+  },
+  devOptions: {
+    port: 3000,
   },
   exclude: [
     '**/.github/**/*',
@@ -27,39 +24,52 @@ export default {
     '**/package-lock.json',
     '**/tsconfig.json',
     '**/tsconfig.tsbuildinfo',
+    '**/web-test-runner.config.mjs',
     '**/*.md',
     '**/*.yml',
+    '**/*.toml',
+  ],
+  optimize: {
+    bundle: true,
+    loader: {
+      '.gif': 'file',
+      '.png': 'file',
+    },
+    manifest: true,
+    minify: true,
+    splitting: true,
+    target: 'es2020',
+    treeshake: true,
+  },
+  packageOptions: {
+    // https://github.com/snowpackjs/snowpack/issues/3682
+    external: ['crypto', 'path', 'util', 'url'],
+
+    polyfillNode: true,
+  },
+  plugins: [
+    '@snowpack/plugin-react-refresh',
+    [
+      'snowpack-plugin-svgr',
+      {
+        /* see "Plugin Options" below */
+      },
+    ],
+    '@snowpack/plugin-dotenv',
   ],
   routes: [
     {
+      dest: '/index.html',
       match: 'routes',
       src: '.*',
-      dest: '/index.html',
     },
   ],
-  plugins: [
-    '@snowpack/plugin-react-refresh',
-    ['snowpack-plugin-svgr', { /* see "Plugin Options" below */}],
-    '@snowpack/plugin-dotenv'
-  ],
-  packageOptions: {
-    polyfillNode: true,
-    // https://github.com/snowpackjs/snowpack/issues/3682
-    external: [
-      'crypto',
-      'path',
-      'util',
-      'url',
-    ]
-  },
-  devOptions: {
-    port: 3000
-  },
-  buildOptions: {
-    jsxInject: 'import React from \'react\'',
-    sourcemap: true
-  },
   testOptions: {
-    files: ["__tests__/**/*","__mocks__/**/*", "**/*.@(spec|test).*","**/*.har"]
-  }
+    files: [
+      '__tests__/**/*',
+      '__mocks__/**/*',
+      '**/*.@(spec|test).*',
+      '**/*.har',
+    ],
+  },
 };

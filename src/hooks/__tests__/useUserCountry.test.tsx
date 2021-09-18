@@ -1,4 +1,5 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks/dom';
+import { expect } from 'chai';
 
 import { createPollyContext } from '../../../testHelper/polly/createPollyContext';
 import { TestApp } from '../../App';
@@ -11,7 +12,10 @@ describe('useUserCountry', () => {
     const { result, waitFor } = renderHook(() => useUserCountry(), {
       wrapper: ({ children }) => <TestApp>{children}</TestApp>,
     });
-    await waitFor(() => expect(result.current).toBeDefined());
-    expect(result.current).toEqual('HK');
+
+    await waitFor(() => {
+      expect(result.current).to.not.be.equal(undefined);
+    });
+    expect(result.current).to.be.equal('HK');
   });
 });
