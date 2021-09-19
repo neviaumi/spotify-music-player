@@ -21,5 +21,6 @@ module.exports = {
       statements: 80,
     },
   },
+  testRunner: 'jest-circus/runner',
   transformIgnorePatterns: ['node_modules/(?!(parse-ms)).*\\.js$'],
 };
