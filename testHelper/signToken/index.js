@@ -47,6 +47,7 @@ async function writeAccessTokenToFile(accessToken) {
         return [key, accessToken];
       return [key, value];
     })
+    .filter(([key, value]) => key && value)
     .map(([key, value]) => [key, value].join('='))
     .join('\n');
   await fs.writeFile(path.join(process.cwd(), '.env.test'), newDotEnvContent);
@@ -68,7 +69,7 @@ server.on('request', async (req, res) => {
       code,
       code_verifier: codeVerifier,
       grant_type: 'authorization_code',
-      redirect_uri: 'http://localhost:42069/auth/login/callback',
+      redirect_uri: 'http://localhost:3000/auth/login/callback',
     }).toString(),
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -88,7 +89,7 @@ server.on('request', async (req, res) => {
   process.exit(0);
 });
 
-server.listen(42069, '0.0.0.0', async () => {
+server.listen(3000, '0.0.0.0', async () => {
   const authURL = new URL('https://accounts.spotify.com/authorize');
   const queryParams = authURL.searchParams;
   queryParams.append('client_id', clientId);
@@ -96,7 +97,7 @@ server.listen(42069, '0.0.0.0', async () => {
   queryParams.append('response_type', 'code');
   queryParams.append(
     'redirect_uri',
-    'http://localhost:42069/auth/login/callback',
+    'http://localhost:3000/auth/login/callback',
   );
   queryParams.append('code_challenge_method', 'S256');
   queryParams.append('code_challenge', codeChallenge);

@@ -1,8 +1,8 @@
-import { renderHook } from '@testing-library/react-hooks';
 import casual from 'casual';
 
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
+import { renderHook } from '../../../../../testHelper/testing-library/react-hooks';
 import { TestApp } from '../../../../App';
 import { useAvailableDevices } from '../useAvailableDevices';
 

@@ -52,8 +52,9 @@
     "@jest/globals": "26.6.2",
     "@lhci/cli": "0.8.1",
     "@pollyjs/adapter-xhr": "5.1.1",
+    "@pollyjs/cli": "5.1.1",
     "@pollyjs/core": "5.1.1",
-    "@pollyjs/persister-fs": "5.1.1",
+    "@pollyjs/persister-rest": "5.1.1",
     "@snowpack/app-scripts-react": "2.0.1",
     "@snowpack/plugin-dotenv": "2.2.0",
     "@snowpack/plugin-react-refresh": "2.5.0",
@@ -68,7 +69,7 @@
     "@types/node": "16.9.2",
     "@types/pollyjs__adapter-xhr": "2.6.1",
     "@types/pollyjs__core": "4.3.3",
-    "@types/pollyjs__persister-fs": "2.0.1",
+    "@types/pollyjs__persister-rest": "4.0.1",
     "@types/ramda": "0.27.44",
     "@types/react": "17.0.21",
     "@types/react-dom": "17.0.9",
@@ -95,6 +96,7 @@
     "serve": "12.0.1",
     "snowpack": "3.8.6",
     "snowpack-plugin-svgr": "0.1.2",
+    "start-server-and-test": "1.14.0",
     "stylelint": "13.13.1",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-order": "4.1.0",
@@ -123,9 +125,9 @@
     "serve:lhci": "serve -l 3000 -s build",
     "signToken": "node ./testHelper/signToken/index.js",
     "start": "snowpack dev",
-    "test": "jest --maxWorkers=50% --coverage --watchAll=false",
-    "test:ci": "CI=true jest --runInBand --coverage",
-    "test:reset": "rimraf ./src/**/*.har && npm run signToken && REACT_APP_POLLY_MODE=record jest --watchAll=false --runInBand --testTimeout 60000"
+    "test": "start-server-and-test 'polly listen -p 3001' 3001 'jest --maxWorkers=50%'",
+    "test:ci": "start-server-and-test 'polly listen -p 3001' 3001 'CI=true jest --runInBand --coverage'",
+    "test:reset": "rimraf ./recordings/** && npm run signToken && start-server-and-test 'polly listen -p 3001' 3001 'SNOWPACK_PUBLIC_POLLY_MODE=record jest --runInBand --testTimeout 60000 --silent'"
   },
   "version": "0.1.0"
 }
