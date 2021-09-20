@@ -1,7 +1,8 @@
-import casual from 'casual';
-
 import { createPollyContext } from '../../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../../testHelper/polly/setupMockServer';
+import { CurrentlyPlayingObject } from '../../../../../../testHelper/seeders/CurrentlyPlayingObject';
+import { CursorPagingObject } from '../../../../../../testHelper/seeders/PagingObject';
+import { PlayHistoryObject } from '../../../../../../testHelper/seeders/PlayHistoryObject';
 import { createSpotifyAPIClientForTesting } from '../../../../../utils/createSpotifyAPIClient';
 import { PlaybackState } from '../../../typings/Playback';
 import { createPlaybackStateMachine } from '../../PlaybackState';
@@ -10,7 +11,7 @@ import { IdlePlaybackState } from '../index';
 const context = createPollyContext({});
 describe('IdlePlaybackState', () => {
   it(`.getPlaybackState will transit to ${PlaybackState.PLAY_ON_REMOTE_PLAYBACK} if currently playing track is_playing is true`, async () => {
-    const currentlyPlaying = casual.CurrentlyPlayingObject({
+    const currentlyPlaying = CurrentlyPlayingObject({
       is_playing: true,
     });
     setupMockServer(context.polly, {
@@ -39,7 +40,7 @@ describe('IdlePlaybackState', () => {
   });
 
   it(`.getPlaybackState will keep IDLE if currently playing track is_playing is false`, async () => {
-    const currentlyPlaying = casual.CurrentlyPlayingObject({
+    const currentlyPlaying = CurrentlyPlayingObject({
       is_playing: false,
     });
     setupMockServer(context.polly, {
@@ -78,7 +79,7 @@ describe('IdlePlaybackState', () => {
   });
 
   it(`.getPlaybackState will fallback to recently play if currently playing 204`, async () => {
-    const currentlyPlaying = casual.PlayHistoryObject({});
+    const currentlyPlaying = PlayHistoryObject({});
     setupMockServer(context.polly, {
       handlers: {
         spotifyAPI: {
@@ -87,9 +88,7 @@ describe('IdlePlaybackState', () => {
               res.status(204);
             },
             '/v1/me/player/recently-played': (_, res) => {
-              res
-                .status(200)
-                .json(casual.CursorPagingObject([currentlyPlaying]));
+              res.status(200).json(CursorPagingObject([currentlyPlaying]));
             },
           },
         },
@@ -134,8 +133,8 @@ describe('IdlePlaybackState', () => {
   });
 
   it(`.getPlaybackState will return if recently playing is podcast`, async () => {
-    const currentlyPlaying = casual.CursorPagingObject([
-      casual.PlayHistoryObject({
+    const currentlyPlaying = CursorPagingObject([
+      PlayHistoryObject({
         track: {
           type: 'episode',
         },

@@ -1,16 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import event from '@testing-library/user-event';
-import casual from 'casual';
 import { createMemoryHistory } from 'history';
 
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
+import { CursorPagingObject } from '../../../../../testHelper/seeders/PagingObject';
+import { PlayHistoryObject } from '../../../../../testHelper/seeders/PlayHistoryObject';
+import { RecommendationsObject } from '../../../../../testHelper/seeders/RecommendationsObject';
+import { SimplifiedTrackObject } from '../../../../../testHelper/seeders/SimplifiedTrackObject';
 import { TestApp } from '../../../../App';
 import type { Props } from '../Present/PresentSuggestAlbum';
 import { withSuggestAlbumByUserLastPlayedTracks } from '../SuggestAlbumByUserLastPlayedTracks';
 
-const mockPlayHistory = casual.PlayHistoryObject({});
-const mockTrack = casual.SimplifiedTrackObject({});
+const mockPlayHistory = PlayHistoryObject({});
+const mockTrack = SimplifiedTrackObject({});
 const context = createPollyContext();
 
 const SuggestAlbumByUserLastPlayedTracks =
@@ -42,12 +45,10 @@ describe('Test SuggestAlbumByUserLastPlayedTracks component', () => {
         spotifyAPI: {
           get: {
             '/v1/me/player/recently-played': (_, res) => {
-              res
-                .status(200)
-                .json(casual.CursorPagingObject([mockPlayHistory]));
+              res.status(200).json(CursorPagingObject([mockPlayHistory]));
             },
             '/v1/recommendations': (_, res) => {
-              res.status(200).json(casual.RecommendationsObject([mockTrack]));
+              res.status(200).json(RecommendationsObject([mockTrack]));
             },
           },
         },

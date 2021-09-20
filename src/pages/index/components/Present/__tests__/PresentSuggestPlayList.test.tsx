@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import events from '@testing-library/user-event';
-import casual from 'casual';
 
+import { PlaylistObject } from '../../../../../../testHelper/seeders/PlaylistObject';
 import { TestApp } from '../../../../../App';
 import { PresentSuggestPlayList } from '../PresentSuggestPlayList';
 
@@ -94,7 +94,7 @@ describe('Test render PresentSuggestPlayList component', () => {
   });
   it('Should not show the play button by default', async () => {
     const onClickSuggestion = jest.fn();
-    const suggestion = casual.PlaylistObject({
+    const suggestion = PlaylistObject({
       description: 'FooBar',
       id: 'FooBarID',
       images: [{ url: 'https://www.google.com' }],

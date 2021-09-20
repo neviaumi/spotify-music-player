@@ -1,16 +1,16 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import casual from 'casual';
 import { createMemoryHistory } from 'history';
 import { Route } from 'react-router-dom';
 
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
+import { PlaylistObject } from '../../../../../testHelper/seeders/PlaylistObject';
 import { TestApp } from '../../../../App';
 import { PresentPlayList, withPlayList } from '../';
 
 describe('render PresentPlayList', () => {
   const context = createPollyContext();
-  const playlist = casual.PlaylistObject();
+  const playlist = PlaylistObject();
   it('should render heading', async () => {
     setupMockServer(context.polly, {});
     render(

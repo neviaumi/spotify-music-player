@@ -1,6 +1,4 @@
-import casual from 'casual';
-
-function RecommendationsObjectFactory<T>(tracks?: T[]) {
+export function RecommendationsObject<T>(tracks?: T[]) {
   return {
     seeds: [
       {
@@ -46,15 +44,4 @@ function RecommendationsObjectFactory<T>(tracks?: T[]) {
     ],
     tracks: tracks,
   };
-}
-
-casual.define('RecommendationsObject', RecommendationsObjectFactory);
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace Casual {
-    export interface Casual {
-      RecommendationsObject: typeof RecommendationsObjectFactory;
-    }
-  }
 }

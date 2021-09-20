@@ -1,6 +1,4 @@
-import casual from 'casual';
-
-function CurrentlyPlayingObjectFactory(attributes?: any) {
+export function CurrentlyPlayingObject(attributes?: any) {
   return {
     actions: {
       disallows: {
@@ -98,15 +96,4 @@ function CurrentlyPlayingObjectFactory(attributes?: any) {
     timestamp: 1615040958362,
     ...attributes,
   };
-}
-
-casual.define('CurrentlyPlayingObject', CurrentlyPlayingObjectFactory);
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace Casual {
-    export interface Casual {
-      CurrentlyPlayingObject: typeof CurrentlyPlayingObjectFactory;
-    }
-  }
 }

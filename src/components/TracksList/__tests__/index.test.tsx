@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import casual from 'casual';
 
 import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
+import { CurrentlyPlayingContextObject } from '../../../../testHelper/seeders/CurrentlyPlayingContextObject';
 import { TestApp } from '../../../App';
 import { TracksList } from '../index';
 
-const currentPlaying = casual.CurrentlyPlayingContextObject();
+const currentPlaying = CurrentlyPlayingContextObject();
 createPollyContext({
   appConfig: {
     enableMockServer: true,

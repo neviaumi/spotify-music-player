@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import events from '@testing-library/user-event';
-import casual from 'casual';
 
+import { AlbumObject } from '../../../../../../testHelper/seeders/AlbumObject';
 import { TestApp } from '../../../../../App';
 import { PresentSuggestAlbum } from '../PresentSuggestAlbum';
 
@@ -42,7 +42,7 @@ describe('Test render PresentSuggestAlbum component', () => {
           onClickSuggestion={jest.fn()}
           onClickToggleButton={jest.fn()}
           suggestions={[
-            casual.AlbumObject({
+            AlbumObject({
               artists: [
                 { name: 'Paul' },
                 { name: 'David' },
@@ -72,7 +72,7 @@ describe('Test render PresentSuggestAlbum component', () => {
   });
   it('Should trigger onClickSuggestion when Suggestion clicked', () => {
     const onClickSuggestion = jest.fn();
-    const suggestion = casual.AlbumObject({
+    const suggestion = AlbumObject({
       artists: [],
       id: 'FooBarID',
       images: [{ url: 'https://www.google.com' }],

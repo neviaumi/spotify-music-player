@@ -1,16 +1,17 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import casual from 'casual';
 
 import { createPollyContext } from '../../../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../../../testHelper/polly/setupMockServer';
+import { CurrentlyPlayingContextObject } from '../../../../../../../testHelper/seeders/CurrentlyPlayingContextObject';
+import { DeviceObject } from '../../../../../../../testHelper/seeders/DeviceObject';
 import { TestApp } from '../../../../../../App';
 import { PickConnectedDevice } from '../index';
 
 const context = createPollyContext();
 describe('ConnectedDeviceList', () => {
   it('Click item in list will transfer playback', async () => {
-    const device = casual.DeviceObject();
+    const device = DeviceObject();
     const transferPlaybackMock = jest
       .fn()
       .mockImplementation((_, res) => res.status(204));
@@ -52,7 +53,7 @@ describe('ConnectedDeviceList', () => {
   });
 
   it('Click current device in list will not transfer playback', async () => {
-    const device = casual.DeviceObject();
+    const device = DeviceObject();
     const transferPlaybackMock = jest
       .fn()
       .mockImplementation((_, res) => res.status(204));
@@ -62,7 +63,7 @@ describe('ConnectedDeviceList', () => {
           get: {
             '/v1/me/player': jest.fn().mockImplementation((_, res) => {
               res.status(200).json(
-                casual.CurrentlyPlayingContextObject({
+                CurrentlyPlayingContextObject({
                   device,
                 }),
               );

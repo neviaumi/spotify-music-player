@@ -1,6 +1,4 @@
-import casual from 'casual';
-
-function ArtistObjectFactory(attributes?: any) {
+export function ArtistObject(attributes?: any) {
   return {
     external_urls: {
       spotify: 'https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2',
@@ -42,15 +40,4 @@ function ArtistObjectFactory(attributes?: any) {
     uri: 'spotify:artist:3WrFJ7ztbogyGnTHbHJFl2',
     ...attributes,
   };
-}
-
-casual.define('ArtistObject', ArtistObjectFactory);
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace Casual {
-    export interface Casual {
-      ArtistObject: typeof ArtistObjectFactory;
-    }
-  }
 }

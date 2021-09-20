@@ -1,6 +1,4 @@
-import casual from 'casual';
-
-const WebPlaybackStateFactory = (attributes?: any) => {
+export function WebPlaybackState(attributes?: any) {
   return {
     context: {
       metadata: {
@@ -239,15 +237,4 @@ const WebPlaybackStateFactory = (attributes?: any) => {
     },
     ...(attributes || {}),
   };
-};
-
-casual.define('WebPlaybackState', WebPlaybackStateFactory);
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace Casual {
-    export interface Casual {
-      WebPlaybackState: typeof WebPlaybackStateFactory;
-    }
-  }
 }

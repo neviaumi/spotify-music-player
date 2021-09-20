@@ -13,12 +13,14 @@
       <excludeFolder url="file://$MODULE_DIR$/build-functions" />
       <excludeFolder url="file://$MODULE_DIR$/.netlify" />
       <excludeFolder url="file://$MODULE_DIR$/public" />
+      <excludeFolder url="file://$MODULE_DIR$/node_modules" />
       <excludePattern pattern="yarn-error.log" />
       <excludePattern pattern="yarn.lock" />
       <excludePattern pattern="*.har" />
       <excludePattern pattern="package-lock.json" />
       <excludePattern pattern="tsconfig.tsbuildinfo" />
     </content>
+    <content url="file://$MODULE_DIR$/node_modules" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="@types/jest" level="application" />

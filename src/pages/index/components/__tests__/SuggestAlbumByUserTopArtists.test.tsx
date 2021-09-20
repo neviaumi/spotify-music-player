@@ -1,16 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import event from '@testing-library/user-event';
-import casual from 'casual';
 import { createMemoryHistory } from 'history';
 
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
+import { ArtistObject } from '../../../../../testHelper/seeders/ArtistObject';
+import { PagingObject } from '../../../../../testHelper/seeders/PagingObject';
+import { RecommendationsObject } from '../../../../../testHelper/seeders/RecommendationsObject';
+import { SimplifiedTrackObject } from '../../../../../testHelper/seeders/SimplifiedTrackObject';
 import { TestApp } from '../../../../App';
 import type { Props } from '../Present/PresentSuggestAlbum';
 import { withSuggestAlbumByUserTopArtists } from '../SuggestAlbumByUserTopArtists';
 
-const mockArtist = casual.ArtistObject({});
-const mockTrack = casual.SimplifiedTrackObject({});
+const mockArtist = ArtistObject({});
+const mockTrack = SimplifiedTrackObject({});
 const context = createPollyContext();
 
 const SuggestPlayListByTopArtist = withSuggestAlbumByUserTopArtists(
@@ -40,10 +43,10 @@ describe('Test SuggestAlbumByUserTopArtists component', () => {
         spotifyAPI: {
           get: {
             '/v1/me/top/artists': (_, res) => {
-              res.status(200).json(casual.PagingObject([mockArtist]));
+              res.status(200).json(PagingObject([mockArtist]));
             },
             '/v1/recommendations': (_, res) => {
-              res.status(200).json(casual.RecommendationsObject([mockTrack]));
+              res.status(200).json(RecommendationsObject([mockTrack]));
             },
           },
         },

@@ -1,7 +1,6 @@
-import casual from 'casual';
-
 import { createPollyContext } from '../../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../../testHelper/polly/setupMockServer';
+import { CurrentlyPlayingContextObject } from '../../../../../../testHelper/seeders/CurrentlyPlayingContextObject';
 import { createSpotifyAPIClientForTesting } from '../../../../../utils/createSpotifyAPIClient';
 import { PlaybackState } from '../../../typings/Playback';
 import { createPlaybackStateMachine } from '../../PlaybackState';
@@ -36,7 +35,7 @@ describe('RemotePlaybackState', () => {
   });
 
   it('.getPlaybackState will transit state to PlayOnLocal', async () => {
-    const currentPlayingContext = casual.CurrentlyPlayingContextObject();
+    const currentPlayingContext = CurrentlyPlayingContextObject();
     setupMockServer(context.polly, {
       handlers: {
         spotifyAPI: {
@@ -66,7 +65,7 @@ describe('RemotePlaybackState', () => {
   });
 
   it('.getPlaybackState return current player state and current track', async () => {
-    const currentPlayingContext = casual.CurrentlyPlayingContextObject();
+    const currentPlayingContext = CurrentlyPlayingContextObject();
     setupMockServer(context.polly, {
       handlers: {
         spotifyAPI: {
@@ -101,7 +100,7 @@ describe('RemotePlaybackState', () => {
   });
 
   it('.getPlaybackState skip return if current playing non track', async () => {
-    const currentPlayingContext = casual.CurrentlyPlayingContextObject({
+    const currentPlayingContext = CurrentlyPlayingContextObject({
       currently_playing_type: 'episode',
     });
     context.polly.server.host('https://api.spotify.com/v1', () => {

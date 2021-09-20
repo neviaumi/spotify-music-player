@@ -1,16 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import event from '@testing-library/user-event';
-import casual from 'casual';
 import { createMemoryHistory } from 'history';
 
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
+import { PagingObject } from '../../../../../testHelper/seeders/PagingObject';
+import { RecommendationsObject } from '../../../../../testHelper/seeders/RecommendationsObject';
+import { SimplifiedTrackObject } from '../../../../../testHelper/seeders/SimplifiedTrackObject';
 import { TestApp } from '../../../../App';
 import type { Props } from '../Present/PresentSuggestAlbum';
 import { withSuggestAlbumByUserTopTracks } from '../SuggestAlbumByUserTopTracks';
 
-const mockTopTrack = casual.SimplifiedTrackObject({});
-const mockTrack = casual.SimplifiedTrackObject({
+const mockTopTrack = SimplifiedTrackObject({});
+const mockTrack = SimplifiedTrackObject({
   name: 'Day Tripper',
 });
 
@@ -44,10 +46,10 @@ describe('Test SuggestAlbumByUserTopTracks component', () => {
         spotifyAPI: {
           get: {
             '/v1/me/top/tracks': (_, res) => {
-              res.status(200).json(casual.PagingObject([mockTopTrack]));
+              res.status(200).json(PagingObject([mockTopTrack]));
             },
             '/v1/recommendations': (_, res) => {
-              res.status(200).json(casual.RecommendationsObject([mockTrack]));
+              res.status(200).json(RecommendationsObject([mockTrack]));
             },
           },
         },
