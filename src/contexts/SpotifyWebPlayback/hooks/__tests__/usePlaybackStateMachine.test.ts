@@ -1,5 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
-
+import { renderHook } from '../../../../../testHelper/testing-library/react-hooks';
 import { IdlePlaybackState } from '../../states/IdlePlaybackState';
 import { LocalPlaybackState } from '../../states/LocalPlaybackState';
 import { RemotePlaybackState } from '../../states/RemotePlaybackState';

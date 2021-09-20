@@ -1,5 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
-
+import { renderHook } from '../../../../../testHelper/testing-library/react-hooks';
 import { TestAuthProvider } from '../../../Auth';
 import { useLocalSpotifyPlayback } from '../useLocalSpotifyPlayback';
 

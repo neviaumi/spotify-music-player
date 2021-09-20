@@ -2,10 +2,10 @@ const configBuilder = require('@snowpack/app-scripts-react/jest.config.js');
 const dotenv = require('dotenv');
 
 dotenv.config({
-  path: '.env',
+  path: '.env.test',
 });
 dotenv.config({
-  path: '.env.test',
+  path: '.env',
 });
 
 const jestConfig = configBuilder();

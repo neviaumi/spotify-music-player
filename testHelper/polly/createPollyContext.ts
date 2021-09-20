@@ -1,14 +1,12 @@
 import XHRAdapter from '@pollyjs/adapter-xhr';
 import { MODE, Polly, PollyConfig, Timing } from '@pollyjs/core';
-import FSPersister from '@pollyjs/persister-fs';
+import RestPersister from '@pollyjs/persister-rest';
 import kebabcase from 'lodash.kebabcase';
-import path from 'path';
 
-import { getCurrentTestPath } from './getCurrentTestPath';
 import { APIMock, setupMockServer } from './setupMockServer';
 
 Polly.register(XHRAdapter);
-Polly.register(FSPersister);
+Polly.register(RestPersister);
 
 export function createPollyContext(
   config: {
@@ -40,7 +38,7 @@ export function createPollyContext(
       body: false,
       headers: false,
     },
-    persister: FSPersister,
+    persister: RestPersister,
     recordFailedRequests: true,
     recordIfMissing: false,
     timing: Timing.fixed(100),
@@ -58,12 +56,8 @@ export function createPollyContext(
       ...pollyOptions,
       persisterOptions: {
         keepUnusedRequests: false,
-        [FSPersister.id]: {
-          recordingsDir: path.join(
-            getCurrentTestPath(),
-            '__recordings__',
-            path.parse(currentTestPath).name,
-          ),
+        [RestPersister.id]: {
+          host: 'http://localhost:3001/',
         },
       },
     });
