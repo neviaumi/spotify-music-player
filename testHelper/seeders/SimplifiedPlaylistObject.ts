@@ -1,6 +1,4 @@
-import casual from 'casual';
-
-function SimplifiedPlaylistObjectFactory(attributes?: any) {
+export function SimplifiedPlaylistObject(attributes?: any) {
   return {
     collaborative: false,
     description: '',
@@ -38,15 +36,4 @@ function SimplifiedPlaylistObjectFactory(attributes?: any) {
     uri: 'spotify:playlist:1bTZ1OTnP2JP4TM2nNpcqp',
     ...attributes,
   };
-}
-
-casual.define('SimplifiedPlaylistObject', SimplifiedPlaylistObjectFactory);
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace Casual {
-    export interface Casual {
-      SimplifiedPlaylistObject: typeof SimplifiedPlaylistObjectFactory;
-    }
-  }
 }

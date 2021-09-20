@@ -1,7 +1,6 @@
-import casual from 'casual';
-
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
+import { DeviceObject } from '../../../../../testHelper/seeders/DeviceObject';
 import { renderHook } from '../../../../../testHelper/testing-library/react-hooks';
 import { TestApp } from '../../../../App';
 import { useAvailableDevices } from '../useAvailableDevices';
@@ -34,7 +33,7 @@ describe('Test useAvailableDevices', () => {
   });
 
   it('Should call API and report contained device', async () => {
-    const devices = [casual.DeviceObject()];
+    const devices = [DeviceObject()];
     setupMockServer(context.polly, {
       handlers: {
         spotifyAPI: {

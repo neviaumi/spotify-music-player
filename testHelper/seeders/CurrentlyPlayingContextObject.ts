@@ -1,7 +1,6 @@
-import casual from 'casual';
 import { mergeDeepRight } from 'ramda';
 
-const CurrentlyPlayingContextObjectFactory = (attributes?: any) => {
+export function CurrentlyPlayingContextObject(attributes?: any) {
   return mergeDeepRight(
     {
       actions: {
@@ -113,18 +112,4 @@ const CurrentlyPlayingContextObjectFactory = (attributes?: any) => {
     },
     attributes || {},
   );
-};
-
-casual.define(
-  'CurrentlyPlayingContextObject',
-  CurrentlyPlayingContextObjectFactory,
-);
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace Casual {
-    export interface Casual {
-      CurrentlyPlayingContextObject: typeof CurrentlyPlayingContextObjectFactory;
-    }
-  }
 }

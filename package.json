@@ -77,7 +77,6 @@
     "@types/retry": "0.12.1",
     "@types/spotify-web-playback-sdk": "0.1.11",
     "@types/styled-components": "5.1.14",
-    "casual": "1.6.2",
     "dotenv": "10.0.0",
     "eslint": "7.32.0",
     "eslint-plugin-typescript-sort-keys": "1.8.0",

@@ -1,7 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import events from '@testing-library/user-event';
-import casual from 'casual';
 
+import { AlbumObject } from '../../../../testHelper/seeders/AlbumObject';
+import { PlaylistObject } from '../../../../testHelper/seeders/PlaylistObject';
 import { TogglePlayerPlayingStateButton } from '../';
 
 describe('Test TogglePlayerPlayingState', () => {
@@ -9,7 +10,7 @@ describe('Test TogglePlayerPlayingState', () => {
     render(
       <TogglePlayerPlayingStateButton
         isBelongCurrentTrack={false}
-        item={casual.AlbumObject()}
+        item={AlbumObject()}
         onClickToggleButton={jest.fn()}
       />,
     );
@@ -24,7 +25,7 @@ describe('Test TogglePlayerPlayingState', () => {
     render(
       <TogglePlayerPlayingStateButton
         isBelongCurrentTrack={true}
-        item={casual.PlaylistObject()}
+        item={PlaylistObject()}
         onClickToggleButton={jest.fn()}
       />,
     );
@@ -36,7 +37,7 @@ describe('Test TogglePlayerPlayingState', () => {
   });
 
   it('onClick button will call .onClickToggleButton', async () => {
-    const item = casual.AlbumObject();
+    const item = AlbumObject();
     const onClickToggleButton = jest.fn();
     render(
       <TogglePlayerPlayingStateButton

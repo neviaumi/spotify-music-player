@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 import 'jest-expect-message';
-import './testHelper/casual';
 
 import { configure } from '@testing-library/react';
 import crypto from 'crypto';

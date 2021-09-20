@@ -3,7 +3,6 @@
 import type { Request, Response } from '@pollyjs/core';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import casual from 'casual';
 import type { PropsWithChildren } from 'react';
 
 import { createPollyContext } from '../../../../testHelper/polly/createPollyContext';
@@ -11,6 +10,9 @@ import {
   MockHandlers,
   setupMockServer,
 } from '../../../../testHelper/polly/setupMockServer';
+import { CurrentlyPlayingContextObject } from '../../../../testHelper/seeders/CurrentlyPlayingContextObject';
+import { CursorPagingObject } from '../../../../testHelper/seeders/PagingObject';
+import { PlayHistoryObject } from '../../../../testHelper/seeders/PlayHistoryObject';
 import { TestApp } from '../../../App';
 import type { TrackSimplified } from '../../../hooks/spotify/typings/Track';
 import { useSpotifyWebPlayback } from '../';
@@ -147,7 +149,7 @@ describe('Test SpotifyWebPlayback', () => {
         get: {
           '/v1/me/player': (_, res) => {
             res.status(200).json(
-              casual.CurrentlyPlayingContextObject({
+              CurrentlyPlayingContextObject({
                 shuffle_state: currentShuffleMode,
               }),
             );
@@ -189,7 +191,7 @@ describe('Test SpotifyWebPlayback', () => {
       get: {
         '/v1/me/player': (_, res) => {
           res.status(200).json(
-            casual.CurrentlyPlayingContextObject({
+            CurrentlyPlayingContextObject({
               progress_ms: 1000,
             }),
           );
@@ -229,7 +231,7 @@ describe('Test SpotifyWebPlayback', () => {
       get: {
         '/v1/me/player': (_, res) => {
           res.status(200).json(
-            casual.CurrentlyPlayingContextObject({
+            CurrentlyPlayingContextObject({
               progress_ms: 0,
             }),
           );
@@ -439,7 +441,7 @@ describe('Test SpotifyWebPlayback', () => {
         get: {
           '/v1/me/player': (_, res) => {
             res.status(200).json(
-              casual.CurrentlyPlayingContextObject({
+              CurrentlyPlayingContextObject({
                 is_playing: !isPaused,
               }),
             );
@@ -508,8 +510,8 @@ describe('Test SpotifyWebPlayback', () => {
           },
           '/v1/me/player/recently-played': (_, res) => {
             res.status(200).json(
-              casual.CursorPagingObject([
-                casual.PlayHistoryObject({
+              CursorPagingObject([
+                PlayHistoryObject({
                   track: { ...item, type: 'track' },
                 }),
               ]),

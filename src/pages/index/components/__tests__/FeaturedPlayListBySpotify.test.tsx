@@ -1,15 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import event from '@testing-library/user-event';
-import casual from 'casual';
 import { createMemoryHistory } from 'history';
 
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
+import { PagingObject } from '../../../../../testHelper/seeders/PagingObject';
+import { SimplifiedPlaylistObject } from '../../../../../testHelper/seeders/SimplifiedPlaylistObject';
 import { TestApp } from '../../../../App';
 import { withFeaturedPlayListBySpotify } from '../FeaturedPlayListBySpotify';
 import type { Props } from '../Present/PresentSuggestPlayList';
 
-const mockPlaylist = casual.SimplifiedPlaylistObject({});
+const mockPlaylist = SimplifiedPlaylistObject({});
 const context = createPollyContext();
 
 const FeaturedPlayListBySpotify = withFeaturedPlayListBySpotify(
@@ -42,7 +43,7 @@ describe('Test FeaturedPlayListBySpotify', () => {
             '/v1/browse/featured-playlists': (_, res) => {
               res.status(200).json({
                 message: 'Testing title',
-                playlists: casual.PagingObject([mockPlaylist]),
+                playlists: PagingObject([mockPlaylist]),
               });
             },
           },

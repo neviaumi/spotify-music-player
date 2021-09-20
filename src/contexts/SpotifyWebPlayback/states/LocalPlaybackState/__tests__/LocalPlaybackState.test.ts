@@ -1,7 +1,7 @@
-import casual from 'casual';
-
 import { createPollyContext } from '../../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../../testHelper/polly/setupMockServer';
+import { SpotifyPlayer } from '../../../../../../testHelper/seeders/SpotifyPlayer';
+import { WebPlaybackState } from '../../../../../../testHelper/seeders/WebPlaybackState';
 import { createSpotifyAPIClientForTesting } from '../../../../../utils/createSpotifyAPIClient';
 import { Command } from '../../../typings/Command';
 import { PlaybackState } from '../../../typings/Playback';
@@ -38,8 +38,8 @@ describe('Test LocalPlaybackState', () => {
       const stateMachine = createPlaybackStateMachine(
         PlaybackState.PLAY_ON_LOCAL_PLAYBACK,
       );
-      const player = casual.SpotifyPlayer({
-        getCurrentState: jest.fn().mockResolvedValue(casual.WebPlaybackState()),
+      const player = SpotifyPlayer({
+        getCurrentState: jest.fn().mockResolvedValue(WebPlaybackState()),
       });
 
       const apiClient = createSpotifyAPIClientForTesting();
@@ -67,8 +67,8 @@ describe('Test LocalPlaybackState', () => {
       const stateMachine = createPlaybackStateMachine(
         PlaybackState.PLAY_ON_LOCAL_PLAYBACK,
       );
-      const player = casual.SpotifyPlayer({
-        getCurrentState: jest.fn().mockResolvedValue(casual.WebPlaybackState()),
+      const player = SpotifyPlayer({
+        getCurrentState: jest.fn().mockResolvedValue(WebPlaybackState()),
       });
 
       const apiClient = createSpotifyAPIClientForTesting();
@@ -105,7 +105,7 @@ describe('Test LocalPlaybackState', () => {
   });
 
   it('.getPlaybackState return current player state and current track', async () => {
-    const currentState = casual.WebPlaybackState();
+    const currentState = WebPlaybackState();
     const stateMachine = createPlaybackStateMachine(
       PlaybackState.PLAY_ON_LOCAL_PLAYBACK,
     );

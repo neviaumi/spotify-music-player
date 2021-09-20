@@ -1,6 +1,4 @@
-import casual from 'casual';
-
-function PlayHistoryObjectFactory(attributes?: any) {
+export function PlayHistoryObject(attributes?: any) {
   return {
     context: {
       external_urls: {
@@ -91,15 +89,4 @@ function PlayHistoryObjectFactory(attributes?: any) {
     },
     ...attributes,
   };
-}
-
-casual.define('PlayHistoryObject', PlayHistoryObjectFactory);
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace Casual {
-    export interface Casual {
-      PlayHistoryObject: typeof PlayHistoryObjectFactory;
-    }
-  }
 }

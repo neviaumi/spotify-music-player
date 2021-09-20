@@ -1,6 +1,4 @@
-import casual from 'casual';
-
-function TrackObjectFactory(attributes?: any) {
+export function TrackObject(attributes?: any) {
   return {
     album: {
       album_type: 'ALBUM',
@@ -80,15 +78,4 @@ function TrackObjectFactory(attributes?: any) {
     uri: 'spotify:track:4pbG9SUmWIvsROVLF0zF9s',
     ...attributes,
   };
-}
-
-casual.define('TrackObject', TrackObjectFactory);
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace Casual {
-    export interface Casual {
-      TrackObject: typeof TrackObjectFactory;
-    }
-  }
 }

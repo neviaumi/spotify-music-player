@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import casual from 'casual';
 
 import { createPollyContext } from '../../../../../../testHelper/polly/createPollyContext';
 import { setupMockServer } from '../../../../../../testHelper/polly/setupMockServer';
+import { CurrentlyPlayingContextObject } from '../../../../../../testHelper/seeders/CurrentlyPlayingContextObject';
 import { TestApp } from '../../../../../App';
 import { TrackInfo } from '../';
 
@@ -30,7 +30,7 @@ describe('Test TrackInfo', () => {
   });
 
   it('Render album link', async () => {
-    const track = casual.CurrentlyPlayingContextObject({
+    const track = CurrentlyPlayingContextObject({
       item: {
         album: {
           images: [],

@@ -1,6 +1,4 @@
-import casual from 'casual';
-
-function AlbumObjectFactory(attributes?: any) {
+export function AlbumObject(attributes?: any) {
   return {
     album_type: 'album',
     artists: [
@@ -474,15 +472,4 @@ function AlbumObjectFactory(attributes?: any) {
     uri: 'spotify:album:6wCttLq0ADzkPgtRnUihLV',
     ...attributes,
   };
-}
-
-casual.define('AlbumObject', AlbumObjectFactory);
-
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
-  export namespace Casual {
-    export interface Casual {
-      AlbumObject: typeof AlbumObjectFactory;
-    }
-  }
 }
