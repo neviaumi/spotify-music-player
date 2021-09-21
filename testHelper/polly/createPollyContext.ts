@@ -3,6 +3,7 @@ import { MODE, Polly, PollyConfig, Timing } from '@pollyjs/core';
 import RestPersister from '@pollyjs/persister-rest';
 import kebabcase from 'lodash.kebabcase';
 
+import { afterEach, beforeEach, expect } from '../test-runner';
 import { APIMock, setupMockServer } from './setupMockServer';
 
 Polly.register(XHRAdapter);

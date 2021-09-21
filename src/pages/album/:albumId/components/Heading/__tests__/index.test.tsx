@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
+import { expect, it } from '../../../../../../../testHelper/test-runner';
 import { TestApp } from '../../../../../../App';
 import { Heading } from '../index';
 

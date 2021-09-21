@@ -1,11 +1,23 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { useCallback, useState } from 'react';
 
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  jest,
+} from '../../../../testHelper/test-runner';
 import { useInterval } from '../useInterval';
 
 describe('Test useInterval', () => {
-  beforeEach(() => jest.useFakeTimers());
-  afterEach(() => jest.clearAllTimers());
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+  afterEach(() => {
+    jest.clearAllTimers();
+  });
   it.each([[true], [false]])(
     'useInterval respect enabled flag - %s',
     async enabled => {

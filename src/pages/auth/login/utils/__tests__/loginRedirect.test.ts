@@ -1,6 +1,13 @@
-import { nanoid } from 'nanoid';
 import { URL } from 'url';
 
+import {
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  jest,
+} from '../../../../../../testHelper/test-runner';
 import {
   authorization_endpoint,
   redirect_uris,
@@ -8,10 +15,6 @@ import {
   scopes_supported,
 } from '../../../../../config/openidConfiguration';
 import { getAuthorizeUrl, loginRedirect } from '../loginRedirect';
-
-jest.mock('nanoid', () => ({
-  nanoid: jest.fn(),
-}));
 
 describe('getAuthorizeUrl', () => {
   it('Should return authorization url', () => {
@@ -48,12 +51,14 @@ describe('loginRedirect', () => {
   beforeEach(() => window.localStorage.clear());
 
   it('redirect user to url', async () => {
-    // @ts-expect-error typescript can't refer the type on jest mock
-    nanoid.mockReturnValue('randomId');
     const redirectUrl = await loginRedirect({
       location: 'https://www.google.com',
     });
     expect(window.location.replace).toHaveBeenCalledWith(redirectUrl);
-    expect(window.localStorage.getItem('randomId')).toBeDefined();
+    expect(
+      Object.keys(window.localStorage).filter(key =>
+        key.startsWith('auth-session'),
+      ),
+    ).toHaveLength(1);
   });
 });

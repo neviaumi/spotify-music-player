@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
+import { describe, expect, it } from '../../../../testHelper/test-runner';
 import { AppThemeProvider } from '../../../contexts/Theme';
 import { Panel } from '../';
 

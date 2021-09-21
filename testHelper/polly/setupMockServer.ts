@@ -13,6 +13,7 @@ import { RecommendationsObject } from '../seeders/RecommendationsObject';
 import { SimplifiedPlaylistObject } from '../seeders/SimplifiedPlaylistObject';
 import { SimplifiedTrackObject } from '../seeders/SimplifiedTrackObject';
 import { TrackObject } from '../seeders/TrackObject';
+import { jest } from '../test-runner';
 
 export type MockHandlers = {
   [method in Method]?: {
