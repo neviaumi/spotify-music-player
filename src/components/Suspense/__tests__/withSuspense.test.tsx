@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
+import { expect, it } from '../../../../testHelper/test-runner';
 import { withSuspense } from '../withSuspense';
 
 const Dummy = () => <div data-testid="dummy" />;

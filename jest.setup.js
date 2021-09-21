@@ -1,6 +1,4 @@
-import '@testing-library/jest-dom';
-import 'jest-expect-message';
-
+import { jest } from '@jest/globals';
 import { configure } from '@testing-library/react';
 import crypto from 'crypto';
 import MutationObserver from 'mutation-observer';
@@ -28,4 +26,4 @@ Object.defineProperty(global, 'crypto', {
   },
 });
 
-jest.mock('./src/contexts/SpotifyWebPlayback/hooks/useLocalSpotifyPlayback');
+jest.mock(`./src/contexts/SpotifyWebPlayback/hooks/useLocalSpotifyPlayback`);

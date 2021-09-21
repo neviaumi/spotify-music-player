@@ -1,3 +1,4 @@
+import { expect, it } from '../../../testHelper/test-runner';
 import { jsonParse } from '../jsonParse';
 
 it('Input is stringify object, should parse value', () => {

@@ -1,3 +1,4 @@
+import { expect, it, jest } from '../../../testHelper/test-runner';
 import { getCurrentTimestamp } from '../getCurrentTimestamp';
 
 it('Should get current timestamp from milliseconds', () => {

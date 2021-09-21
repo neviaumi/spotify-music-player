@@ -1,6 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import {
+  describe,
+  expect,
+  it,
+  jest,
+} from '../../../../../../../testHelper/test-runner';
 import { RepeatMode } from '../../../../../../contexts/SpotifyWebPlayback/typings/RepeatMode';
 import { AppThemeProvider } from '../../../../../../contexts/Theme';
 import { ControlButtons, Props } from '../';

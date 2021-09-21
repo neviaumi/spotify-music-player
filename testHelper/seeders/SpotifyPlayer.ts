@@ -1,3 +1,5 @@
+import { jest } from '../test-runner';
+
 export function SpotifyPlayer(attributes?: any): Spotify.Player {
   return {
     _options: {

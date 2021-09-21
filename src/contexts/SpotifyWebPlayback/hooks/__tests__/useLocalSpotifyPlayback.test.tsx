@@ -1,3 +1,6 @@
+import { jest } from '@jest/globals';
+
+import { describe, expect, it } from '../../../../../testHelper/test-runner';
 import { renderHook } from '../../../../../testHelper/testing-library/react-hooks';
 import { TestAuthProvider } from '../../../Auth';
 import { useLocalSpotifyPlayback } from '../useLocalSpotifyPlayback';
@@ -25,12 +28,15 @@ describe('Test useLocalSpotifyPlayback', () => {
     const mockPlayer = {
       _options: {},
       addListener: jest.fn().mockImplementation((event, callback) => {
-        if (event === 'ready')
+        if (event === 'ready') {
+          // @ts-expect-error Missing type here
           setImmediate(() => callback({ device_id: 'mockId' }));
+        }
       }),
       connect: jest.fn(),
     };
     window.Spotify = {
+      // @ts-expect-error Missing type here
       Player: jest.fn().mockReturnValue(mockPlayer),
     };
     await waitFor(() => {

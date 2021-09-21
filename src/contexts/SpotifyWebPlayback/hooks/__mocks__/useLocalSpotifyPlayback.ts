@@ -1,3 +1,5 @@
+import { jest } from '../../../../../testHelper/test-runner';
+
 const result = {
   player: {
     _options: {

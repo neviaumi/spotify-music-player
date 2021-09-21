@@ -12,6 +12,7 @@ const jestConfig = configBuilder();
 
 module.exports = {
   ...jestConfig,
+  // bail: true,
   coverageReporters: ['text', 'text-summary', 'lcov', 'clover', 'json'],
   coverageThreshold: {
     global: {
@@ -21,6 +22,7 @@ module.exports = {
       statements: 80,
     },
   },
+  // injectGlobals: false,
   testRunner: 'jest-circus/runner',
   transformIgnorePatterns: ['node_modules/(?!(parse-ms)).*\\.js$'],
 };

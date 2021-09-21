@@ -2,6 +2,12 @@ import { render, waitFor } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { createPollyContext } from '../../../../../../testHelper/polly/createPollyContext';
+import {
+  beforeAll,
+  describe,
+  expect,
+  it,
+} from '../../../../../../testHelper/test-runner';
 import { TestApp } from '../../../../../App';
 import { Routes } from '../../../../index';
 
@@ -22,7 +28,6 @@ describe('Test /auth/login/callback', () => {
       },
     });
   });
-  // beforeEach(() => window.localStorage.clear());
 
   it('Should redirect to page that before login', async () => {
     window.localStorage.setItem(

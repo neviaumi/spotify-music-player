@@ -1,3 +1,4 @@
+import { expect, it } from '../../../testHelper/test-runner';
 import { getTrackListTotalDuration } from '../getTrackListTotalDuration';
 
 it('Should sum total duration', () => {
