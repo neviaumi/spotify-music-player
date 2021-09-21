@@ -4,7 +4,7 @@ import { renderHook } from '../../../testHelper/testing-library/react-hooks';
 import { TestApp } from '../../App';
 import { useSpotifyAPIClient } from '../useSpotifyAPIClient';
 
-const context = createPollyContext({
+const context = createPollyContext(import.meta.url, {
   pollyConfig: { mode: 'passthrough' },
 });
 

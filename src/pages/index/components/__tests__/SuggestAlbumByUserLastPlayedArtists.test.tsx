@@ -15,7 +15,7 @@ import { withSuggestAlbumByUserLastPlayedArtists } from '../SuggestAlbumByUserLa
 
 const mockPlayHistory = PlayHistoryObject({});
 const mockTrack = SimplifiedTrackObject({});
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 
 const SuggestAlbumByUserLastPlayedArtists =
   withSuggestAlbumByUserLastPlayedArtists(

@@ -4,6 +4,7 @@ import type { RouterProps } from 'react-router';
 import { BrowserRouter, Router } from 'react-router-dom';
 
 import { Suspense } from './components/Suspense/withSuspense';
+import { AppConfigurationProvider } from './contexts/AppConfigureation/AppConfiguration';
 import {
   AuthContextProvider,
   TestAuthProvider,
@@ -24,7 +25,9 @@ export function App() {
       <DataFetchingConfigProvider>
         <BrowserRouter>
           <AuthContextProvider>
-            <Routes />
+            <AppConfigurationProvider>
+              <Routes />
+            </AppConfigurationProvider>
           </AuthContextProvider>
         </BrowserRouter>
       </DataFetchingConfigProvider>
@@ -52,9 +55,11 @@ export function TestApp({
           })}
         >
           <TestAuthProvider {..._TestAuthProviderProps}>
-            <SpotifyWebPlaybackProvider>
-              <Suspense>{children}</Suspense>
-            </SpotifyWebPlaybackProvider>
+            <AppConfigurationProvider>
+              <SpotifyWebPlaybackProvider>
+                <Suspense>{children}</Suspense>
+              </SpotifyWebPlaybackProvider>
+            </AppConfigurationProvider>
           </TestAuthProvider>
         </Router>
       </TestDataFetchingConfigProvider>

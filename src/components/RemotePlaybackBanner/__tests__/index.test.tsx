@@ -6,7 +6,7 @@ import { describe, expect, it, jest } from '../../../../testHelper/test-runner';
 import { TestApp } from '../../../App';
 import { RemotePlaybackBannerWrapper } from '../';
 
-const context = createPollyContext({
+const context = createPollyContext(import.meta.url, {
   pollyConfig: {
     mode: 'passthrough',
   },

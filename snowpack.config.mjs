@@ -12,19 +12,22 @@ export default {
     port: 3000,
   },
   exclude: [
+    '**/node_modules/**/*',
     '**/.github/**/*',
     '**/.git/**/*',
     '**/coverage/**/*',
     '**/scripts/**/*',
     '**/.husky/**/*',
     '**/.idea/**/*',
+    '**/recordings/**/*',
     '**/commitlint.config.js',
     '**/npmpackagejsonlint.config.js',
     '**/package.json',
     '**/package-lock.json',
     '**/tsconfig.json',
     '**/tsconfig.tsbuildinfo',
-    '**/web-test-runner.config.mjs',
+    '**/web-test-runner.config.js',
+    '**/snowpack.config.mjs',
     '**/*.md',
     '**/*.yml',
     '**/*.toml',
@@ -42,10 +45,9 @@ export default {
     treeshake: true,
   },
   packageOptions: {
-    // https://github.com/snowpackjs/snowpack/issues/3682
-    external: ['crypto', 'path', 'util', 'url'],
-
+    external: ['crypto'],
     polyfillNode: true,
+    source: 'local',
   },
   plugins: [
     '@snowpack/plugin-react-refresh',

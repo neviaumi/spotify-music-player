@@ -1,5 +1,13 @@
 module.exports = {
   extends: ['@busybox'],
+  overrides: [
+    {
+      files: ['*.test.tsx', '*.test.ts'],
+      rules: {
+        '@typescript-eslint/ban-ts-comment': 'off',
+      },
+    },
+  ],
   rules: {
     'no-restricted-globals': [
       'error',

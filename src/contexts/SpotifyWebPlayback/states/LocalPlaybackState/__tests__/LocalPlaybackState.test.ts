@@ -4,6 +4,7 @@ import { SpotifyPlayer } from '../../../../../../testHelper/seeders/SpotifyPlaye
 import { WebPlaybackState } from '../../../../../../testHelper/seeders/WebPlaybackState';
 import {
   describe,
+  each,
   expect,
   it,
   jest,
@@ -15,19 +16,26 @@ import { RepeatMode } from '../../../typings/RepeatMode';
 import { createPlaybackStateMachine } from '../../PlaybackState';
 import { LocalPlaybackState } from '../index';
 
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 
 describe('Test LocalPlaybackState', () => {
-  it.each`
-    command                   | reactedAPI                          | payload
-    ${Command.SetRepeatMode} | ${['PUT', '/v1/me/player/repeat']} | ${{
-  repeatMode: RepeatMode.Off,
-}}
-    ${Command.SetShuffleMode} | ${['PUT', '/v1/me/player/shuffle']} | ${{ shouldPlayOnShuffleMode: true }}
-    ${Command.StartPlayback}  | ${['PUT', '/v1/me/player/play']}    | ${undefined}
-  `(
-    '.execute react to $command by $reactedAPI',
-    async ({ command, reactedAPI, payload }) => {
+  each.objects([
+    ['command', 'reactedAPI', 'payload'],
+    [
+      Command.SetRepeatMode,
+      ['PUT', '/v1/me/player/repeat'],
+      {
+        repeatMode: 'off',
+      },
+    ],
+    [
+      Command.SetShuffleMode,
+      ['PUT', '/v1/me/player/shuffle'],
+      { shouldPlayOnShuffleMode: true },
+    ],
+    [Command.StartPlayback, ['PUT', '/v1/me/player/play'], undefined],
+  ])(({ command, reactedAPI, payload }) => {
+    it(`.execute react to ${command} by ${reactedAPI}`, async () => {
       const [method, route] = reactedAPI;
       const apiHandler = jest
         .fn()
@@ -56,20 +64,19 @@ describe('Test LocalPlaybackState', () => {
       });
       await playback.execute(command, payload);
       expect(apiHandler).toHaveBeenCalled();
-    },
-  );
+    });
+  });
 
-  it.each`
-    command                   | reactedMethod      | payload
-    ${Command.NextTrack}      | ${'nextTrack'}     | ${undefined}
-    ${Command.PausePlayback}  | ${'pause'}         | ${undefined}
-    ${Command.PreviousTrack}  | ${'previousTrack'} | ${undefined}
-    ${Command.ResumePlayback} | ${'resume'}        | ${undefined}
-    ${Command.SeekPlayback}   | ${'seek'}          | ${{ position_ms: 0 }}
-    ${Command.SetVolume}      | ${'setVolume'}     | ${{ volume: 100 }}
-  `(
-    '.execute react to $command by call localPlayback.$reactedMethod',
-    async ({ command, reactedMethod, payload }) => {
+  each.objects([
+    ['command', 'reactedMethod', 'payload'],
+    [Command.NextTrack, 'nextTrack', undefined],
+    [Command.PausePlayback, 'pause', undefined],
+    [Command.PreviousTrack, 'previousTrack', undefined],
+    [Command.ResumePlayback, 'resume', undefined],
+    [Command.SeekPlayback, 'seek', { position_ms: 0 }],
+    [Command.SetVolume, 'setVolume', { volume: 100 }],
+  ])(({ command, reactedMethod, payload }) => {
+    it(`.execute react to ${command} by call localPlayback.${reactedMethod}`, async () => {
       const stateMachine = createPlaybackStateMachine(
         PlaybackState.PLAY_ON_LOCAL_PLAYBACK,
       );
@@ -84,10 +91,11 @@ describe('Test LocalPlaybackState', () => {
         stateMachine,
       });
       await playback.execute(command, payload);
-      // @ts-expect-error
+      // @ts-expect-error skipping type
       expect(player[reactedMethod]).toHaveBeenCalled();
-    },
-  );
+    });
+  });
+
   it('.getPlaybackState transit state to PLAY_ON_REMOTE_PLAYBACK if state unavailable', async () => {
     const stateMachine = createPlaybackStateMachine(
       PlaybackState.PLAY_ON_LOCAL_PLAYBACK,

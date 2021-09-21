@@ -15,7 +15,7 @@ import { withSuggestAlbumByUserTopArtists } from '../SuggestAlbumByUserTopArtist
 
 const mockArtist = ArtistObject({});
 const mockTrack = SimplifiedTrackObject({});
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 
 const SuggestPlayListByTopArtist = withSuggestAlbumByUserTopArtists(
   ({ onClickSuggestion, suggestions, title }: Props) => {

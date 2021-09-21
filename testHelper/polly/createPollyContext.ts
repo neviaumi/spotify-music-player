@@ -3,28 +3,18 @@ import { MODE, Polly, PollyConfig, Timing } from '@pollyjs/core';
 import RestPersister from '@pollyjs/persister-rest';
 import kebabcase from 'lodash.kebabcase';
 
-import { afterEach, beforeEach, expect } from '../test-runner';
-import { APIMock, setupMockServer } from './setupMockServer';
+import { afterEach, beforeEach } from '../test-runner';
 
 Polly.register(XHRAdapter);
 Polly.register(RestPersister);
 
 export function createPollyContext(
+  testPath: string,
   config: {
-    appConfig?: {
-      enableMockServer: boolean;
-      mockRouteHandlers?: APIMock;
-    };
     pollyConfig?: PollyConfig;
   } = {},
 ) {
-  const {
-    pollyConfig = {},
-    appConfig = {
-      enableMockServer: false,
-      mockRouteHandlers: {},
-    },
-  } = config;
+  const { pollyConfig = {} } = config;
   const env = import.meta.env;
   const pollyMode: MODE =
     env.SNOWPACK_PUBLIC_POLLY_MODE || pollyConfig.mode || 'replay';
@@ -51,8 +41,11 @@ export function createPollyContext(
     polly: Polly;
   } = {};
   // https://netflix.github.io/pollyjs/#/test-frameworks/jest-jasmine?id=test-hook-ordering
-  beforeEach(() => {
-    const { testPath: currentTestPath, currentTestName } = expect.getState();
+  beforeEach(async function (this: any) {
+    const currentTest = this.currentTest;
+    const { currentTestName } = {
+      currentTestName: `${currentTest.fullTitle()}`,
+    };
     context.polly = new Polly(kebabcase(currentTestName), {
       ...pollyOptions,
       persisterOptions: {
@@ -86,7 +79,7 @@ export function createPollyContext(
           throw new Error(
             [
               '\n',
-              currentTestPath,
+              testPath,
               currentTestName,
               `throw pollyJS Error - ${err.message}`,
               `${req.method} ${req.absoluteUrl}`,
@@ -94,11 +87,6 @@ export function createPollyContext(
           );
         }
       });
-    if (appConfig?.enableMockServer) {
-      setupMockServer(context.polly, {
-        handlers: appConfig.mockRouteHandlers,
-      });
-    }
   });
   afterEach(async () => {
     await context.polly?.stop();

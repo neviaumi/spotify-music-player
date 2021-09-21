@@ -1,0 +1,13 @@
+diff --git a/node_modules/jest-message-util/build/index.js b/node_modules/jest-message-util/build/index.js
+index 516b60f..35ada3e 100644
+--- a/node_modules/jest-message-util/build/index.js
++++ b/node_modules/jest-message-util/build/index.js
+@@ -17,7 +17,7 @@ var _codeFrame = require('@babel/code-frame');
+ 
+ var _chalk = _interopRequireDefault(require('chalk'));
+ 
+-var fs = _interopRequireWildcard(require('graceful-fs'));
++var fs = _interopRequireWildcard(require('fs'));
+ 
+ var _micromatch = _interopRequireDefault(require('micromatch'));
+ 

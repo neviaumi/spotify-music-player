@@ -4,7 +4,7 @@ import { renderHook } from '../../../../../testHelper/testing-library/react-hook
 import { TestApp } from '../../../../App';
 import { useRecentPlayedTrack } from '../useRecentPlayedTrack';
 
-const _context = createPollyContext();
+const _context = createPollyContext(import.meta.url);
 it('Return user recently played track', async () => {
   const { result, waitForNextUpdate } = renderHook(
     () => useRecentPlayedTrack(),

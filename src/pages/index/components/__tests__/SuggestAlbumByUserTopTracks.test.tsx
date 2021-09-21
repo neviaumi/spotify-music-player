@@ -17,7 +17,7 @@ const mockTrack = SimplifiedTrackObject({
   name: 'Day Tripper',
 });
 
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 
 const SuggestPlayListByTopTrack = withSuggestAlbumByUserTopTracks(
   ({ onClickSuggestion, suggestions, title }: Props) => {

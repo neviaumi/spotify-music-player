@@ -10,7 +10,7 @@ import {
 import { TestApp } from '../../../../../../App';
 import { AlbumTracksList } from '../index';
 
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 
 describe('Test Album track list', () => {
   it('render TrackList with one Item', async () => {

@@ -12,7 +12,7 @@ import {
 import { TestApp } from '../../../../../App';
 import { TrackInfo } from '../';
 
-const context = createPollyContext({});
+const context = createPollyContext(import.meta.url, {});
 
 describe('Test TrackInfo', () => {
   it('Render nothing if current playing track is undefined', () => {

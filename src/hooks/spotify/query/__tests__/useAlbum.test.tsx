@@ -4,7 +4,7 @@ import { renderHook } from '../../../../../testHelper/testing-library/react-hook
 import { TestApp } from '../../../../App';
 import { useAlbum } from '../useAlbum';
 
-createPollyContext();
+createPollyContext(import.meta.url);
 describe('Test useAlbum', () => {
   it('fetch the album', async () => {
     const { result, waitFor } = renderHook(

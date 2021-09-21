@@ -13,13 +13,19 @@ import {
 import { CurrentlyPlayingContextObject } from '../../../../testHelper/seeders/CurrentlyPlayingContextObject';
 import { CursorPagingObject } from '../../../../testHelper/seeders/PagingObject';
 import { PlayHistoryObject } from '../../../../testHelper/seeders/PlayHistoryObject';
-import { describe, expect, it, jest } from '../../../../testHelper/test-runner';
+import {
+  describe,
+  each,
+  expect,
+  it,
+  jest,
+} from '../../../../testHelper/test-runner';
 import { TestApp } from '../../../App';
 import type { TrackSimplified } from '../../../hooks/spotify/typings/Track';
 import { useSpotifyWebPlayback } from '../';
 import { RepeatMode } from '../typings/RepeatMode';
 
-const context = createPollyContext({});
+const context = createPollyContext(import.meta.url, {});
 
 function createAPIMock(handlers?: MockHandlers) {
   setupMockServer(context.polly, {
@@ -136,13 +142,12 @@ describe('Test SpotifyWebPlayback', () => {
     });
   });
 
-  it.each`
-    currentShuffleMode
-    ${true}
-    ${false}
-  `(
-    '.toggleShuffleMode should call API with reversed of $currentShuffleMode',
-    async ({ currentShuffleMode }) => {
+  each.objects<{ currentShuffleMode: boolean }>([
+    ['currentShuffleMode'],
+    [true],
+    [false],
+  ])(({ currentShuffleMode }) => {
+    it(`.toggleShuffleMode should call API with reversed of ${currentShuffleMode}`, async () => {
       const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
         res.status(204);
       });
@@ -181,8 +186,8 @@ describe('Test SpotifyWebPlayback', () => {
         device_id: 'mock-remote-player-device-id',
         state: currentShuffleMode ? 'false' : 'true',
       });
-    },
-  );
+    });
+  });
 
   it('.playPreviousTrack should seek to beginning of track', async () => {
     const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
@@ -428,13 +433,15 @@ describe('Test SpotifyWebPlayback', () => {
     });
   });
 
-  it.each`
-    isPaused | expectedCallAPI
-    ${false} | ${'/v1/me/player/pause'}
-    ${true}  | ${'/v1/me/player/play'}
-  `(
-    '.togglePlayMode should call $expectedCallAPI when device active and paused is $isPaused',
-    async ({ expectedCallAPI, isPaused }) => {
+  each.objects<{
+    expectedCallAPI: string;
+    isPaused: boolean;
+  }>([
+    ['isPaused', 'expectedCallAPI'],
+    [false, '/v1/me/player/pause'],
+    [true, '/v1/me/player/play'],
+  ])(({ expectedCallAPI, isPaused }) => {
+    it(`.togglePlayMode should call ${expectedCallAPI} when device active and paused is ${isPaused}`, async () => {
       const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
         res.status(204);
       });
@@ -474,30 +481,56 @@ describe('Test SpotifyWebPlayback', () => {
         device_id: 'mock-remote-player-device-id',
       });
       expect(req.body).toEqual(null);
-    },
-  );
+    });
+  });
 
-  it.each`
-    case | item | expectedCallAPI | expectedBody
-    ${'album available'} | ${{
-  album: {
-    uri: 'album:uri',
-  },
-  name: 'Dummy Track',
-  track_number: 1,
-}} | ${'/v1/me/player/play'} | ${{
-  context_uri: 'album:uri',
-  offset: {
-    position: 0,
-  },
-}}
-    ${'album missing'} | ${{
-  name: 'Dummy Track',
-  uri: 'track:uri',
-}} | ${'/v1/me/player/play'} | ${{ uris: ['track:uri'] }}
-  `(
-    '.togglePlayMode should call $expectedCallAPI when device inactive and $case',
-    async ({ item, expectedCallAPI, expectedBody }) => {
+  each.objects<{
+    case: string;
+    expectedBody: {
+      context_uri: string;
+      offset: {
+        position: number;
+      };
+      uris?: string[];
+    };
+    expectedCallAPI: string;
+    item: {
+      album?: {
+        uri: string;
+      };
+      name: string;
+      track_number: number;
+    };
+  }>([
+    ['case', 'item', 'expectedCallAPI', 'expectedBody'],
+    [
+      'album available',
+      {
+        album: {
+          uri: 'album:uri',
+        },
+        name: 'Dummy Track',
+        track_number: 1,
+      },
+      '/v1/me/player/play',
+      {
+        context_uri: 'album:uri',
+        offset: {
+          position: 0,
+        },
+      },
+    ],
+    [
+      'album missing',
+      {
+        name: 'Dummy Track',
+        uri: 'track:uri',
+      },
+      '/v1/me/player/play',
+      { uris: ['track:uri'] },
+    ],
+  ])(({ item, expectedCallAPI, expectedBody, case: testCase }) => {
+    it(`.togglePlayMode should call ${expectedCallAPI} when device inactive and ${testCase}`, async () => {
       const apiHandler = jest.fn().mockImplementation((_, res: Response) => {
         res.status(204);
       });
@@ -549,6 +582,6 @@ describe('Test SpotifyWebPlayback', () => {
         device_id: 'mock-local-player-device-id',
       });
       expect(req.body).toEqual(JSON.stringify(expectedBody));
-    },
-  );
+    });
+  });
 });

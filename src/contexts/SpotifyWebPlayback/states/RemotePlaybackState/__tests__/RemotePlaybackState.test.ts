@@ -7,7 +7,7 @@ import { PlaybackState } from '../../../typings/Playback';
 import { createPlaybackStateMachine } from '../../PlaybackState';
 import { RemotePlaybackState } from '../index';
 
-const context = createPollyContext({});
+const context = createPollyContext(import.meta.url, {});
 
 describe('RemotePlaybackState', () => {
   it('.getPlaybackState will transit state to IDLE without error when all fallback 204', async () => {

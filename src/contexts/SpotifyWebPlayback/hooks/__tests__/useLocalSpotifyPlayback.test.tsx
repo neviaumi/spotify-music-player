@@ -1,11 +1,13 @@
-import { jest } from '@jest/globals';
-
-import { describe, expect, it } from '../../../../../testHelper/test-runner';
+import {
+  describe,
+  expect,
+  it,
+  jest,
+} from '../../../../../testHelper/test-runner';
 import { renderHook } from '../../../../../testHelper/testing-library/react-hooks';
+import { AppConfigurationProvider } from '../../../AppConfigureation/AppConfiguration';
 import { TestAuthProvider } from '../../../Auth';
 import { useLocalSpotifyPlayback } from '../useLocalSpotifyPlayback';
-
-jest.unmock('../useLocalSpotifyPlayback');
 
 describe('Test useLocalSpotifyPlayback', () => {
   it('Create local spotify playback', async () => {
@@ -16,7 +18,11 @@ describe('Test useLocalSpotifyPlayback', () => {
         }),
       {
         wrapper: ({ children }) => (
-          <TestAuthProvider>{children}</TestAuthProvider>
+          <TestAuthProvider>
+            <AppConfigurationProvider appMode={'development'}>
+              {children}
+            </AppConfigurationProvider>
+          </TestAuthProvider>
         ),
       },
     );
@@ -29,14 +35,12 @@ describe('Test useLocalSpotifyPlayback', () => {
       _options: {},
       addListener: jest.fn().mockImplementation((event, callback) => {
         if (event === 'ready') {
-          // @ts-expect-error Missing type here
-          setImmediate(() => callback({ device_id: 'mockId' }));
+          setTimeout(() => callback({ device_id: 'mockId' }));
         }
       }),
       connect: jest.fn(),
     };
     window.Spotify = {
-      // @ts-expect-error Missing type here
       Player: jest.fn().mockReturnValue(mockPlayer),
     };
     await waitFor(() => {

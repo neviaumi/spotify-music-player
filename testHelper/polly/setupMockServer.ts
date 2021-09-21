@@ -66,6 +66,15 @@ function withMockHandler(
   };
 }
 
+export function createMockHandler(handler: InterceptHandler) {
+  return (
+    jest
+      // @ts-expect-error no type here
+      .fn<void, Parameters<InterceptHandler>>()
+      .mockImplementation(handler)
+  );
+}
+
 export function setupMockServer(
   polly: Polly,
   options: {

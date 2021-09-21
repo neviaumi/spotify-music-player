@@ -2,8 +2,10 @@ import { render, waitFor } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { createPollyContext } from '../../../../../../testHelper/polly/createPollyContext';
+import { setupMockServer } from '../../../../../../testHelper/polly/setupMockServer';
 import {
   beforeAll,
+  beforeEach,
   describe,
   expect,
   it,
@@ -11,11 +13,7 @@ import {
 import { TestApp } from '../../../../../App';
 import { Routes } from '../../../../index';
 
-createPollyContext({
-  appConfig: {
-    enableMockServer: true,
-  },
-});
+const context = createPollyContext(import.meta.url, {});
 describe('Test /auth/login/callback', () => {
   beforeAll(() => {
     const orgWindowLocation = window.location;
@@ -29,6 +27,7 @@ describe('Test /auth/login/callback', () => {
     });
   });
 
+  beforeEach(() => setupMockServer(context.polly));
   it('Should redirect to page that before login', async () => {
     window.localStorage.setItem(
       'randomId',

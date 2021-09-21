@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { useCallback, useState } from 'react';
 
 import {
@@ -18,9 +18,9 @@ describe('Test useInterval', () => {
   afterEach(() => {
     jest.clearAllTimers();
   });
-  it.each([[true], [false]])(
-    'useInterval respect enabled flag - %s',
-    async enabled => {
+
+  [[true], [false]].forEach(([enabled]) => {
+    it(`useInterval respect enabled flag - ${enabled}`, async () => {
       function Dummy() {
         const [callCount, setCallCount] = useState(0);
         useInterval(
@@ -56,18 +56,9 @@ describe('Test useInterval', () => {
           name: 'IntervalCallCount',
         }),
       ).toHaveTextContent(enabled ? '1' : '0');
+    });
+  });
 
-      jest.runAllTimers();
-
-      await waitFor(() =>
-        expect(
-          screen.findByRole('heading', {
-            name: 'IntervalCallCount',
-          }),
-        ).resolves.toHaveTextContent(enabled ? '2' : '0'),
-      );
-    },
-  );
   it('working if handler throw error', () => {
     function Dummy() {
       const [callCount] = useState(0);

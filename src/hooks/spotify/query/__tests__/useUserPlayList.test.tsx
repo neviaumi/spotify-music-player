@@ -4,7 +4,7 @@ import { renderHook } from '../../../../../testHelper/testing-library/react-hook
 import { TestApp } from '../../../../App';
 import { useUserPlayList } from '../useUserPlayList';
 
-const _context = createPollyContext();
+const _context = createPollyContext(import.meta.url);
 it('Return user playlist', async () => {
   const { result, waitForNextUpdate } = renderHook(() => useUserPlayList(), {
     wrapper: ({ children }) => <TestApp>{children}</TestApp>,
