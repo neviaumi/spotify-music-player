@@ -1,5 +1,5 @@
 import { getConfig } from '@testing-library/react';
-import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
+import { renderHook as originalRenderHook } from '@testing-library/react-hooks/dom';
 
 export const renderHook: typeof originalRenderHook = function renderHook<
   TProps,

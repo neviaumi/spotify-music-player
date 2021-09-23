@@ -14,7 +14,7 @@ import { PlaybackState } from '../../../typings/Playback';
 import { createPlaybackStateMachine } from '../../PlaybackState';
 import { IdlePlaybackState } from '../index';
 
-const context = createPollyContext({});
+const context = createPollyContext(import.meta.url, {});
 describe('IdlePlaybackState', () => {
   it(`.getPlaybackState will transit to ${PlaybackState.PLAY_ON_REMOTE_PLAYBACK} if currently playing track is_playing is true`, async () => {
     const currentlyPlaying = CurrentlyPlayingObject({

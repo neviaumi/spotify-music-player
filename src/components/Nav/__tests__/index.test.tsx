@@ -5,7 +5,7 @@ import { describe, expect, it } from '../../../../testHelper/test-runner';
 import { TestApp } from '../../../App';
 import { Nav } from '../';
 
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 describe('Test render Nav component', () => {
   it('Should render without error', async () => {
     context.polly.server.any().intercept((_, res) => {

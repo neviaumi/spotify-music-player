@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import retry from 'retry';
 
+import { useAppConfigurationContext } from '../../AppConfigureation/AppConfiguration';
 import { useAuthContext } from '../../Auth/AuthContext';
 
 const playbackScriptId = 'spotify-web-playback-script';
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export function useLocalSpotifyPlayback({ onPlayerStateChanged }: Props) {
+  const { featuresEnabled } = useAppConfigurationContext();
   const [isPlayerScriptLoaded, togglePlayerScriptLoaded] = useState(
     document.getElementById(playbackScriptId) !== null,
   );
@@ -29,6 +31,7 @@ export function useLocalSpotifyPlayback({ onPlayerStateChanged }: Props) {
   );
   useEffect(
     function loadSpotifyPlayScript() {
+      if (!featuresEnabled.localPlayback) return;
       if (isPlayerScriptLoaded) return;
       const script = document.createElement('script');
       script.src = 'https://sdk.scdn.co/spotify-player.js';
@@ -47,6 +50,7 @@ export function useLocalSpotifyPlayback({ onPlayerStateChanged }: Props) {
   );
   useEffect(
     function setupSpotifyPlayer() {
+      if (!featuresEnabled.localPlayback) return;
       if (!isPlayerScriptLoaded || player) return;
       const playerInstance = new window.Spotify.Player({
         getOAuthToken(callback) {
@@ -85,6 +89,17 @@ export function useLocalSpotifyPlayback({ onPlayerStateChanged }: Props) {
       player,
     ],
   );
+  if (!featuresEnabled.localPlayback)
+    return {
+      player: {
+        _options: {
+          id: 'mock-local-player-device-id',
+        },
+        getCurrentState: () => undefined,
+        getVolume: () => 0,
+      } as unknown as Spotify.Player,
+      playerError: undefined,
+    };
 
   return {
     player,

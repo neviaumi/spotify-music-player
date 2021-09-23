@@ -4,7 +4,7 @@ import { renderHook } from '../../../testHelper/testing-library/react-hooks';
 import { TestApp } from '../../App';
 import { useUserCountry } from '../useUserCountry';
 
-createPollyContext();
+createPollyContext(import.meta.url);
 
 describe('useUserCountry', () => {
   it('should return my current location - hk', async () => {

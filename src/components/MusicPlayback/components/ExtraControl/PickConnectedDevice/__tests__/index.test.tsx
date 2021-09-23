@@ -14,7 +14,7 @@ import {
 import { TestApp } from '../../../../../../App';
 import { PickConnectedDevice } from '../index';
 
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 describe('ConnectedDeviceList', () => {
   it('Click item in list will transfer playback', async () => {
     const device = DeviceObject();

@@ -12,7 +12,7 @@ import { withFeaturedPlayListBySpotify } from '../FeaturedPlayListBySpotify';
 import type { Props } from '../Present/PresentSuggestPlayList';
 
 const mockPlaylist = SimplifiedPlaylistObject({});
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 
 const FeaturedPlayListBySpotify = withFeaturedPlayListBySpotify(
   ({ title, suggestions, onClickSuggestion }: Props) => {

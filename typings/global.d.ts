@@ -1,11 +1,14 @@
 import { MODE } from '@pollyjs/core';
+import expect from 'expect';
 
 declare global {
   namespace NodeJS {
     interface Global {
       MutationObserver: any;
-      jasmine: { testPath: string };
     }
+  }
+  interface Window {
+    expect: expect;
   }
   interface ImportMeta {
     env: {

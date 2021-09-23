@@ -1,17 +1,15 @@
 import { createPollyContext } from '../../../../../testHelper/polly/createPollyContext';
-import { setupMockServer } from '../../../../../testHelper/polly/setupMockServer';
-import { DeviceObject } from '../../../../../testHelper/seeders/DeviceObject';
 import {
-  describe,
-  expect,
-  it,
-  jest,
-} from '../../../../../testHelper/test-runner';
+  createMockHandler,
+  setupMockServer,
+} from '../../../../../testHelper/polly/setupMockServer';
+import { DeviceObject } from '../../../../../testHelper/seeders/DeviceObject';
+import { describe, expect, it } from '../../../../../testHelper/test-runner';
 import { renderHook } from '../../../../../testHelper/testing-library/react-hooks';
 import { TestApp } from '../../../../App';
 import { useAvailableDevices } from '../useAvailableDevices';
 
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 
 describe('Test useAvailableDevices', () => {
   it('Should call API and report empty Array', async () => {
@@ -19,7 +17,7 @@ describe('Test useAvailableDevices', () => {
       handlers: {
         spotifyAPI: {
           get: {
-            '/v1/me/player/devices': jest.fn().mockImplementation((_, res) => {
+            '/v1/me/player/devices': createMockHandler((_, res) => {
               res.status(200).json({
                 devices: [],
               });
@@ -32,8 +30,7 @@ describe('Test useAvailableDevices', () => {
       wrapper: ({ children }) => <TestApp>{children}</TestApp>,
     });
     await waitFor(() => expect(result.current.data).toBeDefined());
-    // @ts-expect-error
-    expect(result.current.data.data).toStrictEqual({
+    expect(result.current.data?.data).toStrictEqual({
       devices: [],
     });
   });
@@ -44,7 +41,7 @@ describe('Test useAvailableDevices', () => {
       handlers: {
         spotifyAPI: {
           get: {
-            '/v1/me/player/devices': jest.fn().mockImplementation((_, res) => {
+            '/v1/me/player/devices': createMockHandler((_, res) => {
               res.status(200).json({
                 devices,
               });
@@ -57,8 +54,7 @@ describe('Test useAvailableDevices', () => {
       wrapper: ({ children }) => <TestApp>{children}</TestApp>,
     });
     await waitFor(() => expect(result.current.data).toBeDefined());
-    // @ts-expect-error
-    expect(result.current.data.data).toStrictEqual({
+    expect(result.current.data?.data).toStrictEqual({
       devices,
     });
   });

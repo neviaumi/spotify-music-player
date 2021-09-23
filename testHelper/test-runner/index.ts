@@ -1,16 +1,12 @@
-/* eslint-disable no-restricted-globals */
+/* eslint-disable no-restricted-globals,import/no-unresolved */
 
-// import { expect as orgExcept, jest as orgJest } from '@jest/globals';
-// @ts-expect-error no type for that
-import * as matchers from '@testing-library/jest-dom/matchers';
-// @ts-expect-error no type for that
-import withMessage from 'jest-expect-message/dist/withMessage';
-//
-// orgExcept.extend(matchers);
-// export const expect = withMessage(orgExcept);
-// export const jest = global.jest ?? orgJest;
-//
-// export { afterEach, beforeAll, beforeEach, describe, it } from '@jest/globals';
+import { ModuleMocker } from 'jest-mock';
+
+import { array } from './each/array';
+import { objects } from './each/objects';
+import { expect } from './expect';
+
+const moduleMocker = new ModuleMocker(window);
 
 const {
   describe: reDescribe,
@@ -21,24 +17,26 @@ const {
   expect: reExpect,
   jest: reJest,
 } = {
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  jest,
+  afterEach: window.afterEach,
+  beforeAll: window.before,
+  beforeEach: window.beforeEach,
+  describe: window.describe,
+  expect: expect,
+  it: window.it,
+  jest: {
+    fn: () => moduleMocker.fn<any, any>(),
+    spyOn: moduleMocker.spyOn.bind(moduleMocker),
+  },
 };
 
-reExpect.extend(matchers);
-const reExpectWithExtension = withMessage(reExpect);
+export const each = { array, objects };
 
 export {
   reAfterEach as afterEach,
   reBeforeAll as beforeAll,
   reBeforeEach as beforeEach,
   reDescribe as describe,
-  reExpectWithExtension as expect,
+  reExpect as expect,
   reIt as it,
   reJest as jest,
 };

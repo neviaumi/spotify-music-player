@@ -4,7 +4,7 @@ import { renderHook } from '../../../../../testHelper/testing-library/react-hook
 import { TestApp } from '../../../../App';
 import { useFeaturedPlaylists } from '../useFeaturedPlaylists';
 
-createPollyContext();
+createPollyContext(import.meta.url);
 describe('useFeaturedPlaylists', () => {
   it('get featured playlist', async () => {
     const { result, waitFor } = renderHook(() => useFeaturedPlaylists(), {

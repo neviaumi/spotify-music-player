@@ -10,7 +10,7 @@ import { TestApp } from '../../../../App';
 import { PresentPlayList, withPlayList } from '../';
 
 describe('render PresentPlayList', () => {
-  const context = createPollyContext();
+  const context = createPollyContext(import.meta.url);
   const playlist = PlaylistObject();
   it('should render heading', async () => {
     setupMockServer(context.polly, {});
@@ -34,7 +34,7 @@ describe('render withPlayList HOC', () => {
       </div>
     );
   });
-  createPollyContext();
+  createPollyContext(import.meta.url);
   it('pass response to wrapper', async () => {
     const history = createMemoryHistory({
       initialEntries: ['/playlist/37i9dQZF1DXdLtD0qszB1w'],

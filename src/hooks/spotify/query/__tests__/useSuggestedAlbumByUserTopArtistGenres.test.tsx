@@ -4,7 +4,7 @@ import { renderHook } from '../../../../../testHelper/testing-library/react-hook
 import { TestApp } from '../../../../App';
 import { useSuggestedAlbumByUserTopArtistGenres } from '../useSuggestedAlbumByUserTopArtistGenres';
 
-const _context = createPollyContext();
+const _context = createPollyContext(import.meta.url);
 it('Return albums of user by top artist genres', async () => {
   const { result, waitFor } = renderHook(
     () => useSuggestedAlbumByUserTopArtistGenres(),

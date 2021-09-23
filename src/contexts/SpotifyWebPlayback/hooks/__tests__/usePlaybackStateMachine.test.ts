@@ -1,4 +1,9 @@
-import { describe, expect, it } from '../../../../../testHelper/test-runner';
+import {
+  describe,
+  each,
+  expect,
+  it,
+} from '../../../../../testHelper/test-runner';
 import { renderHook } from '../../../../../testHelper/testing-library/react-hooks';
 import { IdlePlaybackState } from '../../states/IdlePlaybackState';
 import { LocalPlaybackState } from '../../states/LocalPlaybackState';
@@ -69,9 +74,11 @@ while state is ${PlaybackState.PLAY_ON_LOCAL_PLAYBACK} and localPlayback unavail
     ).toBeInstanceOf(IdlePlaybackState);
   });
 
-  it.each([[PlaybackState.INIT], [PlaybackState.PLAY_ON_REMOTE_PLAYBACK]])(
-    'Use RemotePlaybackState for get current playback state while state is %s',
-    async currentState => {
+  each.array<[PlaybackState]>([
+    [PlaybackState.INIT],
+    [PlaybackState.PLAY_ON_REMOTE_PLAYBACK],
+  ])(currentState => {
+    it(`Use RemotePlaybackState for get current playback state while state is ${currentState}`, async () => {
       const { result } = renderHook(() =>
         usePlaybackStateMachine(currentState),
       );
@@ -80,6 +87,6 @@ while state is ${PlaybackState.PLAY_ON_LOCAL_PLAYBACK} and localPlayback unavail
           apiClient: {} as any,
         }),
       ).toBeInstanceOf(RemotePlaybackState);
-    },
-  );
+    });
+  });
 });

@@ -10,7 +10,7 @@ import { TestApp } from '../../../App';
 import { UnAuthenticatedError } from '../../../errors/UnAuthenticatedError';
 import { useAuthContext } from '../AuthContext';
 
-const context = createPollyContext();
+const context = createPollyContext(import.meta.url);
 
 describe('AuthContext', () => {
   beforeEach(() => window.localStorage.clear());
