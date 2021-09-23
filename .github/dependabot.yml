@@ -4,8 +4,6 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
-    ignore:
-      - dependency-name: 'snowpack'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
