@@ -11,27 +11,10 @@ export default {
   devOptions: {
     port: 3000,
   },
-  exclude: [
-    '**/node_modules/**/*',
-    '**/.github/**/*',
-    '**/.git/**/*',
-    '**/coverage/**/*',
-    '**/scripts/**/*',
-    '**/.husky/**/*',
-    '**/.idea/**/*',
-    '**/recordings/**/*',
-    '**/commitlint.config.js',
-    '**/npmpackagejsonlint.config.js',
-    '**/package.json',
-    '**/package-lock.json',
-    '**/tsconfig.json',
-    '**/tsconfig.tsbuildinfo',
-    '**/web-test-runner.config.js',
-    '**/snowpack.config.mjs',
-    '**/*.md',
-    '**/*.yml',
-    '**/*.toml',
-  ],
+  mount: {
+    public: '/',
+    src: '/src',
+  },
   optimize: {
     bundle: true,
     loader: {
