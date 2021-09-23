@@ -129,11 +129,11 @@
     "serve:lhci": "serve -l 3000 -s build",
     "signToken": "node ./testHelper/signToken/index.js",
     "start": "snowpack dev",
-    "test": "start-server-and-test 'polly listen -p 3001' 3001 'npm run wtr -- --files \"src/**/*.test.{tsx,ts}\"'",
-    "test:ci": "start-server-and-test 'polly listen -p 3001' 3001 'CI=true npm run wtr -- --coverage --concurrent-browsers 1 --concurrency 1 -- --files \"src/**/*.test.{tsx,ts}\"'",
-    "test:reset": "rimraf ./recordings/** && npm run signToken && start-server-and-test 'polly listen -p 3001' 3001 'npm run wtr:record -- --files \"src/**/*.test.{tsx,ts}\"'",
-    "wtr": "web-test-runner --browsers \"chromium\" --playwright",
-    "wtr:record": "SNOWPACK_PUBLIC_POLLY_MODE=record web-test-runner --browsers \"chromium\" --concurrent-browsers 1 --concurrency 1 --playwright"
+    "test": "start-server-and-test 'polly listen -p 3001' 3001 'npm run wtr",
+    "test:ci": "start-server-and-test 'polly listen -p 3001' 3001 'CI=true npm run wtr -- --concurrent-browsers 1 --concurrency 1'",
+    "test:reset": "rimraf ./recordings/** && npm run signToken && start-server-and-test 'polly listen -p 3001' 3001 'npm run wtr:record'",
+    "wtr": "web-test-runner",
+    "wtr:record": "SNOWPACK_PUBLIC_POLLY_MODE=record web-test-runner --concurrent-browsers 1 --concurrency 1"
   },
   "version": "0.1.0"
 }

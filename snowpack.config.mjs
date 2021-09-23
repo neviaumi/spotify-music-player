@@ -6,7 +6,7 @@
 export default {
   buildOptions: {
     jsxInject: "import React from 'react'",
-    sourcemap: true,
+    sourcemap: false,
   },
   devOptions: {
     port: 3000,
@@ -14,6 +14,7 @@ export default {
   mount: {
     public: '/',
     src: '/src',
+    testHelper: '/testHelper',
   },
   optimize: {
     bundle: true,
@@ -53,7 +54,7 @@ export default {
     files: [
       '**/__tests__/**/*',
       '**/__mocks__/**/*',
-      'testHelper/**/*',
+      '**/testHelper/**/*',
       '**/*.@(spec|test).*',
       '**/*.har',
     ],

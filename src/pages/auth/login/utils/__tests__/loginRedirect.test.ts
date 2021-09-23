@@ -34,7 +34,7 @@ describe('getAuthorizeUrl', () => {
   });
 });
 
-describe('loginRedirect', () => {
+describe.skip('loginRedirect', () => {
   beforeAll(() => {
     const orgWindowLocation = window.location;
     // @ts-expect-error
