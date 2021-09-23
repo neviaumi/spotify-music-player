@@ -1,6 +1,5 @@
 #!/bin/sh
 
 set -e
-npx tsc
-npm run lint:script:ci
-CI=true npm test --coverage --watchAll=false
+npx lerna run --concurrency 1 --stream prepush --since HEAD
+npx lerna run --concurrency 1 --stream test --since HEAD

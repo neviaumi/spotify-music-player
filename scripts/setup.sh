@@ -3,5 +3,5 @@
 set -ex
 
 npm install
-npx tsc
-npm run build
+npx lerna bootstrap
+npx lerna run --concurrency 1 --stream build --since HEAD --exclude-dependents

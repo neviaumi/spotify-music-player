@@ -12,8 +12,8 @@
       <excludeFolder url="file://$MODULE_DIR$/build-lambda" />
       <excludeFolder url="file://$MODULE_DIR$/build-functions" />
       <excludeFolder url="file://$MODULE_DIR$/.netlify" />
-      <excludeFolder url="file://$MODULE_DIR$/public" />
       <excludeFolder url="file://$MODULE_DIR$/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/systems/web-frontend/public" />
       <excludePattern pattern="yarn-error.log" />
       <excludePattern pattern="yarn.lock" />
       <excludePattern pattern="*.har" />
