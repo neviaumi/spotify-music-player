@@ -11,6 +11,7 @@ dotenv.config({
 });
 
 module.exports = {
+  browserLogs: process.env.CI === undefined,
   browsers: [playwrightLauncher({ product: 'chromium' })],
   coverage: false,
   coverageConfig: {
