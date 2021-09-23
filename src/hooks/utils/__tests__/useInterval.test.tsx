@@ -1,24 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { useCallback, useState } from 'react';
 
-import {
-  afterEach,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  jest,
-} from '../../../../testHelper/test-runner';
+import { describe, expect, it } from '../../../../testHelper/test-runner';
+import { delay } from '../../../../testHelper/utils/delay';
 import { useInterval } from '../useInterval';
 
 describe('Test useInterval', () => {
-  beforeEach(() => {
-    jest.useFakeTimers();
-  });
-  afterEach(() => {
-    jest.clearAllTimers();
-  });
-
   [[true], [false]].forEach(([enabled]) => {
     it(`useInterval respect enabled flag - ${enabled}`, async () => {
       function Dummy() {
@@ -27,7 +14,7 @@ describe('Test useInterval', () => {
           useCallback(() => {
             setCallCount(callCount + 1);
           }, [setCallCount, callCount]),
-          100,
+          1000,
           {
             enabled,
           },
@@ -49,17 +36,23 @@ describe('Test useInterval', () => {
           name: 'IntervalCallCount',
         }),
       ).toHaveTextContent('0');
-      jest.runAllTimers();
+      await delay(1000);
 
       expect(
         screen.getByRole('heading', {
           name: 'IntervalCallCount',
         }),
       ).toHaveTextContent(enabled ? '1' : '0');
+      await delay(1000);
+      expect(
+        screen.getByRole('heading', {
+          name: 'IntervalCallCount',
+        }),
+      ).toHaveTextContent(enabled ? '2' : '0');
     });
   });
 
-  it('working if handler throw error', () => {
+  it('working if handler throw error', async () => {
     function Dummy() {
       const [callCount] = useState(0);
       const { error } = useInterval(
@@ -87,12 +80,13 @@ describe('Test useInterval', () => {
         name: 'IntervalCallCount',
       }),
     ).toHaveTextContent('0');
-    jest.runAllTimers();
+    await delay(1000);
     expect(
       screen.getByRole('heading', {
         name: 'IntervalCallCount',
       }),
     ).toHaveTextContent('0');
+    await delay(1000);
     expect(
       screen.getByRole('heading', {
         name: 'errorMessage',

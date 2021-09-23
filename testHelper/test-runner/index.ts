@@ -5,12 +5,8 @@ import { ModuleMocker } from 'jest-mock';
 import { array } from './each/array';
 import { objects } from './each/objects';
 import { expect } from './expect';
-import { FakeTimers } from './fake-timer';
 
 const moduleMocker = new ModuleMocker(window);
-const fakeTimer = new FakeTimers({
-  global: window,
-});
 
 const {
   describe: reDescribe,
@@ -28,11 +24,8 @@ const {
   expect: expect,
   it: window.it,
   jest: {
-    clearAllTimers: fakeTimer.runAllTimers.bind(fakeTimer),
     fn: () => moduleMocker.fn<any, any>(),
-    runAllTimers: fakeTimer.runAllTimers.bind(fakeTimer),
     spyOn: moduleMocker.spyOn.bind(moduleMocker),
-    useFakeTimers: fakeTimer.useFakeTimers.bind(fakeTimer),
   },
 };
 
