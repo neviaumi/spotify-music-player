@@ -20,11 +20,15 @@ jobs:
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
       - run: bash ./scripts/setup.sh
-      - uses: paambaati/codeclimate-action@v2.7.5
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-        with:
-          coverageCommand: bash ./scripts/test/jest.sh
+      # @web/test-runner coverage integrated with snowpack buggy for a while
+      #  https://github.com/modernweb-dev/web/issues/1549
+      #      - uses: paambaati/codeclimate-action@v2.7.5
+      #        env:
+      #          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+      #        with:
+      #          coverageCommand: bash ./scripts/test/jest.sh
+      #        if: ${{ github.actor != 'dependabot[bot]' }}
+      - run: bash ./scripts/test/jest.sh
 
   lighthouse:
     runs-on: ubuntu-latest
