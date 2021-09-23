@@ -16,15 +16,10 @@ import { Routes } from '../../../../index';
 const context = createPollyContext(import.meta.url, {});
 describe('Test /auth/login/callback', () => {
   beforeAll(() => {
-    const orgWindowLocation = window.location;
-    // @ts-expect-error
-    delete window.location;
-    Object.assign(window, {
-      location: {
-        ...orgWindowLocation,
-        href: 'http://localshot/auth/login/callback?code=abcd&state=randomId',
-      },
-    });
+    const url = new URL(window.location.href);
+    url.searchParams.set('code', 'abcd');
+    url.searchParams.set('state', 'randomId');
+    window.history.pushState({}, '', url);
   });
 
   beforeEach(() => setupMockServer(context.polly));
