@@ -124,8 +124,6 @@
     "lint:script": "eslint --ext=ts,tsx,json,js --fix .",
     "lint:script:ci": "eslint --ext=ts,tsx,json,js .",
     "postinstall": "patch-package",
-    "precommit": "lint-staged",
-    "prepush": "npx tsc",
     "serve:lhci": "serve -l 3000 -s build",
     "signToken": "node ./testHelper/signToken/index.js",
     "start": "snowpack dev",

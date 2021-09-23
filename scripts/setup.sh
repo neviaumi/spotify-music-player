@@ -4,4 +4,4 @@ set -ex
 
 npm install
 npx lerna bootstrap
-npx lerna run --concurrency 1 --stream build --since HEAD --exclude-dependents
+npx lerna exec --concurrency 1 --stream -- bash scripts/build.sh
