@@ -1,4 +1,4 @@
-name: testing
+name: Test PR
 
 on: pull_request
 env:
@@ -16,27 +16,4 @@ jobs:
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
       - run: bash ./scripts/setup.sh
-      - run: bash ./scripts/lint.sh
-      # @web/test-runner coverage integrated with snowpack buggy for a while
-      #  https://github.com/modernweb-dev/web/issues/1549
-      #      - uses: paambaati/codeclimate-action@v2.7.5
-      #        env:
-      #          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-      #        with:
-      #          coverageCommand: bash ./scripts/test/jest.sh
-      #        if: ${{ github.actor != 'dependabot[bot]' }}
-      - run: bash ./scripts/test/jest.sh
-
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Read .nvmrc
-        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
-        id: nvm
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
-      - run: bash ./scripts/setup.sh
-      - run: bash ./scripts/test/lchi.sh
+      - run: lerna exec --stream --concurrency 1 -- bash scripts/ci/test.sh

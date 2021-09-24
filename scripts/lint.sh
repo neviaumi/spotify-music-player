@@ -2,5 +2,5 @@
 
 set -ex
 
-npm run lint:script:ci
-npm run lint:css:ci
+npx markdownlint-cli2 .
+npx npmPkgJsonLint .

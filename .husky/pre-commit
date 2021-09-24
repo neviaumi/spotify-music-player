@@ -1,4 +1,5 @@
 #!/bin/sh
+set -ex
 
-set -e
-npx lint-staged
+bash ./scripts/lint.sh
+npx lerna exec --concurrency 1 --stream --since HEAD --exclude-dependents -- bash scripts/pre-commit.sh
