@@ -1,0 +1,23 @@
+{
+  "author": "davidNHK",
+  "bugs": {
+    "url": "https://github.com/davidNHK/spotify-music-player/issues"
+  },
+  "dependencies": {},
+  "description": "![](https://github.com/davidNHK/spotify-music-player/workflows/testing/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/31550918-79b7-4439-b069-cb67bd21da7f/deploy-status)](https://app.netlify.com/sites/dnghk-spotify-player/deploys) [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)",
+  "devDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "homepage": "https://github.com/davidNHK/spotify-music-player#readme",
+  "license": "MIT",
+  "name": "@music-player/infrastructure",
+  "private": true,
+  "repository": {
+    "directory": "systems/infrastructure",
+    "type": "git",
+    "url": "git+ssh://git@github.com/davidNHK/spotify-music-player.git"
+  },
+  "scripts": {},
+  "version": "0.1.0"
+}
