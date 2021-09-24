@@ -1,6 +1,6 @@
 # Spotify Music Player
 
-![](https://github.com/davidNHK/spotify-music-player/workflows/testing/badge.svg)
+![Github workflow](https://github.com/davidNHK/spotify-music-player/workflows/testing/badge.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/31550918-79b7-4439-b069-cb67bd21da7f/deploy-status)](https://app.netlify.com/sites/dnghk-spotify-player/deploys)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
@@ -11,25 +11,14 @@
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-# Installation
+## Installation
 
 ```bash
-yarn
-yarn start
+npm install
+npx lerna bootstrap
+npm start
 ```
 
-# Testing
+## Live environment
 
-```bash
-yarn test
-```
-
-## Refresh polly snapshot
-
-```bash
-yarn test:reset
-```
-
-# Live environment
-
-[Staging](https://dnghk-spotify-player.netlify.app/)
+[Live](https://dnghk-spotify-player.netlify.app/)

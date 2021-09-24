@@ -1,6 +1,5 @@
 #!/bin/sh
+set -ex
 
-. "$(dirname $0)/_/husky.sh"
-
-set -e
-yarn lint-staged
+bash ./scripts/lint.sh
+npx lerna exec --concurrency 1 --stream --since HEAD --exclude-dependents -- bash scripts/pre-commit.sh

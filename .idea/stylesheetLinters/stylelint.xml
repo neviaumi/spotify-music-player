@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="StylelintConfiguration" allowJS="true" />
+  <component name="StylelintConfiguration" allowJS="true">
+    <config-file value="$PROJECT_DIR$/systems/web-frontend/.stylelintrc.json" />
+  </component>
 </project>

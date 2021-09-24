@@ -2,4 +2,5 @@
 
 set -ex
 
-yarn lint:script:ci
+npx markdownlint-cli2 .
+npx npmPkgJsonLint .

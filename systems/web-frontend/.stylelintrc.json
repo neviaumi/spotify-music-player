@@ -1,0 +1,5 @@
+{
+  "extends": ["stylelint-config-styled-components"],
+  "plugins": ["stylelint-order"],
+  "rules": {}
+}

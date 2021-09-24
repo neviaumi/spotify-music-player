@@ -2,5 +2,6 @@
 
 set -ex
 
-yarn
-yarn build
+npm install
+npx lerna bootstrap
+npx lerna exec --concurrency 1 --stream -- bash scripts/build.sh

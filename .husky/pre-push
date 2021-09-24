@@ -1,7 +1,4 @@
 #!/bin/sh
 
-. "$(dirname $0)/_/husky.sh"
-
 set -e
-yarn lint:script:ci
-CI=true yarn test --coverage --watchAll=false
+npx lerna exec --concurrency 1 --stream -- bash scripts/pre-push.sh

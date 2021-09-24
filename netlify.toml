@@ -1,13 +1,10 @@
 [build]
-    command = "yarn build"
-    functions = "build-functions"
+    base = "systems/web-frontend/"
+    command = "npm run build"
+    publish = "build"
 
 [[redirects]]
     from = "/*"
     to = "/index.html"
     status = 200
     force = false
-
-[dev]
-    port = 42069
-    targetPort = 3000

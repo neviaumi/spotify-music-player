@@ -1,0 +1,15 @@
+{
+  "*.json": ["npx eslint --ext=json --fix", "npx prettier --write"],
+  "*.svg": ["npx prettier --parser html --write"],
+  "*.{css,md,yaml,yml}": ["npx prettier --write"],
+  "*.{js,jsx,ts,tsx}": [
+    "npx prettier --write",
+    "npx eslint --fix",
+    "npx stylelint"
+  ],
+  "package.json": [
+    "npx eslint --ext=json --fix",
+    "npx prettier --write",
+    "npx npmPkgJsonLint"
+  ]
+}
