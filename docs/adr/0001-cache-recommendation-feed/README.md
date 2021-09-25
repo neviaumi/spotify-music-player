@@ -1,6 +1,6 @@
-# [short title of solved problem and solution]
+# Cache recommendation
 
-- Status: proposed
+- Status: accepted
 - Deciders: [davidNHK](https://github.com/davidNHK)
 - Date: 2021-09-25
 
@@ -8,65 +8,67 @@ Technical Story: [Issues 1491](https://github.com/davidNHK/spotify-music-player/
 
 ## Context and Problem Statement
 
-[Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.]
+The [API endpoint](https://developer.spotify.com/console/get-recommendations) currently used for quires front page
+list of album will get difference result every time.
 
-## Decision Drivers <!-- optional -->
+As user point of view, it feels like every time move forward/back or refresh page
+it would get difference result again.
 
-- [driver 1, e.g., a force, facing concern, …]
-- [driver 2, e.g., a force, facing concern, …]
-- … <!-- numbers of drivers can vary -->
+Let say I saw two new Albums `Led Zeppelin III` and `Machine Head` in front page
+and wanna to tried listen. it is awful UX because when I click `Machine Head` to start listen and back to home page
+then `Led Zeppelin III` is gone.
+
+It can solve by cache recommendations result with period, within the cached period it should always result same result.
+
+## Decision Drivers
+
+- Invalidate Cache invalidate easily
+- Is cache within Browser?
+- Solution have skills grown on contributor
 
 ## Considered Options
 
-- [option 1]
-- [option 2]
-- [option 3]
-- … <!-- numbers of options can vary -->
+- Cache in client side [local storage](https://react-query.tanstack.com/plugins/persistQueryClient)
+- Serverless functions for wrap Spotify endpoint
+- HTTP API for wrap Spotify endpoint
 
 ## Decision Outcome
 
-Chosen option: "[option 1]", because [justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force force | … | comes out best (see below)].
-
-### Positive Consequences <!-- optional -->
-
-- [e.g., improvement of quality attribute satisfaction, follow-up decisions required, …]
-- …
-
-### Negative Consequences <!-- optional -->
-
-- [e.g., compromising quality attribute, follow-up decisions required, …]
-- …
+Chosen option: **HTTP API for wrap Spotify endpoint**, because it less restriction .
 
 ## Pros and Cons of the Options <!-- optional -->
 
-### [option 1]
+### Cache in client side localstorage
 
-[example | description | pointer to more information | …] <!-- optional -->
+Using [react-query](https://react-query.tanstack.com/plugins/persistQueryClient) build-in strategy
 
-- Good, because [argument a]
-- Good, because [argument b]
-- Bad, because [argument c]
-- … <!-- numbers of pros and cons can vary -->
+- Good, because less effort
+- Bad, because not much skill grown
+- Bad, because cache only with in same browser
 
-### [option 2]
+### Serverless functions for wrap Spotify endpoint
 
-[example | description | pointer to more information | …] <!-- optional -->
+Use [Netlify functions](https://www.netlify.com/products/functions/) to host the backend
 
-- Good, because [argument a]
-- Good, because [argument b]
-- Bad, because [argument c]
-- … <!-- numbers of pros and cons can vary -->
+- Good, because cross browser will work
+- Good, because deployment easily
+- Bad, because configuration / setup must follow vendor convention
+- Bad, because connecting with external storage can be complex.
 
-### [option 3]
+### HTTP API for wrap Spotify endpoint
 
-[example | description | pointer to more information | …] <!-- optional -->
+Setup Backend API server to serve custom endpoint
+and place caching within that endpoint.
 
-- Good, because [argument a]
-- Good, because [argument b]
-- Bad, because [argument c]
-- … <!-- numbers of pros and cons can vary -->
+- Good, because future prove for more features
+- Good, because free to use any stack / configuration
+- Bad, because complex deployment config
+- Bad, because deployment options is very limited. as written only `GCP` can deploy docker pay as you consume
 
-## Links <!-- optional -->
+## Links
 
-- [Link type] [Link to ADR] <!-- example: Refined by [ADR-0005](0005-example.md) -->
-- … <!-- numbers of links can vary -->
+### Deployment options
+
+- [Netlify functions](https://www.netlify.com/products/functions/)
+- [GCP Cloud Run](https://cloud.google.com/run)
+- [AWS App Runner](https://aws.amazon.com/apprunner/?nc1=h_ls)
