@@ -63,3 +63,7 @@ JS in Backend
 - Good, because it is my most family language as of now
 - Good, because easily configure CI pipelines as whole project share same stack
 - Bad, because no new thing can learn from, all things is already exist in mind
+
+## Links
+
+[Web framework benchmark](https://www.techempower.com/benchmarks/#section=data-r20&hw=ph&test=query&l=v2p4an-d2&a=2)
