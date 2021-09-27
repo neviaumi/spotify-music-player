@@ -1,0 +1,237 @@
+[tool.poetry]
+name = "http-api"
+version = "0.1.0"
+description = ""
+authors = ["David Ng <david.ng.dev@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = {extras = ["all"], version = "^0.68.1"}
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.11.1"
+pytest = "^6.2.5"
+black = "^21.9b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.REFACTORING]
+
+# Maximum number of nested blocks for function / method body
+max-nested-blocks=5
+
+# Complete name of functions that never returns. When checking for
+# inconsistent-return-statements if a never returning function is called then
+# it will be considered as an explicit return statement and no message will be
+# printed.
+never-returning-functions="sys.exit,argparse.parse_error"
+
+
+[tool.pylint.LOGGING]
+
+# The type of string formatting that logging methods do. `old` means using %
+# formatting, `new` is for `{}` formatting.
+logging-format-style="new"
+
+# Logging modules to check that the string format arguments are in logging
+# function parameter format.
+logging-modules="logging"
+
+
+[tool.pylint.MISCELLANEOUS]
+
+# List of note tags to take in consideration, separated by a comma.
+notes="""FIXME,
+      XXX,
+      TODO"""
+
+[FORMAT]
+
+# Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
+expected-line-ending-format="LF"
+
+# Number of spaces of indent required inside a hanging or continued line.
+indent-after-paren=4
+
+# String used as indentation unit. This is usually "    " (4 spaces) or "\t" (1
+# tab).
+indent-string='    '
+
+# Maximum number of characters on a single line.
+max-line-length=120
+
+# Maximum number of lines in a module.
+max-module-lines=500
+
+# Allow the body of a class to be on the same line as the declaration if body
+# contains single statement.
+single-line-class-stmt="no"
+
+# Allow the body of an if to be on the same line as the test if there is no
+# else.
+single-line-if-stmt="no"
+
+[BASIC]
+
+# Naming style matching correct argument names.
+argument-naming-style="snake_case"
+
+# Regular expression matching correct argument names. Overrides argument-
+# naming-style.
+#argument-rgx=
+
+# Naming style matching correct attribute names.
+attr-naming-style="snake_case"
+
+# Regular expression matching correct attribute names. Overrides attr-naming-
+# style.
+#attr-rgx=
+
+# Naming style matching correct class attribute names.
+class-attribute-naming-style="snake_case"
+
+# Regular expression matching correct class attribute names. Overrides class-
+# attribute-naming-style.
+#class-attribute-rgx=
+
+# Naming style matching correct class constant names.
+class-const-naming-style="UPPER_CASE"
+
+# Regular expression matching correct class constant names. Overrides class-
+# const-naming-style.
+#class-const-rgx=
+
+# Naming style matching correct class names.
+class-naming-style="PascalCase"
+
+# Regular expression matching correct class names. Overrides class-naming-
+# style.
+#class-rgx=
+
+# Naming style matching correct constant names.
+const-naming-style="UPPER_CASE"
+
+# Regular expression matching correct constant names. Overrides const-naming-
+# style.
+#const-rgx=
+
+# Minimum line length for functions/classes that require docstrings, shorter
+# ones are exempt.
+docstring-min-length=-1
+
+# Naming style matching correct function names.
+function-naming-style="snake_case"
+
+# Regular expression matching correct function names. Overrides function-
+# naming-style.
+#function-rgx=
+
+# Good variable names which should always be accepted, separated by a comma.
+good-names="""i,
+           j,
+           k,
+           ex,
+           Run,
+           _"""
+
+# Naming style matching correct method names.
+method-naming-style="snake_case"
+
+# Naming style matching correct module names.
+module-naming-style="snake_case"
+
+# Regular expression matching correct module names. Overrides module-naming-
+# style.
+#module-rgx=
+
+# List of decorators that produce properties, such as abc.abstractproperty. Add
+# to this list to register other decorators that produce valid properties.
+# These decorators are taken in consideration only for invalid-name.
+property-classes="abc.abstractproperty"
+
+# Naming style matching correct variable names.
+variable-naming-style="snake_case"
+
+# Regular expression matching correct variable names. Overrides variable-
+# naming-style.
+#variable-rgx=
+
+
+[STRING]
+
+# This flag controls whether inconsistent-quotes generates a warning when the
+# character used as a quote delimiter is used inconsistently within a module.
+check-quote-consistency="yes"
+
+# This flag controls whether the implicit-str-concat should generate a warning
+# on implicit string concatenation in sequences defined over several lines.
+check-str-concat-over-line-jumps="yes"
+
+[CLASSES]
+
+# Warn about protected attribute access inside special methods
+check-protected-access-in-special-methods="no"
+
+# List of method names used to declare (i.e. assign) instance attributes.
+defining-attr-methods="""__init__,
+                      __new__,
+                      setUp,
+                      __post_init__"""
+
+# List of member names, which should be excluded from the protected access
+# warning.
+exclude-protected="""_asdict,
+                  _fields,
+                  _replace,
+                  _source,
+                  _make"""
+
+# List of valid names for the first argument in a class method.
+valid-classmethod-first-arg="cls"
+
+# List of valid names for the first argument in a metaclass class method.
+valid-metaclass-classmethod-first-arg="cls"
+
+
+[DESIGN]
+
+# Maximum number of arguments for function / method.
+max-args=5
+
+# Maximum number of attributes for a class (see R0902).
+max-attributes=7
+
+# Maximum number of boolean expressions in an if statement (see R0916).
+max-bool-expr=5
+
+# Maximum number of branch for function / method body.
+max-branches=12
+
+# Maximum number of locals for function / method body.
+max-locals=15
+
+# Maximum number of parents for a class (see R0901).
+max-parents=7
+
+# Maximum number of public methods for a class (see R0904).
+max-public-methods=20
+
+# Maximum number of return / yield for function / method body.
+max-returns=6
+
+# Maximum number of statements in function / method body.
+max-statements=40
+
+# Minimum number of public methods for a class (see R0903).
+min-public-methods=2
+
+
+[EXCEPTIONS]
+
+# Exceptions that will emit a warning when being caught. Defaults to
+# "BaseException, Exception".
+overgeneral-exceptions="""BaseException,
+                       Exception"""
