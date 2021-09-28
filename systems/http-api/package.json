@@ -1,0 +1,22 @@
+{
+  "author": "davidNHK",
+  "bugs": {
+    "url": "https://github.com/davidNHK/spotify-music-player/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "homepage": "https://github.com/davidNHK/spotify-music-player#readme",
+  "license": "MIT",
+  "name": "@music-player/http-api",
+  "private": true,
+  "repository": {
+    "directory": "systems/http-api",
+    "type": "git",
+    "url": "git+ssh://git@github.com/davidNHK/spotify-music-player.git"
+  },
+  "scripts": {},
+  "version": "0.1.0"
+}
