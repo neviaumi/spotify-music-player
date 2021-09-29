@@ -6,7 +6,7 @@ updates:
       interval: 'daily'
 
   - package-ecosystem: 'pip'
-    directory: '/'
+    directory: '/systems/http-api'
     schedule:
       interval: 'daily'
 
