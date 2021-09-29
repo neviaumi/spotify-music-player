@@ -4,6 +4,9 @@
 /** @type {import('snowpack').SnowpackUserConfig } */
 // eslint-disable-next-line import/no-default-export
 export default {
+  alias: {
+    'graceful-fs': 'memfs',
+  },
   buildOptions: {
     jsxInject: "import React from 'react'",
     sourcemap: false,
