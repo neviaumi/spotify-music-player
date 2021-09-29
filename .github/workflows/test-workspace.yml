@@ -5,11 +5,11 @@ on:
     branches:
       - development
       - master
-    paths:
-      - '!systems/**'
+    paths-ignore:
+      - 'systems/**'
   pull_request:
-    paths:
-      - '!systems/**'
+    paths-ignore:
+      - 'systems/**'
 env:
   CI: true
 jobs:
