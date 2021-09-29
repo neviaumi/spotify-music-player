@@ -86,6 +86,7 @@
     "jest-mock": "27.2.3",
     "lint-staged": "11.1.2",
     "lodash.isfunction": "3.0.9",
+    "memfs": "3.3.0",
     "mutation-observer": "1.0.3",
     "open": "8.2.1",
     "patch-package": "6.4.7",
