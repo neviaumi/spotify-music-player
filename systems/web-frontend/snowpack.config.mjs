@@ -19,18 +19,6 @@ export default {
     src: '/src',
     testHelper: '/testHelper',
   },
-  optimize: {
-    bundle: true,
-    loader: {
-      '.gif': 'file',
-      '.png': 'file',
-    },
-    manifest: true,
-    minify: true,
-    splitting: true,
-    target: 'es2020',
-    treeshake: true,
-  },
   packageOptions: {
     external: ['crypto'],
     polyfillNode: true,
@@ -38,13 +26,14 @@ export default {
   },
   plugins: [
     '@snowpack/plugin-react-refresh',
+    ['snowpack-plugin-svgr', {}],
+    '@snowpack/plugin-dotenv',
     [
-      'snowpack-plugin-svgr',
+      '@snowpack/plugin-webpack',
       {
-        /* see "Plugin Options" below */
+        manifest: true,
       },
     ],
-    '@snowpack/plugin-dotenv',
   ],
   routes: [
     {

@@ -28,8 +28,8 @@ module.exports = {
   },
   testRunnerHtml: testFramework => `<html>
     <body>
-    <script type="module" src="/systems/web-frontend/testHelper/test-runner/hooks.js"></script>
-    <script type="module" src="/systems/web-frontend/testHelper/test-runner/expect.js"></script>
+    <script type="module" src="/testHelper/test-runner/hooks.js"></script>
+    <script type="module" src="/testHelper/test-runner/expect.js"></script>
     <script id='uit' type="module" src="${testFramework}"></script>
     </body>
   </html>`,

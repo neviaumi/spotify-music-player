@@ -1,3 +1,5 @@
+import '@babel/code-frame';
+
 // @ts-expect-error no typing
 import matchers from '@testing-library/jest-dom/matchers';
 import orgExpect from 'expect';
