@@ -28,7 +28,12 @@ export default {
     '@snowpack/plugin-react-refresh',
     ['snowpack-plugin-svgr', {}],
     '@snowpack/plugin-dotenv',
-    ['@snowpack/plugin-webpack', {}],
+    [
+      '@snowpack/plugin-webpack',
+      {
+        manifest: true,
+      },
+    ],
   ],
   routes: [
     {
