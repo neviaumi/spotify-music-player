@@ -1,0 +1,9 @@
+{
+  "*.json": ["npx eslint --ext=json --fix", "npx prettier --write"],
+  "*.{js,cjs}": ["npx prettier --write", "npx eslint --fix"],
+  "package.json": [
+    "npx eslint --ext=json --fix",
+    "npx prettier --write",
+    "npx npmPkgJsonLint"
+  ]
+}

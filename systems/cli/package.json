@@ -1,26 +1,35 @@
 {
   "author": "davidNHK",
+  "bin": {
+    "cli": "src/index.js"
+  },
   "bugs": {
     "url": "https://github.com/davidNHK/spotify-music-player/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "open": "8.2.1",
+    "yargs": "17.2.1"
+  },
   "devDependencies": {
-    "@music-player/cli": "file:../cli"
+    "@busybox/eslint-config": "5.6.2",
+    "@busybox/prettier-config": "1.2.0",
+    "eslint": "7.32.0"
   },
   "engines": {
     "node": "16"
   },
+  "files": [
+    "src"
+  ],
   "homepage": "https://github.com/davidNHK/spotify-music-player#readme",
   "license": "MIT",
-  "name": "@music-player/http-api",
-  "private": true,
+  "name": "@music-player/cli",
   "repository": {
-    "directory": "systems/http-api",
+    "directory": "systems/cli",
     "type": "git",
     "url": "git+ssh://git@github.com/davidNHK/spotify-music-player.git"
   },
-  "scripts": {
-    "signToken": "source ./.env && npx cli sign-token \"$SPOTIFY_CLIENT_ID\" \"$SPOTIFY_REQUESTED_SCOPE\" | npx cli set-env-file \"$PWD/.env.test\" SPOTIFY_ACCESS_TOKEN"
-  },
+  "scripts": {},
+  "type": "module",
   "version": "0.1.0"
 }
