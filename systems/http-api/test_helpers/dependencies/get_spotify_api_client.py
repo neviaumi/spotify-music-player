@@ -4,6 +4,7 @@ from httpx import AsyncClient, MockTransport, Response
 
 from app.config import Settings
 from app.dependencies.get_settings import get_settings
+from test_helpers.seeds import build_track_object
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/token")
@@ -16,8 +17,14 @@ async def raise_on_4xx_5xx(response):
 def handler(request: Request):
     response_body = {
         "GET": {
-            "/v1/me/player/recently-played": {"items": []},
-            "/v1/recommendations": {"tracks": []},
+            "/v1/me/player/recently-played": {
+                "items": [
+                    {"track": build_track_object()},
+                    {"track": build_track_object()},
+                    {"track": build_track_object()},
+                ]
+            },
+            "/v1/recommendations": {"tracks": [build_track_object()]},
         }
     }
     return Response(200, json=response_body[request.method][request.url.path])
