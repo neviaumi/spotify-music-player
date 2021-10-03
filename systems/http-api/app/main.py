@@ -9,9 +9,15 @@ from .exception_handlers.validation_exception_handler import (
     validation_exception_handler,
     RequestValidationError,
 )
+from .schemas import ErrorResponse
 
-
-app = FastAPI()
+app = FastAPI(
+    responses={
+        # https://github.com/tiangolo/fastapi/issues/1376
+        # Override Default 422 error.
+        422: {"model": ErrorResponse},
+    },
+)
 
 app.add_exception_handler(StarletteHTTPException, http_exception_handler)
 app.add_exception_handler(RequestValidationError, validation_exception_handler)

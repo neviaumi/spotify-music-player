@@ -1,14 +1,14 @@
 from httpx import AsyncClient
 
 from fastapi import Depends
-from fastapi.security import OAuth2PasswordBearer
+from fastapi.security import HTTPBearer
 
 
 from app.config import Settings
 from app.dependencies.get_settings import get_settings
 
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/token")
+oauth2_scheme = HTTPBearer()
 
 
 async def raise_on_4xx_5xx(response):
