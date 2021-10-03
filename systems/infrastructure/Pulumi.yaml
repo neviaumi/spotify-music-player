@@ -2,5 +2,5 @@ name: infrastructure
 runtime:
   name: python
   options:
-    virtualenv: venv
+    runtime: python
 description: Deploy Spotify Music Player to GCP
