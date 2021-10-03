@@ -1,0 +1,10 @@
+{
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.pytest_cache"
+  ],
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "pythonVersion": "3.9"
+}
