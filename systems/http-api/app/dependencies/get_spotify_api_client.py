@@ -11,7 +11,7 @@ from app.dependencies.get_settings import get_settings
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/token")
 
 
-def raise_on_4xx_5xx(response):
+async def raise_on_4xx_5xx(response):
     response.raise_for_status()
 
 
