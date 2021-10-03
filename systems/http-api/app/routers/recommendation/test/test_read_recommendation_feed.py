@@ -18,7 +18,7 @@ def test_read_albums_recommendation_feed_by_recent_played_artists(test_app):
     response_body = response.json()
     assert isinstance(response_body["data"], list)
     assert isinstance(response_body["meta"]["seeds"], list)
-    assert response_body["meta"]["type"] == "artists"
+    assert response_body["meta"]["seed_type"] == "artists"
 
 
 def test_read_albums_recommendation_feed_by_recent_played_tracks(test_app):
@@ -33,4 +33,19 @@ def test_read_albums_recommendation_feed_by_recent_played_tracks(test_app):
 
     assert isinstance(response_body["data"], list)
     assert isinstance(response_body["meta"]["seeds"], list)
-    assert response_body["meta"]["type"] == "tracks"
+    assert response_body["meta"]["seed_type"] == "tracks"
+
+
+def test_read_albums_recommendation_feed_by_user_top_tracks(test_app):
+    use_mock_spotify_server(test_app)
+    client = TestClient(test_app)
+    response = client.get(
+        "/recommendation-feed/albums/by-user-top-tracks",
+        headers={"Authorization": f"Bearer {settings.spotify_access_token}"},
+    )
+    assert response.status_code == 200
+    response_body = response.json()
+
+    assert isinstance(response_body["data"], list)
+    assert isinstance(response_body["meta"]["seeds"], list)
+    assert response_body["meta"]["seed_type"] == "tracks"
