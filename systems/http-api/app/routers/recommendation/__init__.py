@@ -1,9 +1,9 @@
 from enum import Enum
-from typing import Literal
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, status
 from httpx import AsyncClient
 from app.dependencies import get_spotify_api_client
+from app.exceptions import TypedHTTPException
 from .services import get_recent_played_artists, get_recommend_albums
 
 router = APIRouter()
@@ -26,7 +26,7 @@ async def get_recommendation_feed(
         )
         seed = {"seeds": recent_played_artists[0:5], "type": "artists"}
     else:
-        raise HTTPException(
+        raise TypedHTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             detail=[{"code": "UNKNOWN_PARAMETER", "meta": {"feed_type": feed_type}}],
         )
