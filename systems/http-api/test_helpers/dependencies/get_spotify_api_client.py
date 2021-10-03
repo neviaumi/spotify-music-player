@@ -10,7 +10,12 @@ from test_helpers.seeds import build_track_object
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/token")
 GetAPI = TypedDict(
-    "GetAPI", {"/v1/me/player/recently-played": dict, "/v1/recommendations": dict}
+    "GetAPI",
+    {
+        "/v1/me/player/recently-played": dict,
+        "/v1/recommendations": dict,
+        "/v1/me/top/tracks": dict,
+    },
 )
 ApiHandler = TypedDict("ApiHandler", {"GET": GetAPI}, total=False)
 default_api_handler: ApiHandler = {
@@ -22,6 +27,7 @@ default_api_handler: ApiHandler = {
                 {"track": build_track_object()},
             ]
         },
+        "/v1/me/top/tracks": {"items": [build_track_object()]},
         "/v1/recommendations": {"tracks": [build_track_object()]},
     }
 }
