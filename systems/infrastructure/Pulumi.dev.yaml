@@ -1,4 +1,4 @@
-encryptionsalt: v1:af/wjaeeiLs=:v1:1XLziKjtWRyBW9Og:k+iESK2xOWVVGw0y01rO4AVhavKtkQ==
+encryptionsalt: v1:nHmOvsM5LZs=:v1:+Bq4T0xxVmP89fxW:+tqFjfMChyazp0b8EVbkfgIi9gY//A==
 config:
   gcp:project: spotify-music-player-327914
   gcp:region: europe-west2

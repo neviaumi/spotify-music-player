@@ -1,6 +1,3 @@
 name: infrastructure
-runtime:
-  name: python
-  options:
-    runtime: python
+runtime: python
 description: Deploy Spotify Music Player to GCP
