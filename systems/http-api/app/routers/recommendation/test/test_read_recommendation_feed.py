@@ -1,11 +1,14 @@
 from fastapi.testclient import TestClient
 
 from test_helpers.dependencies import get_test_settings
+from test_helpers import use_mock_spotify_server
+
 
 settings = get_test_settings()
 
 
 def test_read_albums_recommendation_feed_by_recent_played_artists(test_app):
+    use_mock_spotify_server(test_app)
     client = TestClient(test_app)
     response = client.get(
         "/recommendation-feed/albums/by-recent-played-artists",
@@ -19,6 +22,7 @@ def test_read_albums_recommendation_feed_by_recent_played_artists(test_app):
 
 
 def test_read_albums_recommendation_feed_by_recent_played_tracks(test_app):
+    use_mock_spotify_server(test_app)
     client = TestClient(test_app)
     response = client.get(
         "/recommendation-feed/albums/by-recent-played-tracks",

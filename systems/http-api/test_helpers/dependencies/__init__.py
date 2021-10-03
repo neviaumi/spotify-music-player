@@ -1,2 +1,2 @@
 from .get_settings import get_test_settings
-from .get_spotify_api_client import get_test_spotify_api_client
+from .get_spotify_api_client import mock_spotify_api_client
