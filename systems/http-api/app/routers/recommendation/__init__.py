@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Literal
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from httpx import AsyncClient
@@ -9,7 +10,7 @@ router = APIRouter()
 
 
 class FeedType(Enum):
-    RECENT_PLAYED_ARTISTS: str = "by-recent-played-artists"
+    RECENT_PLAYED_ARTISTS = "by-recent-played-artists"
 
 
 @router.get("/recommendation-feed/albums/{feed_type}")

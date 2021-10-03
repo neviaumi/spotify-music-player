@@ -3,9 +3,9 @@
   "bugs": {
     "url": "https://github.com/davidNHK/spotify-music-player/issues"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@music-player/cli": "file:../cli"
+    "@music-player/cli": "file:../cli",
+    "pyright": "1.1.173"
   },
   "engines": {
     "node": "16"

@@ -1,3 +1,3 @@
 {
-  "*.py": ["poetry run black", "poetry run pylint --fail-under=10"]
+  "*.py": ["poetry run black", "poetry run pylint --fail-under=10", "npx pyright"]
 }
