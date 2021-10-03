@@ -10,6 +10,7 @@ from .services import (
     get_recent_played_tracks,
     get_user_top_tracks,
     get_user_top_artists,
+    get_user_top_artists_genres,
 )
 
 router = APIRouter()
@@ -20,9 +21,10 @@ class FeedType(Enum):
     RECENT_PLAYED_TRACKS = "by-recent-played-tracks"
     USER_TOP_TRACKS = "by-user-top-tracks"
     USER_TOP_ARTISTS = "by-user-top-artists"
+    USER_TOP_ARTISTS_GENRES = "by-user-top-artists-genres"
 
 
-def create_response_obj(data, seeds, seed_type: Literal["artists", "tracks"]):
+def create_response_obj(data, seeds, seed_type: Literal["artists", "tracks", "genres"]):
     return {
         "data": data,
         "meta": {"seeds": seeds[0:5], "seed_type": seed_type},
@@ -67,6 +69,16 @@ async def get_recommendation_feed(
             "seed_artists",
         )
         response = create_response_obj(recommend_albums, user_top_artists, "artists")
+    elif feed_type == FeedType.USER_TOP_ARTISTS_GENRES:
+        user_top_artists_genres = await get_user_top_artists_genres(api_client)
+        recommend_albums = await get_recommend_albums(
+            api_client,
+            user_top_artists_genres,
+            "seed_genres",
+        )
+        response = create_response_obj(
+            recommend_albums, user_top_artists_genres, "genres"
+        )
     else:
         raise TypedHTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
