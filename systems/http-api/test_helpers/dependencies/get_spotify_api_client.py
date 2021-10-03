@@ -15,6 +15,7 @@ GetAPI = TypedDict(
         "/v1/me/player/recently-played": dict,
         "/v1/recommendations": dict,
         "/v1/me/top/tracks": dict,
+        "/v1/me/top/artists": dict,
     },
 )
 ApiHandler = TypedDict("ApiHandler", {"GET": GetAPI}, total=False)
@@ -29,6 +30,7 @@ default_api_handler: ApiHandler = {
         },
         "/v1/me/top/tracks": {"items": [build_track_object()]},
         "/v1/recommendations": {"tracks": [build_track_object()]},
+        "/v1/me/top/artists": {"items": []},
     }
 }
 
