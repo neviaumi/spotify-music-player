@@ -154,7 +154,7 @@ describe('Test LocalPlaybackState', () => {
       is_active: true,
       is_paused: currentState.paused,
       progress_ms: currentState.position,
-      repeat_state: RepeatMode.Track,
+      repeat_state: RepeatMode.Context,
       shuffle_state: currentState.shuffle,
       track: currentState.track_window.current_track,
     });
