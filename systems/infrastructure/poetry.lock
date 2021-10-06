@@ -92,6 +92,19 @@ semver = ">=2.8.1"
 six = ">=1.12.0"
 
 [[package]]
+name = "pulumi-docker"
+version = "3.1.0"
+description = "A Pulumi package for interacting with Docker in Pulumi programs"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+parver = ">=0.2.1"
+pulumi = ">=3.0.0,<4.0.0"
+semver = ">=2.8.1"
+
+[[package]]
 name = "pulumi-gcp"
 version = "5.20.0"
 description = "A Pulumi package for creating and managing Google Cloud Platform resources."
@@ -131,7 +144,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "8a2bc444c4c4ce9ffb88d389383b5901a82ab7e968867c256bc64970a9ee22c6"
+content-hash = "c2a9475e178165dc7ea4409eceaf8b7d8e3ce265559ada5392b7fe5262a81c92"
 
 [metadata.files]
 arpeggio = [
@@ -221,6 +234,9 @@ protobuf = [
 ]
 pulumi = [
     {file = "pulumi-3.13.2-py2.py3-none-any.whl", hash = "sha256:2f9de82cbdf5bc2e586aad1dc3589ca723da95a24b72a8f1db658c1490fcb090"},
+]
+pulumi-docker = [
+    {file = "pulumi_docker-3.1.0.tar.gz", hash = "sha256:0c5edb04448994de6cffb702146085856354efddbe78b0b38fa6a666428f0408"},
 ]
 pulumi-gcp = [
     {file = "pulumi_gcp-5.20.0.tar.gz", hash = "sha256:31ccf7f50b459dc527f49a9bf0dd11fe127b126e81cc5e3190059adf9649973b"},
