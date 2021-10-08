@@ -7,7 +7,7 @@
     "url": "https://github.com/davidNHK/spotify-music-player/issues"
   },
   "dependencies": {
-    "open": "8.2.1",
+    "open": "8.3.0",
     "yargs": "17.2.1"
   },
   "devDependencies": {
