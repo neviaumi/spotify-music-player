@@ -25,3 +25,4 @@ def create_cloud_storage():
         "cloud storage public url",
         pulumi.Output.concat("https://storage.googleapis.com/", bucket.id, "/"),
     )
+    return bucket

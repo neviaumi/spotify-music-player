@@ -40,3 +40,4 @@ def create_cloud_run(default_image: Output[str]):
         policy_data=no_auth_iam_policy.policy_data,
     )
     pulumi.export("cloud run url", cloud_run_instance.statuses[0].url)
+    return cloud_run_instance
