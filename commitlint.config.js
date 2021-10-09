@@ -5,6 +5,6 @@ const {
 module.exports = {
   rules: {
     'scope-enum': ctx =>
-      getPackages(ctx).then(packages => [2, 'always', [...packages, 'deps', 'deps-dev']]),
+      getPackages(ctx).then(packages => [2, 'always', [...packages, 'deps', 'deps-dev', "wip"]]),
   },
 };

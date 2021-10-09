@@ -1,10 +1,5 @@
-"""A Python Pulumi program"""
+from gcp import create_cloud_storage, create_container_registry, create_cloud_run
 
-import pulumi
-from pulumi_gcp import storage
-
-# Create a GCP resource (Storage Bucket)
-bucket = storage.Bucket('test-pulumi')
-
-# Export the DNS name of the bucket
-pulumi.export('test-pulumi',  bucket.url)
+create_cloud_storage()
+registry, initial_image = create_container_registry()
+create_cloud_run(initial_image)
