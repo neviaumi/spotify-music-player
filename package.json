@@ -14,7 +14,7 @@
     "@commitlint/config-lerna-scopes": "13.2.0",
     "commitlint": "13.2.1",
     "husky": "7.0.2",
-    "lint-staged": "11.2.0",
+    "lint-staged": "11.2.3",
     "markdownlint-cli2": "0.3.2",
     "mrm": "3.0.9",
     "npm-package-json-lint": "5.2.4",
