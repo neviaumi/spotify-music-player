@@ -86,7 +86,7 @@
     "expect": "27.2.5",
     "husky": "7.0.2",
     "jest-expect-message": "1.0.2",
-    "jest-mock": "27.2.4",
+    "jest-mock": "27.2.5",
     "lint-staged": "11.2.3",
     "lodash.isfunction": "3.0.9",
     "memfs": "3.3.0",
