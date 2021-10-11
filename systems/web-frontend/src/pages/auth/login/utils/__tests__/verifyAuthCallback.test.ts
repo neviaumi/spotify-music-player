@@ -9,7 +9,10 @@ import { verifyAuthCallback } from '../verifyAuthCallback';
 beforeEach(() => window.localStorage.clear());
 
 it('Read previous state', () => {
-  window.localStorage.setItem('randomIdHere', JSON.stringify({ foo: 'bar' }));
+  window.localStorage.setItem(
+    'auth-session-randomIdHere',
+    JSON.stringify({ foo: 'bar' }),
+  );
   const authorizeUrl = new URL('http://localhost:3000/auth/callback');
   const searchParams = authorizeUrl.searchParams;
   searchParams.append('code', 'foobar');
@@ -20,7 +23,7 @@ it('Read previous state', () => {
     code: 'foobar',
     state: { foo: 'bar' },
   });
-  expect(window.localStorage.getItem('randomIdHere')).toBeNull();
+  expect(window.localStorage.getItem('auth-session-randomIdHere')).toBeNull();
 });
 
 it('error if state not found', () => {

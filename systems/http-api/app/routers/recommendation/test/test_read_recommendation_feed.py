@@ -11,7 +11,7 @@ def test_read_albums_recommendation_feed_by_recent_played_artists(test_app):
     use_mock_spotify_server(test_app)
     client = TestClient(test_app)
     response = client.get(
-        "/recommendation-feed/albums/by-recent-played-artists",
+        "/api/recommendation-feed/albums/by-recent-played-artists",
         headers={"Authorization": f"Bearer {settings.spotify_access_token}"},
     )
     assert response.status_code == 200
@@ -25,7 +25,7 @@ def test_read_albums_recommendation_feed_by_recent_played_tracks(test_app):
     use_mock_spotify_server(test_app)
     client = TestClient(test_app)
     response = client.get(
-        "/recommendation-feed/albums/by-recent-played-tracks",
+        "/api/recommendation-feed/albums/by-recent-played-tracks",
         headers={"Authorization": f"Bearer {settings.spotify_access_token}"},
     )
     assert response.status_code == 200
@@ -40,7 +40,7 @@ def test_read_albums_recommendation_feed_by_user_top_tracks(test_app):
     use_mock_spotify_server(test_app)
     client = TestClient(test_app)
     response = client.get(
-        "/recommendation-feed/albums/by-user-top-tracks",
+        "/api/recommendation-feed/albums/by-user-top-tracks",
         headers={"Authorization": f"Bearer {settings.spotify_access_token}"},
     )
     assert response.status_code == 200
@@ -55,7 +55,7 @@ def test_read_albums_recommendation_feed_by_user_top_artists(test_app):
     use_mock_spotify_server(test_app)
     client = TestClient(test_app)
     response = client.get(
-        "/recommendation-feed/albums/by-user-top-artists",
+        "/api/recommendation-feed/albums/by-user-top-artists",
         headers={"Authorization": f"Bearer {settings.spotify_access_token}"},
     )
     assert response.status_code == 200
@@ -70,7 +70,7 @@ def test_read_albums_recommendation_feed_by_user_top_artists_genres(test_app):
     use_mock_spotify_server(test_app)
     client = TestClient(test_app)
     response = client.get(
-        "/recommendation-feed/albums/by-user-top-artists-genres",
+        "/api/recommendation-feed/albums/by-user-top-artists-genres",
         headers={"Authorization": f"Bearer {settings.spotify_access_token}"},
     )
     assert response.status_code == 200
