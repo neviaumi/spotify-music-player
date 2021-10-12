@@ -1,5 +1,5 @@
 #!/bin/sh
 
 set -e
-npx tsc
+npx tsc --noEmit
 npm test

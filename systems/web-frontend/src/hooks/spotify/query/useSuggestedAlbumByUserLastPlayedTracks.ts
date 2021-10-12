@@ -1,7 +1,7 @@
-import type { AxiosResponse } from 'axios';
 import { eqBy, prop, uniqWith } from 'ramda';
 
 import type { AlbumSimplified } from '../typings/Album';
+import type { QueryResponse } from '../typings/QueryResponse';
 import type { TrackSimplified } from '../typings/Track';
 import { useRecentPlayedTrack } from './useRecentPlayedTrack';
 import { SeedType, useRecommendations } from './useRecommendations';
@@ -11,9 +11,7 @@ interface Response {
   tracks: TrackSimplified[];
 }
 
-export function useSuggestedAlbumByUserLastPlayedTracks():
-  | AxiosResponse<Response>
-  | undefined {
+export function useSuggestedAlbumByUserLastPlayedTracks(): QueryResponse<Response> {
   const recentPlayedTrack = useRecentPlayedTrack();
   const recommendations = useRecommendations(
     recentPlayedTrack?.data.items.map(item => item.track.id) ?? [],
@@ -30,7 +28,6 @@ export function useSuggestedAlbumByUserLastPlayedTracks():
     recommendTracks.map(track => track.album),
   );
   return {
-    ...recommendations,
     data: {
       albums: albums,
       tracks: recentPlayedTrack.data.items.map(item => item.track).slice(0, 5),

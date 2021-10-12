@@ -12,6 +12,6 @@ it('Return user playlist', async () => {
   await waitForNextUpdate();
   expect(result.error).toBeUndefined();
   expect(
-    result.current.data.items.every((item: any) => item.type === 'playlist'),
+    result.current?.data.items.every((item: any) => item.type === 'playlist'),
   ).toBeTruthy();
 });

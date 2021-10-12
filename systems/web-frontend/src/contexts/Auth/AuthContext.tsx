@@ -9,6 +9,10 @@ import {
 import { UnAuthenticatedError } from '../../errors/UnAuthenticatedError';
 import { getCurrentTimestamp } from '../../utils/getCurrentTimestamp';
 
+interface AuthorizationCodeResponse {
+  data: { access_token: string; expires_in: number; refresh_token: string };
+}
+
 function useAuth({
   accessToken,
   tokenExpireTime: hardCodedExpireTime,
@@ -43,7 +47,7 @@ function useAuth({
   const exchangeTokenFromCode = async (code: string, codeVerifier: string) => {
     const {
       data: { access_token, refresh_token, expires_in },
-    } = await axios.request({
+    } = await axios.request<string, AuthorizationCodeResponse>({
       data: new URLSearchParams({
         client_id: import.meta.env.SNOWPACK_PUBLIC_SPOTIFY_CLIENT_ID,
         code,
@@ -69,7 +73,7 @@ function useAuth({
     try {
       const {
         data: { access_token, refresh_token, expires_in },
-      } = await axios.request({
+      } = await axios.request<string, AuthorizationCodeResponse>({
         data: new URLSearchParams({
           client_id: import.meta.env.SNOWPACK_PUBLIC_SPOTIFY_CLIENT_ID,
           grant_type: 'refresh_token',

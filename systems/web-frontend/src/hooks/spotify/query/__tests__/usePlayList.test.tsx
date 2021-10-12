@@ -15,7 +15,7 @@ it('Return playlist info', async () => {
   await waitForNextUpdate();
   expect(result.error).toBeUndefined();
   expect(
-    result.current.data.tracks.items.every(
+    result.current?.data.tracks.items.every(
       (item: any) => item.track.type === 'track',
     ),
   ).toBeTruthy();

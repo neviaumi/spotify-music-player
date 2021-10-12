@@ -1,8 +1,8 @@
-import type { AxiosResponse } from 'axios';
 import { eqBy, prop, uniqWith } from 'ramda';
 
 import type { AlbumSimplified } from '../typings/Album';
 import type { ArtistSimplified } from '../typings/Artist';
+import type { QueryResponse } from '../typings/QueryResponse';
 import { useRecentPlayedTrack } from './useRecentPlayedTrack';
 import { SeedType, useRecommendations } from './useRecommendations';
 
@@ -11,9 +11,7 @@ interface Response {
   artists: ArtistSimplified[];
 }
 
-export function useSuggestedAlbumByUserLastPlayedArtists():
-  | AxiosResponse<Response>
-  | undefined {
+export function useSuggestedAlbumByUserLastPlayedArtists(): QueryResponse<Response> {
   const recentPlayedTrack = useRecentPlayedTrack();
   const recentPlayedTrackArtists = uniqWith<ArtistSimplified, void>(
     // @ts-expect-error error come from ramda internal type
@@ -37,7 +35,6 @@ export function useSuggestedAlbumByUserLastPlayedArtists():
   );
 
   return {
-    ...recommendations,
     data: {
       albums,
       artists: recentPlayedTrackArtists.slice(0, 5),

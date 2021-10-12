@@ -16,6 +16,7 @@ import { setRepeatMode } from './commands/setRepeatMode';
 import { setShuffleMode } from './commands/setShuffleMode';
 import { setVolume } from './commands/setVolume';
 import { startPlayback } from './commands/startPlayback';
+import type { IRemotePlaybackState } from './typings';
 
 export class RemotePlaybackState implements ActivePlaybackState {
   readonly apiClient: AxiosInstance;
@@ -111,13 +112,15 @@ export class RemotePlaybackState implements ActivePlaybackState {
   }
 
   async getPlaybackState() {
-    const { data, status } = await this.apiClient.request({
-      method: 'GET',
-      params: {
-        additional_types: 'track',
+    const { data, status } = await this.apiClient.request<IRemotePlaybackState>(
+      {
+        method: 'GET',
+        params: {
+          additional_types: 'track',
+        },
+        url: '/me/player',
       },
-      url: '/me/player',
-    });
+    );
     if (status === 204) {
       if (this.stateMachine.can(PlaybackState.IDLE)) this.stateMachine.idle();
       return null;
