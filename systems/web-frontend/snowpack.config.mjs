@@ -1,4 +1,5 @@
 // Snowpack Configuration File
+import proxy from 'http2-proxy';
 
 // See all supported options: https://www.snowpack.dev/reference/configuration
 /** @type {import('snowpack').SnowpackUserConfig } */
@@ -8,6 +9,7 @@ export default {
     'graceful-fs': 'memfs',
   },
   buildOptions: {
+    baseUrl: 'https://storage.googleapis.com/test-pulumi-37a15b8',
     jsxInject: "import React from 'react'",
     sourcemap: false,
   },
@@ -36,6 +38,15 @@ export default {
     ],
   ],
   routes: [
+    {
+      dest: (req, res) => {
+        return proxy.web(req, res, {
+          hostname: 'localhost',
+          port: 8000,
+        });
+      },
+      src: '/api/.*',
+    },
     {
       dest: '/index.html',
       match: 'routes',

@@ -25,7 +25,7 @@ describe('Test /auth/login/callback', () => {
   beforeEach(() => setupMockServer(context.polly));
   it('Should redirect to page that before login', async () => {
     window.localStorage.setItem(
-      'randomId',
+      'auth-session-randomId',
       JSON.stringify({
         codeVerifier: '',
         from: {
