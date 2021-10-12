@@ -1,12 +1,15 @@
 import pulumi
 from pulumi_gcp import cloudrun, organizations
-from pulumi import Output
+from pulumi import Output, Config
 
 
 def create_cloud_run(default_image: Output[str]):
+    config = Config("gcp")
+    location = config.require("region")
+
     cloud_run_instance = cloudrun.Service(
         "test-pulumi-cloud-run",
-        location="europe-west2",
+        location=location,
         template=cloudrun.ServiceTemplateArgs(
             spec=cloudrun.ServiceTemplateSpecArgs(
                 containers=[
