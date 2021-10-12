@@ -10,7 +10,7 @@ export function useUserCountry() {
     [queryParams.method, queryParams.url],
     () => {
       const { method, url } = queryParams;
-      return axios.request({
+      return axios.request<{ country: string }>({
         method,
         params: { token: import.meta.env.SNOWPACK_PUBLIC_IPINFO_TOKEN },
         url,

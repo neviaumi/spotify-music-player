@@ -3,8 +3,9 @@ import { useQuery } from 'react-query';
 
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import type { AlbumFull } from '../typings/Album';
+import type { QueryResponse } from '../typings/QueryResponse';
 
-export function useAlbum(albumId: string) {
+export function useAlbum(albumId: string): QueryResponse<AlbumFull> {
   const apiClient = useSpotifyAPIClient();
   const queryParams: AxiosRequestConfig = {
     method: 'GET',

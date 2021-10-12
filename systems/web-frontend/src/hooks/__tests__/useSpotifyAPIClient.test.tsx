@@ -26,7 +26,7 @@ describe('useSpotifyAPIClient', () => {
       method: 'GET',
       url: '/fake-endpoint',
     });
-    expect(response.config.headers.Authorization).toEqual(
+    expect(response.config.headers?.Authorization).toEqual(
       'Bearer fakeAccessToken',
     );
   });
@@ -100,7 +100,7 @@ describe('useSpotifyAPIClient', () => {
       method: 'GET',
       url: '/fake-endpoint',
     });
-    expect(response.config.headers.Authorization).toEqual(
+    expect(response.config.headers?.Authorization).toEqual(
       'Bearer newAccessToken',
     );
   });

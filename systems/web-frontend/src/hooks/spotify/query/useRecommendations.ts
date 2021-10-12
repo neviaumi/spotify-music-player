@@ -3,6 +3,7 @@ import { isEmpty } from 'ramda';
 import { useQuery } from 'react-query';
 
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
+import type { QueryResponse } from '../typings/QueryResponse';
 import type { TrackSimplified } from '../typings/Track';
 
 export enum SeedType {
@@ -14,7 +15,10 @@ export enum SeedType {
 interface Response {
   tracks: TrackSimplified[];
 }
-export function useRecommendations(seeds: string[], seedType: SeedType) {
+export function useRecommendations(
+  seeds: string[],
+  seedType: SeedType,
+): QueryResponse<Response> {
   const queryParams: AxiosRequestConfig = {
     method: 'GET',
     params: {

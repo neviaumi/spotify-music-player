@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import { useUserCountry } from '../../useUserCountry';
 import type { PlaylistSimplified } from '../typings/Playlist';
+import type { QueryResponse } from '../typings/QueryResponse';
 import type { Paging } from '../typings/shared/Paging';
 
 interface Response {
@@ -11,7 +12,7 @@ interface Response {
   playlists: Paging<PlaylistSimplified>;
 }
 
-export function useFeaturedPlaylists() {
+export function useFeaturedPlaylists(): QueryResponse<Response> {
   const apiClient = useSpotifyAPIClient();
   const country = useUserCountry();
 

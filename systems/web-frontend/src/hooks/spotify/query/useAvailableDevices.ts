@@ -1,7 +1,8 @@
-import type { AxiosRequestConfig, AxiosResponse } from 'axios';
+import type { AxiosRequestConfig } from 'axios';
 import { useQuery, UseQueryOptions } from 'react-query';
 
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
+import type { QueryResponse } from '../typings/QueryResponse';
 import type { UserDevice } from '../typings/UserDevice';
 
 interface Response {
@@ -9,23 +10,23 @@ interface Response {
 }
 
 export function useAvailableDevices(
-  options: UseQueryOptions<AxiosResponse<Response>> = {},
+  options: UseQueryOptions<QueryResponse<Response>> = {},
 ) {
   const apiClient = useSpotifyAPIClient();
   const queryParams: AxiosRequestConfig = {
     method: 'GET',
     url: '/me/player/devices',
   };
-  const result = useQuery<AxiosResponse<Response>>(
+  return useQuery<QueryResponse<Response>>(
     [queryParams.method, queryParams.url],
-    () => {
+    async () => {
       const { method, url } = queryParams;
-      return apiClient.request<Response>({
+      const { data } = await apiClient.request<Response>({
         method,
         url,
       });
+      return { data };
     },
     options,
   );
-  return result;
 }
