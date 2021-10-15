@@ -78,7 +78,7 @@
     "@types/spotify-web-playback-sdk": "0.1.12",
     "@types/styled-components": "5.1.15",
     "@types/uuid": "8.3.1",
-    "@web/test-runner": "0.13.18",
+    "@web/test-runner": "0.13.19",
     "@web/test-runner-playwright": "0.8.8",
     "dotenv": "10.0.0",
     "eslint": "7.32.0",
