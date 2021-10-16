@@ -11,6 +11,7 @@ class MockCloudStorage(pulumi.runtime.Mocks):
         return {}
 
 
+pulumi.runtime.set_config("gcp:region", "europe-west2")
 pulumi.runtime.set_mocks(MockCloudStorage())
 
 

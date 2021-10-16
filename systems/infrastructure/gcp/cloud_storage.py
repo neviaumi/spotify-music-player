@@ -1,12 +1,16 @@
 import pulumi
+from pulumi import Config
 from pulumi_gcp import storage
 
 
 def create_cloud_storage():
+    config = Config("gcp")
+    location = config.require("region")
+
     # Create a GCP resource (Storage Bucket)
     bucket = storage.Bucket(
         "test-pulumi",
-        location="EU",
+        location=location,
         force_destroy=True,
         uniform_bucket_level_access=True,
         website=storage.BucketWebsiteArgs(
