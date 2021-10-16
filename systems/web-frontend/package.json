@@ -66,19 +66,19 @@
     "@types/lodash.isfunction": "3.0.6",
     "@types/lodash.kebabcase": "4.1.6",
     "@types/mocha": "9.0.0",
-    "@types/node": "16.10.3",
+    "@types/node": "16.11.0",
     "@types/pollyjs__adapter-xhr": "2.6.1",
     "@types/pollyjs__core": "4.3.3",
     "@types/pollyjs__persister-rest": "4.0.1",
     "@types/ramda": "0.27.45",
-    "@types/react": "17.0.27",
+    "@types/react": "17.0.30",
     "@types/react-dom": "17.0.9",
     "@types/react-router-dom": "5.3.1",
     "@types/retry": "0.12.1",
-    "@types/spotify-web-playback-sdk": "0.1.11",
+    "@types/spotify-web-playback-sdk": "0.1.12",
     "@types/styled-components": "5.1.15",
     "@types/uuid": "8.3.1",
-    "@web/test-runner": "0.13.18",
+    "@web/test-runner": "0.13.19",
     "@web/test-runner-playwright": "0.8.8",
     "dotenv": "10.0.0",
     "eslint": "7.32.0",
@@ -104,7 +104,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-order": "4.1.0",
-    "typescript": "4.4.3"
+    "typescript": "4.4.4"
   },
   "engines": {
     "node": "16"
