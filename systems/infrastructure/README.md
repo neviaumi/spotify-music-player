@@ -7,3 +7,6 @@
 ```
 PULUMI_CONFIG_PASSPHRASE='' poetry run pulumi up
 ```
+
+# Test
+`poetry run pytest ./`
