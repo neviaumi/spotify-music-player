@@ -9,7 +9,7 @@ on:
       - 'systems/http-api/**'
       - 'systems/web-frontend/**'
 env:
-  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  GCP_PROJECT_ID: spotify-music-player-327914
   GCP_SERVICE: test-pulumi-cloud-run
   GCP_REGION: europe-west2
   GCP_IMAGE_REPOSITORY: test-pulumi-repository
