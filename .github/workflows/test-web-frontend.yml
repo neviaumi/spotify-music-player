@@ -27,5 +27,5 @@ jobs:
             package-lock.json
             systems/web-frontend/package-lock.json
       - run: bash ./scripts/setup.sh
-      - run: lerna exec --stream --concurrency 1 --scope=@music-player/web-frontend -- bash scripts/build.sh
+      - run: lerna exec --stream --concurrency 1 --scope=@music-player/web-frontend -- bash scripts/ci/build.sh
       - run: lerna exec --stream --concurrency 1 --scope=@music-player/web-frontend -- bash scripts/ci/test.sh

@@ -9,7 +9,7 @@ export default {
     'graceful-fs': 'memfs',
   },
   buildOptions: {
-    baseUrl: 'https://storage.googleapis.com/test-pulumi-37a15b8',
+    baseUrl: 'https://storage.googleapis.com/test-pulumi-f675971',
     jsxInject: "import React from 'react'",
     sourcemap: false,
   },
