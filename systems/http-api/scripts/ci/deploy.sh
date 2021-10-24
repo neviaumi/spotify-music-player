@@ -5,7 +5,7 @@ if [ -z "$image_name" ]; then
   exit 1
 fi
 docker push "$image_name"
-gcloud run deploy test-pulumi-cloud-run \
+gcloud run deploy "$GCP_SERVICE" \
   --allow-unauthenticated \
   --image="$image_name" \
   --command="uvicorn" \

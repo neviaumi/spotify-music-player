@@ -38,6 +38,8 @@ jobs:
           project_id: ${{ env.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
+      - name: Authorize Docker push
+        run: gcloud auth configure-docker
       - run: bash ./scripts/setup.sh
       - run: lerna exec --stream --concurrency 1 --scope=@music-player/http-api -- bash scripts/ci/setup.sh
       - run: lerna exec --stream --concurrency 1 --scope=@music-player/web-frontend -- bash scripts/ci/build.sh
