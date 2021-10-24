@@ -27,7 +27,7 @@ export const useUserTop: UseUserTopHooks = function useUserTop(
   const apiClient = useSpotifyAPIClient();
   const { data } = useQuery([queryParams.method, queryParams.url], () => {
     const { method, url } = queryParams;
-    return apiClient.request({
+    return apiClient.request<unknown, any>({
       method,
       params: {
         limit: 50,
