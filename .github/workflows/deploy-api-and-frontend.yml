@@ -14,6 +14,7 @@ env:
   GCP_REGION: europe-west2
   GCP_IMAGE_REPOSITORY: test-pulumi-repository
   GCP_STORAGE_BUCKET: test-pulumi-f675971
+  CLOUDSDK_CORE_DISABLE_PROMPTS: 1
 
 jobs:
   deployment:
@@ -37,7 +38,6 @@ jobs:
         with:
           project_id: ${{ env.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
       - name: Authorize Docker push
         run: gcloud auth configure-docker
       - run: bash ./scripts/setup.sh
