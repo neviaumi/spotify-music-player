@@ -12,7 +12,7 @@
     "@busybox/prettier-config": "1.2.0",
     "@commitlint/cli": "14.1.0",
     "@commitlint/config-lerna-scopes": "14.0.0",
-    "commitlint": "14.0.0",
+    "commitlint": "14.1.0",
     "husky": "7.0.4",
     "lint-staged": "11.2.6",
     "markdownlint-cli2": "0.3.2",
