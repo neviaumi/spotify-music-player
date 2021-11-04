@@ -72,7 +72,7 @@
     "@types/pollyjs__core": "4.3.3",
     "@types/pollyjs__persister-rest": "4.0.1",
     "@types/ramda": "0.27.46",
-    "@types/react": "17.0.33",
+    "@types/react": "17.0.34",
     "@types/react-dom": "17.0.10",
     "@types/react-router-dom": "5.3.2",
     "@types/retry": "0.12.1",
