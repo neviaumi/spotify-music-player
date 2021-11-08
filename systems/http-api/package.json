@@ -5,7 +5,7 @@
   },
   "devDependencies": {
     "@music-player/cli": "file:../cli",
-    "pyright": "1.1.184"
+    "pyright": "1.1.185"
   },
   "engines": {
     "node": "16"
