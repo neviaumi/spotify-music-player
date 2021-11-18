@@ -233,7 +233,7 @@ python-versions = "*"
 
 [[package]]
 name = "pulumi"
-version = "3.17.1"
+version = "3.18.0"
 description = "Pulumi's Python SDK"
 category = "main"
 optional = false
@@ -394,7 +394,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "50b20fbbad3f617006e2d04d6584482b9d01f4e64e028b81911f67f5fd64f6ea"
+content-hash = "03bc00b8365567bf5c530dc0957736f8e962295fee5f6c42fb319ec99fc1e522"
 
 [metadata.files]
 arpeggio = [
@@ -559,7 +559,7 @@ protobuf = [
     {file = "protobuf-3.18.0.tar.gz", hash = "sha256:18b308946a592e245299391e53c01b5b8efc2794f49986e80f37d7b5e60a270f"},
 ]
 pulumi = [
-    {file = "pulumi-3.17.1-py2.py3-none-any.whl", hash = "sha256:ee94e276f718198d267ab01be9084392a3f79f2378a95b7d1a261e7a5e0c35c0"},
+    {file = "pulumi-3.18.0-py2.py3-none-any.whl", hash = "sha256:76936350d56f9697628a9002fe56398d19b012b45fc4a59dba501ecc19cf20d0"},
 ]
 pulumi-docker = [
     {file = "pulumi_docker-3.1.0.tar.gz", hash = "sha256:0c5edb04448994de6cffb702146085856354efddbe78b0b38fa6a666428f0408"},
