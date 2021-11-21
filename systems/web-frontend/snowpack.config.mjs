@@ -9,7 +9,8 @@ export default {
     'graceful-fs': 'memfs',
   },
   buildOptions: {
-    baseUrl: 'https://storage.googleapis.com/test-pulumi-f675971',
+    baseUrl:
+      'https://storage.googleapis.com/spotify-music-player-bucket-e2d0619',
     jsxInject: "import React from 'react'",
     sourcemap: false,
   },
