@@ -4,10 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Spotify music player" />
+  {% for (_, css_file) in css_files.items() %}
+      <link rel="stylesheet" href="{{ css_file }}">
+  {% endfor %}
   <title>Spotify music player</title>
 </head>
 <body>
 <div id="root">Loading...</div>
-<script type="module" src="{{ manifest["index.js"] }}"></script>
+{% for (_, js_file) in js_files.items() %}
+    <script type="module" src="{{ js_file }}"></script>
+{% endfor %}
 </body>
 </html>

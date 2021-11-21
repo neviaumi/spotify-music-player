@@ -14,6 +14,16 @@ def create_cloud_storage():
         f"{prefix}-bucket",
         location=location,
         force_destroy=True,
+        cors=[
+            storage.BucketCorArgs(
+                max_age_seconds=3600,
+                methods=[
+                    "GET",
+                ],
+                origins=["*"],
+                response_headers=["*"],
+            )
+        ],
         uniform_bucket_level_access=True,
         website=storage.BucketWebsiteArgs(
             main_page_suffix="index.html",
