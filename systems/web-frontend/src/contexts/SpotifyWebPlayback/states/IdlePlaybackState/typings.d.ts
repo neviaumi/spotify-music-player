@@ -1,4 +1,3 @@
-import { PlaybackDevice } from '../../typings/Playback';
 import { RepeatMode } from '../../typings/RepeatMode';
 
 export interface ICurrentlyPlayingTrack {

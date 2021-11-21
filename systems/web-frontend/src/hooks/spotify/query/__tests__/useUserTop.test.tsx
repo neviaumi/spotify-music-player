@@ -4,7 +4,7 @@ import { renderHook } from '../../../../../testHelper/testing-library/react-hook
 import { TestApp } from '../../../../App';
 import { QueryType, useUserTop } from '../useUserTop';
 
-const _context = createPollyContext(import.meta.url);
+createPollyContext(import.meta.url);
 it('Return user top artist', async () => {
   const { result, waitForNextUpdate } = renderHook(
     () => useUserTop(QueryType.ARTIST),
