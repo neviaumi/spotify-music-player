@@ -6,10 +6,12 @@ from pulumi_gcp import storage
 def create_cloud_storage():
     config = Config("gcp")
     location = config.require("region")
+    name_config = Config("name")
+    prefix = name_config.require("prefix")
 
     # Create a GCP resource (Storage Bucket)
     bucket = storage.Bucket(
-        "test-pulumi",
+        f"{prefix}-bucket",
         location=location,
         force_destroy=True,
         uniform_bucket_level_access=True,
@@ -19,7 +21,7 @@ def create_cloud_storage():
         ),
     )
     storage.BucketIAMBinding(
-        "test-pulumi-bucket-iam-binding",
+        f"{prefix}-bucket-iam-binding",
         bucket=bucket,
         role="roles/storage.objectViewer",
         members=["allUsers"],

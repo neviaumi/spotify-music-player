@@ -3,3 +3,5 @@ config:
   gcp:project: spotify-music-player-327914
   gcp:region: europe-west2
   gcp:zone: europe-west2-a
+  name:prefix: spotify-music-player
+  domain:prefix: spotify-music-player-demo

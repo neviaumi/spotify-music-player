@@ -6,9 +6,14 @@ from pulumi import Output, Config
 def create_cloud_run(default_image: Output[str]):
     config = Config("gcp")
     location = config.require("region")
+    name_config = Config("name")
+    prefix = name_config.require("prefix")
+    domain_config = Config("domain")
+    domain_prefix = domain_config.require("prefix")
 
     cloud_run_instance = cloudrun.Service(
-        "test-pulumi-cloud-run",
+        f"{prefix}-cloud-run",
+        name=domain_prefix,  # Specific name because it would used on final result url
         location=location,
         template=cloudrun.ServiceTemplateArgs(
             spec=cloudrun.ServiceTemplateSpecArgs(
@@ -36,7 +41,7 @@ def create_cloud_run(default_image: Output[str]):
         ]
     )
     cloudrun.IamPolicy(
-        "no-auth-iam-policy",
+        f"{prefix}-no-auth-iam-policy",
         location=cloud_run_instance.location,
         project=cloud_run_instance.project,
         service=cloud_run_instance.name,

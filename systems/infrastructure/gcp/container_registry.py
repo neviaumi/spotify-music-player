@@ -7,12 +7,15 @@ def create_container_registry():
     config = Config("gcp")
     project_id = config.require("project")
     location = config.require("region")
+    name_config = Config("name")
+    prefix = name_config.require("prefix")
+
     image_name = "http-api"
-    domain = "europe-west2-docker.pkg.dev"
+    domain = f"{location}-docker.pkg.dev"
     registry = artifactregistry.Repository(
-        "test-pulumi-repository",
+        f"{prefix}-docker-repository",
         location=location,
-        repository_id="test-pulumi-repository",
+        repository_id=f"{prefix}-docker-repository",
         description="example docker repository",
         format="DOCKER",
     )
