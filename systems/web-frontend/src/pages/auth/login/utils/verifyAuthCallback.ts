@@ -15,11 +15,12 @@ export function verifyAuthCallback(url: string) {
   if (params.error) {
     throw new AuthenticationCallbackError(params.error);
   }
-  const state = window.localStorage.getItem(params.state);
+  const storageKey = `auth-session-${params.state}`;
+  const state = window.localStorage.getItem(storageKey);
   if (!state) {
     throw new AuthenticationCallbackError(`Unknown state: ${params.state}`);
   }
-  window.localStorage.removeItem(params.state);
+  window.localStorage.removeItem(storageKey);
   return {
     code: params.code,
     state: JSON.parse(state),

@@ -1,0 +1,35 @@
+{
+  "author": "davidNHK",
+  "bin": {
+    "cli": "src/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/davidNHK/spotify-music-player/issues"
+  },
+  "dependencies": {
+    "open": "8.4.0",
+    "yargs": "17.2.1"
+  },
+  "devDependencies": {
+    "@busybox/eslint-config": "5.6.4",
+    "@busybox/prettier-config": "1.2.0",
+    "eslint": "8.2.0"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "files": [
+    "src"
+  ],
+  "homepage": "https://github.com/davidNHK/spotify-music-player#readme",
+  "license": "MIT",
+  "name": "@music-player/cli",
+  "repository": {
+    "directory": "systems/cli",
+    "type": "git",
+    "url": "git+ssh://git@github.com/davidNHK/spotify-music-player.git"
+  },
+  "scripts": {},
+  "type": "module",
+  "version": "0.1.0"
+}

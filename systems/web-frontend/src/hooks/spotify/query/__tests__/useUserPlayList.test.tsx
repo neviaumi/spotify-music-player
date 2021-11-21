@@ -4,7 +4,7 @@ import { renderHook } from '../../../../../testHelper/testing-library/react-hook
 import { TestApp } from '../../../../App';
 import { useUserPlayList } from '../useUserPlayList';
 
-const _context = createPollyContext(import.meta.url);
+createPollyContext(import.meta.url);
 it('Return user playlist', async () => {
   const { result, waitForNextUpdate } = renderHook(() => useUserPlayList(), {
     wrapper: ({ children }) => <TestApp>{children}</TestApp>,
@@ -12,6 +12,6 @@ it('Return user playlist', async () => {
   await waitForNextUpdate();
   expect(result.error).toBeUndefined();
   expect(
-    result.current.data.items.every((item: any) => item.type === 'playlist'),
+    result.current?.data.items.every((item: any) => item.type === 'playlist'),
   ).toBeTruthy();
 });

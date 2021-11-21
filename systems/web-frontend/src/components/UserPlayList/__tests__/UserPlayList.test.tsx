@@ -19,7 +19,7 @@ describe('Test withUserPlayList HOC', () => {
       </div>
     );
   });
-  const _context = createPollyContext(import.meta.url);
+  createPollyContext(import.meta.url);
   it('Should render without error', async () => {
     const history = createMemoryHistory();
     render(

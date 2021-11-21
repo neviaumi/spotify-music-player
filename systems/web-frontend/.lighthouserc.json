@@ -4,7 +4,7 @@
       "assertions": {
         "resource-summary.script.size": [
           "error",
-          { "maxNumericValue": 150000 }
+          { "maxNumericValue": 200000 }
         ],
         "resource-summary:document:size": [
           "error",

@@ -9,6 +9,7 @@ import {
 import { RepeatMode } from '../../typings/RepeatMode';
 import type { StateMachine } from '../../typings/State';
 import { startPlayback } from '../LocalPlaybackState/commands/startPlayback';
+import type { ICurrentlyPlayingTrack, IRecentlyPlayedTracks } from './typings';
 
 export class IdlePlaybackState implements ActivePlaybackState {
   readonly apiClient: AxiosInstance;
@@ -89,13 +90,14 @@ export class IdlePlaybackState implements ActivePlaybackState {
   }
 
   private async getUserPlayTrack() {
-    const { data, status } = await this.apiClient.request({
-      method: 'GET',
-      params: {
-        additional_types: 'track',
-      },
-      url: '/me/player/currently-playing',
-    });
+    const { data, status } =
+      await this.apiClient.request<ICurrentlyPlayingTrack>({
+        method: 'GET',
+        params: {
+          additional_types: 'track',
+        },
+        url: '/me/player/currently-playing',
+      });
     if (status === 204) {
       return this.getUserRecentlyPlayingTrack();
     }
@@ -112,14 +114,15 @@ export class IdlePlaybackState implements ActivePlaybackState {
   }
 
   private async getUserRecentlyPlayingTrack() {
-    const { data, status } = await this.apiClient.request({
-      method: 'GET',
-      params: {
-        additional_types: 'track',
-        limit: 1,
-      },
-      url: '/me/player/recently-played',
-    });
+    const { data, status } =
+      await this.apiClient.request<IRecentlyPlayedTracks>({
+        method: 'GET',
+        params: {
+          additional_types: 'track',
+          limit: 1,
+        },
+        url: '/me/player/recently-played',
+      });
     if (status === 204) {
       return null;
     }

@@ -1,10 +1,16 @@
 // Snowpack Configuration File
+import proxy from 'http2-proxy';
 
 // See all supported options: https://www.snowpack.dev/reference/configuration
 /** @type {import('snowpack').SnowpackUserConfig } */
 // eslint-disable-next-line import/no-default-export
 export default {
+  alias: {
+    'graceful-fs': 'memfs',
+  },
   buildOptions: {
+    baseUrl:
+      'https://storage.googleapis.com/spotify-music-player-bucket-e2d0619',
     jsxInject: "import React from 'react'",
     sourcemap: false,
   },
@@ -16,18 +22,6 @@ export default {
     src: '/src',
     testHelper: '/testHelper',
   },
-  optimize: {
-    bundle: true,
-    loader: {
-      '.gif': 'file',
-      '.png': 'file',
-    },
-    manifest: true,
-    minify: true,
-    splitting: true,
-    target: 'es2020',
-    treeshake: true,
-  },
   packageOptions: {
     external: ['crypto'],
     polyfillNode: true,
@@ -35,15 +29,25 @@ export default {
   },
   plugins: [
     '@snowpack/plugin-react-refresh',
+    ['snowpack-plugin-svgr', {}],
+    '@snowpack/plugin-dotenv',
     [
-      'snowpack-plugin-svgr',
+      '@snowpack/plugin-webpack',
       {
-        /* see "Plugin Options" below */
+        manifest: true,
       },
     ],
-    '@snowpack/plugin-dotenv',
   ],
   routes: [
+    {
+      dest: (req, res) => {
+        return proxy.web(req, res, {
+          hostname: 'localhost',
+          port: 8000,
+        });
+      },
+      src: '/api/.*',
+    },
     {
       dest: '/index.html',
       match: 'routes',

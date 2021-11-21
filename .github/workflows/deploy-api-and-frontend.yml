@@ -1,0 +1,46 @@
+name: Deploy systems/http-api and web-frontend
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'systems/http-api/**'
+      - 'systems/web-frontend/**'
+env:
+  GCP_PROJECT_ID: spotify-music-player-327914
+  GCP_SERVICE: spotify-music-player-demo
+  GCP_REGION: europe-west2
+  GCP_IMAGE_REPOSITORY: spotify-music-player-docker-repository
+  GCP_STORAGE_BUCKET: spotify-music-player-bucket-e2d0619
+  CLOUDSDK_CORE_DISABLE_PROMPTS: 1
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo ::set-output name=PYTHON_VERSION::$(cat ./systems/http-api/.python-version)
+        id: python-version
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '${{ steps.python-version.outputs.PYTHON_VERSION }}'
+      - run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        id: nvm
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ env.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+      - name: Authorize Docker push
+        run: gcloud auth configure-docker "$GCP_REGION-docker.pkg.dev"
+      - run: bash ./scripts/setup.sh
+      - run: lerna exec --stream --concurrency 1 --scope=@music-player/http-api -- bash scripts/ci/setup.sh
+      - run: lerna exec --stream --concurrency 1 --scope=@music-player/web-frontend -- bash scripts/ci/build.sh
+      - run: lerna exec --stream --concurrency 1 --scope=@music-player/web-frontend -- bash scripts/ci/deploy.sh
+      - run: lerna exec --stream --concurrency 1 --scope=@music-player/http-api -- bash scripts/ci/build-and-deploy.sh

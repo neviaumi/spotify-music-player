@@ -139,8 +139,8 @@ export class LocalPlaybackState implements ActivePlaybackState {
       progress_ms: position,
       repeat_state: {
         0: RepeatMode.Off,
-        1: RepeatMode.Track,
-        2: RepeatMode.Context,
+        1: RepeatMode.Context,
+        2: RepeatMode.Track,
       }[repeat_mode],
       shuffle_state: shuffle,
       track: track_window.current_track,

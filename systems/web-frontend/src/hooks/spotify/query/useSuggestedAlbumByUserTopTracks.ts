@@ -1,7 +1,7 @@
-import type { AxiosResponse } from 'axios';
 import { eqBy, prop, uniqWith } from 'ramda';
 
 import type { AlbumSimplified } from '../typings/Album';
+import type { QueryResponse } from '../typings/QueryResponse';
 import type { TrackFull } from '../typings/Track';
 import { SeedType, useRecommendations } from './useRecommendations';
 import { QueryType, useUserTop } from './useUserTop';
@@ -11,9 +11,7 @@ interface Response {
   tracks: TrackFull[];
 }
 
-export function useSuggestedAlbumByUserTopTracks():
-  | AxiosResponse<Response>
-  | undefined {
+export function useSuggestedAlbumByUserTopTracks(): QueryResponse<Response> {
   const userTop = useUserTop(QueryType.TRACK);
   const topTracks = userTop?.data?.items ?? [];
   const recommendations = useRecommendations(
@@ -32,7 +30,6 @@ export function useSuggestedAlbumByUserTopTracks():
     recommendTracks.map(track => track.album),
   );
   return {
-    ...recommendations,
     data: {
       albums: albums,
       tracks: topTracks.slice(0, 5),

@@ -41,7 +41,7 @@ export function createPollyContext(
     polly: Polly;
   } = {};
   // https://netflix.github.io/pollyjs/#/test-frameworks/jest-jasmine?id=test-hook-ordering
-  beforeEach(async function (this: any) {
+  beforeEach(async function beforeEachHook(this: any) {
     const currentTest = this.currentTest;
     const { currentTestName } = {
       currentTestName: `${currentTest.fullTitle()}`,

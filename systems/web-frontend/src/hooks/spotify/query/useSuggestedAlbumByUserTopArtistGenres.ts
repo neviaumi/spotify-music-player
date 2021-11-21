@@ -1,7 +1,7 @@
-import type { AxiosResponse } from 'axios';
 import { eqBy, prop, uniqWith } from 'ramda';
 
 import type { AlbumSimplified } from '../typings/Album';
+import type { QueryResponse } from '../typings/QueryResponse';
 import { SeedType, useRecommendations } from './useRecommendations';
 import { QueryType, useUserTop } from './useUserTop';
 
@@ -10,9 +10,7 @@ interface Response {
   genres: string[];
 }
 
-export function useSuggestedAlbumByUserTopArtistGenres():
-  | AxiosResponse<Response>
-  | undefined {
+export function useSuggestedAlbumByUserTopArtistGenres(): QueryResponse<Response> {
   const userTop = useUserTop(QueryType.ARTIST);
   const topArtistGenres = Object.entries(
     userTop?.data?.items
@@ -43,7 +41,6 @@ export function useSuggestedAlbumByUserTopArtistGenres():
     recommendTracks.map(track => track.album),
   );
   return {
-    ...recommendations,
     data: {
       albums: albums,
       genres: topArtistGenres.map(([genre]) => genre).slice(0, 5),

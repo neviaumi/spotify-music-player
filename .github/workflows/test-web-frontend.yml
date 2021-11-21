@@ -1,0 +1,31 @@
+name: Test systems/web-frontend
+
+on:
+  push:
+    branches:
+      - development
+      - master
+    paths:
+      - 'systems/web-frontend/**'
+  pull_request:
+    paths:
+      - 'systems/web-frontend/**'
+env:
+  CI: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        id: nvm
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            systems/web-frontend/package-lock.json
+      - run: bash ./scripts/setup.sh
+      - run: lerna exec --stream --concurrency 1 --scope=@music-player/web-frontend -- bash scripts/ci/build.sh
+      - run: lerna exec --stream --concurrency 1 --scope=@music-player/web-frontend -- bash scripts/ci/test.sh

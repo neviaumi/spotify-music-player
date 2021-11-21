@@ -3,8 +3,9 @@ import { useQuery } from 'react-query';
 
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import type { PlaylistFull } from '../typings/Playlist';
+import type { QueryResponse } from '../typings/QueryResponse';
 
-export function usePlayList(playListId: string) {
+export function usePlayList(playListId: string): QueryResponse<PlaylistFull> {
   const queryParams: AxiosRequestConfig = {
     method: 'GET',
     url: `/playlists/${playListId}`,
@@ -17,5 +18,5 @@ export function usePlayList(playListId: string) {
       url,
     });
   });
-  return data!;
+  return data;
 }

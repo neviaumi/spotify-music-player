@@ -5,6 +5,16 @@ updates:
     schedule:
       interval: 'daily'
 
+  - package-ecosystem: 'pip'
+    directory: '/systems/http-api'
+    schedule:
+      interval: 'daily'
+
+  - package-ecosystem: 'pip'
+    directory: '/systems/infrastructure'
+    schedule:
+      interval: 'daily'
+
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:

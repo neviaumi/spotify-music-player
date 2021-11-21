@@ -2,13 +2,14 @@ import type { AxiosRequestConfig } from 'axios';
 import { useQuery } from 'react-query';
 
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
+import type { QueryResponse } from '../typings/QueryResponse';
 import type { TrackSimplified } from '../typings/Track';
 
 interface Response {
   items: { track: TrackSimplified }[];
 }
 
-export function useRecentPlayedTrack() {
+export function useRecentPlayedTrack(): QueryResponse<Response> {
   const queryParams: AxiosRequestConfig = {
     method: 'GET',
     url: '/me/player/recently-played',

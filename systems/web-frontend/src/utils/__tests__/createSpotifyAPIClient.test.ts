@@ -7,7 +7,8 @@ describe('Test create API Client', () => {
       Promise.resolve(''),
     );
     expect(apiClient.defaults.baseURL).toEqual('https://api.spotify.com/v1');
-    expect(apiClient.defaults.headers.Authorization).toEqual(
+    // @ts-ignore
+    expect(apiClient.defaults.headers?.Authorization).toEqual(
       'Bearer Spotify Access Token here',
     );
     expect(apiClient.defaults).toHaveProperty('raxConfig');

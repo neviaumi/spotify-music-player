@@ -1,7 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import { withErrorBoundary } from 'react-error-boundary';
-import { useLocation } from 'react-router';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { ErrorFallback } from '../ErrorFallback';

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "infrastructure"
+version = "0.1.0"
+description = ""
+authors = ["David Ng <david.ng.dev@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pulumi = "^3.18.0"
+pulumi-gcp = "^6.1.0"
+pulumi-docker = "^3.1.0"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.11.1"
+black = "^21.11b1"
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

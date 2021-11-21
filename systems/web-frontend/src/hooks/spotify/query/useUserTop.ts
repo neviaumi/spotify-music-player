@@ -1,8 +1,9 @@
-import type { AxiosRequestConfig, AxiosResponse } from 'axios';
+import type { AxiosRequestConfig } from 'axios';
 import { useQuery } from 'react-query';
 
 import { useSpotifyAPIClient } from '../../useSpotifyAPIClient';
 import type { ArtistFull } from '../typings/Artist';
+import type { QueryResponse } from '../typings/QueryResponse';
 import type { Paging } from '../typings/shared/Paging';
 import type { TrackFull } from '../typings/Track';
 
@@ -12,8 +13,8 @@ export enum QueryType {
 }
 
 interface UseUserTopHooks {
-  (type: QueryType.ARTIST): AxiosResponse<Paging<ArtistFull>>;
-  (type: QueryType.TRACK): AxiosResponse<Paging<TrackFull>>;
+  (type: QueryType.ARTIST): QueryResponse<Paging<ArtistFull>>;
+  (type: QueryType.TRACK): QueryResponse<Paging<TrackFull>>;
 }
 
 export const useUserTop: UseUserTopHooks = function useUserTop(
@@ -26,7 +27,7 @@ export const useUserTop: UseUserTopHooks = function useUserTop(
   const apiClient = useSpotifyAPIClient();
   const { data } = useQuery([queryParams.method, queryParams.url], () => {
     const { method, url } = queryParams;
-    return apiClient.request({
+    return apiClient.request<unknown, any>({
       method,
       params: {
         limit: 50,
@@ -35,5 +36,5 @@ export const useUserTop: UseUserTopHooks = function useUserTop(
       url,
     });
   });
-  return data!;
+  return data;
 };

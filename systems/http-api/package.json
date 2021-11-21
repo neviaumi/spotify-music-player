@@ -1,0 +1,26 @@
+{
+  "author": "davidNHK",
+  "bugs": {
+    "url": "https://github.com/davidNHK/spotify-music-player/issues"
+  },
+  "devDependencies": {
+    "@music-player/cli": "file:../cli",
+    "pyright": "1.1.188"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "homepage": "https://github.com/davidNHK/spotify-music-player#readme",
+  "license": "MIT",
+  "name": "@music-player/http-api",
+  "private": true,
+  "repository": {
+    "directory": "systems/http-api",
+    "type": "git",
+    "url": "git+ssh://git@github.com/davidNHK/spotify-music-player.git"
+  },
+  "scripts": {
+    "signToken": "source ./.env && npx cli sign-token \"$SPOTIFY_CLIENT_ID\" \"$SPOTIFY_REQUESTED_SCOPE\" | npx cli set-env-file \"$PWD/.env.test\" SPOTIFY_ACCESS_TOKEN"
+  },
+  "version": "0.1.0"
+}
