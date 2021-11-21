@@ -12,6 +12,8 @@ class MockCloudStorage(pulumi.runtime.Mocks):
 
 
 pulumi.runtime.set_config("gcp:region", "europe-west2")
+pulumi.runtime.set_config("name:prefix", "testing")
+
 pulumi.runtime.set_mocks(MockCloudStorage())
 
 
@@ -20,5 +22,9 @@ def test_create_cloud_storage():
     def check_website(website):
         assert website["not_found_page"] == website["main_page_suffix"]
 
+    def check_name(name):
+        assert name == "testing"
+
     storage = create_cloud_storage()
     storage.website.apply(check_website)
+    storage.name.apply(check_name)

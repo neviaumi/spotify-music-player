@@ -3,17 +3,17 @@ name: Deploy systems/http-api and web-frontend
 on:
   push:
     branches:
-      - development
       - master
+      - development
 #    paths:
 #      - 'systems/http-api/**'
 #      - 'systems/web-frontend/**'
 env:
   GCP_PROJECT_ID: spotify-music-player-327914
-  GCP_SERVICE: test-pulumi-cloud-run
+  GCP_SERVICE: spotify-music-player-demo
   GCP_REGION: europe-west2
-  GCP_IMAGE_REPOSITORY: test-pulumi-repository
-  GCP_STORAGE_BUCKET: test-pulumi-f675971
+  GCP_IMAGE_REPOSITORY: spotify-music-player-docker-repository
+  GCP_STORAGE_BUCKET: spotify-music-player-bucket-e2d0619
   CLOUDSDK_CORE_DISABLE_PROMPTS: 1
 
 jobs:
