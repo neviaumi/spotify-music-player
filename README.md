@@ -19,7 +19,7 @@ npm start
 
 ## Live environment
 
-[Live](https://dnghk-spotify-player.netlify.app/)
+[Live](https://spotify-music-player-demo-lh5kzbzxzq-nw.a.run.app/)
 
 ## Sponsor
 
