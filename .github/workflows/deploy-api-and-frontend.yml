@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - master
-      - development
-#    paths:
-#      - 'systems/http-api/**'
-#      - 'systems/web-frontend/**'
+    paths:
+      - 'systems/http-api/**'
+      - 'systems/web-frontend/**'
 env:
   GCP_PROJECT_ID: spotify-music-player-327914
   GCP_SERVICE: spotify-music-player-demo
