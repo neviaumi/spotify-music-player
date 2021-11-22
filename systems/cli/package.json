@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@busybox/eslint-config": "5.6.4",
-    "@busybox/prettier-config": "1.2.0",
+    "@busybox/prettier-config": "1.2.1",
     "eslint": "8.3.0"
   },
   "engines": {
