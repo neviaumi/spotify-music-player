@@ -13,7 +13,7 @@ httpx = {version = "^0.21.1"}
 Jinja2 = "^3.0.3"
 
 [tool.poetry.dev-dependencies]
-pylint = "^2.11.1"
+pylint = "^2.12.1"
 pytest = "^6.2.5"
 black = "^21.11b1"
 ipython = "^7.29.0"
