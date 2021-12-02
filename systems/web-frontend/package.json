@@ -50,7 +50,7 @@
     "@music-player/cli": "file:../cli",
     "@pollyjs/adapter-xhr": "5.1.1",
     "@pollyjs/cli": "5.1.1",
-    "@pollyjs/core": "5.1.1",
+    "@pollyjs/core": "6.0.0",
     "@pollyjs/persister-rest": "5.1.1",
     "@snowpack/plugin-dotenv": "2.2.0",
     "@snowpack/plugin-react-refresh": "2.5.0",
