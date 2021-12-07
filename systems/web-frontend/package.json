@@ -51,7 +51,7 @@
     "@pollyjs/adapter-xhr": "6.0.0",
     "@pollyjs/cli": "6.0.0",
     "@pollyjs/core": "6.0.0",
-    "@pollyjs/persister-rest": "6.0.0",
+    "@pollyjs/persister-rest": "6.0.1",
     "@snowpack/plugin-dotenv": "2.2.0",
     "@snowpack/plugin-react-refresh": "2.5.0",
     "@snowpack/plugin-webpack": "3.0.0",
