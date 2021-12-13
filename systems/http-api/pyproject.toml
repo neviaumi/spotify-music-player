@@ -7,7 +7,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = {extras = ["all"], version = "^0.70.0"}
+fastapi = {extras = ["all"], version = "^0.70.1"}
 python-dotenv = "^0.19.2"
 httpx = {version = "^0.21.1"}
 Jinja2 = "^3.0.3"
