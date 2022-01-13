@@ -16,7 +16,7 @@ Jinja2 = "^3.0.3"
 pylint = "^2.12.2"
 pytest = "^6.2.5"
 black = "^21.12b0"
-ipython = "^7.31.0"
+ipython = "^8.0.0"
 pytest-asyncio = "^0.16.0"
 
 [build-system]
