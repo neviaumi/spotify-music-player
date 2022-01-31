@@ -6,7 +6,7 @@ authors = ["David Ng <david.ng.dev@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-pulumi = "^3.23.0"
+pulumi = "^3.23.2"
 pulumi-gcp = "^6.9.0"
 pulumi-docker = "^3.1.0"
 
