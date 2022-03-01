@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: echo ::set-output name=PYTHON_VERSION::$(cat ./systems/http-api/.python-version)
         id: python-version
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v3
         with:
           python-version: '${{ steps.python-version.outputs.PYTHON_VERSION }}'
       - run: echo ::set-output name=NVMRC::$(cat .nvmrc)
