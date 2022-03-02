@@ -16,7 +16,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: echo ::set-output name=PYTHON_VERSION::$(cat ./systems/infrastructure/.python-version)
         id: python-version
       - uses: actions/setup-python@v3
