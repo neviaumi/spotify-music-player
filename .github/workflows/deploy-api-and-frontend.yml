@@ -19,7 +19,7 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: echo ::set-output name=PYTHON_VERSION::$(cat ./systems/http-api/.python-version)
         id: python-version
       - uses: actions/setup-python@v3
