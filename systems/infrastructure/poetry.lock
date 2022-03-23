@@ -257,7 +257,7 @@ semver = ">=2.8.1"
 
 [[package]]
 name = "pulumi-gcp"
-version = "6.16.0"
+version = "6.17.0"
 description = "A Pulumi package for creating and managing Google Cloud Platform resources."
 category = "main"
 optional = false
@@ -381,7 +381,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "c4df11c1dbf46c09c2a149a6448cab0894c1e7ae3f6ef784154a5379fb287a28"
+content-hash = "a2241661435cffef6aad6ef8a75fd46cd5e9d3d592943c8f7072c9e408a66a4d"
 
 [metadata.files]
 arpeggio = [
@@ -573,7 +573,7 @@ pulumi-docker = [
     {file = "pulumi_docker-3.1.0.tar.gz", hash = "sha256:0c5edb04448994de6cffb702146085856354efddbe78b0b38fa6a666428f0408"},
 ]
 pulumi-gcp = [
-    {file = "pulumi_gcp-6.16.0.tar.gz", hash = "sha256:77abe30f25854faa25f4ad8532b8d8419543ef01b4cda1fc7925d4ed11b6c3f1"},
+    {file = "pulumi_gcp-6.17.0.tar.gz", hash = "sha256:e887a8a0653aa3d5e2f58089f1f3f193d5bc02f54ba1589ec7e0ca3a1cb4e99b"},
 ]
 py = [
     {file = "py-1.10.0-py2.py3-none-any.whl", hash = "sha256:3b80836aa6d1feeaa108e046da6423ab8f6ceda6468545ae8d02d9d58d18818a"},
