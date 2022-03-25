@@ -11,7 +11,7 @@ pulumi-gcp = "^6.17.0"
 pulumi-docker = "^3.1.0"
 
 [tool.poetry.dev-dependencies]
-pylint = "^2.12.2"
+pylint = "^2.13.0"
 black = "^22.1"
 pytest = "^7.1.1"
 
