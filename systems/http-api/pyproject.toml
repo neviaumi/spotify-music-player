@@ -10,7 +10,7 @@ python = "^3.9"
 fastapi = {extras = ["all"], version = "^0.75.0"}
 python-dotenv = "^0.20.0"
 httpx = {version = "^0.22.0"}
-Jinja2 = "^3.0.3"
+Jinja2 = "^3.1.0"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.13.0"
