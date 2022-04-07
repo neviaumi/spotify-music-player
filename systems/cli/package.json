@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "open": "8.4.0",
-    "yargs": "17.2.1"
+    "yargs": "17.4.0"
   },
   "devDependencies": {
     "@busybox/eslint-config": "5.7.1",
