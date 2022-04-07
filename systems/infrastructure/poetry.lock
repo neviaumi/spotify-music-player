@@ -244,7 +244,7 @@ six = ">=1.12.0"
 
 [[package]]
 name = "pulumi-docker"
-version = "3.1.0"
+version = "3.2.0"
 description = "A Pulumi package for interacting with Docker in Pulumi programs"
 category = "main"
 optional = false
@@ -377,7 +377,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "9ba7f10502fa3b85258f241f349c1bee0ce8612a4ad65f860cd67fe1f549916b"
+content-hash = "e3b47c46298e7d36b51752cdcd873034aa15cccf09a6279e078afbb5916b8fa7"
 
 [metadata.files]
 arpeggio = [
@@ -566,7 +566,7 @@ pulumi = [
     {file = "pulumi-3.27.0-py2.py3-none-any.whl", hash = "sha256:d1ced38a17f8be3a0731699a8d4319d4561316df0325ab1195186b289a34b981"},
 ]
 pulumi-docker = [
-    {file = "pulumi_docker-3.1.0.tar.gz", hash = "sha256:0c5edb04448994de6cffb702146085856354efddbe78b0b38fa6a666428f0408"},
+    {file = "pulumi_docker-3.2.0.tar.gz", hash = "sha256:355a30cad08f4925be43cf825a18301ff6baecf2c435f1b67e3bf4e5be22ef1d"},
 ]
 pulumi-gcp = [
     {file = "pulumi_gcp-6.17.0.tar.gz", hash = "sha256:e887a8a0653aa3d5e2f58089f1f3f193d5bc02f54ba1589ec7e0ca3a1cb4e99b"},

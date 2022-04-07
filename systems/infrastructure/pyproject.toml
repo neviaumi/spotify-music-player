@@ -8,7 +8,7 @@ authors = ["David Ng <david.ng.dev@gmail.com>"]
 python = "^3.9"
 pulumi = "^3.27.0"
 pulumi-gcp = "^6.17.0"
-pulumi-docker = "^3.1.0"
+pulumi-docker = "^3.2.0"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.13.5"
