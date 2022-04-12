@@ -24,7 +24,7 @@ jobs:
           python-version: '${{ steps.python-version.outputs.PYTHON_VERSION }}'
       - run: echo ::set-output name=NVMRC::$(cat .nvmrc)
         id: nvm
-      - uses: actions/setup-node@v3.1.0
+      - uses: actions/setup-node@v3.1.1
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
           cache: 'npm'
